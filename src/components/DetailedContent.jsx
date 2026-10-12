@@ -17,9 +17,9 @@ import {
   ChevronRight
 } from 'lucide-react';
 
-import plywoodImg from '../assets/plywood-image.png';
-import laminatesImg from '../assets/laminates.png';
-import hardwareImg from '../assets/hardwarefittings.png';
+import plywoodImg from '../assets/plywood/plywood-image.png';
+import laminatesImg from '../assets/laminates/laminates.png';
+import hardwareImg from '../assets/hardware/hardwarefittings.png';
 
 export const DetailedContent = ({ onNavigate }) => {
   const [openFaq, setOpenFaq] = useState(null);

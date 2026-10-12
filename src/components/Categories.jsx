@@ -1,11 +1,12 @@
 import React from 'react';
-import laminates from '../assets/laminates.png';
-import doorfittings from '../assets/door_fittings.png';
-import fancydoors from '../assets/fancydoors.png';
-import hardwarefittings from '../assets/hardwarefittings.png';
-import kitchenaccessories from '../assets/kitchenaccessories.png';
-import slidingchannels from '../assets/slidingchannels.png';
-import tandemboxes from '../assets/tandembox.png';
+import laminates from '../assets/laminates/laminate-marble-slabs.jpg';
+import plywood from '../assets/plywood/plywood-image.png';
+import doorfittings from '../assets/doors/door_fittings.png';
+import fancydoors from '../assets/doors/fancydoors.png';
+import hardwarefittings from '../assets/hardware/hardwarefittings.png';
+import kitchenaccessories from '../assets/kitchen/kitchenaccessories.png';
+import slidingchannels from '../assets/hardware/slidingchannels.png';
+import tandemboxes from '../assets/kitchen/tandembox.png';
 
 
 export const Categories = ({ onNavigate }) => {
@@ -26,7 +27,7 @@ export const Categories = ({ onNavigate }) => {
     {
       title: 'Plywood',
       desc: 'Premium plywood for every application',
-      img: laminates,
+      img: plywood,
       icon: (
         <svg className="w-5 h-5 text-[#7A5C12]" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 3v16.5M20.25 3v16.5M3 5.25h18M3 9.75h18M3 14.25h18M3 18.75h18" />

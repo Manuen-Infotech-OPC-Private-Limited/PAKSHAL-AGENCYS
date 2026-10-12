@@ -2,11 +2,11 @@ import { useState, useEffect } from 'react';
 import { API_BASE_URL } from '../config';
 
 // Import local image assets
-import marinePlywood from '../assets/homepage-marineplywood.png';
-import veneers from '../assets/veneer2.png';
-import laminates from '../assets/laminates.png';
-import hardwareFittings from '../assets/hardwarefittings.png';
-import doors from '../assets/fancydoors.png';
+import marinePlywood from '../assets/plywood/homepage-marineplywood.png';
+import veneers from '../assets/plywood/veneer2.png';
+import laminates from '../assets/laminates/laminate-marble-slabs.jpg';
+import hardwareFittings from '../assets/hardware/hardwarefittings.png';
+import doors from '../assets/doors/fancydoors.png';
 
 const COLLECTIONS = [
   {

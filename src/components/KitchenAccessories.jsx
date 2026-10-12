@@ -1,24 +1,24 @@
 import React from 'react';
 
 // Import images from assets/kitchenaccesories
-import bifoldLiftUpImg from '../assets/kitchenaccesories/bifoldliftupsystem.png';
-import cornerImg from '../assets/kitchenaccesories/corner.jpg';
-import cutleryTrayImg from '../assets/kitchenaccesories/cutlerytray.png';
-import cutleryTray2Img from '../assets/kitchenaccesories/cutlerytray2.png';
-import glassBoxImg from '../assets/kitchenaccesories/glassbox.jpg';
-import glassTandemBoxImg from '../assets/kitchenaccesories/glasstandembox.jpg';
-import magicCornerImg from '../assets/kitchenaccesories/magiccorner.jpg';
-import pullDownDishRackImg from '../assets/kitchenaccesories/pulldowndishrackelevator.jpg';
-import pullDownElevatorImg from '../assets/kitchenaccesories/pulldownelevator.png';
-import rollingShuttersImg from '../assets/kitchenaccesories/rollingshutters.png';
-import sidePullout2Img from '../assets/kitchenaccesories/sidepulloutbox2.jpg';
-import sidePulloutImg from '../assets/kitchenaccesories/sidepulloutboxes.jpg';
-import slimBoxesImg from '../assets/kitchenaccesories/slimboxes.jpg';
-import swingStorageImg from '../assets/kitchenaccesories/swingstoragebox.jpg';
-import tandemBoxImg from '../assets/kitchenaccesories/tandembox.jpg';
-import universalGlassBoxImg from '../assets/kitchenaccesories/universalglassbox.jpg';
-import ventilatorImg from '../assets/kitchenaccesories/ventilator.png';
-import wastebinImg from '../assets/kitchenaccesories/wastebin.png';
+import bifoldLiftUpImg from '../assets/kitchen/bifoldliftupsystem.png';
+import cornerImg from '../assets/kitchen/corner.jpg';
+import cutleryTrayImg from '../assets/kitchen/cutlerytray.png';
+import cutleryTray2Img from '../assets/kitchen/cutlerytray2.png';
+import glassBoxImg from '../assets/kitchen/glassbox.jpg';
+import glassTandemBoxImg from '../assets/kitchen/glasstandembox.jpg';
+import magicCornerImg from '../assets/kitchen/magiccorner.jpg';
+import pullDownDishRackImg from '../assets/kitchen/pulldowndishrackelevator.jpg';
+import pullDownElevatorImg from '../assets/kitchen/pulldownelevator.png';
+import rollingShuttersImg from '../assets/kitchen/rollingshutters.png';
+import sidePullout2Img from '../assets/kitchen/sidepulloutbox2.jpg';
+import sidePulloutImg from '../assets/kitchen/sidepulloutboxes.jpg';
+import slimBoxesImg from '../assets/kitchen/slimboxes.jpg';
+import swingStorageImg from '../assets/kitchen/swingstoragebox.jpg';
+import tandemBoxImg from '../assets/kitchen/tandembox-accessory.jpg';
+import universalGlassBoxImg from '../assets/kitchen/universalglassbox.jpg';
+import ventilatorImg from '../assets/kitchen/ventilator.png';
+import wastebinImg from '../assets/kitchen/wastebin.png';
 
 // Spreads dataset for ProductsPage catalogue booklet and sidebar index
 export const kitchenAccessoriesSpreads = [

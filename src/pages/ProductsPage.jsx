@@ -26,63 +26,63 @@ import {
 } from 'lucide-react';
 import sgCatalogPdf from '../assets/Broucher/SG CATALOG.pdf';
 import hardwarePdf from '../assets/Broucher/hardwareaccessories.pdf';
-import plywoodImg from '../assets/royalclub.png';
-import royalClubImg from '../assets/royalclub.png';
-import royalClub2Img from '../assets/royalclub2.png';
-import marineClubImg from '../assets/marineclub.png';
-import laminatesImg from '../assets/laminates.png';
-import laminates2Img from '../assets/laminates2.png';
-import laminates3Img from '../assets/laminates3.png';
-import centuryLaminateImg from '../assets/century_laminate.jpg';
-import greenLaminateImg from '../assets/green_laminate.jpg';
-import marineLaminateImg from '../assets/marine_laminate.jpg';
-import vistaLaminateImg from '../assets/vista_laminate.jpg';
-import cromaLaminateImg from '../assets/croma_laminate.jpg';
-import acrylicPanelsImg from '../assets/acrylicpanels.png';
-import acrylicPanels2Img from '../assets/acrylicpanels2.png';
-import acrylicPanels3Img from '../assets/acrylicpanels3.png';
-import acrylicPanels4Img from '../assets/acrylicpanels4.png';
-import acrylicPanels5Img from '../assets/acrylicpanels5.png';
-import acrylicPanels6Img from '../assets/acrylicpanels6.png';
-import hardwareImg from '../assets/hardwarefittings.png';
-import accessoriesImg from '../assets/kitchenaccessories.png';
-import slidingChannelsImg from '../assets/slidingchannels.png';
-import gurjanStarImg from '../assets/gurjanstar.png';
-import tandemBoxImg from '../assets/tandembox.png';
-import fancyDoorsImg from '../assets/fancydoors.png';
-import designerDoorImg from '../assets/homepage-designerdoor.png';
-import doorFittingsImg from '../assets/door_fittings.png';
-import plywoodKingImg from '../assets/plywood-image.png';
-import veneer2Img from '../assets/veneer2.png';
-import veneer3Img from '../assets/veneer3.png';
-import veneer4Img from '../assets/veneer4.png';
-import kitchensCardImg from '../assets/kitchens-card.jpg';
-import wardrobesCardImg from '../assets/wardrobes-card.jpg';
-import officefurniture from '../assets/officefurniture.jpg';
-import interiorpanels from '../assets/interiorpanels.png';
-import hardwareFittings1 from '../assets/productspage-hardware&fittings.png';
-import hydraulicHingeImg from '../assets/hydraulichinge.png';
-import hardwareFittings2 from '../assets/productspage-hardware&fittings2.png';
-import drawerChannelImg from '../assets/drawerchannel.jpg';
-import hardwareFittings3 from '../assets/productspage-hardware&fittings3.png';
-import kitchenBasketImg from '../assets/kitchenbasket.jpg';
-import hardwareFittings4 from '../assets/productspage-hardware&fittings4.png';
-import tandemBoxNewImg from '../assets/tandembox.jpg';
-import hardwareFittings5 from '../assets/productspage-hardware&fittings5.png';
-import hardwareFittings6 from '../assets/productspage-hardware&fittings6.png';
-import hardwareFittings7 from '../assets/productspage-hardware&fittings7.png';
-import astdaxHandles1 from '../assets/astdax-handles-1.jpg';
-import astdaxHandles2 from '../assets/astdax-handles-2.jpg';
-import conceal from '../assets/conceal.png';
-import conceal2 from '../assets/conceal2.png';
-import knob from '../assets/knob.png';
-import knob2 from '../assets/knob2.png';
-import curtain from '../assets/curtain.png';
-import curtain2 from '../assets/curtain2.png';
-import mortise from '../assets/mortise.png';
-import support from '../assets/support.png';
-import sofaleg from '../assets/sofaleg.png';
-import others from '../assets/others.png';
+import plywoodImg from '../assets/plywood/royalclub.png';
+import royalClubImg from '../assets/plywood/royalclub.png';
+import royalClub2Img from '../assets/plywood/royalclub2.png';
+import marineClubImg from '../assets/plywood/marineclub.png';
+import laminatesImg from '../assets/laminates/laminate-marble-slabs.jpg';
+import laminates2Img from '../assets/laminates/laminates2.png';
+import laminates3Img from '../assets/laminates/laminates3.png';
+import centuryLaminateImg from '../assets/laminates/century_laminate.jpg';
+import greenLaminateImg from '../assets/laminates/green_laminate.jpg';
+import marineLaminateImg from '../assets/laminates/marine_laminate.jpg';
+import vistaLaminateImg from '../assets/laminates/vista_laminate.jpg';
+import cromaLaminateImg from '../assets/laminates/croma_laminate.jpg';
+import acrylicPanelsImg from '../assets/laminates/acrylicpanels.png';
+import acrylicPanels2Img from '../assets/laminates/acrylicpanels2.png';
+import acrylicPanels3Img from '../assets/laminates/acrylicpanels3.png';
+import acrylicPanels4Img from '../assets/laminates/acrylicpanels4.png';
+import acrylicPanels5Img from '../assets/laminates/acrylicpanels5.png';
+import acrylicPanels6Img from '../assets/laminates/acrylicpanels6.png';
+import hardwareImg from '../assets/hardware/hardwarefittings.png';
+import accessoriesImg from '../assets/kitchen/kitchenaccessories.png';
+import slidingChannelsImg from '../assets/hardware/slidingchannels.png';
+import gurjanStarImg from '../assets/plywood/gurjanstar.png';
+import tandemBoxImg from '../assets/kitchen/tandembox.png';
+import fancyDoorsImg from '../assets/doors/fancydoors.png';
+import designerDoorImg from '../assets/doors/homepage-designerdoor.png';
+import doorFittingsImg from '../assets/doors/door_fittings.png';
+import plywoodKingImg from '../assets/plywood/plywood-image.png';
+import veneer2Img from '../assets/plywood/veneer2.png';
+import veneer3Img from '../assets/plywood/veneer3.png';
+import veneer4Img from '../assets/plywood/veneer4.png';
+import kitchensCardImg from '../assets/kitchen/kitchens-card.jpg';
+import wardrobesCardImg from '../assets/furniture/wardrobes-card.jpg';
+import officefurniture from '../assets/furniture/officefurniture.jpg';
+import interiorpanels from '../assets/laminates/interiorpanels.png';
+import hardwareFittings1 from '../assets/hardware/productspage-hardware&fittings.png';
+import hydraulicHingeImg from '../assets/hardware/hydraulichinge.png';
+import hardwareFittings2 from '../assets/hardware/productspage-hardware&fittings2.png';
+import drawerChannelImg from '../assets/hardware/drawerchannel.jpg';
+import hardwareFittings3 from '../assets/hardware/productspage-hardware&fittings3.png';
+import kitchenBasketImg from '../assets/kitchen/kitchenbasket.jpg';
+import hardwareFittings4 from '../assets/hardware/productspage-hardware&fittings4.png';
+import tandemBoxNewImg from '../assets/kitchen/tandembox.jpg';
+import hardwareFittings5 from '../assets/hardware/productspage-hardware&fittings5.png';
+import hardwareFittings6 from '../assets/hardware/productspage-hardware&fittings6.png';
+import hardwareFittings7 from '../assets/hardware/productspage-hardware&fittings7.png';
+import astdaxHandles1 from '../assets/hardware/astdax-handles-1.jpg';
+import astdaxHandles2 from '../assets/hardware/astdax-handles-2.jpg';
+import conceal from '../assets/hardware/conceal.png';
+import conceal2 from '../assets/hardware/conceal2.png';
+import knob from '../assets/hardware/knob.png';
+import knob2 from '../assets/hardware/knob2.png';
+import curtain from '../assets/hardware/curtain.png';
+import curtain2 from '../assets/hardware/curtain2.png';
+import mortise from '../assets/hardware/mortise.png';
+import support from '../assets/hardware/support.png';
+import sofaleg from '../assets/hardware/sofaleg.png';
+import others from '../assets/hardware/others.png';
 
 const SPREADS = [
   {
@@ -104,7 +104,7 @@ const SPREADS = [
     specs: {
       'Core Material': 'Imported Gurjan',
       'Bonding Adhesive': 'Phenolic Formaldehyde',
-      'Manufacturer Warranty': 'Lifetime Guarantee*'
+      'Manufacturer Warranty': 'Lifetime Guarantee'
     },
     heroSub: 'PREMIUM QUALITY. TIMELESS STRENGTH.',
     heroTitle: 'ROYAL CLUB',
@@ -207,7 +207,7 @@ const SPREADS = [
     badge: 'Architectural Collection',
     title: 'Timeless\nElegance.',
     tagline: 'High-pressure decorative laminates for interior surfaces',
-    image: centuryLaminateImg,
+    image: laminatesImg,
     brandName: 'Century',
     desc: 'Century Laminates offer high-pressure scratch-resistant surfaces, rich textures, and superior color fastness.',
     thicknesses: ['0.8mm', '1.0mm', '1.2mm'],
@@ -1589,32 +1589,25 @@ export const ProductsPage = ({ onNavigate, search }) => {
   }, []);
 
   const getCatalogScale = () => {
-    if (windowDimensions.width < 320) return { scale: 0.3, marginBot: -580, leftOffset: 0 };
+    const width = windowDimensions.width;
+    const isSidebarVisible = width >= 1280;
+    const targetWidth = 960;
 
-    const isMobile = windowDimensions.width < 768;
-    const targetWidth = isMobile ? 960 : 1352;
-    const padding = isMobile ? 24 : 48;
-    const scaleWidth = (windowDimensions.width - padding) / targetWidth;
+    let availableWidth;
+    if (isSidebarVisible) {
+      const sidebarSpace = 320 + 32;
+      const padding = 48;
+      availableWidth = width - sidebarSpace - padding;
+    } else {
+      const padding = width < 640 ? 24 : 48;
+      availableWidth = width - padding;
+    }
 
-    const targetHeight = 720;
-    const scaleHeight = (windowDimensions.height - 120) / targetHeight;
-
-    let scale = Math.min(scaleWidth, scaleHeight);
-    scale = Math.min(1.0, Math.max(0.3, scale));
-
-    // The inner container includes the book, navigation controls, and brochure button = ~840px on mobile
-    const contentHeight = isMobile ? 840 : 740;
-    const heightReduction = contentHeight * (1 - scale);
-    const marginBot = -heightReduction + (isMobile ? 8 : 16);
-
-    const parentContentWidth = Math.min(windowDimensions.width, 1360) - padding;
-    const visualWidth = (isMobile ? 960 : 1320) * scale;
-    const leftOffset = Math.round(((parentContentWidth - visualWidth) / 2) - (isMobile ? 5 : 0));
-
-    return { scale, marginBot, leftOffset };
+    const scale = Math.min(1.0, Math.max(0.32, (availableWidth - 16) / targetWidth));
+    return { scale, isMobile: scale < 1.0, isSidebarVisible };
   };
 
-  const { scale, marginBot, leftOffset } = getCatalogScale();
+  const { scale, isMobile, isSidebarVisible } = getCatalogScale();
 
 
   const renderHeroTagIcon = (iconName) => {
@@ -1796,7 +1789,7 @@ export const ProductsPage = ({ onNavigate, search }) => {
           { label: 'Density', value: 'High Density Hardwood', icon: 'layers' },
           { label: 'Moisture Content', value: 'Below 12%', icon: 'moisture' },
           { label: 'Thickness Tolerance', value: '±0.5mm', icon: 'ruler' },
-          { label: 'Warranty', value: spread.specs['Manufacturer Warranty'] || 'Lifetime Guarantee*', icon: 'warranty' },
+          { label: 'Warranty', value: spread.specs['Manufacturer Warranty'] || 'Lifetime Guarantee', icon: 'warranty' },
           { label: 'Certification', value: 'ISO 9001:2015 Certified', icon: 'cert' }
         ],
         highlights: [
@@ -2155,29 +2148,34 @@ export const ProductsPage = ({ onNavigate, search }) => {
             handlePrev();
           }
         }}
-        className={`page-content page-content-left flex-1 border-r border-slate-100 p-6 lg:p-8 flex flex-col relative overflow-hidden bg-[#fdfdfa] text-left w-full ${canGoPrev ? 'lg:cursor-pointer' : ''}`}
+        className={`page-content page-content-left flex-1 border-r border-slate-200/80 p-5 lg:p-6 flex flex-col justify-between relative overflow-hidden bg-[#fdfdfa] text-left w-full select-none ${canGoPrev ? 'lg:cursor-pointer' : ''}`}
       >
         {/* Page curvature effect */}
         <div className="page-curvature-left" style={{ width: '60px' }} />
 
         {/* Left Page Header */}
-        <div className="flex justify-between items-start mb-4">
+        <div className="flex justify-between items-center mb-2 shrink-0">
           <div className="flex flex-col">
-            <span className="text-xl font-black tracking-tighter uppercase italic mb-0.5 text-slate-800">
+            <span className="text-lg lg:text-xl font-black tracking-tighter uppercase italic mb-0.5 text-slate-800">
               PAKSHAL <span className="text-[#006e2f]">AGENCYS</span>
             </span>
           </div>
           <div className="text-right">
-            <div className="text-slate-800 font-black text-xs mb-0.5">{spread.brandName.toUpperCase()}</div>
-            <div className="text-[#006e2f] font-bold text-[10px]">+91 9247449522</div>
+            <a
+              href="tel:+919247449522"
+              onClick={(e) => e.stopPropagation()}
+              className="text-[#006e2f] font-bold text-xs tracking-wide hover:underline cursor-pointer"
+            >
+              +91 9247449522
+            </a>
           </div>
         </div>
 
         {/* Large Product Showcase Image */}
-        <div className="relative flex-grow rounded-xl overflow-hidden mb-4 shadow-inner min-h-[180px] md:min-h-[200px] lg:min-h-[210px] bg-white border border-slate-100 flex items-center justify-center p-2">
+        <div className="relative flex-1 rounded-xl overflow-hidden my-2 min-h-[190px] flex items-center justify-center">
           <img
             alt={spread.brandName}
-            className={`w-full h-full ${spread.category === 'Kitchen Accessories' || spread.imageFit === 'contain'
+            className={`w-full h-full max-h-[350px] ${spread.category === 'Kitchen Accessories' || spread.imageFit === 'contain'
               ? 'object-contain'
               : 'object-cover'
               }`}
@@ -2186,7 +2184,7 @@ export const ProductsPage = ({ onNavigate, search }) => {
         </div>
 
         {/* Bottom Page Number */}
-        <div className="absolute bottom-4 left-8 text-[10px] font-black text-slate-400 z-20">Pg. {pageNumLeft}</div>
+        <div className="text-[10px] font-black text-slate-400 shrink-0 text-left pl-1">Pg. {pageNumLeft}</div>
       </div>
     );
   };
@@ -2204,67 +2202,60 @@ export const ProductsPage = ({ onNavigate, search }) => {
             handleNext();
           }
         }}
-        className={`page-content page-content-right flex-1 p-6 lg:p-8 flex flex-col relative overflow-hidden bg-[#fdfdfa] text-left w-full ${canGoNext ? 'lg:cursor-pointer' : ''}`}
+        className={`page-content page-content-right flex-1 p-5 lg:p-6 flex flex-col justify-between relative overflow-hidden bg-[#fdfdfa] text-left w-full select-none ${canGoNext ? 'lg:cursor-pointer' : ''}`}
       >
         {/* Page curvature effect */}
         <div className="page-curvature-right" style={{ width: '60px' }} />
 
-        {/* Right Page Header */}
-        <div className="flex justify-between items-baseline mb-4">
-          <div>
-            <div className="flex flex-wrap items-center gap-2 mb-1">
-              <h2 className="text-2xl font-black text-slate-900 tracking-tighter leading-none">{spread.brandName}</h2>
-              {spread.badge && (
-                <span className="px-2.5 py-0.5 text-[10px] font-black uppercase tracking-wider rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200/60">
+        <div className="flex flex-col gap-2.5 flex-1 min-h-0 overflow-hidden">
+          {/* Right Page Header */}
+          <div className="shrink-0">
+            {spread.badge && (
+              <div className="mb-1">
+                <span className="px-2 py-0.5 text-[9px] font-black uppercase tracking-wider rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200/60 inline-block">
                   {spread.badge}
                 </span>
-              )}
-            </div>
-            {spread.category !== 'Kitchen Accessories' && (
-              <div className="h-1.5 w-12 bg-[#006e2f] mb-2 rounded-full" />
+              </div>
             )}
-            <p className="text-slate-500 font-medium text-xs sm:text-sm leading-relaxed max-w-sm">
+            <p className="text-slate-500 font-medium text-[11px] lg:text-xs leading-relaxed max-w-sm line-clamp-2">
               {spread.desc}
             </p>
 
             {/* Provided Material, Color, and Size Content */}
             {(spread.material || spread.colors || spread.sizeDetails) && (
-              <div className="mt-3 p-3 bg-[#f5ede0]/60 rounded-xl border border-[#C9A44C]/30 text-xs font-semibold text-slate-800 space-y-1 max-w-sm">
+              <div className="mt-1.5 p-2 bg-[#f5ede0]/60 rounded-lg border border-[#C9A44C]/30 text-[11px] font-semibold text-slate-800 space-y-0.5 max-w-sm">
                 {spread.material && (
                   <div className="flex gap-1.5 items-start">
-                    <span className="text-[#8c6d23] font-black uppercase text-[10px] tracking-wider min-w-[70px]">Material:</span>
+                    <span className="text-[#8c6d23] font-black uppercase text-[9px] tracking-wider min-w-[60px]">Material:</span>
                     <span className="font-bold text-slate-900">{spread.material}</span>
                   </div>
                 )}
                 {spread.colors && (
                   <div className="flex gap-1.5 items-start">
-                    <span className="text-[#8c6d23] font-black uppercase text-[10px] tracking-wider min-w-[70px]">Color:</span>
+                    <span className="text-[#8c6d23] font-black uppercase text-[9px] tracking-wider min-w-[60px]">Color:</span>
                     <span className="font-bold text-slate-900">{spread.colors}</span>
                   </div>
                 )}
                 {spread.sizeDetails && (
                   <div className="flex gap-1.5 items-start">
-                    <span className="text-[#8c6d23] font-black uppercase text-[10px] tracking-wider min-w-[70px]">Size:</span>
+                    <span className="text-[#8c6d23] font-black uppercase text-[9px] tracking-wider min-w-[60px]">Size:</span>
                     <span className="font-bold text-slate-900 leading-snug">{spread.sizeDetails}</span>
                   </div>
                 )}
               </div>
             )}
           </div>
-        </div>
-
-        <div className="space-y-4">
 
           {/* Thickness / Finishes / Sizes Selection Chips */}
-          <div>
-            <h3 className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-3">
+          <div className="shrink-0">
+            <h3 className="text-[9px] font-black uppercase tracking-widest text-slate-400 mb-1">
               {spread.thicknessLabel || "Available Thickness"}
             </h3>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-1.5">
               {spread.thicknesses.map(thick => (
                 <span
                   key={thick}
-                  className="px-3 py-1.5 text-xs font-bold rounded-lg border border-slate-200 bg-white text-slate-700 select-none"
+                  className="px-2.5 py-0.5 text-[11px] font-bold rounded-md border border-slate-200 bg-white text-slate-700 select-none shadow-2xs"
                 >
                   {thick}
                 </span>
@@ -2273,25 +2264,25 @@ export const ProductsPage = ({ onNavigate, search }) => {
           </div>
 
           {/* Core Features & Applications */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div className="grid grid-cols-2 gap-3 shrink-0">
             <div>
-              <h3 className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-3">Core Features</h3>
-              <div className="space-y-2">
-                {spread.features.map((feat, i) => (
-                  <div key={i} className="flex items-center gap-2">
-                    <svg className="w-4 h-4 text-[#006e2f] flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+              <h3 className="text-[9px] font-black uppercase tracking-widest text-slate-400 mb-1">Core Features</h3>
+              <div className="space-y-1">
+                {spread.features.slice(0, 3).map((feat, i) => (
+                  <div key={i} className="flex items-center gap-1.5">
+                    <svg className="w-3.5 h-3.5 text-[#006e2f] flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
-                    <span className="text-xs font-bold text-slate-700">{feat}</span>
+                    <span className="text-[11px] font-bold text-slate-700 truncate">{feat}</span>
                   </div>
                 ))}
               </div>
             </div>
             <div>
-              <h3 className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-3">Applications</h3>
-              <div className="flex flex-wrap gap-1.5">
-                {spread.applications.map((app, i) => (
-                  <span key={i} className="px-2.5 py-1 bg-slate-100 text-slate-600 rounded text-[9px] font-black uppercase tracking-wider">
+              <h3 className="text-[9px] font-black uppercase tracking-widest text-slate-400 mb-1">Applications</h3>
+              <div className="flex flex-wrap gap-1">
+                {spread.applications.slice(0, 3).map((app, i) => (
+                  <span key={i} className="px-2 py-0.5 bg-slate-100 text-slate-600 rounded text-[8.5px] font-black uppercase tracking-wider">
                     {app}
                   </span>
                 ))}
@@ -2301,28 +2292,27 @@ export const ProductsPage = ({ onNavigate, search }) => {
 
           {/* Technical Specifications Table */}
           {spread.specs && Object.keys(spread.specs).length > 0 && (
-            <div className="bg-slate-50 p-4 rounded-xl border border-slate-100 mt-1">
-              <div className="flex justify-between items-center mb-2">
-                <h3 className="text-[10px] font-black uppercase tracking-widest text-slate-900">Technical Specifications</h3>
-                <span className="text-[8px] font-black text-[#006e2f] px-2 py-0.5 bg-white border border-green-700/20 rounded-full uppercase tracking-wider">
+            <div className="bg-slate-50/80 p-2.5 rounded-xl border border-slate-100/80 mt-auto shrink-0">
+              <div className="flex justify-between items-center mb-1">
+                <h3 className="text-[9px] font-black uppercase tracking-widest text-slate-800">Technical Specifications</h3>
+                <span className="text-[7.5px] font-black text-[#006e2f] px-1.5 py-0.5 bg-white border border-green-700/20 rounded-full uppercase tracking-wider">
                   Premium Quality
                 </span>
               </div>
-              <div className="space-y-2">
-                {Object.entries(spread.specs).map(([key, val]) => (
-                  <div key={key} className="flex flex-col sm:flex-row sm:justify-between text-[11px] border-b border-slate-200/60 pb-1.5 last:border-b-0 last:pb-0 gap-1 sm:gap-2">
-                    <span className="text-slate-400 font-bold uppercase tracking-wider">{key}</span>
-                    <span className="text-slate-900 font-black uppercase sm:text-right">{val}</span>
+              <div className="space-y-0.5">
+                {Object.entries(spread.specs).slice(0, 3).map(([key, val]) => (
+                  <div key={key} className="flex justify-between text-[10px] border-b border-slate-200/50 pb-0.5 last:border-b-0 last:pb-0 gap-2">
+                    <span className="text-slate-400 font-bold uppercase tracking-wider truncate">{key}</span>
+                    <span className="text-slate-900 font-black uppercase text-right truncate">{val}</span>
                   </div>
                 ))}
               </div>
             </div>
           )}
-
         </div>
 
         {/* Bottom Page Number */}
-        <div className="absolute bottom-4 right-8 text-[10px] font-black text-slate-400 z-20">Pg. {pageNumRight}</div>
+        <div className="text-[10px] font-black text-slate-400 shrink-0 text-right pr-1 pt-1.5">Pg. {pageNumRight}</div>
       </div>
     );
   };
@@ -2397,114 +2387,115 @@ export const ProductsPage = ({ onNavigate, search }) => {
         </div>
       )}
 
-      {/* Dynamic Catalog Hero Banner (Full Bleed) - Already existing section below navbar */}
-      <div className="w-full bg-[#F5EDE0] text-slate-800 relative min-h-[260px] flex flex-col justify-center border-b border-[#FAF2DF] animate-fade-in mb-8 sm:mb-12 shadow-xs pt-[98px] sm:pt-[102px] md:pt-[105px]">
-        {/* Centered layout container */}
-        <div className="max-w-[1280px] mx-auto w-full px-3 sm:px-6 pt-2 sm:pt-3 pb-5 md:py-6 flex flex-col relative z-20">
+      {/* Compact Category Navigation Deck (Below Navbar) */}
+      <div className="w-full bg-[#F5EDE0] text-slate-800 relative border-b border-[#FAF2DF] animate-fade-in mb-6 sm:mb-8 shadow-2xs pt-[90px] sm:pt-[94px] md:pt-[98px] pb-3.5 sm:pb-4.5">
+        <div className="max-w-[1360px] mx-auto w-full px-3 sm:px-6 relative z-20">
 
-          {/* All Brands of this Category - Displayed in an organized manner */}
-          <div className="w-full mb-4 sm:mb-6 pb-1 sm:pb-2">
-            <div className="flex items-center justify-between flex-wrap gap-2 mb-3">
-              <div className="flex items-center gap-2">
-                <span className="text-xs sm:text-sm font-black uppercase tracking-wider text-[#8c6d23]">
-                  {activeSpread.category === 'Hardware&Fittings' ? 'Hardware & Fittings' : activeSpread.category}
-                </span>
-              </div>
-              <span className="text-[11px] text-slate-500 font-bold hidden sm:inline">
-                Click any brand to explore its catalogue & specifications
+          {/* Header Row */}
+          <div className="flex items-center justify-between gap-3 mb-2.5 px-0.5">
+            <div className="flex items-center gap-2">
+              <span className="text-[11px] font-black uppercase tracking-widest text-[#8c6d23]">
+                Product Categories
               </span>
             </div>
-
-            {/* Organized Brands Pills / Cards */}
-            <div className="flex flex-wrap items-center gap-2 sm:gap-2.5">
-              {(categories[activeSpread.category] || []).map(({ spread, idx }) => {
-                const isBrandActive =
-                  idx === currentSpreadIdx ||
-                  (activeSpread.parentBrandId && activeSpread.parentBrandId === spread.brandId) ||
-                  (activeSpread.brandName === spread.brandName);
-
-                return (
-                  <button
-                    key={spread.id}
-                    onClick={() => handleThumbnailClick(idx)}
-                    className={`group flex items-center gap-2.5 px-3 sm:px-4 py-2 rounded-xl border transition-all duration-200 cursor-pointer ${
-                      isBrandActive
-                        ? 'bg-gradient-to-r from-[#006e2f] to-[#0A4D2E] text-white border-[#006e2f] shadow-md ring-2 ring-[#C9A44C]/60 scale-105 font-black'
-                        : 'bg-white hover:bg-[#FAF8F5] text-slate-800 border-[#C9A44C]/35 hover:border-[#006e2f] shadow-2xs hover:shadow-xs'
-                    }`}
-                  >
-                    {/* Small brand thumbnail image */}
-                    <div className={`w-6 h-6 rounded-md overflow-hidden shrink-0 border ${
-                      isBrandActive ? 'border-amber-300' : 'border-slate-200'
-                    }`}>
-                      <img
-                        src={spread.image}
-                        alt={spread.brandName}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <span className={`text-xs sm:text-[13px] font-black tracking-tight ${
-                      isBrandActive ? 'text-white' : 'text-slate-800 group-hover:text-[#006e2f]'
-                    }`}>
-                      {spread.brandName}
-                    </span>
-                    {spread.badge && (
-                      <span className={`text-[9px] font-bold uppercase tracking-wider hidden md:inline px-1.5 py-0.5 rounded ${
-                        isBrandActive ? 'bg-white/20 text-amber-200' : 'bg-slate-100 text-slate-500'
-                      }`}>
-                        {spread.badge}
-                      </span>
-                    )}
-                    {isBrandActive && (
-                      <span className="w-1.5 h-1.5 rounded-full bg-amber-300 ml-0.5 animate-pulse" />
-                    )}
-                  </button>
-                );
-              })}
-            </div>
+            <span className="text-[10px] font-bold text-slate-400 hidden sm:inline tracking-wider uppercase">
+              Click to browse collection in catalogue
+            </span>
           </div>
 
-          {/* Active Brand Content Row: Left Text + Right Image */}
-          <div className="flex flex-col md:flex-row items-stretch relative">
-            {/* Left side text contents */}
-            <div className="flex-1 py-2 md:py-4 flex flex-col justify-center text-left relative z-20 md:max-w-[48%] lg:max-w-[50%]">
-              <span className="text-[10px] text-[#8c6d23] tracking-[0.25em] font-black uppercase mb-1.5 block">
-                {activeSpread.heroSub || 'PREMIUM QUALITY. TIMELESS STRENGTH.'}
-              </span>
-              <h2 className="text-2xl sm:text-3xl lg:text-[38px] font-black text-slate-900 leading-tight uppercase tracking-tight font-sans">
-                {activeSpread.heroTitle || activeSpread.brandName}
-              </h2>
-              <p className="text-slate-650 font-medium text-xs sm:text-sm leading-relaxed mt-2.5 max-w-xl">
-                {activeSpread.heroDesc || activeSpread.desc}
-              </p>
-
-              {/* Row of dynamic tags */}
-              <div className="flex flex-wrap gap-3 sm:gap-4 mt-4">
-                {(activeSpread.heroTags || []).map((tag, i) => (
-                  <div key={i} className="flex items-center gap-2">
-                    <div className="w-7 h-7 rounded-full bg-white border border-[#C9A44C]/35 flex items-center justify-center shrink-0 shadow-xs">
-                      {renderHeroTagIcon(tag.icon)}
-                    </div>
-                    <span className="text-[11px] font-bold text-slate-700 tracking-wide">{tag.text}</span>
+          {/* Category Items - Free of Boxes */}
+          <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-7 gap-2 sm:gap-3 lg:gap-4 pt-2 pb-2 px-0.5">
+            {[
+              {
+                key: 'Plywood',
+                title: 'Plywood',
+                desc: 'BWP & Calibrated',
+                image: plywoodKingImg
+              },
+              {
+                key: 'Laminates',
+                title: 'Laminates',
+                desc: 'Textured & Decorative',
+                image: laminatesImg
+              },
+              {
+                key: 'Acrylic Panels',
+                title: 'Acrylic Panels',
+                desc: 'High-Gloss & Matte',
+                image: acrylicPanelsImg
+              },
+              {
+                key: 'Veneers',
+                title: 'Veneers',
+                desc: 'Natural Wood Grain',
+                image: veneer2Img
+              },
+              {
+                key: 'Fancy Doors',
+                title: 'Fancy Doors',
+                desc: 'Designer & Flush',
+                image: fancyDoorsImg
+              },
+              {
+                key: 'Architectural Hardware',
+                title: 'Arch. Hardware',
+                desc: 'Luxury Handles',
+                image: hardwareImg
+              },
+              {
+                key: 'Hardware&Fittings',
+                title: 'Hardware & Fittings',
+                desc: 'Systems & Hinges',
+                image: hardwareFittings1
+              }
+            ].map((cat, idx) => {
+              const isActive = activeSpread.category === cat.key;
+              const isLastOdd = idx === 6;
+              return (
+                <button
+                  key={cat.key}
+                  onClick={() => {
+                    setExpandedCategories(prev => ({
+                      ...prev,
+                      [cat.key]: true
+                    }));
+                    const firstMatch = SPREADS.findIndex(s => s.category === cat.key && !s.hideFromIndex);
+                    if (firstMatch !== -1) {
+                      handleThumbnailClick(firstMatch);
+                    }
+                  }}
+                  className={`group flex flex-col items-center justify-center p-1.5 sm:p-2 transition-all duration-300 cursor-pointer text-center select-none w-full min-w-0 relative ${isLastOdd ? 'col-start-2 sm:col-start-auto' : ''
+                    }`}
+                >
+                  {/* Category Image - Free of box */}
+                  <div className={`w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 rounded-2xl overflow-hidden shrink-0 transition-all duration-300 ${isActive
+                      ? 'ring-2.5 ring-[#006e2f] ring-offset-2 ring-offset-[#F5EDE0] shadow-md -translate-y-1'
+                      : 'ring-1 ring-slate-300/70 group-hover:ring-[#006e2f]/50 group-hover:shadow-md group-hover:-translate-y-0.5'
+                    }`}>
+                    <img
+                      src={cat.image}
+                      alt={cat.title}
+                      className="w-full h-full object-cover brightness-105 contrast-105 transition-all duration-300 group-hover:scale-110 group-hover:brightness-115 transform-gpu"
+                      style={{ backfaceVisibility: 'hidden', transform: 'translateZ(0)' }}
+                    />
                   </div>
-                ))}
-              </div>
-            </div>
 
-            {/* Right side image showcase with slanted cut */}
-            <div
-              className="hidden md:block absolute right-0 top-0 bottom-0 w-[48%] overflow-hidden pointer-events-none z-10 rounded-2xl"
-              style={{ clipPath: 'polygon(12% 0, 100% 0, 100% 100%, 0 100%)' }}
-            >
-              <img
-                src={activeSpread.image}
-                className={`w-full h-full ${activeSpread.category === 'Kitchen Accessories' || activeSpread.imageFit === 'contain'
-                  ? 'object-contain p-6 bg-white/40'
-                  : 'object-cover'
-                  } object-center transform hover:scale-[1.03] transition-transform duration-10000`}
-                alt={activeSpread.brandName}
-              />
-            </div>
+                  {/* Category Title & Subtitle */}
+                  <div className="flex flex-col items-center w-full mt-1.5">
+                    <span className={`text-[11px] sm:text-xs lg:text-[13px] font-black tracking-tight leading-tight transition-colors line-clamp-1 ${isActive ? 'text-[#006e2f]' : 'text-slate-800 group-hover:text-[#006e2f]'
+                      }`}>
+                      {cat.title}
+                    </span>
+                    <span className="text-[9px] sm:text-[10px] font-medium text-slate-500 line-clamp-1 mt-0.5 leading-none">
+                      {cat.desc}
+                    </span>
+                    {isActive && (
+                      <span className="h-0.5 w-4 bg-[#006e2f] rounded-full mt-1 animate-fade-in" />
+                    )}
+                  </div>
+                </button>
+              );
+            })}
           </div>
 
         </div>
@@ -2512,52 +2503,32 @@ export const ProductsPage = ({ onNavigate, search }) => {
 
       {/* Brochure Section Heading */}
       <div className="max-w-[1280px] mx-auto px-6 mb-8">
-        <div className="flex items-center gap-4">
-          <div className="flex-1 h-px bg-gradient-to-r from-slate-200 to-transparent" />
+        <div className="flex items-center justify-center">
           <div className="flex items-center gap-3 px-5 py-2.5 bg-white rounded-full border border-slate-200 shadow-sm">
             <svg className="w-4 h-4 text-[#006e2f]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
             </svg>
             <span className="text-[11px] font-black uppercase tracking-widest text-slate-700">Product Catalogue</span>
-            <span className="w-1.5 h-1.5 rounded-full bg-[#C9A44C]" />
-            <span className="text-[10px] font-bold text-slate-400"></span>
           </div>
-          <div className="flex-1 h-px bg-gradient-to-l from-slate-200 to-transparent" />
         </div>
       </div>
 
+      {/* Catalogue Book Section */}
       <div
-        className="max-w-[1360px] mx-auto px-3 sm:px-6 relative"
-        style={windowDimensions.width >= 320 ? {
-          marginBottom: `${marginBot}px`
-        } : {}}
+        id="catalogue-book-section"
+        className="max-w-[1360px] mx-auto px-3 sm:px-6 relative scroll-mt-28 overflow-x-clip"
       >
-        <div
-          className="flex flex-row gap-10 items-start relative"
-          style={windowDimensions.width >= 320 ? {
-            width: windowDimensions.width >= 768 ? '1320px' : '960px',
-            transform: `scale(${scale}) translateZ(0)`,
-            transformOrigin: 'top left',
-            left: `${leftOffset}px`,
-            position: 'relative',
-            margin: '0',
-            willChange: 'transform',
-            WebkitFontSmoothing: 'antialiased',
-            MozOsxFontSmoothing: 'grayscale',
-            backfaceVisibility: 'hidden'
-          } : {}}
-        >
+        <div className="flex flex-col xl:flex-row gap-6 xl:gap-8 items-center xl:items-start justify-center relative">
           {/* Desktop Sidebar Navigation */}
           <aside
-            className="catalog-sidebar hidden md:flex w-80 sticky top-32 flex-shrink-0 bg-white/70 backdrop-blur-md p-6 rounded-2xl border border-slate-200/40 shadow-sm h-[600px] flex-col overflow-hidden"
-            style={{ transform: 'translateX(-16px)' }}
+            className="catalog-sidebar hidden xl:flex w-72 lg:w-80 sticky top-28 flex-shrink-0 bg-white/80 backdrop-blur-md p-5 rounded-2xl border border-slate-200/50 shadow-sm h-[520px] flex-col overflow-hidden z-20"
           >
             {/* Desktop Title Header */}
-            <div className="mb-5 pb-3 border-b border-slate-200/60 flex-shrink-0 text-left">
-              <h3 className="text-sm font-black uppercase tracking-widest text-[#C9A44C]">
+            <div className="mb-4 pb-3 border-b border-slate-200/60 flex-shrink-0 text-left">
+              <h3 className="text-xs font-black uppercase tracking-widest text-[#C9A44C]">
                 Catalogue Index
               </h3>
-              <p className="text-[11px] text-slate-400 font-bold uppercase mt-0.5">
+              <p className="text-[10px] text-slate-400 font-bold uppercase mt-0.5">
                 Select Brand to View Page
               </p>
             </div>
@@ -2565,36 +2536,61 @@ export const ProductsPage = ({ onNavigate, search }) => {
           </aside>
 
           {/* Main booklet area wrapper */}
-          <div className="flex-1 w-full min-w-0 flex flex-col">
+          <div className="flex-1 w-full max-w-[960px] min-w-0 flex flex-col items-center">
+            {/* Tablet & Mobile Index Quick Bar */}
+            <div className="xl:hidden w-full flex items-center justify-between gap-3 mb-3 px-1 max-w-[960px]">
+              <button
+                onClick={() => setShowSidebar(true)}
+                className="inline-flex items-center gap-2 px-3.5 py-1.5 sm:px-4 sm:py-2 bg-white hover:bg-slate-50 border border-slate-200 text-slate-800 font-extrabold text-[11px] sm:text-xs rounded-xl shadow-2xs hover:shadow-xs transition-all cursor-pointer"
+              >
+                <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#006e2f]" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+                <span>Catalogue Index</span>
+                <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider">{activeSpread.category}</span>
+              </button>
+              <span className="text-[11px] font-bold text-slate-400">
+                Pg. {(currentSpreadIdx * 2) + 1}-{(currentSpreadIdx * 2) + 2}
+              </span>
+            </div>
+
             {/* The Open Book */}
-            <div className="w-full pb-8 mb-4 overflow-visible">
-              <div className="book-outer-wrap flex-shrink-0 w-[960px] relative">
+            <div
+              className="w-full flex justify-center pb-3 mb-2"
+              style={{
+                height: `${Math.round(520 * scale)}px`,
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'flex-start'
+              }}
+            >
+              <div
+                className="book-outer-wrap flex-shrink-0 w-[960px] relative"
+                style={{
+                  transform: `scale(${scale})`,
+                  transformOrigin: 'top center'
+                }}
+              >
                 <div className="book-container book-shadow-3d relative">
 
                   {/* Hardcover structural base wrapping the stacks */}
-                  <div className="book-hardcover-base" style={{ inset: '-4px -18px -18px -18px' }} />
+                  <div className="book-hardcover-base" />
 
                   {/* Realistic Page Stack Effect (Left, Right, and Bottom edges) */}
                   {/* Right Side Pages Stack */}
-                  <div className="absolute top-[2px] bottom-[2px] right-[-3px] w-[3px] bg-[#fdfdfa] border-r-2 border-[#000000]/25 border-b border-[#000000]/10 pointer-events-none rounded-r-md" style={{ zIndex: -10 }} />
-                  <div className="absolute top-[4px] bottom-[4px] right-[-6px] w-[3px] bg-[#fdfdfa] border-r-2 border-[#000000]/25 border-b border-[#000000]/10 pointer-events-none rounded-r-md" style={{ zIndex: -20 }} />
-                  <div className="absolute top-[6px] bottom-[6px] right-[-9px] w-[3px] bg-[#fdfdfa] border-r-2 border-[#000000]/25 border-b border-[#000000]/10 pointer-events-none rounded-r-md" style={{ zIndex: -30 }} />
-                  <div className="absolute top-[8px] bottom-[8px] right-[-12px] w-[3px] bg-[#fdfdfa] border-r-2 border-[#000000]/25 border-b border-[#000000]/10 pointer-events-none rounded-r-md" style={{ zIndex: -40 }} />
-                  <div className="absolute top-[10px] bottom-[10px] right-[-15px] w-[3px] bg-[#fdfdfa] border-r-2 border-[#000000]/25 border-b border-[#000000]/10 pointer-events-none rounded-r-md" style={{ zIndex: -50 }} />
+                  <div className="absolute top-[2px] bottom-[2px] right-[-3px] w-[3px] bg-[#fdfdfa] border-r-2 border-black/15 border-b border-black/10 pointer-events-none rounded-r-md -z-1" />
+                  <div className="absolute top-[4px] bottom-[4px] right-[-6px] w-[3px] bg-[#fdfdfa] border-r-2 border-black/15 border-b border-black/10 pointer-events-none rounded-r-md -z-2" />
+                  <div className="absolute top-[6px] bottom-[6px] right-[-9px] w-[3px] bg-[#fdfdfa] border-r-2 border-black/15 border-b border-black/10 pointer-events-none rounded-r-md -z-3" />
 
                   {/* Left Side Pages Stack */}
-                  <div className="absolute top-[2px] bottom-[2px] left-[-3px] w-[3px] bg-[#fdfdfa] border-l-2 border-[#000000]/25 border-b border-[#000000]/10 pointer-events-none rounded-l-md" style={{ zIndex: -10 }} />
-                  <div className="absolute top-[4px] bottom-[4px] left-[-6px] w-[3px] bg-[#fdfdfa] border-l-2 border-[#000000]/25 border-b border-[#000000]/10 pointer-events-none rounded-l-md" style={{ zIndex: -20 }} />
-                  <div className="absolute top-[6px] bottom-[6px] left-[-9px] w-[3px] bg-[#fdfdfa] border-l-2 border-[#000000]/25 border-b border-[#000000]/10 pointer-events-none rounded-l-md" style={{ zIndex: -30 }} />
-                  <div className="absolute top-[8px] bottom-[8px] left-[-12px] w-[3px] bg-[#fdfdfa] border-l-2 border-[#000000]/25 border-b border-[#000000]/10 pointer-events-none rounded-l-md" style={{ zIndex: -40 }} />
-                  <div className="absolute top-[10px] bottom-[10px] left-[-15px] w-[3px] bg-[#fdfdfa] border-l-2 border-[#000000]/25 border-b border-[#000000]/10 pointer-events-none rounded-l-md" style={{ zIndex: -50 }} />
+                  <div className="absolute top-[2px] bottom-[2px] left-[-3px] w-[3px] bg-[#fdfdfa] border-l-2 border-black/15 border-b border-black/10 pointer-events-none rounded-l-md -z-1" />
+                  <div className="absolute top-[4px] bottom-[4px] left-[-6px] w-[3px] bg-[#fdfdfa] border-l-2 border-black/15 border-b border-black/10 pointer-events-none rounded-l-md -z-2" />
+                  <div className="absolute top-[6px] bottom-[6px] left-[-9px] w-[3px] bg-[#fdfdfa] border-l-2 border-black/15 border-b border-black/10 pointer-events-none rounded-l-md -z-3" />
 
                   {/* Bottom Pages Stack */}
-                  <div className="absolute bottom-[-3px] left-[2px] right-[2px] h-[3px] bg-[#fdfdfa] border-b-2 border-[#000000]/25 pointer-events-none rounded-b-md" style={{ zIndex: -10 }} />
-                  <div className="absolute bottom-[-6px] left-[4px] right-[4px] h-[3px] bg-[#fdfdfa] border-b-2 border-[#000000]/25 pointer-events-none rounded-b-md" style={{ zIndex: -20 }} />
-                  <div className="absolute bottom-[-9px] left-[6px] right-[6px] h-[3px] bg-[#fdfdfa] border-b-2 border-[#000000]/25 pointer-events-none rounded-b-md" style={{ zIndex: -30 }} />
-                  <div className="absolute bottom-[-12px] left-[8px] right-[8px] h-[3px] bg-[#fdfdfa] border-b-2 border-[#000000]/25 pointer-events-none rounded-b-md" style={{ zIndex: -40 }} />
-                  <div className="absolute bottom-[-15px] left-[10px] right-[10px] h-[3px] bg-[#fdfdfa] border-b-2 border-[#000000]/25 pointer-events-none rounded-b-md" style={{ zIndex: -50 }} />
+                  <div className="absolute bottom-[-3px] left-[3px] right-[3px] h-[3px] bg-[#fdfdfa] border-b-2 border-black/15 pointer-events-none rounded-b-md -z-1" />
+                  <div className="absolute bottom-[-6px] left-[6px] right-[6px] h-[3px] bg-[#fdfdfa] border-b-2 border-black/15 pointer-events-none rounded-b-md -z-2" />
+                  <div className="absolute bottom-[-9px] left-[9px] right-[9px] h-[3px] bg-[#fdfdfa] border-b-2 border-black/15 pointer-events-none rounded-b-md -z-3" />
 
                   {/* Realistic Spine Elements */}
                   <div className="book-spine" />
@@ -2610,13 +2606,17 @@ export const ProductsPage = ({ onNavigate, search }) => {
 
                     {/* 3D Page Turning Card Overlay */}
                     {flipState !== 'idle' && (
-                      <div className={`flip-card ${flipState === 'flipping-next' ? 'flip-card-next' : 'flip-card-prev'}`}>
+                      <div
+                        onAnimationEnd={() => setFlipState('idle')}
+                        className={`flip-card ${flipState === 'flipping-next' ? 'flip-card-next' : 'flip-card-prev'}`}
+                      >
                         {/* Front of the flipping page */}
                         <div className="flip-front">
                           {flipState === 'flipping-next'
                             ? renderRightPage(prevSpreadIdx)
                             : renderLeftPage(prevSpreadIdx)
                           }
+                          <div className="flip-shadow-overlay" />
                         </div>
                         {/* Back of the flipping page */}
                         <div className="flip-back">
@@ -2624,6 +2624,7 @@ export const ProductsPage = ({ onNavigate, search }) => {
                             ? renderLeftPage(currentSpreadIdx)
                             : renderRightPage(currentSpreadIdx)
                           }
+                          <div className="flip-shadow-overlay" />
                         </div>
                       </div>
                     )}
@@ -2634,7 +2635,7 @@ export const ProductsPage = ({ onNavigate, search }) => {
             </div>
 
             {/* Navigation Controls */}
-            <div className="flex items-center justify-center gap-6 mt-8">
+            <div className="flex items-center justify-center gap-4 sm:gap-6 mt-3 sm:mt-4">
               <button
                 onClick={handlePrev}
                 disabled={currentSpreadIdx === 0 || flipState !== 'idle'}
@@ -2648,7 +2649,7 @@ export const ProductsPage = ({ onNavigate, search }) => {
                 <span className="hidden sm:inline tracking-tight">Previous Spread</span>
               </button>
 
-              <div className="px-6 py-2 bg-white rounded-full shadow-sm border border-slate-100 font-black text-xs text-slate-800">
+              <div className="px-5 py-2 bg-white rounded-full shadow-sm border border-slate-100 font-black text-xs text-slate-800">
                 {(currentSpreadIdx * 2) + 1} - {(currentSpreadIdx * 2) + 2} <span className="text-slate-400 font-medium mx-1.5">in</span> {activeSpread.category}
               </div>
 
@@ -2667,10 +2668,10 @@ export const ProductsPage = ({ onNavigate, search }) => {
             </div>
 
             {/* Brochure Download Dropdown Section */}
-            <div className="mt-6 pt-4 border-t border-slate-200/50 flex flex-col items-center justify-center text-center relative z-30">
+            <div className="mt-4 pt-3 border-t border-slate-200/50 flex flex-col items-center justify-center text-center relative z-30">
               <button
                 onClick={() => setIsBrochureDropdownOpen(!isBrochureDropdownOpen)}
-                className="group relative inline-flex items-center gap-2.5 px-7 py-3 rounded-full bg-[#006e2f] hover:bg-[#005c26] text-white font-extrabold text-xs sm:text-sm uppercase tracking-wider shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer"
+                className="group relative inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#006e2f] hover:bg-[#005c26] text-white font-extrabold text-xs sm:text-[13px] uppercase tracking-wider shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer"
               >
                 <span>For more details Download Brochure</span>
                 <ChevronDown className={`w-4 h-4 text-white transition-transform duration-200 ${isBrochureDropdownOpen ? 'rotate-180' : ''}`} />
@@ -2770,11 +2771,11 @@ export const ProductsPage = ({ onNavigate, search }) => {
 
         // Otherwise, render the Plywood Interactive Visualizer Section inside the card wrapper
         const thicknessOptions = [
-          { value: '25mm', thickness: '25MM', tag: 'Extra Strong', desc: 'Heavy Duty', icon: 'weight', scale: 0.72, mt: '0px', layerHeight: 'h-6' },
-          { value: '18mm', thickness: '18MM', tag: 'Most Preferred', desc: 'All Purpose Use', icon: 'star', scale: 0.80, mt: '-18px', layerHeight: 'h-[18px]' },
-          { value: '12mm', thickness: '12MM', tag: 'Ideal for Furniture', desc: 'Ideal for Furniture', icon: 'chair', scale: 0.88, mt: '-24px', layerHeight: 'h-[12px]' },
-          { value: '9mm', thickness: '9MM', tag: 'Best for Interiors', desc: 'Best for Interiors', icon: 'door', scale: 0.94, mt: '-28px', layerHeight: 'h-[9px]' },
-          { value: '6mm', thickness: '6MM', tag: 'Lightweight', desc: 'Decor Use', icon: 'leaf', scale: 1.00, mt: '-30px', layerHeight: 'h-[6px]' }
+          { value: '25mm', thickness: '25MM', tag: 'Extra Strong', desc: 'Heavy Duty', icon: 'weight', scale: 0.72, mt: '0px', layerHeight: 'h-6', miniHeight: 'h-3' },
+          { value: '18mm', thickness: '18MM', tag: 'Most Preferred', desc: 'All Purpose', icon: 'star', scale: 0.80, mt: '-18px', layerHeight: 'h-[18px]', miniHeight: 'h-2.5' },
+          { value: '12mm', thickness: '12MM', tag: 'Ideal for Furniture', desc: 'Furniture Use', icon: 'chair', scale: 0.88, mt: '-24px', layerHeight: 'h-[12px]', miniHeight: 'h-2' },
+          { value: '9mm', thickness: '9MM', tag: 'Best for Interiors', desc: 'Interiors', icon: 'door', scale: 0.94, mt: '-28px', layerHeight: 'h-[9px]', miniHeight: 'h-1.5' },
+          { value: '6mm', thickness: '6MM', tag: 'Lightweight', desc: 'Decor Use', icon: 'leaf', scale: 1.00, mt: '-30px', layerHeight: 'h-[6px]', miniHeight: 'h-1' }
         ];
 
         const rawThicknesses = [...(activeSpread.thicknesses || ['6mm', '9mm', '12mm', '18mm', '25mm'])].reverse();
@@ -2829,7 +2830,7 @@ export const ProductsPage = ({ onNavigate, search }) => {
 
         return (
           <div className="max-w-[1280px] mx-auto px-4 mt-4 md:mt-16 mb-12 md:mb-16 animate-fade-in text-center">
-            <div className="bg-white rounded-[32px] border border-slate-200/50 shadow-xl p-6 sm:p-10 md:p-12">
+            <div className="bg-white rounded-[32px] border border-slate-200/50 shadow-xl p-4 sm:p-10 md:p-12">
 
               {/* HEADER SECTION */}
               <header className="text-center mb-8 md:mb-10">
@@ -2849,23 +2850,23 @@ export const ProductsPage = ({ onNavigate, search }) => {
               </header>
 
               {/* SIZE SELECTOR TABS */}
-              <div className="flex flex-col items-center justify-center mb-8">
-                <span className="text-[10px] font-black uppercase tracking-widest text-[#006e2f] mb-3 block">
+              <div className="flex flex-col items-center justify-center mb-6 sm:mb-8">
+                <span className="text-[10px] sm:text-xs font-black uppercase tracking-[0.2em] text-[#8c6d23] mb-2.5 block">
                   Select Plywood Size (ft)
                 </span>
-                <div className="flex flex-wrap items-center justify-center gap-3">
+                <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
                   {['8 x 4', '7 x 4', '6 x 4', '6 x 3'].map(size => {
                     const isSelected = selectedSize === size;
                     return (
                       <button
                         key={size}
                         onClick={() => setSelectedSize(size)}
-                        className={`px-6 py-3 text-xs font-black uppercase tracking-wider rounded-xl border transition-all duration-300 cursor-pointer ${isSelected
-                          ? 'bg-emerald-600 border-emerald-600 text-white shadow-md'
-                          : 'bg-white border-slate-200 text-slate-700 hover:border-emerald-500 hover:text-emerald-600 shadow-sm'
+                        className={`px-4 sm:px-6 py-2 sm:py-2.5 text-xs font-black uppercase tracking-wider rounded-xl transition-all duration-300 cursor-pointer ${isSelected
+                          ? 'bg-[#8c6d23] text-white shadow-md shadow-[#8c6d23]/25 scale-[1.02]'
+                          : 'bg-white border border-slate-200 text-slate-700 hover:border-[#8c6d23] hover:text-[#8c6d23] shadow-xs'
                           }`}
                       >
-                        {size} {size === '8 x 4' && <span className="text-[9px] opacity-75 ml-1 font-extrabold">(Standard)</span>}
+                        {size} {size === '8 x 4' && <span className="text-[9px] opacity-80 ml-1 font-extrabold">(Standard)</span>}
                       </button>
                     );
                   })}
@@ -2885,196 +2886,351 @@ export const ProductsPage = ({ onNavigate, search }) => {
                     Please select a plywood sheet size above to visualize the available thicknesses and 3D stack.
                   </p>
                 </div>
-              ) : (
-                /* Grid content */
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center justify-center my-4 animate-fade-in">
+              ) : (() => {
+                const sizeFactors = {
+                  '8 x 4': { length: 1.0, width: 1.0 },
+                  '7 x 4': { length: 0.875, width: 1.0 },
+                  '6 x 4': { length: 0.75, width: 1.0 },
+                  '6 x 3': { length: 0.75, width: 0.75 }
+                };
+                const factors = sizeFactors[selectedSize] || { length: 1.0, width: 1.0 };
 
-                  {/* LEFT SELECTOR PANEL */}
-                  <div className="col-span-1 lg:col-span-3 flex flex-col gap-4 z-20">
-                    {thicknessOptions.map((opt, i) => {
-                      const displayVal = stackThicknesses[i];
-                      if (displayVal === 'N/A') return null;
-
-                      const isSelected = displayVal.toLowerCase() === activeThickness.toLowerCase();
-
-                      return (
-                        <button
-                          key={opt.value}
-                          onClick={() => handleThicknessSelect(displayVal)}
-                          className={`flex items-center space-x-4 p-3 rounded-2xl border-2 transition-all duration-300 shadow-md cursor-pointer w-full text-left outline-none ${isSelected
-                            ? 'border-emerald-500 bg-[#f0f9f4]/45 shadow-md'
-                            : 'border-slate-100 bg-white hover:bg-slate-50/50 shadow-sm'
-                            }`}
-                        >
-                          <div className={`icon-circle flex-shrink-0 w-11 h-11 rounded-full flex items-center justify-center transition-all ${isSelected ? 'bg-emerald-500 text-white shadow-md' : 'bg-gray-100 text-emerald-600'
-                            }`}>
-                            {renderSelectorIcon(opt.icon, isSelected)}
-                          </div>
-                          <div>
-                            <div className="text-sm font-bold text-[#0c2340]">
-                              {displayVal.toUpperCase()} <span className="text-xs font-semibold text-gray-400 ml-1">THICKNESS</span>
-                            </div>
-                            <div className="text-xs text-gray-500 leading-tight mt-0.5">
-                              {opt.value === '18mm' ? (
-                                <>
-                                  <span className="font-semibold text-emerald-600">Most Preferred</span> · All Purpose Use
-                                </>
-                              ) : opt.desc}
-                            </div>
-                          </div>
-                        </button>
-                      );
-                    })}
-                  </div>
-
-                  {/* CENTER 3D STACK INTERACTIVE VISUALIZATION */}
-                  <div className="col-span-1 lg:col-span-6 flex flex-col items-center justify-center relative min-h-[420px] py-4 select-none">
-                    <div className="relative w-full max-w-lg mx-auto flex flex-col items-center space-y-2 py-8 px-4" style={{ perspective: '1200px' }}>
-                      {(() => {
-                        const sizeFactors = {
-                          '8 x 4': { length: 1.0, width: 1.0 },
-                          '7 x 4': { length: 0.875, width: 1.0 },
-                          '6 x 4': { length: 0.75, width: 1.0 },
-                          '6 x 3': { length: 0.75, width: 0.75 }
-                        };
-                        const factors = sizeFactors[selectedSize] || { length: 1.0, width: 1.0 };
-
-                        return thicknessOptions.map((opt, i) => {
+                return (
+                  <>
+                    {/* MOBILE VIEW (< 1024px) - Arranged matching reference image structure */}
+                    <div className="block lg:hidden w-full my-2 animate-fade-in">
+                      {/* TIER 2: 3D Stack Stage with Left Leader Pins */}
+                      <div className="relative w-full max-w-sm sm:max-w-md mx-auto flex flex-col items-center py-3 sm:py-5 px-1 select-none" style={{ perspective: '1000px' }}>
+                        {thicknessOptions.map((opt, i) => {
                           const displayVal = stackThicknesses[i];
                           if (displayVal === 'N/A') return null;
 
                           const isSelected = displayVal.toLowerCase() === activeThickness.toLowerCase();
                           const isThinnest = i === 4;
                           const mtVal = parseInt(opt.mt) || 0;
-                          const computedMt = `${mtVal * factors.width}px`;
+                          const computedMt = `${(mtVal * factors.width) * 0.85}px`;
 
                           return (
                             <div
                               key={opt.value}
                               onClick={() => handleThicknessSelect(displayVal)}
-                              className={`sheet-container ply-shadow rounded bg-stone-100 transition-all duration-300 relative ${isSelected ? 'sheet-active' : ''
+                              className={`sheet-container ply-shadow rounded bg-stone-100 transition-all duration-300 relative cursor-pointer ${isSelected ? 'sheet-active' : ''
                                 }`}
                               style={{
-                                width: `${opt.scale * factors.length * 100}%`,
-                                transform: 'rotateX(24deg) rotateY(-8deg) rotateZ(1deg)',
+                                width: `${opt.scale * factors.length * 96}%`,
+                                transform: 'rotateX(22deg) rotateY(-8deg) rotateZ(1deg)',
                                 marginTop: computedMt,
                                 zIndex: 10 + i * 10
                               }}
                             >
-                              {/* Plywood surface */}
+                              {/* Plywood Surface */}
                               <div
-                                className={`wood-top-grain rounded-t relative ${isThinnest ? 'pr-16 flex items-center justify-end' : ''}`}
+                                className={`wood-top-grain rounded-t relative ${isThinnest ? 'pr-10 flex items-center justify-end' : ''}`}
                                 style={{
-                                  height: `${(isThinnest ? 72 : 64) * factors.width}px`
+                                  height: `${(isThinnest ? 54 : 46) * factors.width}px`
                                 }}
                               >
-                                {/* Hotspot with Label */}
-                                <div className="absolute left-6 top-1/2 -translate-y-1/2 flex items-center gap-2">
-                                  {isSelected ? (
-                                    <span className="relative flex h-4 w-4 shrink-0">
-                                      <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 animate-ping"></span>
-                                      <span className="relative inline-flex rounded-full h-4 w-4 bg-emerald-600 border-2 border-white"></span>
-                                    </span>
-                                  ) : (
-                                    <span className="relative inline-flex rounded-full h-3 w-3 bg-white border-2 border-emerald-500 shrink-0"></span>
-                                  )}
-                                  <span className={`text-[11px] font-black uppercase tracking-wider select-none ${isSelected ? 'text-emerald-800 font-extrabold' : 'text-[#533b25]/85'}`}>
+                                {/* Left Leader Badge (Matching Reference Image) */}
+                                <div className="absolute left-2.5 top-1/2 -translate-y-1/2 flex items-center gap-1.5 z-20">
+                                  <span
+                                    className={`px-2 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider transition-all duration-200 shadow-xs ${isSelected
+                                        ? 'bg-[#8c6d23] text-white ring-2 ring-[#8c6d23]/40 scale-105'
+                                        : 'bg-white/95 text-slate-800 border border-slate-200/90'
+                                      }`}
+                                  >
                                     {displayVal}
                                   </span>
+                                  <span className="w-2.5 h-[1.5px] bg-[#8c6d23]/60 hidden sm:inline-block" />
+                                  <span
+                                    className={`w-2 h-2 rounded-full border-2 transition-all shrink-0 ${isSelected
+                                        ? 'bg-emerald-500 border-white ring-2 ring-emerald-400/50 scale-125'
+                                        : 'bg-white border-[#8c6d23]'
+                                      }`}
+                                  />
                                 </div>
+                              </div>
 
-                                {/* Royal Club Plywood Stamp branding for bottom layer */}
-                                {isThinnest && (
-                                  <div className="text-right flex flex-col items-center justify-center opacity-75 font-serif select-none pointer-events-none transform -skew-x-12 scale-90">
-                                    <svg className="w-8 h-8 text-[#533b25]" fill="currentColor" viewBox="0 0 24 24">
-                                      <path d="M18.89 12.18c-.46 0-.85-.35-.9-.81l-.6-5.4c-.03-.27.1-.53.33-.67.23-.14.52-.13.75.02L20.5 6.7l1.5-3.3c.12-.26.38-.4.65-.36.27.04.49.23.55.5l.77 6.9c.05.46-.27.88-.73.93-.03 0-.07.01-.1.01h-4.25zM5.11 12.18c.46 0 .85-.35.9-.81l.6-5.4c.03-.27-.1-.53-.33-.67-.23-.14-.52-.13-.75.02L3.5 6.7l-1.5-3.3c-.12-.26-.38-.4-.65-.36-.27.04-.49.23-.55.5l-.77 6.9c-.05.46.27.88.73.93.03 0 .07.01.1.01h-4.25zm6.89 2.82c.48 0 .9-.32.99-.79l1.45-8.1c.05-.28-.08-.56-.33-.69-.25-.13-.56-.09-.77.1L12 7l-1.34-1.48c-.21-.19-.52-.23-.77-.1-.25.13-.38.41-.33.69l1.45 8.1c.09.47.51.79.99.79z"></path>
-                                      <rect x="2" y="16" width="20" height="2" rx="1" fill="#533b25"></rect>
+                              {/* Layer Depth Edge */}
+                              <div className={`plywood-layers rounded-b ${opt.layerHeight}`} />
+                            </div>
+                          );
+                        })}
+                      </div>
+
+                      {/* TIER 3: Horizontal 5-Card Row (Matching Reference Image) */}
+                      <div className="grid grid-cols-5 gap-1.5 sm:gap-2.5 w-full max-w-md mx-auto my-4 sm:my-5">
+                        {thicknessOptions.map((opt, i) => {
+                          const displayVal = stackThicknesses[i];
+                          if (displayVal === 'N/A') return null;
+
+                          const isSelected = displayVal.toLowerCase() === activeThickness.toLowerCase();
+
+                          return (
+                            <button
+                              key={opt.value}
+                              onClick={() => handleThicknessSelect(displayVal)}
+                              className={`flex flex-col items-center p-1 sm:p-2 rounded-xl sm:rounded-2xl border transition-all duration-200 cursor-pointer text-center outline-none ${isSelected
+                                  ? 'bg-white border-[#8c6d23] ring-2 ring-[#8c6d23]/40 shadow-md scale-[1.03]'
+                                  : 'bg-white border-slate-200/80 hover:border-slate-300 shadow-2xs'
+                                }`}
+                            >
+                              {/* Mini Wood Slice Preview */}
+                              <div className="w-full h-8 sm:h-10 rounded-lg wood-top-grain relative overflow-hidden border border-[#533b25]/20 flex flex-col justify-end">
+                                <div className={`plywood-layers w-full ${opt.miniHeight || 'h-2'}`} />
+                                {isSelected && (
+                                  <div className="absolute top-0.5 right-0.5 w-3.5 h-3.5 rounded-full bg-[#8c6d23] text-white flex items-center justify-center shadow-xs">
+                                    <svg className="w-2 h-2" fill="none" stroke="currentColor" strokeWidth="3.5" viewBox="0 0 24 24">
+                                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                                     </svg>
-                                    <span className="text-[11px] uppercase tracking-widest font-bold text-[#533b25] mt-0.5">{activeSpread.brandName}</span>
-                                    <span className="text-[8px] uppercase tracking-[0.25em] font-medium text-[#533b25]">Plywood</span>
                                   </div>
                                 )}
                               </div>
-                              {/* Layer Depth edges */}
-                              <div className={`plywood-layers rounded-b ${opt.layerHeight}`}></div>
-                            </div>
+
+                              {/* Thickness Text */}
+                              <span className={`text-[11px] sm:text-xs font-black mt-1.5 tracking-tight ${isSelected ? 'text-[#8c6d23]' : 'text-slate-800'
+                                }`}>
+                                {displayVal.toUpperCase()}
+                              </span>
+
+                              {/* Use-Case Description */}
+                              <span className="text-[8px] sm:text-[9px] font-bold text-slate-400 truncate w-full leading-tight mt-0.5">
+                                {opt.value === '18mm' ? 'All Purpose' : opt.desc}
+                              </span>
+                            </button>
                           );
-                        });
-                      })()}
-                    </div>
-                  </div>
-
-                  {/* RIGHT DETAIL CARD */}
-                  <div className="col-span-1 lg:col-span-3 flex justify-center z-20">
-                    <div className="w-full max-w-sm bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden transform hover:-translate-y-1 transition-all duration-300">
-                      <div className="bg-emerald-700 text-white text-center py-3.5 px-4 text-xs font-bold tracking-widest uppercase">
-                        Selected Option
+                        })}
                       </div>
-                      <div className="p-6 md:p-8 space-y-6">
-                        <div className="text-center">
-                          <span className="text-5xl font-black text-[#0c2340] tracking-tight">{activeThickness.toUpperCase()}</span>
-                          <p className="text-[11px] font-bold tracking-widest text-slate-400 uppercase mt-1">Thickness</p>
-                        </div>
-                        <div className="h-[1px] bg-slate-100 w-full"></div>
 
-                        <div className="space-y-4">
-                          {/* Size */}
-                          <div className="flex items-center space-x-4 text-left">
-                            <div className="w-10 h-10 bg-gray-50 text-gray-400 rounded-xl flex items-center justify-center flex-shrink-0">
-                              <Ruler className="w-5 h-5 text-[#006e2f]" />
-                            </div>
-                            <div className="flex-grow text-left">
-                              <div className="text-[10px] font-semibold text-gray-400 uppercase tracking-wider">Size (ft)</div>
-                              <div className="text-sm font-bold text-slate-800">{selectedSpecSize}</div>
-                            </div>
+                      {/* TIER 4: Bottom Summary Card & Quote CTA (Matching Reference Image) */}
+                      <div className="w-full max-w-md mx-auto bg-white rounded-2xl sm:rounded-3xl border border-slate-200/90 shadow-md p-4 sm:p-5 text-left overflow-hidden">
+                        {/* Top: Thickness info */}
+                        <div className="flex items-center justify-between pb-3 border-b border-slate-100">
+                          <div className="flex items-baseline gap-2">
+                            <span className="text-2xl sm:text-3xl font-black text-[#0c2340] leading-none tracking-tight">
+                              {activeThickness.toUpperCase()}
+                            </span>
+                            <span className="text-[10px] font-extrabold tracking-widest text-slate-400 uppercase">
+                              THICKNESS
+                            </span>
                           </div>
+                        </div>
+
+                        {/* Middle: 3 Specs evenly balanced across 3 columns with zero horizontal overflow */}
+                        <div className="grid grid-cols-3 gap-2 py-3 border-b border-slate-100 text-center items-center">
                           {/* Grade */}
-                          <div className="flex items-center space-x-4 text-left">
-                            <div className="w-10 h-10 bg-gray-50 text-gray-400 rounded-xl flex items-center justify-center flex-shrink-0">
-                              <Layers className="w-5 h-5 text-[#006e2f]" />
+                          <div className="flex flex-col items-center justify-center min-w-0">
+                            <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#fdf8ee] flex items-center justify-center text-[#8c6d23] mb-1">
+                              <Layers className="w-3.5 h-3.5 sm:w-4 sm:h-4" strokeWidth={2.2} />
                             </div>
-                            <div className="flex-grow text-left">
-                              <div className="text-[10px] font-semibold text-gray-400 uppercase tracking-wider">Grade</div>
-                              <div className="text-sm font-bold text-slate-800">{selectedSpecGrade}</div>
-                            </div>
+                            <span className="text-[10px] sm:text-[11px] font-black text-slate-800 leading-tight truncate w-full px-0.5">
+                              {selectedSpecGrade}
+                            </span>
+                            <span className="text-[8px] font-bold text-slate-400 uppercase mt-0.5">Grade</span>
                           </div>
+
                           {/* Warranty */}
-                          <div className="flex items-center space-x-4 text-left">
-                            <div className="w-10 h-10 bg-gray-50 text-gray-400 rounded-xl flex items-center justify-center flex-shrink-0">
-                              <Shield className="w-5 h-5 text-[#006e2f]" />
+                          <div className="flex flex-col items-center justify-center min-w-0 border-x border-slate-100 px-1">
+                            <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#fdf8ee] flex items-center justify-center text-[#8c6d23] mb-1">
+                              <Shield className="w-3.5 h-3.5 sm:w-4 sm:h-4" strokeWidth={2.2} />
                             </div>
-                            <div className="flex-grow text-left">
-                              <div className="text-[10px] font-semibold text-gray-400 uppercase tracking-wider">Warranty</div>
-                              <div className="text-sm font-bold text-slate-800">{selectedSpecWarranty}</div>
-                            </div>
+                            <span className="text-[10px] sm:text-[11px] font-black text-slate-800 leading-tight truncate w-full px-0.5">
+                              {selectedSpecWarranty.replace(' Guarantee*', '').replace(' Guarantee', '').replace(' Warranty', '')}
+                            </span>
+                            <span className="text-[8px] font-bold text-slate-400 uppercase mt-0.5">Warranty</span>
                           </div>
+
                           {/* Feature */}
-                          <div className="flex items-center space-x-4 text-left">
-                            <div className="w-10 h-10 bg-gray-50 text-gray-400 rounded-xl flex items-center justify-center flex-shrink-0">
-                              <Droplets className="w-5 h-5 text-[#006e2f]" />
+                          <div className="flex flex-col items-center justify-center min-w-0">
+                            <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-[#fdf8ee] flex items-center justify-center text-[#8c6d23] mb-1">
+                              <Droplets className="w-3.5 h-3.5 sm:w-4 sm:h-4" strokeWidth={2.2} />
                             </div>
-                            <div className="flex-grow text-left">
-                              <div className="text-[10px] font-semibold text-gray-400 uppercase tracking-wider">Feature</div>
-                              <div className="text-sm font-bold text-slate-800 truncate max-w-[150px]">{selectedSpecFeature}</div>
-                            </div>
+                            <span className="text-[10px] sm:text-[11px] font-black text-slate-800 leading-tight truncate w-full px-0.5">
+                              {selectedSpecFeature}
+                            </span>
+                            <span className="text-[8px] font-bold text-slate-400 uppercase mt-0.5">Feature</span>
                           </div>
                         </div>
 
+                        {/* Full Width GET QUOTE Button */}
                         <button
                           onClick={handleGetQuote}
-                          className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-4 px-6 rounded-2xl flex items-center justify-center space-x-3 shadow-lg hover:shadow-xl hover:shadow-emerald-500/10 active:scale-[0.98] transition-all duration-300 cursor-pointer"
+                          className="w-full mt-3.5 bg-gradient-to-r from-[#996f1d] via-[#8c6d23] to-[#735515] hover:from-[#8c6d23] hover:to-[#614710] text-white font-black py-3 sm:py-3.5 px-6 rounded-xl flex items-center justify-center gap-2 shadow-md hover:shadow-lg active:scale-[0.98] transition-all duration-200 cursor-pointer text-xs sm:text-sm tracking-widest uppercase"
                         >
                           <span>GET QUOTE</span>
-                          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                           </svg>
                         </button>
                       </div>
                     </div>
-                  </div>
 
-                </div>
-              )}
+                    {/* DESKTOP VIEW (>= 1024px) - Preserved 3-Column Layout */}
+                    <div className="hidden lg:grid grid-cols-12 gap-8 items-center justify-center my-4 animate-fade-in">
+                      {/* LEFT SELECTOR PANEL */}
+                      <div className="col-span-3 flex flex-col gap-4 z-20">
+                        {thicknessOptions.map((opt, i) => {
+                          const displayVal = stackThicknesses[i];
+                          if (displayVal === 'N/A') return null;
+
+                          const isSelected = displayVal.toLowerCase() === activeThickness.toLowerCase();
+
+                          return (
+                            <button
+                              key={opt.value}
+                              onClick={() => handleThicknessSelect(displayVal)}
+                              className={`flex items-center space-x-4 p-3 rounded-2xl border-2 transition-all duration-300 shadow-md cursor-pointer w-full text-left outline-none ${isSelected
+                                ? 'border-[#8c6d23] bg-[#fdf8ee]/60 shadow-md'
+                                : 'border-slate-100 bg-white hover:bg-slate-50/50 shadow-sm'
+                                }`}
+                            >
+                              <div className={`icon-circle flex-shrink-0 w-11 h-11 rounded-full flex items-center justify-center transition-all ${isSelected ? 'bg-[#8c6d23] text-white shadow-md' : 'bg-gray-100 text-[#8c6d23]'
+                                }`}>
+                                {renderSelectorIcon(opt.icon, isSelected)}
+                              </div>
+                              <div>
+                                <div className="text-sm font-bold text-[#0c2340]">
+                                  {displayVal.toUpperCase()} <span className="text-xs font-semibold text-gray-400 ml-1">THICKNESS</span>
+                                </div>
+                                <div className="text-xs text-gray-500 leading-tight mt-0.5">
+                                  {opt.value === '18mm' ? (
+                                    <>
+                                      <span className="font-semibold text-[#8c6d23]">Most Preferred</span> · All Purpose Use
+                                    </>
+                                  ) : opt.desc}
+                                </div>
+                              </div>
+                            </button>
+                          );
+                        })}
+                      </div>
+
+                      {/* CENTER 3D STACK INTERACTIVE VISUALIZATION */}
+                      <div className="col-span-6 flex flex-col items-center justify-center relative min-h-[420px] py-4 select-none">
+                        <div className="relative w-full max-w-lg mx-auto flex flex-col items-center space-y-2 py-8 px-4" style={{ perspective: '1200px' }}>
+                          {thicknessOptions.map((opt, i) => {
+                            const displayVal = stackThicknesses[i];
+                            if (displayVal === 'N/A') return null;
+
+                            const isSelected = displayVal.toLowerCase() === activeThickness.toLowerCase();
+                            const isThinnest = i === 4;
+                            const mtVal = parseInt(opt.mt) || 0;
+                            const computedMt = `${mtVal * factors.width}px`;
+
+                            return (
+                              <div
+                                key={opt.value}
+                                onClick={() => handleThicknessSelect(displayVal)}
+                                className={`sheet-container ply-shadow rounded bg-stone-100 transition-all duration-300 relative ${isSelected ? 'sheet-active' : ''
+                                  }`}
+                                style={{
+                                  width: `${opt.scale * factors.length * 100}%`,
+                                  transform: 'rotateX(24deg) rotateY(-8deg) rotateZ(1deg)',
+                                  marginTop: computedMt,
+                                  zIndex: 10 + i * 10
+                                }}
+                              >
+                                {/* Plywood surface */}
+                                <div
+                                  className={`wood-top-grain rounded-t relative ${isThinnest ? 'pr-16 flex items-center justify-end' : ''}`}
+                                  style={{
+                                    height: `${(isThinnest ? 72 : 64) * factors.width}px`
+                                  }}
+                                >
+                                  {/* Hotspot with Label */}
+                                  <div className="absolute left-6 top-1/2 -translate-y-1/2 flex items-center gap-2">
+                                    {isSelected ? (
+                                      <span className="relative flex h-4 w-4 shrink-0">
+                                        <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 animate-ping"></span>
+                                        <span className="relative inline-flex rounded-full h-4 w-4 bg-emerald-600 border-2 border-white"></span>
+                                      </span>
+                                    ) : (
+                                      <span className="relative inline-flex rounded-full h-3 w-3 bg-white border-2 border-emerald-500 shrink-0"></span>
+                                    )}
+                                    <span className={`text-[11px] font-black uppercase tracking-wider select-none ${isSelected ? 'text-emerald-800 font-extrabold' : 'text-[#533b25]/85'}`}>
+                                      {displayVal}
+                                    </span>
+                                  </div>
+                                </div>
+                                {/* Layer Depth edges */}
+                                <div className={`plywood-layers rounded-b ${opt.layerHeight}`}></div>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      </div>
+
+                      {/* RIGHT DETAIL CARD */}
+                      <div className="col-span-3 flex justify-center z-20">
+                        <div className="w-full max-w-sm bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden transform hover:-translate-y-1 transition-all duration-300">
+                          <div className="bg-[#8c6d23] text-white text-center py-3.5 px-4 text-xs font-bold tracking-widest uppercase">
+                            Selected Option
+                          </div>
+                          <div className="p-6 md:p-8 space-y-6">
+                            <div className="text-center">
+                              <span className="text-5xl font-black text-[#0c2340] tracking-tight">{activeThickness.toUpperCase()}</span>
+                              <p className="text-[11px] font-bold tracking-widest text-slate-400 uppercase mt-1">Thickness</p>
+                            </div>
+                            <div className="h-[1px] bg-slate-100 w-full"></div>
+
+                            <div className="space-y-4">
+                              {/* Size */}
+                              <div className="flex items-center space-x-4 text-left">
+                                <div className="w-10 h-10 bg-gray-50 text-gray-400 rounded-xl flex items-center justify-center flex-shrink-0">
+                                  <Ruler className="w-5 h-5 text-[#8c6d23]" />
+                                </div>
+                                <div className="flex-grow text-left">
+                                  <div className="text-[10px] font-semibold text-gray-400 uppercase tracking-wider">Size (ft)</div>
+                                  <div className="text-sm font-bold text-slate-800">{selectedSpecSize}</div>
+                                </div>
+                              </div>
+                              {/* Grade */}
+                              <div className="flex items-center space-x-4 text-left">
+                                <div className="w-10 h-10 bg-gray-50 text-gray-400 rounded-xl flex items-center justify-center flex-shrink-0">
+                                  <Layers className="w-5 h-5 text-[#8c6d23]" />
+                                </div>
+                                <div className="flex-grow text-left">
+                                  <div className="text-[10px] font-semibold text-gray-400 uppercase tracking-wider">Grade</div>
+                                  <div className="text-sm font-bold text-slate-800">{selectedSpecGrade}</div>
+                                </div>
+                              </div>
+                              {/* Warranty */}
+                              <div className="flex items-center space-x-4 text-left">
+                                <div className="w-10 h-10 bg-gray-50 text-gray-400 rounded-xl flex items-center justify-center flex-shrink-0">
+                                  <Shield className="w-5 h-5 text-[#8c6d23]" />
+                                </div>
+                                <div className="flex-grow text-left">
+                                  <div className="text-[10px] font-semibold text-gray-400 uppercase tracking-wider">Warranty</div>
+                                  <div className="text-sm font-bold text-slate-800">{selectedSpecWarranty}</div>
+                                </div>
+                              </div>
+                              {/* Feature */}
+                              <div className="flex items-center space-x-4 text-left">
+                                <div className="w-10 h-10 bg-gray-50 text-gray-400 rounded-xl flex items-center justify-center flex-shrink-0">
+                                  <Droplets className="w-5 h-5 text-[#8c6d23]" />
+                                </div>
+                                <div className="flex-grow text-left">
+                                  <div className="text-[10px] font-semibold text-gray-400 uppercase tracking-wider">Feature</div>
+                                  <div className="text-sm font-bold text-slate-800 truncate max-w-[150px]">{selectedSpecFeature}</div>
+                                </div>
+                              </div>
+                            </div>
+
+                            <button
+                              onClick={handleGetQuote}
+                              className="w-full bg-[#8c6d23] hover:bg-[#735515] text-white font-bold py-4 px-6 rounded-2xl flex items-center justify-center space-x-3 shadow-lg hover:shadow-xl hover:shadow-[#8c6d23]/20 active:scale-[0.98] transition-all duration-300 cursor-pointer"
+                            >
+                              <span>GET QUOTE</span>
+                              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                              </svg>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </>
+                );
+              })()}
 
               {/* BOTTOM ACCREDITATIONS BAR */}
               <div className="mt-8 pt-8 border-t border-gray-100">
@@ -3295,48 +3451,38 @@ export const ProductsPage = ({ onNavigate, search }) => {
           })()}
         </div>
       </div>
+
       {/* Floating Action Buttons */}
-      <div className="fixed right-3.5 bottom-6 sm:right-6 sm:bottom-8 z-[40] flex flex-col gap-2.5 sm:gap-3">
-        {/* Mobile Sidebar Index Toggle */}
-        <button
-          onClick={() => setShowSidebar(true)}
-          className="md:hidden w-10 h-10 sm:w-12 sm:h-12 bg-[#006e2f] hover:bg-[#005223] text-white rounded-xl sm:rounded-2xl flex items-center justify-center shadow-lg hover:shadow-xl hover:scale-110 active:scale-95 transition-all duration-200 cursor-pointer"
-          title="Browse Catalogue Index"
-          aria-label="Browse Catalogue Index"
-        >
-          <svg className="w-4.5 h-4.5 sm:w-5 sm:h-5 text-white" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-          </svg>
-        </button>
+      <div className="fixed right-3 bottom-5 sm:right-5 sm:bottom-6 z-[40] flex flex-col gap-2">
         <a
           href="https://wa.me/919247449522"
           target="_blank"
           rel="noopener noreferrer"
-          className="w-10 h-10 sm:w-12 sm:h-12 bg-[#25d366] hover:bg-[#1ebd59] text-white rounded-xl sm:rounded-2xl flex items-center justify-center shadow-lg hover:shadow-xl hover:scale-110 active:scale-95 transition-all duration-200 cursor-pointer"
+          className="w-8 h-8 sm:w-9 sm:h-9 bg-[#25d366] hover:bg-[#1ebd59] text-white rounded-lg sm:rounded-xl flex items-center justify-center shadow-md hover:shadow-lg hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer"
           title="WhatsApp Support"
           aria-label="WhatsApp Support"
         >
-          <svg className="w-4.5 h-4.5 sm:w-5 sm:h-5 fill-current" viewBox="0 0 24 24">
+          <svg className="w-4 h-4 sm:w-4.5 sm:h-4.5 fill-current" viewBox="0 0 24 24">
             <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.66.986 3.292 1.493 4.904 1.495 5.182 0 9.4-4.216 9.403-9.397.001-2.51-1-4.87-2.817-6.649-1.817-1.778-4.23-2.757-6.79-2.758-5.186 0-9.409 4.217-9.412 9.4-.002 1.942.506 3.843 1.472 5.513L2.26 21.53l4.387-1.376zM18.04 14.99c-.32-.16-1.89-.93-2.18-1.04-.3-.1-.51-.16-.72.16-.21.32-.82 1.04-1 1.25-.19.21-.38.24-.7.08-.32-.16-1.35-.5-2.57-1.59-.95-.85-1.9-1.9-1.78-2.22-.19-.32-.02-.49.14-.65.15-.14.32-.32.48-.48.16-.16.21-.27.32-.48.11-.21.05-.4-.03-.56-.08-.16-.72-1.74-.99-2.38-.26-.64-.53-.55-.72-.56l-.61-.01c-.21 0-.55.08-.84.4-.29.32-1.12 1.1-1.12 2.68s1.15 3.1 1.31 3.32c.16.22 2.27 3.46 5.5 4.86.76.33 1.36.53 1.83.68.77.24 1.47.21 2.03.12.62-.09 1.89-.77 2.15-1.51.26-.74.26-1.38.18-1.51-.08-.13-.3-.21-.62-.37z" />
           </svg>
         </a>
         <a
           href="tel:+919247449522"
-          className="w-10 h-10 sm:w-12 sm:h-12 bg-slate-900 hover:bg-slate-800 text-white rounded-xl sm:rounded-2xl flex items-center justify-center shadow-lg hover:shadow-xl hover:scale-110 active:scale-95 transition-all duration-200 cursor-pointer"
+          className="w-8 h-8 sm:w-9 sm:h-9 bg-slate-900 hover:bg-slate-800 text-white rounded-lg sm:rounded-xl flex items-center justify-center shadow-md hover:shadow-lg hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer"
           title="Call Direct"
           aria-label="Call Direct"
         >
-          <svg className="w-4 h-4 sm:w-4.5 sm:h-4.5 fill-current" viewBox="0 0 24 24">
+          <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-current" viewBox="0 0 24 24">
             <path d="M20 15.5c-1.2 0-2.4-.2-3.6-.6-.3-.1-.7 0-1 .2l-2.2 2.2c-2.8-1.4-5.1-3.8-6.6-6.6l2.2-2.2c.3-.3.4-.7.2-1-.3-1.1-.5-2.3-.5-3.5 0-.6-.4-1-1-1H4c-.6 0-1 .4-1 1 0 9.4 7.6 17 17 17 .6 0 1-.4 1-1v-3.5c0-.6-.4-1-1-1z" />
           </svg>
         </a>
         <button
           onClick={handleGetQuote}
-          className="w-10 h-10 sm:w-12 sm:h-12 bg-white hover:bg-amber-50 text-slate-800 hover:text-[#0F5C3B] border border-slate-200 hover:border-[#0F5C3B]/40 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-lg hover:shadow-xl hover:scale-110 active:scale-95 transition-all duration-200 cursor-pointer"
+          className="w-8 h-8 sm:w-9 sm:h-9 bg-white hover:bg-amber-50 text-slate-800 hover:text-[#0F5C3B] border border-slate-200 hover:border-[#0F5C3B]/40 rounded-lg sm:rounded-xl flex items-center justify-center shadow-md hover:shadow-lg hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer"
           title="Inquiry Form"
           aria-label="Inquiry Form"
         >
-          <svg className="w-4 h-4 sm:w-4.5 sm:h-4.5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+          <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
           </svg>
         </button>
@@ -3344,7 +3490,7 @@ export const ProductsPage = ({ onNavigate, search }) => {
 
       {/* Mobile Sidebar Slide-over Drawer */}
       {showSidebar && (
-        <div className="fixed inset-0 z-[130] md:hidden">
+        <div className="fixed inset-0 z-[130] xl:hidden">
           {/* Backdrop shadow */}
           <div
             onClick={() => setShowSidebar(false)}

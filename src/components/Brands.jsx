@@ -1,9 +1,9 @@
 import React from 'react';
-import ebcoLogo from '../assets/ebco-logo.png';
-import hettichLogo from '../assets/hettich-logo.png';
-import godrejLogo from '../assets/godrej-logo.png';
-import dorsetLogo from '../assets/dorset-logo.png';
-import hafeleLogo from '../assets/hafele-logo.png';
+import ebcoLogo from '../assets/logos/ebco-logo.png';
+import hettichLogo from '../assets/logos/hettich-logo.png';
+import godrejLogo from '../assets/logos/godrej-logo.png';
+import dorsetLogo from '../assets/logos/dorset-logo.png';
+import hafeleLogo from '../assets/logos/hafele-logo.png';
 
 export const Brands = () => {
   const brandLogos = [
@@ -50,7 +50,7 @@ export const Brands = () => {
                   src={brand.src}
                   alt={`${brand.name} Logo`}
                   className="max-h-12 max-w-[85%] object-contain select-none mix-blend-multiply"
-                  loading="lazy"
+                  decoding="async"
                 />
               </a>
             ))}

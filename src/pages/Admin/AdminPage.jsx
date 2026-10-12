@@ -2,15 +2,15 @@ import { useState, useEffect, useCallback } from 'react';
 import {
   Lock, Unlock, Plus, Trash2, Edit, Image as ImageIcon, CheckCircle2,
   AlertCircle, Loader2, LogOut, ArrowLeft, Tag, Gift, Percent,
-  UploadCloud, Copy, Sparkles, Calendar, ShieldCheck, X
+  UploadCloud, Copy, Calendar, ShieldCheck, X
 } from 'lucide-react';
 import { API_BASE_URL } from '../../config';
 // Import homepage static image assets
-import marinePlywood from '../../assets/homepage-marineplywood.png';
-import veneers from '../../assets/veneer2.png';
-import laminates from '../../assets/laminates.png';
-import hardwareFittings from '../../assets/hardwarefittings.png';
-import doors from '../../assets/fancydoors.png';
+import marinePlywood from '../../assets/plywood/homepage-marineplywood.png';
+import veneers from '../../assets/plywood/veneer2.png';
+import laminates from '../../assets/laminates/laminates.png';
+import hardwareFittings from '../../assets/hardware/hardwarefittings.png';
+import doors from '../../assets/doors/fancydoors.png';
 
 const getFallbackImage = (id) => {
   switch (id) {
@@ -384,8 +384,8 @@ export const AdminPage = ({ onNavigate }) => {
       {/* Toast Notification */}
       {notification && (
         <div className={`fixed bottom-6 right-6 z-[120] flex items-center gap-3 px-5 py-4 rounded-2xl shadow-xl border animate-fade-in ${notification.type === 'success'
-            ? 'bg-emerald-950 border-emerald-500/30 text-emerald-400'
-            : 'bg-red-950 border-red-500/30 text-red-400'
+          ? 'bg-emerald-950 border-emerald-500/30 text-emerald-400'
+          : 'bg-red-950 border-red-500/30 text-red-400'
           }`}>
           {notification.type === 'success' ? (
             <CheckCircle2 className="w-5.5 h-5.5 text-emerald-400 shrink-0" />
@@ -463,8 +463,8 @@ export const AdminPage = ({ onNavigate }) => {
             <button
               onClick={() => setActiveTab('offers')}
               className={`pb-3 px-2.5 sm:px-4 font-black text-[10px] sm:text-[11px] uppercase tracking-widest border-b-2 flex items-center gap-1.5 sm:gap-2 cursor-pointer transition-all whitespace-nowrap shrink-0 ${activeTab === 'offers'
-                  ? 'border-[#0F5C3B] text-[#0F5C3B]'
-                  : 'border-transparent text-stone-500 hover:text-stone-850'
+                ? 'border-[#0F5C3B] text-[#0F5C3B]'
+                : 'border-transparent text-stone-500 hover:text-stone-850'
                 }`}
             >
               <Tag className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
@@ -474,11 +474,11 @@ export const AdminPage = ({ onNavigate }) => {
             <button
               onClick={() => setActiveTab('collections')}
               className={`pb-3 px-2.5 sm:px-4 font-black text-[10px] sm:text-[11px] uppercase tracking-widest border-b-2 flex items-center gap-1.5 sm:gap-2 cursor-pointer transition-all whitespace-nowrap shrink-0 ${activeTab === 'collections'
-                  ? 'border-[#0F5C3B] text-[#0F5C3B]'
-                  : 'border-transparent text-stone-500 hover:text-stone-850'
+                ? 'border-[#0F5C3B] text-[#0F5C3B]'
+                : 'border-transparent text-stone-500 hover:text-stone-850'
                 }`}
             >
-              <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+              <ImageIcon className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               Manage Carousel (5)
             </button>
           </div>
@@ -810,7 +810,7 @@ export const AdminPage = ({ onNavigate }) => {
                 {/* Title */}
                 <div className="sm:col-span-2">
                   <label className="block text-[9px] font-black text-stone-500 uppercase tracking-widest mb-1.5 pl-0.5">
-                    Offer Title / Heading *
+                    Offer Title / Heading
                   </label>
                   <input
                     type="text"
@@ -857,7 +857,7 @@ export const AdminPage = ({ onNavigate }) => {
                 {/* Description */}
                 <div className="sm:col-span-2">
                   <label className="block text-[9px] font-black text-stone-500 uppercase tracking-widest mb-1.5 pl-0.5">
-                    Description Text *
+                    Description Text
                   </label>
                   <textarea
                     required
@@ -1015,7 +1015,6 @@ export const AdminPage = ({ onNavigate }) => {
                   ) : (
                     <>
                       Publish Offer
-                      <Sparkles className="w-3.5 h-3.5 text-[#C9A44C]" />
                     </>
                   )}
                 </button>
@@ -1054,7 +1053,7 @@ export const AdminPage = ({ onNavigate }) => {
                 {/* Title */}
                 <div className="sm:col-span-2">
                   <label className="block text-[9px] font-black text-stone-500 uppercase tracking-widest mb-1.5 pl-0.5">
-                    Slide Heading / Collection Title *
+                    Slide Heading / Collection Title
                   </label>
                   <input
                     type="text"
@@ -1069,7 +1068,7 @@ export const AdminPage = ({ onNavigate }) => {
                 {/* Subtitle / Desc */}
                 <div className="sm:col-span-2">
                   <label className="block text-[9px] font-black text-stone-500 uppercase tracking-widest mb-1.5 pl-0.5">
-                    Subtitle / Description Text *
+                    Subtitle / Description Text
                   </label>
                   <input
                     type="text"
@@ -1170,7 +1169,6 @@ export const AdminPage = ({ onNavigate }) => {
                   ) : (
                     <>
                       Save Changes
-                      <Sparkles className="w-3.5 h-3.5 text-[#C9A44C]" />
                     </>
                   )}
                 </button>

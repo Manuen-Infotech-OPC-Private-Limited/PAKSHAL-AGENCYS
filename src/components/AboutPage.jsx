@@ -8,26 +8,26 @@ export const AboutPage = ({ onNavigateHome }) => {
 
   return (
     <div className="w-full bg-white text-slate-800 select-none text-left pt-20">
-      
+
       {/* 1. Page Hero Section */}
       <section className="relative bg-gradient-to-b from-[#fcf7ea] via-[#fcf7ea]/40 to-white py-16 sm:py-24 overflow-hidden border-b border-[#ebd8a1]/20">
         <div className="absolute inset-0 opacity-40 bg-[radial-gradient(#C9A44C_1px,transparent_1px)] [background-size:24px_24px] pointer-events-none" />
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <div className="inline-flex items-center px-4 py-1.5 rounded-full border border-[#ebd8a1] bg-white/80 shadow-sm mb-6">
             <span className="w-1.5 h-1.5 rounded-full bg-[#38a12c] mr-2" />
             <span className="text-[10px] font-black uppercase tracking-[0.18em] text-[#a88634]">Est. 2011 • Hyderabad</span>
           </div>
-          
+
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-[#071330] font-sans leading-tight max-w-4xl mx-auto">
             Shaping Modern Spaces with <span className="text-[#38a12c]">Premium</span> Materials
           </h1>
-          
+
           <p className="mt-6 text-base sm:text-lg lg:text-xl text-slate-600 max-w-2xl mx-auto font-medium leading-relaxed">
             PAKSHAL AGENCYS is a premier distributor of high-end plywood, laminates, designer doors, and state-of-the-art kitchen and furniture hardware.
           </p>
 
-          <button 
+          <button
             onClick={() => onNavigateHome('#contact')}
             className="mt-8 inline-flex items-center gap-2 bg-[#38a12c] hover:bg-[#2e8a23] text-white px-7 py-3.5 rounded-xl text-xs font-bold uppercase tracking-wider transition-all duration-300 shadow-md hover:-translate-y-0.5 cursor-pointer"
           >
@@ -43,14 +43,14 @@ export const AboutPage = ({ onNavigateHome }) => {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
+
             {/* Left Panel: Content details */}
             <div className="lg:col-span-7 flex flex-col gap-6">
               <div className="text-xs font-extrabold uppercase tracking-widest text-[#a88634]">WHO WE ARE</div>
               <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#071330] font-sans">
                 A Decade of Quality, Authenticity &amp; Unmatched Service
               </h2>
-              
+
               <div className="flex flex-col gap-4 text-slate-600 text-sm sm:text-base leading-relaxed">
                 <p>
                   Founded with a vision to streamline supply chains for premium interior fittings, PAKSHAL AGENCYS has grown to become Hyderabad's most trusted name for builders, interior architects, dealers, and carpenters.
@@ -79,13 +79,13 @@ export const AboutPage = ({ onNavigateHome }) => {
             {/* Right Panel: Showcase Image */}
             <div className="lg:col-span-5 relative group">
               <div className="absolute inset-0 bg-[#38a12c] rounded-3xl rotate-2 opacity-5 group-hover:rotate-1 transition-transform duration-300" />
-              <img 
-                src={`${import.meta.env.BASE_URL}about-warehouse.png`} 
-                alt="Central Timber Warehouse" 
+              <img
+                src={`${import.meta.env.BASE_URL}about-warehouse.png`}
+                alt="Central Timber Warehouse"
                 className="relative z-10 w-full h-[400px] object-cover rounded-3xl border border-[#ebd8a1]/30 shadow-lg"
               />
             </div>
-            
+
           </div>
         </div>
       </section>
@@ -93,7 +93,7 @@ export const AboutPage = ({ onNavigateHome }) => {
       {/* 3. Vision, Mission & Core Values */}
       <section className="py-16 bg-[#fcf7ea]/40 border-y border-[#ebd8a1]/15">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
             {/* Vision */}
             <div className="bg-white border border-[#ebd8a1]/25 p-8 rounded-3xl shadow-[0_4px_20px_rgba(201,164,76,0.03)] flex gap-5">
@@ -191,7 +191,7 @@ export const AboutPage = ({ onNavigateHome }) => {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
+
             {/* Left Panel: visual list */}
             <div className="lg:col-span-5 order-last lg:order-first relative group">
               <div className="absolute inset-0 bg-[#ebd8a1] rounded-3xl -rotate-2 opacity-15 group-hover:rotate-0 transition-transform duration-300" />
@@ -221,10 +221,10 @@ export const AboutPage = ({ onNavigateHome }) => {
               <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-[#071330] font-sans">
                 Supplying Projects of Every Scale Across the Region
               </h2>
-              
+
               <div className="flex flex-col gap-4 text-slate-600 text-sm sm:text-base leading-relaxed">
                 <p>
-                  With strong fleet connections, we distribute building materials to a vast grid of hardware dealers, retail outlets, and commercial projects across Telangana and neighboring states. 
+                  With strong fleet connections, we distribute building materials to a vast grid of hardware dealers, retail outlets, and commercial projects across Telangana and neighboring states.
                 </p>
                 <p>
                   Whether you are planning a modern modular kitchen manufacturing setup or executing a grand commercial tower development, we supply top-tier fittings and structural timber panels exactly when you require them, avoiding project delays and budget overflows.

@@ -1,4 +1,4 @@
-import pakshallogo from '../assets/pakshallogo_new.png';
+import pakshallogo from '../assets/logos/pakshallogo_new.png';
 
 export const Footer = ({ onNavigate }) => {
   const basePrefix = window.location.pathname.startsWith('/PAKSHAL-AGENCYS') ? '/PAKSHAL-AGENCYS' : '';
@@ -238,7 +238,6 @@ export const Footer = ({ onNavigate }) => {
                   className="text-[#E6DFD5]/80 hover:text-[#C9A44C] font-semibold text-xs sm:text-[13px] mt-0.5 transition-colors group/addr"
                 >
                   <span>5-5-755, Hindi Nagar, Goshamahal, Hyderabad 500012. TS</span>
-                  <span className="block text-[10px] text-[#C9A44C] font-extrabold mt-0.5 tracking-wider uppercase underline">Get Directions →</span>
                 </a>
               </div>
             </div>

@@ -59,10 +59,10 @@ function App() {
     const pageParam = params.get('page');
     if (pageParam && ['about', 'gallery', 'products', 'contact'].includes(pageParam)) {
       const basePrefix = window.location.pathname.startsWith('/PAKSHAL-AGENCYS') ? '/PAKSHAL-AGENCYS' : '';
-      const pathMap = { 
-        about: '/about', 
-        gallery: '/gallery', 
-        products: '/products', 
+      const pathMap = {
+        about: '/about',
+        gallery: '/gallery',
+        products: '/products',
         contact: '/contact'
       };
       const cleanPath = pathMap[pageParam] || '/';
@@ -89,10 +89,10 @@ function App() {
     if (page === 'admin' || page === 'login') {
       newPath = `${basePrefix}/?page=${page}`;
     } else {
-      const pathMap = { 
-        about: '/about', 
-        gallery: '/gallery', 
-        products: '/products', 
+      const pathMap = {
+        about: '/about',
+        gallery: '/gallery',
+        products: '/products',
         contact: '/contact'
       };
       const cleanPath = pathMap[page] || '/';

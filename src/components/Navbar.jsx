@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { LogIn, ShieldCheck, LogOut, Home, Info, Image as ImageIcon, ShoppingBag, PhoneCall, X, Menu } from 'lucide-react';
-import pakshallogo from '../assets/pakshallogo_new.png';
+import pakshallogo from '../assets/logos/pakshallogo_new.png';
 
 export const Navbar = ({ currentPage, onNavigate, isAdminAuthenticated }) => {
   const [isOpen, setIsOpen] = useState(false);
