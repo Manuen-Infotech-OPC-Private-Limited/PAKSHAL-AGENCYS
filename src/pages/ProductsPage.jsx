@@ -1999,6 +1999,7 @@ export const ProductsPage = ({ onNavigate, search }) => {
   const [expandedCategories, setExpandedCategories] = useState({
     'Plywood': true
   });
+  const [selectedCategoryBrands, setSelectedCategoryBrands] = useState(null);
 
   useEffect(() => {
     setSelectedSize('8 x 4');
@@ -2013,6 +2014,22 @@ export const ProductsPage = ({ onNavigate, search }) => {
     acc[spread.category].push({ spread, idx });
     return acc;
   }, {});
+
+  const getCategoryBrands = (catKey) => {
+    if (!catKey) return [];
+    if (catKey === 'Laminates') {
+      return ['Century', 'Green', 'Marine', 'Vista', 'Croma'];
+    }
+    const items = categories[catKey] || categories[catKey.replace('&', ' & ')] || categories[catKey.replace(' & ', '&')] || [];
+    const brandSet = [];
+    items.forEach(({ spread }) => {
+      const name = spread.brandName;
+      if (name && !brandSet.includes(name)) {
+        brandSet.push(name);
+      }
+    });
+    return brandSet;
+  };
 
   const toggleCategory = (catName) => {
     setExpandedCategories(prev => ({
@@ -2112,6 +2129,30 @@ export const ProductsPage = ({ onNavigate, search }) => {
   const handleThumbnailClick = (idx) => {
     if (idx !== currentSpreadIdx && flipState === 'idle') {
       triggerFlip(idx, idx > currentSpreadIdx ? 'next' : 'prev');
+    }
+  };
+
+  const handleBrandClick = (brandName) => {
+    const matchIdx = SPREADS.findIndex(s =>
+      s.category === selectedCategoryBrands &&
+      s.brandName &&
+      s.brandName.toLowerCase() === brandName.toLowerCase() &&
+      !s.hideFromIndex
+    );
+
+    const fallbackIdx = SPREADS.findIndex(s =>
+      s.brandName && s.brandName.toLowerCase() === brandName.toLowerCase() && !s.hideFromIndex
+    );
+
+    const targetIdx = matchIdx !== -1 ? matchIdx : fallbackIdx;
+
+    if (targetIdx !== -1) {
+      handleThumbnailClick(targetIdx);
+    }
+
+    const bookSection = document.getElementById('catalogue-book-section');
+    if (bookSection) {
+      bookSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -2455,6 +2496,7 @@ export const ProductsPage = ({ onNavigate, search }) => {
                 <button
                   key={cat.key}
                   onClick={() => {
+                    setSelectedCategoryBrands(prev => prev === cat.key ? null : cat.key);
                     setExpandedCategories(prev => ({
                       ...prev,
                       [cat.key]: true
@@ -2470,13 +2512,13 @@ export const ProductsPage = ({ onNavigate, search }) => {
                   {/* Category Image - Free of box */}
                   <div className={`w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 rounded-2xl overflow-hidden shrink-0 transition-all duration-300 ${isActive
                       ? 'ring-2.5 ring-[#006e2f] ring-offset-2 ring-offset-[#F5EDE0] shadow-md -translate-y-1'
-                      : 'ring-1 ring-slate-300/70 group-hover:ring-[#006e2f]/50 group-hover:shadow-md group-hover:-translate-y-0.5'
+                      : 'ring-1 ring-slate-300/70 group-hover:ring-2 group-hover:ring-[#006e2f] group-hover:ring-offset-2 group-hover:ring-offset-[#F5EDE0] group-hover:shadow-md group-hover:shadow-[#006e2f]/20 group-hover:-translate-y-0.5'
                     }`}>
                     <img
                       src={cat.image}
                       alt={cat.title}
-                      className="w-full h-full object-cover brightness-105 contrast-105 transition-all duration-300 group-hover:scale-110 group-hover:brightness-115 transform-gpu"
-                      style={{ backfaceVisibility: 'hidden', transform: 'translateZ(0)' }}
+                      className="w-full h-full object-cover brightness-105 contrast-105 transition-all duration-300 group-hover:brightness-115 group-hover:contrast-110"
+                      style={{ backfaceVisibility: 'hidden' }}
                     />
                   </div>
 
@@ -2497,6 +2539,30 @@ export const ProductsPage = ({ onNavigate, search }) => {
               );
             })}
           </div>
+
+          {/* Selected Category Brand Names (Displays where the red line was drawn when a category is clicked) */}
+          {selectedCategoryBrands && (() => {
+            const brandsList = getCategoryBrands(selectedCategoryBrands);
+
+            return (
+              <div className="mt-3 animate-fade-in flex flex-wrap items-center justify-center gap-2 sm:gap-2.5">
+                {brandsList.length > 0 ? (
+                  brandsList.map((brandName) => (
+                    <button
+                      key={brandName}
+                      type="button"
+                      onClick={() => handleBrandClick(brandName)}
+                      className="px-4 py-1.5 rounded-full text-[12px] sm:text-[13px] font-bold border border-[#8c6d23]/25 bg-white text-slate-800 shadow-2xs select-none transition-all cursor-pointer active:scale-95 hover:border-[#8c6d23]/40 hover:bg-[#FAF6EE]"
+                    >
+                      {brandName}
+                    </button>
+                  ))
+                ) : (
+                  <span className="text-xs font-semibold text-slate-500 italic">No brand listings available</span>
+                )}
+              </div>
+            );
+          })()}
 
         </div>
       </div>
