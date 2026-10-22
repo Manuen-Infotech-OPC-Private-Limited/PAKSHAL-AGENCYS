@@ -1916,7 +1916,7 @@ export const CATEGORY_DEFINITIONS = [
     key: 'Plywood',
     label: 'Plywood',
     icon: (isActive) => (
-      <svg className={`w-5 h-5 shrink-0 ${isActive ? 'text-white' : 'text-[#005a2b]'}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+      <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke={isActive ? '#005a2b' : '#64748b'} strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 2L2 7l10 5 10-5-10-5z" />
         <path d="M2 12l10 5 10-5" />
         <path d="M2 17l10 5 10-5" />
@@ -1927,9 +1927,10 @@ export const CATEGORY_DEFINITIONS = [
     key: 'Laminates',
     label: 'Laminates',
     icon: (isActive) => (
-      <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none">
-        <path d="M4 14l8 4 8-4M4 10l8 4 8-4" stroke={isActive ? '#FFFFFF' : '#0c2340'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-        <path d="M12 3L4 7l8 4 8-4-8-4z" stroke={isActive ? '#FFFFFF' : '#0284c7'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+      <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke={isActive ? '#005a2b' : '#64748b'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <polygon points="12 2 2 7 12 12 22 7 12 2" />
+        <path d="M2 12l10 5 10-5" />
+        <path d="M2 17l10 5 10-5" />
       </svg>
     )
   },
@@ -1937,9 +1938,10 @@ export const CATEGORY_DEFINITIONS = [
     key: 'Acrylic Panels',
     label: 'Acrylic Panels',
     icon: (isActive) => (
-      <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none">
-        <path d="M12 3L4 7.5v9l8 4.5 8-4.5v-9L12 3z" stroke={isActive ? '#FFFFFF' : '#0c2340'} strokeWidth="2" strokeLinejoin="round" />
-        <path d="M12 12l8-4.5M12 12v9M12 12L4 7.5" stroke={isActive ? '#FFFFFF' : '#0284c7'} strokeWidth="1.8" strokeLinejoin="round" />
+      <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke={isActive ? '#005a2b' : '#64748b'} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="6" y="3" width="12" height="18" rx="2" />
+        <line x1="10" y1="7" x2="14" y2="7" />
+        <line x1="10" y1="10" x2="14" y2="10" />
       </svg>
     )
   },
@@ -1947,11 +1949,11 @@ export const CATEGORY_DEFINITIONS = [
     key: 'Veneers',
     label: 'Veneers',
     icon: (isActive) => (
-      <svg className={`w-5 h-5 shrink-0 ${isActive ? 'text-white' : 'text-[#C5A059]'}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
-        <rect x="4" y="3" width="16" height="18" rx="2" />
-        <path d="M8 3c1.5 4 1.5 8 0 12s0 6 0 6" />
-        <path d="M12 3c-1.2 4-1.2 9 0 13s1.2 5 0 5" />
-        <path d="M16 3c1.2 5 0 10-1 14s0 4 0 4" />
+      <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke={isActive ? '#005a2b' : '#64748b'} strokeWidth="1.8" strokeLinecap="round">
+        <rect x="4" y="3" width="16" height="18" rx="1.5" />
+        <line x1="8" y1="3" x2="8" y2="21" strokeDasharray="3 2" />
+        <line x1="12" y1="3" x2="12" y2="21" />
+        <line x1="16" y1="3" x2="16" y2="21" strokeDasharray="3 2" />
       </svg>
     )
   },
@@ -1959,10 +1961,9 @@ export const CATEGORY_DEFINITIONS = [
     key: 'Fancy Doors',
     label: 'Fancy Doors',
     icon: (isActive) => (
-      <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none">
-        <rect x="4" y="3" width="16" height="18" rx="1.5" stroke={isActive ? '#FFFFFF' : '#0c2340'} strokeWidth="1.8" />
-        <path d="M8 3v18l8-2.5V5.5L8 3z" stroke={isActive ? '#FFFFFF' : '#C5A059'} strokeWidth="1.8" fill={isActive ? 'rgba(255,255,255,0.2)' : '#C5A059'} fillOpacity={isActive ? 1 : 0.15} />
-        <circle cx="13.5" cy="12" r="1" fill={isActive ? '#FFFFFF' : '#0c2340'} />
+      <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke={isActive ? '#005a2b' : '#64748b'} strokeWidth="1.8">
+        <rect x="5" y="2.5" width="14" height="19" rx="1.5" />
+        <circle cx="9" cy="12" r="1" fill={isActive ? '#005a2b' : '#64748b'} />
       </svg>
     )
   },
@@ -1970,10 +1971,10 @@ export const CATEGORY_DEFINITIONS = [
     key: 'Arch. Hardware',
     label: 'Arch. Hardware',
     icon: (isActive) => (
-      <svg className={`w-5 h-5 shrink-0 ${isActive ? 'text-white' : 'text-[#C5A059]'}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="4" y="6" width="6" height="12" rx="3" />
-        <path d="M10 10h10a1.5 1.5 0 011.5 1.5v0a1.5 1.5 0 01-1.5 1.5H10" />
-        <circle cx="7" cy="12" r="1.2" fill="currentColor" />
+      <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke={isActive ? '#005a2b' : '#64748b'} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="3" y="9" width="6" height="6" rx="3" />
+        <path d="M6 12h13a2 2 0 012 2v0a2 2 0 01-2 2h-1" />
+        <circle cx="6" cy="12" r="1.2" fill={isActive ? '#005a2b' : '#64748b'} />
       </svg>
     )
   },
@@ -1981,7 +1982,7 @@ export const CATEGORY_DEFINITIONS = [
     key: 'Hardware & Fittings',
     label: 'Hardware & Fittings',
     icon: (isActive) => (
-      <svg className={`w-5 h-5 shrink-0 ${isActive ? 'text-white' : 'text-[#C5A059]'}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke={isActive ? '#005a2b' : '#64748b'} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <path d="M14.5 5.5a2 2 0 00-2.8 2.8l1.4 1.4-7.5 7.5a1.5 1.5 0 002.1 2.1l7.5-7.5 1.4 1.4a2 2 0 002.8-2.8l-2.1-2.1 1.4-1.4a1 1 0 00-1.4-1.4l-1.4 1.4-1.4-1.4z" />
         <path d="M6 18l12-12" />
       </svg>
@@ -1991,7 +1992,7 @@ export const CATEGORY_DEFINITIONS = [
     key: 'Kitchen Accessories',
     label: 'Kitchen Accessories',
     icon: (isActive) => (
-      <svg className={`w-5 h-5 shrink-0 ${isActive ? 'text-white' : 'text-[#C5A059]'}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke={isActive ? '#005a2b' : '#64748b'} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <path d="M9 3h6v4l5 8v3H4v-3l5-8V3z" />
         <path d="M7 18v2M17 18v2" />
         <line x1="8" y1="15" x2="16" y2="15" />
@@ -2002,7 +2003,7 @@ export const CATEGORY_DEFINITIONS = [
     key: 'Sliding Systems',
     label: 'Sliding Systems',
     icon: (isActive) => (
-      <svg className={`w-5 h-5 shrink-0 ${isActive ? 'text-white' : 'text-[#C5A059]'}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke={isActive ? '#005a2b' : '#64748b'} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <rect x="3" y="3" width="18" height="18" rx="2" />
         <path d="M12 3v18" />
         <path d="M7.5 8v8M16.5 8v8" strokeDasharray="2 2" />
@@ -2636,12 +2637,32 @@ export const ProductsPage = ({ onNavigate, search }) => {
         </div>
       )}
 
-      {/* Visual Navigation Deck */}
-      <div className="w-full bg-white text-slate-800 relative border-b border-[#E8DFC8]/60 animate-fade-in mb-6 sm:mb-8 shadow-xs pt-[112px] sm:pt-[94px] md:pt-[96px] pb-3 sm:pb-4">
+      {/* Visual Navigation Deck (Matching Mobile Reference Mockup) */}
+      <div className="w-full bg-white text-slate-800 relative animate-fade-in mb-6 sm:mb-8 pt-[104px] sm:pt-[94px] md:pt-[96px] pb-3 sm:pb-4 border-b border-slate-100">
         <div className="max-w-[1440px] mx-auto w-full px-3 sm:px-6 relative z-20">
 
+          {/* 1. BRANDS Header with Gold Accent & View All */}
+          <div className="flex items-center justify-between mb-2.5 px-0.5 sm:px-1">
+            <div className="flex items-center gap-2 sm:gap-3">
+              <span className="text-[12px] sm:text-[13px] font-black uppercase tracking-[0.16em] text-[#1e293b]">
+                BRANDS
+              </span>
+              <div className="h-[2px] w-12 sm:w-16 bg-[#C5A059]" />
+            </div>
+            <button
+              type="button"
+              onClick={() => scrollBrands('right')}
+              className="text-[#1e3a8a] text-[11px] sm:text-xs font-bold tracking-tight hover:underline flex items-center gap-0.5 cursor-pointer"
+            >
+              <span>View All</span>
+              <svg className="w-3.5 h-3.5 text-[#C5A059]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+              </svg>
+            </button>
+          </div>
+
           {/* Brand Cards Carousel with Controls */}
-          <div className="relative group/brandrow px-0 sm:px-6">
+          <div className="relative group/brandrow px-0 sm:px-6 mb-3 sm:mb-4">
             {/* Left Scroll Button */}
             <button
               type="button"
@@ -2658,47 +2679,62 @@ export const ProductsPage = ({ onNavigate, search }) => {
             {/* Brand Cards Grid / Scroll Track */}
             <div
               ref={brandScrollRef}
-              className="flex items-center gap-2.5 sm:gap-3.5 overflow-x-auto no-scrollbar py-2 px-1 scroll-smooth"
+              className="flex items-center gap-2 sm:gap-3 overflow-x-auto no-scrollbar py-1 px-0.5 scroll-smooth"
             >
               {BRAND_CONFIG.map((b) => {
                 const isBrandActive = (selectedBrand || activeSpread.brandName || '').toLowerCase() === b.name.toLowerCase();
                 return (
-                  <button
-                    key={b.name}
-                    ref={(el) => {
-                      if (el) brandButtonRefs.current[b.name] = el;
-                    }}
-                    type="button"
-                    onClick={() => handleBrandSelect(b.name)}
-                    className={`group flex flex-col items-center justify-center min-w-[145px] sm:min-w-[160px] h-[68px] sm:h-[72px] px-3 py-2 rounded-xl sm:rounded-2xl border transition-all cursor-pointer select-none active:scale-95 shrink-0 shadow-2xs ${isBrandActive
-                      ? 'bg-[#FFFDF7] border-[#C5A059] ring-1 ring-[#C5A059]/60 shadow-sm scale-[1.02]'
-                      : 'bg-white hover:bg-[#FFFDF7] border-[#D4AF37]/50 hover:border-[#C5A059] hover:shadow-xs'
-                      }`}
-                  >
-                    {/* Brand Icon / Emblem on top */}
-                    <div className="flex items-center justify-center h-6 mb-1 transition-transform group-hover:scale-105">
-                      {b.icon}
-                    </div>
-
-                    {/* Brand Name Typography */}
-                    <div className="flex items-center justify-center leading-none text-center">
-                      <span className="font-serif font-black tracking-wider text-[11px] sm:text-[12px] text-[#0c2340] whitespace-nowrap">
-                        {b.highlightWord ? (
-                          <>
-                            {b.displayName.replace(b.highlightWord, '')}
-                            <span className={`ml-0.5 ${b.highlightWord === 'KING' ? 'italic text-[#b88a44]' : 'text-[#b88a44]'}`}>
-                              {b.highlightWord}
-                            </span>
-                          </>
+                  <div key={b.name} className="flex flex-col items-center shrink-0">
+                    <button
+                      ref={(el) => {
+                        if (el) brandButtonRefs.current[b.name] = el;
+                      }}
+                      type="button"
+                      onClick={() => handleBrandSelect(b.name)}
+                      className={`group flex flex-col items-center justify-center min-w-[110px] sm:min-w-[130px] h-[64px] sm:h-[68px] px-2.5 py-2 rounded-xl border transition-all cursor-pointer select-none active:scale-95 shadow-2xs ${isBrandActive
+                        ? 'bg-[#005a2b] border-[#004722] text-white shadow-sm'
+                        : 'bg-white hover:bg-[#FFFDF7] border-slate-200/90 hover:border-[#C5A059] text-slate-800'
+                        }`}
+                    >
+                      {/* Brand Icon / Emblem on top */}
+                      <div className="flex items-center justify-center h-6 mb-1 transition-transform group-hover:scale-105">
+                        {isBrandActive && b.name === 'Royal Club' ? (
+                          <svg className="w-7 h-5 text-[#C5A059]" viewBox="0 0 32 22" fill="currentColor">
+                            <path d="M4 18h24v2.5H4V18zm1.5-2.5l2.5-9 5.5 5 2.5-8 2.5 8 5.5-5 2.5 9H5.5z" />
+                            <circle cx="8" cy="6" r="1.5" />
+                            <circle cx="16" cy="3" r="1.8" />
+                            <circle cx="24" cy="6" r="1.5" />
+                          </svg>
+                        ) : isBrandActive ? (
+                          <span className="text-white drop-shadow-xs">{b.icon}</span>
                         ) : (
-                          b.displayName
+                          b.icon
                         )}
-                      </span>
-                      {b.trademark && (
-                        <span className="text-[8px] font-normal text-slate-500 ml-0.5 relative -top-1">®</span>
-                      )}
-                    </div>
-                  </button>
+                      </div>
+
+                      {/* Brand Name Typography */}
+                      <div className="flex items-center justify-center leading-none text-center">
+                        <span className={`font-serif font-black tracking-wider text-[10.5px] sm:text-[11px] whitespace-nowrap ${isBrandActive ? 'text-white' : 'text-[#0c2340]'}`}>
+                          {b.highlightWord ? (
+                            <>
+                              {b.displayName.replace(b.highlightWord, '')}
+                              <span className={`ml-0.5 ${b.highlightWord === 'KING' ? (isBrandActive ? 'italic text-[#E8DFC8]' : 'italic text-[#b88a44]') : (isBrandActive ? 'text-[#E8DFC8]' : 'text-[#b88a44]')}`}>
+                                {b.highlightWord}
+                              </span>
+                            </>
+                          ) : (
+                            b.displayName
+                          )}
+                        </span>
+                        {b.trademark && (
+                          <span className={`text-[7.5px] font-normal ml-0.5 relative -top-1 ${isBrandActive ? 'text-white/80' : 'text-slate-500'}`}>®</span>
+                        )}
+                      </div>
+                    </button>
+
+                    {/* Active green underline pill indicator */}
+                    <div className={`w-8 h-[2.5px] rounded-full mt-1.5 transition-all ${isBrandActive ? 'bg-[#005a2b]' : 'bg-transparent'}`} />
+                  </div>
                 );
               })}
             </div>
@@ -2717,11 +2753,21 @@ export const ProductsPage = ({ onNavigate, search }) => {
             </button>
           </div>
 
-          {/* Divider Line */}
-          <div className="w-full max-w-[1360px] mx-auto h-[1px] bg-[#E8DFC8]/60 my-2.5 sm:my-3.5" />
+          {/* 2. CATEGORIES Header with Gold Accent & Contextual Brand */}
+          <div className="flex items-center justify-between mb-2 px-0.5 sm:px-1">
+            <div className="flex items-center gap-2 sm:gap-3">
+              <span className="text-[12px] sm:text-[13px] font-black uppercase tracking-[0.16em] text-[#1e293b]">
+                CATEGORIES
+              </span>
+              <div className="h-[2px] w-12 sm:w-16 bg-[#C5A059]" />
+            </div>
+            <span className="text-[#1e3a8a] text-[11px] sm:text-xs font-semibold tracking-tight">
+              For {activeSpread.brandName || selectedBrand || 'Royal Club'}
+            </span>
+          </div>
 
-          {/* Category Cards Grid / Scroll */}
-          <div className="flex items-center gap-2 sm:gap-2.5 overflow-x-auto no-scrollbar py-1 px-1 justify-start lg:justify-center">
+          {/* Categories Tab Strip with Vertical Dividers */}
+          <div className="flex items-center overflow-x-auto no-scrollbar py-1 divide-x divide-slate-200/80">
             {CATEGORY_DEFINITIONS.map((cat) => {
               const currentCanonicalCat = getCanonicalCategory(selectedCategory || activeSpread.category);
               const isCatActive = cat.key === currentCanonicalCat;
@@ -2731,18 +2777,20 @@ export const ProductsPage = ({ onNavigate, search }) => {
                   key={cat.key}
                   type="button"
                   onClick={() => handleCategorySelect(cat.key)}
-                  className={`group flex items-center gap-2 sm:gap-2.5 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-lg sm:rounded-xl border transition-all cursor-pointer select-none active:scale-95 shrink-0 shadow-2xs ${isCatActive
-                    ? 'bg-[#005a2b] text-white border-[#004722] shadow-sm'
-                    : 'bg-white hover:bg-[#FFFDF7] text-[#0c2340] border-[#D4AF37]/55 hover:border-[#b88a44] hover:shadow-xs'
-                    }`}
+                  className="group flex flex-col items-center justify-center px-4 sm:px-5 py-1.5 shrink-0 cursor-pointer select-none transition-all"
                 >
-                  <span className={`transition-colors ${isCatActive ? 'text-white' : ''}`}>
+                  <div className="flex items-center justify-center h-6 mb-1">
                     {typeof cat.icon === 'function' ? cat.icon(isCatActive) : cat.icon}
-                  </span>
-                  <span className={`text-[12px] sm:text-[13px] font-bold tracking-tight whitespace-nowrap ${isCatActive ? 'text-white' : 'text-[#0c2340] group-hover:text-[#005a2b]'
-                    }`}>
+                  </div>
+                  <span className={`text-[11px] sm:text-[12px] tracking-tight whitespace-nowrap leading-tight transition-colors ${
+                    isCatActive ? 'text-[#005a2b] font-bold' : 'text-slate-600 font-semibold group-hover:text-slate-900'
+                  }`}>
                     {cat.label}
                   </span>
+                  {/* Bottom green active underline */}
+                  <div className={`w-full h-[2.5px] rounded-full mt-1.5 transition-all ${
+                    isCatActive ? 'bg-[#005a2b]' : 'bg-transparent'
+                  }`} />
                 </button>
               );
             })}
@@ -2797,6 +2845,33 @@ export const ProductsPage = ({ onNavigate, search }) => {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
                 </svg>
               </button>
+
+              {/* Carousel Pagination Dots (Matching Reference Mockup) */}
+              <div className="absolute bottom-3 left-1/2 -translate-x-1/2 z-20 flex items-center gap-1.5">
+                {[0, 1, 2].map((dotIdx) => {
+                  const isDotActive = (activeCatIdx !== -1 ? activeCatIdx % 3 : 0) === dotIdx;
+                  return (
+                    <button
+                      key={dotIdx}
+                      type="button"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        if (activeCategorySpreads.length > dotIdx) {
+                          const targetSpread = activeCategorySpreads[dotIdx];
+                          const targetIdx = SPREADS.findIndex(s => s.id === targetSpread.id);
+                          if (targetIdx !== -1) setCurrentSpreadIdx(targetIdx);
+                        }
+                      }}
+                      className={`transition-all rounded-full cursor-pointer ${
+                        isDotActive
+                          ? 'w-2.5 h-2.5 bg-white shadow-xs scale-110'
+                          : 'w-2 h-2 bg-white/50 hover:bg-white/80'
+                      }`}
+                      aria-label={`Go to slide ${dotIdx + 1}`}
+                    />
+                  );
+                })}
+              </div>
             </div>
           </div>
 
