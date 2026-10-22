@@ -1886,18 +1886,6 @@ export const BRAND_CONFIG = [
     )
   },
   {
-    name: 'Fancy Doors',
-    displayName: 'FANCY DOORS',
-    trademark: true,
-    categories: ['Fancy Doors'],
-    icon: (
-      <svg className="w-5 h-5 text-[#c28d3a]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-        <rect x="4" y="2" width="16" height="20" rx="1" />
-        <circle cx="8" cy="12" r="1" fill="currentColor" />
-      </svg>
-    )
-  },
-  {
     name: 'Architecture',
     displayName: 'ARCHITECTURE',
     trademark: true,
@@ -2069,8 +2057,6 @@ export const ProductsPage = ({ onNavigate, search }) => {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
-
-
 
   const renderHeroTagIcon = (iconName) => {
     switch (iconName) {
@@ -2528,7 +2514,23 @@ export const ProductsPage = ({ onNavigate, search }) => {
       return;
     }
 
-    // 2. Match on brand only
+    // 2. If category was specified, find first spread matching this category
+    if (categoryName) {
+      const catIdx = SPREADS.findIndex(s => {
+        if (s.hideFromIndex) return false;
+        return getCanonicalCategory(s.category) === targetCanonical;
+      });
+
+      if (catIdx !== -1) {
+        handleThumbnailClick(catIdx);
+        if (SPREADS[catIdx] && SPREADS[catIdx].brandName) {
+          setSelectedBrand(SPREADS[catIdx].brandName);
+        }
+        return;
+      }
+    }
+
+    // 3. Fallback: match on brand only
     const brandIdx = SPREADS.findIndex(s => {
       if (s.hideFromIndex) return false;
       return s.brandName && (
@@ -2541,16 +2543,6 @@ export const ProductsPage = ({ onNavigate, search }) => {
     if (brandIdx !== -1) {
       handleThumbnailClick(brandIdx);
       return;
-    }
-
-    // 3. Fallback: match category
-    const catIdx = SPREADS.findIndex(s => {
-      if (s.hideFromIndex) return false;
-      return getCanonicalCategory(s.category) === targetCanonical;
-    });
-
-    if (catIdx !== -1) {
-      handleThumbnailClick(catIdx);
     }
   };
 
@@ -2645,18 +2637,9 @@ export const ProductsPage = ({ onNavigate, search }) => {
         </div>
       )}
 
-      {/* Visual Navigation Deck (Matching Reference Image) */}
-      <div className="w-full bg-white text-slate-800 relative border-b border-[#E8DFC8]/60 animate-fade-in mb-6 sm:mb-8 shadow-xs pt-[116px] sm:pt-[96px] md:pt-[100px] pb-4 sm:pb-5">
+      {/* Visual Navigation Deck */}
+      <div className="w-full bg-white text-slate-800 relative border-b border-[#E8DFC8]/60 animate-fade-in mb-6 sm:mb-8 shadow-xs pt-[112px] sm:pt-[94px] md:pt-[96px] pb-3 sm:pb-4">
         <div className="max-w-[1440px] mx-auto w-full px-3 sm:px-6 relative z-20">
-
-          {/* 1. Header: SHOP BY BRAND */}
-          <div className="flex items-center justify-center gap-3 sm:gap-4 mb-3 sm:mb-3.5">
-            <div className="h-[1.5px] w-12 sm:w-28 bg-[#C5A059]" />
-            <span className="text-[12px] sm:text-[13.5px] font-black uppercase tracking-[0.2em] text-[#a88634]">
-              SHOP BY <span className="text-[#0c2340]">BRAND</span>
-            </span>
-            <div className="h-[1.5px] w-12 sm:w-28 bg-[#C5A059]" />
-          </div>
 
           {/* Brand Cards Carousel with Controls */}
           <div className="relative group/brandrow px-0 sm:px-6">
@@ -2688,11 +2671,10 @@ export const ProductsPage = ({ onNavigate, search }) => {
                     }}
                     type="button"
                     onClick={() => handleBrandSelect(b.name)}
-                    className={`group flex flex-col items-center justify-center min-w-[145px] sm:min-w-[160px] h-[68px] sm:h-[72px] px-3 py-2 rounded-xl sm:rounded-2xl border transition-all cursor-pointer select-none active:scale-95 shrink-0 shadow-2xs ${
-                      isBrandActive
-                        ? 'bg-[#FFFDF7] border-[#C5A059] ring-1 ring-[#C5A059]/60 shadow-sm scale-[1.02]'
-                        : 'bg-white hover:bg-[#FFFDF7] border-[#D4AF37]/50 hover:border-[#C5A059] hover:shadow-xs'
-                    }`}
+                    className={`group flex flex-col items-center justify-center min-w-[145px] sm:min-w-[160px] h-[68px] sm:h-[72px] px-3 py-2 rounded-xl sm:rounded-2xl border transition-all cursor-pointer select-none active:scale-95 shrink-0 shadow-2xs ${isBrandActive
+                      ? 'bg-[#FFFDF7] border-[#C5A059] ring-1 ring-[#C5A059]/60 shadow-sm scale-[1.02]'
+                      : 'bg-white hover:bg-[#FFFDF7] border-[#D4AF37]/50 hover:border-[#C5A059] hover:shadow-xs'
+                      }`}
                   >
                     {/* Brand Icon / Emblem on top */}
                     <div className="flex items-center justify-center h-6 mb-1 transition-transform group-hover:scale-105">
@@ -2737,16 +2719,7 @@ export const ProductsPage = ({ onNavigate, search }) => {
           </div>
 
           {/* Divider Line */}
-          <div className="w-full max-w-[1360px] mx-auto h-[1px] bg-[#E8DFC8]/60 my-3.5 sm:my-4" />
-
-          {/* 2. Header: BROWSE CATEGORIES */}
-          <div className="flex items-center justify-center gap-3 sm:gap-4 mb-3 sm:mb-3.5">
-            <div className="h-[1.5px] w-12 sm:w-28 bg-[#C5A059]" />
-            <span className="text-[12px] sm:text-[13.5px] font-black uppercase tracking-[0.2em] text-[#a88634]">
-              BROWSE <span className="text-[#0c2340]">CATEGORIES</span>
-            </span>
-            <div className="h-[1.5px] w-12 sm:w-28 bg-[#C5A059]" />
-          </div>
+          <div className="w-full max-w-[1360px] mx-auto h-[1px] bg-[#E8DFC8]/60 my-2.5 sm:my-3.5" />
 
           {/* Category Cards Grid / Scroll */}
           <div className="flex items-center gap-2 sm:gap-2.5 overflow-x-auto no-scrollbar py-1 px-1 justify-start lg:justify-center">
@@ -2759,18 +2732,16 @@ export const ProductsPage = ({ onNavigate, search }) => {
                   key={cat.key}
                   type="button"
                   onClick={() => handleCategorySelect(cat.key)}
-                  className={`group flex items-center gap-2 sm:gap-2.5 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-lg sm:rounded-xl border transition-all cursor-pointer select-none active:scale-95 shrink-0 shadow-2xs ${
-                    isCatActive
-                      ? 'bg-[#005a2b] text-white border-[#004722] shadow-sm'
-                      : 'bg-white hover:bg-[#FFFDF7] text-[#0c2340] border-[#D4AF37]/55 hover:border-[#b88a44] hover:shadow-xs'
-                  }`}
+                  className={`group flex items-center gap-2 sm:gap-2.5 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-lg sm:rounded-xl border transition-all cursor-pointer select-none active:scale-95 shrink-0 shadow-2xs ${isCatActive
+                    ? 'bg-[#005a2b] text-white border-[#004722] shadow-sm'
+                    : 'bg-white hover:bg-[#FFFDF7] text-[#0c2340] border-[#D4AF37]/55 hover:border-[#b88a44] hover:shadow-xs'
+                    }`}
                 >
                   <span className={`transition-colors ${isCatActive ? 'text-white' : ''}`}>
                     {typeof cat.icon === 'function' ? cat.icon(isCatActive) : cat.icon}
                   </span>
-                  <span className={`text-[12px] sm:text-[13px] font-bold tracking-tight whitespace-nowrap ${
-                    isCatActive ? 'text-white' : 'text-[#0c2340] group-hover:text-[#005a2b]'
-                  }`}>
+                  <span className={`text-[12px] sm:text-[13px] font-bold tracking-tight whitespace-nowrap ${isCatActive ? 'text-white' : 'text-[#0c2340] group-hover:text-[#005a2b]'
+                    }`}>
                     {cat.label}
                   </span>
                 </button>
