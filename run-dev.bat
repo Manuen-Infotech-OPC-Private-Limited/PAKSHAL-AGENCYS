@@ -4,8 +4,6 @@ echo ========================================================
 echo  Starting Pakshal Agencys Development Server from Root
 echo ========================================================
 echo.
-echo Starting backend server...
-start cmd /k "npm run server"
-echo Starting frontend server...
+echo Starting development servers (backend + frontend)...
 npm run dev
 pause

@@ -48,6 +48,7 @@ import hardwareImg from '../assets/hardware/hardwarefittings.png';
 import accessoriesImg from '../assets/kitchen/kitchenaccessories.png';
 import slidingChannelsImg from '../assets/hardware/slidingchannels.png';
 import gurjanStarImg from '../assets/plywood/gurjanstar.png';
+import gurjanGoldImg from '../assets/plywood/gurjangold.jpg';
 import tandemBoxImg from '../assets/kitchen/tandembox.png';
 import fancyDoorsImg from '../assets/doors/fancydoors.png';
 import designerDoorImg from '../assets/doors/homepage-designerdoor.png';
@@ -958,7 +959,44 @@ const SPREADS = [
       { title: 'Zero Core Gaps', desc: 'No overlapping plies or voids', icon: 'wood' },
       { title: 'Boiling Water Proof', desc: 'Withstands heavy moisture exposure', icon: 'droplet' },
       { title: 'Screw Holding', desc: 'Superior grip strength for hinges', icon: 'gear' },
-      { title: 'Green Standard', desc: 'Safe for kitchen modular storage', icon: 'leaf' }
+    ]
+  },
+  {
+    id: 81,
+    brandId: 'gurjan-gold',
+    category: 'Plywood',
+    pageNumLeft: 37,
+    pageNumRight: 38,
+    badge: 'Gold Calibrated BWP',
+    title: 'Golden Standard\nExcellence.',
+    tagline: '100% Selected Gurjan Core with 4-Press Technology',
+    image: gurjanGoldImg,
+    brandName: 'Gurjan Gold',
+    desc: 'Engineered with 100% selected Gurjan veneers and 4-times hot pressed calibration. Offers superior bonding, termite protection, and mirror-flat finish for luxury interiors.',
+    thicknesses: ['6mm', '9mm', '12mm', '16mm', '19mm', '25mm'],
+    defaultThickness: '19mm',
+    features: ['4-Press Calibrated', '100% Gurjan Core', 'Lifetime Warranty'],
+    applications: ['Luxury Kitchens', 'Wardrobes', 'Beds & Heavy Furniture'],
+    specs: {
+      'Press Type': '4-Times Hot Pressed',
+      'Wood Species': '100% Selected Gurjan',
+      'Bonding': 'Unextended BWP Phenolic Resin',
+      'Warranty': 'Lifetime Guarantee'
+    },
+    heroSub: 'GOLD CALIBRATED. LIFETIME ENDURANCE.',
+    heroTitle: 'GURJAN GOLD',
+    heroDesc: 'Engineered with 100% selected Gurjan veneers and 4-times hot pressed calibration. Offers superior bonding, termite protection, and mirror-flat finish for luxury interiors.',
+    heroTags: [
+      { text: '4-Press Calibrated', icon: 'calibrate' },
+      { text: '100% Gurjan Core', icon: 'wood' },
+      { text: 'Lifetime Warranty', icon: 'shield' }
+    ],
+    overviewFeatures: [
+      { title: '4-Press Calibration', desc: 'Mirror-flat surface with zero core voids', icon: 'calibrate' },
+      { title: '100% Selected Gurjan', desc: 'Imported high-density hardwood plies', icon: 'wood' },
+      { title: 'Phenolic PF Resin', desc: 'Boiling water proof marine endurance', icon: 'droplet' },
+      { title: 'Borer & Termite Shield', desc: 'Deep vacuum-pressure chemical treatment', icon: 'shield' },
+      { title: 'Screw Retention', desc: 'Maximum load bearing and hinge strength', icon: 'gear' }
     ]
   },
   {
@@ -1588,26 +1626,6 @@ export const ProductsPage = ({ onNavigate, search }) => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  const getCatalogScale = () => {
-    const width = windowDimensions.width;
-    const isSidebarVisible = width >= 1280;
-    const targetWidth = 960;
-
-    let availableWidth;
-    if (isSidebarVisible) {
-      const sidebarSpace = 320 + 32;
-      const padding = 48;
-      availableWidth = width - sidebarSpace - padding;
-    } else {
-      const padding = width < 640 ? 24 : 48;
-      availableWidth = width - padding;
-    }
-
-    const scale = Math.min(1.0, Math.max(0.32, (availableWidth - 16) / targetWidth));
-    return { scale, isMobile: scale < 1.0, isSidebarVisible };
-  };
-
-  const { scale, isMobile, isSidebarVisible } = getCatalogScale();
 
 
   const renderHeroTagIcon = (iconName) => {
@@ -1678,104 +1696,6 @@ export const ProductsPage = ({ onNavigate, search }) => {
     return `${brand} ${cat}`;
   };
 
-  const getBrandApplications = (spread) => {
-    const cat = spread.category;
-
-    if (cat === 'Plywood') {
-      return [
-        {
-          title: 'KITCHENS',
-          desc: 'Modular kitchen cabinets & shutters',
-          image: kitchensCardImg
-        },
-        {
-          title: 'WARDROBES',
-          desc: 'Premium wardrobes & storage solutions',
-          image: wardrobesCardImg
-        },
-        {
-          title: 'OFFICE FURNITURE',
-          desc: 'Desks, partitions & office interiors',
-          image: officefurniture
-        },
-        {
-          title: 'INTERIOR PANELS',
-          desc: 'Wall cladding & decorative panels',
-          image: interiorpanels
-        }
-      ];
-    } else if (cat === 'Laminates' || cat === 'Acrylic Panels' || cat === 'Veneers') {
-      return [
-        {
-          title: 'KITCHENS',
-          desc: 'High-gloss cabinet shutters & panels',
-          image: kitchensCardImg
-        },
-        {
-          title: 'WARDROBES',
-          desc: 'Decorative wardrobe doors & frontages',
-          image: wardrobesCardImg
-        },
-        {
-          title: 'WALL PANELING',
-          desc: 'Feature walls & luxury architectural accents',
-          image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=600&q=80'
-        },
-        {
-          title: 'LUXURY FURNITURE',
-          desc: 'Tabletops, TV consoles & premium joinery',
-          image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=600&q=80'
-        }
-      ];
-    } else if (cat === 'Fancy Doors') {
-      return [
-        {
-          title: 'MAIN ENTRANCE',
-          desc: 'Luxury grand designer entrance doors',
-          image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80'
-        },
-        {
-          title: 'BEDROOM DOORS',
-          desc: 'Acoustic sound-dampening flush doors',
-          image: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=600&q=80'
-        },
-        {
-          title: 'VILLAS & BUNGALOWS',
-          desc: 'High-height designer carved double doors',
-          image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80'
-        },
-        {
-          title: 'PUJA & BALCONY',
-          desc: 'Water-resistant moisture-proof designer doors',
-          image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=600&q=80'
-        }
-      ];
-    } else {
-      // Architectural Hardware etc.
-      return [
-        {
-          title: 'KITCHEN DRAWERS',
-          desc: 'Soft-close drawer systems & runners',
-          image: 'https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?auto=format&fit=crop&w=600&q=80'
-        },
-        {
-          title: 'WARDROBE SYSTEMS',
-          desc: 'Smooth sliding channels & door fittings',
-          image: wardrobesCardImg
-        },
-        {
-          title: 'OFFICE DESKS',
-          desc: 'Ergonomic cable managers & brackets',
-          image: 'https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=600&q=80'
-        },
-        {
-          title: 'MAIN DOORS',
-          desc: 'Designer pull handles & security locks',
-          image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80'
-        }
-      ];
-    }
-  };
 
   const getTechnicalSpecs = (spread) => {
     const cat = spread.category;
@@ -1980,26 +1900,23 @@ export const ProductsPage = ({ onNavigate, search }) => {
   const [currentSpreadIdx, setCurrentSpreadIdx] = useState(() => {
     return getIndexFromSearch(search || window.location.search);
   });
-  const [prevSpreadIdx, setPrevSpreadIdx] = useState(currentSpreadIdx);
 
   useEffect(() => {
     const targetIdx = getIndexFromSearch(search || window.location.search);
     if (targetIdx !== currentSpreadIdx) {
       setCurrentSpreadIdx(targetIdx);
-      setPrevSpreadIdx(targetIdx);
     }
   }, [search]);
-  const [flipState, setFlipState] = useState('idle'); // 'idle', 'flipping-next', 'flipping-prev'
   const [selectedThicknesses, setSelectedThicknesses] = useState({});
   const [selectedSize, setSelectedSize] = useState('8 x 4');
   const [showEnquiryModal, setShowEnquiryModal] = useState(false);
   const [isBrochureDropdownOpen, setIsBrochureDropdownOpen] = useState(false);
   const [toastMsg, setToastMsg] = useState('');
-  const [showSidebar, setShowSidebar] = useState(false);
   const [expandedCategories, setExpandedCategories] = useState({
     'Plywood': true
   });
-  const [selectedCategoryBrands, setSelectedCategoryBrands] = useState(null);
+  const [selectedCategoryBrands, setSelectedCategoryBrands] = useState('Plywood');
+  const [selectedBrand, setSelectedBrand] = useState(null);
 
   useEffect(() => {
     setSelectedSize('8 x 4');
@@ -2017,6 +1934,9 @@ export const ProductsPage = ({ onNavigate, search }) => {
 
   const getCategoryBrands = (catKey) => {
     if (!catKey) return [];
+    if (catKey === 'Plywood') {
+      return ['Royal Club', 'Marine Club', 'Gurjan Club', 'Gurjan King', 'Gurjan Gold', 'Gurjan Star'];
+    }
     if (catKey === 'Laminates') {
       return ['Century', 'Green', 'Marine', 'Vista', 'Croma'];
     }
@@ -2056,6 +1976,7 @@ export const ProductsPage = ({ onNavigate, search }) => {
 
   useEffect(() => {
     if (activeSpread && activeSpread.category) {
+      setSelectedCategoryBrands(activeSpread.category);
       setExpandedCategories(prev => ({
         ...prev,
         [activeSpread.category]: true
@@ -2063,15 +1984,14 @@ export const ProductsPage = ({ onNavigate, search }) => {
     }
   }, [currentSpreadIdx, activeSpread]);
 
-  // Update default message whenever active brand, thickness, or size changes
+  // Update default message whenever active brand or thickness changes
   useEffect(() => {
     const thicknessStr = selectedThicknesses[currentSpreadIdx] || activeSpread.defaultThickness;
-    const sizeStr = selectedSize ? ` (${selectedSize} ft)` : '';
     setEnquiryForm(prev => ({
       ...prev,
-      message: `I am interested in ${activeSpread.brandName} (${thicknessStr}${sizeStr}). Please share pricing and availability.`
+      message: `I am interested in ${activeSpread.brandName} (${thicknessStr}). Please share pricing and availability.`
     }));
-  }, [currentSpreadIdx, selectedThicknesses, activeSpread, selectedSize]);
+  }, [currentSpreadIdx, selectedThicknesses, activeSpread]);
 
   const handleThicknessSelect = (thickness) => {
     setSelectedThicknesses(prev => ({
@@ -2083,11 +2003,10 @@ export const ProductsPage = ({ onNavigate, search }) => {
   const handleGetQuote = () => {
     const isPlywoodOrBoard = activeSpread.category === 'Plywood';
     const thicknessStr = selectedThicknesses[currentSpreadIdx] || activeSpread.defaultThickness;
-    const sizeStr = selectedSize ? ` (${selectedSize} ft)` : '';
 
     let message = '';
     if (isPlywoodOrBoard) {
-      message = `I am interested in ${activeSpread.brandName} Plywood - ${thicknessStr}${sizeStr}. Please share pricing and availability.`;
+      message = `I am interested in ${activeSpread.brandName} Plywood - ${thicknessStr}. Please share pricing and availability.`;
     } else {
       message = `I am interested in ${getOverviewTitle(activeSpread)} (${thicknessStr}). Please share pricing and availability.`;
     }
@@ -2103,38 +2022,61 @@ export const ProductsPage = ({ onNavigate, search }) => {
     }
   };
 
-  const triggerFlip = (nextIdx, direction) => {
-    setPrevSpreadIdx(currentSpreadIdx);
-    setCurrentSpreadIdx(nextIdx);
-    setFlipState(direction === 'next' ? 'flipping-next' : 'flipping-prev');
-
-    // Reset flip state after animation completes
-    setTimeout(() => {
-      setFlipState('idle');
-    }, 700);
-  };
-
   const handlePrev = () => {
-    if (currentSpreadIdx > 0 && flipState === 'idle') {
-      triggerFlip(currentSpreadIdx - 1, 'prev');
+    if (currentSpreadIdx > 0) {
+      setCurrentSpreadIdx(prev => prev - 1);
     }
   };
 
   const handleNext = () => {
-    if (currentSpreadIdx < SPREADS.length - 1 && flipState === 'idle') {
-      triggerFlip(currentSpreadIdx + 1, 'next');
+    if (currentSpreadIdx < SPREADS.length - 1) {
+      setCurrentSpreadIdx(prev => prev + 1);
+    }
+  };
+
+  const handlePrevImage = (e) => {
+    if (e) e.stopPropagation();
+    if (activeCategorySpreads.length > 1 && activeCatIdx !== -1) {
+      const prevCatIdx = (activeCatIdx - 1 + activeCategorySpreads.length) % activeCategorySpreads.length;
+      const targetSpread = activeCategorySpreads[prevCatIdx];
+      const targetIdx = SPREADS.findIndex(s => s.id === targetSpread.id);
+      if (targetIdx !== -1) setCurrentSpreadIdx(targetIdx);
+    } else if (currentSpreadIdx > 0) {
+      setCurrentSpreadIdx(prev => prev - 1);
+    } else {
+      setCurrentSpreadIdx(SPREADS.length - 1);
+    }
+  };
+
+  const handleNextImage = (e) => {
+    if (e) e.stopPropagation();
+    if (activeCategorySpreads.length > 1 && activeCatIdx !== -1) {
+      const nextCatIdx = (activeCatIdx + 1) % activeCategorySpreads.length;
+      const targetSpread = activeCategorySpreads[nextCatIdx];
+      const targetIdx = SPREADS.findIndex(s => s.id === targetSpread.id);
+      if (targetIdx !== -1) setCurrentSpreadIdx(targetIdx);
+    } else if (currentSpreadIdx < SPREADS.length - 1) {
+      setCurrentSpreadIdx(prev => prev + 1);
+    } else {
+      setCurrentSpreadIdx(0);
     }
   };
 
   const handleThumbnailClick = (idx) => {
-    if (idx !== currentSpreadIdx && flipState === 'idle') {
-      triggerFlip(idx, idx > currentSpreadIdx ? 'next' : 'prev');
+    if (idx >= 0 && idx < SPREADS.length) {
+      setCurrentSpreadIdx(idx);
     }
   };
 
   const handleBrandClick = (brandName) => {
+    if (selectedBrand && selectedBrand.toLowerCase() === brandName.toLowerCase()) {
+      setSelectedBrand(null);
+      return;
+    }
+    setSelectedBrand(brandName);
+    const catKey = selectedCategoryBrands || activeSpread.category;
     const matchIdx = SPREADS.findIndex(s =>
-      s.category === selectedCategoryBrands &&
+      (s.category === catKey || s.category.replace(/\s+/g, '') === catKey.replace(/\s+/g, '')) &&
       s.brandName &&
       s.brandName.toLowerCase() === brandName.toLowerCase() &&
       !s.hideFromIndex
@@ -2148,11 +2090,6 @@ export const ProductsPage = ({ onNavigate, search }) => {
 
     if (targetIdx !== -1) {
       handleThumbnailClick(targetIdx);
-    }
-
-    const bookSection = document.getElementById('catalogue-book-section');
-    if (bookSection) {
-      bookSection.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -2177,243 +2114,7 @@ export const ProductsPage = ({ onNavigate, search }) => {
 
   const activeThickness = selectedThicknesses[currentSpreadIdx] || activeSpread.defaultThickness;
 
-  const renderLeftPage = (idx) => {
-    const spread = SPREADS[idx];
-    if (!spread) return null;
-    const canGoPrev = idx > 0 && flipState === 'idle';
-    const pageNumLeft = (idx * 2) + 1;
-    return (
-      <div
-        onClick={() => {
-          if (canGoPrev) {
-            handlePrev();
-          }
-        }}
-        className={`page-content page-content-left flex-1 border-r border-slate-200/80 p-5 lg:p-6 flex flex-col justify-between relative overflow-hidden bg-[#fdfdfa] text-left w-full select-none ${canGoPrev ? 'lg:cursor-pointer' : ''}`}
-      >
-        {/* Page curvature effect */}
-        <div className="page-curvature-left" style={{ width: '60px' }} />
 
-        {/* Left Page Header */}
-        <div className="flex justify-between items-center mb-2 shrink-0">
-          <div className="flex flex-col">
-            <span className="text-lg lg:text-xl font-black tracking-tighter uppercase italic mb-0.5 text-slate-800">
-              PAKSHAL <span className="text-[#006e2f]">AGENCYS</span>
-            </span>
-          </div>
-          <div className="text-right">
-            <a
-              href="tel:+919247449522"
-              onClick={(e) => e.stopPropagation()}
-              className="text-[#006e2f] font-bold text-xs tracking-wide hover:underline cursor-pointer"
-            >
-              +91 9247449522
-            </a>
-          </div>
-        </div>
-
-        {/* Large Product Showcase Image */}
-        <div className="relative flex-1 rounded-xl overflow-hidden my-2 min-h-[190px] flex items-center justify-center">
-          <img
-            alt={spread.brandName}
-            className={`w-full h-full max-h-[350px] ${spread.category === 'Kitchen Accessories' || spread.imageFit === 'contain'
-              ? 'object-contain'
-              : 'object-cover'
-              }`}
-            src={spread.image}
-          />
-        </div>
-
-        {/* Bottom Page Number */}
-        <div className="text-[10px] font-black text-slate-400 shrink-0 text-left pl-1">Pg. {pageNumLeft}</div>
-      </div>
-    );
-  };
-
-  const renderRightPage = (idx) => {
-    const spread = SPREADS[idx];
-    if (!spread) return null;
-    const thickness = selectedThicknesses[idx] || spread.defaultThickness;
-    const canGoNext = idx < SPREADS.length - 1 && flipState === 'idle';
-    const pageNumRight = (idx * 2) + 2;
-    return (
-      <div
-        onClick={() => {
-          if (canGoNext) {
-            handleNext();
-          }
-        }}
-        className={`page-content page-content-right flex-1 p-5 lg:p-6 flex flex-col justify-between relative overflow-hidden bg-[#fdfdfa] text-left w-full select-none ${canGoNext ? 'lg:cursor-pointer' : ''}`}
-      >
-        {/* Page curvature effect */}
-        <div className="page-curvature-right" style={{ width: '60px' }} />
-
-        <div className="flex flex-col gap-2.5 flex-1 min-h-0 overflow-hidden">
-          {/* Right Page Header */}
-          <div className="shrink-0">
-            {spread.badge && (
-              <div className="mb-1">
-                <span className="px-2 py-0.5 text-[9px] font-black uppercase tracking-wider rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200/60 inline-block">
-                  {spread.badge}
-                </span>
-              </div>
-            )}
-            <p className="text-slate-500 font-medium text-[11px] lg:text-xs leading-relaxed max-w-sm line-clamp-2">
-              {spread.desc}
-            </p>
-
-            {/* Provided Material, Color, and Size Content */}
-            {(spread.material || spread.colors || spread.sizeDetails) && (
-              <div className="mt-1.5 p-2 bg-[#f5ede0]/60 rounded-lg border border-[#C9A44C]/30 text-[11px] font-semibold text-slate-800 space-y-0.5 max-w-sm">
-                {spread.material && (
-                  <div className="flex gap-1.5 items-start">
-                    <span className="text-[#8c6d23] font-black uppercase text-[9px] tracking-wider min-w-[60px]">Material:</span>
-                    <span className="font-bold text-slate-900">{spread.material}</span>
-                  </div>
-                )}
-                {spread.colors && (
-                  <div className="flex gap-1.5 items-start">
-                    <span className="text-[#8c6d23] font-black uppercase text-[9px] tracking-wider min-w-[60px]">Color:</span>
-                    <span className="font-bold text-slate-900">{spread.colors}</span>
-                  </div>
-                )}
-                {spread.sizeDetails && (
-                  <div className="flex gap-1.5 items-start">
-                    <span className="text-[#8c6d23] font-black uppercase text-[9px] tracking-wider min-w-[60px]">Size:</span>
-                    <span className="font-bold text-slate-900 leading-snug">{spread.sizeDetails}</span>
-                  </div>
-                )}
-              </div>
-            )}
-          </div>
-
-          {/* Thickness / Finishes / Sizes Selection Chips */}
-          <div className="shrink-0">
-            <h3 className="text-[9px] font-black uppercase tracking-widest text-slate-400 mb-1">
-              {spread.thicknessLabel || "Available Thickness"}
-            </h3>
-            <div className="flex flex-wrap gap-1.5">
-              {spread.thicknesses.map(thick => (
-                <span
-                  key={thick}
-                  className="px-2.5 py-0.5 text-[11px] font-bold rounded-md border border-slate-200 bg-white text-slate-700 select-none shadow-2xs"
-                >
-                  {thick}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          {/* Core Features & Applications */}
-          <div className="grid grid-cols-2 gap-3 shrink-0">
-            <div>
-              <h3 className="text-[9px] font-black uppercase tracking-widest text-slate-400 mb-1">Core Features</h3>
-              <div className="space-y-1">
-                {spread.features.slice(0, 3).map((feat, i) => (
-                  <div key={i} className="flex items-center gap-1.5">
-                    <svg className="w-3.5 h-3.5 text-[#006e2f] flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    <span className="text-[11px] font-bold text-slate-700 truncate">{feat}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-            <div>
-              <h3 className="text-[9px] font-black uppercase tracking-widest text-slate-400 mb-1">Applications</h3>
-              <div className="flex flex-wrap gap-1">
-                {spread.applications.slice(0, 3).map((app, i) => (
-                  <span key={i} className="px-2 py-0.5 bg-slate-100 text-slate-600 rounded text-[8.5px] font-black uppercase tracking-wider">
-                    {app}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Technical Specifications Table */}
-          {spread.specs && Object.keys(spread.specs).length > 0 && (
-            <div className="bg-slate-50/80 p-2.5 rounded-xl border border-slate-100/80 mt-auto shrink-0">
-              <div className="flex justify-between items-center mb-1">
-                <h3 className="text-[9px] font-black uppercase tracking-widest text-slate-800">Technical Specifications</h3>
-                <span className="text-[7.5px] font-black text-[#006e2f] px-1.5 py-0.5 bg-white border border-green-700/20 rounded-full uppercase tracking-wider">
-                  Premium Quality
-                </span>
-              </div>
-              <div className="space-y-0.5">
-                {Object.entries(spread.specs).slice(0, 3).map(([key, val]) => (
-                  <div key={key} className="flex justify-between text-[10px] border-b border-slate-200/50 pb-0.5 last:border-b-0 last:pb-0 gap-2">
-                    <span className="text-slate-400 font-bold uppercase tracking-wider truncate">{key}</span>
-                    <span className="text-slate-900 font-black uppercase text-right truncate">{val}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-        </div>
-
-        {/* Bottom Page Number */}
-        <div className="text-[10px] font-black text-slate-400 shrink-0 text-right pr-1 pt-1.5">Pg. {pageNumRight}</div>
-      </div>
-    );
-  };
-
-  const renderSidebarContent = () => {
-    return (
-      <div className="space-y-4 flex-1 overflow-y-auto pr-1 pb-6 min-h-0 no-scrollbar">
-        {Object.entries(categories).map(([catName, items]) => {
-          const isExpanded = !!expandedCategories[catName];
-          return (
-            <div key={catName} className="border-b border-slate-100/50 pb-2 last:border-b-0">
-              {/* Category Dropdown Header */}
-              <button
-                onClick={() => toggleCategory(catName)}
-                className="w-full flex items-center justify-between py-2 text-[12px] font-black uppercase tracking-widest text-slate-500 hover:text-slate-900 cursor-pointer select-none"
-              >
-                <span>{catName}</span>
-                <svg
-                  className={`w-4 h-4 text-slate-400 transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''
-                    }`}
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.5"
-                  viewBox="0 0 24 24"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                </svg>
-              </button>
-
-              {/* Brands List (Dropdown Content) */}
-              <div
-                className={`space-y-1 transition-all duration-300 overflow-hidden ${isExpanded ? 'max-h-[500px] opacity-100 mt-1 pb-1' : 'max-h-0 opacity-0 pointer-events-none'
-                  }`}
-              >
-                {items.map(({ spread, idx }) => {
-                  const isActive = idx === currentSpreadIdx ||
-                    (SPREADS[currentSpreadIdx].parentBrandId && SPREADS[currentSpreadIdx].parentBrandId === spread.brandId);
-                  return (
-                    <button
-                      key={spread.id}
-                      onClick={() => {
-                        handleThumbnailClick(idx);
-                        setShowSidebar(false);
-                      }}
-                      className={`w-full text-left py-2 px-3 rounded-lg text-[13px] transition-all flex items-center justify-between cursor-pointer ${isActive
-                        ? 'bg-[#C9A44C]/10 text-[#C9A44C] font-black'
-                        : 'bg-transparent text-slate-600 hover:bg-slate-50/50 hover:text-slate-900'
-                        }`}
-                    >
-                      <span className="truncate pr-1">{spread.brandName}</span>
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
-          );
-        })}
-      </div>
-    );
-  };
 
   return (
     <div className="w-full min-h-screen bg-[#F8F8F6] font-sans pt-0 pb-4 select-none text-slate-800">
@@ -2429,137 +2130,146 @@ export const ProductsPage = ({ onNavigate, search }) => {
       )}
 
       {/* Compact Category Navigation Deck (Below Navbar) */}
-      <div className="w-full bg-[#F5EDE0] text-slate-800 relative border-b border-[#FAF2DF] animate-fade-in mb-6 sm:mb-8 shadow-2xs pt-[90px] sm:pt-[94px] md:pt-[98px] pb-3.5 sm:pb-4.5">
+      <div className="w-full bg-[#F5EDE0] text-slate-800 relative border-b border-[#FAF2DF] animate-fade-in mb-6 sm:mb-8 shadow-2xs pt-[116px] sm:pt-[96px] md:pt-[100px] pb-3.5 sm:pb-4.5">
         <div className="max-w-[1360px] mx-auto w-full px-3 sm:px-6 relative z-20">
 
-          {/* Header Row */}
-          <div className="flex items-center justify-between gap-3 mb-2.5 px-0.5">
-            <div className="flex items-center gap-2">
-              <span className="text-[11px] font-black uppercase tracking-widest text-[#8c6d23]">
-                Product Categories
-              </span>
-            </div>
-            <span className="text-[10px] font-bold text-slate-400 hidden sm:inline tracking-wider uppercase">
-              Click to browse collection in catalogue
+          {/* Header Row (Hidden on mobile) */}
+          <div className="hidden sm:flex items-center gap-2 mb-2 px-0.5">
+            <span className="text-[11px] font-black uppercase tracking-widest text-[#8c6d23]">
+              Product Categories
             </span>
           </div>
 
-          {/* Category Items - Free of Boxes */}
-          <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-7 gap-2 sm:gap-3 lg:gap-4 pt-2 pb-2 px-0.5">
+          {/* Category Items - Compact Sizing, Text-Only Presentation */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-1.5 sm:gap-2 lg:gap-2.5 pt-0.5 pb-1 px-0.5">
             {[
-              {
-                key: 'Plywood',
-                title: 'Plywood',
-                desc: 'BWP & Calibrated',
-                image: plywoodKingImg
-              },
-              {
-                key: 'Laminates',
-                title: 'Laminates',
-                desc: 'Textured & Decorative',
-                image: laminatesImg
-              },
-              {
-                key: 'Acrylic Panels',
-                title: 'Acrylic Panels',
-                desc: 'High-Gloss & Matte',
-                image: acrylicPanelsImg
-              },
-              {
-                key: 'Veneers',
-                title: 'Veneers',
-                desc: 'Natural Wood Grain',
-                image: veneer2Img
-              },
-              {
-                key: 'Fancy Doors',
-                title: 'Fancy Doors',
-                desc: 'Designer & Flush',
-                image: fancyDoorsImg
-              },
-              {
-                key: 'Architectural Hardware',
-                title: 'Arch. Hardware',
-                desc: 'Luxury Handles',
-                image: hardwareImg
-              },
-              {
-                key: 'Hardware&Fittings',
-                title: 'Hardware & Fittings',
-                desc: 'Systems & Hinges',
-                image: hardwareFittings1
-              }
-            ].map((cat, idx) => {
-              const isActive = activeSpread.category === cat.key;
-              const isLastOdd = idx === 6;
+              { key: 'Plywood', title: 'Plywood' },
+              { key: 'Laminates', title: 'Laminates' },
+              { key: 'Acrylic Panels', title: 'Acrylic Panels' },
+              { key: 'Veneers', title: 'Veneers' },
+              { key: 'Fancy Doors', title: 'Fancy Doors' },
+              { key: 'Architectural Hardware', title: 'Arch. Hardware' },
+              { key: 'Hardware&Fittings', title: 'Hardware & Fittings' }
+            ].map((cat) => {
+              const isActive = (selectedCategoryBrands || activeSpread.category) === cat.key;
               return (
                 <button
                   key={cat.key}
+                  type="button"
                   onClick={() => {
-                    setSelectedCategoryBrands(prev => prev === cat.key ? null : cat.key);
+                    setSelectedCategoryBrands(cat.key);
+                    setSelectedBrand(null); // By default no brand is selected!
                     setExpandedCategories(prev => ({
                       ...prev,
                       [cat.key]: true
                     }));
-                    const firstMatch = SPREADS.findIndex(s => s.category === cat.key && !s.hideFromIndex);
+                    const firstMatch = SPREADS.findIndex(s =>
+                      (s.category === cat.key || s.category.replace(/\s+/g, '') === cat.key.replace(/\s+/g, '')) &&
+                      !s.hideFromIndex
+                    );
                     if (firstMatch !== -1) {
                       handleThumbnailClick(firstMatch);
                     }
                   }}
-                  className={`group flex flex-col items-center justify-center p-1.5 sm:p-2 transition-all duration-300 cursor-pointer text-center select-none w-full min-w-0 relative ${isLastOdd ? 'col-start-2 sm:col-start-auto' : ''
+                  className={`group flex items-center justify-center px-2 py-1.5 sm:px-2.5 sm:py-2 rounded-lg sm:rounded-xl transition-all duration-200 cursor-pointer text-center select-none w-full border ${isActive
+                    ? 'bg-[#006e2f] text-white border-[#006e2f] shadow-sm shadow-[#006e2f]/20 scale-[1.02]'
+                    : 'bg-white hover:bg-[#FAF6EE] text-slate-800 hover:text-[#006e2f] border-slate-200/80 hover:border-[#8c6d23]/40 shadow-2xs hover:shadow-xs'
                     }`}
                 >
-                  {/* Category Image - Free of box */}
-                  <div className={`w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 rounded-2xl overflow-hidden shrink-0 transition-all duration-300 ${isActive
-                      ? 'ring-2.5 ring-[#006e2f] ring-offset-2 ring-offset-[#F5EDE0] shadow-md -translate-y-1'
-                      : 'ring-1 ring-slate-300/70 group-hover:ring-2 group-hover:ring-[#006e2f] group-hover:ring-offset-2 group-hover:ring-offset-[#F5EDE0] group-hover:shadow-md group-hover:shadow-[#006e2f]/20 group-hover:-translate-y-0.5'
+                  <span className={`text-[11px] sm:text-[12px] font-black tracking-tight leading-tight transition-colors ${isActive ? 'text-white' : 'text-slate-800 group-hover:text-[#006e2f]'
                     }`}>
-                    <img
-                      src={cat.image}
-                      alt={cat.title}
-                      className="w-full h-full object-cover brightness-105 contrast-105 transition-all duration-300 group-hover:brightness-115 group-hover:contrast-110"
-                      style={{ backfaceVisibility: 'hidden' }}
-                    />
-                  </div>
-
-                  {/* Category Title & Subtitle */}
-                  <div className="flex flex-col items-center w-full mt-1.5">
-                    <span className={`text-[11px] sm:text-xs lg:text-[13px] font-black tracking-tight leading-tight transition-colors line-clamp-1 ${isActive ? 'text-[#006e2f]' : 'text-slate-800 group-hover:text-[#006e2f]'
-                      }`}>
-                      {cat.title}
-                    </span>
-                    <span className="text-[9px] sm:text-[10px] font-medium text-slate-500 line-clamp-1 mt-0.5 leading-none">
-                      {cat.desc}
-                    </span>
-                    {isActive && (
-                      <span className="h-0.5 w-4 bg-[#006e2f] rounded-full mt-1 animate-fade-in" />
-                    )}
-                  </div>
+                    {cat.title}
+                  </span>
                 </button>
               );
             })}
           </div>
 
-          {/* Selected Category Brand Names (Displays where the red line was drawn when a category is clicked) */}
+          {/* Selected Category Brand Names - Styled Distinctly as Brands */}
           {selectedCategoryBrands && (() => {
             const brandsList = getCategoryBrands(selectedCategoryBrands);
 
-            return (
-              <div className="mt-3 animate-fade-in flex flex-wrap items-center justify-center gap-2 sm:gap-2.5">
-                {brandsList.length > 0 ? (
-                  brandsList.map((brandName) => (
-                    <button
-                      key={brandName}
-                      type="button"
-                      onClick={() => handleBrandClick(brandName)}
-                      className="px-4 py-1.5 rounded-full text-[12px] sm:text-[13px] font-bold border border-[#8c6d23]/25 bg-white text-slate-800 shadow-2xs select-none transition-all cursor-pointer active:scale-95 hover:border-[#8c6d23]/40 hover:bg-[#FAF6EE]"
-                    >
-                      {brandName}
-                    </button>
-                  ))
-                ) : (
+            if (!brandsList.length) {
+              return (
+                <div className="mt-2 text-center">
                   <span className="text-xs font-semibold text-slate-500 italic">No brand listings available</span>
-                )}
+                </div>
+              );
+            }
+
+            // Split into exactly 2 rows if more than 3 brands exist
+            const shouldSplit = brandsList.length > 3;
+            const midpoint = shouldSplit ? Math.ceil(brandsList.length / 2) : brandsList.length;
+            const row1 = brandsList.slice(0, midpoint);
+            const row2 = shouldSplit ? brandsList.slice(midpoint) : [];
+
+            return (
+              <div className="mt-2.5 animate-fade-in w-full">
+
+                {/* Desktop View: Normal single row */}
+                <div className="hidden md:flex items-center justify-center gap-1.5 lg:gap-2 flex-wrap max-w-full px-1">
+                  {brandsList.map((brandName) => {
+                    const isBrandActive = selectedBrand && selectedBrand.toLowerCase() === brandName.toLowerCase();
+                    return (
+                      <button
+                        key={brandName}
+                        type="button"
+                        onClick={() => handleBrandClick(brandName)}
+                        className={`group flex items-center justify-center px-3 py-1 sm:py-1.5 rounded-full text-[11px] sm:text-[12px] font-bold border select-none transition-all cursor-pointer active:scale-95 whitespace-nowrap shadow-2xs ${isBrandActive
+                          ? 'bg-slate-900 text-white border-slate-900 shadow-md ring-2 ring-[#006e2f]/40 scale-[1.02]'
+                          : 'bg-white hover:bg-[#FAF6EE] text-slate-800 hover:text-[#006e2f] border-slate-300/80 hover:border-[#8c6d23]/50'
+                          }`}
+                      >
+                        <span>{brandName}</span>
+                      </button>
+                    );
+                  })}
+                </div>
+
+                {/* Mobile View: Exactly 2 rows */}
+                <div className="flex md:hidden flex-col items-center justify-center gap-1.5 w-full">
+                  {/* Row 1 */}
+                  <div className="flex items-center justify-center gap-1.5 max-w-full overflow-x-auto no-scrollbar px-1">
+                    {row1.map((brandName) => {
+                      const isBrandActive = selectedBrand && selectedBrand.toLowerCase() === brandName.toLowerCase();
+                      return (
+                        <button
+                          key={brandName}
+                          type="button"
+                          onClick={() => handleBrandClick(brandName)}
+                          className={`group flex items-center justify-center px-2.5 py-1 rounded-full text-[11px] font-bold border select-none transition-all cursor-pointer active:scale-95 whitespace-nowrap shrink-0 shadow-2xs ${isBrandActive
+                            ? 'bg-slate-900 text-white border-slate-900 shadow-md ring-2 ring-[#006e2f]/40 scale-[1.02]'
+                            : 'bg-white hover:bg-[#FAF6EE] text-slate-800 hover:text-[#006e2f] border-slate-300/80 hover:border-[#8c6d23]/50'
+                            }`}
+                        >
+                          <span>{brandName}</span>
+                        </button>
+                      );
+                    })}
+                  </div>
+
+                  {/* Row 2 */}
+                  {row2.length > 0 && (
+                    <div className="flex items-center justify-center gap-1.5 max-w-full overflow-x-auto no-scrollbar px-1">
+                      {row2.map((brandName) => {
+                        const isBrandActive = selectedBrand && selectedBrand.toLowerCase() === brandName.toLowerCase();
+                        return (
+                          <button
+                            key={brandName}
+                            type="button"
+                            onClick={() => handleBrandClick(brandName)}
+                            className={`group flex items-center justify-center px-2.5 py-1 rounded-full text-[11px] font-bold border select-none transition-all cursor-pointer active:scale-95 whitespace-nowrap shrink-0 shadow-2xs ${isBrandActive
+                              ? 'bg-slate-900 text-white border-slate-900 shadow-md ring-2 ring-[#006e2f]/40 scale-[1.02]'
+                              : 'bg-white hover:bg-[#FAF6EE] text-slate-800 hover:text-[#006e2f] border-slate-300/80 hover:border-[#8c6d23]/50'
+                              }`}
+                          >
+                            <span>{brandName}</span>
+                          </button>
+                        );
+                      })}
+                    </div>
+                  )}
+                </div>
               </div>
             );
           })()}
@@ -2567,208 +2277,143 @@ export const ProductsPage = ({ onNavigate, search }) => {
         </div>
       </div>
 
-      {/* Brochure Section Heading */}
-      <div className="max-w-[1280px] mx-auto px-6 mb-8">
-        <div className="flex items-center justify-center">
-          <div className="flex items-center gap-3 px-5 py-2.5 bg-white rounded-full border border-slate-200 shadow-sm">
-            <svg className="w-4 h-4 text-[#006e2f]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
-            </svg>
-            <span className="text-[11px] font-black uppercase tracking-widest text-slate-700">Product Catalogue</span>
-          </div>
-        </div>
-      </div>
 
-      {/* Catalogue Book Section */}
+
+      {/* Product Spotlight Showcase Section - Seamless 2-Column Layout */}
       <div
         id="catalogue-book-section"
-        className="max-w-[1360px] mx-auto px-3 sm:px-6 relative scroll-mt-28 overflow-x-clip"
+        className="w-full max-w-[1536px] mx-auto px-3 sm:px-6 lg:px-8 relative mb-16"
       >
-        <div className="flex flex-col xl:flex-row gap-6 xl:gap-8 items-center xl:items-start justify-center relative">
-          {/* Desktop Sidebar Navigation */}
-          <aside
-            className="catalog-sidebar hidden xl:flex w-72 lg:w-80 sticky top-28 flex-shrink-0 bg-white/80 backdrop-blur-md p-5 rounded-2xl border border-slate-200/50 shadow-sm h-[520px] flex-col overflow-hidden z-20"
-          >
-            {/* Desktop Title Header */}
-            <div className="mb-4 pb-3 border-b border-slate-200/60 flex-shrink-0 text-left">
-              <h3 className="text-xs font-black uppercase tracking-widest text-[#C9A44C]">
-                Catalogue Index
-              </h3>
-              <p className="text-[10px] text-slate-400 font-bold uppercase mt-0.5">
-                Select Brand to View Page
-              </p>
-            </div>
-            {renderSidebarContent()}
-          </aside>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
 
-          {/* Main booklet area wrapper */}
-          <div className="flex-1 w-full max-w-[960px] min-w-0 flex flex-col items-center">
-            {/* Tablet & Mobile Index Quick Bar */}
-            <div className="xl:hidden w-full flex items-center justify-between gap-3 mb-3 px-1 max-w-[960px]">
+          {/* Left: Product Image with Prev/Next Overlay Buttons */}
+          <div className="lg:col-span-7 flex items-center justify-start">
+            <div className="relative w-full overflow-hidden rounded-2xl shadow-sm group">
+              <img
+                src={activeSpread.image}
+                alt={activeSpread.brandName}
+                className={`w-full max-h-[460px] sm:max-h-[520px] md:max-h-[580px] transition-transform duration-500 hover:scale-[1.01] ${activeSpread.category === 'Kitchen Accessories' || activeSpread.imageFit === 'contain'
+                  ? 'object-contain'
+                  : 'object-cover'
+                  }`}
+              />
+
+              {/* Prev Button Overlay (<) - Transparent Frosted Glass */}
               <button
-                onClick={() => setShowSidebar(true)}
-                className="inline-flex items-center gap-2 px-3.5 py-1.5 sm:px-4 sm:py-2 bg-white hover:bg-slate-50 border border-slate-200 text-slate-800 font-extrabold text-[11px] sm:text-xs rounded-xl shadow-2xs hover:shadow-xs transition-all cursor-pointer"
+                type="button"
+                onClick={handlePrevImage}
+                className="absolute left-3 sm:left-5 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/25 hover:bg-black/45 text-white shadow-md hover:shadow-lg backdrop-blur-md border border-white/30 flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95 cursor-pointer"
+                title="Previous Image"
+                aria-label="Previous Image"
               >
-                <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#006e2f]" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                <svg className="w-5 h-5 sm:w-6 sm:h-6 drop-shadow-sm" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
                 </svg>
-                <span>Catalogue Index</span>
-                <span className="text-[10px] text-slate-500 font-bold uppercase tracking-wider">{activeSpread.category}</span>
               </button>
-              <span className="text-[11px] font-bold text-slate-400">
-                Pg. {(currentSpreadIdx * 2) + 1}-{(currentSpreadIdx * 2) + 2}
-              </span>
-            </div>
 
-            {/* The Open Book */}
-            <div
-              className="w-full flex justify-center pb-3 mb-2"
-              style={{
-                height: `${Math.round(520 * scale)}px`,
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'flex-start'
-              }}
-            >
-              <div
-                className="book-outer-wrap flex-shrink-0 w-[960px] relative"
-                style={{
-                  transform: `scale(${scale})`,
-                  transformOrigin: 'top center'
-                }}
-              >
-                <div className="book-container book-shadow-3d relative">
-
-                  {/* Hardcover structural base wrapping the stacks */}
-                  <div className="book-hardcover-base" />
-
-                  {/* Realistic Page Stack Effect (Left, Right, and Bottom edges) */}
-                  {/* Right Side Pages Stack */}
-                  <div className="absolute top-[2px] bottom-[2px] right-[-3px] w-[3px] bg-[#fdfdfa] border-r-2 border-black/15 border-b border-black/10 pointer-events-none rounded-r-md -z-1" />
-                  <div className="absolute top-[4px] bottom-[4px] right-[-6px] w-[3px] bg-[#fdfdfa] border-r-2 border-black/15 border-b border-black/10 pointer-events-none rounded-r-md -z-2" />
-                  <div className="absolute top-[6px] bottom-[6px] right-[-9px] w-[3px] bg-[#fdfdfa] border-r-2 border-black/15 border-b border-black/10 pointer-events-none rounded-r-md -z-3" />
-
-                  {/* Left Side Pages Stack */}
-                  <div className="absolute top-[2px] bottom-[2px] left-[-3px] w-[3px] bg-[#fdfdfa] border-l-2 border-black/15 border-b border-black/10 pointer-events-none rounded-l-md -z-1" />
-                  <div className="absolute top-[4px] bottom-[4px] left-[-6px] w-[3px] bg-[#fdfdfa] border-l-2 border-black/15 border-b border-black/10 pointer-events-none rounded-l-md -z-2" />
-                  <div className="absolute top-[6px] bottom-[6px] left-[-9px] w-[3px] bg-[#fdfdfa] border-l-2 border-black/15 border-b border-black/10 pointer-events-none rounded-l-md -z-3" />
-
-                  {/* Bottom Pages Stack */}
-                  <div className="absolute bottom-[-3px] left-[3px] right-[3px] h-[3px] bg-[#fdfdfa] border-b-2 border-black/15 pointer-events-none rounded-b-md -z-1" />
-                  <div className="absolute bottom-[-6px] left-[6px] right-[6px] h-[3px] bg-[#fdfdfa] border-b-2 border-black/15 pointer-events-none rounded-b-md -z-2" />
-                  <div className="absolute bottom-[-9px] left-[9px] right-[9px] h-[3px] bg-[#fdfdfa] border-b-2 border-black/15 pointer-events-none rounded-b-md -z-3" />
-
-                  {/* Realistic Spine Elements */}
-                  <div className="book-spine" />
-                  <div className="spine-binding" />
-
-                  <div className="flex flex-row relative">
-
-                    {/* Left Page (static under flip overlay) */}
-                    {renderLeftPage(flipState === 'flipping-next' ? prevSpreadIdx : currentSpreadIdx)}
-
-                    {/* Right Page (static under flip overlay) */}
-                    {renderRightPage(flipState === 'flipping-prev' ? prevSpreadIdx : currentSpreadIdx)}
-
-                    {/* 3D Page Turning Card Overlay */}
-                    {flipState !== 'idle' && (
-                      <div
-                        onAnimationEnd={() => setFlipState('idle')}
-                        className={`flip-card ${flipState === 'flipping-next' ? 'flip-card-next' : 'flip-card-prev'}`}
-                      >
-                        {/* Front of the flipping page */}
-                        <div className="flip-front">
-                          {flipState === 'flipping-next'
-                            ? renderRightPage(prevSpreadIdx)
-                            : renderLeftPage(prevSpreadIdx)
-                          }
-                          <div className="flip-shadow-overlay" />
-                        </div>
-                        {/* Back of the flipping page */}
-                        <div className="flip-back">
-                          {flipState === 'flipping-next'
-                            ? renderLeftPage(currentSpreadIdx)
-                            : renderRightPage(currentSpreadIdx)
-                          }
-                          <div className="flip-shadow-overlay" />
-                        </div>
-                      </div>
-                    )}
-
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Navigation Controls */}
-            <div className="flex items-center justify-center gap-4 sm:gap-6 mt-3 sm:mt-4">
+              {/* Next Button Overlay (>) - Transparent Frosted Glass */}
               <button
-                onClick={handlePrev}
-                disabled={currentSpreadIdx === 0 || flipState !== 'idle'}
-                className="flex items-center gap-2 group text-slate-800 font-bold text-xs cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed"
+                type="button"
+                onClick={handleNextImage}
+                className="absolute right-3 sm:right-5 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/25 hover:bg-black/45 text-white shadow-md hover:shadow-lg backdrop-blur-md border border-white/30 flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95 cursor-pointer"
+                title="Next Image"
+                aria-label="Next Image"
               >
-                <span className="w-8 h-8 rounded-full border border-slate-200 flex items-center justify-center bg-white group-hover:bg-slate-900 group-hover:text-white transition-all shadow-sm">
-                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-                  </svg>
-                </span>
-                <span className="hidden sm:inline tracking-tight">Previous Spread</span>
+                <svg className="w-5 h-5 sm:w-6 sm:h-6 drop-shadow-sm" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                </svg>
               </button>
-
-              <div className="px-5 py-2 bg-white rounded-full shadow-sm border border-slate-100 font-black text-xs text-slate-800">
-                {(currentSpreadIdx * 2) + 1} - {(currentSpreadIdx * 2) + 2} <span className="text-slate-400 font-medium mx-1.5">in</span> {activeSpread.category}
-              </div>
-
-              <button
-                onClick={handleNext}
-                disabled={currentSpreadIdx === SPREADS.length - 1 || flipState !== 'idle'}
-                className="flex items-center gap-2 group text-slate-800 font-bold text-xs cursor-pointer disabled:opacity-30 disabled:cursor-not-allowed"
-              >
-                <span className="hidden sm:inline tracking-tight">Next Spread</span>
-                <span className="w-8 h-8 rounded-full border border-slate-200 flex items-center justify-center bg-white group-hover:bg-slate-900 group-hover:text-white transition-all shadow-sm">
-                  <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                  </svg>
-                </span>
-              </button>
-            </div>
-
-            {/* Brochure Download Dropdown Section */}
-            <div className="mt-4 pt-3 border-t border-slate-200/50 flex flex-col items-center justify-center text-center relative z-30">
-              <button
-                onClick={() => setIsBrochureDropdownOpen(!isBrochureDropdownOpen)}
-                className="group relative inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-[#006e2f] hover:bg-[#005c26] text-white font-extrabold text-xs sm:text-[13px] uppercase tracking-wider shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer"
-              >
-                <span>For more details Download Brochure</span>
-                <ChevronDown className={`w-4 h-4 text-white transition-transform duration-200 ${isBrochureDropdownOpen ? 'rotate-180' : ''}`} />
-              </button>
-
-              {isBrochureDropdownOpen && (
-                <div className="mt-2 w-72 bg-white rounded-xl border border-slate-200 shadow-xl overflow-hidden animate-fade-in text-left z-50 divide-y divide-slate-100">
-                  <a
-                    href={sgCatalogPdf}
-                    download="SG CATALOG.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={() => setIsBrochureDropdownOpen(false)}
-                    className="block px-4 py-3 text-xs font-extrabold text-slate-800 hover:bg-[#f0f9f4] hover:text-[#006e2f] transition-colors cursor-pointer"
-                  >
-                    SG Product Catalogue
-                  </a>
-                  <a
-                    href={hardwarePdf}
-                    download="hardwareaccessories.pdf"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    onClick={() => setIsBrochureDropdownOpen(false)}
-                    className="block px-4 py-3 text-xs font-extrabold text-slate-800 hover:bg-[#f0f9f4] hover:text-[#006e2f] transition-colors cursor-pointer"
-                  >
-                    Hardware Accessories Catalogue
-                  </a>
-                </div>
-              )}
             </div>
           </div>
+
+          {/* Right: Text Content in the gap */}
+          <div className="lg:col-span-5 flex flex-col justify-center space-y-4 text-left">
+
+
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 tracking-tight leading-tight">
+              {activeSpread.brandName}
+            </h2>
+
+            {activeSpread.tagline && (
+              <p className="text-[#8c6d23] font-bold text-sm sm:text-base">
+                {activeSpread.tagline}
+              </p>
+            )}
+
+            <p className="text-slate-600 text-sm leading-relaxed">
+              {activeSpread.desc}
+            </p>
+
+            {/* Material & Color Tags */}
+            {(activeSpread.material || activeSpread.colors) && (
+              <div className="flex flex-wrap items-center gap-3 pt-1 text-xs text-slate-800">
+                {activeSpread.material && (
+                  <div className="flex gap-1.5 items-center bg-[#FAF6EE] px-3 py-1 rounded-lg border border-[#C9A44C]/30">
+                    <span className="text-[#8c6d23] font-black uppercase text-[10px] tracking-wider">Material:</span>
+                    <span className="font-bold text-slate-900">{activeSpread.material}</span>
+                  </div>
+                )}
+                {activeSpread.colors && (
+                  <div className="flex gap-1.5 items-center bg-[#FAF6EE] px-3 py-1 rounded-lg border border-[#C9A44C]/30">
+                    <span className="text-[#8c6d23] font-black uppercase text-[10px] tracking-wider">Color:</span>
+                    <span className="font-bold text-slate-900">{activeSpread.colors}</span>
+                  </div>
+                )}
+              </div>
+            )}
+
+            {/* Action Buttons */}
+            <div className="flex flex-wrap sm:flex-nowrap gap-3 pt-3">
+              <button
+                onClick={handleGetQuote}
+                className="px-7 py-3.5 bg-[#006e2f] hover:bg-[#005a26] text-white text-xs font-black tracking-widest uppercase rounded-xl shadow-sm hover:shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer active:scale-98"
+              >
+                <span>Get Instant Quote</span>
+                <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                </svg>
+              </button>
+
+              {/* Download Brochure Dropdown */}
+              <div className="relative">
+                <button
+                  onClick={() => setIsBrochureDropdownOpen(!isBrochureDropdownOpen)}
+                  className="px-5 py-3.5 bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-black tracking-wider uppercase rounded-xl transition-all flex items-center justify-center gap-1.5 cursor-pointer active:scale-98"
+                >
+                  <Download className="w-4 h-4 text-slate-700" />
+                  <span>Brochure</span>
+                  <ChevronDown className={`w-3.5 h-3.5 text-slate-600 transition-transform duration-200 ${isBrochureDropdownOpen ? 'rotate-180' : ''}`} />
+                </button>
+
+                {isBrochureDropdownOpen && (
+                  <div className="absolute left-0 sm:right-0 bottom-full mb-2 w-64 bg-white rounded-xl border border-slate-200 shadow-xl overflow-hidden animate-fade-in text-left z-50 divide-y divide-slate-100">
+                    <a
+                      href={sgCatalogPdf}
+                      download="SG CATALOG.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => setIsBrochureDropdownOpen(false)}
+                      className="block px-4 py-3 text-xs font-extrabold text-slate-800 hover:bg-[#f0f9f4] hover:text-[#006e2f] transition-colors cursor-pointer"
+                    >
+                      SG Product Catalogue
+                    </a>
+                    <a
+                      href={hardwarePdf}
+                      download="hardwareaccessories.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => setIsBrochureDropdownOpen(false)}
+                      className="block px-4 py-3 text-xs font-extrabold text-slate-800 hover:bg-[#f0f9f4] hover:text-[#006e2f] transition-colors cursor-pointer"
+                    >
+                      Hardware Accessories Catalogue
+                    </a>
+                  </div>
+                )}
+              </div>
+            </div>
+
+          </div>
+
         </div>
       </div>
 
@@ -2903,7 +2548,7 @@ export const ProductsPage = ({ onNavigate, search }) => {
                 <div className="flex items-center justify-center space-x-3 mb-3">
                   <span className="h-[1px] w-8 md:w-16 bg-emerald-500"></span>
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-                  <span className="text-xs md:text-sm font-extrabold tracking-wider text-emerald-600 uppercase">AVAILABLE SIZES & THICKNESS</span>
+                  <span className="text-xs md:text-sm font-extrabold tracking-wider text-emerald-600 uppercase">AVAILABLE THICKNESS OPTIONS</span>
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
                   <span className="h-[1px] w-8 md:w-16 bg-emerald-500"></span>
                 </div>
@@ -2915,51 +2560,8 @@ export const ProductsPage = ({ onNavigate, search }) => {
                 </p>
               </header>
 
-              {/* SIZE SELECTOR TABS */}
-              <div className="flex flex-col items-center justify-center mb-6 sm:mb-8">
-                <span className="text-[10px] sm:text-xs font-black uppercase tracking-[0.2em] text-[#8c6d23] mb-2.5 block">
-                  Select Plywood Size (ft)
-                </span>
-                <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-3">
-                  {['8 x 4', '7 x 4', '6 x 4', '6 x 3'].map(size => {
-                    const isSelected = selectedSize === size;
-                    return (
-                      <button
-                        key={size}
-                        onClick={() => setSelectedSize(size)}
-                        className={`px-4 sm:px-6 py-2 sm:py-2.5 text-xs font-black uppercase tracking-wider rounded-xl transition-all duration-300 cursor-pointer ${isSelected
-                          ? 'bg-[#8c6d23] text-white shadow-md shadow-[#8c6d23]/25 scale-[1.02]'
-                          : 'bg-white border border-slate-200 text-slate-700 hover:border-[#8c6d23] hover:text-[#8c6d23] shadow-xs'
-                          }`}
-                      >
-                        {size} {size === '8 x 4' && <span className="text-[9px] opacity-80 ml-1 font-extrabold">(Standard)</span>}
-                      </button>
-                    );
-                  })}
-                </div>
-              </div>
-
-              {!selectedSize ? (
-                /* Hidden/Placeholder state when no size is selected */
-                <div className="w-full py-16 px-6 bg-slate-50/50 rounded-[24px] border border-dashed border-slate-200/80 flex flex-col items-center justify-center text-center animate-fade-in my-6">
-                  <div className="w-16 h-16 rounded-full bg-emerald-50 flex items-center justify-center mb-4 text-emerald-600">
-                    <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5v-4m0 4h-4m4 0l-5-5" />
-                    </svg>
-                  </div>
-                  <h3 className="text-base font-black text-slate-800 uppercase tracking-wide">No Size Selected</h3>
-                  <p className="text-xs font-semibold text-slate-500 max-w-sm mt-2 leading-relaxed">
-                    Please select a plywood sheet size above to visualize the available thicknesses and 3D stack.
-                  </p>
-                </div>
-              ) : (() => {
-                const sizeFactors = {
-                  '8 x 4': { length: 1.0, width: 1.0 },
-                  '7 x 4': { length: 0.875, width: 1.0 },
-                  '6 x 4': { length: 0.75, width: 1.0 },
-                  '6 x 3': { length: 0.75, width: 0.75 }
-                };
-                const factors = sizeFactors[selectedSize] || { length: 1.0, width: 1.0 };
+              {(() => {
+                const factors = { length: 1.0, width: 1.0 };
 
                 return (
                   <>
@@ -3000,8 +2602,8 @@ export const ProductsPage = ({ onNavigate, search }) => {
                                 <div className="absolute left-2.5 top-1/2 -translate-y-1/2 flex items-center gap-1.5 z-20">
                                   <span
                                     className={`px-2 py-0.5 rounded-full text-[10px] font-black uppercase tracking-wider transition-all duration-200 shadow-xs ${isSelected
-                                        ? 'bg-[#8c6d23] text-white ring-2 ring-[#8c6d23]/40 scale-105'
-                                        : 'bg-white/95 text-slate-800 border border-slate-200/90'
+                                      ? 'bg-[#8c6d23] text-white ring-2 ring-[#8c6d23]/40 scale-105'
+                                      : 'bg-white/95 text-slate-800 border border-slate-200/90'
                                       }`}
                                   >
                                     {displayVal}
@@ -3009,8 +2611,8 @@ export const ProductsPage = ({ onNavigate, search }) => {
                                   <span className="w-2.5 h-[1.5px] bg-[#8c6d23]/60 hidden sm:inline-block" />
                                   <span
                                     className={`w-2 h-2 rounded-full border-2 transition-all shrink-0 ${isSelected
-                                        ? 'bg-emerald-500 border-white ring-2 ring-emerald-400/50 scale-125'
-                                        : 'bg-white border-[#8c6d23]'
+                                      ? 'bg-emerald-500 border-white ring-2 ring-emerald-400/50 scale-125'
+                                      : 'bg-white border-[#8c6d23]'
                                       }`}
                                   />
                                 </div>
@@ -3036,8 +2638,8 @@ export const ProductsPage = ({ onNavigate, search }) => {
                               key={opt.value}
                               onClick={() => handleThicknessSelect(displayVal)}
                               className={`flex flex-col items-center p-1 sm:p-2 rounded-xl sm:rounded-2xl border transition-all duration-200 cursor-pointer text-center outline-none ${isSelected
-                                  ? 'bg-white border-[#8c6d23] ring-2 ring-[#8c6d23]/40 shadow-md scale-[1.03]'
-                                  : 'bg-white border-slate-200/80 hover:border-slate-300 shadow-2xs'
+                                ? 'bg-white border-[#8c6d23] ring-2 ring-[#8c6d23]/40 shadow-md scale-[1.03]'
+                                : 'bg-white border-slate-200/80 hover:border-slate-300 shadow-2xs'
                                 }`}
                             >
                               {/* Mini Wood Slice Preview */}
@@ -3330,52 +2932,12 @@ export const ProductsPage = ({ onNavigate, search }) => {
                   </svg>
                   <span>All thickness in mm</span>
                 </div>
-                <span className="hidden md:inline text-gray-300">|</span>
-                <div className="flex items-center space-x-1.5">
-                  <svg className="w-4 h-4 text-emerald-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                  </svg>
-                  <span>All sizes in feet</span>
-                </div>
               </footer>
 
             </div>
           </div>
         );
       })()}
-
-      {/* Applications Section */}
-      <div className="max-w-[1380px] mx-auto px-2 mb-16 animate-fade-in text-center">
-        <span className="text-[11px] font-black tracking-[0.25em] text-[#006e2f] uppercase block mb-2">
-          Applications
-        </span>
-        <h3 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-10 tracking-tight font-sans">
-          Where {getOverviewTitle(activeSpread)} Fits Best
-        </h3>
-
-        {/* Grid of 4 Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
-          {getBrandApplications(activeSpread).map((app, i) => (
-            <div key={i} className="bg-white rounded-[24px] border border-slate-200/50 shadow-sm overflow-hidden flex flex-col hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-              <div className="w-full aspect-[4/3] overflow-hidden bg-slate-100">
-                <img
-                  src={app.image}
-                  alt={app.title}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="p-6 flex flex-col flex-grow bg-white border-t border-slate-100">
-                <span className="text-xs font-black tracking-wider text-[#006e2f] uppercase">
-                  {app.title}
-                </span>
-                <p className="text-[13px] font-semibold text-slate-500 mt-2 leading-relaxed">
-                  {app.desc}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
 
       {/* Technical Specifications Section */}
       <div className="max-w-[1380px] mx-auto px-2 mb-16 animate-fade-in text-center">
@@ -3518,8 +3080,8 @@ export const ProductsPage = ({ onNavigate, search }) => {
         </div>
       </div>
 
-      {/* Floating Action Buttons */}
-      <div className="fixed right-3 bottom-5 sm:right-5 sm:bottom-6 z-[40] flex flex-col gap-2">
+      {/* Floating Action Buttons (Hidden on mobile view) */}
+      <div className="hidden sm:flex fixed sm:right-5 sm:bottom-6 z-[40] flex-col gap-2">
         <a
           href="https://wa.me/919247449522"
           target="_blank"
@@ -3554,35 +3116,8 @@ export const ProductsPage = ({ onNavigate, search }) => {
         </button>
       </div>
 
-      {/* Mobile Sidebar Slide-over Drawer */}
-      {showSidebar && (
-        <div className="fixed inset-0 z-[130] xl:hidden">
-          {/* Backdrop shadow */}
-          <div
-            onClick={() => setShowSidebar(false)}
-            className="absolute inset-0 bg-black/50 backdrop-blur-sm transition-opacity"
-          />
-          {/* Slide-over panel */}
-          <div className="absolute top-0 bottom-0 left-0 w-80 max-w-[85vw] bg-[#FAF8F5] shadow-2xl p-6 flex flex-col animate-fade-in text-left border-r border-slate-200/50 overflow-hidden">
-            <div className="flex justify-between items-center mb-5 border-b border-slate-200/60 pb-3 flex-shrink-0">
-              <div className="flex flex-col text-left">
-                <span className="text-sm font-black uppercase tracking-widest text-[#C9A44C]">Catalogue Index</span>
-                <span className="text-[11px] text-slate-400 font-bold uppercase mt-0.5">Select Brand to View Page</span>
-              </div>
-              <button
-                onClick={() => setShowSidebar(false)}
-                className="w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center cursor-pointer transition-colors"
-                aria-label="Close Catalogue Index"
-              >
-                <svg className="w-4 h-4 text-slate-600" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
-            </div>
-            {renderSidebarContent()}
-          </div>
-        </div>
-      )}
+
     </div>
   );
 };
+

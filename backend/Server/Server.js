@@ -126,7 +126,7 @@ app.get('/', (req, res) => {
 // Determine host: bind to '0.0.0.0' to accept IPv4/IPv6 loopback connections reliably
 const host = process.env.HOST || '0.0.0.0';
 
-app.listen(PORT, host, () => {
+const server = app.listen(PORT, host, () => {
   console.log(`\nServer is running:`);
   console.log(`  - Local:   http://localhost:${PORT}`);
 
@@ -142,6 +142,15 @@ app.listen(PORT, host, () => {
     }
   }
   console.log('');
+});
+
+server.on('error', (err) => {
+  if (err.code === 'EADDRINUSE') {
+    console.error(`\n[Server Warning] Port ${PORT} is already in use.`);
+    console.error(`A backend server instance appears to already be running on port ${PORT}.\n`);
+  } else {
+    console.error('Server error:', err);
+  }
 });
 
 
