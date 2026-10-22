@@ -1920,32 +1920,6 @@ export const BRAND_CONFIG = [
         <circle cx="6" cy="12" r="1.2" fill="currentColor" />
       </svg>
     )
-  },
-  {
-    name: 'Tandem Box',
-    displayName: 'TANDEM BOX',
-    trademark: true,
-    categories: ['Kitchen Accessories'],
-    icon: (
-      <svg className="w-6 h-5 text-[#C5A059]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="3" y="5" width="18" height="14" rx="2" />
-        <path d="M3 11h18M9 15h6" />
-      </svg>
-    )
-  },
-  {
-    name: 'Drawer Channel',
-    displayName: 'DRAWER CHANNEL',
-    trademark: true,
-    categories: ['Sliding Systems', 'Hardware & Fittings'],
-    icon: (
-      <svg className="w-6 h-5 text-[#C5A059]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="2" y="7" width="20" height="10" rx="1.5" />
-        <line x1="6" y1="12" x2="18" y2="12" strokeDasharray="2 2" />
-        <circle cx="5" cy="12" r="1" fill="currentColor" />
-        <circle cx="19" cy="12" r="1" fill="currentColor" />
-      </svg>
-    )
   }
 ];
 
@@ -2058,6 +2032,21 @@ export const getCategoriesForBrand = (brandName) => {
     return brand.categories;
   }
   return ['Plywood'];
+};
+
+export const getCanonicalCategory = (categoryName) => {
+  if (!categoryName) return 'Plywood';
+  const c = categoryName.toLowerCase().trim();
+  if (c === 'arch. hardware' || c.includes('arch') || c.includes('architectural')) return 'Arch. Hardware';
+  if (c === 'hardware & fittings' || c.includes('hardware') || c.includes('fittings')) return 'Hardware & Fittings';
+  if (c.includes('sliding')) return 'Sliding Systems';
+  if (c.includes('plywood')) return 'Plywood';
+  if (c.includes('laminate')) return 'Laminates';
+  if (c.includes('acrylic')) return 'Acrylic Panels';
+  if (c.includes('veneer')) return 'Veneers';
+  if (c.includes('door')) return 'Fancy Doors';
+  if (c.includes('kitchen')) return 'Kitchen Accessories';
+  return 'Plywood';
 };
 
 export const ProductsPage = ({ onNavigate, search }) => {
@@ -2425,10 +2414,7 @@ export const ProductsPage = ({ onNavigate, search }) => {
       if (activeSpread.brandName) {
         setSelectedBrand(activeSpread.brandName);
       }
-      let cat = activeSpread.category;
-      if (cat === 'Architectural Hardware') cat = 'Arch. Hardware';
-      else if (cat === 'Hardware&Fittings' || cat === 'Hardware & Fittings') cat = 'Hardware & Fittings';
-      setSelectedCategory(cat);
+      setSelectedCategory(getCanonicalCategory(activeSpread.category));
       setExpandedCategories(prev => ({
         ...prev,
         [activeSpread.category]: true
@@ -2522,19 +2508,19 @@ export const ProductsPage = ({ onNavigate, search }) => {
 
   const navigateToBrandCategory = (brandName, categoryName) => {
     const bLower = (brandName || '').toLowerCase().trim();
-    const cLower = (categoryName || '').toLowerCase().trim();
+    const targetCanonical = getCanonicalCategory(categoryName);
 
-    // 1. Exact match on brand and category
+    // 1. Exact match on brand and canonical category
     const exactIdx = SPREADS.findIndex(s => {
       if (s.hideFromIndex) return false;
-      const bMatch = s.brandName && s.brandName.toLowerCase().trim() === bLower;
+      const bMatch = s.brandName && (
+        s.brandName.toLowerCase().trim() === bLower ||
+        (bLower === 'astdax' && s.brandName.toLowerCase().includes('astdax')) ||
+        (bLower === 'steel wood' && s.brandName.toLowerCase().includes('steel'))
+      );
       if (!bMatch) return false;
 
-      const catNorm = s.category.toLowerCase().trim();
-      if (cLower === 'arch. hardware') return catNorm.includes('architectural');
-      if (cLower === 'hardware & fittings') return catNorm.includes('hardware') && !catNorm.includes('architectural');
-      if (cLower === 'sliding systems') return catNorm.includes('sliding') || s.brandId === 'drawer-channel';
-      return catNorm === cLower;
+      return getCanonicalCategory(s.category) === targetCanonical;
     });
 
     if (exactIdx !== -1) {
@@ -2545,7 +2531,11 @@ export const ProductsPage = ({ onNavigate, search }) => {
     // 2. Match on brand only
     const brandIdx = SPREADS.findIndex(s => {
       if (s.hideFromIndex) return false;
-      return s.brandName && s.brandName.toLowerCase().trim() === bLower;
+      return s.brandName && (
+        s.brandName.toLowerCase().trim() === bLower ||
+        (bLower === 'astdax' && s.brandName.toLowerCase().includes('astdax')) ||
+        (bLower === 'steel wood' && s.brandName.toLowerCase().includes('steel'))
+      );
     });
 
     if (brandIdx !== -1) {
@@ -2556,11 +2546,7 @@ export const ProductsPage = ({ onNavigate, search }) => {
     // 3. Fallback: match category
     const catIdx = SPREADS.findIndex(s => {
       if (s.hideFromIndex) return false;
-      const catNorm = s.category.toLowerCase().trim();
-      if (cLower === 'arch. hardware') return catNorm.includes('architectural');
-      if (cLower === 'hardware & fittings') return catNorm.includes('hardware') && !catNorm.includes('architectural');
-      if (cLower === 'sliding systems') return catNorm.includes('sliding') || s.brandId === 'drawer-channel';
-      return catNorm === cLower;
+      return getCanonicalCategory(s.category) === targetCanonical;
     });
 
     if (catIdx !== -1) {
@@ -2571,30 +2557,36 @@ export const ProductsPage = ({ onNavigate, search }) => {
   const handleBrandSelect = (brandName) => {
     setSelectedBrand(brandName);
     const availableCats = getCategoriesForBrand(brandName);
-    const nextCat = availableCats.includes(selectedCategory) ? selectedCategory : availableCats[0];
+    const canonicalCurrent = getCanonicalCategory(selectedCategory);
+    const nextCat = availableCats.map(getCanonicalCategory).includes(canonicalCurrent)
+      ? canonicalCurrent
+      : getCanonicalCategory(availableCats[0]);
     setSelectedCategory(nextCat);
     navigateToBrandCategory(brandName, nextCat);
   };
 
   const handleCategorySelect = (categoryName) => {
-    setSelectedCategory(categoryName);
+    const canonical = getCanonicalCategory(categoryName);
+    setSelectedCategory(canonical);
+
+    // Find brands offering this category
     const currentBrand = selectedBrand || activeSpread.brandName || 'Royal Club';
     const brandOffersCat = getCategoriesForBrand(currentBrand).some(
-      c => c.toLowerCase() === categoryName.toLowerCase()
+      c => getCanonicalCategory(c) === canonical
     );
 
     if (brandOffersCat) {
-      navigateToBrandCategory(currentBrand, categoryName);
+      navigateToBrandCategory(currentBrand, canonical);
     } else {
       // Find the first brand that offers this category
       const matchingBrand = BRAND_CONFIG.find(b =>
-        b.categories.some(c => c.toLowerCase() === categoryName.toLowerCase())
+        b.categories.some(c => getCanonicalCategory(c) === canonical)
       );
       if (matchingBrand) {
         setSelectedBrand(matchingBrand.name);
-        navigateToBrandCategory(matchingBrand.name, categoryName);
+        navigateToBrandCategory(matchingBrand.name, canonical);
       } else {
-        navigateToBrandCategory(currentBrand, categoryName);
+        navigateToBrandCategory(currentBrand, canonical);
       }
     }
   };
@@ -2759,12 +2751,8 @@ export const ProductsPage = ({ onNavigate, search }) => {
           {/* Category Cards Grid / Scroll */}
           <div className="flex items-center gap-2 sm:gap-2.5 overflow-x-auto no-scrollbar py-1 px-1 justify-start lg:justify-center">
             {CATEGORY_DEFINITIONS.map((cat) => {
-              const activeCatNorm = (selectedCategory || activeSpread.category || '').toLowerCase();
-              const catNorm = cat.key.toLowerCase();
-              const isCatActive = activeCatNorm === catNorm ||
-                (catNorm === 'arch. hardware' && activeCatNorm.includes('architectural')) ||
-                (catNorm === 'hardware & fittings' && activeCatNorm.includes('hardware') && !activeCatNorm.includes('architectural')) ||
-                (catNorm === 'sliding systems' && activeCatNorm.includes('sliding'));
+              const currentCanonicalCat = getCanonicalCategory(selectedCategory || activeSpread.category);
+              const isCatActive = cat.key === currentCanonicalCat;
 
               return (
                 <button
