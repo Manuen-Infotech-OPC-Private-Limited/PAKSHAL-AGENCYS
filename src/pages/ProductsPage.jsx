@@ -2394,12 +2394,9 @@ export const ProductsPage = ({ onNavigate, search }) => {
   const activeCategorySpreads = SPREADS.filter(s => s.category === activeSpread.category);
   const activeCatIdx = activeCategorySpreads.findIndex(s => s.id === activeSpread.id);
 
-  // Sync selectedBrand & selectedCategory whenever activeSpread changes
+  // Sync selectedCategory whenever activeSpread changes (do NOT auto-select brand)
   useEffect(() => {
     if (activeSpread) {
-      if (activeSpread.brandName) {
-        setSelectedBrand(activeSpread.brandName);
-      }
       setSelectedCategory(getCanonicalCategory(activeSpread.category));
       setExpandedCategories(prev => ({
         ...prev,
@@ -2523,9 +2520,6 @@ export const ProductsPage = ({ onNavigate, search }) => {
 
       if (catIdx !== -1) {
         handleThumbnailClick(catIdx);
-        if (SPREADS[catIdx] && SPREADS[catIdx].brandName) {
-          setSelectedBrand(SPREADS[catIdx].brandName);
-        }
         return;
       }
     }
@@ -2561,25 +2555,13 @@ export const ProductsPage = ({ onNavigate, search }) => {
     const canonical = getCanonicalCategory(categoryName);
     setSelectedCategory(canonical);
 
-    // Find brands offering this category
-    const currentBrand = selectedBrand || activeSpread.brandName || 'Royal Club';
-    const brandOffersCat = getCategoriesForBrand(currentBrand).some(
-      c => getCanonicalCategory(c) === canonical
-    );
+    // USER REQUIREMENT: When user clicks any category, do NOT highlight/select any brand!
+    setSelectedBrand(null);
 
-    if (brandOffersCat) {
-      navigateToBrandCategory(currentBrand, canonical);
-    } else {
-      // Find the first brand that offers this category
-      const matchingBrand = BRAND_CONFIG.find(b =>
-        b.categories.some(c => getCanonicalCategory(c) === canonical)
-      );
-      if (matchingBrand) {
-        setSelectedBrand(matchingBrand.name);
-        navigateToBrandCategory(matchingBrand.name, canonical);
-      } else {
-        navigateToBrandCategory(currentBrand, canonical);
-      }
+    // Find the first spread matching this category
+    const catIdx = SPREADS.findIndex(s => !s.hideFromIndex && getCanonicalCategory(s.category) === canonical);
+    if (catIdx !== -1) {
+      handleThumbnailClick(catIdx);
     }
   };
 
@@ -2682,7 +2664,7 @@ export const ProductsPage = ({ onNavigate, search }) => {
               className="flex items-center gap-2 sm:gap-3 overflow-x-auto no-scrollbar py-1 px-0.5 scroll-smooth"
             >
               {BRAND_CONFIG.map((b) => {
-                const isBrandActive = (selectedBrand || activeSpread.brandName || '').toLowerCase() === b.name.toLowerCase();
+                const isBrandActive = Boolean(selectedBrand && selectedBrand.toLowerCase() === b.name.toLowerCase());
                 return (
                   <div key={b.name} className="flex flex-col items-center shrink-0">
                     <button
@@ -2691,7 +2673,7 @@ export const ProductsPage = ({ onNavigate, search }) => {
                       }}
                       type="button"
                       onClick={() => handleBrandSelect(b.name)}
-                      className={`group flex flex-col items-center justify-center min-w-[110px] sm:min-w-[130px] h-[64px] sm:h-[68px] px-2.5 py-2 rounded-xl border transition-all cursor-pointer select-none active:scale-95 shadow-2xs ${isBrandActive
+                      className={`group flex flex-col items-center justify-center min-w-[110px] sm:min-w-[130px] h-[64px] sm:h-[68px] px-2.5 py-2 rounded-xl border transition-all cursor-pointer select-none active:scale-95 shadow-2xs outline-none focus:outline-none focus-visible:outline-none ring-0 focus:ring-0 ${isBrandActive
                         ? 'bg-[#005a2b] border-[#004722] text-white shadow-sm'
                         : 'bg-white hover:bg-[#FFFDF7] border-slate-200/90 hover:border-[#C5A059] text-slate-800'
                         }`}
@@ -2753,7 +2735,7 @@ export const ProductsPage = ({ onNavigate, search }) => {
             </button>
           </div>
 
-          {/* 2. CATEGORIES Header with Gold Accent & Contextual Brand */}
+          {/* 2. CATEGORIES Header with Gold Accent */}
           <div className="flex items-center justify-between mb-2 px-0.5 sm:px-1">
             <div className="flex items-center gap-2 sm:gap-3">
               <span className="text-[12px] sm:text-[13px] font-black uppercase tracking-[0.16em] text-[#1e293b]">
@@ -2762,12 +2744,12 @@ export const ProductsPage = ({ onNavigate, search }) => {
               <div className="h-[2px] w-12 sm:w-16 bg-[#C5A059]" />
             </div>
             <span className="text-[#1e3a8a] text-[11px] sm:text-xs font-semibold tracking-tight">
-              For {activeSpread.brandName || selectedBrand || 'Royal Club'}
+              {selectedBrand ? `For ${selectedBrand}` : 'All Categories'}
             </span>
           </div>
 
-          {/* Categories Tab Strip with Vertical Dividers */}
-          <div className="flex items-center overflow-x-auto no-scrollbar py-1 divide-x divide-slate-200/80">
+          {/* Categories Tab Strip without vertical dividers or underline box */}
+          <div className="flex items-center gap-2 sm:gap-3.5 overflow-x-auto no-scrollbar py-1 px-0.5">
             {CATEGORY_DEFINITIONS.map((cat) => {
               const currentCanonicalCat = getCanonicalCategory(selectedCategory || activeSpread.category);
               const isCatActive = cat.key === currentCanonicalCat;
@@ -2777,20 +2759,18 @@ export const ProductsPage = ({ onNavigate, search }) => {
                   key={cat.key}
                   type="button"
                   onClick={() => handleCategorySelect(cat.key)}
-                  className="group flex flex-col items-center justify-center px-4 sm:px-5 py-1.5 shrink-0 cursor-pointer select-none transition-all"
+                  className={`group flex flex-col items-center justify-center px-3 sm:px-4 py-1.5 shrink-0 cursor-pointer select-none transition-all outline-none focus:outline-none focus-visible:outline-none ring-0 focus:ring-0 border-0 bg-transparent ${
+                    isCatActive ? 'scale-105' : 'hover:scale-102 opacity-80 hover:opacity-100'
+                  }`}
                 >
                   <div className="flex items-center justify-center h-6 mb-1">
                     {typeof cat.icon === 'function' ? cat.icon(isCatActive) : cat.icon}
                   </div>
                   <span className={`text-[11px] sm:text-[12px] tracking-tight whitespace-nowrap leading-tight transition-colors ${
-                    isCatActive ? 'text-[#005a2b] font-bold' : 'text-slate-600 font-semibold group-hover:text-slate-900'
+                    isCatActive ? 'text-[#005a2b] font-black' : 'text-slate-600 font-semibold group-hover:text-slate-900'
                   }`}>
                     {cat.label}
                   </span>
-                  {/* Bottom green active underline */}
-                  <div className={`w-full h-[2.5px] rounded-full mt-1.5 transition-all ${
-                    isCatActive ? 'bg-[#005a2b]' : 'bg-transparent'
-                  }`} />
                 </button>
               );
             })}
