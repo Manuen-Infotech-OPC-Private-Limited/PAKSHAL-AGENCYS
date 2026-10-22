@@ -25,13 +25,14 @@ const getNormalizedPage = (pathname, search = '') => {
     ? pathname.slice('/PAKSHAL-AGENCYS'.length)
     : pathname;
 
+  if (cleanPath === '/home') return 'home';
   if (cleanPath === '/about') return 'about';
   if (cleanPath === '/gallery') return 'gallery';
   if (cleanPath === '/products') return 'products';
   if (cleanPath === '/contact') return 'contact';
   if (cleanPath === '/admin') return 'admin';
   if (cleanPath === '/login') return 'login';
-  return 'home';
+  return 'products';
 };
 
 function App() {
@@ -57,15 +58,16 @@ function App() {
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const pageParam = params.get('page');
-    if (pageParam && ['about', 'gallery', 'products', 'contact'].includes(pageParam)) {
+    if (pageParam && ['home', 'about', 'gallery', 'products', 'contact'].includes(pageParam)) {
       const basePrefix = window.location.pathname.startsWith('/PAKSHAL-AGENCYS') ? '/PAKSHAL-AGENCYS' : '';
       const pathMap = {
+        home: '/home',
         about: '/about',
         gallery: '/gallery',
         products: '/products',
         contact: '/contact'
       };
-      const cleanPath = pathMap[pageParam] || '/';
+      const cleanPath = pathMap[pageParam] || '/products';
       params.delete('page');
       const remainingSearch = params.toString();
       const searchString = remainingSearch ? `?${remainingSearch}` : '';
@@ -90,12 +92,13 @@ function App() {
       newPath = `${basePrefix}/?page=${page}`;
     } else {
       const pathMap = {
+        home: '/home',
         about: '/about',
         gallery: '/gallery',
         products: '/products',
         contact: '/contact'
       };
-      const cleanPath = pathMap[page] || '/';
+      const cleanPath = pathMap[page] || '/products';
       newPath = basePrefix + cleanPath + search;
     }
 

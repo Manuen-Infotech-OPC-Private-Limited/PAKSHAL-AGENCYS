@@ -10,7 +10,7 @@
       var base = window.location.pathname.startsWith('/PAKSHAL-AGENCYS') ? '/PAKSHAL-AGENCYS' : '';
       var cleanPath = base ? path.slice(base.length) : path;
       var pageName = cleanPath.replace(/^\//, '');
-      var validPages = ['about', 'gallery', 'products', 'contact', 'admin', 'login'];
+      var validPages = ['home', 'about', 'gallery', 'products', 'contact', 'admin', 'login'];
 
       if (validPages.indexOf(pageName) !== -1) {
         var search = window.location.search;

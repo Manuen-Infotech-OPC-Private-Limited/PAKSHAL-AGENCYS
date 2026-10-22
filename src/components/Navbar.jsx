@@ -32,7 +32,7 @@ export const Navbar = ({ currentPage, onNavigate, isAdminAuthenticated }) => {
           {/* Logo Section */}
           <a
             href={`${basePrefix}/`}
-            onClick={(e) => handleLinkClick(e, 'home')}
+            onClick={(e) => handleLinkClick(e, 'products')}
             className="flex-shrink-0 flex items-center group relative h-14 w-48 sm:w-56 md:w-64"
           >
             <img
@@ -47,7 +47,7 @@ export const Navbar = ({ currentPage, onNavigate, isAdminAuthenticated }) => {
             {/* Home Link */}
             <div className="relative flex flex-col items-center py-2">
               <a
-                href={`${basePrefix}/`}
+                href={`${basePrefix}/home`}
                 onClick={(e) => handleLinkClick(e, 'home')}
                 className={`text-[11px] font-extrabold uppercase tracking-widest transition-colors ${currentPage === 'home' ? 'text-[#38a12c]' : 'text-slate-800 hover:text-[#38a12c]'}`}
               >
@@ -208,7 +208,7 @@ export const Navbar = ({ currentPage, onNavigate, isAdminAuthenticated }) => {
                 return (
                   <a
                     key={item.id}
-                    href={`${basePrefix}/${item.id === 'home' ? '' : item.id}`}
+                    href={`${basePrefix}/${item.id}`}
                     onClick={(e) => handleLinkClick(e, item.id)}
                     className={`group flex items-center gap-3.5 px-4 py-3.5 rounded-2xl text-[12px] font-extrabold uppercase tracking-wider transition-all duration-200 cursor-pointer ${isActive
                       ? 'bg-[#0F5C3B] text-white shadow-md shadow-[#0F5C3B]/20 border border-[#0F5C3B]/20'

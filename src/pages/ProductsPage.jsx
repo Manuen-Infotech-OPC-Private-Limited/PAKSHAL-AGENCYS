@@ -2057,7 +2057,6 @@ export const ProductsPage = ({ onNavigate, search }) => {
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
-
   const renderHeroTagIcon = (iconName) => {
     switch (iconName) {
       case 'wood':
@@ -2638,8 +2637,8 @@ export const ProductsPage = ({ onNavigate, search }) => {
       )}
 
       {/* Visual Navigation Deck */}
-      <div className="w-full bg-white text-slate-800 relative animate-fade-in mb-6 sm:mb-8 pt-[112px] sm:pt-[94px] md:pt-[96px] pb-3 sm:pb-4">
-        <div className="max-w-[1440px] mx-auto w-full px-3 sm:px-6 relative z-20 flex flex-col gap-3 sm:gap-3.5">
+      <div className="w-full bg-white text-slate-800 relative border-b border-[#E8DFC8]/60 animate-fade-in mb-6 sm:mb-8 shadow-xs pt-[112px] sm:pt-[94px] md:pt-[96px] pb-3 sm:pb-4">
+        <div className="max-w-[1440px] mx-auto w-full px-3 sm:px-6 relative z-20">
 
           {/* Brand Cards Carousel with Controls */}
           <div className="relative group/brandrow px-0 sm:px-6">
@@ -2717,6 +2716,9 @@ export const ProductsPage = ({ onNavigate, search }) => {
               </svg>
             </button>
           </div>
+
+          {/* Divider Line */}
+          <div className="w-full max-w-[1360px] mx-auto h-[1px] bg-[#E8DFC8]/60 my-2.5 sm:my-3.5" />
 
           {/* Category Cards Grid / Scroll */}
           <div className="flex items-center gap-2 sm:gap-2.5 overflow-x-auto no-scrollbar py-1 px-1 justify-start lg:justify-center">
