@@ -2024,7 +2024,7 @@ export const getCategoriesForBrand = (brandName) => {
 };
 
 export const getCanonicalCategory = (categoryName) => {
-  if (!categoryName) return 'Plywood';
+  if (!categoryName) return '';
   const c = categoryName.toLowerCase().trim();
   if (c === 'arch. hardware' || c.includes('arch') || c.includes('architectural')) return 'Arch. Hardware';
   if (c === 'hardware & fittings' || c.includes('hardware') || c.includes('fittings')) return 'Hardware & Fittings';
@@ -2035,7 +2035,7 @@ export const getCanonicalCategory = (categoryName) => {
   if (c.includes('veneer')) return 'Veneers';
   if (c.includes('door')) return 'Fancy Doors';
   if (c.includes('kitchen')) return 'Kitchen Accessories';
-  return 'Plywood';
+  return categoryName;
 };
 
 export const ProductsPage = ({ onNavigate, search }) => {
@@ -2355,7 +2355,7 @@ export const ProductsPage = ({ onNavigate, search }) => {
     'Plywood': true
   });
   const [selectedBrand, setSelectedBrand] = useState('Royal Club');
-  const [selectedCategory, setSelectedCategory] = useState('Plywood');
+  const [selectedCategory, setSelectedCategory] = useState(null);
 
   useEffect(() => {
     setSelectedSize('8 x 4');
@@ -2394,10 +2394,9 @@ export const ProductsPage = ({ onNavigate, search }) => {
   const activeCategorySpreads = SPREADS.filter(s => s.category === activeSpread.category);
   const activeCatIdx = activeCategorySpreads.findIndex(s => s.id === activeSpread.id);
 
-  // Sync selectedCategory whenever activeSpread changes (do NOT auto-select brand)
+  // Sync category expansion whenever activeSpread changes (do NOT auto-select brand or category)
   useEffect(() => {
     if (activeSpread) {
-      setSelectedCategory(getCanonicalCategory(activeSpread.category));
       setExpandedCategories(prev => ({
         ...prev,
         [activeSpread.category]: true
@@ -2491,28 +2490,47 @@ export const ProductsPage = ({ onNavigate, search }) => {
 
   const navigateToBrandCategory = (brandName, categoryName) => {
     const bLower = (brandName || '').toLowerCase().trim();
-    const targetCanonical = getCanonicalCategory(categoryName);
+    const targetCanonical = categoryName ? getCanonicalCategory(categoryName) : null;
 
-    // 1. Exact match on brand and canonical category
-    const exactIdx = SPREADS.findIndex(s => {
-      if (s.hideFromIndex) return false;
-      const bMatch = s.brandName && (
-        s.brandName.toLowerCase().trim() === bLower ||
-        (bLower === 'astdax' && s.brandName.toLowerCase().includes('astdax')) ||
-        (bLower === 'steel wood' && s.brandName.toLowerCase().includes('steel'))
-      );
-      if (!bMatch) return false;
+    // 1. If both brand and category are provided, find exact match
+    if (bLower && targetCanonical) {
+      const exactIdx = SPREADS.findIndex(s => {
+        if (s.hideFromIndex) return false;
+        const bMatch = s.brandName && (
+          s.brandName.toLowerCase().trim() === bLower ||
+          (bLower === 'astdax' && s.brandName.toLowerCase().includes('astdax')) ||
+          (bLower === 'steel wood' && s.brandName.toLowerCase().includes('steel'))
+        );
+        if (!bMatch) return false;
 
-      return getCanonicalCategory(s.category) === targetCanonical;
-    });
+        return getCanonicalCategory(s.category) === targetCanonical;
+      });
 
-    if (exactIdx !== -1) {
-      handleThumbnailClick(exactIdx);
-      return;
+      if (exactIdx !== -1) {
+        handleThumbnailClick(exactIdx);
+        return;
+      }
     }
 
-    // 2. If category was specified, find first spread matching this category
-    if (categoryName) {
+    // 2. If brand was specified, find first spread matching brand
+    if (bLower) {
+      const brandIdx = SPREADS.findIndex(s => {
+        if (s.hideFromIndex) return false;
+        return s.brandName && (
+          s.brandName.toLowerCase().trim() === bLower ||
+          (bLower === 'astdax' && s.brandName.toLowerCase().includes('astdax')) ||
+          (bLower === 'steel wood' && s.brandName.toLowerCase().includes('steel'))
+        );
+      });
+
+      if (brandIdx !== -1) {
+        handleThumbnailClick(brandIdx);
+        return;
+      }
+    }
+
+    // 3. If category was specified, find first spread matching this category
+    if (targetCanonical) {
       const catIdx = SPREADS.findIndex(s => {
         if (s.hideFromIndex) return false;
         return getCanonicalCategory(s.category) === targetCanonical;
@@ -2523,32 +2541,13 @@ export const ProductsPage = ({ onNavigate, search }) => {
         return;
       }
     }
-
-    // 3. Fallback: match on brand only
-    const brandIdx = SPREADS.findIndex(s => {
-      if (s.hideFromIndex) return false;
-      return s.brandName && (
-        s.brandName.toLowerCase().trim() === bLower ||
-        (bLower === 'astdax' && s.brandName.toLowerCase().includes('astdax')) ||
-        (bLower === 'steel wood' && s.brandName.toLowerCase().includes('steel'))
-      );
-    });
-
-    if (brandIdx !== -1) {
-      handleThumbnailClick(brandIdx);
-      return;
-    }
   };
 
   const handleBrandSelect = (brandName) => {
     setSelectedBrand(brandName);
-    const availableCats = getCategoriesForBrand(brandName);
-    const canonicalCurrent = getCanonicalCategory(selectedCategory);
-    const nextCat = availableCats.map(getCanonicalCategory).includes(canonicalCurrent)
-      ? canonicalCurrent
-      : getCanonicalCategory(availableCats[0]);
-    setSelectedCategory(nextCat);
-    navigateToBrandCategory(brandName, nextCat);
+    // USER REQUIREMENT: When user clicks any brand, do NOT auto-select or highlight any category!
+    setSelectedCategory(null);
+    navigateToBrandCategory(brandName, null);
   };
 
   const handleCategorySelect = (categoryName) => {
@@ -2744,31 +2743,28 @@ export const ProductsPage = ({ onNavigate, search }) => {
               <div className="h-[2px] w-12 sm:w-16 bg-[#C5A059]" />
             </div>
             <span className="text-[#1e3a8a] text-[11px] sm:text-xs font-semibold tracking-tight">
-              {selectedBrand ? `For ${selectedBrand}` : 'All Categories'}
+              {selectedBrand ? `For ${selectedBrand}` : selectedCategory ? `${selectedCategory}` : 'All Categories'}
             </span>
           </div>
 
           {/* Categories Tab Strip without vertical dividers or underline box */}
           <div className="flex items-center gap-2 sm:gap-3.5 overflow-x-auto no-scrollbar py-1 px-0.5">
             {CATEGORY_DEFINITIONS.map((cat) => {
-              const currentCanonicalCat = getCanonicalCategory(selectedCategory || activeSpread.category);
-              const isCatActive = cat.key === currentCanonicalCat;
+              const isCatActive = Boolean(selectedCategory && getCanonicalCategory(cat.key) === getCanonicalCategory(selectedCategory));
 
               return (
                 <button
                   key={cat.key}
                   type="button"
                   onClick={() => handleCategorySelect(cat.key)}
-                  className={`group flex flex-col items-center justify-center px-3 sm:px-4 py-1.5 shrink-0 cursor-pointer select-none transition-all outline-none focus:outline-none focus-visible:outline-none ring-0 focus:ring-0 border-0 bg-transparent ${
-                    isCatActive ? 'scale-105' : 'hover:scale-102 opacity-80 hover:opacity-100'
-                  }`}
+                  className={`group flex flex-col items-center justify-center px-3 sm:px-4 py-1.5 shrink-0 cursor-pointer select-none transition-all outline-none focus:outline-none focus-visible:outline-none ring-0 focus:ring-0 border-0 bg-transparent ${isCatActive ? 'scale-105' : 'hover:scale-102 opacity-80 hover:opacity-100'
+                    }`}
                 >
                   <div className="flex items-center justify-center h-6 mb-1">
                     {typeof cat.icon === 'function' ? cat.icon(isCatActive) : cat.icon}
                   </div>
-                  <span className={`text-[11px] sm:text-[12px] tracking-tight whitespace-nowrap leading-tight transition-colors ${
-                    isCatActive ? 'text-[#005a2b] font-black' : 'text-slate-600 font-semibold group-hover:text-slate-900'
-                  }`}>
+                  <span className={`text-[11px] sm:text-[12px] tracking-tight whitespace-nowrap leading-tight transition-colors ${isCatActive ? 'text-[#005a2b] font-black' : 'text-slate-600 font-semibold group-hover:text-slate-900'
+                    }`}>
                     {cat.label}
                   </span>
                 </button>
@@ -2778,9 +2774,6 @@ export const ProductsPage = ({ onNavigate, search }) => {
 
         </div>
       </div>
-
-
-
       {/* Product Spotlight Showcase Section - Seamless 2-Column Layout */}
       <div
         id="catalogue-book-section"
@@ -2842,11 +2835,10 @@ export const ProductsPage = ({ onNavigate, search }) => {
                           if (targetIdx !== -1) setCurrentSpreadIdx(targetIdx);
                         }
                       }}
-                      className={`transition-all rounded-full cursor-pointer ${
-                        isDotActive
+                      className={`transition-all rounded-full cursor-pointer ${isDotActive
                           ? 'w-2.5 h-2.5 bg-white shadow-xs scale-110'
                           : 'w-2 h-2 bg-white/50 hover:bg-white/80'
-                      }`}
+                        }`}
                       aria-label={`Go to slide ${dotIdx + 1}`}
                     />
                   );
