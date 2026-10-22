@@ -274,6 +274,112 @@ const SPREADS = [
     ]
   },
   {
+    id: 301,
+    brandId: 'century-plywood',
+    category: 'Plywood',
+    pageNumLeft: 7,
+    pageNumRight: 8,
+    badge: 'Architectural Grade',
+    title: 'Engineered\nEndurance.',
+    tagline: 'Century Plywood - BWP Marine Grade Core',
+    image: royalClubImg,
+    brandName: 'Century',
+    desc: 'Century architectural plywood features calibrated core layers bonded with phenolic resin, engineered for extreme moisture resistance and load strength.',
+    thicknesses: ['6mm', '9mm', '12mm', '16mm', '19mm', '25mm'],
+    defaultThickness: '19mm',
+    features: ['100% Calibrated', 'BWP Grade', 'Borer & Termite Proof'],
+    applications: ['Luxury Kitchens', 'Wardrobes', 'Paneling'],
+    specs: {
+      'Core Material': 'Hardwood & Gurjan',
+      'Bonding Adhesive': 'BWP Phenolic Resin',
+      'Warranty': '25 Years Warranty'
+    },
+    heroSub: 'CENTURY PLYWOOD. STRUCTURAL MASTERY.',
+    heroTitle: 'CENTURY PLYWOOD',
+    heroDesc: 'Century architectural plywood features calibrated core layers bonded with phenolic resin, engineered for extreme moisture resistance and load strength.',
+    heroTags: [
+      { text: '100% Calibrated', icon: 'calibrate' },
+      { text: 'BWP Marine Grade', icon: 'droplet' },
+      { text: '25 Year Warranty', icon: 'shield' }
+    ],
+    overviewFeatures: [
+      { title: 'BWP Marine Grade', desc: 'Withstands extreme boiling water test', icon: 'droplet' },
+      { title: 'Calibrated Thickness', desc: 'Even surface on both sides', icon: 'calibrate' },
+      { title: 'Termite Proof', desc: 'Treated with specialized preservative salts', icon: 'shield' }
+    ]
+  },
+  {
+    id: 302,
+    brandId: 'green-plywood',
+    category: 'Plywood',
+    pageNumLeft: 11,
+    pageNumRight: 12,
+    badge: 'Sustainable Strength',
+    title: 'Eco-Certified\nIntegrity.',
+    tagline: 'Greenply Marine Grade BWP Plywood',
+    image: plywoodKingImg,
+    brandName: 'Green',
+    desc: 'Green premium plywood is crafted from ethically sourced hardwood veneers and bonded with high-grade synthetic resin for maximum durability and strength.',
+    thicknesses: ['6mm', '9mm', '12mm', '16mm', '19mm'],
+    defaultThickness: '19mm',
+    features: ['BWP Grade', 'Zero Core Gaps', 'Termite Resistant'],
+    applications: ['Kitchens', 'Heavy Furniture', 'Ceilings'],
+    specs: {
+      'Core Material': 'Selected Hardwood',
+      'Bonding': 'Phenolic Resin',
+      'Warranty': '20 Years Warranty'
+    },
+    heroSub: 'GREEN PLYWOOD. CERTIFIED QUALITY.',
+    heroTitle: 'GREEN PLYWOOD',
+    heroDesc: 'Green premium plywood is crafted from ethically sourced hardwood veneers and bonded with high-grade synthetic resin for maximum durability and strength.',
+    heroTags: [
+      { text: 'BWP Grade', icon: 'droplet' },
+      { text: 'Zero Core Gaps', icon: 'wood' },
+      { text: 'Termite Resistant', icon: 'shield' }
+    ],
+    overviewFeatures: [
+      { title: 'BWP Bonded', desc: 'Protected against boiling water and humidity', icon: 'droplet' },
+      { title: 'Selected Hardwood', desc: 'Superior core density and screw-holding', icon: 'wood' },
+      { title: 'Termite Protection', desc: 'Specially chemically treated', icon: 'shield' }
+    ]
+  },
+  {
+    id: 27,
+    brandId: 'indigo-laminates',
+    category: 'Laminates',
+    pageNumLeft: 53,
+    pageNumRight: 54,
+    badge: 'Matt Finish Collection',
+    title: 'Contemporary\nElegance.',
+    tagline: 'Superior Matt Finish & Anti-Fingerprint Surfaces',
+    image: laminates2Img,
+    brandName: 'Indigo',
+    desc: 'Indigo premium laminates deliver ultra-smooth matte textures with superior scratch and fingerprint resistance for sophisticated interiors.',
+    thicknesses: ['0.8mm', '1.0mm', '1.2mm'],
+    defaultThickness: '1.0mm',
+    features: ['Anti-Fingerprint', 'High Scratch Resistance', 'Color Fastness'],
+    applications: ['Wardrobes', 'Kitchen Cabinets', 'Office Furniture'],
+    specs: {
+      'Surface Finish': 'Ultra Matt / Suede',
+      'Thickness': '1.0mm European Grade',
+      'Scratch Resistance': 'High Grade'
+    },
+    heroSub: 'ULTRA MATT FINISH. TIMELESS SOPHISTICATION.',
+    heroTitle: 'INDIGO LAMINATES',
+    heroDesc: 'Indigo premium laminates deliver ultra-smooth matte textures with superior scratch and fingerprint resistance for sophisticated interiors.',
+    heroTags: [
+      { text: 'Anti-Fingerprint', icon: 'sparkles' },
+      { text: 'High Scratch Resistance', icon: 'shield' },
+      { text: 'Color Fastness', icon: 'droplet' }
+    ],
+    overviewFeatures: [
+      { title: 'Anti-Fingerprint Surface', desc: 'Resists smudges and fingerprints', icon: 'sparkles' },
+      { title: 'Scratch Resistant', desc: 'Durable finish for high-traffic use', icon: 'shield' },
+      { title: 'Moisture Resistant', desc: 'Protected against ambient humidity', icon: 'droplet' },
+      { title: 'Eco Friendly', desc: 'Low VOC compliant materials', icon: 'leaf' }
+    ]
+  },
+  {
     id: 14,
     brandId: 'marine-laminates',
     category: 'Laminates',
@@ -1605,6 +1711,316 @@ const SPREADS = [
   }
 ];
 
+export const BRAND_CONFIG = [
+  {
+    name: 'Royal Club',
+    displayName: 'ROYAL CLUB',
+    trademark: true,
+    categories: ['Plywood'],
+    icon: (
+      <svg className="w-8 h-6 text-[#C5A059]" viewBox="0 0 32 22" fill="currentColor">
+        <path d="M4 18h24v2.5H4V18zm1.5-2.5l2.5-9 5.5 5 2.5-8 2.5 8 5.5-5 2.5 9H5.5z" />
+        <circle cx="8" cy="6" r="1.5" />
+        <circle cx="16" cy="3" r="1.8" />
+        <circle cx="24" cy="6" r="1.5" />
+      </svg>
+    )
+  },
+  {
+    name: 'Marine Club',
+    displayName: 'MARINE CLUB',
+    trademark: true,
+    categories: ['Plywood'],
+    icon: (
+      <svg className="w-8 h-6" viewBox="0 0 34 20" fill="none">
+        <path d="M3 14c5-6 10-6 15 0s9 6 13 0" stroke="#0077b6" strokeWidth="3" strokeLinecap="round" />
+        <path d="M6 7c4.5-5 9-5 13.5 0s8 5 11.5 0" stroke="#00b4d8" strokeWidth="3" strokeLinecap="round" />
+      </svg>
+    )
+  },
+  {
+    name: 'Gurjan Club',
+    displayName: 'GURJAN CLUB',
+    trademark: true,
+    categories: ['Plywood'],
+    icon: (
+      <svg className="w-6 h-6 text-[#C5A059]" viewBox="0 0 28 28" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+        <circle cx="14" cy="14" r="12" fill="currentColor" fillOpacity="0.1" />
+        <path d="M10 5.5c-1 3-1 6 0 8.5s1 5.5 0 8.5" />
+        <path d="M14 3.5c-1.2 4-1.2 8 0 11.5s1.2 7.5 0 9.5" />
+        <path d="M18 5.5c1 3 1 6 0 8.5s-1 5.5 0 8.5" />
+      </svg>
+    )
+  },
+  {
+    name: 'Gurjan King',
+    displayName: 'GURJAN KING',
+    highlightWord: 'KING',
+    trademark: true,
+    categories: ['Plywood'],
+    icon: (
+      <svg className="w-8 h-6 text-[#C5A059]" viewBox="0 0 30 22" fill="currentColor">
+        <path d="M3 18h24v2H3v-2zm1.8-2.5l2.2-8.5 5 4.5 4-7 4 7 5-4.5 2.2 8.5H4.8z" />
+        <circle cx="15" cy="3.5" r="1.6" />
+      </svg>
+    )
+  },
+  {
+    name: 'Gurjan Gold',
+    displayName: 'GURJAN GOLD',
+    highlightWord: 'GOLD',
+    trademark: true,
+    categories: ['Plywood'],
+    icon: (
+      <svg className="w-6 h-6 text-[#C5A059]" viewBox="0 0 28 28" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
+        <circle cx="14" cy="14" r="11" />
+        <path d="M18.5 10.5a5.5 5.5 0 101.5 5.5H14" />
+        <circle cx="14" cy="14" r="1.5" fill="currentColor" />
+      </svg>
+    )
+  },
+  {
+    name: 'Gurjan Star',
+    displayName: 'GURJAN STAR',
+    highlightWord: 'STAR',
+    trademark: true,
+    categories: ['Plywood'],
+    icon: (
+      <svg className="w-6 h-6 text-[#C5A059]" viewBox="0 0 26 26" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+        <polygon points="13 2.5 16.2 9.2 23.6 10.2 18.3 15.3 19.6 22.6 13 19.1 6.4 22.6 7.7 15.3 2.4 10.2 9.8 9.2 13 2.5" />
+      </svg>
+    )
+  },
+  {
+    name: 'Century',
+    displayName: 'CENTURY',
+    trademark: true,
+    categories: ['Laminates', 'Plywood'],
+    icon: (
+      <svg className="w-5 h-5 text-[#006e2f]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <circle cx="12" cy="12" r="9" />
+        <path d="M15 9a4 4 0 100 6" strokeLinecap="round" />
+      </svg>
+    )
+  },
+  {
+    name: 'Green',
+    displayName: 'GREEN',
+    trademark: true,
+    categories: ['Laminates', 'Plywood'],
+    icon: (
+      <svg className="w-5 h-5 text-[#16a34a]" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M17 8C8 10 5 16 5 21c5 0 11-3 13-12 1-4-1-1-1-1z" />
+      </svg>
+    )
+  },
+  {
+    name: 'Marine',
+    displayName: 'MARINE',
+    trademark: true,
+    categories: ['Laminates'],
+    icon: (
+      <svg className="w-6 h-5 text-[#0284c7]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+        <path d="M3 15c4-3 8-3 12 0s6 3 6 0" />
+        <path d="M3 9c4-3 8-3 12 0s6 3 6 0" />
+      </svg>
+    )
+  },
+  {
+    name: 'Vista',
+    displayName: 'VISTA',
+    trademark: true,
+    categories: ['Laminates'],
+    icon: (
+      <svg className="w-5 h-5 text-[#a88634]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <polygon points="12 3 21 12 12 21 3 12" />
+      </svg>
+    )
+  },
+  {
+    name: 'Croma',
+    displayName: 'CROMA',
+    trademark: true,
+    categories: ['Laminates'],
+    icon: (
+      <svg className="w-5 h-5 text-[#d97706]" viewBox="0 0 24 24" fill="currentColor">
+        <circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" strokeWidth="2" />
+        <circle cx="9" cy="10" r="2" />
+        <circle cx="15" cy="10" r="2" />
+        <circle cx="12" cy="15" r="2" />
+      </svg>
+    )
+  },
+  {
+    name: 'Indigo',
+    displayName: 'INDIGO',
+    trademark: true,
+    categories: ['Laminates'],
+    icon: (
+      <svg className="w-5 h-5 text-[#4f46e5]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <polygon points="12 2 20 7 20 17 12 22 4 17 4 7" />
+      </svg>
+    )
+  },
+  {
+    name: 'Armani',
+    displayName: 'ARMANI',
+    trademark: true,
+    categories: ['Acrylic Panels'],
+    icon: (
+      <svg className="w-6 h-5 text-[#1e293b]" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 3L2 12h5v7h10v-7h5z" />
+      </svg>
+    )
+  },
+  {
+    name: 'Steel Wood',
+    displayName: 'STEEL WOOD',
+    trademark: true,
+    categories: ['Arch. Hardware', 'Hardware & Fittings', 'Sliding Systems'],
+    icon: (
+      <svg className="w-5 h-5 text-[#475569]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <rect x="4" y="4" width="16" height="16" rx="2" />
+        <path d="M4 12h16M12 4v16" />
+      </svg>
+    )
+  },
+  {
+    name: 'Fancy Doors',
+    displayName: 'FANCY DOORS',
+    trademark: true,
+    categories: ['Fancy Doors'],
+    icon: (
+      <svg className="w-5 h-5 text-[#c28d3a]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <rect x="4" y="2" width="16" height="20" rx="1" />
+        <circle cx="8" cy="12" r="1" fill="currentColor" />
+      </svg>
+    )
+  },
+  {
+    name: 'Architecture',
+    displayName: 'ARCHITECTURE',
+    trademark: true,
+    categories: ['Veneers'],
+    icon: (
+      <svg className="w-5 h-5 text-[#8c6d23]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M3 21h18M6 21V7l6-4 6 4v14" />
+      </svg>
+    )
+  }
+];
+
+export const CATEGORY_DEFINITIONS = [
+  {
+    key: 'Plywood',
+    label: 'Plywood',
+    icon: (isActive) => (
+      <svg className={`w-5 h-5 shrink-0 ${isActive ? 'text-white' : 'text-[#005a2b]'}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 2L2 7l10 5 10-5-10-5z" />
+        <path d="M2 12l10 5 10-5" />
+        <path d="M2 17l10 5 10-5" />
+      </svg>
+    )
+  },
+  {
+    key: 'Laminates',
+    label: 'Laminates',
+    icon: (isActive) => (
+      <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none">
+        <path d="M4 14l8 4 8-4M4 10l8 4 8-4" stroke={isActive ? '#FFFFFF' : '#0c2340'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M12 3L4 7l8 4 8-4-8-4z" stroke={isActive ? '#FFFFFF' : '#0284c7'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    )
+  },
+  {
+    key: 'Acrylic Panels',
+    label: 'Acrylic Panels',
+    icon: (isActive) => (
+      <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none">
+        <path d="M12 3L4 7.5v9l8 4.5 8-4.5v-9L12 3z" stroke={isActive ? '#FFFFFF' : '#0c2340'} strokeWidth="2" strokeLinejoin="round" />
+        <path d="M12 12l8-4.5M12 12v9M12 12L4 7.5" stroke={isActive ? '#FFFFFF' : '#0284c7'} strokeWidth="1.8" strokeLinejoin="round" />
+      </svg>
+    )
+  },
+  {
+    key: 'Veneers',
+    label: 'Veneers',
+    icon: (isActive) => (
+      <svg className={`w-5 h-5 shrink-0 ${isActive ? 'text-white' : 'text-[#C5A059]'}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round">
+        <rect x="4" y="3" width="16" height="18" rx="2" />
+        <path d="M8 3c1.5 4 1.5 8 0 12s0 6 0 6" />
+        <path d="M12 3c-1.2 4-1.2 9 0 13s1.2 5 0 5" />
+        <path d="M16 3c1.2 5 0 10-1 14s0 4 0 4" />
+      </svg>
+    )
+  },
+  {
+    key: 'Fancy Doors',
+    label: 'Fancy Doors',
+    icon: (isActive) => (
+      <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none">
+        <rect x="4" y="3" width="16" height="18" rx="1.5" stroke={isActive ? '#FFFFFF' : '#0c2340'} strokeWidth="1.8" />
+        <path d="M8 3v18l8-2.5V5.5L8 3z" stroke={isActive ? '#FFFFFF' : '#C5A059'} strokeWidth="1.8" fill={isActive ? 'rgba(255,255,255,0.2)' : '#C5A059'} fillOpacity={isActive ? 1 : 0.15} />
+        <circle cx="13.5" cy="12" r="1" fill={isActive ? '#FFFFFF' : '#0c2340'} />
+      </svg>
+    )
+  },
+  {
+    key: 'Arch. Hardware',
+    label: 'Arch. Hardware',
+    icon: (isActive) => (
+      <svg className={`w-5 h-5 shrink-0 ${isActive ? 'text-white' : 'text-[#C5A059]'}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="4" y="6" width="6" height="12" rx="3" />
+        <path d="M10 10h10a1.5 1.5 0 011.5 1.5v0a1.5 1.5 0 01-1.5 1.5H10" />
+        <circle cx="7" cy="12" r="1.2" fill="currentColor" />
+      </svg>
+    )
+  },
+  {
+    key: 'Hardware & Fittings',
+    label: 'Hardware & Fittings',
+    icon: (isActive) => (
+      <svg className={`w-5 h-5 shrink-0 ${isActive ? 'text-white' : 'text-[#C5A059]'}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M14.5 5.5a2 2 0 00-2.8 2.8l1.4 1.4-7.5 7.5a1.5 1.5 0 002.1 2.1l7.5-7.5 1.4 1.4a2 2 0 002.8-2.8l-2.1-2.1 1.4-1.4a1 1 0 00-1.4-1.4l-1.4 1.4-1.4-1.4z" />
+        <path d="M6 18l12-12" />
+      </svg>
+    )
+  },
+  {
+    key: 'Kitchen Accessories',
+    label: 'Kitchen Accessories',
+    icon: (isActive) => (
+      <svg className={`w-5 h-5 shrink-0 ${isActive ? 'text-white' : 'text-[#C5A059]'}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M9 3h6v4l5 8v3H4v-3l5-8V3z" />
+        <path d="M7 18v2M17 18v2" />
+        <line x1="8" y1="15" x2="16" y2="15" />
+      </svg>
+    )
+  },
+  {
+    key: 'Sliding Systems',
+    label: 'Sliding Systems',
+    icon: (isActive) => (
+      <svg className={`w-5 h-5 shrink-0 ${isActive ? 'text-white' : 'text-[#C5A059]'}`} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="3" y="3" width="18" height="18" rx="2" />
+        <path d="M12 3v18" />
+        <path d="M7.5 8v8M16.5 8v8" strokeDasharray="2 2" />
+      </svg>
+    )
+  }
+];
+
+export const getCategoriesForBrand = (brandName) => {
+  if (!brandName) return ['Plywood'];
+  const brand = BRAND_CONFIG.find(
+    b => b.name.toLowerCase() === brandName.toLowerCase()
+  );
+  if (brand && brand.categories && brand.categories.length > 0) {
+    return brand.categories;
+  }
+  return ['Plywood'];
+};
+
 export const ProductsPage = ({ onNavigate, search }) => {
   useDocumentMetadata(
     "Plywood, Cabinet Fittings & Kitchen Accessories | Pakshal",
@@ -1854,7 +2270,15 @@ export const ProductsPage = ({ onNavigate, search }) => {
 
   const getIndexFromSearch = (searchStr) => {
     const params = new URLSearchParams(searchStr || '');
+    const brand = params.get('brand');
     const category = params.get('category');
+
+    if (brand) {
+      const bNorm = brand.toLowerCase().replace(/[\s-]+/g, '');
+      const bIdx = SPREADS.findIndex(s => !s.hideFromIndex && s.brandName && s.brandName.toLowerCase().replace(/[\s-]+/g, '') === bNorm);
+      if (bIdx !== -1) return bIdx;
+    }
+
     if (!category) return 0;
     const catLower = category.toLowerCase().trim();
     const foundIdx = SPREADS.findIndex(s => s.category.toLowerCase().replace(/[\s&]+/g, '-') === catLower.replace(/[\s&]+/g, '-'));
@@ -1907,6 +2331,7 @@ export const ProductsPage = ({ onNavigate, search }) => {
       setCurrentSpreadIdx(targetIdx);
     }
   }, [search]);
+
   const [selectedThicknesses, setSelectedThicknesses] = useState({});
   const [selectedSize, setSelectedSize] = useState('8 x 4');
   const [showEnquiryModal, setShowEnquiryModal] = useState(false);
@@ -1915,8 +2340,8 @@ export const ProductsPage = ({ onNavigate, search }) => {
   const [expandedCategories, setExpandedCategories] = useState({
     'Plywood': true
   });
-  const [selectedCategoryBrands, setSelectedCategoryBrands] = useState('Plywood');
-  const [selectedBrand, setSelectedBrand] = useState(null);
+  const [selectedBrand, setSelectedBrand] = useState('Royal Club');
+  const [selectedCategory, setSelectedCategory] = useState('Plywood');
 
   useEffect(() => {
     setSelectedSize('8 x 4');
@@ -1931,25 +2356,6 @@ export const ProductsPage = ({ onNavigate, search }) => {
     acc[spread.category].push({ spread, idx });
     return acc;
   }, {});
-
-  const getCategoryBrands = (catKey) => {
-    if (!catKey) return [];
-    if (catKey === 'Plywood') {
-      return ['Royal Club', 'Marine Club', 'Gurjan Club', 'Gurjan King', 'Gurjan Gold', 'Gurjan Star'];
-    }
-    if (catKey === 'Laminates') {
-      return ['Century', 'Green', 'Marine', 'Vista', 'Croma'];
-    }
-    const items = categories[catKey] || categories[catKey.replace('&', ' & ')] || categories[catKey.replace(' & ', '&')] || [];
-    const brandSet = [];
-    items.forEach(({ spread }) => {
-      const name = spread.brandName;
-      if (name && !brandSet.includes(name)) {
-        brandSet.push(name);
-      }
-    });
-    return brandSet;
-  };
 
   const toggleCategory = (catName) => {
     setExpandedCategories(prev => ({
@@ -1970,13 +2376,20 @@ export const ProductsPage = ({ onNavigate, search }) => {
     message: ''
   });
 
-  const activeSpread = SPREADS[currentSpreadIdx];
+  const activeSpread = SPREADS[currentSpreadIdx] || SPREADS[0];
   const activeCategorySpreads = SPREADS.filter(s => s.category === activeSpread.category);
   const activeCatIdx = activeCategorySpreads.findIndex(s => s.id === activeSpread.id);
 
+  // Sync selectedBrand & selectedCategory whenever activeSpread changes
   useEffect(() => {
-    if (activeSpread && activeSpread.category) {
-      setSelectedCategoryBrands(activeSpread.category);
+    if (activeSpread) {
+      if (activeSpread.brandName) {
+        setSelectedBrand(activeSpread.brandName);
+      }
+      let cat = activeSpread.category;
+      if (cat === 'Architectural Hardware') cat = 'Arch. Hardware';
+      else if (cat === 'Hardware&Fittings' || cat === 'Hardware & Fittings') cat = 'Hardware & Fittings';
+      setSelectedCategory(cat);
       setExpandedCategories(prev => ({
         ...prev,
         [activeSpread.category]: true
@@ -2068,28 +2481,82 @@ export const ProductsPage = ({ onNavigate, search }) => {
     }
   };
 
-  const handleBrandClick = (brandName) => {
-    if (selectedBrand && selectedBrand.toLowerCase() === brandName.toLowerCase()) {
-      setSelectedBrand(null);
+  const navigateToBrandCategory = (brandName, categoryName) => {
+    const bLower = (brandName || '').toLowerCase().trim();
+    const cLower = (categoryName || '').toLowerCase().trim();
+
+    // 1. Exact match on brand and category
+    const exactIdx = SPREADS.findIndex(s => {
+      if (s.hideFromIndex) return false;
+      const bMatch = s.brandName && s.brandName.toLowerCase().trim() === bLower;
+      if (!bMatch) return false;
+
+      const catNorm = s.category.toLowerCase().trim();
+      if (cLower === 'arch. hardware') return catNorm.includes('architectural');
+      if (cLower === 'hardware & fittings') return catNorm.includes('hardware') && !catNorm.includes('architectural');
+      if (cLower === 'sliding systems') return catNorm.includes('sliding') || s.brandId === 'drawer-channel';
+      return catNorm === cLower;
+    });
+
+    if (exactIdx !== -1) {
+      handleThumbnailClick(exactIdx);
       return;
     }
+
+    // 2. Match on brand only
+    const brandIdx = SPREADS.findIndex(s => {
+      if (s.hideFromIndex) return false;
+      return s.brandName && s.brandName.toLowerCase().trim() === bLower;
+    });
+
+    if (brandIdx !== -1) {
+      handleThumbnailClick(brandIdx);
+      return;
+    }
+
+    // 3. Fallback: match category
+    const catIdx = SPREADS.findIndex(s => {
+      if (s.hideFromIndex) return false;
+      const catNorm = s.category.toLowerCase().trim();
+      if (cLower === 'arch. hardware') return catNorm.includes('architectural');
+      if (cLower === 'hardware & fittings') return catNorm.includes('hardware') && !catNorm.includes('architectural');
+      if (cLower === 'sliding systems') return catNorm.includes('sliding') || s.brandId === 'drawer-channel';
+      return catNorm === cLower;
+    });
+
+    if (catIdx !== -1) {
+      handleThumbnailClick(catIdx);
+    }
+  };
+
+  const handleBrandSelect = (brandName) => {
     setSelectedBrand(brandName);
-    const catKey = selectedCategoryBrands || activeSpread.category;
-    const matchIdx = SPREADS.findIndex(s =>
-      (s.category === catKey || s.category.replace(/\s+/g, '') === catKey.replace(/\s+/g, '')) &&
-      s.brandName &&
-      s.brandName.toLowerCase() === brandName.toLowerCase() &&
-      !s.hideFromIndex
+    const availableCats = getCategoriesForBrand(brandName);
+    const nextCat = availableCats.includes(selectedCategory) ? selectedCategory : availableCats[0];
+    setSelectedCategory(nextCat);
+    navigateToBrandCategory(brandName, nextCat);
+  };
+
+  const handleCategorySelect = (categoryName) => {
+    setSelectedCategory(categoryName);
+    const currentBrand = selectedBrand || activeSpread.brandName || 'Royal Club';
+    const brandOffersCat = getCategoriesForBrand(currentBrand).some(
+      c => c.toLowerCase() === categoryName.toLowerCase()
     );
 
-    const fallbackIdx = SPREADS.findIndex(s =>
-      s.brandName && s.brandName.toLowerCase() === brandName.toLowerCase() && !s.hideFromIndex
-    );
-
-    const targetIdx = matchIdx !== -1 ? matchIdx : fallbackIdx;
-
-    if (targetIdx !== -1) {
-      handleThumbnailClick(targetIdx);
+    if (brandOffersCat) {
+      navigateToBrandCategory(currentBrand, categoryName);
+    } else {
+      // Find the first brand that offers this category
+      const matchingBrand = BRAND_CONFIG.find(b =>
+        b.categories.some(c => c.toLowerCase() === categoryName.toLowerCase())
+      );
+      if (matchingBrand) {
+        setSelectedBrand(matchingBrand.name);
+        navigateToBrandCategory(matchingBrand.name, categoryName);
+      } else {
+        navigateToBrandCategory(currentBrand, categoryName);
+      }
     }
   };
 
@@ -2114,7 +2581,35 @@ export const ProductsPage = ({ onNavigate, search }) => {
 
   const activeThickness = selectedThicknesses[currentSpreadIdx] || activeSpread.defaultThickness;
 
+  // Determine active category key
+  const activeCatKey = CATEGORY_DEFINITIONS.find(cat => {
+    const activeCatNorm = (selectedCategory || activeSpread.category || '').toLowerCase();
+    const catNorm = cat.key.toLowerCase();
+    return activeCatNorm === catNorm ||
+      (catNorm === 'arch. hardware' && activeCatNorm.includes('architectural')) ||
+      (catNorm === 'hardware & fittings' && activeCatNorm.includes('hardware') && !activeCatNorm.includes('architectural')) ||
+      (catNorm === 'sliding systems' && activeCatNorm.includes('sliding'));
+  })?.key || 'Plywood';
 
+  // Flagship 6 brands shown in the reference image
+  const flagshipBrandNames = ['Royal Club', 'Marine Club', 'Gurjan Club', 'Gurjan King', 'Gurjan Gold', 'Gurjan Star'];
+
+  // Brands associated with the active category
+  const categoryBrands = BRAND_CONFIG.filter(b => {
+    if (activeCatKey === 'Plywood') {
+      return flagshipBrandNames.includes(b.name);
+    }
+    return b.categories && b.categories.some(c =>
+      c.toLowerCase() === activeCatKey.toLowerCase() ||
+      (activeCatKey === 'Arch. Hardware' && c.toLowerCase().includes('arch')) ||
+      (activeCatKey === 'Hardware & Fittings' && c.toLowerCase().includes('hardware')) ||
+      (activeCatKey === 'Sliding Systems' && c.toLowerCase().includes('sliding'))
+    );
+  });
+
+  const displayedBrands = categoryBrands.length > 0
+    ? categoryBrands
+    : BRAND_CONFIG.filter(b => flagshipBrandNames.includes(b.name));
 
   return (
     <div className="w-full min-h-screen bg-[#F8F8F6] font-sans pt-0 pb-4 select-none text-slate-800">
@@ -2129,150 +2624,107 @@ export const ProductsPage = ({ onNavigate, search }) => {
         </div>
       )}
 
-      {/* Compact Category Navigation Deck (Below Navbar) */}
-      <div className="w-full bg-[#F5EDE0] text-slate-800 relative border-b border-[#FAF2DF] animate-fade-in mb-6 sm:mb-8 shadow-2xs pt-[116px] sm:pt-[96px] md:pt-[100px] pb-3.5 sm:pb-4.5">
-        <div className="max-w-[1360px] mx-auto w-full px-3 sm:px-6 relative z-20">
+      {/* Visual Navigation Deck (Matching Reference Image) */}
+      <div className="w-full bg-white text-slate-800 relative border-b border-[#E8DFC8]/60 animate-fade-in mb-6 sm:mb-8 shadow-xs pt-[116px] sm:pt-[96px] md:pt-[100px] pb-4 sm:pb-5">
+        <div className="max-w-[1440px] mx-auto w-full px-3 sm:px-6 relative z-20">
 
-          {/* Header Row (Hidden on mobile) */}
-          <div className="hidden sm:flex items-center gap-2 mb-2 px-0.5">
-            <span className="text-[11px] font-black uppercase tracking-widest text-[#8c6d23]">
-              Product Categories
+          {/* 1. Header: SHOP BY BRAND */}
+          <div className="flex items-center justify-center gap-3 sm:gap-4 mb-3 sm:mb-3.5">
+            <div className="h-[1.5px] w-12 sm:w-28 bg-[#C5A059]" />
+            <span className="text-[12px] sm:text-[13.5px] font-black uppercase tracking-[0.2em] text-[#a88634]">
+              SHOP BY <span className="text-[#0c2340]">BRAND</span>
             </span>
+            <div className="h-[1.5px] w-12 sm:w-28 bg-[#C5A059]" />
           </div>
 
-          {/* Category Items - Compact Sizing, Text-Only Presentation */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-1.5 sm:gap-2 lg:gap-2.5 pt-0.5 pb-1 px-0.5">
-            {[
-              { key: 'Plywood', title: 'Plywood' },
-              { key: 'Laminates', title: 'Laminates' },
-              { key: 'Acrylic Panels', title: 'Acrylic Panels' },
-              { key: 'Veneers', title: 'Veneers' },
-              { key: 'Fancy Doors', title: 'Fancy Doors' },
-              { key: 'Architectural Hardware', title: 'Arch. Hardware' },
-              { key: 'Hardware&Fittings', title: 'Hardware & Fittings' }
-            ].map((cat) => {
-              const isActive = (selectedCategoryBrands || activeSpread.category) === cat.key;
+          {/* Brand Cards Grid / Scroll */}
+          <div className="flex items-center gap-2.5 sm:gap-3.5 overflow-x-auto no-scrollbar py-1 px-1 justify-start lg:justify-center">
+            {displayedBrands.map((b) => {
+              const isBrandActive = (selectedBrand || activeSpread.brandName || '').toLowerCase() === b.name.toLowerCase();
               return (
                 <button
-                  key={cat.key}
+                  key={b.name}
                   type="button"
-                  onClick={() => {
-                    setSelectedCategoryBrands(cat.key);
-                    setSelectedBrand(null); // By default no brand is selected!
-                    setExpandedCategories(prev => ({
-                      ...prev,
-                      [cat.key]: true
-                    }));
-                    const firstMatch = SPREADS.findIndex(s =>
-                      (s.category === cat.key || s.category.replace(/\s+/g, '') === cat.key.replace(/\s+/g, '')) &&
-                      !s.hideFromIndex
-                    );
-                    if (firstMatch !== -1) {
-                      handleThumbnailClick(firstMatch);
-                    }
-                  }}
-                  className={`group flex items-center justify-center px-2 py-1.5 sm:px-2.5 sm:py-2 rounded-lg sm:rounded-xl transition-all duration-200 cursor-pointer text-center select-none w-full border ${isActive
-                    ? 'bg-[#006e2f] text-white border-[#006e2f] shadow-sm shadow-[#006e2f]/20 scale-[1.02]'
-                    : 'bg-white hover:bg-[#FAF6EE] text-slate-800 hover:text-[#006e2f] border-slate-200/80 hover:border-[#8c6d23]/40 shadow-2xs hover:shadow-xs'
-                    }`}
+                  onClick={() => handleBrandSelect(b.name)}
+                  className={`group flex flex-col items-center justify-center min-w-[145px] sm:min-w-[165px] lg:w-[172px] h-[68px] sm:h-[72px] px-3 py-2 rounded-xl sm:rounded-2xl border transition-all cursor-pointer select-none active:scale-95 shrink-0 shadow-2xs ${
+                    isBrandActive
+                      ? 'bg-[#FFFDF7] border-[#C5A059] ring-1 ring-[#C5A059]/60 shadow-sm'
+                      : 'bg-white hover:bg-[#FFFDF7] border-[#D4AF37]/50 hover:border-[#C5A059] hover:shadow-xs'
+                  }`}
                 >
-                  <span className={`text-[11px] sm:text-[12px] font-black tracking-tight leading-tight transition-colors ${isActive ? 'text-white' : 'text-slate-800 group-hover:text-[#006e2f]'
-                    }`}>
-                    {cat.title}
-                  </span>
+                  {/* Brand Icon / Emblem on top */}
+                  <div className="flex items-center justify-center h-6 mb-1 transition-transform group-hover:scale-105">
+                    {b.icon}
+                  </div>
+
+                  {/* Brand Name Typography */}
+                  <div className="flex items-center justify-center leading-none text-center">
+                    <span className="font-serif font-black tracking-wider text-[11px] sm:text-[12.5px] text-[#0c2340]">
+                      {b.highlightWord ? (
+                        <>
+                          {b.displayName.replace(b.highlightWord, '')}
+                          <span className={`ml-0.5 ${b.highlightWord === 'KING' ? 'italic text-[#b88a44]' : 'text-[#b88a44]'}`}>
+                            {b.highlightWord}
+                          </span>
+                        </>
+                      ) : (
+                        b.displayName
+                      )}
+                    </span>
+                    {b.trademark && (
+                      <span className="text-[8px] font-normal text-slate-500 ml-0.5 relative -top-1">®</span>
+                    )}
+                  </div>
                 </button>
               );
             })}
           </div>
 
-          {/* Selected Category Brand Names - Styled Distinctly as Brands */}
-          {selectedCategoryBrands && (() => {
-            const brandsList = getCategoryBrands(selectedCategoryBrands);
+          {/* Divider Line */}
+          <div className="w-full max-w-[1360px] mx-auto h-[1px] bg-[#E8DFC8]/60 my-3.5 sm:my-4" />
 
-            if (!brandsList.length) {
+          {/* 2. Header: BROWSE CATEGORIES */}
+          <div className="flex items-center justify-center gap-3 sm:gap-4 mb-3 sm:mb-3.5">
+            <div className="h-[1.5px] w-12 sm:w-28 bg-[#C5A059]" />
+            <span className="text-[12px] sm:text-[13.5px] font-black uppercase tracking-[0.2em] text-[#a88634]">
+              BROWSE <span className="text-[#0c2340]">CATEGORIES</span>
+            </span>
+            <div className="h-[1.5px] w-12 sm:w-28 bg-[#C5A059]" />
+          </div>
+
+          {/* Category Cards Grid / Scroll */}
+          <div className="flex items-center gap-2 sm:gap-2.5 overflow-x-auto no-scrollbar py-1 px-1 justify-start lg:justify-center">
+            {CATEGORY_DEFINITIONS.map((cat) => {
+              const activeCatNorm = (selectedCategory || activeSpread.category || '').toLowerCase();
+              const catNorm = cat.key.toLowerCase();
+              const isCatActive = activeCatNorm === catNorm ||
+                (catNorm === 'arch. hardware' && activeCatNorm.includes('architectural')) ||
+                (catNorm === 'hardware & fittings' && activeCatNorm.includes('hardware') && !activeCatNorm.includes('architectural')) ||
+                (catNorm === 'sliding systems' && activeCatNorm.includes('sliding'));
+
               return (
-                <div className="mt-2 text-center">
-                  <span className="text-xs font-semibold text-slate-500 italic">No brand listings available</span>
-                </div>
+                <button
+                  key={cat.key}
+                  type="button"
+                  onClick={() => handleCategorySelect(cat.key)}
+                  className={`group flex items-center gap-2 sm:gap-2.5 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-lg sm:rounded-xl border transition-all cursor-pointer select-none active:scale-95 shrink-0 shadow-2xs ${
+                    isCatActive
+                      ? 'bg-[#005a2b] text-white border-[#004722] shadow-sm'
+                      : 'bg-white hover:bg-[#FFFDF7] text-[#0c2340] border-[#D4AF37]/55 hover:border-[#b88a44] hover:shadow-xs'
+                  }`}
+                >
+                  <span className={`transition-colors ${isCatActive ? 'text-white' : ''}`}>
+                    {typeof cat.icon === 'function' ? cat.icon(isCatActive) : cat.icon}
+                  </span>
+                  <span className={`text-[12px] sm:text-[13px] font-bold tracking-tight whitespace-nowrap ${
+                    isCatActive ? 'text-white' : 'text-[#0c2340] group-hover:text-[#005a2b]'
+                  }`}>
+                    {cat.label}
+                  </span>
+                </button>
               );
-            }
-
-            // Split into exactly 2 rows if more than 3 brands exist
-            const shouldSplit = brandsList.length > 3;
-            const midpoint = shouldSplit ? Math.ceil(brandsList.length / 2) : brandsList.length;
-            const row1 = brandsList.slice(0, midpoint);
-            const row2 = shouldSplit ? brandsList.slice(midpoint) : [];
-
-            return (
-              <div className="mt-2.5 animate-fade-in w-full">
-
-                {/* Desktop View: Normal single row */}
-                <div className="hidden md:flex items-center justify-center gap-1.5 lg:gap-2 flex-wrap max-w-full px-1">
-                  {brandsList.map((brandName) => {
-                    const isBrandActive = selectedBrand && selectedBrand.toLowerCase() === brandName.toLowerCase();
-                    return (
-                      <button
-                        key={brandName}
-                        type="button"
-                        onClick={() => handleBrandClick(brandName)}
-                        className={`group flex items-center justify-center px-3 py-1 sm:py-1.5 rounded-full text-[11px] sm:text-[12px] font-bold border select-none transition-all cursor-pointer active:scale-95 whitespace-nowrap shadow-2xs ${isBrandActive
-                          ? 'bg-slate-900 text-white border-slate-900 shadow-md ring-2 ring-[#006e2f]/40 scale-[1.02]'
-                          : 'bg-white hover:bg-[#FAF6EE] text-slate-800 hover:text-[#006e2f] border-slate-300/80 hover:border-[#8c6d23]/50'
-                          }`}
-                      >
-                        <span>{brandName}</span>
-                      </button>
-                    );
-                  })}
-                </div>
-
-                {/* Mobile View: Exactly 2 rows */}
-                <div className="flex md:hidden flex-col items-center justify-center gap-1.5 w-full">
-                  {/* Row 1 */}
-                  <div className="flex items-center justify-center gap-1.5 max-w-full overflow-x-auto no-scrollbar px-1">
-                    {row1.map((brandName) => {
-                      const isBrandActive = selectedBrand && selectedBrand.toLowerCase() === brandName.toLowerCase();
-                      return (
-                        <button
-                          key={brandName}
-                          type="button"
-                          onClick={() => handleBrandClick(brandName)}
-                          className={`group flex items-center justify-center px-2.5 py-1 rounded-full text-[11px] font-bold border select-none transition-all cursor-pointer active:scale-95 whitespace-nowrap shrink-0 shadow-2xs ${isBrandActive
-                            ? 'bg-slate-900 text-white border-slate-900 shadow-md ring-2 ring-[#006e2f]/40 scale-[1.02]'
-                            : 'bg-white hover:bg-[#FAF6EE] text-slate-800 hover:text-[#006e2f] border-slate-300/80 hover:border-[#8c6d23]/50'
-                            }`}
-                        >
-                          <span>{brandName}</span>
-                        </button>
-                      );
-                    })}
-                  </div>
-
-                  {/* Row 2 */}
-                  {row2.length > 0 && (
-                    <div className="flex items-center justify-center gap-1.5 max-w-full overflow-x-auto no-scrollbar px-1">
-                      {row2.map((brandName) => {
-                        const isBrandActive = selectedBrand && selectedBrand.toLowerCase() === brandName.toLowerCase();
-                        return (
-                          <button
-                            key={brandName}
-                            type="button"
-                            onClick={() => handleBrandClick(brandName)}
-                            className={`group flex items-center justify-center px-2.5 py-1 rounded-full text-[11px] font-bold border select-none transition-all cursor-pointer active:scale-95 whitespace-nowrap shrink-0 shadow-2xs ${isBrandActive
-                              ? 'bg-slate-900 text-white border-slate-900 shadow-md ring-2 ring-[#006e2f]/40 scale-[1.02]'
-                              : 'bg-white hover:bg-[#FAF6EE] text-slate-800 hover:text-[#006e2f] border-slate-300/80 hover:border-[#8c6d23]/50'
-                              }`}
-                          >
-                            <span>{brandName}</span>
-                          </button>
-                        );
-                      })}
-                    </div>
-                  )}
-                </div>
-              </div>
-            );
-          })()}
+            })}
+          </div>
 
         </div>
       </div>
