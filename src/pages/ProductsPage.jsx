@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useDocumentMetadata } from '../hooks/useDocumentMetadata';
 import { kitchenAccessoriesSpreads } from '../components/KitchenAccessories';
 import {
@@ -1907,6 +1907,45 @@ export const BRAND_CONFIG = [
         <path d="M3 21h18M6 21V7l6-4 6 4v14" />
       </svg>
     )
+  },
+  {
+    name: 'Astdax',
+    displayName: 'ASTDAX',
+    trademark: true,
+    categories: ['Arch. Hardware', 'Hardware & Fittings'],
+    icon: (
+      <svg className="w-6 h-5 text-[#C5A059]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="3" y="6" width="6" height="12" rx="3" />
+        <path d="M9 10h11a1.5 1.5 0 011.5 1.5v0a1.5 1.5 0 01-1.5 1.5H9" />
+        <circle cx="6" cy="12" r="1.2" fill="currentColor" />
+      </svg>
+    )
+  },
+  {
+    name: 'Tandem Box',
+    displayName: 'TANDEM BOX',
+    trademark: true,
+    categories: ['Kitchen Accessories'],
+    icon: (
+      <svg className="w-6 h-5 text-[#C5A059]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="3" y="5" width="18" height="14" rx="2" />
+        <path d="M3 11h18M9 15h6" />
+      </svg>
+    )
+  },
+  {
+    name: 'Drawer Channel',
+    displayName: 'DRAWER CHANNEL',
+    trademark: true,
+    categories: ['Sliding Systems', 'Hardware & Fittings'],
+    icon: (
+      <svg className="w-6 h-5 text-[#C5A059]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="2" y="7" width="20" height="10" rx="1.5" />
+        <line x1="6" y1="12" x2="18" y2="12" strokeDasharray="2 2" />
+        <circle cx="5" cy="12" r="1" fill="currentColor" />
+        <circle cx="19" cy="12" r="1" fill="currentColor" />
+      </svg>
+    )
   }
 ];
 
@@ -2581,35 +2620,25 @@ export const ProductsPage = ({ onNavigate, search }) => {
 
   const activeThickness = selectedThicknesses[currentSpreadIdx] || activeSpread.defaultThickness;
 
-  // Determine active category key
-  const activeCatKey = CATEGORY_DEFINITIONS.find(cat => {
-    const activeCatNorm = (selectedCategory || activeSpread.category || '').toLowerCase();
-    const catNorm = cat.key.toLowerCase();
-    return activeCatNorm === catNorm ||
-      (catNorm === 'arch. hardware' && activeCatNorm.includes('architectural')) ||
-      (catNorm === 'hardware & fittings' && activeCatNorm.includes('hardware') && !activeCatNorm.includes('architectural')) ||
-      (catNorm === 'sliding systems' && activeCatNorm.includes('sliding'));
-  })?.key || 'Plywood';
+  const brandScrollRef = useRef(null);
+  const brandButtonRefs = useRef({});
 
-  // Flagship 6 brands shown in the reference image
-  const flagshipBrandNames = ['Royal Club', 'Marine Club', 'Gurjan Club', 'Gurjan King', 'Gurjan Gold', 'Gurjan Star'];
-
-  // Brands associated with the active category
-  const categoryBrands = BRAND_CONFIG.filter(b => {
-    if (activeCatKey === 'Plywood') {
-      return flagshipBrandNames.includes(b.name);
+  const scrollBrands = (direction) => {
+    if (brandScrollRef.current) {
+      const scrollAmount = direction === 'left' ? -380 : 380;
+      brandScrollRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
     }
-    return b.categories && b.categories.some(c =>
-      c.toLowerCase() === activeCatKey.toLowerCase() ||
-      (activeCatKey === 'Arch. Hardware' && c.toLowerCase().includes('arch')) ||
-      (activeCatKey === 'Hardware & Fittings' && c.toLowerCase().includes('hardware')) ||
-      (activeCatKey === 'Sliding Systems' && c.toLowerCase().includes('sliding'))
-    );
-  });
+  };
 
-  const displayedBrands = categoryBrands.length > 0
-    ? categoryBrands
-    : BRAND_CONFIG.filter(b => flagshipBrandNames.includes(b.name));
+  useEffect(() => {
+    if (selectedBrand && brandButtonRefs.current[selectedBrand]) {
+      brandButtonRefs.current[selectedBrand].scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest',
+        inline: 'center'
+      });
+    }
+  }, [selectedBrand]);
 
   return (
     <div className="w-full min-h-screen bg-[#F8F8F6] font-sans pt-0 pb-4 select-none text-slate-800">
@@ -2637,47 +2666,82 @@ export const ProductsPage = ({ onNavigate, search }) => {
             <div className="h-[1.5px] w-12 sm:w-28 bg-[#C5A059]" />
           </div>
 
-          {/* Brand Cards Grid / Scroll */}
-          <div className="flex items-center gap-2.5 sm:gap-3.5 overflow-x-auto no-scrollbar py-1 px-1 justify-start lg:justify-center">
-            {displayedBrands.map((b) => {
-              const isBrandActive = (selectedBrand || activeSpread.brandName || '').toLowerCase() === b.name.toLowerCase();
-              return (
-                <button
-                  key={b.name}
-                  type="button"
-                  onClick={() => handleBrandSelect(b.name)}
-                  className={`group flex flex-col items-center justify-center min-w-[145px] sm:min-w-[165px] lg:w-[172px] h-[68px] sm:h-[72px] px-3 py-2 rounded-xl sm:rounded-2xl border transition-all cursor-pointer select-none active:scale-95 shrink-0 shadow-2xs ${
-                    isBrandActive
-                      ? 'bg-[#FFFDF7] border-[#C5A059] ring-1 ring-[#C5A059]/60 shadow-sm'
-                      : 'bg-white hover:bg-[#FFFDF7] border-[#D4AF37]/50 hover:border-[#C5A059] hover:shadow-xs'
-                  }`}
-                >
-                  {/* Brand Icon / Emblem on top */}
-                  <div className="flex items-center justify-center h-6 mb-1 transition-transform group-hover:scale-105">
-                    {b.icon}
-                  </div>
+          {/* Brand Cards Carousel with Controls */}
+          <div className="relative group/brandrow px-0 sm:px-6">
+            {/* Left Scroll Button */}
+            <button
+              type="button"
+              onClick={() => scrollBrands('left')}
+              className="hidden sm:flex absolute -left-1 top-1/2 -translate-y-1/2 z-30 w-8 h-8 rounded-full bg-white border border-[#D4AF37]/60 text-[#0c2340] shadow-md hover:bg-[#FAF8F2] hover:border-[#b88a44] items-center justify-center transition-all cursor-pointer hover:scale-110 active:scale-95"
+              title="Previous Brands"
+              aria-label="Previous Brands"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+              </svg>
+            </button>
 
-                  {/* Brand Name Typography */}
-                  <div className="flex items-center justify-center leading-none text-center">
-                    <span className="font-serif font-black tracking-wider text-[11px] sm:text-[12.5px] text-[#0c2340]">
-                      {b.highlightWord ? (
-                        <>
-                          {b.displayName.replace(b.highlightWord, '')}
-                          <span className={`ml-0.5 ${b.highlightWord === 'KING' ? 'italic text-[#b88a44]' : 'text-[#b88a44]'}`}>
-                            {b.highlightWord}
-                          </span>
-                        </>
-                      ) : (
-                        b.displayName
+            {/* Brand Cards Grid / Scroll Track */}
+            <div
+              ref={brandScrollRef}
+              className="flex items-center gap-2.5 sm:gap-3.5 overflow-x-auto no-scrollbar py-2 px-1 scroll-smooth"
+            >
+              {BRAND_CONFIG.map((b) => {
+                const isBrandActive = (selectedBrand || activeSpread.brandName || '').toLowerCase() === b.name.toLowerCase();
+                return (
+                  <button
+                    key={b.name}
+                    ref={(el) => {
+                      if (el) brandButtonRefs.current[b.name] = el;
+                    }}
+                    type="button"
+                    onClick={() => handleBrandSelect(b.name)}
+                    className={`group flex flex-col items-center justify-center min-w-[145px] sm:min-w-[160px] h-[68px] sm:h-[72px] px-3 py-2 rounded-xl sm:rounded-2xl border transition-all cursor-pointer select-none active:scale-95 shrink-0 shadow-2xs ${
+                      isBrandActive
+                        ? 'bg-[#FFFDF7] border-[#C5A059] ring-1 ring-[#C5A059]/60 shadow-sm scale-[1.02]'
+                        : 'bg-white hover:bg-[#FFFDF7] border-[#D4AF37]/50 hover:border-[#C5A059] hover:shadow-xs'
+                    }`}
+                  >
+                    {/* Brand Icon / Emblem on top */}
+                    <div className="flex items-center justify-center h-6 mb-1 transition-transform group-hover:scale-105">
+                      {b.icon}
+                    </div>
+
+                    {/* Brand Name Typography */}
+                    <div className="flex items-center justify-center leading-none text-center">
+                      <span className="font-serif font-black tracking-wider text-[11px] sm:text-[12px] text-[#0c2340] whitespace-nowrap">
+                        {b.highlightWord ? (
+                          <>
+                            {b.displayName.replace(b.highlightWord, '')}
+                            <span className={`ml-0.5 ${b.highlightWord === 'KING' ? 'italic text-[#b88a44]' : 'text-[#b88a44]'}`}>
+                              {b.highlightWord}
+                            </span>
+                          </>
+                        ) : (
+                          b.displayName
+                        )}
+                      </span>
+                      {b.trademark && (
+                        <span className="text-[8px] font-normal text-slate-500 ml-0.5 relative -top-1">®</span>
                       )}
-                    </span>
-                    {b.trademark && (
-                      <span className="text-[8px] font-normal text-slate-500 ml-0.5 relative -top-1">®</span>
-                    )}
-                  </div>
-                </button>
-              );
-            })}
+                    </div>
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Right Scroll Button */}
+            <button
+              type="button"
+              onClick={() => scrollBrands('right')}
+              className="hidden sm:flex absolute -right-1 top-1/2 -translate-y-1/2 z-30 w-8 h-8 rounded-full bg-white border border-[#D4AF37]/60 text-[#0c2340] shadow-md hover:bg-[#FAF8F2] hover:border-[#b88a44] items-center justify-center transition-all cursor-pointer hover:scale-110 active:scale-95"
+              title="Next Brands"
+              aria-label="Next Brands"
+            >
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+              </svg>
+            </button>
           </div>
 
           {/* Divider Line */}
