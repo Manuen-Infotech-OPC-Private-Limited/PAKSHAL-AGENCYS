@@ -30,6 +30,20 @@ import plywoodImg from '../assets/plywood/royalclub.png';
 import royalClubImg from '../assets/plywood/royalclub.png';
 import royalClub2Img from '../assets/plywood/royalclub2.png';
 import marineClubImg from '../assets/plywood/marineclub.png';
+import royalClubLogo from '../assets/logos/Royal Club.png';
+import marineClubLogo from '../assets/logos/Marine Club.png';
+import gurjanClubLogo from '../assets/logos/gurjan club.png';
+import gurjanKingLogo from '../assets/logos/GURJAN KING.png';
+import gurjanGoldLogo from '../assets/logos/Gurjan Gold.png';
+import gurjanStarLogo from '../assets/logos/Gurjan Star.png';
+import centuryLogo from '../assets/logos/Century.png';
+import greenLogo from '../assets/logos/Green.png';
+import vistaLogo from '../assets/logos/VISTA.png';
+import cromaLogo from '../assets/logos/CROMA.png';
+import indigoLogo from '../assets/logos/Indigo City Gear Emblem.png';
+import armaniLogo from '../assets/logos/Armani.png';
+import steelWoodLogo from '../assets/logos/Steel Wood.png';
+import architectureLogo from '../assets/logos/Architecture.png';
 import laminatesImg from '../assets/laminates/laminate-marble-slabs.jpg';
 import laminates2Img from '../assets/laminates/laminates2.png';
 import laminates3Img from '../assets/laminates/laminates3.png';
@@ -1716,6 +1730,7 @@ export const BRAND_CONFIG = [
     name: 'Royal Club',
     displayName: 'ROYAL CLUB',
     trademark: true,
+    logo: royalClubLogo,
     categories: ['Plywood'],
     icon: (
       <svg className="w-8 h-6 text-[#C5A059]" viewBox="0 0 32 22" fill="currentColor">
@@ -1730,6 +1745,7 @@ export const BRAND_CONFIG = [
     name: 'Marine Club',
     displayName: 'MARINE CLUB',
     trademark: true,
+    logo: marineClubLogo,
     categories: ['Plywood'],
     icon: (
       <svg className="w-8 h-6" viewBox="0 0 34 20" fill="none">
@@ -1742,6 +1758,7 @@ export const BRAND_CONFIG = [
     name: 'Gurjan Club',
     displayName: 'GURJAN CLUB',
     trademark: true,
+    logo: gurjanClubLogo,
     categories: ['Plywood'],
     icon: (
       <svg className="w-6 h-6 text-[#C5A059]" viewBox="0 0 28 28" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
@@ -1757,6 +1774,7 @@ export const BRAND_CONFIG = [
     displayName: 'GURJAN KING',
     highlightWord: 'KING',
     trademark: true,
+    logo: gurjanKingLogo,
     categories: ['Plywood'],
     icon: (
       <svg className="w-8 h-6 text-[#C5A059]" viewBox="0 0 30 22" fill="currentColor">
@@ -1770,6 +1788,7 @@ export const BRAND_CONFIG = [
     displayName: 'GURJAN GOLD',
     highlightWord: 'GOLD',
     trademark: true,
+    logo: gurjanGoldLogo,
     categories: ['Plywood'],
     icon: (
       <svg className="w-6 h-6 text-[#C5A059]" viewBox="0 0 28 28" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
@@ -1784,6 +1803,7 @@ export const BRAND_CONFIG = [
     displayName: 'GURJAN STAR',
     highlightWord: 'STAR',
     trademark: true,
+    logo: gurjanStarLogo,
     categories: ['Plywood'],
     icon: (
       <svg className="w-6 h-6 text-[#C5A059]" viewBox="0 0 26 26" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
@@ -1795,6 +1815,7 @@ export const BRAND_CONFIG = [
     name: 'Century',
     displayName: 'CENTURY',
     trademark: true,
+    logo: centuryLogo,
     categories: ['Laminates', 'Plywood'],
     icon: (
       <svg className="w-5 h-5 text-[#006e2f]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -1807,6 +1828,7 @@ export const BRAND_CONFIG = [
     name: 'Green',
     displayName: 'GREEN',
     trademark: true,
+    logo: greenLogo,
     categories: ['Laminates', 'Plywood'],
     icon: (
       <svg className="w-5 h-5 text-[#16a34a]" viewBox="0 0 24 24" fill="currentColor">
@@ -1830,6 +1852,7 @@ export const BRAND_CONFIG = [
     name: 'Vista',
     displayName: 'VISTA',
     trademark: true,
+    logo: vistaLogo,
     categories: ['Laminates'],
     icon: (
       <svg className="w-5 h-5 text-[#a88634]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -1841,6 +1864,7 @@ export const BRAND_CONFIG = [
     name: 'Croma',
     displayName: 'CROMA',
     trademark: true,
+    logo: cromaLogo,
     categories: ['Laminates'],
     icon: (
       <svg className="w-5 h-5 text-[#d97706]" viewBox="0 0 24 24" fill="currentColor">
@@ -1855,6 +1879,7 @@ export const BRAND_CONFIG = [
     name: 'Indigo',
     displayName: 'INDIGO',
     trademark: true,
+    logo: indigoLogo,
     categories: ['Laminates'],
     icon: (
       <svg className="w-5 h-5 text-[#4f46e5]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -1866,6 +1891,7 @@ export const BRAND_CONFIG = [
     name: 'Armani',
     displayName: 'ARMANI',
     trademark: true,
+    logo: armaniLogo,
     categories: ['Acrylic Panels'],
     icon: (
       <svg className="w-6 h-5 text-[#1e293b]" viewBox="0 0 24 24" fill="currentColor">
@@ -1877,6 +1903,7 @@ export const BRAND_CONFIG = [
     name: 'Steel Wood',
     displayName: 'STEEL WOOD',
     trademark: true,
+    logo: steelWoodLogo,
     categories: ['Arch. Hardware', 'Hardware & Fittings', 'Sliding Systems'],
     icon: (
       <svg className="w-5 h-5 text-[#475569]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -1889,6 +1916,7 @@ export const BRAND_CONFIG = [
     name: 'Architecture',
     displayName: 'ARCHITECTURE',
     trademark: true,
+    logo: architectureLogo,
     categories: ['Veneers'],
     icon: (
       <svg className="w-5 h-5 text-[#8c6d23]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -2698,45 +2726,46 @@ export const ProductsPage = ({ onNavigate, search }) => {
                     }}
                     type="button"
                     onClick={() => handleBrandSelect(b.name)}
-                    className={`group shrink-0 flex flex-col items-center justify-center min-w-[110px] sm:min-w-[130px] h-[64px] sm:h-[68px] px-2.5 py-2 rounded-xl border transition-all cursor-pointer select-none active:scale-95 shadow-2xs outline-none focus:outline-none focus-visible:outline-none ring-0 focus:ring-0 ${isBrandActive
-                      ? 'bg-[#005a2b] border-[#004722] text-white shadow-sm'
-                      : 'bg-white hover:bg-[#FFFDF7] border-slate-200/90 hover:border-[#C5A059] text-slate-800'
+                    className={`group shrink-0 flex flex-col items-center justify-center min-w-[110px] sm:min-w-[130px] h-[64px] sm:h-[68px] px-2.5 py-1.5 rounded-xl transition-all cursor-pointer select-none active:scale-95 outline-none focus:outline-none focus-visible:outline-none ring-0 focus:ring-0 ${isBrandActive
+                      ? 'bg-white border-2 border-[#005a2b] shadow-xs ring-1 ring-[#005a2b]/15 text-[#005a2b]'
+                      : 'bg-white hover:bg-[#FFFDF7] border border-slate-200/90 hover:border-[#C5A059] text-slate-800 shadow-2xs'
                       }`}
                   >
-                    {/* Brand Icon / Emblem on top */}
-                    <div className="flex items-center justify-center h-6 mb-1 transition-transform group-hover:scale-105">
-                      {isBrandActive && b.name === 'Royal Club' ? (
-                        <svg className="w-7 h-5 text-[#C5A059]" viewBox="0 0 32 22" fill="currentColor">
-                          <path d="M4 18h24v2.5H4V18zm1.5-2.5l2.5-9 5.5 5 2.5-8 2.5 8 5.5-5 2.5 9H5.5z" />
-                          <circle cx="8" cy="6" r="1.5" />
-                          <circle cx="16" cy="3" r="1.8" />
-                          <circle cx="24" cy="6" r="1.5" />
-                        </svg>
-                      ) : isBrandActive ? (
-                        <span className="text-white drop-shadow-xs">{b.icon}</span>
-                      ) : (
-                        b.icon
-                      )}
-                    </div>
+                    {b.logo ? (
+                      <div className="w-full h-full flex items-center justify-center px-1.5 py-0.5">
+                        <img
+                          src={b.logo}
+                          alt={b.displayName}
+                          className="max-h-9 sm:max-h-10 max-w-full object-contain transition-transform duration-300 group-hover:scale-105 mix-blend-multiply"
+                        />
+                      </div>
+                    ) : (
+                      <>
+                        {/* Brand Icon / Emblem on top */}
+                        <div className="flex items-center justify-center h-6 mb-1 transition-transform group-hover:scale-105">
+                          {b.icon}
+                        </div>
 
-                    {/* Brand Name Typography */}
-                    <div className="flex items-center justify-center leading-none text-center">
-                      <span className={`font-serif font-black tracking-wider text-[10.5px] sm:text-[11px] whitespace-nowrap ${isBrandActive ? 'text-white' : 'text-[#0c2340]'}`}>
-                        {b.highlightWord ? (
-                          <>
-                            {b.displayName.replace(b.highlightWord, '')}
-                            <span className={`ml-0.5 ${b.highlightWord === 'KING' ? (isBrandActive ? 'italic text-[#E8DFC8]' : 'italic text-[#b88a44]') : (isBrandActive ? 'text-[#E8DFC8]' : 'text-[#b88a44]')}`}>
-                              {b.highlightWord}
-                            </span>
-                          </>
-                        ) : (
-                          b.displayName
-                        )}
-                      </span>
-                      {b.trademark && (
-                        <span className={`text-[7.5px] font-normal ml-0.5 relative -top-1 ${isBrandActive ? 'text-white/80' : 'text-slate-500'}`}>®</span>
-                      )}
-                    </div>
+                        {/* Brand Name Typography */}
+                        <div className="flex items-center justify-center leading-none text-center">
+                          <span className={`font-serif font-black tracking-wider text-[10.5px] sm:text-[11px] whitespace-nowrap ${isBrandActive ? 'text-[#005a2b]' : 'text-[#0c2340]'}`}>
+                            {b.highlightWord ? (
+                              <>
+                                {b.displayName.replace(b.highlightWord, '')}
+                                <span className={`ml-0.5 ${b.highlightWord === 'KING' ? 'italic text-[#b88a44]' : 'text-[#b88a44]'}`}>
+                                  {b.highlightWord}
+                                </span>
+                              </>
+                            ) : (
+                              b.displayName
+                            )}
+                          </span>
+                          {b.trademark && (
+                            <span className="text-[7.5px] font-normal ml-0.5 relative -top-1 text-slate-500">®</span>
+                          )}
+                        </div>
+                      </>
+                    )}
                   </button>
                 );
               })}
