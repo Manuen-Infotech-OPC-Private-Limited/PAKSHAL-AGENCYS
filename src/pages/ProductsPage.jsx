@@ -2545,19 +2545,67 @@ export const ProductsPage = ({ onNavigate, search }) => {
 
   const handleBrandSelect = (brandName) => {
     setSelectedBrand(brandName);
-    // USER REQUIREMENT: When user clicks any brand, do NOT auto-select or highlight any category!
-    setSelectedCategory(null);
-    navigateToBrandCategory(brandName, null);
+
+    const bLower = (brandName || '').toLowerCase().trim();
+
+    // 1. If a category is already selected, try to find this brand in that category
+    if (selectedCategory) {
+      const exactIdx = SPREADS.findIndex(s => {
+        if (s.hideFromIndex) return false;
+        const bMatch = s.brandName && (
+          s.brandName.toLowerCase().trim() === bLower ||
+          (bLower === 'astdax' && s.brandName.toLowerCase().includes('astdax')) ||
+          (bLower === 'steel wood' && s.brandName.toLowerCase().includes('steel'))
+        );
+        return bMatch && getCanonicalCategory(s.category) === selectedCategory;
+      });
+
+      if (exactIdx !== -1) {
+        handleThumbnailClick(exactIdx);
+        return;
+      }
+    }
+
+    // 2. Otherwise find the first spread for this brand
+    const brandIdx = SPREADS.findIndex(s => {
+      if (s.hideFromIndex) return false;
+      return s.brandName && (
+        s.brandName.toLowerCase().trim() === bLower ||
+        (bLower === 'astdax' && s.brandName.toLowerCase().includes('astdax')) ||
+        (bLower === 'steel wood' && s.brandName.toLowerCase().includes('steel'))
+      );
+    });
+
+    if (brandIdx !== -1) {
+      handleThumbnailClick(brandIdx);
+    }
   };
 
   const handleCategorySelect = (categoryName) => {
     const canonical = getCanonicalCategory(categoryName);
     setSelectedCategory(canonical);
 
-    // USER REQUIREMENT: When user clicks any category, do NOT highlight/select any brand!
-    setSelectedBrand(null);
+    // 1. If a brand is already selected, try to find this brand in the clicked category
+    if (selectedBrand) {
+      const bLower = selectedBrand.toLowerCase().trim();
+      const exactIdx = SPREADS.findIndex(s => {
+        if (s.hideFromIndex) return false;
+        const bMatch = s.brandName && (
+          s.brandName.toLowerCase().trim() === bLower ||
+          (bLower === 'astdax' && s.brandName.toLowerCase().includes('astdax')) ||
+          (bLower === 'steel wood' && s.brandName.toLowerCase().includes('steel'))
+        );
+        return bMatch && getCanonicalCategory(s.category) === canonical;
+      });
 
-    // Find the first spread matching this category
+      if (exactIdx !== -1) {
+        handleThumbnailClick(exactIdx);
+        return;
+      }
+    }
+
+    // 2. If the current brand has no specific spread in this category, show the category spread (using images from assets)
+    // and KEEP selectedBrand unchanged (do not switch brand automatically)
     const catIdx = SPREADS.findIndex(s => !s.hideFromIndex && getCanonicalCategory(s.category) === canonical);
     if (catIdx !== -1) {
       handleThumbnailClick(catIdx);
@@ -2596,14 +2644,195 @@ export const ProductsPage = ({ onNavigate, search }) => {
   };
 
   useEffect(() => {
-    if (selectedBrand && brandButtonRefs.current[selectedBrand]) {
-      brandButtonRefs.current[selectedBrand].scrollIntoView({
-        behavior: 'smooth',
-        block: 'nearest',
-        inline: 'center'
+    if (selectedBrand && brandButtonRefs.current[selectedBrand] && brandScrollRef.current) {
+      const container = brandScrollRef.current;
+      const button = brandButtonRefs.current[selectedBrand];
+      const targetScroll = button.offsetLeft - (container.offsetWidth / 2) + (button.offsetWidth / 2);
+      container.scrollTo({
+        left: Math.max(0, targetScroll),
+        behavior: 'smooth'
       });
     }
   }, [selectedBrand]);
+
+  // Mobile View: Scroll brands horizontally first when at top; if scrolling continuously, seamlessly scroll down the page
+  useEffect(() => {
+    let startX = 0;
+    let startY = 0;
+    let lastY = 0;
+    let startScrollLeft = 0;
+    let isTouching = false;
+    let hasPreventedDefaultInGesture = false;
+
+    const isMobile = () => window.innerWidth < 768;
+
+    const onGlobalWheel = (e) => {
+      if (!isMobile()) return;
+      const container = brandScrollRef.current;
+      if (!container) return;
+      if (showEnquiryModal || isBrochureDropdownOpen) return;
+
+      const delta = Math.abs(e.deltaY) >= Math.abs(e.deltaX) ? e.deltaY : e.deltaX;
+      const maxScroll = Math.max(0, container.scrollWidth - container.clientWidth);
+
+      if (delta > 0) {
+        // Scrolling DOWN
+        if (window.scrollY <= 1 && container.scrollLeft < maxScroll - 3) {
+          const remaining = maxScroll - container.scrollLeft;
+          if (delta <= remaining) {
+            container.scrollLeft += delta;
+            if (e.cancelable) e.preventDefault();
+          } else {
+            container.scrollLeft = maxScroll;
+            const excess = delta - remaining;
+            window.scrollBy(0, excess);
+            if (e.cancelable) e.preventDefault();
+          }
+        } else {
+          // Brands are already at end OR already scrolled down:
+          // Allow natural window scroll down (do not prevent default)
+        }
+      } else if (delta < 0) {
+        // Scrolling UP
+        if (window.scrollY > 1) {
+          if (window.scrollY + delta <= 0) {
+            const excess = -(window.scrollY + delta);
+            window.scrollTo(0, 0);
+            if (container.scrollLeft > 0) {
+              container.scrollLeft = Math.max(0, container.scrollLeft - excess);
+            }
+            if (e.cancelable) e.preventDefault();
+          } else {
+            // Natural window scroll up (do not prevent default)
+          }
+        } else {
+          // window.scrollY <= 1 (at the top)
+          if (container.scrollLeft > 3) {
+            container.scrollLeft = Math.max(0, container.scrollLeft + delta);
+            if (e.cancelable) e.preventDefault();
+          } else {
+            container.scrollLeft = 0;
+          }
+        }
+      }
+    };
+
+    const onGlobalTouchStart = (e) => {
+      if (!isMobile()) return;
+      const container = brandScrollRef.current;
+      if (!container) return;
+      if (showEnquiryModal || isBrochureDropdownOpen) return;
+      if (e.touches.length !== 1) return;
+
+      isTouching = true;
+      hasPreventedDefaultInGesture = false;
+      startX = e.touches[0].clientX;
+      startY = e.touches[0].clientY;
+      lastY = e.touches[0].clientY;
+      startScrollLeft = container.scrollLeft;
+    };
+
+    const onGlobalTouchMove = (e) => {
+      if (!isTouching || !isMobile()) return;
+      const container = brandScrollRef.current;
+      if (!container) return;
+      if (showEnquiryModal || isBrochureDropdownOpen) return;
+      if (e.touches.length !== 1) return;
+
+      const currentX = e.touches[0].clientX;
+      const currentY = e.touches[0].clientY;
+      const deltaX = currentX - startX;
+      const deltaY = currentY - startY;
+      const stepY = currentY - lastY;
+      lastY = currentY;
+
+      // Small movements are taps; let them pass
+      if (Math.abs(deltaX) <= 4 && Math.abs(deltaY) <= 4) return;
+
+      // Horizontal swipe directly moves brands
+      if (Math.abs(deltaX) > Math.abs(deltaY)) {
+        container.scrollLeft = startScrollLeft - deltaX;
+        if (e.cancelable) e.preventDefault();
+        hasPreventedDefaultInGesture = true;
+        return;
+      }
+
+      // Vertical swipe
+      const maxScroll = Math.max(0, container.scrollWidth - container.clientWidth);
+
+      if (stepY < 0) {
+        // Swiping UP (scrolling DOWN)
+        if (window.scrollY <= 1 && container.scrollLeft < maxScroll - 3) {
+          const remaining = maxScroll - container.scrollLeft;
+          const moveAmount = -stepY * 1.1;
+          if (moveAmount <= remaining) {
+            container.scrollLeft += moveAmount;
+            if (e.cancelable) e.preventDefault();
+            hasPreventedDefaultInGesture = true;
+          } else {
+            container.scrollLeft = maxScroll;
+            const excess = moveAmount - remaining;
+            window.scrollBy(0, excess);
+            if (e.cancelable) e.preventDefault();
+            hasPreventedDefaultInGesture = true;
+          }
+        } else if (window.scrollY <= 1 && container.scrollLeft >= maxScroll - 3) {
+          // Brands already at end
+          if (hasPreventedDefaultInGesture) {
+            window.scrollBy(0, -stepY * 1.1);
+            if (e.cancelable) e.preventDefault();
+          } else {
+            // Native smooth scroll
+          }
+        } else {
+          // Scrolled down the page: native scroll
+        }
+      } else if (stepY > 0) {
+        // Swiping DOWN (scrolling UP)
+        if (window.scrollY > 1) {
+          if (window.scrollY - stepY <= 0) {
+            const excess = stepY - window.scrollY;
+            window.scrollTo(0, 0);
+            if (container.scrollLeft > 0) {
+              container.scrollLeft = Math.max(0, container.scrollLeft - excess);
+            }
+            if (e.cancelable) e.preventDefault();
+            hasPreventedDefaultInGesture = true;
+          } else {
+            // Natural window scroll up
+          }
+        } else {
+          // window.scrollY <= 1 (at the top)
+          if (container.scrollLeft > 3) {
+            container.scrollLeft = Math.max(0, container.scrollLeft - stepY * 1.1);
+            if (e.cancelable) e.preventDefault();
+            hasPreventedDefaultInGesture = true;
+          } else {
+            container.scrollLeft = 0;
+          }
+        }
+      }
+    };
+
+    const onGlobalTouchEnd = () => {
+      isTouching = false;
+      hasPreventedDefaultInGesture = false;
+    };
+
+    window.addEventListener('wheel', onGlobalWheel, { passive: false });
+    window.addEventListener('touchstart', onGlobalTouchStart, { passive: true });
+    window.addEventListener('touchmove', onGlobalTouchMove, { passive: false });
+    window.addEventListener('touchend', onGlobalTouchEnd, { passive: true });
+    window.addEventListener('touchcancel', onGlobalTouchEnd, { passive: true });
+
+    return () => {
+      window.removeEventListener('wheel', onGlobalWheel);
+      window.removeEventListener('touchstart', onGlobalTouchStart);
+      window.removeEventListener('touchmove', onGlobalTouchMove);
+      window.removeEventListener('touchend', onGlobalTouchEnd);
+      window.removeEventListener('touchcancel', onGlobalTouchEnd);
+    };
+  }, [showEnquiryModal, isBrochureDropdownOpen]);
 
   return (
     <div className="w-full min-h-screen bg-[#F8F8F6] font-sans pt-0 pb-4 select-none text-slate-800">
@@ -2622,128 +2851,80 @@ export const ProductsPage = ({ onNavigate, search }) => {
       <div className="w-full bg-white text-slate-800 relative animate-fade-in mb-6 sm:mb-8 pt-[104px] sm:pt-[94px] md:pt-[96px] pb-3 sm:pb-4 border-b border-slate-100">
         <div className="max-w-[1440px] mx-auto w-full px-3 sm:px-6 relative z-20">
 
-          {/* 1. BRANDS Header with Gold Accent & View All */}
-          <div className="flex items-center justify-between mb-2.5 px-0.5 sm:px-1">
-            <div className="flex items-center gap-2 sm:gap-3">
-              <span className="text-[12px] sm:text-[13px] font-black uppercase tracking-[0.16em] text-[#1e293b]">
-                BRANDS
-              </span>
-              <div className="h-[2px] w-12 sm:w-16 bg-[#C5A059]" />
-            </div>
-            <button
-              type="button"
-              onClick={() => scrollBrands('right')}
-              className="text-[#1e3a8a] text-[11px] sm:text-xs font-bold tracking-tight hover:underline flex items-center gap-0.5 cursor-pointer"
-            >
-              <span>View All</span>
-              <svg className="w-3.5 h-3.5 text-[#C5A059]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-              </svg>
-            </button>
+          {/* 1. BRANDS Header */}
+          <div className="flex items-center mb-2.5 px-0.5 sm:px-1">
+            <span className="text-[12px] sm:text-[13px] font-black uppercase tracking-[0.16em] text-[#1e293b]">
+              BRANDS
+            </span>
           </div>
 
-          {/* Brand Cards Carousel with Controls */}
-          <div className="relative group/brandrow px-0 sm:px-6 mb-3 sm:mb-4">
-            {/* Left Scroll Button */}
-            <button
-              type="button"
-              onClick={() => scrollBrands('left')}
-              className="hidden sm:flex absolute -left-1 top-1/2 -translate-y-1/2 z-30 w-8 h-8 rounded-full bg-white border border-[#D4AF37]/60 text-[#0c2340] shadow-md hover:bg-[#FAF8F2] hover:border-[#b88a44] items-center justify-center transition-all cursor-pointer hover:scale-110 active:scale-95"
-              title="Previous Brands"
-              aria-label="Previous Brands"
-            >
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-              </svg>
-            </button>
-
+          {/* Brand Cards Carousel without Arrow Buttons */}
+          <div className="mb-3 sm:mb-4">
             {/* Brand Cards Grid / Scroll Track */}
             <div
+              id="brand-scroll-track"
               ref={brandScrollRef}
-              className="flex items-center gap-2 sm:gap-3 overflow-x-auto no-scrollbar py-1 px-0.5 scroll-smooth"
+              className="flex items-center gap-2 sm:gap-3 overflow-x-auto no-scrollbar py-1 px-0.5"
             >
               {BRAND_CONFIG.map((b) => {
                 const isBrandActive = Boolean(selectedBrand && selectedBrand.toLowerCase() === b.name.toLowerCase());
                 return (
-                  <div key={b.name} className="flex flex-col items-center shrink-0">
-                    <button
-                      ref={(el) => {
-                        if (el) brandButtonRefs.current[b.name] = el;
-                      }}
-                      type="button"
-                      onClick={() => handleBrandSelect(b.name)}
-                      className={`group flex flex-col items-center justify-center min-w-[110px] sm:min-w-[130px] h-[64px] sm:h-[68px] px-2.5 py-2 rounded-xl border transition-all cursor-pointer select-none active:scale-95 shadow-2xs outline-none focus:outline-none focus-visible:outline-none ring-0 focus:ring-0 ${isBrandActive
-                        ? 'bg-[#005a2b] border-[#004722] text-white shadow-sm'
-                        : 'bg-white hover:bg-[#FFFDF7] border-slate-200/90 hover:border-[#C5A059] text-slate-800'
-                        }`}
-                    >
-                      {/* Brand Icon / Emblem on top */}
-                      <div className="flex items-center justify-center h-6 mb-1 transition-transform group-hover:scale-105">
-                        {isBrandActive && b.name === 'Royal Club' ? (
-                          <svg className="w-7 h-5 text-[#C5A059]" viewBox="0 0 32 22" fill="currentColor">
-                            <path d="M4 18h24v2.5H4V18zm1.5-2.5l2.5-9 5.5 5 2.5-8 2.5 8 5.5-5 2.5 9H5.5z" />
-                            <circle cx="8" cy="6" r="1.5" />
-                            <circle cx="16" cy="3" r="1.8" />
-                            <circle cx="24" cy="6" r="1.5" />
-                          </svg>
-                        ) : isBrandActive ? (
-                          <span className="text-white drop-shadow-xs">{b.icon}</span>
+                  <button
+                    key={b.name}
+                    ref={(el) => {
+                      if (el) brandButtonRefs.current[b.name] = el;
+                    }}
+                    type="button"
+                    onClick={() => handleBrandSelect(b.name)}
+                    className={`group shrink-0 flex flex-col items-center justify-center min-w-[110px] sm:min-w-[130px] h-[64px] sm:h-[68px] px-2.5 py-2 rounded-xl border transition-all cursor-pointer select-none active:scale-95 shadow-2xs outline-none focus:outline-none focus-visible:outline-none ring-0 focus:ring-0 ${isBrandActive
+                      ? 'bg-[#005a2b] border-[#004722] text-white shadow-sm'
+                      : 'bg-white hover:bg-[#FFFDF7] border-slate-200/90 hover:border-[#C5A059] text-slate-800'
+                      }`}
+                  >
+                    {/* Brand Icon / Emblem on top */}
+                    <div className="flex items-center justify-center h-6 mb-1 transition-transform group-hover:scale-105">
+                      {isBrandActive && b.name === 'Royal Club' ? (
+                        <svg className="w-7 h-5 text-[#C5A059]" viewBox="0 0 32 22" fill="currentColor">
+                          <path d="M4 18h24v2.5H4V18zm1.5-2.5l2.5-9 5.5 5 2.5-8 2.5 8 5.5-5 2.5 9H5.5z" />
+                          <circle cx="8" cy="6" r="1.5" />
+                          <circle cx="16" cy="3" r="1.8" />
+                          <circle cx="24" cy="6" r="1.5" />
+                        </svg>
+                      ) : isBrandActive ? (
+                        <span className="text-white drop-shadow-xs">{b.icon}</span>
+                      ) : (
+                        b.icon
+                      )}
+                    </div>
+
+                    {/* Brand Name Typography */}
+                    <div className="flex items-center justify-center leading-none text-center">
+                      <span className={`font-serif font-black tracking-wider text-[10.5px] sm:text-[11px] whitespace-nowrap ${isBrandActive ? 'text-white' : 'text-[#0c2340]'}`}>
+                        {b.highlightWord ? (
+                          <>
+                            {b.displayName.replace(b.highlightWord, '')}
+                            <span className={`ml-0.5 ${b.highlightWord === 'KING' ? (isBrandActive ? 'italic text-[#E8DFC8]' : 'italic text-[#b88a44]') : (isBrandActive ? 'text-[#E8DFC8]' : 'text-[#b88a44]')}`}>
+                              {b.highlightWord}
+                            </span>
+                          </>
                         ) : (
-                          b.icon
+                          b.displayName
                         )}
-                      </div>
-
-                      {/* Brand Name Typography */}
-                      <div className="flex items-center justify-center leading-none text-center">
-                        <span className={`font-serif font-black tracking-wider text-[10.5px] sm:text-[11px] whitespace-nowrap ${isBrandActive ? 'text-white' : 'text-[#0c2340]'}`}>
-                          {b.highlightWord ? (
-                            <>
-                              {b.displayName.replace(b.highlightWord, '')}
-                              <span className={`ml-0.5 ${b.highlightWord === 'KING' ? (isBrandActive ? 'italic text-[#E8DFC8]' : 'italic text-[#b88a44]') : (isBrandActive ? 'text-[#E8DFC8]' : 'text-[#b88a44]')}`}>
-                                {b.highlightWord}
-                              </span>
-                            </>
-                          ) : (
-                            b.displayName
-                          )}
-                        </span>
-                        {b.trademark && (
-                          <span className={`text-[7.5px] font-normal ml-0.5 relative -top-1 ${isBrandActive ? 'text-white/80' : 'text-slate-500'}`}>®</span>
-                        )}
-                      </div>
-                    </button>
-
-                    {/* Active green underline pill indicator */}
-                    <div className={`w-8 h-[2.5px] rounded-full mt-1.5 transition-all ${isBrandActive ? 'bg-[#005a2b]' : 'bg-transparent'}`} />
-                  </div>
+                      </span>
+                      {b.trademark && (
+                        <span className={`text-[7.5px] font-normal ml-0.5 relative -top-1 ${isBrandActive ? 'text-white/80' : 'text-slate-500'}`}>®</span>
+                      )}
+                    </div>
+                  </button>
                 );
               })}
             </div>
-
-            {/* Right Scroll Button */}
-            <button
-              type="button"
-              onClick={() => scrollBrands('right')}
-              className="hidden sm:flex absolute -right-1 top-1/2 -translate-y-1/2 z-30 w-8 h-8 rounded-full bg-white border border-[#D4AF37]/60 text-[#0c2340] shadow-md hover:bg-[#FAF8F2] hover:border-[#b88a44] items-center justify-center transition-all cursor-pointer hover:scale-110 active:scale-95"
-              title="Next Brands"
-              aria-label="Next Brands"
-            >
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-              </svg>
-            </button>
           </div>
 
-          {/* 2. CATEGORIES Header with Gold Accent */}
-          <div className="flex items-center justify-between mb-2 px-0.5 sm:px-1">
-            <div className="flex items-center gap-2 sm:gap-3">
-              <span className="text-[12px] sm:text-[13px] font-black uppercase tracking-[0.16em] text-[#1e293b]">
-                CATEGORIES
-              </span>
-              <div className="h-[2px] w-12 sm:w-16 bg-[#C5A059]" />
-            </div>
-            <span className="text-[#1e3a8a] text-[11px] sm:text-xs font-semibold tracking-tight">
-              {selectedBrand ? `For ${selectedBrand}` : selectedCategory ? `${selectedCategory}` : 'All Categories'}
+          {/* 2. CATEGORIES Header */}
+          <div className="flex items-center mb-2 px-0.5 sm:px-1">
+            <span className="text-[12px] sm:text-[13px] font-black uppercase tracking-[0.16em] text-[#1e293b]">
+              CATEGORIES
             </span>
           </div>
 
@@ -2836,8 +3017,8 @@ export const ProductsPage = ({ onNavigate, search }) => {
                         }
                       }}
                       className={`transition-all rounded-full cursor-pointer ${isDotActive
-                          ? 'w-2.5 h-2.5 bg-white shadow-xs scale-110'
-                          : 'w-2 h-2 bg-white/50 hover:bg-white/80'
+                        ? 'w-2.5 h-2.5 bg-white shadow-xs scale-110'
+                        : 'w-2 h-2 bg-white/50 hover:bg-white/80'
                         }`}
                       aria-label={`Go to slide ${dotIdx + 1}`}
                     />
