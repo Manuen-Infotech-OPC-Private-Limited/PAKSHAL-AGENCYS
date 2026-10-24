@@ -2692,8 +2692,8 @@ export const ProductsPage = ({ onNavigate, search }) => {
     'Plywood': true
   });
   const [selectedBrand, setSelectedBrand] = useState(() => {
-    const initialIdx = getIndexFromSearch(search || (typeof window !== 'undefined' ? window.location.search : ''));
-    return SPREADS[initialIdx]?.brandName || 'Royal Club';
+    const params = new URLSearchParams(search || (typeof window !== 'undefined' ? window.location.search : ''));
+    return params.get('brand') || null;
   });
   const [selectedCategory, setSelectedCategory] = useState(() => {
     const params = new URLSearchParams(search || (typeof window !== 'undefined' ? window.location.search : ''));
@@ -2708,12 +2708,13 @@ export const ProductsPage = ({ onNavigate, search }) => {
     }
     const params = new URLSearchParams(search || window.location.search);
     const cat = params.get('category');
+    const brand = params.get('brand');
+    if (brand) {
+      setSelectedBrand(brand);
+    }
     if (cat) {
       const canonical = getCanonicalCategory(cat);
       setSelectedCategory(canonical);
-      if (SPREADS[targetIdx]?.brandName) {
-        setSelectedBrand(SPREADS[targetIdx].brandName);
-      }
     }
   }, [search]);
 
@@ -2854,9 +2855,6 @@ export const ProductsPage = ({ onNavigate, search }) => {
   const handleThumbnailClick = (idx) => {
     if (idx >= 0 && idx < SPREADS.length) {
       setCurrentSpreadIdx(idx);
-      if (SPREADS[idx].brandName) {
-        setSelectedBrand(SPREADS[idx].brandName);
-      }
     }
   };
 
@@ -2959,32 +2957,11 @@ export const ProductsPage = ({ onNavigate, search }) => {
   const handleCategorySelect = (categoryName) => {
     const canonical = getCanonicalCategory(categoryName);
     setSelectedCategory(canonical);
+    setSelectedBrand(null);
 
-    // 1. If current brand is in this category, select that brand's item
-    let targetIdx = -1;
-    if (selectedBrand) {
-      const bLower = selectedBrand.toLowerCase().trim();
-      targetIdx = SPREADS.findIndex(s => {
-        if (s.hideFromIndex) return false;
-        const bMatch = s.brandName && (
-          s.brandName.toLowerCase().trim() === bLower ||
-          (bLower === 'astdax' && s.brandName.toLowerCase().includes('astdax')) ||
-          (bLower === 'steel wood' && s.brandName.toLowerCase().includes('steel'))
-        );
-        return bMatch && getCanonicalCategory(s.category) === canonical;
-      });
-    }
-
-    // 2. If current brand has no item in this category, switch to the first item of this category
-    if (targetIdx === -1) {
-      targetIdx = SPREADS.findIndex(s => !s.hideFromIndex && getCanonicalCategory(s.category) === canonical);
-    }
-
+    const targetIdx = SPREADS.findIndex(s => !s.hideFromIndex && getCanonicalCategory(s.category) === canonical);
     if (targetIdx !== -1) {
       setCurrentSpreadIdx(targetIdx);
-      if (SPREADS[targetIdx].brandName) {
-        setSelectedBrand(SPREADS[targetIdx].brandName);
-      }
     }
   };
 
