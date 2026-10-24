@@ -2417,6 +2417,26 @@ export const getCanonicalCategory = (categoryName) => {
   return categoryName;
 };
 
+export const isPlywoodOrLaminateBrand = (brandName) => {
+  if (!brandName) return false;
+  const bLower = brandName.toLowerCase().trim();
+  const targetBrands = [
+    'royal club',
+    'marine club',
+    'gurjan club',
+    'gurjan king',
+    'gurjan star',
+    'gurjan gold',
+    'century',
+    'green',
+    'marine',
+    'vista',
+    'croma',
+    'indigo'
+  ];
+  return targetBrands.some(b => bLower === b || bLower.startsWith(b));
+};
+
 export const ProductsPage = ({ onNavigate, search }) => {
   useDocumentMetadata(
     "Plywood, Cabinet Fittings & Kitchen Accessories | Pakshal",
@@ -2693,7 +2713,9 @@ export const ProductsPage = ({ onNavigate, search }) => {
   });
   const [selectedBrand, setSelectedBrand] = useState(() => {
     const params = new URLSearchParams(search || (typeof window !== 'undefined' ? window.location.search : ''));
-    return params.get('brand') || null;
+    if (params.get('brand')) return params.get('brand');
+    if (params.get('category')) return null;
+    return 'Royal Club';
   });
   const [selectedCategory, setSelectedCategory] = useState(() => {
     const params = new URLSearchParams(search || (typeof window !== 'undefined' ? window.location.search : ''));
@@ -3107,21 +3129,52 @@ export const ProductsPage = ({ onNavigate, search }) => {
           {/* Categories Tab Strip without vertical dividers or underline box */}
           <div className="flex items-center gap-2 sm:gap-3.5 overflow-x-auto no-scrollbar py-1 px-0.5">
             {CATEGORY_DEFINITIONS.map((cat) => {
-              const isCatActive = Boolean(selectedCategory && getCanonicalCategory(cat.key) === getCanonicalCategory(selectedCategory));
+              const canonicalKey = getCanonicalCategory(cat.key);
+              const isCatActive = Boolean(selectedCategory && canonicalKey === getCanonicalCategory(selectedCategory));
+
+              const isCatDisabled = Boolean(
+                selectedBrand &&
+                isPlywoodOrLaminateBrand(selectedBrand) &&
+                [
+                  'Arch. Hardware',
+                  'Hardware & Fittings',
+                  'Kitchen Accessories',
+                  'Sliding Systems'
+                ].includes(canonicalKey)
+              );
 
               return (
                 <button
                   key={cat.key}
                   type="button"
-                  onClick={() => handleCategorySelect(cat.key)}
-                  className={`group flex flex-col items-center justify-center px-3 sm:px-4 py-1.5 shrink-0 cursor-pointer select-none transition-all outline-none focus:outline-none focus-visible:outline-none ring-0 focus:ring-0 border-0 bg-transparent ${isCatActive ? 'scale-105' : 'hover:scale-102 opacity-80 hover:opacity-100'
-                    }`}
+                  disabled={isCatDisabled}
+                  onClick={(e) => {
+                    if (isCatDisabled) {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      return;
+                    }
+                    handleCategorySelect(cat.key);
+                  }}
+                  title={isCatDisabled ? `${cat.label} is not available for ${selectedBrand}` : cat.label}
+                  className={`group flex flex-col items-center justify-center px-3 sm:px-4 py-1.5 shrink-0 select-none transition-all outline-none focus:outline-none ring-0 border-0 bg-transparent ${
+                    isCatDisabled
+                      ? 'opacity-35 cursor-not-allowed grayscale'
+                      : isCatActive
+                      ? 'scale-105 cursor-pointer'
+                      : 'hover:scale-102 opacity-80 hover:opacity-100 cursor-pointer'
+                  }`}
                 >
-                  <div className="flex items-center justify-center h-6 mb-1">
-                    {typeof cat.icon === 'function' ? cat.icon(isCatActive) : cat.icon}
+                  <div className={`flex items-center justify-center h-6 mb-1 ${isCatDisabled ? 'text-slate-400' : ''}`}>
+                    {typeof cat.icon === 'function' ? cat.icon(isCatActive && !isCatDisabled) : cat.icon}
                   </div>
-                  <span className={`text-[11px] sm:text-[12px] tracking-tight whitespace-nowrap leading-tight transition-colors ${isCatActive ? 'text-[#005a2b] font-black' : 'text-slate-600 font-semibold group-hover:text-slate-900'
-                    }`}>
+                  <span className={`text-[11px] sm:text-[12px] tracking-tight whitespace-nowrap leading-tight transition-colors ${
+                    isCatDisabled
+                      ? 'text-slate-400 font-normal'
+                      : isCatActive
+                      ? 'text-[#005a2b] font-black'
+                      : 'text-slate-600 font-semibold group-hover:text-slate-900'
+                  }`}>
                     {cat.label}
                   </span>
                 </button>
