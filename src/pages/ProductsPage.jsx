@@ -3164,7 +3164,7 @@ export const ProductsPage = ({ onNavigate, search }) => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
 
           {/* Left: Product Image with Prev/Next Overlay Buttons */}
-          <div className="lg:col-span-7 flex flex-col justify-center">
+          <div className="lg:col-span-7 flex items-center justify-start">
             <div className="relative w-full overflow-hidden rounded-2xl shadow-sm group bg-white">
               <img
                 src={activeSpread.image}
@@ -3227,40 +3227,6 @@ export const ProductsPage = ({ onNavigate, search }) => {
                 })}
               </div>
             </div>
-
-            {/* Inline Thumbnail Strip: Shows all hardware items directly in the image place */}
-            {activeCategorySpreads.length > 1 && (
-              <div className="flex items-center gap-2 overflow-x-auto no-scrollbar py-2.5 px-0.5 mt-2">
-                {activeCategorySpreads.map((item) => {
-                  const isSelected = item === activeSpread;
-                  return (
-                    <button
-                      key={item.id}
-                      type="button"
-                      onClick={() => {
-                        const idx = SPREADS.indexOf(item);
-                        if (idx !== -1) {
-                          setCurrentSpreadIdx(idx);
-                          if (item.brandName) setSelectedBrand(item.brandName);
-                        }
-                      }}
-                      className={`shrink-0 w-13 h-13 sm:w-15 sm:h-15 rounded-xl overflow-hidden p-1 bg-white transition-all cursor-pointer border-2 ${
-                        isSelected
-                          ? 'border-[#005a2b] shadow-md scale-105 ring-2 ring-[#005a2b]/25'
-                          : 'border-slate-200 hover:border-[#C5A059] opacity-75 hover:opacity-100'
-                      }`}
-                      title={item.title?.replace('\n', ' ') || item.brandName}
-                    >
-                      <img
-                        src={item.image}
-                        alt={item.brandName}
-                        className="w-full h-full object-contain mix-blend-multiply"
-                      />
-                    </button>
-                  );
-                })}
-              </div>
-            )}
           </div>
 
           {/* Right: Text Content in the gap */}
