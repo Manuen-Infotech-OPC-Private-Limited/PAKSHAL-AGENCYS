@@ -3128,11 +3128,9 @@ export const ProductsPage = ({ onNavigate, search }) => {
 
           {/* Categories Tab Strip without vertical dividers or underline box */}
           <div className="flex items-center gap-2 sm:gap-3.5 overflow-x-auto no-scrollbar py-1 px-0.5">
-            {CATEGORY_DEFINITIONS.map((cat) => {
+            {CATEGORY_DEFINITIONS.filter((cat) => {
               const canonicalKey = getCanonicalCategory(cat.key);
-              const isCatActive = Boolean(selectedCategory && canonicalKey === getCanonicalCategory(selectedCategory));
-
-              const isCatDisabled = Boolean(
+              const isCatHidden = Boolean(
                 selectedBrand &&
                 isPlywoodOrLaminateBrand(selectedBrand) &&
                 [
@@ -3142,38 +3140,25 @@ export const ProductsPage = ({ onNavigate, search }) => {
                   'Sliding Systems'
                 ].includes(canonicalKey)
               );
+              return !isCatHidden;
+            }).map((cat) => {
+              const canonicalKey = getCanonicalCategory(cat.key);
+              const isCatActive = Boolean(selectedCategory && canonicalKey === getCanonicalCategory(selectedCategory));
 
               return (
                 <button
                   key={cat.key}
                   type="button"
-                  disabled={isCatDisabled}
-                  onClick={(e) => {
-                    if (isCatDisabled) {
-                      e.preventDefault();
-                      e.stopPropagation();
-                      return;
-                    }
-                    handleCategorySelect(cat.key);
-                  }}
-                  title={isCatDisabled ? `${cat.label} is not available for ${selectedBrand}` : cat.label}
-                  className={`group flex flex-col items-center justify-center px-3 sm:px-4 py-1.5 shrink-0 select-none transition-all outline-none focus:outline-none ring-0 border-0 bg-transparent ${
-                    isCatDisabled
-                      ? 'opacity-35 cursor-not-allowed grayscale'
-                      : isCatActive
-                      ? 'scale-105 cursor-pointer'
-                      : 'hover:scale-102 opacity-80 hover:opacity-100 cursor-pointer'
+                  onClick={() => handleCategorySelect(cat.key)}
+                  className={`group flex flex-col items-center justify-center px-3 sm:px-4 py-1.5 shrink-0 cursor-pointer select-none transition-all outline-none focus:outline-none focus-visible:outline-none ring-0 focus:ring-0 border-0 bg-transparent ${
+                    isCatActive ? 'scale-105' : 'hover:scale-102 opacity-80 hover:opacity-100'
                   }`}
                 >
-                  <div className={`flex items-center justify-center h-6 mb-1 ${isCatDisabled ? 'text-slate-400' : ''}`}>
-                    {typeof cat.icon === 'function' ? cat.icon(isCatActive && !isCatDisabled) : cat.icon}
+                  <div className="flex items-center justify-center h-6 mb-1">
+                    {typeof cat.icon === 'function' ? cat.icon(isCatActive) : cat.icon}
                   </div>
                   <span className={`text-[11px] sm:text-[12px] tracking-tight whitespace-nowrap leading-tight transition-colors ${
-                    isCatDisabled
-                      ? 'text-slate-400 font-normal'
-                      : isCatActive
-                      ? 'text-[#005a2b] font-black'
-                      : 'text-slate-600 font-semibold group-hover:text-slate-900'
+                    isCatActive ? 'text-[#005a2b] font-black' : 'text-slate-600 font-semibold group-hover:text-slate-900'
                   }`}>
                     {cat.label}
                   </span>
