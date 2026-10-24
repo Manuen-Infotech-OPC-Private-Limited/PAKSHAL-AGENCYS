@@ -2434,7 +2434,9 @@ export const isPlywoodOrLaminateBrand = (brandName) => {
     'croma',
     'indigo',
     'armani',
-    'architecture'
+    'architecture',
+    'fancy doors',
+    'carved timber doors'
   ];
   return targetBrands.some(b => bLower === b || bLower.startsWith(b));
 };
@@ -3129,17 +3131,26 @@ export const ProductsPage = ({ onNavigate, search }) => {
           <div className="flex items-center gap-2 sm:gap-3.5 overflow-x-auto no-scrollbar py-1 px-0.5">
             {CATEGORY_DEFINITIONS.filter((cat) => {
               const canonicalKey = getCanonicalCategory(cat.key);
+              const isHardwareCat = [
+                'Arch. Hardware',
+                'Hardware & Fittings',
+                'Kitchen Accessories',
+                'Sliding Systems'
+              ].includes(canonicalKey);
+
+              const currentCategory = selectedCategory || getCanonicalCategory(activeSpread?.category);
+              const isNonHardwareCategory = [
+                'Plywood',
+                'Laminates',
+                'Acrylic Panels',
+                'Veneers',
+                'Fancy Doors'
+              ].includes(currentCategory);
+
               const activeBrandName = selectedBrand || activeSpread?.brandName || '';
-              const isCatHidden = Boolean(
-                activeBrandName &&
-                isPlywoodOrLaminateBrand(activeBrandName) &&
-                [
-                  'Arch. Hardware',
-                  'Hardware & Fittings',
-                  'Kitchen Accessories',
-                  'Sliding Systems'
-                ].includes(canonicalKey)
-              );
+              const isNonHardwareBrand = isPlywoodOrLaminateBrand(activeBrandName);
+
+              const isCatHidden = isHardwareCat && (isNonHardwareCategory || isNonHardwareBrand);
               return !isCatHidden;
             }).map((cat) => {
               const canonicalKey = getCanonicalCategory(cat.key);
