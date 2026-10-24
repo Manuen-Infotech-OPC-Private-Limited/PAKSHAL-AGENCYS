@@ -2720,7 +2720,7 @@ export const ProductsPage = ({ onNavigate, search }) => {
   const [selectedCategory, setSelectedCategory] = useState(() => {
     const params = new URLSearchParams(search || (typeof window !== 'undefined' ? window.location.search : ''));
     const cat = params.get('category');
-    return cat ? getCanonicalCategory(cat) : 'Plywood';
+    return cat ? getCanonicalCategory(cat) : null;
   });
 
   useEffect(() => {
@@ -2776,10 +2776,7 @@ export const ProductsPage = ({ onNavigate, search }) => {
   const activeCategory = selectedCategory || getCanonicalCategory(SPREADS[currentSpreadIdx]?.category);
   const activeCategorySpreads = SPREADS.filter(s => !s.hideFromIndex && getCanonicalCategory(s.category) === activeCategory);
   
-  // Guarantee activeSpread belongs to activeCategorySpreads when a category is selected
-  const activeSpread = (selectedCategory 
-    ? activeCategorySpreads.find(s => s === SPREADS[currentSpreadIdx]) || activeCategorySpreads[0] 
-    : SPREADS[currentSpreadIdx]) || SPREADS[0];
+  const activeSpread = SPREADS[currentSpreadIdx] || SPREADS[0];
   const activeCatIdx = activeCategorySpreads.indexOf(activeSpread);
 
   // Sync category expansion whenever activeSpread changes (do NOT auto-select brand or category)
@@ -2937,28 +2934,9 @@ export const ProductsPage = ({ onNavigate, search }) => {
 
   const handleBrandSelect = (brandName) => {
     setSelectedBrand(brandName);
+    setSelectedCategory(null);
 
     const bLower = (brandName || '').toLowerCase().trim();
-
-    // 1. If a category is already selected, try to find this brand in that category
-    if (selectedCategory) {
-      const exactIdx = SPREADS.findIndex(s => {
-        if (s.hideFromIndex) return false;
-        const bMatch = s.brandName && (
-          s.brandName.toLowerCase().trim() === bLower ||
-          (bLower === 'astdax' && s.brandName.toLowerCase().includes('astdax')) ||
-          (bLower === 'steel wood' && s.brandName.toLowerCase().includes('steel'))
-        );
-        return bMatch && getCanonicalCategory(s.category) === selectedCategory;
-      });
-
-      if (exactIdx !== -1) {
-        handleThumbnailClick(exactIdx);
-        return;
-      }
-    }
-
-    // 2. Otherwise find the first spread for this brand and sync its category
     const brandIdx = SPREADS.findIndex(s => {
       if (s.hideFromIndex) return false;
       return s.brandName && (
@@ -2970,17 +2948,36 @@ export const ProductsPage = ({ onNavigate, search }) => {
 
     if (brandIdx !== -1) {
       handleThumbnailClick(brandIdx);
-      if (SPREADS[brandIdx].category) {
-        setSelectedCategory(getCanonicalCategory(SPREADS[brandIdx].category));
-      }
     }
   };
 
   const handleCategorySelect = (categoryName) => {
     const canonical = getCanonicalCategory(categoryName);
+    if (selectedCategory === canonical) {
+      setSelectedCategory(null);
+      return;
+    }
     setSelectedCategory(canonical);
-    setSelectedBrand(null);
 
+    if (selectedBrand) {
+      const bLower = selectedBrand.toLowerCase().trim();
+      const matchIdx = SPREADS.findIndex(s => {
+        if (s.hideFromIndex) return false;
+        const bMatch = s.brandName && (
+          s.brandName.toLowerCase().trim() === bLower ||
+          (bLower === 'astdax' && s.brandName.toLowerCase().includes('astdax')) ||
+          (bLower === 'steel wood' && s.brandName.toLowerCase().includes('steel'))
+        );
+        return bMatch && getCanonicalCategory(s.category) === canonical;
+      });
+
+      if (matchIdx !== -1) {
+        setCurrentSpreadIdx(matchIdx);
+        return;
+      }
+    }
+
+    setSelectedBrand(null);
     const targetIdx = SPREADS.findIndex(s => !s.hideFromIndex && getCanonicalCategory(s.category) === canonical);
     if (targetIdx !== -1) {
       setCurrentSpreadIdx(targetIdx);
