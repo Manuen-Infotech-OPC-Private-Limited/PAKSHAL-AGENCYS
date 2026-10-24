@@ -2775,7 +2775,7 @@ export const ProductsPage = ({ onNavigate, search }) => {
 
   const activeCategory = selectedCategory || getCanonicalCategory(SPREADS[currentSpreadIdx]?.category);
   const activeCategorySpreads = SPREADS.filter(s => !s.hideFromIndex && getCanonicalCategory(s.category) === activeCategory);
-  
+
   const activeSpread = SPREADS[currentSpreadIdx] || SPREADS[0];
   const activeCatIdx = activeCategorySpreads.indexOf(activeSpread);
 
@@ -3147,16 +3147,14 @@ export const ProductsPage = ({ onNavigate, search }) => {
                   key={cat.key}
                   type="button"
                   onClick={() => handleCategorySelect(cat.key)}
-                  className={`group flex flex-col items-center justify-center px-3 sm:px-4 py-1.5 shrink-0 cursor-pointer select-none transition-all outline-none focus:outline-none focus-visible:outline-none ring-0 focus:ring-0 border-0 bg-transparent ${
-                    isCatActive ? 'scale-105' : 'hover:scale-102 opacity-80 hover:opacity-100'
-                  }`}
+                  className={`group flex flex-col items-center justify-center px-3 sm:px-4 py-1.5 shrink-0 cursor-pointer select-none transition-all outline-none focus:outline-none focus-visible:outline-none ring-0 focus:ring-0 border-0 bg-transparent ${isCatActive ? 'scale-105' : 'hover:scale-102 opacity-80 hover:opacity-100'
+                    }`}
                 >
                   <div className="flex items-center justify-center h-6 mb-1">
                     {typeof cat.icon === 'function' ? cat.icon(isCatActive) : cat.icon}
                   </div>
-                  <span className={`text-[11px] sm:text-[12px] tracking-tight whitespace-nowrap leading-tight transition-colors ${
-                    isCatActive ? 'text-[#005a2b] font-black' : 'text-slate-600 font-semibold group-hover:text-slate-900'
-                  }`}>
+                  <span className={`text-[11px] sm:text-[12px] tracking-tight whitespace-nowrap leading-tight transition-colors ${isCatActive ? 'text-[#005a2b] font-black' : 'text-slate-600 font-semibold group-hover:text-slate-900'
+                    }`}>
                     {cat.label}
                   </span>
                 </button>
