@@ -2876,16 +2876,6 @@ export const ProductsPage = ({ onNavigate, search }) => {
   const handleThumbnailClick = (idx) => {
     if (idx >= 0 && idx < SPREADS.length) {
       setCurrentSpreadIdx(idx);
-      const targetSpread = SPREADS[idx];
-      if (targetSpread && targetSpread.brandName) {
-        const matchingBrand = BRAND_CONFIG.find(b => 
-          b.name.toLowerCase() === targetSpread.brandName.toLowerCase() ||
-          (targetSpread.brandName.toLowerCase().includes('astdax') && b.name.toLowerCase() === 'astdax') ||
-          (targetSpread.brandName.toLowerCase().includes('steel') && b.name.toLowerCase() === 'steel wood') ||
-          (targetSpread.brandName.toLowerCase().includes('architecture') && b.name.toLowerCase() === 'architecture')
-        );
-        setSelectedBrand(matchingBrand ? matchingBrand.name : targetSpread.brandName);
-      }
     }
   };
 
@@ -2989,19 +2979,10 @@ export const ProductsPage = ({ onNavigate, search }) => {
       }
     }
 
+    setSelectedBrand(null);
     const targetIdx = SPREADS.findIndex(s => !s.hideFromIndex && getCanonicalCategory(s.category) === canonical);
     if (targetIdx !== -1) {
       setCurrentSpreadIdx(targetIdx);
-      const targetSpread = SPREADS[targetIdx];
-      if (targetSpread && targetSpread.brandName) {
-        const matchingBrand = BRAND_CONFIG.find(b => 
-          b.name.toLowerCase() === targetSpread.brandName.toLowerCase() ||
-          (targetSpread.brandName.toLowerCase().includes('astdax') && b.name.toLowerCase() === 'astdax') ||
-          (targetSpread.brandName.toLowerCase().includes('steel') && b.name.toLowerCase() === 'steel wood') ||
-          (targetSpread.brandName.toLowerCase().includes('architecture') && b.name.toLowerCase() === 'architecture')
-        );
-        setSelectedBrand(matchingBrand ? matchingBrand.name : targetSpread.brandName);
-      }
     }
   };
 
