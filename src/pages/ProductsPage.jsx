@@ -2827,7 +2827,6 @@ export const ProductsPage = ({ onNavigate, search }) => {
       const targetIdx = SPREADS.indexOf(targetSpread);
       if (targetIdx !== -1) {
         setCurrentSpreadIdx(targetIdx);
-        if (targetSpread.brandName) setSelectedBrand(targetSpread.brandName);
       }
     } else if (currentSpreadIdx > 0) {
       setCurrentSpreadIdx(prev => prev - 1);
@@ -2844,7 +2843,6 @@ export const ProductsPage = ({ onNavigate, search }) => {
       const targetIdx = SPREADS.indexOf(targetSpread);
       if (targetIdx !== -1) {
         setCurrentSpreadIdx(targetIdx);
-        if (targetSpread.brandName) setSelectedBrand(targetSpread.brandName);
       }
     } else if (currentSpreadIdx < SPREADS.length - 1) {
       setCurrentSpreadIdx(prev => prev + 1);
@@ -3214,7 +3212,6 @@ export const ProductsPage = ({ onNavigate, search }) => {
                         const targetIdx = SPREADS.indexOf(dotSpread);
                         if (targetIdx !== -1) {
                           setCurrentSpreadIdx(targetIdx);
-                          if (dotSpread.brandName) setSelectedBrand(dotSpread.brandName);
                         }
                       }}
                       className={`transition-all rounded-full cursor-pointer ${isDotActive
