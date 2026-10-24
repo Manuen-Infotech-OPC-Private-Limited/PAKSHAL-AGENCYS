@@ -1,6 +1,6 @@
 import React from 'react';
 
-// Import images from assets/kitchenaccesories
+// Import all 26 kitchen images from assets/kitchen
 import bifoldLiftUpImg from '../assets/kitchen/bifoldliftupsystem.png';
 import cornerImg from '../assets/kitchen/corner.jpg';
 import cutleryTrayImg from '../assets/kitchen/cutlerytray.png';
@@ -15,12 +15,20 @@ import sidePullout2Img from '../assets/kitchen/sidepulloutbox2.jpg';
 import sidePulloutImg from '../assets/kitchen/sidepulloutboxes.jpg';
 import slimBoxesImg from '../assets/kitchen/slimboxes.jpg';
 import swingStorageImg from '../assets/kitchen/swingstoragebox.jpg';
-import tandemBoxImg from '../assets/kitchen/tandembox-accessory.jpg';
+import tandemBoxAccessoryImg from '../assets/kitchen/tandembox-accessory.jpg';
 import universalGlassBoxImg from '../assets/kitchen/universalglassbox.jpg';
 import ventilatorImg from '../assets/kitchen/ventilator.png';
 import wastebinImg from '../assets/kitchen/wastebin.png';
+import kitchenBasketImg from '../assets/kitchen/kitchenbasket.jpg';
+import tandemBoxJpgImg from '../assets/kitchen/tandembox.jpg';
+import tandemBoxPngImg from '../assets/kitchen/tandembox.png';
+import channelBasketImg from '../assets/kitchen/homepage-channelbasket.png';
+import channelDrawerImg from '../assets/kitchen/homepage-channeldrawer.png';
+import multiTierTandemImg from '../assets/kitchen/homepage-tandemboxes.png';
+import kitchenAccessoriesMasterImg from '../assets/kitchen/kitchenaccessories.png';
+import kitchensCardImg from '../assets/kitchen/kitchens-card.jpg';
 
-// Spreads dataset for ProductsPage catalogue booklet and sidebar index
+// Spreads dataset for ProductsPage catalogue booklet and sidebar index (All 26 kitchen assets)
 export const kitchenAccessoriesSpreads = [
   {
     id: 101,
@@ -40,7 +48,11 @@ export const kitchenAccessoriesSpreads = [
     thicknessLabel: 'Available Sizes (W x D x H)',
     features: ['Hydraulic Assist Mechanism', 'Dual Lift Capacity', 'SS 304 Rust-Proof Mesh'],
     applications: ['Overhead Cabinets', 'Pantry Storage', 'High Reach Storage'],
-    specs: {},
+    specs: {
+      'Mount Type': 'Overhead Wall Cabinet',
+      'Weight Capacity': '15 kg',
+      'Dampening': 'Dual Hydraulic Struts'
+    },
     heroSub: 'SMART ERGONOMICS. EFFORTLESS ACCESS.',
     heroTitle: 'PULL-DOWN ELEVATOR',
     heroDesc: 'Heavy-duty hydraulic pull-down elevator basket system allowing effortless access to high overhead cabinet storage with dual lift capacity.',
@@ -63,8 +75,6 @@ export const kitchenAccessoriesSpreads = [
     category: 'Kitchen Accessories',
     pageNumLeft: 73,
     pageNumRight: 74,
-    hideFromIndex: true,
-    parentBrandId: 'pull-down-elevator',
     badge: 'Dish Storage Elevator',
     title: 'Dish Rack\nElevator.',
     tagline: 'Pull-down dish drying rack with stainless drip tray',
@@ -77,7 +87,11 @@ export const kitchenAccessoriesSpreads = [
     thicknessLabel: 'Available Sizes (W x D x H)',
     features: ['Integrated Drip Tray', 'Plate & Bowl Dividers', 'Soft-Return Dampener'],
     applications: ['Overhead Dish Storage', 'Wet Dish Drying', 'Wall Cabinets'],
-    specs: {},
+    specs: {
+      'Tray Material': 'SS 304 Removable Drip Tray',
+      'Plate Capacity': 'Up to 24 Plates & 30 Bowls',
+      'Return': 'Hydraulic Soft Return'
+    },
     heroSub: 'OVERHEAD DISH DRYING. CLEAN HYGIENE.',
     heroTitle: 'DISH RACK ELEVATOR',
     heroDesc: 'Specialized pull-down dish drying elevator with integrated water tray and plate slots for hygienic dish storage inside wall cabinets.',
@@ -110,7 +124,11 @@ export const kitchenAccessoriesSpreads = [
     thicknessLabel: 'Available Sizes (W x D x H)',
     features: ['Synchronized Pull-out', 'Soft-Close Motion', '4 Heavy-Duty Baskets'],
     applications: ['Blind Corner Cabinets', 'L-Shape Modular Kitchens', 'Corner Pantries'],
-    specs: {},
+    specs: {
+      'Baskets': '4 Tier Tempered Glass Shelves',
+      'Load Capacity': '35 kg Dynamic Load',
+      'Mechanism': 'Synchronized Articulated Arm'
+    },
     heroSub: 'MAXIMUM CORNER UTILIZATION.',
     heroTitle: 'MAGIC CORNER UNIT',
     heroDesc: 'Innovative magic corner pull-out basket mechanism that transforms awkward blind corner cabinets into fully accessible, dual-tier storage space.',
@@ -131,8 +149,6 @@ export const kitchenAccessoriesSpreads = [
     category: 'Kitchen Accessories',
     pageNumLeft: 77,
     pageNumRight: 78,
-    hideFromIndex: true,
-    parentBrandId: 'magic-corner',
     badge: 'Rotary Corner Storage',
     title: 'Rotary Corner\nCarousel.',
     tagline: '360° revolving kidney tray corner storage',
@@ -145,7 +161,11 @@ export const kitchenAccessoriesSpreads = [
     thicknessLabel: 'Available Sizes (W x D x H)',
     features: ['360° Rotation', 'Height Adjustable Pole', 'Chrome Steel Trim'],
     applications: ['Base Corner Cabinets', 'Pantry Corners', 'Cookware Storage'],
-    specs: {},
+    specs: {
+      'Rotation': 'Independent 360° Swivel',
+      'Tray Style': 'Kidney Shape Anti-Slip',
+      'Center Axis': 'Telescopic Steel Pole'
+    },
     heroSub: '360 DEGREE REVOLVING TRAY.',
     heroTitle: 'CORNER CAROUSEL',
     heroDesc: 'Smooth 360° revolving kidney-shaped corner shelf system designed to utilize deep corner cabinet dead zones with effortless rotational access.',
@@ -176,7 +196,11 @@ export const kitchenAccessoriesSpreads = [
     thicknessLabel: 'Compatible Drawer Width',
     features: ['Food-Grade Material', 'Trimmable Edges', 'Stain & Dishwasher Safe'],
     applications: ['Kitchen Drawers', 'Cutlery Storage', 'Utensil Organization'],
-    specs: {},
+    specs: {
+      'Material': 'BPA-Free Food Grade ABS',
+      'Edge Finish': 'Trimmable Precision Flange',
+      'Divider Layout': 'Multi-Section Utensil Bays'
+    },
     heroSub: 'ORGANIZED CUTLERY. CLEAN & HYGIENIC.',
     heroTitle: 'CUTLERY TRAY ORGANIZER',
     heroDesc: 'Precision molded food-grade plastic cutlery inserts with adjustable divider slots for spoons, forks, knives, and cooking utensils.',
@@ -197,8 +221,6 @@ export const kitchenAccessoriesSpreads = [
     category: 'Kitchen Accessories',
     pageNumLeft: 81,
     pageNumRight: 82,
-    hideFromIndex: true,
-    parentBrandId: 'cutlery-tray-organizer',
     badge: 'Premium Cutlery Series',
     title: 'Cutlery Tray\nSeries II.',
     tagline: 'Deep compartment utensil organizer tray',
@@ -210,7 +232,11 @@ export const kitchenAccessoriesSpreads = [
     thicknessLabel: 'Drawer Size Width',
     features: ['Deep Utensil Bays', 'Scratch-Proof Matte Coat', 'Spice Bottle Bay'],
     applications: ['Chef Drawers', 'Executive Kitchens', 'Utensil Organization'],
-    specs: {},
+    specs: {
+      'Finish': 'Anthracite Matte',
+      'Depth': 'Extra Deep 65mm Bays',
+      'Layout': 'Includes Integrated Knife Bay'
+    },
     heroSub: 'EXECUTIVE UTENSIL MANAGEMENT.',
     heroTitle: 'CUTLERY TRAY II',
     heroDesc: 'Deep multi-compartment executive cutlery tray with specialized knife block, spice bottle slots, and extended utensil dividers.',
@@ -241,7 +267,11 @@ export const kitchenAccessoriesSpreads = [
     thicknessLabel: 'Spring Power Factor',
     features: ['Smooth Variable Stop', 'Soft-Close Cushioning', 'Adjustable Power Mechanism'],
     applications: ['Overhead Kitchen Cabinets', 'Microwave Housing', 'Wall Furniture'],
-    specs: {},
+    specs: {
+      'Door Width': 'Up to 1800mm',
+      'Door Height': '480mm to 1040mm',
+      'Stop Action': 'Multi-Position Free Stop'
+    },
     heroSub: 'PARALLEL BI-FOLD ELEVATION.',
     heroTitle: 'BI-FOLD LIFT-UP SYSTEM',
     heroDesc: 'German-engineered bi-fold hydraulic lift system that folds wall cabinet doors upwards and out of the way for unrestricted overhead access.',
@@ -269,12 +299,16 @@ export const kitchenAccessoriesSpreads = [
     brandName: 'Kitchen Rolling Shutters',
     desc: 'Sleek vertical rolling tambour shutter systems crafted from toughened glass or brushed aluminum slats. Perfect for hiding kitchen counter appliances.',
     colors: 'Silver, White, Black',
-    thicknesses: ['450x1320mm', '600x1320mm'],
+    thicknesses: ['450x1320mm', '600x1320mm', '900x1320mm'],
     defaultThickness: '600x1320mm',
     thicknessLabel: 'Available Unit Sizes (W x H)',
     features: ['Counter-balanced Spring', 'Smooth Vertical Roll', 'Space-Saving Tambour'],
     applications: ['Appliance Cabinets', 'Coffee Stations', 'Breakfast Counter Garages'],
-    specs: {},
+    specs: {
+      'Slat Material': 'Extruded Aluminum / Toughened Glass',
+      'Roll Direction': 'Vertical Tambour Cassette',
+      'Balance System': 'Spring Tension Roller'
+    },
     heroSub: 'SLEEK APPLIANCE GARAGE STORAGE.',
     heroTitle: 'ROLLING SHUTTERS',
     heroDesc: 'Sleek vertical rolling tambour shutter systems crafted from toughened glass or brushed aluminum slats for kitchen counter units.',
@@ -306,7 +340,11 @@ export const kitchenAccessoriesSpreads = [
     thicknessLabel: 'Side Wall Height Profile',
     features: ['Tempered Glass Inserts', '50kg Dynamic Load Rating', 'Concealed Soft-Close Runners'],
     applications: ['Luxury Kitchen Drawers', 'Pantry Pull-outs', 'Executive Cabinetry'],
-    specs: {},
+    specs: {
+      'Side Walls': 'Tempered Clear Safety Glass',
+      'Runner Track': 'Synchronized Full Extension',
+      'Dynamic Capacity': '50 kg'
+    },
     heroSub: 'CRYSTAL CLEAR GLASS SIDE GALLERIES.',
     heroTitle: 'GLASS TANDEM BOX',
     heroDesc: 'Luxury double-wall metal drawer system featuring crystal clear tempered glass side galleries and full extension concealed runners.',
@@ -327,19 +365,21 @@ export const kitchenAccessoriesSpreads = [
     category: 'Kitchen Accessories',
     pageNumLeft: 89,
     pageNumRight: 90,
-    hideFromIndex: true,
-    parentBrandId: 'glass-tandem-box-system',
     badge: 'Modern Glass Drawers',
     title: 'Glass Box\nDrawers.',
     tagline: 'Frameless glass panel drawer side profiles',
     image: glassBoxImg,
     brandName: 'Glass Box Drawers',
     desc: 'Minimalist frameless glass drawer sides with integrated LED strip ready grooves and soft-closing slide runners.',
-    thicknesses: ['Standard 500mm Length'],
+    thicknesses: ['Standard 500mm Length', 'Short 450mm Length'],
     defaultThickness: 'Standard 500mm Length',
     features: ['Frameless Glass Design', 'Synchronized Rails', '3D Adjustment'],
     applications: ['Wardrobes', 'Kitchen Drawers', 'Display Units'],
-    specs: {},
+    specs: {
+      'Glass Type': 'Smoked Grey / Pure Clear Glass',
+      'Slide Mechanism': 'Concealed Synchronized Runners',
+      'Load Rating': '40 kg'
+    },
     heroSub: 'FRAMELESS SMOKED & CLEAR GLASS.',
     heroTitle: 'GLASS BOX DRAWERS',
     heroDesc: 'Minimalist frameless glass drawer sides with integrated LED strip ready grooves and soft-closing slide runners.',
@@ -357,8 +397,6 @@ export const kitchenAccessoriesSpreads = [
     category: 'Kitchen Accessories',
     pageNumLeft: 91,
     pageNumRight: 92,
-    hideFromIndex: true,
-    parentBrandId: 'glass-tandem-box-system',
     badge: 'Universal Drawer Series',
     title: 'Universal Glass\nBox System.',
     tagline: 'Modular glass side box drawer system',
@@ -369,7 +407,11 @@ export const kitchenAccessoriesSpreads = [
     defaultThickness: 'Standard 16mm',
     features: ['Universal Back Adapter', 'Tool-less Assembly', 'Smooth Glide'],
     applications: ['Kitchens', 'Closets', 'Office Storage'],
-    specs: {},
+    specs: {
+      'Adapter Type': 'Universal Wooden & Metal Back',
+      'Mounting': 'Click-on Tool-less Bracket',
+      'Glide': 'Soft-Close Concealed'
+    },
     heroSub: 'UNIVERSAL MODULAR DRAWER FIT.',
     heroTitle: 'UNIVERSAL GLASS BOX',
     heroDesc: 'Versatile glass box drawer mechanism designed to fit both wooden and metal drawer back panels seamlessly.',
@@ -398,7 +440,11 @@ export const kitchenAccessoriesSpreads = [
     thicknessLabel: 'Side Wall Thickness',
     features: ['13mm Ultra-Slim Profile', 'Straight 90° Internal Walls', 'Soft-Close Synchronization'],
     applications: ['Modern Modular Kitchens', 'Minimalist Closets', 'Office Furniture'],
-    specs: {},
+    specs: {
+      'Wall Thickness': '13mm Straight Steel Profile',
+      'Internal Angle': '90° Square Inner Walls',
+      'Capacity': '65 kg Dynamic Load'
+    },
     heroSub: '13MM ULTRA-SLIM STRAIGHT WALLS.',
     heroTitle: 'SLIM BOX SYSTEM',
     heroDesc: 'State-of-the-art 13mm straight-line ultra-slim metal side drawer box system that maximizes internal drawer storage capacity.',
@@ -419,19 +465,21 @@ export const kitchenAccessoriesSpreads = [
     category: 'Kitchen Accessories',
     pageNumLeft: 95,
     pageNumRight: 96,
-    hideFromIndex: true,
-    parentBrandId: 'slim-box-drawer-system',
     badge: 'Double-Wall Metal Drawer',
     title: 'Kitchen Tandem\nBox.',
     tagline: 'Heavy-duty double-wall steel drawer box',
-    image: tandemBoxImg,
+    image: tandemBoxAccessoryImg,
     brandName: 'Kitchen Tandem Box',
     desc: 'Classic double-wall metallic tandem drawer box system with round railing options and high load-bearing concealed runners.',
     thicknesses: ['Low Drawer (84mm)', 'Medium Drawer (135mm)', 'High Drawer (199mm)'],
     defaultThickness: 'Medium Drawer (135mm)',
     features: ['Double-Wall Steel', 'Gallery Railings', 'Soft-Close Action'],
     applications: ['Kitchen Pots & Pans', 'Grocery Pull-outs', 'Tandem Drawers'],
-    specs: {},
+    specs: {
+      'Material': 'Cold-Rolled Steel Electroplated',
+      'Closing Type': 'Integrated Hydraulic Piston',
+      'Cycle Rating': '100,000 Tested Openings'
+    },
     heroSub: 'CLASSIC METALLIC TANDEM DRAWER.',
     heroTitle: 'KITCHEN TANDEM BOX',
     heroDesc: 'Classic double-wall metallic tandem drawer box system with round railing options and high load-bearing concealed runners.',
@@ -460,7 +508,11 @@ export const kitchenAccessoriesSpreads = [
     thicknessLabel: 'Base Cabinet Width',
     features: ['SS 304 Wire Structure', 'Bottom/Side Mounted Runners', 'Integrated Bottle Divider Grid'],
     applications: ['Stovetop Side Cabinets', 'Spice Storage', 'Sauce & Oil Bottles'],
-    specs: {},
+    specs: {
+      'Structure': 'SS 304 Electroplated Wire Basket',
+      'Runners': 'Heavy Under-Mount Soft-Close',
+      'Dividers': 'Snap-on Bottle Stability Dividers'
+    },
     heroSub: 'STOVETOP SPICE & BOTTLE ORGANIZER.',
     heroTitle: 'SIDE PULL-OUT BASKETS',
     heroDesc: 'Slim 150mm and 200mm side pull-out basket organizer for storing oil bottles, spice containers, and cooking sauces right next to the stove.',
@@ -481,8 +533,6 @@ export const kitchenAccessoriesSpreads = [
     category: 'Kitchen Accessories',
     pageNumLeft: 99,
     pageNumRight: 100,
-    hideFromIndex: true,
-    parentBrandId: 'side-pullout-baskets',
     badge: 'Sheet Base Pull-out',
     title: 'Side Pull-Out\nSeries II.',
     tagline: 'Solid wooden base side pull-out organizer',
@@ -493,7 +543,11 @@ export const kitchenAccessoriesSpreads = [
     defaultThickness: '200 mm',
     features: ['Solid Flat Base', 'Flat Railing Profile', 'Soft-Close Under-mount Track'],
     applications: ['Base Units', 'Pantry Bottling', 'Kitchen Counter Storage'],
-    specs: {},
+    specs: {
+      'Base Tray': 'Non-Slip Solid Wooden Sheet Tray',
+      'Rail Trim': 'Flat Brushed Chrome Guard',
+      'Weight Capacity': '30 kg Dynamic'
+    },
     heroSub: 'SOLID BASE WIPE-CLEAN PULL-OUT.',
     heroTitle: 'SIDE PULL-OUT II',
     heroDesc: 'Premium solid wooden/sheet base side pull-out unit with flat chrome railing guards for easy wipe-clean maintenance.',
@@ -522,7 +576,11 @@ export const kitchenAccessoriesSpreads = [
     thicknessLabel: 'Door Width & Tier Count',
     features: ['Dual Door & Cabinet Baskets', 'Heavy Load Swing Hinge', 'Adjustable Basket Height'],
     applications: ['Tall Pantry Cabinets', 'Bulk Grocery Storage', 'Kitchen Towers'],
-    specs: {},
+    specs: {
+      'Capacity': '100 kg Total Dynamic Load',
+      'Basket Count': '12 Baskets (6 Body + 6 Door)',
+      'Hinge System': 'Heavy-Duty Bearing Pivot'
+    },
     heroSub: '100KG HEAVY-DUTY TALL PANTRY TOWER.',
     heroTitle: 'SWING STORAGE UNIT',
     heroDesc: 'High-capacity tall pantry unit mechanism that swings internal rear shelves forward as the pantry door opens, providing dual-sided storage visibility.',
@@ -554,7 +612,11 @@ export const kitchenAccessoriesSpreads = [
     thicknessLabel: 'Bin Capacity Option',
     features: ['Wet/Dry Segregation', 'Auto-Closing Odor Lid', 'Full Extension Soft-Close Tracks'],
     applications: ['Under-Sink Cabinets', 'Kitchen Waste Disposal', 'Wet Waste Management'],
-    specs: {},
+    specs: {
+      'Bucket Material': 'Virgin Food-Safe Polypropylene',
+      'Odor Seal': 'Cabinet Mounted Auto Seal Lid',
+      'Slide Mechanism': 'Heavy-Duty 30kg Soft-Close'
+    },
     heroSub: 'UNDER-SINK HYGIENIC WASTE SEGREGATION.',
     heroTitle: 'PULL-OUT WASTE BIN',
     heroDesc: 'Hygienic dual-bin pull-out waste management system with integrated odor lid for wet and dry waste segregation under kitchen sinks.',
@@ -586,7 +648,11 @@ export const kitchenAccessoriesSpreads = [
     thicknessLabel: 'Grill Dimensions',
     features: ['Heat Dissipation Louvers', 'Anodized Anti-Rust Finish', 'Recessed Flush Mount'],
     applications: ['Built-in Oven Cabinets', 'Refrigerator Enclosures', 'Sink Under-Counters'],
-    specs: {},
+    specs: {
+      'Profile': 'Aerodynamic Louvered Vanes',
+      'Material': '6063-T5 Extruded Anodized Aluminum',
+      'Finish': 'Satin Anodized Silver'
+    },
     heroSub: 'APPLIANCE HEAT DISSIPATION & AIRFLOW.',
     heroTitle: 'VENTILATOR GRILLS',
     heroDesc: 'Precision extruded aluminum ventilation grills designed to dissipate heat from oven housings, refrigerator cavities, and under-sink cabinets.',
@@ -599,20 +665,322 @@ export const kitchenAccessoriesSpreads = [
       { title: 'Heat Dissipation', desc: 'Protects expensive kitchen electronics from overheating', icon: 'gear' },
       { title: 'Anodized Anti-Rust', desc: 'Durable finish unaffected by humidity or steam', icon: 'shield' }
     ]
+  },
+  {
+    id: 119,
+    brandId: 'modular-kitchen-basket',
+    category: 'Kitchen Accessories',
+    pageNumLeft: 107,
+    pageNumRight: 108,
+    badge: 'Wire Basket Organizer',
+    title: 'Kitchen Wire\nBasket.',
+    tagline: 'Stainless steel SS 304 modular kitchen basket for utensils & crockery',
+    image: kitchenBasketImg,
+    brandName: 'Kitchen Basket',
+    desc: 'Heavy-duty food-grade SS 304 stainless steel modular kitchen baskets designed for plate storage, cup-saucer organization, and heavy cookware load distribution.',
+    material: 'SS 304 Stainless Steel',
+    thicknesses: ['450mm Cabinet', '500mm Cabinet', '600mm Cabinet'],
+    defaultThickness: '500mm Cabinet',
+    thicknessLabel: 'Cabinet Width Fit',
+    features: ['SS 304 Food-Grade', 'Chrome Electroplated', '45kg Heavy Weight Support'],
+    applications: ['Modular Kitchens', 'Under-Counter Storage', 'Pantry Pull-Outs'],
+    specs: {
+      'Basket Material': 'SS 304 Food-grade',
+      'Finish Type': 'Chrome Electroplated',
+      'Rust Resistance': 'Lifetime Warranty'
+    },
+    heroSub: 'MODULAR KITCHEN. ORGANIZED SPACES.',
+    heroTitle: 'KITCHEN BASKET',
+    heroDesc: 'Heavy-duty food-grade SS 304 stainless steel modular kitchen baskets designed for plate storage, cup-saucer organization, and heavy modular kitchen setups.',
+    heroTags: [
+      { text: 'Food-grade SS 304', icon: 'shield' },
+      { text: 'Anti-Rust Chrome', icon: 'sparkles' },
+      { text: '45kg Load Capacity', icon: 'shield' }
+    ],
+    overviewFeatures: [
+      { title: 'SS 304 Food-Grade', desc: 'Completely hygienic and rust-proof structure', icon: 'shield' },
+      { title: 'Electroplated Chrome', desc: 'Mirror finish with extreme scratch resistance', icon: 'sparkles' },
+      { title: 'Heavy Wire Mesh', desc: 'Deep welds for structural load bearing', icon: 'wood' },
+      { title: 'Easy Slide Mounts', desc: 'Seamlessly compatible with telescopic runners', icon: 'gear' },
+      { title: 'Optimum Ventilation', desc: 'Open mesh prevents moisture and odors', icon: 'droplet' }
+    ]
+  },
+  {
+    id: 120,
+    brandId: 'tandem-box-drawer',
+    category: 'Kitchen Accessories',
+    pageNumLeft: 109,
+    pageNumRight: 110,
+    badge: 'Double-Wall Metallic System',
+    title: 'Luxury Tandem\nBox.',
+    tagline: 'German engineered double-wall metallic modular drawer box system',
+    image: tandemBoxJpgImg,
+    brandName: 'Tandem Box Drawers',
+    desc: 'Precision engineered double-wall metallic drawer systems with synchronized smooth motion runners, integrated soft-close dampening, and sleek modern side walls.',
+    material: 'Electro-Galvanized Steel',
+    thicknesses: ['Low Wall (84mm)', 'Medium Wall (135mm)', 'High Wall (199mm)'],
+    defaultThickness: 'Medium Wall (135mm)',
+    thicknessLabel: 'Drawer Height Profile',
+    features: ['Synchronized Movement', 'Soft-Close Silent', '65kg Dynamic Load'],
+    applications: ['Modular Kitchens', 'Pots & Pans Drawers', 'Pantry Drawers'],
+    specs: {
+      'System Type': 'Double-Wall Metallic Drawer',
+      'Dynamic Capacity': '65 kg',
+      'Height Options': '84mm / 135mm / 199mm'
+    },
+    heroSub: 'DOUBLE-WALL SYSTEM. LUXURY DRAWERS.',
+    heroTitle: 'TANDEM BOX',
+    heroDesc: 'Precision engineered double-wall metallic drawer systems with synchronized smooth motion runners, integrated soft-close dampening, and sleek modern side walls.',
+    heroTags: [
+      { text: 'Synchronized Run', icon: 'gear' },
+      { text: '65kg Dynamic Load', icon: 'shield' },
+      { text: 'Soft-Close Silent', icon: 'gear' }
+    ],
+    overviewFeatures: [
+      { title: 'Sleek Double-Wall', desc: 'Saves internal space with ultra-thin profiles', icon: 'calibrate' },
+      { title: 'Synchronized Slide', desc: 'Fluid movement without sag or friction', icon: 'gear' },
+      { title: '65kg Dynamic Load', desc: 'Built for very heavy cookware drawer units', icon: 'shield' },
+      { title: 'Soft-Close System', desc: 'Hydraulic mechanism for silent cushioning', icon: 'gear' },
+      { title: 'Modern Finishes', desc: 'Anthracite, grey, and metallic white finishes', icon: 'sparkles' }
+    ]
+  },
+  {
+    id: 121,
+    brandId: 'tandem-box-pullout',
+    category: 'Kitchen Accessories',
+    pageNumLeft: 111,
+    pageNumRight: 112,
+    badge: 'Deep Pantry Tandem',
+    title: 'Modular Tandem\nPull-Out.',
+    tagline: 'High gallery railing deep drawer tandem system for kitchen storage',
+    image: tandemBoxPngImg,
+    brandName: 'Tandem Box Pull-Out',
+    desc: 'Deep modular tandem drawer system equipped with round gallery railings and anti-slip matting. Built for storing tall grocery containers and heavy kitchen appliances.',
+    material: 'Steel + Chrome Railing',
+    thicknesses: ['450mm Depth', '500mm Depth', '550mm Depth'],
+    defaultThickness: '500mm Depth',
+    thicknessLabel: 'Drawer Depth',
+    features: ['Gallery Railing Support', 'Anti-Slip Matting', 'Full Extension Runners'],
+    applications: ['Deep Kitchen Drawers', 'Tall Groceries', 'Mixer & Cooker Storage'],
+    specs: {
+      'Rail Type': 'Gallery Railing',
+      'Extension': 'Full Extension Concealed',
+      'Capacity': '50 kg'
+    },
+    heroSub: 'DEEP DRAWER STORAGE. GALLERY RAILING.',
+    heroTitle: 'TANDEM PULL-OUT',
+    heroDesc: 'Deep modular tandem drawer system equipped with round gallery railings and anti-slip matting for tall grocery containers.',
+    heroTags: [
+      { text: 'Gallery Railings', icon: 'gear' },
+      { text: 'Full Extension', icon: 'calibrate' },
+      { text: '50kg Capacity', icon: 'shield' }
+    ],
+    overviewFeatures: [
+      { title: 'Tall Gallery Rails', desc: 'Prevents tall bottles and packages from tipping', icon: 'shield' },
+      { title: 'Full Extension', desc: 'Entire drawer pulls out for 100% reach', icon: 'gear' },
+      { title: 'Anti-Vibration Silent', desc: 'Cushioned dampers protect fragile glassware', icon: 'sparkles' }
+    ]
+  },
+  {
+    id: 122,
+    brandId: 'channel-basket-system',
+    category: 'Kitchen Accessories',
+    pageNumLeft: 113,
+    pageNumRight: 114,
+    badge: 'Sliding Wire Basket',
+    title: 'Channel Basket\nSystem.',
+    tagline: 'Smooth slide-out wire basket with precision ball-bearing runners',
+    image: channelBasketImg,
+    brandName: 'Channel Basket System',
+    desc: 'Heavy-gauge stainless steel kitchen wire basket integrated with soft-closing telescopic drawer slides. Ideal for daily dish, bowl, and utensil access.',
+    material: 'Stainless Steel + Zinc Slides',
+    thicknesses: ['15-inch Drawer', '17-inch Drawer', '21-inch Drawer'],
+    defaultThickness: '17-inch Drawer',
+    thicknessLabel: 'Runner Channel Length',
+    features: ['SS 304 High-Tensile Wire', 'Soft-Closing Slides', 'Corrosion Resistant'],
+    applications: ['Modular Kitchen Cabinets', 'Plates & Thali Storage', 'Cutlery Bays'],
+    specs: {
+      'Wire Grade': 'SS 304',
+      'Slide Type': 'Soft-Close Telescopic',
+      'Rating': '35 kg'
+    },
+    heroSub: 'TELESCOPIC SLIDE BASKET. SILENT GLIDE.',
+    heroTitle: 'CHANNEL BASKET',
+    heroDesc: 'Heavy-gauge stainless steel kitchen wire basket integrated with soft-closing telescopic drawer slides for effortless utensil reach.',
+    heroTags: [
+      { text: 'Soft-Close Telescopic', icon: 'gear' },
+      { text: 'SS 304 Grade', icon: 'shield' },
+      { text: 'Smooth Glide', icon: 'flex' }
+    ],
+    overviewFeatures: [
+      { title: 'Integrated Channels', desc: 'Concealed or side-mount telescopic soft-close slides', icon: 'gear' },
+      { title: 'Heavy Wire Gauge', desc: 'Reinforced welded frame supports heavy loads', icon: 'shield' },
+      { title: 'Multi-Purpose Grid', desc: 'Ideal for bowls, plates, and dry food storage', icon: 'sparkles' }
+    ]
+  },
+  {
+    id: 123,
+    brandId: 'channel-drawer-organizer',
+    category: 'Kitchen Accessories',
+    pageNumLeft: 115,
+    pageNumRight: 116,
+    badge: 'Under-Mount Drawer',
+    title: 'Channel Drawer\nOrganizer.',
+    tagline: 'Under-mount synchronized soft-close drawer system for sleek cabinets',
+    image: channelDrawerImg,
+    brandName: 'Channel Drawer Organizer',
+    desc: 'Advanced concealed under-mount drawer channel system providing completely hidden runner hardware and whisper-quiet soft closing for kitchen cabinetry.',
+    material: 'Galvanized Cold Rolled Steel',
+    thicknesses: ['350mm (14")', '450mm (18")', '500mm (20")', '550mm (22")'],
+    defaultThickness: '500mm (20")',
+    thicknessLabel: 'Runner Nominal Length',
+    features: ['Under-Mount Concealed', '3D Fascia Alignment', 'Whisper-Quiet Damping'],
+    applications: ['Wood Drawers', 'Modular Kitchens', 'Designer Cabinetry'],
+    specs: {
+      'Mounting Type': 'Under-mount Concealed',
+      'Closing Mechanism': 'Hydraulic Soft-Close',
+      'Load Rating': '40 kg'
+    },
+    heroSub: 'CONCEALED UNDER-MOUNT. FLUID MOTION.',
+    heroTitle: 'CHANNEL DRAWER',
+    heroDesc: 'Advanced concealed under-mount drawer channel system providing completely hidden runner hardware and whisper-quiet soft closing.',
+    heroTags: [
+      { text: 'Under-Mount Concealed', icon: 'calibrate' },
+      { text: 'Whisper Soft-Close', icon: 'gear' },
+      { text: '40kg Rating', icon: 'shield' }
+    ],
+    overviewFeatures: [
+      { title: 'Concealed Under-Mount', desc: 'Drawers show clean wood sides with no visible hardware', icon: 'sparkles' },
+      { title: '3D Front Adjustment', desc: 'Easy micro-adjustments for perfect shutter alignment', icon: 'calibrate' },
+      { title: 'Fluid Soft-Close', desc: 'Gentle deceleration prevents cups and glasses from rattling', icon: 'gear' }
+    ]
+  },
+  {
+    id: 124,
+    brandId: 'multi-tier-tandem-boxes',
+    category: 'Kitchen Accessories',
+    pageNumLeft: 117,
+    pageNumRight: 118,
+    badge: 'Modular Tandem Series',
+    title: 'Modular Tandem\nSeries.',
+    tagline: 'Complete multi-tier kitchen drawer ensemble with inner dividers',
+    image: multiTierTandemImg,
+    brandName: 'Modular Tandem Series',
+    desc: 'All-in-one modular kitchen tandem drawer system grouping cutlery organizers, plate organizers, and deep pot drawers into a coordinated cabinetry suite.',
+    material: 'Anthracite Metallic Steel',
+    thicknesses: ['3-Drawer Stack (Standard)', '2-Drawer Deep Stack', '4-Drawer Chef Stack'],
+    defaultThickness: '3-Drawer Stack (Standard)',
+    thicknessLabel: 'Drawer Configuration',
+    features: ['Full Kitchen Suite', 'Internal Modular Dividers', 'Coordinated Anthracite Look'],
+    applications: ['Modular Kitchen Islands', 'Cooktop Base Units', 'Pantry Stacks'],
+    specs: {
+      'Finish': 'Anthracite Matte',
+      'Runner Action': 'Synchronized Rack & Pinion',
+      'Total Capacity': '120 kg Stack'
+    },
+    heroSub: 'COORDINATED DRAWER SUITE. LUXURY ANTHRACITE.',
+    heroTitle: 'MODULAR TANDEM SERIES',
+    heroDesc: 'All-in-one modular kitchen tandem drawer system grouping cutlery organizers, plate organizers, and deep pot drawers into a coordinated cabinetry suite.',
+    heroTags: [
+      { text: 'Full Kitchen Suite', icon: 'sparkles' },
+      { text: 'Anthracite Finish', icon: 'sparkles' },
+      { text: 'Synchronized Glide', icon: 'gear' }
+    ],
+    overviewFeatures: [
+      { title: 'Harmonious Aesthetics', desc: 'Uniform dark metallic finish across all drawers', icon: 'sparkles' },
+      { title: 'Modular Dividers', desc: 'Customizable cross and longitudinal divider sets', icon: 'calibrate' },
+      { title: 'Heavy Pan Support', desc: 'Heavy gauge steel bottom supports heavy cast iron pots', icon: 'shield' }
+    ]
+  },
+  {
+    id: 125,
+    brandId: 'kitchen-accessories-master',
+    category: 'Kitchen Accessories',
+    pageNumLeft: 119,
+    pageNumRight: 120,
+    badge: 'Complete Kitchen Suite',
+    title: 'Modular Kitchen\nAccessories.',
+    tagline: 'Comprehensive collection of smart storage hardware & fittings',
+    image: kitchenAccessoriesMasterImg,
+    brandName: 'Kitchen Accessories Collection',
+    desc: 'The complete signature collection of Pakshal modular kitchen hardware: pull-downs, magic corners, cutlery trays, rolling shutters, and tandem systems.',
+    material: 'Premium SS 304, Aluminum & Glass',
+    thicknesses: ['Standard 600mm Kitchen Module', 'Standard 900mm Kitchen Module'],
+    defaultThickness: 'Standard 600mm Kitchen Module',
+    thicknessLabel: 'Kitchen Module Standard',
+    features: ['Ergonomic Storage', 'Food-Grade Materials', 'Lifetime Mechanical Durability'],
+    applications: ['Modern Modular Kitchens', 'Luxury Residences', 'Commercial Pantries'],
+    specs: {
+      'Material Range': 'SS 304, Tempered Glass, Anodized Al',
+      'Warranty': '10 Years Assurance',
+      'Compatibility': 'Universal Modular Cabinets'
+    },
+    heroSub: 'THE COMPLETE KITCHEN SUITE.',
+    heroTitle: 'KITCHEN ACCESSORIES',
+    heroDesc: 'The complete signature collection of Pakshal modular kitchen hardware: pull-downs, magic corners, cutlery trays, rolling shutters, and tandem systems.',
+    heroTags: [
+      { text: 'Complete Modular Suite', icon: 'sparkles' },
+      { text: 'SS 304 & Aluminum', icon: 'shield' },
+      { text: '10 Years Warranty', icon: 'shield' }
+    ],
+    overviewFeatures: [
+      { title: 'Full Modular Range', desc: 'Everything needed to outfit modern kitchen cabinets', icon: 'sparkles' },
+      { title: 'Tested Durability', desc: 'Tested for over 100,000 smooth opening cycles', icon: 'gear' },
+      { title: 'Maximum Space Gain', desc: 'Converts every corner and high shelf into easy storage', icon: 'calibrate' }
+    ]
+  },
+  {
+    id: 126,
+    brandId: 'modern-kitchen-cabinetry',
+    category: 'Kitchen Accessories',
+    pageNumLeft: 121,
+    pageNumRight: 122,
+    badge: 'Cabinetry Design',
+    title: 'Modern Modular\nKitchen Suite.',
+    tagline: 'Turnkey architectural modular kitchen cabinetry & fittings layout',
+    image: kitchensCardImg,
+    brandName: 'Modern Modular Kitchen',
+    desc: 'Full architectural modular kitchen layout displaying seamless integration of tandem drawers, rolling shutters, overhead lift-up shutters, and pantry swing units.',
+    material: 'Luxury Matte Laminates & Calibrated Marine Plywood',
+    thicknesses: ['L-Shaped Kitchen', 'U-Shaped Kitchen', 'Parallel Kitchen', 'Island Kitchen'],
+    defaultThickness: 'L-Shaped Kitchen',
+    thicknessLabel: 'Kitchen Layout Type',
+    features: ['Turnkey Modular Layout', 'Integrated Hardware Fitting', 'Waterproof BWP Core'],
+    applications: ['Luxury Apartments', 'Villas', 'Contemporary Residences'],
+    specs: {
+      'Core Framework': 'Calibrated BWP Marine Ply',
+      'Fittings': 'Soft-Close Concealed German Hardware',
+      'Finish': 'Anti-Scratch Matte Panels'
+    },
+    heroSub: 'ARCHITECTURAL KITCHEN CONCEPTS.',
+    heroTitle: 'MODULAR KITCHEN SUITE',
+    heroDesc: 'Full architectural modular kitchen layout displaying seamless integration of tandem drawers, rolling shutters, overhead lift-up shutters, and pantry swing units.',
+    heroTags: [
+      { text: 'Architectural Layout', icon: 'sparkles' },
+      { text: 'Integrated Hardware', icon: 'gear' },
+      { text: 'Waterproof Core', icon: 'droplet' }
+    ],
+    overviewFeatures: [
+      { title: 'Integrated Design', desc: 'Combines all modular accessories into a cohesive space', icon: 'sparkles' },
+      { title: 'Ergonomic Flow', desc: 'Optimized work triangle: cooking, washing, and storage', icon: 'calibrate' },
+      { title: 'Premium Finish', desc: 'Resistant to cooking steam, moisture, and stains', icon: 'shield' }
+    ]
   }
 ];
 
 // React Component showcasing Kitchen Accessories in a clean interactive showcase grid
-export const KitchenAccessories = ({ onNavigate }) => {
-  const handleItemClick = () => {
-    if (onNavigate) {
-      onNavigate('products', 'category=kitchen-accessories');
+export const KitchenAccessories = ({ onNavigate, onSelectItem, activeId }) => {
+  const handleItemClick = (item) => {
+    if (onSelectItem) {
+      onSelectItem(item);
+    } else if (onNavigate) {
+      onNavigate('products', '', `?category=kitchen-accessories&product=${item.brandId}`);
     }
   };
 
   return (
-    <div className="w-full bg-[#fdfdfa] py-12 px-6 font-sans">
-      <div className="max-w-[1280px] mx-auto text-left">
+    <div className="w-full bg-[#fdfdfa] py-12 px-4 sm:px-6 font-sans">
+      <div className="max-w-[1440px] mx-auto text-left">
 
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 pb-4 border-b border-slate-200">
@@ -621,66 +989,80 @@ export const KitchenAccessories = ({ onNavigate }) => {
               Modular Storage Solutions
             </span>
             <h2 className="text-3xl md:text-4xl font-black text-slate-900 tracking-tight uppercase">
-              Kitchen Accessories
+              Kitchen Accessories Collection
             </h2>
             <p className="text-slate-500 font-medium text-xs sm:text-sm mt-1 max-w-2xl">
-              Smart pull-outs, tandem drawers, magic corners, overhead elevators, and organizer trays engineered for modern modular kitchens.
+              Explore our complete range of pull-downs, tandem drawers, magic corners, carousel trays, organizer systems, and architectural cabinetry.
             </p>
           </div>
 
-          <button
-            onClick={handleItemClick}
-            className="mt-4 md:mt-0 px-6 py-2.5 bg-[#006e2f] hover:bg-[#005c26] text-white text-xs font-bold uppercase tracking-wider rounded-lg transition-all shadow-sm cursor-pointer flex items-center gap-2 self-start md:self-auto"
-          >
-            <span>Explore Catalogue</span>
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-            </svg>
-          </button>
+          <div className="mt-4 md:mt-0 flex items-center gap-3">
+            <span className="px-3.5 py-1.5 bg-[#f0f9f4] text-[#006e2f] border border-[#006e2f]/20 rounded-full text-xs font-black uppercase tracking-wider">
+              Premium Collection
+            </span>
+          </div>
         </div>
 
-        {/* Grid of Kitchen Accessories */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {kitchenAccessoriesSpreads.filter(item => !item.hideFromIndex).map((item) => (
-            <div
-              key={item.id}
-              onClick={handleItemClick}
-              className="group bg-white rounded-2xl border border-slate-200/80 overflow-hidden shadow-xs hover:shadow-md transition-all duration-300 flex flex-col cursor-pointer"
-            >
-              {/* Product Image Container */}
-              <div className="relative h-48 sm:h-52 bg-white overflow-hidden border-b border-slate-100 flex items-center justify-center p-3">
-                <img
-                  src={item.image}
-                  alt={item.brandName}
-                  className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute top-3 left-3 bg-white/90 backdrop-blur-md px-2.5 py-1 rounded-full text-[10px] font-black uppercase tracking-wider text-slate-800 border border-slate-200/60 shadow-xs">
-                  {item.badge}
+        {/* Grid of All 26 Kitchen Accessories */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 sm:gap-6">
+          {kitchenAccessoriesSpreads.map((item) => {
+            const isSelected = activeId === item.id;
+            return (
+              <div
+                key={item.id}
+                onClick={() => handleItemClick(item)}
+                className={`group bg-white rounded-2xl border transition-all duration-300 flex flex-col cursor-pointer overflow-hidden ${
+                  isSelected
+                    ? 'border-2 border-[#006e2f] shadow-lg ring-2 ring-[#006e2f]/20 scale-[1.01]'
+                    : 'border-slate-200/90 shadow-2xs hover:shadow-md hover:border-[#006e2f]/60'
+                }`}
+              >
+                {/* Product Image Container */}
+                <div className="relative h-48 sm:h-52 bg-white overflow-hidden border-b border-slate-100 flex items-center justify-center p-3">
+                  <img
+                    src={item.image}
+                    alt={item.brandName}
+                    className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-md px-2.5 py-1 rounded-full text-[10px] font-black uppercase tracking-wider text-slate-800 border border-slate-200/70 shadow-2xs">
+                    {item.badge}
+                  </div>
+                  {isSelected && (
+                    <div className="absolute top-3 right-3 bg-[#006e2f] text-white px-2 py-0.5 rounded-full text-[9px] font-black uppercase tracking-wider shadow-xs">
+                      Active
+                    </div>
+                  )}
                 </div>
-              </div>
 
-              {/* Product Details */}
-              <div className="p-5 flex-grow flex flex-col justify-between">
-                <div>
-                  <h3 className="text-base font-black text-slate-900 group-hover:text-[#006e2f] transition-colors leading-snug">
-                    {item.brandName}
-                  </h3>
-                  <p className="text-xs font-medium text-slate-500 mt-1.5 line-clamp-2 leading-relaxed">
-                    {item.tagline}
-                  </p>
-                </div>
+                {/* Product Details */}
+                <div className="p-4 sm:p-5 flex-grow flex flex-col justify-between">
+                  <div>
+                    <h3 className={`text-base font-black transition-colors leading-snug ${
+                      isSelected ? 'text-[#006e2f]' : 'text-slate-900 group-hover:text-[#006e2f]'
+                    }`}>
+                      {item.brandName}
+                    </h3>
+                    <p className="text-xs font-medium text-slate-500 mt-1 line-clamp-2 leading-relaxed">
+                      {item.tagline}
+                    </p>
+                  </div>
 
-                <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
-                  <span className="text-[11px] font-bold text-[#006e2f]">View Specifications</span>
-                  <div className="w-6 h-6 rounded-full bg-slate-100 group-hover:bg-[#006e2f] group-hover:text-white flex items-center justify-center transition-all text-slate-600">
-                    <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                    </svg>
+                  <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
+                    <span className="text-[11px] font-bold text-[#006e2f]">View Specifications</span>
+                    <div className={`w-6 h-6 rounded-full flex items-center justify-center transition-all ${
+                      isSelected
+                        ? 'bg-[#006e2f] text-white'
+                        : 'bg-slate-100 group-hover:bg-[#006e2f] group-hover:text-white text-slate-600'
+                    }`}>
+                      <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                      </svg>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
       </div>

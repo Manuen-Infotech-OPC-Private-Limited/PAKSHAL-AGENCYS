@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useDocumentMetadata } from '../hooks/useDocumentMetadata';
-import { kitchenAccessoriesSpreads } from '../components/KitchenAccessories';
+import KitchenAccessories, { kitchenAccessoriesSpreads } from '../components/KitchenAccessories';
 import {
   Trees,
   FlaskConical,
@@ -66,7 +66,7 @@ import gurjanGoldImg from '../assets/plywood/gurjangold.jpg';
 import tandemBoxImg from '../assets/kitchen/tandembox.png';
 import fancyDoorsImg from '../assets/doors/fancydoors.png';
 import designerDoorImg from '../assets/doors/homepage-designerdoor.png';
-import doorFittingsImg from '../assets/doors/door_fittings.png';
+import doorFittingsImg from '../assets/hardware/door_fittings.png';
 import plywoodKingImg from '../assets/plywood/plywood-image.png';
 import veneer2Img from '../assets/plywood/veneer2.png';
 import veneer3Img from '../assets/plywood/veneer3.png';
@@ -86,6 +86,8 @@ import tandemBoxNewImg from '../assets/kitchen/tandembox.jpg';
 import hardwareFittings5 from '../assets/hardware/productspage-hardware&fittings5.png';
 import hardwareFittings6 from '../assets/hardware/productspage-hardware&fittings6.png';
 import hardwareFittings7 from '../assets/hardware/productspage-hardware&fittings7.png';
+import hardwareFittings8 from '../assets/hardware/productspage-hardware&fittings8.png';
+import hingesImg from '../assets/hardware/hinges.png';
 import astdaxHandles1 from '../assets/hardware/astdax-handles-1.jpg';
 import astdaxHandles2 from '../assets/hardware/astdax-handles-2.jpg';
 import conceal from '../assets/hardware/conceal.png';
@@ -972,9 +974,9 @@ const SPREADS = [
     ]
   },
   {
-    id: 6,
+    id: 200,
     brandId: 'steel-wood',
-    category: 'Architectural Hardware',
+    category: 'Arch. Hardware',
     pageNumLeft: 33,
     pageNumRight: 34,
     badge: 'Precision Hardware',
@@ -1120,9 +1122,9 @@ const SPREADS = [
     ]
   },
   {
-    id: 9,
+    id: 232,
     brandId: 'hydraulic-hinge',
-    category: 'Hardware&Fittings',
+    category: 'Hardware & Fittings',
     pageNumLeft: 39,
     pageNumRight: 40,
     badge: 'Soft-Close Mechanism',
@@ -1157,9 +1159,9 @@ const SPREADS = [
     ]
   },
   {
-    id: 13,
+    id: 213,
     brandId: 'drawer-channel',
-    category: 'Hardware&Fittings',
+    category: 'Hardware & Fittings',
     pageNumLeft: 41,
     pageNumRight: 42,
     badge: 'Precision Slides',
@@ -1194,83 +1196,81 @@ const SPREADS = [
     ]
   },
   {
-    id: 14,
-    brandId: 'kitchen-basket',
-    category: 'Hardware&Fittings',
+    id: 206,
+    brandId: 'sliding-channels',
+    category: 'Hardware & Fittings',
     pageNumLeft: 43,
     pageNumRight: 44,
-    badge: 'Modular Kitchen',
-    title: 'Organized\nSpaces.',
-    tagline: 'Stainless steel modular wire basket systems',
-    image: kitchenBasketImg,
-    brandName: 'Kitchen Basket',
-    desc: 'Premium food-grade stainless steel modular kitchen baskets designed for plate storage, cup-saucer organization, and utensil load distribution.',
-    thicknesses: ['Wire Basket', 'Perforated Sheet'],
-    defaultThickness: 'Wire Basket',
-    features: ['Anti-Rust Chrome', 'Easy to Clean', 'High Load Capacity'],
-    applications: ['Under-counter Storage', 'Pantry Organizers', 'Pull-out Units'],
+    badge: 'Heavy Duty Slides',
+    title: 'Heavy Duty\nSliding Channels.',
+    tagline: 'Precision roll-formed steel sliding track and channel systems',
+    image: slidingChannelsImg,
+    brandName: 'Sliding Channels',
+    desc: 'Heavy-duty precision sliding channel systems built from roll-formed high tensile carbon steel for silent and reliable sliding wardrobe doors and partitions.',
+    thicknesses: ['Standard 45kg', 'Heavy Duty 65kg'],
+    defaultThickness: 'Heavy Duty 65kg',
+    features: ['Smooth Roller Action', 'High Load Capacity', 'Corrosion Resistant'],
+    applications: ['Wardrobes', 'Kitchen Pull-outs', 'Pocket Doors'],
     specs: {
-      'Basket Material': 'SS 304 Food-grade',
-      'Finish Type': 'Chrome Electroplated',
-      'Rust Resistance': 'Lifetime Warranty'
+      'Material': 'Roll-formed Cold Rolled Steel',
+      'Track Length': 'Up to 3.6m',
+      'Load Rating': '65 kg'
     },
-    heroSub: 'MODULAR KITCHEN. ORGANIZED SPACES.',
-    heroTitle: 'KITCHEN BASKET',
-    heroDesc: 'Premium food-grade stainless steel modular kitchen baskets designed for plate storage, cup-saucer organization, and heavy modular kitchen setups.',
+    heroSub: 'HEAVY DUTY SLIDES. SILENT GLIDE.',
+    heroTitle: 'SLIDING CHANNELS',
+    heroDesc: 'Heavy-duty precision sliding channel systems built from roll-formed high tensile carbon steel for silent and reliable sliding wardrobe doors and partitions.',
     heroTags: [
-      { text: 'Anti-Rust Chrome', icon: 'sparkles' },
-      { text: 'Food-grade SS 304', icon: 'shield' },
-      { text: 'High Load Capacity', icon: 'shield' }
+      { text: 'Smooth Roller Action', icon: 'gear' },
+      { text: 'Heavy Duty Steel', icon: 'shield' },
+      { text: '65kg Rating', icon: 'calibrate' }
     ],
     overviewFeatures: [
-      { title: 'SS 304 Food-grade', desc: 'Completely safe and hygienic structure', icon: 'shield' },
-      { title: 'Electroplated Chrome', desc: 'Mirror finish with extreme scratch resistance', icon: 'sparkles' },
-      { title: 'Heavy Wire Mesh', desc: 'Deep welds for structural load bearing', icon: 'wood' },
-      { title: 'Easy Slide Mounts', desc: 'Seamlessly compatible with telescopic runners', icon: 'gear' },
-      { title: 'Optimum Ventilation', desc: 'Open mesh prevents moisture and odors', icon: 'droplet' }
+      { title: 'Smooth Roller Action', desc: 'Low-noise nylon bearing wheels for silent operation', icon: 'gear' },
+      { title: 'Heavy Duty Steel', desc: 'High gauge rolled steel withstands repeated cycling', icon: 'shield' },
+      { title: 'Precision Alignment', desc: 'Anti-jump and anti-derail track channels', icon: 'calibrate' },
+      { title: 'Zinc Passivated', desc: 'Double surface coating prevents oxidation', icon: 'droplet' }
     ]
   },
   {
-    id: 15,
-    brandId: 'tandem-box',
-    category: 'Hardware&Fittings',
+    id: 207,
+    brandId: 'steelwood-butt-hinges',
+    category: 'Hardware & Fittings',
     pageNumLeft: 45,
     pageNumRight: 46,
-    badge: 'Double-wall System',
-    title: 'Luxury\nDrawers.',
-    tagline: 'Premium double-wall modular drawer system',
-    image: tandemBoxNewImg,
-    brandName: 'Tandem Box',
-    desc: 'German-engineered double-wall metal drawer systems with synchronized smooth action runners, built-in soft-close dampeners, and sleek modern side profile walls.',
-    thicknesses: ['Slimline Wall', 'Standard Metal Wall'],
-    defaultThickness: 'Standard Metal Wall',
-    features: ['Synchronized Movement', 'Soft-Close Silent', 'Premium Metallic Sides'],
-    applications: ['High-end Kitchens', 'Premium Closets', 'Luxury Office Credenzas'],
+    badge: 'Butt Hinges',
+    title: 'SS 304\nButt Hinges.',
+    tagline: 'High load bearing stainless steel architectural butt hinges',
+    image: hingesImg,
+    brandName: 'Steel Wood',
+    desc: 'Heavy-duty AISI 304 grade architectural butt hinges with two precision ball bearings, ensuring frictionless rotation and lifetime durability for heavy doors.',
+    thicknesses: ['4 x 3 x 3 mm', '5 x 3 x 3 mm'],
+    defaultThickness: '5 x 3 x 3 mm',
+    features: ['SS 304 Grade', 'Two Ball Bearings', 'High Load Bearing'],
+    applications: ['Main Doors', 'Bedroom Doors', 'Heavy Flush Doors'],
     specs: {
-      'System Type': 'Double-Wall Metallic Drawer',
-      'Dynamic Capacity': '65 kg',
-      'Height Options': '90mm / 180mm'
+      'Material': 'AISI 304 Stainless Steel',
+      'Bearing': '2 Heavy Precision Ball Bearings',
+      'Load Capacity': 'Up to 80 kg per pair'
     },
-    heroSub: 'DOUBLE-WALL SYSTEM. LUXURY DRAWERS.',
-    heroTitle: 'TANDEM BOX',
-    heroDesc: 'German-engineered double-wall metal drawer systems with synchronized smooth action runners, built-in soft-close dampeners, and sleek modern side profile walls.',
+    heroSub: 'ARCHITECTURAL HINGES. SOLID SS 304.',
+    heroTitle: 'STEEL WOOD BUTT HINGES',
+    heroDesc: 'Heavy-duty AISI 304 grade architectural butt hinges with two precision ball bearings, ensuring frictionless rotation and lifetime durability for heavy doors.',
     heroTags: [
-      { text: 'Synchronized Run', icon: 'gear' },
-      { text: '65kg Dynamic Load', icon: 'shield' },
-      { text: 'Soft-Close Silent', icon: 'gear' }
+      { text: 'SS 304 Grade', icon: 'shield' },
+      { text: 'Twin Ball Bearings', icon: 'gear' },
+      { text: '80kg Load Rating', icon: 'calibrate' }
     ],
     overviewFeatures: [
-      { title: 'Sleek Double-Wall', desc: 'Saves internal space with ultra-thin profiles', icon: 'calibrate' },
-      { title: 'Synchronized Slide', desc: 'Fluid movement without sag or friction', icon: 'gear' },
-      { title: '65kg Dynamic Load', desc: 'Built for very heavy drawer drawer units', icon: 'shield' },
-      { title: 'Soft-Close System', desc: 'Hydraulic mechanism for silent cushioning', icon: 'gear' },
-      { title: 'Modern Colors', desc: 'Anthracite, grey, and metallic white finishes', icon: 'sparkles' }
+      { title: 'SS 304 Construction', desc: 'Marine grade stainless steel rust resistance', icon: 'shield' },
+      { title: 'Twin Ball Bearings', desc: 'Frictionless rotation with zero hinge squeak', icon: 'gear' },
+      { title: 'Countersunk Holes', desc: 'Flat flush screw mounting on door frames', icon: 'calibrate' },
+      { title: '80kg Door Support', desc: 'Designed for solid wood and heavy veneered doors', icon: 'shield' }
     ]
   },
   {
-    id: 16,
+    id: 216,
     brandId: 'corner-carousel',
-    category: 'Hardware&Fittings',
+    category: 'Hardware & Fittings',
     pageNumLeft: 47,
     pageNumRight: 48,
     badge: 'Space Optimization',
@@ -1305,11 +1305,262 @@ const SPREADS = [
     ]
   },
   {
-    id: 22,
-    brandId: 'astdax-hardwares',
-    category: 'Hardware&Fittings',
+    id: 208,
+    brandId: 'sliding-systems',
+    category: 'Hardware & Fittings',
+    pageNumLeft: 49,
+    pageNumRight: 50,
+    badge: 'Sliding Hardware',
+    title: 'Sliding &\nPivot Systems.',
+    tagline: 'Smooth synchronized wardrobe sliding and pivot mechanisms',
+    image: hardwareFittings1,
+    brandName: 'Sliding & Pivot Systems',
+    desc: 'High-performance sliding and pivot door gear systems engineered for silent gliding, heavy shutter support, and synchronized movement across modular wardrobes.',
+    thicknesses: ['Top-Hung', 'Bottom-Rolling'],
+    defaultThickness: 'Top-Hung',
+    features: ['Synchronized Sliding', 'Soft-Damping Stopper', 'Quiet Nylon Bearings'],
+    applications: ['Full-height Wardrobes', 'Glass Sliding Partitions', 'Walk-in Closets'],
+    specs: {
+      'Track Type': 'Heavy Extruded Aluminium',
+      'Weight Rating': '80 kg per shutter',
+      'Door Thickness': '18mm - 32mm'
+    },
+    heroSub: 'SLIDING & PIVOT SYSTEMS. PRECISION GEAR.',
+    heroTitle: 'SLIDING & PIVOT SYSTEMS',
+    heroDesc: 'High-performance sliding and pivot door gear systems engineered for silent gliding, heavy shutter support, and synchronized movement across modular wardrobes.',
+    heroTags: [
+      { text: 'Synchronized Sliding', icon: 'gear' },
+      { text: 'Soft-Damping Stopper', icon: 'gear' },
+      { text: '80kg Shutter Support', icon: 'shield' }
+    ],
+    overviewFeatures: [
+      { title: 'Synchronized Run', desc: 'Both doors slide simultaneously with gentle touch', icon: 'gear' },
+      { title: 'Soft-Close Dampers', desc: 'Hydraulic brakes stop door gently at both ends', icon: 'gear' },
+      { title: 'Extruded Aluminium', desc: 'Rigid alloy track prevents bowing over long spans', icon: 'calibrate' },
+      { title: 'Concealed Rollers', desc: 'Clean interior looks without visible hardware', icon: 'sparkles' }
+    ]
+  },
+  {
+    id: 209,
+    brandId: 'drawer-runners-ii',
+    category: 'Hardware & Fittings',
     pageNumLeft: 51,
     pageNumRight: 52,
+    badge: 'Telescopic Runners',
+    title: 'Precision\nDrawer Runners.',
+    tagline: 'Full-extension soft-close ball bearing drawer runners',
+    image: hardwareFittings2,
+    brandName: 'Drawer Runners II',
+    desc: 'Heavy-gauge zinc passivated cold-rolled steel telescopic runners engineered for heavy modular drawers with hydraulic buffering and silent smooth extension.',
+    thicknesses: ['14 inch', '16 inch', '18 inch', '20 inch'],
+    defaultThickness: '18 inch',
+    features: ['Full Extension', 'Integrated Hydraulic Buffer', 'High Tensile Steel'],
+    applications: ['Modular Kitchen Drawers', 'Office Pedestals', 'Filing Cabinets'],
+    specs: {
+      'Extension': '100% Full Extension',
+      'Load Rating': '45 kg Dynamic',
+      'Finish': 'Zinc Plated / Black'
+    },
+    heroSub: 'PRECISION RUNNERS. SILENT HYDRAULIC.',
+    heroTitle: 'DRAWER RUNNERS II',
+    heroDesc: 'Heavy-gauge zinc passivated cold-rolled steel telescopic runners engineered for heavy modular drawers with hydraulic buffering and silent smooth extension.',
+    heroTags: [
+      { text: 'Full Extension', icon: 'calibrate' },
+      { text: 'Hydraulic Buffer', icon: 'gear' },
+      { text: '45kg Dynamic Load', icon: 'shield' }
+    ],
+    overviewFeatures: [
+      { title: 'Triple Fold Design', desc: 'Allows complete drawer box to pull out for easy reach', icon: 'calibrate' },
+      { title: 'Silent Soft-Close', desc: 'Hydraulic piston gently pulls drawer shut silently', icon: 'gear' },
+      { title: 'Micro-Gap Adjustment', desc: 'Fine adjustment tabs for perfect drawer spacing', icon: 'calibrate' },
+      { title: 'Tested 80,000 Cycles', desc: 'Guaranteed smooth glide through daily repetitive use', icon: 'shield' }
+    ]
+  },
+  {
+    id: 210,
+    brandId: 'undermount-slides',
+    category: 'Hardware & Fittings',
+    pageNumLeft: 53,
+    pageNumRight: 54,
+    badge: 'Concealed Slides',
+    title: 'Concealed\nUndermount Slides.',
+    tagline: 'Concealed bottom-mount runners with integrated dampening',
+    image: hardwareFittings3,
+    brandName: 'Undermount Slides',
+    desc: 'Hidden bottom-mounted drawer runners that preserve the natural wood beauty of drawer boxes, featuring synchronized fluid action and feather-light touch soft-closing.',
+    thicknesses: ['Soft-Close', 'Push-to-Open'],
+    defaultThickness: 'Soft-Close',
+    features: ['Concealed Installation', 'Synchronized Action', 'Tool-Free Quick Release'],
+    applications: ['Luxury Bathroom Vanities', 'High-end Kitchens', 'Dresser Drawers'],
+    specs: {
+      'Mounting': 'Concealed Under-Drawer Mount',
+      'Dynamic Load': '35 kg',
+      'Drawer Thickness': 'Up to 16mm wood'
+    },
+    heroSub: 'CONCEALED SLIDES. INVISIBLE LUXURY.',
+    heroTitle: 'UNDERMOUNT SLIDES',
+    heroDesc: 'Hidden bottom-mounted drawer runners that preserve the natural wood beauty of drawer boxes, featuring synchronized fluid action and feather-light touch soft-closing.',
+    heroTags: [
+      { text: 'Concealed Mount', icon: 'sparkles' },
+      { text: 'Synchronized Action', icon: 'gear' },
+      { text: '35kg Dynamic Load', icon: 'shield' }
+    ],
+    overviewFeatures: [
+      { title: 'Invisible Hardware', desc: 'Hidden beneath drawer bottom for pure wooden aesthetics', icon: 'sparkles' },
+      { title: 'Synchronized Rack', desc: 'Eliminates drawer wiggle and tilt under heavy loads', icon: 'gear' },
+      { title: 'Tool-Free Clip Release', desc: 'Quick front release clips for swift removal and cleaning', icon: 'calibrate' },
+      { title: 'Smooth Feather Motion', desc: 'Effortless opening and cushioned soft closing', icon: 'gear' }
+    ]
+  },
+  {
+    id: 211,
+    brandId: 'wardrobe-sliding-system',
+    category: 'Hardware & Fittings',
+    pageNumLeft: 55,
+    pageNumRight: 56,
+    badge: 'Wardrobe Systems',
+    title: 'Modular\nWardrobe Systems.',
+    tagline: 'Heavy-duty top hung and bottom rolling wardrobe fittings',
+    image: hardwareFittings4,
+    brandName: 'Wardrobe Sliding System',
+    desc: 'Complete architectural wardrobe sliding fitting system featuring double-direction soft damping, heavy-duty aluminium profile tracks, and anti-jump safety rollers.',
+    thicknesses: ['2-Door System', '3-Door System'],
+    defaultThickness: '2-Door System',
+    features: ['Top-Hung Concealed Track', 'Two-Way Dampening', 'Heavy Door Support'],
+    applications: ['Floor-to-Ceiling Wardrobes', 'Modular Bedroom Closets', 'Commercial Partitions'],
+    specs: {
+      'Max Door Weight': '100 kg per door',
+      'Door Height': 'Up to 2.8m',
+      'Guide Mechanism': 'Self-cleaning roller guides'
+    },
+    heroSub: 'WARDROBE SYSTEMS. ARCHITECTURAL GRADE.',
+    heroTitle: 'WARDROBE SLIDING SYSTEM',
+    heroDesc: 'Complete architectural wardrobe sliding fitting system featuring double-direction soft damping, heavy-duty aluminium profile tracks, and anti-jump safety rollers.',
+    heroTags: [
+      { text: '100kg Capacity', icon: 'shield' },
+      { text: 'Two-Way Dampening', icon: 'gear' },
+      { text: 'Aluminium Track', icon: 'calibrate' }
+    ],
+    overviewFeatures: [
+      { title: '100kg Capacity', desc: 'Engineered for full solid-core and veneered large doors', icon: 'shield' },
+      { title: 'Bi-Directional Soft-Close', desc: 'Gentle cushioning on both open and close stops', icon: 'gear' },
+      { title: 'Floor-Clearance Freedom', desc: 'Top-hung design leaves floor completely unobstructed', icon: 'calibrate' },
+      { title: 'Anti-Jump Safety Clips', desc: 'Prevents shutter dislodgement even with rapid slides', icon: 'shield' }
+    ]
+  },
+  {
+    id: 212,
+    brandId: 'utility-fittings',
+    category: 'Hardware & Fittings',
+    pageNumLeft: 57,
+    pageNumRight: 58,
+    badge: 'Cabinet Fittings',
+    title: 'Modular\nCabinet Fittings.',
+    tagline: 'Heavy-duty brackets, gas springs and modular cabinet fittings',
+    image: hardwareFittings8,
+    brandName: 'Utility Fittings',
+    desc: 'Heavy-duty overhead gas spring lifts, flap fittings, and structural cabinet brackets engineered to support seamless upward opening and secure cabinetry assembly.',
+    thicknesses: ['Gas Spring 100N', 'Gas Spring 150N', 'Cabinet Brackets'],
+    defaultThickness: 'Gas Spring 100N',
+    features: ['High Pneumatic Force', 'Rust-Resistant Cylinder', 'Easy Pivot Mounting'],
+    applications: ['Overhead Kitchen Cabinets', 'Lift-up Flap Doors', 'Under-bed Storage'],
+    specs: {
+      'Force Rating': '100N / 150N / 200N',
+      'Stroke Length': '90mm',
+      'Cycle Life': '50,000 Cycles'
+    },
+    heroSub: 'CABINET FITTINGS. PNEUMATIC UTILITY.',
+    heroTitle: 'UTILITY FITTINGS',
+    heroDesc: 'Heavy-duty overhead gas spring lifts, flap fittings, and structural cabinet brackets engineered to support seamless upward opening and secure cabinetry assembly.',
+    heroTags: [
+      { text: 'Pneumatic Lift', icon: 'gear' },
+      { text: '50k Cycles Tested', icon: 'shield' },
+      { text: 'Heavy Load Brackets', icon: 'calibrate' }
+    ],
+    overviewFeatures: [
+      { title: 'Pneumatic Lift Assist', desc: 'Effortless opening and stay-open support for flap doors', icon: 'gear' },
+      { title: 'Nitrogen-Charged Cylinder', desc: 'Consistent damping force without pressure drop', icon: 'shield' },
+      { title: 'Reinforced Mount Brackets', desc: 'Distributes load safely across cabinet sides', icon: 'calibrate' },
+      { title: 'Quick Click Installation', desc: 'Snap-on ball socket connectors for easy fitting', icon: 'gear' }
+    ]
+  },
+  {
+    id: 230,
+    brandId: 'astdax-others',
+    category: 'Hardware & Fittings',
+    pageNumLeft: 59,
+    pageNumRight: 60,
+    parentBrandId: 'astdax-hardwares',
+    badge: 'Hardware Accessories',
+    title: 'Hardware\nAccessories.',
+    tagline: 'Essential cabinet studs, magnets & caster wheels',
+    image: others,
+    brandName: 'Astdax Hardwares',
+    desc: 'High-performance utility hardware accessories including 6mm corner studs, magnetic catches, sixer wheels, and locking wheels.',
+    thicknesses: ['6mm Corner Stud', 'Magnets', 'Sixer Wheels', 'Locking Wheel'],
+    defaultThickness: '6mm Corner Stud',
+    thicknessLabel: 'Available Accessories',
+    features: ['Heavy Load Capacity', 'Smooth Caster Movement', 'Strong Magnetic Hold'],
+    applications: ['Modular Furniture', 'Cabinet Assembly', 'Movable Storage Units'],
+    specs: {},
+    heroSub: 'HARDWARE ACCESSORIES. UTILITY & MOBILITY.',
+    heroTitle: 'ASTDAX HARDWARES',
+    heroDesc: 'Essential cabinet accessories: 6mm corner studs, magnetic catches, sixer wheels, and locking wheels for complete furniture utility.',
+    heroTags: [
+      { text: '6mm Studs', icon: 'gear' },
+      { text: 'Magnetic Catch', icon: 'shield' },
+      { text: 'Caster Wheels', icon: 'sparkles' }
+    ],
+    overviewFeatures: [
+      { title: '6mm Corner Stud', desc: 'Strong corner reinforcement', icon: 'gear' },
+      { title: 'Magnetic Catches', desc: 'Keeps cabinet doors firmly shut', icon: 'shield' },
+      { title: 'Sixer & Locking Wheels', desc: 'Smooth heavy-duty trolley movement', icon: 'sparkles' }
+    ]
+  },
+  {
+    id: 231,
+    brandId: 'astdax-sofaleg',
+    category: 'Hardware & Fittings',
+    pageNumLeft: 61,
+    pageNumRight: 62,
+    parentBrandId: 'astdax-hardwares',
+    badge: 'Sofa Legs',
+    title: 'Sofa\nLegs.',
+    tagline: 'Heavy-duty decorative furniture & sofa legs',
+    image: sofaleg,
+    brandName: 'Astdax Hardwares',
+    desc: 'Sturdy and stylish metallic sofa legs engineered to support heavy upholstered furniture in Antique, Copper, Wengi, and Silver finishes.',
+    thicknesses: ['Antique', 'Copper', 'Wengi', 'Silver'],
+    defaultThickness: 'Antique',
+    thicknessLabel: 'Available Finishes',
+    features: ['High Load Bearing', 'Protective Rubber Base', 'Corrosion Resistant'],
+    applications: ['Sofas & Couches', 'Bed Frames', 'Cabinets & Sideboards'],
+    specs: {
+      'Finish': 'Antique | Copper | Wengi | Silver',
+      'Material': 'Heavy Duty Alloy / Steel',
+      'Base': 'Anti-scratch Rubber Pad',
+      'Load Capacity': 'Up to 200kg per leg'
+    },
+    heroSub: 'SOFA LEGS. HEAVY-DUTY STRENGTH.',
+    heroTitle: 'ASTDAX HARDWARES',
+    heroDesc: 'Heavy-duty decorative sofa legs engineered for maximum weight capacity in Antique, Copper, Wengi, and Silver finishes.',
+    heroTags: [
+      { text: 'Heavy Load', icon: 'shield' },
+      { text: '4 Finishes', icon: 'sparkles' },
+      { text: 'Rubber Base', icon: 'gear' }
+    ],
+    overviewFeatures: [
+      { title: '200kg Load Rating', desc: 'Supports heavy couches and sofa sets', icon: 'shield' },
+      { title: '4 Premium Finishes', desc: 'Antique, Copper, Wengi, Silver', icon: 'sparkles' },
+      { title: 'Floor Protection', desc: 'Rubber base prevents floor scratching', icon: 'gear' }
+    ]
+  },
+  {
+    id: 222,
+    brandId: 'astdax-hardwares',
+    category: 'Arch. Hardware',
+    pageNumLeft: 63,
+    pageNumRight: 64,
     badge: 'Premium Handles',
     title: 'Designer\nHandles.',
     tagline: 'Premium zinc alloy cabinet pulls with multi-finish options',
@@ -1342,12 +1593,11 @@ const SPREADS = [
     ]
   },
   {
-    id: 23,
+    id: 223,
     brandId: 'astdax-hardwares-2',
-    category: 'Hardware&Fittings',
-    pageNumLeft: 53,
-    pageNumRight: 54,
-    hideFromIndex: true,
+    category: 'Arch. Hardware',
+    pageNumLeft: 65,
+    pageNumRight: 66,
     parentBrandId: 'astdax-hardwares',
     badge: 'Premium Collection',
     title: 'Fusion\nHandles.',
@@ -1382,12 +1632,11 @@ const SPREADS = [
     ]
   },
   {
-    id: 24,
+    id: 224,
     brandId: 'astdax-conceal',
-    category: 'Hardware&Fittings',
-    pageNumLeft: 55,
-    pageNumRight: 56,
-    hideFromIndex: true,
+    category: 'Arch. Hardware',
+    pageNumLeft: 67,
+    pageNumRight: 68,
     parentBrandId: 'astdax-hardwares',
     badge: 'Conceal Handles',
     title: 'Conceal\nHandles.',
@@ -1421,12 +1670,11 @@ const SPREADS = [
     ]
   },
   {
-    id: 25,
+    id: 225,
     brandId: 'astdax-conceal-2',
-    category: 'Hardware&Fittings',
-    pageNumLeft: 57,
-    pageNumRight: 58,
-    hideFromIndex: true,
+    category: 'Arch. Hardware',
+    pageNumLeft: 69,
+    pageNumRight: 70,
     parentBrandId: 'astdax-hardwares',
     badge: 'Conceal Handles II',
     title: 'Conceal\nHandles II.',
@@ -1459,12 +1707,11 @@ const SPREADS = [
     ]
   },
   {
-    id: 26,
+    id: 226,
     brandId: 'astdax-curtain',
-    category: 'Hardware&Fittings',
-    pageNumLeft: 59,
-    pageNumRight: 60,
-    hideFromIndex: true,
+    category: 'Arch. Hardware',
+    pageNumLeft: 71,
+    pageNumRight: 72,
     parentBrandId: 'astdax-hardwares',
     badge: 'Curtain Brackets',
     title: 'Curtain\nBrackets.',
@@ -1497,12 +1744,11 @@ const SPREADS = [
     ]
   },
   {
-    id: 27,
+    id: 227,
     brandId: 'astdax-curtain-2',
-    category: 'Hardware&Fittings',
-    pageNumLeft: 61,
-    pageNumRight: 62,
-    hideFromIndex: true,
+    category: 'Arch. Hardware',
+    pageNumLeft: 73,
+    pageNumRight: 74,
     parentBrandId: 'astdax-hardwares',
     badge: 'Curtain Brackets II',
     title: 'Curtain\nBrackets II.',
@@ -1535,12 +1781,11 @@ const SPREADS = [
     ]
   },
   {
-    id: 28,
+    id: 228,
     brandId: 'astdax-knob',
-    category: 'Hardware&Fittings',
-    pageNumLeft: 63,
-    pageNumRight: 64,
-    hideFromIndex: true,
+    category: 'Arch. Hardware',
+    pageNumLeft: 75,
+    pageNumRight: 76,
     parentBrandId: 'astdax-hardwares',
     badge: 'Designer Knobs',
     title: 'Designer\nKnobs.',
@@ -1573,12 +1818,11 @@ const SPREADS = [
     ]
   },
   {
-    id: 29,
+    id: 229,
     brandId: 'astdax-knob-2',
-    category: 'Hardware&Fittings',
-    pageNumLeft: 65,
-    pageNumRight: 66,
-    hideFromIndex: true,
+    category: 'Arch. Hardware',
+    pageNumLeft: 77,
+    pageNumRight: 78,
     parentBrandId: 'astdax-hardwares',
     badge: 'Designer Knobs II',
     title: 'Designer\nKnobs II.',
@@ -1611,76 +1855,183 @@ const SPREADS = [
     ]
   },
   {
-    id: 30,
-    brandId: 'astdax-others',
-    category: 'Hardware&Fittings',
-    pageNumLeft: 67,
-    pageNumRight: 68,
-    hideFromIndex: true,
-    parentBrandId: 'astdax-hardwares',
-    badge: 'Hardware Accessories',
-    title: 'Hardware\nAccessories.',
-    tagline: 'Essential cabinet studs, magnets & caster wheels',
-    image: others,
-    brandName: 'Astdax Hardwares',
-    desc: 'High-performance utility hardware accessories including 6mm corner studs, magnetic catches, sixer wheels, and locking wheels.',
-    thicknesses: ['6mm Corner Stud', 'Magnets', 'Sixer Wheels', 'Locking Wheel'],
-    defaultThickness: '6mm Corner Stud',
-    thicknessLabel: 'Available Accessories',
-    features: ['Heavy Load Capacity', 'Smooth Caster Movement', 'Strong Magnetic Hold'],
-    applications: ['Modular Furniture', 'Cabinet Assembly', 'Movable Storage Units'],
-    specs: {},
-    heroSub: 'HARDWARE ACCESSORIES. UTILITY & MOBILITY.',
-    heroTitle: 'ASTDAX HARDWARES',
-    heroDesc: 'Essential cabinet accessories: 6mm corner studs, magnetic catches, sixer wheels, and locking wheels for complete furniture utility.',
+    id: 201,
+    brandId: 'steelwood-door-fittings',
+    category: 'Arch. Hardware',
+    pageNumLeft: 79,
+    pageNumRight: 80,
+    badge: 'Door Fittings',
+    title: 'Architectural\nDoor Fittings.',
+    tagline: 'Precision engineered luxury door hardware & fittings',
+    image: doorFittingsImg,
+    brandName: 'Steel Wood',
+    desc: 'Architectural grade solid brass and stainless steel door hardware accessories designed for luxury main doors, high security latching, and enduring performance.',
+    thicknesses: ['Brass Finish', 'Satin Nickel', 'Antique Bronze'],
+    defaultThickness: 'Brass Finish',
+    features: ['Solid Brass Alloy', 'Heavy Security Rating', 'Anti-Tarnish Coating'],
+    applications: ['Main Entrance Doors', 'Luxury Villa Entries', 'Commercial Suites'],
+    specs: {
+      'Material Grade': 'Solid Forged Brass & SS 304',
+      'Finish': 'PVD Titanium Brass / Satin Steel',
+      'Corrosion Resistance': '500-hour Salt Spray Tested'
+    },
+    heroSub: 'DOOR FITTINGS. ARCHITECTURAL LUXURY.',
+    heroTitle: 'STEEL WOOD DOOR FITTINGS',
+    heroDesc: 'Architectural grade solid brass and stainless steel door hardware accessories designed for luxury main doors, high security latching, and enduring performance.',
     heroTags: [
-      { text: '6mm Studs', icon: 'gear' },
-      { text: 'Magnetic Catch', icon: 'shield' },
-      { text: 'Caster Wheels', icon: 'sparkles' }
+      { text: 'Solid Brass Core', icon: 'shield' },
+      { text: 'PVD Scratch Proof', icon: 'sparkles' },
+      { text: 'Universal Mounting', icon: 'gear' }
     ],
     overviewFeatures: [
-      { title: '6mm Corner Stud', desc: 'Strong corner reinforcement', icon: 'gear' },
-      { title: 'Magnetic Catches', desc: 'Keeps cabinet doors firmly shut', icon: 'shield' },
-      { title: 'Sixer & Locking Wheels', desc: 'Smooth heavy-duty trolley movement', icon: 'sparkles' }
+      { title: 'Forged Brass Core', desc: 'High-density metal casting resists forced entry', icon: 'shield' },
+      { title: 'PVD Scratch Coating', desc: 'Lifetime luster without fading or peeling', icon: 'sparkles' },
+      { title: 'Architectural Profile', desc: 'Bold sculptured styling for premium doors', icon: 'calibrate' },
+      { title: 'Universal Mounting', desc: 'Fits all standard wooden and composite doors', icon: 'gear' }
     ]
   },
   {
-    id: 31,
-    brandId: 'astdax-sofaleg',
-    category: 'Hardware&Fittings',
-    pageNumLeft: 69,
-    pageNumRight: 70,
-    hideFromIndex: true,
-    parentBrandId: 'astdax-hardwares',
-    badge: 'Sofa Legs',
-    title: 'Sofa\nLegs.',
-    tagline: 'Heavy-duty decorative furniture & sofa legs',
-    image: sofaleg,
-    brandName: 'Astdax Hardwares',
-    desc: 'Sturdy and stylish metallic sofa legs engineered to support heavy upholstered furniture in Antique, Copper, Wengi, and Silver finishes.',
-    thicknesses: ['Antique', 'Copper', 'Wengi', 'Silver'],
-    defaultThickness: 'Antique',
-    thicknessLabel: 'Available Finishes',
-    features: ['High Load Bearing', 'Protective Rubber Base', 'Corrosion Resistant'],
-    applications: ['Sofas & Couches', 'Bed Frames', 'Cabinets & Sideboards'],
+    id: 202,
+    brandId: 'steelwood-mortise',
+    category: 'Arch. Hardware',
+    pageNumLeft: 81,
+    pageNumRight: 82,
+    badge: 'Mortise Locks',
+    title: 'Security\nMortise Locks.',
+    tagline: 'High-security brass cylinder mortise latch & lock systems',
+    image: mortise,
+    brandName: 'Steel Wood',
+    desc: 'Precision engineered Euro-profile security mortise lock bodies equipped with anti-pick brass cylinder, hardened steel deadbolt, and reversible silent latch.',
+    thicknesses: ['Double Cylinder', 'Thumbturn Cylinder'],
+    defaultThickness: 'Double Cylinder',
+    features: ['Solid Brass Deadbolt', 'Anti-Drill Pin Cylinder', 'Smooth Latch Retraction'],
+    applications: ['External Doors', 'Office Cabins', 'Master Bedrooms'],
     specs: {
-      'Finish': 'Antique | Copper | Wengi | Silver',
-      'Material': 'Heavy Duty Alloy / Steel',
-      'Base': 'Anti-scratch Rubber Pad',
-      'Load Capacity': 'Up to 200kg per leg'
+      'Lock Type': 'Euro Profile Mortise Body',
+      'Backset': '50mm / 60mm',
+      'Deadbolt Throw': '20mm Double Throw'
     },
-    heroSub: 'SOFA LEGS. HEAVY-DUTY STRENGTH.',
-    heroTitle: 'ASTDAX HARDWARES',
-    heroDesc: 'Heavy-duty decorative sofa legs engineered for maximum weight capacity in Antique, Copper, Wengi, and Silver finishes.',
+    heroSub: 'MORTISE LOCKS. ADVANCED SECURITY.',
+    heroTitle: 'STEEL WOOD MORTISE LOCKS',
+    heroDesc: 'Precision engineered Euro-profile security mortise lock bodies equipped with anti-pick brass cylinder, hardened steel deadbolt, and reversible silent latch.',
     heroTags: [
-      { text: 'Heavy Load', icon: 'shield' },
-      { text: '4 Finishes', icon: 'sparkles' },
-      { text: 'Rubber Base', icon: 'gear' }
+      { text: 'Hardened Deadbolt', icon: 'shield' },
+      { text: 'Brass Pin Cylinder', icon: 'shield' },
+      { text: 'Silent Reversible Latch', icon: 'gear' }
     ],
     overviewFeatures: [
-      { title: '200kg Load Rating', desc: 'Supports heavy couches and sofa sets', icon: 'shield' },
-      { title: '4 Premium Finishes', desc: 'Antique, Copper, Wengi, Silver', icon: 'sparkles' },
-      { title: 'Floor Protection', desc: 'Rubber base prevents floor scratching', icon: 'gear' }
+      { title: 'Hardened Deadbolt', desc: 'Resists hacksaw cuts and crowbar pressure', icon: 'shield' },
+      { title: 'Brass Pin Cylinder', desc: 'Over 100,000 unique key combinations', icon: 'shield' },
+      { title: 'Silent Reversible Latch', desc: 'Adjusts for left or right handed doors effortlessly', icon: 'gear' },
+      { title: 'Heavy Faceplate', desc: 'Solid stainless steel faceplate with smooth bevels', icon: 'calibrate' }
+    ]
+  },
+  {
+    id: 203,
+    brandId: 'steelwood-support',
+    category: 'Arch. Hardware',
+    pageNumLeft: 83,
+    pageNumRight: 84,
+    badge: 'Shelf Supports',
+    title: 'Architectural\nSupports.',
+    tagline: 'Heavy-load glass and wooden shelf bracket supports',
+    image: support,
+    brandName: 'Steel Wood',
+    desc: 'Heavy-duty adjustable pelikan and glass shelf brackets manufactured from die-cast zinc alloy with cushioned soft rubber pads for damage-free shelf clamping.',
+    thicknesses: ['Glass Clamp', 'Heavy Pelikan Support'],
+    defaultThickness: 'Heavy Pelikan Support',
+    features: ['Adjustable Clamping Gap', 'Soft Rubber Cushions', 'Mirror Chrome Finish'],
+    applications: ['Glass Shelves', 'Display Cabinets', 'Bathroom Vanities'],
+    specs: {
+      'Material': 'Die-cast Zinc Alloy',
+      'Clamping Range': '4mm - 25mm thickness',
+      'Load Capacity': '25 kg per pair'
+    },
+    heroSub: 'SHELF SUPPORTS. HEAVY LOAD CAPACITY.',
+    heroTitle: 'STEEL WOOD SHELF SUPPORTS',
+    heroDesc: 'Heavy-duty adjustable pelikan and glass shelf brackets manufactured from die-cast zinc alloy with cushioned soft rubber pads for damage-free shelf clamping.',
+    heroTags: [
+      { text: 'Adjustable Jaws', icon: 'calibrate' },
+      { text: 'Silicone Pads', icon: 'shield' },
+      { text: '25kg per Pair', icon: 'shield' }
+    ],
+    overviewFeatures: [
+      { title: 'Adjustable Jaws', desc: 'Accommodates glass and wood shelves from 4mm to 25mm', icon: 'calibrate' },
+      { title: 'Protective Silicone Pads', desc: 'Prevents glass chipping and slips under vibration', icon: 'shield' },
+      { title: 'Heavy Die-cast Alloy', desc: 'High rigidity without bending under shelf weight', icon: 'shield' },
+      { title: 'Concealed Wall Fixings', desc: 'Sleek mount with zero exposed wall anchors', icon: 'sparkles' }
+    ]
+  },
+  {
+    id: 204,
+    brandId: 'steelwood-lever-handles',
+    category: 'Arch. Hardware',
+    pageNumLeft: 85,
+    pageNumRight: 86,
+    badge: 'Lever Handles',
+    title: 'Ergonomic\nLever Handles.',
+    tagline: 'Architectural grade solid brass & zinc lever handles',
+    image: hardwareFittings6,
+    brandName: 'Steel Wood',
+    desc: 'Modern designer door lever handles with concealed screw roses, spring-assisted return mechanisms, and luxury electroplated dual-tone finishes.',
+    thicknesses: ['Rosegold-Black', 'Matt Black', 'Satin CP'],
+    defaultThickness: 'Rosegold-Black',
+    features: ['Spring-Assisted Mechanism', 'Ergonomic Grip', 'Dual-Tone Finish'],
+    applications: ['Internal Doors', 'Luxury Hotel Rooms', 'Designer Residences'],
+    specs: {
+      'Material': 'High Purity Zinc / Solid Brass',
+      'Spindle Size': '8mm Square Spindle',
+      'Rose Type': 'Concealed Round / Square Rose'
+    },
+    heroSub: 'LEVER HANDLES. MODERN ERGONOMICS.',
+    heroTitle: 'STEEL WOOD LEVER HANDLES',
+    heroDesc: 'Modern designer door lever handles with concealed screw roses, spring-assisted return mechanisms, and luxury electroplated dual-tone finishes.',
+    heroTags: [
+      { text: 'Spring-Assisted', icon: 'gear' },
+      { text: 'Ergonomic Grip', icon: 'gear' },
+      { text: 'Dual-Tone PVD', icon: 'sparkles' }
+    ],
+    overviewFeatures: [
+      { title: 'High-Grade Return Spring', desc: 'Prevents handle sag and keeps lever horizontal', icon: 'gear' },
+      { title: 'Comfort Palm Contour', desc: 'Ergonomically shaped for smooth hand operation', icon: 'gear' },
+      { title: 'Scratch-Proof PVD', desc: 'Resistant to daily ring and key contact scratches', icon: 'sparkles' },
+      { title: 'Clip-on Escutcheon', desc: 'Concealed screw rose creates clean door aesthetic', icon: 'calibrate' }
+    ]
+  },
+  {
+    id: 205,
+    brandId: 'steelwood-door-closers',
+    category: 'Arch. Hardware',
+    pageNumLeft: 87,
+    pageNumRight: 88,
+    badge: 'Door Closers',
+    title: 'Overhead\nDoor Closers.',
+    tagline: 'Hydraulic speed-adjustable overhead commercial door closers',
+    image: hardwareFittings7,
+    brandName: 'Steel Wood',
+    desc: 'Commercial-grade rack and pinion overhead hydraulic door closers featuring dual valve speed controls, latching action adjustments, and fire-resistant construction.',
+    thicknesses: ['EN 2-4 Adjustable', 'Heavy Duty EN 5'],
+    defaultThickness: 'EN 2-4 Adjustable',
+    features: ['Dual Valve Speed Control', 'Rack & Pinion Mechanism', 'Fire Rated 120 mins'],
+    applications: ['Commercial Entrances', 'Fire Exit Doors', 'Air-Conditioned Offices'],
+    specs: {
+      'Closing Force': 'EN Size 2 - 4 adjustable',
+      'Max Door Width': '1100 mm',
+      'Max Door Weight': '85 kg'
+    },
+    heroSub: 'DOOR CLOSERS. HYDRAULIC CONTROL.',
+    heroTitle: 'STEEL WOOD DOOR CLOSERS',
+    heroDesc: 'Commercial-grade rack and pinion overhead hydraulic door closers featuring dual valve speed controls, latching action adjustments, and fire-resistant construction.',
+    heroTags: [
+      { text: 'Dual Valve Control', icon: 'gear' },
+      { text: 'Cast Aluminium Body', icon: 'shield' },
+      { text: '500k Cycles Tested', icon: 'shield' }
+    ],
+    overviewFeatures: [
+      { title: 'Independent Speed Valves', desc: 'Individual control of closing and latching speeds', icon: 'gear' },
+      { title: 'Cast Aluminium Body', desc: 'Rugged leak-proof hydraulic chamber', icon: 'shield' },
+      { title: 'Tested 500,000 Cycles', desc: 'Reliable operation for busy commercial entryways', icon: 'shield' },
+      { title: 'Backcheck Cushioning', desc: 'Prevents door slamming against wall during gusts', icon: 'shield' }
     ]
   },
 
@@ -2322,57 +2673,15 @@ export const ProductsPage = ({ onNavigate, search }) => {
     }
 
     if (!category) return 0;
-    const catLower = category.toLowerCase().trim();
-    const foundIdx = SPREADS.findIndex(s => s.category.toLowerCase().replace(/[\s&]+/g, '-') === catLower.replace(/[\s&]+/g, '-'));
-    if (foundIdx !== -1) return foundIdx;
-    switch (catLower) {
-      case 'plywood': return 0;
-      case 'laminates': {
-        const lIdx = SPREADS.findIndex(s => s.category === 'Laminates');
-        return lIdx !== -1 ? lIdx : 0;
-      }
-      case 'fancy-doors':
-      case 'doors':
-      case 'fancy-door': {
-        const fdIdx = SPREADS.findIndex(s => s.category === 'Fancy Doors' || s.brandId === 'fancy-doors');
-        return fdIdx !== -1 ? fdIdx : 0;
-      }
-      case 'hardware':
-      case 'hardware-fittings':
-      case 'hardware&fittings': {
-        const hfIdx = SPREADS.findIndex(s => s.category === 'Hardware&Fittings' || s.category === 'Hardware & Fittings');
-        return hfIdx !== -1 ? hfIdx : 0;
-      }
-      case 'door-fittings': {
-        const dfIdx = SPREADS.findIndex(s => s.brandId === 'astdax-hardwares' || s.brandId === 'steel-wood');
-        return dfIdx !== -1 ? dfIdx : 0;
-      }
-      case 'kitchen-accessories': {
-        const kaIdx = SPREADS.findIndex(s => s.category === 'Kitchen Accessories');
-        return kaIdx !== -1 ? kaIdx : 0;
-      }
-      case 'sliding-channels': {
-        const scIdx = SPREADS.findIndex(s => s.brandId === 'drawer-channel');
-        return scIdx !== -1 ? scIdx : 0;
-      }
-      case 'tandem-boxes': {
-        const tbIdx = SPREADS.findIndex(s => s.brandId === 'tandem-box');
-        return tbIdx !== -1 ? tbIdx : 0;
-      }
-      default: return 0;
-    }
+    const canonical = getCanonicalCategory(category);
+    const catIdx = SPREADS.findIndex(s => !s.hideFromIndex && getCanonicalCategory(s.category) === canonical);
+    if (catIdx !== -1) return catIdx;
+    return 0;
   };
 
   const [currentSpreadIdx, setCurrentSpreadIdx] = useState(() => {
     return getIndexFromSearch(search || window.location.search);
   });
-
-  useEffect(() => {
-    const targetIdx = getIndexFromSearch(search || window.location.search);
-    if (targetIdx !== currentSpreadIdx) {
-      setCurrentSpreadIdx(targetIdx);
-    }
-  }, [search]);
 
   const [selectedThicknesses, setSelectedThicknesses] = useState({});
   const [selectedSize, setSelectedSize] = useState('8 x 4');
@@ -2382,8 +2691,31 @@ export const ProductsPage = ({ onNavigate, search }) => {
   const [expandedCategories, setExpandedCategories] = useState({
     'Plywood': true
   });
-  const [selectedBrand, setSelectedBrand] = useState('Royal Club');
-  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [selectedBrand, setSelectedBrand] = useState(() => {
+    const initialIdx = getIndexFromSearch(search || (typeof window !== 'undefined' ? window.location.search : ''));
+    return SPREADS[initialIdx]?.brandName || 'Royal Club';
+  });
+  const [selectedCategory, setSelectedCategory] = useState(() => {
+    const params = new URLSearchParams(search || (typeof window !== 'undefined' ? window.location.search : ''));
+    const cat = params.get('category');
+    return cat ? getCanonicalCategory(cat) : 'Plywood';
+  });
+
+  useEffect(() => {
+    const targetIdx = getIndexFromSearch(search || window.location.search);
+    if (targetIdx !== currentSpreadIdx) {
+      setCurrentSpreadIdx(targetIdx);
+    }
+    const params = new URLSearchParams(search || window.location.search);
+    const cat = params.get('category');
+    if (cat) {
+      const canonical = getCanonicalCategory(cat);
+      setSelectedCategory(canonical);
+      if (SPREADS[targetIdx]?.brandName) {
+        setSelectedBrand(SPREADS[targetIdx].brandName);
+      }
+    }
+  }, [search]);
 
   useEffect(() => {
     setSelectedSize('8 x 4');
@@ -2418,9 +2750,14 @@ export const ProductsPage = ({ onNavigate, search }) => {
     message: ''
   });
 
-  const activeSpread = SPREADS[currentSpreadIdx] || SPREADS[0];
-  const activeCategorySpreads = SPREADS.filter(s => s.category === activeSpread.category);
-  const activeCatIdx = activeCategorySpreads.findIndex(s => s.id === activeSpread.id);
+  const activeCategory = selectedCategory || getCanonicalCategory(SPREADS[currentSpreadIdx]?.category);
+  const activeCategorySpreads = SPREADS.filter(s => !s.hideFromIndex && getCanonicalCategory(s.category) === activeCategory);
+  
+  // Guarantee activeSpread belongs to activeCategorySpreads when a category is selected
+  const activeSpread = (selectedCategory 
+    ? activeCategorySpreads.find(s => s === SPREADS[currentSpreadIdx]) || activeCategorySpreads[0] 
+    : SPREADS[currentSpreadIdx]) || SPREADS[0];
+  const activeCatIdx = activeCategorySpreads.indexOf(activeSpread);
 
   // Sync category expansion whenever activeSpread changes (do NOT auto-select brand or category)
   useEffect(() => {
@@ -2487,8 +2824,11 @@ export const ProductsPage = ({ onNavigate, search }) => {
     if (activeCategorySpreads.length > 1 && activeCatIdx !== -1) {
       const prevCatIdx = (activeCatIdx - 1 + activeCategorySpreads.length) % activeCategorySpreads.length;
       const targetSpread = activeCategorySpreads[prevCatIdx];
-      const targetIdx = SPREADS.findIndex(s => s.id === targetSpread.id);
-      if (targetIdx !== -1) setCurrentSpreadIdx(targetIdx);
+      const targetIdx = SPREADS.indexOf(targetSpread);
+      if (targetIdx !== -1) {
+        setCurrentSpreadIdx(targetIdx);
+        if (targetSpread.brandName) setSelectedBrand(targetSpread.brandName);
+      }
     } else if (currentSpreadIdx > 0) {
       setCurrentSpreadIdx(prev => prev - 1);
     } else {
@@ -2501,8 +2841,11 @@ export const ProductsPage = ({ onNavigate, search }) => {
     if (activeCategorySpreads.length > 1 && activeCatIdx !== -1) {
       const nextCatIdx = (activeCatIdx + 1) % activeCategorySpreads.length;
       const targetSpread = activeCategorySpreads[nextCatIdx];
-      const targetIdx = SPREADS.findIndex(s => s.id === targetSpread.id);
-      if (targetIdx !== -1) setCurrentSpreadIdx(targetIdx);
+      const targetIdx = SPREADS.indexOf(targetSpread);
+      if (targetIdx !== -1) {
+        setCurrentSpreadIdx(targetIdx);
+        if (targetSpread.brandName) setSelectedBrand(targetSpread.brandName);
+      }
     } else if (currentSpreadIdx < SPREADS.length - 1) {
       setCurrentSpreadIdx(prev => prev + 1);
     } else {
@@ -2513,6 +2856,9 @@ export const ProductsPage = ({ onNavigate, search }) => {
   const handleThumbnailClick = (idx) => {
     if (idx >= 0 && idx < SPREADS.length) {
       setCurrentSpreadIdx(idx);
+      if (SPREADS[idx].brandName) {
+        setSelectedBrand(SPREADS[idx].brandName);
+      }
     }
   };
 
@@ -2594,7 +2940,7 @@ export const ProductsPage = ({ onNavigate, search }) => {
       }
     }
 
-    // 2. Otherwise find the first spread for this brand
+    // 2. Otherwise find the first spread for this brand and sync its category
     const brandIdx = SPREADS.findIndex(s => {
       if (s.hideFromIndex) return false;
       return s.brandName && (
@@ -2606,6 +2952,9 @@ export const ProductsPage = ({ onNavigate, search }) => {
 
     if (brandIdx !== -1) {
       handleThumbnailClick(brandIdx);
+      if (SPREADS[brandIdx].category) {
+        setSelectedCategory(getCanonicalCategory(SPREADS[brandIdx].category));
+      }
     }
   };
 
@@ -2613,10 +2962,11 @@ export const ProductsPage = ({ onNavigate, search }) => {
     const canonical = getCanonicalCategory(categoryName);
     setSelectedCategory(canonical);
 
-    // 1. If a brand is already selected, try to find this brand in the clicked category
+    // 1. If current brand is in this category, select that brand's item
+    let targetIdx = -1;
     if (selectedBrand) {
       const bLower = selectedBrand.toLowerCase().trim();
-      const exactIdx = SPREADS.findIndex(s => {
+      targetIdx = SPREADS.findIndex(s => {
         if (s.hideFromIndex) return false;
         const bMatch = s.brandName && (
           s.brandName.toLowerCase().trim() === bLower ||
@@ -2625,18 +2975,18 @@ export const ProductsPage = ({ onNavigate, search }) => {
         );
         return bMatch && getCanonicalCategory(s.category) === canonical;
       });
-
-      if (exactIdx !== -1) {
-        handleThumbnailClick(exactIdx);
-        return;
-      }
     }
 
-    // 2. If the current brand has no specific spread in this category, show the category spread (using images from assets)
-    // and KEEP selectedBrand unchanged (do not switch brand automatically)
-    const catIdx = SPREADS.findIndex(s => !s.hideFromIndex && getCanonicalCategory(s.category) === canonical);
-    if (catIdx !== -1) {
-      handleThumbnailClick(catIdx);
+    // 2. If current brand has no item in this category, switch to the first item of this category
+    if (targetIdx === -1) {
+      targetIdx = SPREADS.findIndex(s => !s.hideFromIndex && getCanonicalCategory(s.category) === canonical);
+    }
+
+    if (targetIdx !== -1) {
+      setCurrentSpreadIdx(targetIdx);
+      if (SPREADS[targetIdx].brandName) {
+        setSelectedBrand(SPREADS[targetIdx].brandName);
+      }
     }
   };
 
@@ -2814,13 +3164,13 @@ export const ProductsPage = ({ onNavigate, search }) => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
 
           {/* Left: Product Image with Prev/Next Overlay Buttons */}
-          <div className="lg:col-span-7 flex items-center justify-start">
-            <div className="relative w-full overflow-hidden rounded-2xl shadow-sm group">
+          <div className="lg:col-span-7 flex flex-col justify-center">
+            <div className="relative w-full overflow-hidden rounded-2xl shadow-sm group bg-white">
               <img
                 src={activeSpread.image}
                 alt={activeSpread.brandName}
-                className={`w-full max-h-[460px] sm:max-h-[520px] md:max-h-[580px] transition-transform duration-500 hover:scale-[1.01] ${activeSpread.category === 'Kitchen Accessories' || activeSpread.imageFit === 'contain'
-                  ? 'object-contain'
+                className={`w-full max-h-[460px] sm:max-h-[520px] md:max-h-[580px] transition-transform duration-500 hover:scale-[1.01] ${activeSpread.category === 'Kitchen Accessories' || activeSpread.category === 'Arch. Hardware' || activeSpread.category === 'Hardware & Fittings' || activeSpread.imageFit === 'contain'
+                  ? 'object-contain bg-white p-4 sm:p-6'
                   : 'object-cover'
                   }`}
               />
@@ -2851,20 +3201,20 @@ export const ProductsPage = ({ onNavigate, search }) => {
                 </svg>
               </button>
 
-              {/* Carousel Pagination Dots (Matching Reference Mockup) */}
+              {/* Carousel Pagination Dots */}
               <div className="absolute bottom-3 left-1/2 -translate-x-1/2 z-20 flex items-center gap-1.5">
-                {[0, 1, 2].map((dotIdx) => {
-                  const isDotActive = (activeCatIdx !== -1 ? activeCatIdx % 3 : 0) === dotIdx;
+                {activeCategorySpreads.slice(0, Math.min(activeCategorySpreads.length, 12)).map((dotSpread, dotIdx) => {
+                  const isDotActive = activeCatIdx === dotIdx;
                   return (
                     <button
-                      key={dotIdx}
+                      key={dotSpread.id || dotIdx}
                       type="button"
                       onClick={(e) => {
                         e.stopPropagation();
-                        if (activeCategorySpreads.length > dotIdx) {
-                          const targetSpread = activeCategorySpreads[dotIdx];
-                          const targetIdx = SPREADS.findIndex(s => s.id === targetSpread.id);
-                          if (targetIdx !== -1) setCurrentSpreadIdx(targetIdx);
+                        const targetIdx = SPREADS.indexOf(dotSpread);
+                        if (targetIdx !== -1) {
+                          setCurrentSpreadIdx(targetIdx);
+                          if (dotSpread.brandName) setSelectedBrand(dotSpread.brandName);
                         }
                       }}
                       className={`transition-all rounded-full cursor-pointer ${isDotActive
@@ -2877,6 +3227,40 @@ export const ProductsPage = ({ onNavigate, search }) => {
                 })}
               </div>
             </div>
+
+            {/* Inline Thumbnail Strip: Shows all hardware items directly in the image place */}
+            {activeCategorySpreads.length > 1 && (
+              <div className="flex items-center gap-2 overflow-x-auto no-scrollbar py-2.5 px-0.5 mt-2">
+                {activeCategorySpreads.map((item) => {
+                  const isSelected = item === activeSpread;
+                  return (
+                    <button
+                      key={item.id}
+                      type="button"
+                      onClick={() => {
+                        const idx = SPREADS.indexOf(item);
+                        if (idx !== -1) {
+                          setCurrentSpreadIdx(idx);
+                          if (item.brandName) setSelectedBrand(item.brandName);
+                        }
+                      }}
+                      className={`shrink-0 w-13 h-13 sm:w-15 sm:h-15 rounded-xl overflow-hidden p-1 bg-white transition-all cursor-pointer border-2 ${
+                        isSelected
+                          ? 'border-[#005a2b] shadow-md scale-105 ring-2 ring-[#005a2b]/25'
+                          : 'border-slate-200 hover:border-[#C5A059] opacity-75 hover:opacity-100'
+                      }`}
+                      title={item.title?.replace('\n', ' ') || item.brandName}
+                    >
+                      <img
+                        src={item.image}
+                        alt={item.brandName}
+                        className="w-full h-full object-contain mix-blend-multiply"
+                      />
+                    </button>
+                  );
+                })}
+              </div>
+            )}
           </div>
 
           {/* Right: Text Content in the gap */}
@@ -3491,6 +3875,25 @@ export const ProductsPage = ({ onNavigate, search }) => {
           </div>
         );
       })()}
+
+      {/* Kitchen Accessories Full Collection Showcase (All 26 Products) */}
+      {(getCanonicalCategory(activeSpread.category) === 'Kitchen Accessories' || getCanonicalCategory(selectedCategory) === 'Kitchen Accessories') && (
+        <div id="kitchen-accessories-grid-section" className="w-full max-w-[1536px] mx-auto px-3 sm:px-6 lg:px-8 mt-4 mb-16 animate-fade-in">
+          <KitchenAccessories
+            activeId={activeSpread.id}
+            onSelectItem={(item) => {
+              const targetIdx = SPREADS.findIndex(s => s.id === item.id);
+              if (targetIdx !== -1) {
+                setCurrentSpreadIdx(targetIdx);
+                const bookElem = document.getElementById('catalogue-book-section');
+                if (bookElem) {
+                  bookElem.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+              }
+            }}
+          />
+        </div>
+      )}
 
       {/* Technical Specifications Section */}
       <div className="max-w-[1380px] mx-auto px-2 mb-16 animate-fade-in text-center">

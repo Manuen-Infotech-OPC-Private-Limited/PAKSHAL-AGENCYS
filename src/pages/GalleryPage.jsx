@@ -3,7 +3,7 @@ import plywoodImg from '../assets/plywood/royalclub.png';
 import laminatesImg from '../assets/laminates/laminate-marble-slabs.jpg';
 import hardwareImg from '../assets/hardware/hardwarefittings.png';
 import accessoriesImg from '../assets/kitchen/kitchenaccessories.png';
-import doorFittingsImg from '../assets/doors/door_fittings.png';
+import doorFittingsImg from '../assets/hardware/door_fittings.png';
 import slidingChannelsImg from '../assets/hardware/slidingchannels.png';
 import tandemBoxImg from '../assets/kitchen/tandembox.png';
 import fancyDoorsImg from '../assets/doors/fancydoors.png';
@@ -19,6 +19,29 @@ import veneer4Img from '../assets/plywood/veneer4.png';
 import homepageMarinePlywoodImg from '../assets/plywood/homepage-marineplywood.png';
 import hingesImg from '../assets/hardware/hinges.png';
 import kitchensCardImg from '../assets/kitchen/kitchens-card.jpg';
+import bifoldLiftUpImg from '../assets/kitchen/bifoldliftupsystem.png';
+import cornerImg from '../assets/kitchen/corner.jpg';
+import cutleryTrayImg from '../assets/kitchen/cutlerytray.png';
+import cutleryTray2Img from '../assets/kitchen/cutlerytray2.png';
+import glassBoxImg from '../assets/kitchen/glassbox.jpg';
+import glassTandemBoxImg from '../assets/kitchen/glasstandembox.jpg';
+import magicCornerImg from '../assets/kitchen/magiccorner.jpg';
+import pullDownDishRackImg from '../assets/kitchen/pulldowndishrackelevator.jpg';
+import pullDownElevatorImg from '../assets/kitchen/pulldownelevator.png';
+import rollingShuttersImg from '../assets/kitchen/rollingshutters.png';
+import sidePullout2Img from '../assets/kitchen/sidepulloutbox2.jpg';
+import sidePulloutImg from '../assets/kitchen/sidepulloutboxes.jpg';
+import slimBoxesImg from '../assets/kitchen/slimboxes.jpg';
+import swingStorageImg from '../assets/kitchen/swingstoragebox.jpg';
+import tandemBoxAccessoryImg from '../assets/kitchen/tandembox-accessory.jpg';
+import universalGlassBoxImg from '../assets/kitchen/universalglassbox.jpg';
+import ventilatorImg from '../assets/kitchen/ventilator.png';
+import wastebinImg from '../assets/kitchen/wastebin.png';
+import kitchenBasketImg from '../assets/kitchen/kitchenbasket.jpg';
+import tandemBoxJpgImg from '../assets/kitchen/tandembox.jpg';
+import channelBasketImg from '../assets/kitchen/homepage-channelbasket.png';
+import channelDrawerImg from '../assets/kitchen/homepage-channeldrawer.png';
+import multiTierTandemImg from '../assets/kitchen/homepage-tandemboxes.png';
 import wardrobesCardImg from '../assets/furniture/wardrobes-card.jpg';
 import officeFurnitureImg from '../assets/furniture/officefurniture.jpg';
 import interiorPanelsImg from '../assets/laminates/interiorpanels.png';
@@ -58,15 +81,36 @@ const GALLERY_ITEMS = [
     title: 'Kitchen & Accessories',
     category: 'Kitchen & Accessories',
     img: accessoriesImg,
-    imagesCount: 5,
+    imagesCount: 26,
     images: [
       accessoriesImg,
-      kitchensCardImg,
-      wardrobesCardImg,
-      officeFurnitureImg,
-      interiorPanelsImg
+      pullDownElevatorImg,
+      pullDownDishRackImg,
+      magicCornerImg,
+      cornerImg,
+      cutleryTrayImg,
+      cutleryTray2Img,
+      bifoldLiftUpImg,
+      rollingShuttersImg,
+      glassTandemBoxImg,
+      glassBoxImg,
+      universalGlassBoxImg,
+      slimBoxesImg,
+      tandemBoxAccessoryImg,
+      sidePulloutImg,
+      sidePullout2Img,
+      swingStorageImg,
+      wastebinImg,
+      ventilatorImg,
+      kitchenBasketImg,
+      tandemBoxJpgImg,
+      tandemBoxImg,
+      channelBasketImg,
+      channelDrawerImg,
+      multiTierTandemImg,
+      kitchensCardImg
     ],
-    desc: 'Stainless steel modular kitchen baskets, pull-outs, and corner carousel accessories.'
+    desc: 'Stainless steel modular kitchen baskets, pull-outs, tandem drawers, and magic corner carousel accessories.'
   },
   {
     id: 3,
