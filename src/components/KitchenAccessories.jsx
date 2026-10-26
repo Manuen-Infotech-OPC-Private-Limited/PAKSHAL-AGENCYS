@@ -1027,11 +1027,7 @@ export const KitchenAccessories = ({ onNavigate, onSelectItem, activeId }) => {
                   <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-md px-2.5 py-1 rounded-full text-[10px] font-black uppercase tracking-wider text-slate-800 border border-slate-200/70 shadow-2xs">
                     {item.badge}
                   </div>
-                  {isSelected && (
-                    <div className="absolute top-3 right-3 bg-[#006e2f] text-white px-2 py-0.5 rounded-full text-[9px] font-black uppercase tracking-wider shadow-xs">
-                      Active
-                    </div>
-                  )}
+
                 </div>
 
                 {/* Product Details */}

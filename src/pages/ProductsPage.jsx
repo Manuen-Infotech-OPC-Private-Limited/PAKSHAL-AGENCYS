@@ -65,8 +65,11 @@ import gurjanStarImg from '../assets/plywood/gurjanstar.png';
 import gurjanGoldImg from '../assets/plywood/gurjangold.jpg';
 import tandemBoxImg from '../assets/kitchen/tandembox.png';
 import fancyDoorsImg from '../assets/doors/fancydoors.png';
+import fancyDoors2Img from '../assets/doors/fancydoors2.png';
+import fancyDoors3Img from '../assets/doors/fancydoors3.png';
+import fancyDoors4Img from '../assets/doors/fancydoors4.png';
 import designerDoorImg from '../assets/doors/homepage-designerdoor.png';
-import doorFittingsImg from '../assets/hardware/door_fittings.png';
+import FancyDoors from '../components/FancyDoors';
 import plywoodKingImg from '../assets/plywood/plywood-image.png';
 import veneer2Img from '../assets/plywood/veneer2.png';
 import veneer3Img from '../assets/plywood/veneer3.png';
@@ -87,7 +90,6 @@ import hardwareFittings5 from '../assets/hardware/productspage-hardware&fittings
 import hardwareFittings6 from '../assets/hardware/productspage-hardware&fittings6.png';
 import hardwareFittings7 from '../assets/hardware/productspage-hardware&fittings7.png';
 import hardwareFittings8 from '../assets/hardware/productspage-hardware&fittings8.png';
-import hingesImg from '../assets/hardware/hinges.png';
 import astdaxHandles1 from '../assets/hardware/astdax-handles-1.jpg';
 import astdaxHandles2 from '../assets/hardware/astdax-handles-2.jpg';
 import conceal from '../assets/hardware/conceal.png';
@@ -1240,7 +1242,7 @@ const SPREADS = [
     badge: 'Butt Hinges',
     title: 'SS 304\nButt Hinges.',
     tagline: 'High load bearing stainless steel architectural butt hinges',
-    image: hingesImg,
+    image: hydraulicHingeImg,
     brandName: 'Steel Wood',
     desc: 'Heavy-duty AISI 304 grade architectural butt hinges with two precision ball bearings, ensuring frictionless rotation and lifetime durability for heavy doors.',
     thicknesses: ['4 x 3 x 3 mm', '5 x 3 x 3 mm'],
@@ -1863,7 +1865,7 @@ const SPREADS = [
     badge: 'Door Fittings',
     title: 'Architectural\nDoor Fittings.',
     tagline: 'Precision engineered luxury door hardware & fittings',
-    image: doorFittingsImg,
+    image: hardwareImg,
     brandName: 'Steel Wood',
     desc: 'Architectural grade solid brass and stainless steel door hardware accessories designed for luxury main doors, high security latching, and enduring performance.',
     thicknesses: ['Brass Finish', 'Satin Nickel', 'Antique Bronze'],
@@ -2255,7 +2257,7 @@ export const BRAND_CONFIG = [
     displayName: 'STEEL WOOD',
     trademark: true,
     logo: steelWoodLogo,
-    categories: ['Arch. Hardware', 'Hardware & Fittings', 'Sliding Systems'],
+    categories: ['Arch. Hardware', 'Hardware & Fittings', 'Sliding Systems', 'Kitchen Accessories'],
     icon: (
       <svg className="w-5 h-5 text-[#475569]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <rect x="4" y="4" width="16" height="16" rx="2" />
@@ -2275,6 +2277,7 @@ export const BRAND_CONFIG = [
       </svg>
     )
   },
+
   {
     name: 'Astdax',
     displayName: 'ASTDAX',
@@ -2405,6 +2408,8 @@ export const getCategoriesForBrand = (brandName) => {
 export const getCanonicalCategory = (categoryName) => {
   if (!categoryName) return '';
   const c = categoryName.toLowerCase().trim();
+  if (c === 'door fittings' || c === 'door-fittings') return 'Hardware & Fittings';
+  if (c.includes('door')) return 'Fancy Doors';
   if (c === 'arch. hardware' || c.includes('arch') || c.includes('architectural')) return 'Arch. Hardware';
   if (c === 'hardware & fittings' || c.includes('hardware') || c.includes('fittings')) return 'Hardware & Fittings';
   if (c.includes('sliding')) return 'Sliding Systems';
@@ -2412,7 +2417,6 @@ export const getCanonicalCategory = (categoryName) => {
   if (c.includes('laminate')) return 'Laminates';
   if (c.includes('acrylic')) return 'Acrylic Panels';
   if (c.includes('veneer')) return 'Veneers';
-  if (c.includes('door')) return 'Fancy Doors';
   if (c.includes('kitchen')) return 'Kitchen Accessories';
   return categoryName;
 };
@@ -2436,9 +2440,52 @@ export const isPlywoodOrLaminateBrand = (brandName) => {
     'armani',
     'architecture',
     'fancy doors',
-    'carved timber doors'
+    'carved timber doors',
+    'modern fancy doors',
+    'royal fancy doors',
+    'architectural fancy doors'
   ];
   return targetBrands.some(b => bLower === b || bLower.startsWith(b));
+};
+
+export const isBrandMatch = (s, brandName) => {
+  if (!s || !brandName) return false;
+  const bLower = brandName.toLowerCase().trim();
+  const sBrand = (s.brandName || '').toLowerCase().trim();
+  const sCat = getCanonicalCategory(s.category);
+
+  if (bLower === 'armani') {
+    return sCat === 'Acrylic Panels' || sBrand.includes('armani') || sBrand.includes('acrylic');
+  }
+  if (bLower === 'fancy doors') {
+    return sCat === 'Fancy Doors' || sBrand.includes('fancy doors') || sBrand.includes('door');
+  }
+  if (bLower === 'architecture') {
+    return sCat === 'Veneers' || sBrand.includes('architecture');
+  }
+  if (bLower === 'astdax') {
+    return sBrand.includes('astdax');
+  }
+  if (bLower === 'steel wood') {
+    return sBrand.includes('steel') || sCat === 'Sliding Systems' || sCat === 'Kitchen Accessories' || sBrand.includes('sliding');
+  }
+  return sBrand === bLower;
+};
+
+export const isBrandCategoryMatch = (s, brandName, categoryName) => {
+  if (!s) return false;
+  const targetCategory = categoryName ? getCanonicalCategory(categoryName) : null;
+  const sCat = getCanonicalCategory(s.category);
+  if (targetCategory) {
+    if (targetCategory === 'Sliding Systems') {
+      const isSliding = sCat === 'Sliding Systems' || (s.brandName || '').toLowerCase().includes('sliding');
+      if (!isSliding) return false;
+    } else if (sCat !== targetCategory) {
+      return false;
+    }
+  }
+  if (brandName && !isBrandMatch(s, brandName)) return false;
+  return true;
 };
 
 export const ProductsPage = ({ onNavigate, search }) => {
@@ -2690,16 +2737,23 @@ export const ProductsPage = ({ onNavigate, search }) => {
     const brand = params.get('brand');
     const category = params.get('category');
 
+    if (brand && category) {
+      const canonical = getCanonicalCategory(category);
+      const exactIdx = SPREADS.findIndex(s => !s.hideFromIndex && isBrandCategoryMatch(s, brand, canonical));
+      if (exactIdx !== -1) return exactIdx;
+    }
+
     if (brand) {
-      const bNorm = brand.toLowerCase().replace(/[\s-]+/g, '');
-      const bIdx = SPREADS.findIndex(s => !s.hideFromIndex && s.brandName && s.brandName.toLowerCase().replace(/[\s-]+/g, '') === bNorm);
+      const bIdx = SPREADS.findIndex(s => !s.hideFromIndex && isBrandMatch(s, brand));
       if (bIdx !== -1) return bIdx;
     }
 
-    if (!category) return 0;
-    const canonical = getCanonicalCategory(category);
-    const catIdx = SPREADS.findIndex(s => !s.hideFromIndex && getCanonicalCategory(s.category) === canonical);
-    if (catIdx !== -1) return catIdx;
+    if (category) {
+      const canonical = getCanonicalCategory(category);
+      const catIdx = SPREADS.findIndex(s => !s.hideFromIndex && getCanonicalCategory(s.category) === canonical);
+      if (catIdx !== -1) return catIdx;
+    }
+
     return 0;
   };
 
@@ -2717,15 +2771,33 @@ export const ProductsPage = ({ onNavigate, search }) => {
   });
   const [selectedBrand, setSelectedBrand] = useState(() => {
     const params = new URLSearchParams(search || (typeof window !== 'undefined' ? window.location.search : ''));
-    if (params.get('brand')) return params.get('brand');
-    if (params.get('category')) return null;
+    const brandParam = params.get('brand');
+    if (brandParam) {
+      const matched = BRAND_CONFIG.find(b => b.name.toLowerCase() === brandParam.toLowerCase().trim());
+      if (matched) return matched.name;
+      return brandParam;
+    }
+    const catParam = params.get('category');
+    if (catParam) {
+      const canonical = getCanonicalCategory(catParam);
+      const brandForCat = BRAND_CONFIG.find(b =>
+        b.categories && b.categories.map(c => getCanonicalCategory(c)).includes(canonical)
+      );
+      if (brandForCat) return brandForCat.name;
+    }
     return 'Royal Club';
   });
   const [selectedCategory, setSelectedCategory] = useState(() => {
     const params = new URLSearchParams(search || (typeof window !== 'undefined' ? window.location.search : ''));
-    const cat = params.get('category');
-    if (cat) return getCanonicalCategory(cat);
-    if (params.get('brand')) return null;
+    const catParam = params.get('category');
+    if (catParam) return getCanonicalCategory(catParam);
+    const brandParam = params.get('brand');
+    if (brandParam) {
+      const matched = BRAND_CONFIG.find(b => b.name.toLowerCase() === brandParam.toLowerCase().trim());
+      if (matched && matched.categories && matched.categories.length > 0) {
+        return getCanonicalCategory(matched.categories[0]);
+      }
+    }
     return 'Plywood';
   });
 
@@ -2738,7 +2810,8 @@ export const ProductsPage = ({ onNavigate, search }) => {
     const cat = params.get('category');
     const brand = params.get('brand');
     if (brand) {
-      setSelectedBrand(brand);
+      const matched = BRAND_CONFIG.find(b => b.name.toLowerCase() === brand.toLowerCase().trim());
+      setSelectedBrand(matched ? matched.name : brand);
     }
     if (cat) {
       const canonical = getCanonicalCategory(cat);
@@ -2779,13 +2852,16 @@ export const ProductsPage = ({ onNavigate, search }) => {
     message: ''
   });
 
-  const activeCategory = selectedCategory || getCanonicalCategory(SPREADS[currentSpreadIdx]?.category);
-  const activeCategorySpreads = SPREADS.filter(s => !s.hideFromIndex && getCanonicalCategory(s.category) === activeCategory);
+  const activeCategory = selectedCategory || getCanonicalCategory(SPREADS[currentSpreadIdx]?.category) || 'Plywood';
+  const matchingSpreads = SPREADS.filter(s => isBrandCategoryMatch(s, selectedBrand, activeCategory));
+  const activeCategorySpreads = matchingSpreads.length > 0
+    ? matchingSpreads
+    : SPREADS.filter(s => getCanonicalCategory(s.category) === activeCategory);
 
-  const activeSpread = SPREADS[currentSpreadIdx] || SPREADS[0];
+  const activeSpread = SPREADS[currentSpreadIdx] || activeCategorySpreads[0] || SPREADS[0];
   const activeCatIdx = activeCategorySpreads.indexOf(activeSpread);
 
-  // Sync category expansion whenever activeSpread changes (do NOT auto-select brand or category)
+  // Sync category expansion whenever activeSpread changes
   useEffect(() => {
     if (activeSpread) {
       setExpandedCategories(prev => ({
@@ -2847,33 +2923,27 @@ export const ProductsPage = ({ onNavigate, search }) => {
 
   const handlePrevImage = (e) => {
     if (e) e.stopPropagation();
-    if (activeCategorySpreads.length > 1 && activeCatIdx !== -1) {
-      const prevCatIdx = (activeCatIdx - 1 + activeCategorySpreads.length) % activeCategorySpreads.length;
+    if (activeCategorySpreads.length > 0) {
+      const currentIdxInCat = activeCatIdx !== -1 ? activeCatIdx : 0;
+      const prevCatIdx = (currentIdxInCat - 1 + activeCategorySpreads.length) % activeCategorySpreads.length;
       const targetSpread = activeCategorySpreads[prevCatIdx];
       const targetIdx = SPREADS.indexOf(targetSpread);
       if (targetIdx !== -1) {
         setCurrentSpreadIdx(targetIdx);
       }
-    } else if (currentSpreadIdx > 0) {
-      setCurrentSpreadIdx(prev => prev - 1);
-    } else {
-      setCurrentSpreadIdx(SPREADS.length - 1);
     }
   };
 
   const handleNextImage = (e) => {
     if (e) e.stopPropagation();
-    if (activeCategorySpreads.length > 1 && activeCatIdx !== -1) {
-      const nextCatIdx = (activeCatIdx + 1) % activeCategorySpreads.length;
+    if (activeCategorySpreads.length > 0) {
+      const currentIdxInCat = activeCatIdx !== -1 ? activeCatIdx : 0;
+      const nextCatIdx = (currentIdxInCat + 1) % activeCategorySpreads.length;
       const targetSpread = activeCategorySpreads[nextCatIdx];
       const targetIdx = SPREADS.indexOf(targetSpread);
       if (targetIdx !== -1) {
         setCurrentSpreadIdx(targetIdx);
       }
-    } else if (currentSpreadIdx < SPREADS.length - 1) {
-      setCurrentSpreadIdx(prev => prev + 1);
-    } else {
-      setCurrentSpreadIdx(0);
     }
   };
 
@@ -2941,40 +3011,68 @@ export const ProductsPage = ({ onNavigate, search }) => {
   };
 
   const handleBrandSelect = (brandName) => {
+    if (!brandName) return;
+    const bLower = brandName.toLowerCase().trim();
     setSelectedBrand(brandName);
-    setSelectedCategory(null);
-  };
 
-  const handleCategorySelect = (categoryName) => {
-    const canonical = getCanonicalCategory(categoryName);
-    if (selectedCategory === canonical) {
-      setSelectedCategory(null);
-      return;
-    }
-    setSelectedCategory(canonical);
-
-    if (selectedBrand) {
-      const bLower = selectedBrand.toLowerCase().trim();
-      const matchIdx = SPREADS.findIndex(s => {
-        if (s.hideFromIndex) return false;
-        const bMatch = s.brandName && (
-          s.brandName.toLowerCase().trim() === bLower ||
-          (bLower === 'armani' && (s.category === 'Acrylic Panels' || s.brandName.toLowerCase().includes('acrylic'))) ||
-          (bLower === 'astdax' && s.brandName.toLowerCase().includes('astdax')) ||
-          (bLower === 'steel wood' && s.brandName.toLowerCase().includes('steel'))
-        );
-        return bMatch && getCanonicalCategory(s.category) === canonical;
-      });
-
-      if (matchIdx !== -1) {
-        setCurrentSpreadIdx(matchIdx);
+    // 1. Check if the currently selected category has spreads for this brand
+    if (selectedCategory) {
+      const spreadsInCurrentCat = SPREADS.filter(s => isBrandCategoryMatch(s, brandName, selectedCategory));
+      if (spreadsInCurrentCat.length > 0) {
+        const targetIdx = SPREADS.indexOf(spreadsInCurrentCat[0]);
+        if (targetIdx !== -1) {
+          setCurrentSpreadIdx(targetIdx);
+        }
         return;
       }
     }
 
-    const targetIdx = SPREADS.findIndex(s => !s.hideFromIndex && getCanonicalCategory(s.category) === canonical);
-    if (targetIdx !== -1) {
-      setCurrentSpreadIdx(targetIdx);
+    // 2. Find first category that has spreads for this brand
+    const brandSpreads = SPREADS.filter(s => isBrandMatch(s, brandName));
+    if (brandSpreads.length > 0) {
+      const firstSpread = brandSpreads[0];
+      const newCat = getCanonicalCategory(firstSpread.category);
+      setSelectedCategory(newCat);
+      const targetIdx = SPREADS.indexOf(firstSpread);
+      if (targetIdx !== -1) {
+        setCurrentSpreadIdx(targetIdx);
+      }
+      return;
+    }
+
+    // 3. Fallback to brand config defined categories
+    const brandObj = BRAND_CONFIG.find(b => b.name.toLowerCase() === bLower);
+    if (brandObj && brandObj.categories && brandObj.categories.length > 0) {
+      const newCat = getCanonicalCategory(brandObj.categories[0]);
+      setSelectedCategory(newCat);
+    }
+  };
+
+  const handleCategorySelect = (categoryName) => {
+    if (!categoryName) return;
+    const canonical = getCanonicalCategory(categoryName);
+    setSelectedCategory(canonical);
+
+    // Keep selectedBrand locked! Do NOT shift or change selectedBrand when category changes.
+    // 1. If currently selectedBrand has spreads in this new category, select that spread
+    if (selectedBrand) {
+      const spreadsInBrandAndCat = SPREADS.filter(s => isBrandCategoryMatch(s, selectedBrand, canonical));
+      if (spreadsInBrandAndCat.length > 0) {
+        const targetIdx = SPREADS.indexOf(spreadsInBrandAndCat[0]);
+        if (targetIdx !== -1) {
+          setCurrentSpreadIdx(targetIdx);
+        }
+        return;
+      }
+    }
+
+    // 2. If selectedBrand does not have spreads in this category, show the first spread of this category
+    const catSpreads = SPREADS.filter(s => getCanonicalCategory(s.category) === canonical);
+    if (catSpreads.length > 0) {
+      const targetIdx = SPREADS.indexOf(catSpreads[0]);
+      if (targetIdx !== -1) {
+        setCurrentSpreadIdx(targetIdx);
+      }
     }
   };
 
@@ -3010,16 +3108,33 @@ export const ProductsPage = ({ onNavigate, search }) => {
   };
 
   useEffect(() => {
-    if (selectedBrand && brandButtonRefs.current[selectedBrand] && brandScrollRef.current) {
-      const container = brandScrollRef.current;
-      const button = brandButtonRefs.current[selectedBrand];
-      const targetScroll = button.offsetLeft - (container.offsetWidth / 2) + (button.offsetWidth / 2);
-      container.scrollTo({
-        left: Math.max(0, targetScroll),
-        behavior: 'smooth'
-      });
+    if (selectedBrand && brandScrollRef.current) {
+      const matchedKey = Object.keys(brandButtonRefs.current).find(
+        k => k.toLowerCase() === selectedBrand.toLowerCase()
+      );
+      const button = matchedKey ? brandButtonRefs.current[matchedKey] : null;
+      if (button) {
+        const container = brandScrollRef.current;
+        const targetScroll = button.offsetLeft - (container.offsetWidth / 2) + (button.offsetWidth / 2);
+        container.scrollTo({
+          left: Math.max(0, targetScroll),
+          behavior: 'smooth'
+        });
+      }
     }
   }, [selectedBrand]);
+
+  const activeBrandDisplay = (() => {
+    const canonical = getCanonicalCategory(activeSpread?.category || selectedCategory);
+    if (canonical === 'Fancy Doors') return 'Fancy Doors';
+    if (selectedBrand) return selectedBrand;
+    if (!activeSpread) return 'Royal Club';
+    if (canonical === 'Acrylic Panels') return 'Armani';
+    const b = activeSpread.brandName || '';
+    if (b.toLowerCase().includes('astdax')) return 'Astdax';
+    if (b.toLowerCase().includes('steel wood')) return 'Steel Wood';
+    return b || 'Royal Club';
+  })();
 
 
   return (
@@ -3121,6 +3236,33 @@ export const ProductsPage = ({ onNavigate, search }) => {
           <div className="flex items-center gap-2 sm:gap-3.5 overflow-x-auto no-scrollbar py-1 px-0.5">
             {CATEGORY_DEFINITIONS.filter((cat) => {
               const canonicalKey = getCanonicalCategory(cat.key);
+              const activeBrandName = (selectedBrand || activeSpread?.brandName || '').toLowerCase().trim();
+              const isAstdax = activeBrandName.includes('astdax');
+              const isSteelWood = activeBrandName.includes('steel wood') || activeBrandName.includes('steel');
+              const isHardwareBrand = isAstdax || isSteelWood;
+
+              const nonHardwareCategories = [
+                'Plywood',
+                'Laminates',
+                'Acrylic Panels',
+                'Veneers',
+                'Fancy Doors'
+              ];
+
+              // For Astdax brand: DO NOT show non-hardware categories, show remaining only!
+              if (isAstdax) {
+                if (nonHardwareCategories.includes(canonicalKey)) {
+                  return false;
+                }
+                return ['Arch. Hardware', 'Hardware & Fittings'].includes(canonicalKey);
+              }
+
+              // For other hardware brands (like Steel Wood):
+              if (isHardwareBrand) {
+                return !nonHardwareCategories.includes(canonicalKey);
+              }
+
+              // For non-hardware brands: do not show hardware categories
               const isHardwareCat = [
                 'Arch. Hardware',
                 'Hardware & Fittings',
@@ -3128,20 +3270,7 @@ export const ProductsPage = ({ onNavigate, search }) => {
                 'Sliding Systems'
               ].includes(canonicalKey);
 
-              const currentCategory = selectedCategory || getCanonicalCategory(activeSpread?.category);
-              const isNonHardwareCategory = [
-                'Plywood',
-                'Laminates',
-                'Acrylic Panels',
-                'Veneers',
-                'Fancy Doors'
-              ].includes(currentCategory);
-
-              const activeBrandName = selectedBrand || activeSpread?.brandName || '';
-              const isNonHardwareBrand = isPlywoodOrLaminateBrand(activeBrandName);
-
-              const isCatHidden = isHardwareCat && (isNonHardwareCategory || isNonHardwareBrand);
-              return !isCatHidden;
+              return !isHardwareCat;
             }).map((cat) => {
               const canonicalKey = getCanonicalCategory(cat.key);
               const isCatActive = Boolean(selectedCategory && canonicalKey === getCanonicalCategory(selectedCategory));
@@ -3263,9 +3392,7 @@ export const ProductsPage = ({ onNavigate, search }) => {
 
 
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 tracking-tight leading-tight">
-                  {activeSpread.category === 'Acrylic Panels' || activeSpread.brandName === 'Armani'
-                    ? 'Acrylic Panels'
-                    : activeSpread.brandName}
+                  {activeBrandDisplay}
                 </h2>
 
                 {activeSpread.tagline && (
@@ -3877,6 +4004,25 @@ export const ProductsPage = ({ onNavigate, search }) => {
           {(getCanonicalCategory(activeSpread.category) === 'Kitchen Accessories' || getCanonicalCategory(selectedCategory) === 'Kitchen Accessories') && (
             <div id="kitchen-accessories-grid-section" className="w-full max-w-[1536px] mx-auto px-3 sm:px-6 lg:px-8 mt-4 mb-16 animate-fade-in">
               <KitchenAccessories
+                activeId={activeSpread.id}
+                onSelectItem={(item) => {
+                  const targetIdx = SPREADS.findIndex(s => s.id === item.id);
+                  if (targetIdx !== -1) {
+                    setCurrentSpreadIdx(targetIdx);
+                    const bookElem = document.getElementById('catalogue-book-section');
+                    if (bookElem) {
+                      bookElem.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                  }
+                }}
+              />
+            </div>
+          )}
+
+          {/* Fancy Doors Full Collection Showcase (All 5 Models) */}
+          {(getCanonicalCategory(activeSpread.category) === 'Fancy Doors' || getCanonicalCategory(selectedCategory) === 'Fancy Doors') && (
+            <div id="fancy-doors-grid-section" className="w-full max-w-[1536px] mx-auto px-3 sm:px-6 lg:px-8 mt-4 mb-16 animate-fade-in">
+              <FancyDoors
                 activeId={activeSpread.id}
                 onSelectItem={(item) => {
                   const targetIdx = SPREADS.findIndex(s => s.id === item.id);

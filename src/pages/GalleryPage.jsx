@@ -3,10 +3,15 @@ import plywoodImg from '../assets/plywood/royalclub.png';
 import laminatesImg from '../assets/laminates/laminate-marble-slabs.jpg';
 import hardwareImg from '../assets/hardware/hardwarefittings.png';
 import accessoriesImg from '../assets/kitchen/kitchenaccessories.png';
-import doorFittingsImg from '../assets/hardware/door_fittings.png';
 import slidingChannelsImg from '../assets/hardware/slidingchannels.png';
 import tandemBoxImg from '../assets/kitchen/tandembox.png';
 import fancyDoorsImg from '../assets/doors/fancydoors.png';
+import fancyDoors2Img from '../assets/doors/fancydoors2.png';
+import fancyDoors3Img from '../assets/doors/fancydoors3.png';
+import fancyDoors4Img from '../assets/doors/fancydoors4.png';
+import designerDoorImg from '../assets/doors/homepage-designerdoor.png';
+import hydraulicHingeImg from '../assets/hardware/hydraulichinge.png';
+import mortiseImg from '../assets/hardware/mortise.png';
 import royalClubImg from '../assets/plywood/royalclub.png';
 import royalClub2Img from '../assets/plywood/royalclub2.png';
 import marineClubImg from '../assets/plywood/marineclub.png';
@@ -17,7 +22,6 @@ import veneer2Img from '../assets/plywood/veneer2.png';
 import veneer3Img from '../assets/plywood/veneer3.png';
 import veneer4Img from '../assets/plywood/veneer4.png';
 import homepageMarinePlywoodImg from '../assets/plywood/homepage-marineplywood.png';
-import hingesImg from '../assets/hardware/hinges.png';
 import kitchensCardImg from '../assets/kitchen/kitchens-card.jpg';
 import bifoldLiftUpImg from '../assets/kitchen/bifoldliftupsystem.png';
 import cornerImg from '../assets/kitchen/corner.jpg';
@@ -136,24 +140,88 @@ const GALLERY_ITEMS = [
     imagesCount: 5,
     images: [
       hardwareImg,
-      doorFittingsImg,
+      mortiseImg,
       slidingChannelsImg,
       tandemBoxImg,
-      hingesImg
+      hydraulicHingeImg
     ],
     desc: 'Precision architectural hinges, drawer runners, locks, and premium door fittings.'
   },
   {
     id: 5,
-    title: 'Doors & Systems',
+    title: 'Fancy Doors Collection',
     category: 'Doors & Systems',
     img: fancyDoorsImg,
-    imagesCount: 1,
+    imagesCount: 5,
     images: [
-      fancyDoorsImg
+      fancyDoorsImg,
+      fancyDoors2Img,
+      fancyDoors3Img,
+      fancyDoors4Img,
+      designerDoorImg
     ],
-    desc: 'Designer entrance doors, sliding partition systems, and modern flush doors.'
+    desc: 'Designer entrance doors, contemporary fancy doors, luxury veneer doors, and carved timber doors.'
   },
+  {
+    id: 501,
+    title: 'Modern Fancy Doors',
+    category: 'Doors & Systems',
+    img: fancyDoors2Img,
+    imagesCount: 5,
+    images: [
+      fancyDoors2Img,
+      fancyDoors3Img,
+      fancyDoors4Img,
+      fancyDoorsImg,
+      designerDoorImg
+    ],
+    desc: 'Contemporary high-pressure laminate finished fancy doors with solid timber core.'
+  },
+  {
+    id: 502,
+    title: 'Luxury Veneered Fancy Doors',
+    category: 'Doors & Systems',
+    img: fancyDoors3Img,
+    imagesCount: 5,
+    images: [
+      fancyDoors3Img,
+      fancyDoors4Img,
+      fancyDoorsImg,
+      fancyDoors2Img,
+      designerDoorImg
+    ],
+    desc: 'Exotic natural wood grains with bookmatched symmetry and acoustic sound dampening.'
+  },
+  {
+    id: 503,
+    title: 'Architectural Fancy Doors',
+    category: 'Doors & Systems',
+    img: fancyDoors4Img,
+    imagesCount: 5,
+    images: [
+      fancyDoors4Img,
+      fancyDoorsImg,
+      fancyDoors2Img,
+      fancyDoors3Img,
+      designerDoorImg
+    ],
+    desc: 'Precision CNC grooved geometric patterns designed for luxury modern architectural spaces.'
+  },
+  {
+    id: 504,
+    title: 'Carved Timber Heritage Doors',
+    category: 'Doors & Systems',
+    img: designerDoorImg,
+    imagesCount: 5,
+    images: [
+      designerDoorImg,
+      fancyDoorsImg,
+      fancyDoors2Img,
+      fancyDoors3Img,
+      fancyDoors4Img
+    ],
+    desc: 'Handcrafted solid timber doors with traditional architectural relief carvings.'
+  }
 ];
 
 const CATEGORIES = [
@@ -353,7 +421,7 @@ export const GalleryPage = () => {
 
               {/* Row 1, Col 2 */}
               <div className="relative rounded-2xl overflow-hidden group">
-                <img src={doorFittingsImg} alt="Hardware fittings grid" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <img src={mortiseImg} alt="Hardware fittings grid" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
               </div>
 
               {/* Row 1, Col 3 */}
