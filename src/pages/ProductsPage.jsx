@@ -30,20 +30,10 @@ import plywoodImg from '../assets/plywood/royalclub.png';
 import royalClubImg from '../assets/plywood/royalclub.png';
 import royalClub2Img from '../assets/plywood/royalclub2.png';
 import marineClubImg from '../assets/plywood/marineclub.png';
-import royalClubLogo from '../assets/logos/Royal Club.png';
-import marineClubLogo from '../assets/logos/Marine Club.png';
-import gurjanClubLogo from '../assets/logos/gurjan club.png';
-import gurjanKingLogo from '../assets/logos/GURJAN KING.png';
-import gurjanGoldLogo from '../assets/logos/Gurjan Gold.png';
-import gurjanStarLogo from '../assets/logos/Gurjan Star.png';
-import centuryLogo from '../assets/logos/Century.png';
-import greenLogo from '../assets/logos/Green.png';
-import vistaLogo from '../assets/logos/VISTA.png';
-import cromaLogo from '../assets/logos/CROMA.png';
-import indigoLogo from '../assets/logos/Indigo City Gear Emblem.png';
-import armaniLogo from '../assets/logos/Armani.png';
-import steelWoodLogo from '../assets/logos/Steel Wood.png';
-import architectureLogo from '../assets/logos/Architecture.png';
+import gurjanKingBrandImg from '../assets/brands/gurjan_king_plywood.jpg';
+import centuryBrandImg from '../assets/brands/century_laminates.jpg';
+import armaniBrandImg from '../assets/brands/armani_acrylic.jpg';
+import astdaxBrandImg from '../assets/brands/astdax_hardware.jpg';
 import laminatesImg from '../assets/laminates/laminate-marble-slabs.jpg';
 import laminates2Img from '../assets/laminates/laminates2.png';
 import laminates3Img from '../assets/laminates/laminates3.png';
@@ -2083,11 +2073,15 @@ export const BRAND_CONFIG = [
     name: 'Royal Club',
     displayName: 'ROYAL CLUB',
     trademark: true,
-    logo: royalClubLogo,
+    image: royalClubImg,
     categories: ['Plywood'],
+    categorySummary: 'Plywood • BWP Marine Grade',
+    tagline: "The Architect's Choice Since 1994",
+    hallmark: '100% selected Gurjan timber with lifetime structural guarantee and boiling water proof resistance.',
+    tags: ['100% Gurjan Core', 'BWP Grade', 'Lifetime Warranty'],
     icon: (
-      <svg className="w-8 h-6 text-[#C5A059]" viewBox="0 0 32 22" fill="currentColor">
-        <path d="M4 18h24v2.5H4V18zm1.5-2.5l2.5-9 5.5 5 2.5-8 2.5 8 5.5-5 2.5 9H5.5z" />
+      <svg className="w-7 h-7 text-[#C9A44C]" viewBox="0 0 32 24" fill="currentColor">
+        <path d="M4 19h24v2.5H4V19zm1.5-3l2.5-9 5.5 5 2.5-8 2.5 8 5.5-5 2.5 9H5.5z" />
         <circle cx="8" cy="6" r="1.5" />
         <circle cx="16" cy="3" r="1.8" />
         <circle cx="24" cy="6" r="1.5" />
@@ -2098,12 +2092,16 @@ export const BRAND_CONFIG = [
     name: 'Marine Club',
     displayName: 'MARINE CLUB',
     trademark: true,
-    logo: marineClubLogo,
+    image: marineClubImg,
     categories: ['Plywood'],
+    categorySummary: 'Plywood • High Moisture Defense',
+    tagline: 'Waterproof Shield for High-Moisture Zones',
+    hallmark: 'Engineered specifically for kitchens, bathrooms and exterior decks with high-density hardwood core.',
+    tags: ['BWP IS 710', 'High Density Wood', 'Weatherproof'],
     icon: (
-      <svg className="w-8 h-6" viewBox="0 0 34 20" fill="none">
-        <path d="M3 14c5-6 10-6 15 0s9 6 13 0" stroke="#0077b6" strokeWidth="3" strokeLinecap="round" />
-        <path d="M6 7c4.5-5 9-5 13.5 0s8 5 11.5 0" stroke="#00b4d8" strokeWidth="3" strokeLinecap="round" />
+      <svg className="w-7 h-7 text-[#C9A44C]" viewBox="0 0 34 22" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+        <path d="M3 15c5-6 10-6 15 0s9 6 13 0" />
+        <path d="M6 8c4.5-5 9-5 13.5 0s8 5 11.5 0" strokeWidth="2" />
       </svg>
     )
   },
@@ -2111,11 +2109,15 @@ export const BRAND_CONFIG = [
     name: 'Gurjan Club',
     displayName: 'GURJAN CLUB',
     trademark: true,
-    logo: gurjanClubLogo,
+    image: plywoodKingImg,
     categories: ['Plywood'],
+    categorySummary: 'Plywood • Calibrated Gurjan Core',
+    tagline: 'Precision Calibrated for Zero Core Gaps',
+    hallmark: 'Double-pressed with uniform thickness tolerance for flawless luxury cabinetry and architectural veneer backing.',
+    tags: ['Double Pressed', 'Zero Core Gaps', 'Phenolic Bonded'],
     icon: (
-      <svg className="w-6 h-6 text-[#C5A059]" viewBox="0 0 28 28" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
-        <circle cx="14" cy="14" r="12" fill="currentColor" fillOpacity="0.1" />
+      <svg className="w-7 h-7 text-[#C9A44C]" viewBox="0 0 28 28" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+        <circle cx="14" cy="14" r="12" fill="currentColor" fillOpacity="0.08" />
         <path d="M10 5.5c-1 3-1 6 0 8.5s1 5.5 0 8.5" />
         <path d="M14 3.5c-1.2 4-1.2 8 0 11.5s1.2 7.5 0 9.5" />
         <path d="M18 5.5c1 3 1 6 0 8.5s-1 5.5 0 8.5" />
@@ -2127,10 +2129,14 @@ export const BRAND_CONFIG = [
     displayName: 'GURJAN KING',
     highlightWord: 'KING',
     trademark: true,
-    logo: gurjanKingLogo,
+    image: gurjanKingBrandImg,
     categories: ['Plywood'],
+    categorySummary: 'Plywood • Structural Heavy-Duty',
+    tagline: 'Heavy Load-Bearing Structural Endurance',
+    hallmark: 'Maximum-density structural plywood built for demanding load-bearing frameworks and high-traffic spaces.',
+    tags: ['Heavy Duty', 'Maximum Density', 'Termite Proof'],
     icon: (
-      <svg className="w-8 h-6 text-[#C5A059]" viewBox="0 0 30 22" fill="currentColor">
+      <svg className="w-7 h-7 text-[#C9A44C]" viewBox="0 0 30 22" fill="currentColor">
         <path d="M3 18h24v2H3v-2zm1.8-2.5l2.2-8.5 5 4.5 4-7 4 7 5-4.5 2.2 8.5H4.8z" />
         <circle cx="15" cy="3.5" r="1.6" />
       </svg>
@@ -2141,10 +2147,14 @@ export const BRAND_CONFIG = [
     displayName: 'GURJAN GOLD',
     highlightWord: 'GOLD',
     trademark: true,
-    logo: gurjanGoldLogo,
+    image: gurjanGoldImg,
     categories: ['Plywood'],
+    categorySummary: 'Plywood • Commercial MR & BWR',
+    tagline: 'Premium Commercial & Interior Fit-Outs',
+    hallmark: 'Versatile, smooth-sanded calibrated plywood ideal for residential wardrobes, partitions, and office interior paneling.',
+    tags: ['Smooth Sanded', 'Calibrated', 'Borer Proof'],
     icon: (
-      <svg className="w-6 h-6 text-[#C5A059]" viewBox="0 0 28 28" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
+      <svg className="w-7 h-7 text-[#C9A44C]" viewBox="0 0 28 28" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="14" cy="14" r="11" />
         <path d="M18.5 10.5a5.5 5.5 0 101.5 5.5H14" />
         <circle cx="14" cy="14" r="1.5" fill="currentColor" />
@@ -2156,10 +2166,14 @@ export const BRAND_CONFIG = [
     displayName: 'GURJAN STAR',
     highlightWord: 'STAR',
     trademark: true,
-    logo: gurjanStarLogo,
+    image: gurjanStarImg,
     categories: ['Plywood'],
+    categorySummary: 'Plywood • 360° Flexible Plywood',
+    tagline: 'Specially Formulated Bendable Architectural Ply',
+    hallmark: 'Flexible grain-parallel plywood engineered for seamless curves, round counters, decorative arches, and columns.',
+    tags: ['360° Flexibility', 'Grain Parallel Bending', 'No Splitting'],
     icon: (
-      <svg className="w-6 h-6 text-[#C5A059]" viewBox="0 0 26 26" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+      <svg className="w-7 h-7 text-[#C9A44C]" viewBox="0 0 26 26" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
         <polygon points="13 2.5 16.2 9.2 23.6 10.2 18.3 15.3 19.6 22.6 13 19.1 6.4 22.6 7.7 15.3 2.4 10.2 9.8 9.2 13 2.5" />
       </svg>
     )
@@ -2168,10 +2182,14 @@ export const BRAND_CONFIG = [
     name: 'Century',
     displayName: 'CENTURY',
     trademark: true,
-    logo: centuryLogo,
+    image: centuryBrandImg,
     categories: ['Laminates', 'Plywood'],
+    categorySummary: 'Laminates & Plywood • Surface Solutions',
+    tagline: "India's Benchmark for Decorative Surfaces",
+    hallmark: 'Industry-standard high-pressure decorative laminates and structural plywood with antibacterial surface protection.',
+    tags: ['High Pressure Laminate', 'Antibacterial', 'Anti-Fingerprint'],
     icon: (
-      <svg className="w-5 h-5 text-[#006e2f]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+      <svg className="w-7 h-7 text-[#C9A44C]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <circle cx="12" cy="12" r="9" />
         <path d="M15 9a4 4 0 100 6" strokeLinecap="round" />
       </svg>
@@ -2181,10 +2199,14 @@ export const BRAND_CONFIG = [
     name: 'Green',
     displayName: 'GREEN',
     trademark: true,
-    logo: greenLogo,
+    image: greenLaminateImg,
     categories: ['Laminates', 'Plywood'],
+    categorySummary: 'Laminates & Plywood • Eco Luxury',
+    tagline: 'Eco-Friendly Premium Surface Collection',
+    hallmark: 'Sustainably sourced, zero-emission high-pressure laminates and calibrated plywood with natural organic textures.',
+    tags: ['Zero Emission', 'Scratch Resistant', 'Texture Rich'],
     icon: (
-      <svg className="w-5 h-5 text-[#16a34a]" viewBox="0 0 24 24" fill="currentColor">
+      <svg className="w-7 h-7 text-[#C9A44C]" viewBox="0 0 24 24" fill="currentColor">
         <path d="M17 8C8 10 5 16 5 21c5 0 11-3 13-12 1-4-1-1-1-1z" />
       </svg>
     )
@@ -2193,9 +2215,14 @@ export const BRAND_CONFIG = [
     name: 'Marine',
     displayName: 'MARINE',
     trademark: true,
+    image: marineLaminateImg,
     categories: ['Laminates'],
+    categorySummary: 'Laminates • Moisture-Proof Finishes',
+    tagline: 'High-Resilience Moisture Resistant Sheets',
+    hallmark: 'Specially treated decorative laminates designed to resist steam, moisture, and temperature fluctuations in kitchens and baths.',
+    tags: ['Steam Resistant', 'Non-Porous Surface', 'Easy Clean'],
     icon: (
-      <svg className="w-6 h-5 text-[#0284c7]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+      <svg className="w-7 h-7 text-[#C9A44C]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
         <path d="M3 15c4-3 8-3 12 0s6 3 6 0" />
         <path d="M3 9c4-3 8-3 12 0s6 3 6 0" />
       </svg>
@@ -2205,10 +2232,14 @@ export const BRAND_CONFIG = [
     name: 'Vista',
     displayName: 'VISTA',
     trademark: true,
-    logo: vistaLogo,
+    image: vistaLaminateImg,
     categories: ['Laminates'],
+    categorySummary: 'Laminates • Architectural Textures',
+    tagline: 'Contemporary Textures & Natural Stone Looks',
+    hallmark: 'Sophisticated architectural laminate range featuring realistic marble, rustic stone, and tactile woodgrain patterns.',
+    tags: ['Stone Textures', 'Matte Finish', 'Impact Resistant'],
     icon: (
-      <svg className="w-5 h-5 text-[#a88634]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+      <svg className="w-7 h-7 text-[#C9A44C]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <polygon points="12 3 21 12 12 21 3 12" />
       </svg>
     )
@@ -2217,10 +2248,14 @@ export const BRAND_CONFIG = [
     name: 'Croma',
     displayName: 'CROMA',
     trademark: true,
-    logo: cromaLogo,
+    image: cromaLaminateImg,
     categories: ['Laminates'],
+    categorySummary: 'Laminates • Solid Colors & Woodgrains',
+    tagline: 'Vibrant Colors & Timeless Wood Decors',
+    hallmark: 'Expansive color palette of vibrant solids, pastels, and synchronized woodgrains for creative interior aesthetics.',
+    tags: ['Vibrant Solids', 'Woodgrain Series', 'Fade Resistant'],
     icon: (
-      <svg className="w-5 h-5 text-[#d97706]" viewBox="0 0 24 24" fill="currentColor">
+      <svg className="w-7 h-7 text-[#C9A44C]" viewBox="0 0 24 24" fill="currentColor">
         <circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" strokeWidth="2" />
         <circle cx="9" cy="10" r="2" />
         <circle cx="15" cy="10" r="2" />
@@ -2232,10 +2267,14 @@ export const BRAND_CONFIG = [
     name: 'Indigo',
     displayName: 'INDIGO',
     trademark: true,
-    logo: indigoLogo,
+    image: acrylicPanelsImg,
     categories: ['Laminates'],
+    categorySummary: 'Laminates • High-Gloss & Velvet Matte',
+    tagline: 'Ultra High-Gloss & Velvet Touch Surfaces',
+    hallmark: 'Mirror-finish gloss and soft-touch anti-scratch velvet laminates that elevate modern cabinetry and wardrobe doors.',
+    tags: ['Mirror Gloss', 'Velvet Touch', 'Anti-Scratch'],
     icon: (
-      <svg className="w-5 h-5 text-[#4f46e5]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+      <svg className="w-7 h-7 text-[#C9A44C]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <polygon points="12 2 20 7 20 17 12 22 4 17 4 7" />
       </svg>
     )
@@ -2244,24 +2283,15 @@ export const BRAND_CONFIG = [
     name: 'Armani',
     displayName: 'ARMANI',
     trademark: true,
-    logo: armaniLogo,
+    image: armaniBrandImg,
     categories: ['Acrylic Panels'],
+    categorySummary: 'Acrylic Panels • Ultra High-Gloss',
+    tagline: 'Italian-Inspired Luxury High-Gloss Acrylics',
+    hallmark: 'Crystal-clear acrylic panels with 6H pencil hardness scratch resistance, glass-like depth, and UV color fastness.',
+    tags: ['6H Scratch Proof', 'Mirror Reflection', 'Zero Delamination'],
     icon: (
-      <svg className="w-6 h-5 text-[#1e293b]" viewBox="0 0 24 24" fill="currentColor">
+      <svg className="w-7 h-7 text-[#C9A44C]" viewBox="0 0 24 24" fill="currentColor">
         <path d="M12 3L2 12h5v7h10v-7h5z" />
-      </svg>
-    )
-  },
-  {
-    name: 'Steel Wood',
-    displayName: 'STEEL WOOD',
-    trademark: true,
-    logo: steelWoodLogo,
-    categories: ['Arch. Hardware', 'Hardware & Fittings', 'Sliding Systems', 'Kitchen Accessories'],
-    icon: (
-      <svg className="w-5 h-5 text-[#475569]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-        <rect x="4" y="4" width="16" height="16" rx="2" />
-        <path d="M4 12h16M12 4v16" />
       </svg>
     )
   },
@@ -2269,22 +2299,48 @@ export const BRAND_CONFIG = [
     name: 'Architecture',
     displayName: 'ARCHITECTURE',
     trademark: true,
-    logo: architectureLogo,
+    image: veneer2Img,
     categories: ['Veneers'],
+    categorySummary: 'Veneers • Exotic Natural Woods',
+    tagline: 'Curated Natural & Smoked Wood Veneers',
+    hallmark: 'Hand-selected natural wood species, flitch-matched smoked veneers, and open-grain architectural surfaces.',
+    tags: ['Natural Timber', 'Smoked Finishes', 'Bookmatched'],
     icon: (
-      <svg className="w-5 h-5 text-[#8c6d23]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+      <svg className="w-7 h-7 text-[#C9A44C]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <path d="M3 21h18M6 21V7l6-4 6 4v14" />
       </svg>
     )
   },
 
   {
+    name: 'Steel Wood',
+    displayName: 'STEEL WOOD',
+    trademark: true,
+    image: hardwareFittings1,
+    categories: ['Arch. Hardware', 'Hardware & Fittings', 'Sliding Systems', 'Kitchen Accessories'],
+    categorySummary: 'Hardware & Kitchen • Precision Fittings',
+    tagline: 'Heavy-Duty Drawer Systems & Sliding Hardware',
+    hallmark: 'German-engineered soft-close hinges, tandem boxes, sliding wardrobe systems, and modular kitchen accessories.',
+    tags: ['Soft-Close Tested', 'High Load Capacity', 'Corrosion Free'],
+    icon: (
+      <svg className="w-7 h-7 text-[#C9A44C]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <rect x="4" y="4" width="16" height="16" rx="2" />
+        <path d="M4 12h16M12 4v16" />
+      </svg>
+    )
+  },
+  {
     name: 'Astdax',
     displayName: 'ASTDAX',
     trademark: true,
+    image: astdaxBrandImg,
     categories: ['Arch. Hardware', 'Hardware & Fittings'],
+    categorySummary: 'Architectural Hardware • Luxury Brass & Zinc',
+    tagline: 'Designer Door Handles, Mortise Locks & Pulls',
+    hallmark: 'Ergonomic solid brass and zinc door handles, concealed roses, digital locks, and precision furniture fittings.',
+    tags: ['Solid Brass & Zinc', 'PVD Finish Guarantee', 'Concealed Screws'],
     icon: (
-      <svg className="w-6 h-5 text-[#C5A059]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg className="w-7 h-7 text-[#C9A44C]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <rect x="3" y="6" width="6" height="12" rx="3" />
         <path d="M9 10h11a1.5 1.5 0 011.5 1.5v0a1.5 1.5 0 01-1.5 1.5H9" />
         <circle cx="6" cy="12" r="1.2" fill="currentColor" />
@@ -2298,7 +2354,7 @@ export const CATEGORY_DEFINITIONS = [
     key: 'Plywood',
     label: 'Plywood',
     icon: (isActive) => (
-      <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke={isActive ? '#005a2b' : '#64748b'} strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+      <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke={isActive ? '#C9A44C' : '#64748b'} strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 2L2 7l10 5 10-5-10-5z" />
         <path d="M2 12l10 5 10-5" />
         <path d="M2 17l10 5 10-5" />
@@ -2309,7 +2365,7 @@ export const CATEGORY_DEFINITIONS = [
     key: 'Laminates',
     label: 'Laminates',
     icon: (isActive) => (
-      <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke={isActive ? '#005a2b' : '#64748b'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+      <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke={isActive ? '#C9A44C' : '#64748b'} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <polygon points="12 2 2 7 12 12 22 7 12 2" />
         <path d="M2 12l10 5 10-5" />
         <path d="M2 17l10 5 10-5" />
@@ -2320,7 +2376,7 @@ export const CATEGORY_DEFINITIONS = [
     key: 'Acrylic Panels',
     label: 'Acrylic Panels',
     icon: (isActive) => (
-      <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke={isActive ? '#005a2b' : '#64748b'} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke={isActive ? '#C9A44C' : '#64748b'} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <rect x="6" y="3" width="12" height="18" rx="2" />
         <line x1="10" y1="7" x2="14" y2="7" />
         <line x1="10" y1="10" x2="14" y2="10" />
@@ -2331,7 +2387,7 @@ export const CATEGORY_DEFINITIONS = [
     key: 'Veneers',
     label: 'Veneers',
     icon: (isActive) => (
-      <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke={isActive ? '#005a2b' : '#64748b'} strokeWidth="1.8" strokeLinecap="round">
+      <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke={isActive ? '#C9A44C' : '#64748b'} strokeWidth="1.8" strokeLinecap="round">
         <rect x="4" y="3" width="16" height="18" rx="1.5" />
         <line x1="8" y1="3" x2="8" y2="21" strokeDasharray="3 2" />
         <line x1="12" y1="3" x2="12" y2="21" />
@@ -2343,9 +2399,9 @@ export const CATEGORY_DEFINITIONS = [
     key: 'Fancy Doors',
     label: 'Fancy Doors',
     icon: (isActive) => (
-      <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke={isActive ? '#005a2b' : '#64748b'} strokeWidth="1.8">
+      <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke={isActive ? '#C9A44C' : '#64748b'} strokeWidth="1.8">
         <rect x="5" y="2.5" width="14" height="19" rx="1.5" />
-        <circle cx="9" cy="12" r="1" fill={isActive ? '#005a2b' : '#64748b'} />
+        <circle cx="9" cy="12" r="1" fill={isActive ? '#C9A44C' : '#64748b'} />
       </svg>
     )
   },
@@ -2353,10 +2409,10 @@ export const CATEGORY_DEFINITIONS = [
     key: 'Arch. Hardware',
     label: 'Arch. Hardware',
     icon: (isActive) => (
-      <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke={isActive ? '#005a2b' : '#64748b'} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke={isActive ? '#C9A44C' : '#64748b'} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <rect x="3" y="9" width="6" height="6" rx="3" />
         <path d="M6 12h13a2 2 0 012 2v0a2 2 0 01-2 2h-1" />
-        <circle cx="6" cy="12" r="1.2" fill={isActive ? '#005a2b' : '#64748b'} />
+        <circle cx="6" cy="12" r="1.2" fill={isActive ? '#C9A44C' : '#64748b'} />
       </svg>
     )
   },
@@ -2364,7 +2420,7 @@ export const CATEGORY_DEFINITIONS = [
     key: 'Hardware & Fittings',
     label: 'Hardware & Fittings',
     icon: (isActive) => (
-      <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke={isActive ? '#005a2b' : '#64748b'} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke={isActive ? '#C9A44C' : '#64748b'} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <path d="M14.5 5.5a2 2 0 00-2.8 2.8l1.4 1.4-7.5 7.5a1.5 1.5 0 002.1 2.1l7.5-7.5 1.4 1.4a2 2 0 002.8-2.8l-2.1-2.1 1.4-1.4a1 1 0 00-1.4-1.4l-1.4 1.4-1.4-1.4z" />
         <path d="M6 18l12-12" />
       </svg>
@@ -2374,7 +2430,7 @@ export const CATEGORY_DEFINITIONS = [
     key: 'Kitchen Accessories',
     label: 'Kitchen Accessories',
     icon: (isActive) => (
-      <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke={isActive ? '#005a2b' : '#64748b'} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke={isActive ? '#C9A44C' : '#64748b'} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <path d="M9 3h6v4l5 8v3H4v-3l5-8V3z" />
         <path d="M7 18v2M17 18v2" />
         <line x1="8" y1="15" x2="16" y2="15" />
@@ -2385,7 +2441,7 @@ export const CATEGORY_DEFINITIONS = [
     key: 'Sliding Systems',
     label: 'Sliding Systems',
     icon: (isActive) => (
-      <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke={isActive ? '#005a2b' : '#64748b'} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke={isActive ? '#C9A44C' : '#64748b'} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <rect x="3" y="3" width="18" height="18" rx="2" />
         <path d="M12 3v18" />
         <path d="M7.5 8v8M16.5 8v8" strokeDasharray="2 2" />
@@ -2532,25 +2588,25 @@ export const ProductsPage = ({ onNavigate, search }) => {
   const renderOverviewTagIcon = (iconName) => {
     switch (iconName) {
       case 'wood':
-        return <Trees className="w-7 h-7 text-[#006e2f]" strokeWidth={2} />;
+        return <Trees className="w-7 h-7 text-[#C9A44C]" strokeWidth={2} />;
       case 'droplet':
-        return <Droplets className="w-7 h-7 text-[#006e2f]" strokeWidth={2} />;
+        return <Droplets className="w-7 h-7 text-[#C9A44C]" strokeWidth={2} />;
       case 'bug':
-        return <Bug className="w-7 h-7 text-[#006e2f]" strokeWidth={2} />;
+        return <Bug className="w-7 h-7 text-[#C9A44C]" strokeWidth={2} />;
       case 'shield':
-        return <ShieldCheck className="w-7 h-7 text-[#006e2f]" strokeWidth={2} />;
+        return <ShieldCheck className="w-7 h-7 text-[#C9A44C]" strokeWidth={2} />;
       case 'leaf':
-        return <Leaf className="w-7 h-7 text-[#006e2f]" strokeWidth={2} />;
+        return <Leaf className="w-7 h-7 text-[#C9A44C]" strokeWidth={2} />;
       case 'calibrate':
-        return <Ruler className="w-7 h-7 text-[#006e2f]" strokeWidth={2} />;
+        return <Ruler className="w-7 h-7 text-[#C9A44C]" strokeWidth={2} />;
       case 'sparkles':
-        return <Sparkles className="w-7 h-7 text-[#006e2f]" strokeWidth={2} />;
+        return <Sparkles className="w-7 h-7 text-[#C9A44C]" strokeWidth={2} />;
       case 'gear':
-        return <Settings className="w-7 h-7 text-[#006e2f]" strokeWidth={2} />;
+        return <Settings className="w-7 h-7 text-[#C9A44C]" strokeWidth={2} />;
       case 'flex':
-        return <RefreshCw className="w-7 h-7 text-[#006e2f]" strokeWidth={2} />;
+        return <RefreshCw className="w-7 h-7 text-[#C9A44C]" strokeWidth={2} />;
       default:
-        return <ShieldCheck className="w-7 h-7 text-[#006e2f]" strokeWidth={2} />;
+        return <ShieldCheck className="w-7 h-7 text-[#C9A44C]" strokeWidth={2} />;
     }
   };
 
@@ -2667,21 +2723,21 @@ export const ProductsPage = ({ onNavigate, search }) => {
   const renderSpecIcon = (iconName) => {
     switch (iconName) {
       case 'tree':
-        return <Trees className="w-5 h-5 text-[#006e2f]" strokeWidth={2} />;
+        return <Trees className="w-5 h-5 text-[#C9A44C]" strokeWidth={2} />;
       case 'glue':
-        return <FlaskConical className="w-5 h-5 text-[#006e2f]" strokeWidth={2} />;
+        return <FlaskConical className="w-5 h-5 text-[#C9A44C]" strokeWidth={2} />;
       case 'grade':
-        return <Lock className="w-5 h-5 text-[#006e2f]" strokeWidth={2} />;
+        return <Lock className="w-5 h-5 text-[#C9A44C]" strokeWidth={2} />;
       case 'layers':
-        return <Layers className="w-5 h-5 text-[#006e2f]" strokeWidth={2} />;
+        return <Layers className="w-5 h-5 text-[#C9A44C]" strokeWidth={2} />;
       case 'moisture':
-        return <Droplets className="w-5 h-5 text-[#006e2f]" strokeWidth={2} />;
+        return <Droplets className="w-5 h-5 text-[#C9A44C]" strokeWidth={2} />;
       case 'ruler':
-        return <Ruler className="w-5 h-5 text-[#006e2f]" strokeWidth={2} />;
+        return <Ruler className="w-5 h-5 text-[#C9A44C]" strokeWidth={2} />;
       case 'warranty':
-        return <ShieldCheck className="w-5 h-5 text-[#006e2f]" strokeWidth={2} />;
+        return <ShieldCheck className="w-5 h-5 text-[#C9A44C]" strokeWidth={2} />;
       case 'cert':
-        return <BadgeCheck className="w-5 h-5 text-[#006e2f]" strokeWidth={2} />;
+        return <BadgeCheck className="w-5 h-5 text-[#C9A44C]" strokeWidth={2} />;
       default:
         return null;
     }
@@ -2692,41 +2748,41 @@ export const ProductsPage = ({ onNavigate, search }) => {
       case 'water-proof':
         return (
           <div className="relative w-8 h-8 flex items-center justify-center">
-            <Shield className="w-7 h-7 text-[#006e2f] shrink-0" strokeWidth={1.8} />
-            <Droplets className="absolute w-4 h-4 text-[#006e2f] top-[9px] shrink-0" strokeWidth={1.8} />
+            <Shield className="w-7 h-7 text-[#C9A44C] shrink-0" strokeWidth={1.8} />
+            <Droplets className="absolute w-4 h-4 text-[#C9A44C] top-[9px] shrink-0" strokeWidth={1.8} />
           </div>
         );
       case 'termite-proof':
         return (
           <div className="relative w-8 h-8 flex items-center justify-center">
-            <Bug className="w-6 h-6 text-[#006e2f] shrink-0" strokeWidth={1.8} />
+            <Bug className="w-6 h-6 text-[#C9A44C] shrink-0" strokeWidth={1.8} />
             <Ban className="absolute inset-0 w-8 h-8 text-rose-500 opacity-90 shrink-0" strokeWidth={2} />
           </div>
         );
       case 'borer-proof':
         return (
           <div className="relative w-8 h-8 flex items-center justify-center">
-            <Bug className="w-6 h-6 text-[#006e2f] rotate-90 shrink-0" strokeWidth={1.8} />
+            <Bug className="w-6 h-6 text-[#C9A44C] rotate-90 shrink-0" strokeWidth={1.8} />
             <Ban className="absolute inset-0 w-8 h-8 text-rose-500 opacity-90 shrink-0" strokeWidth={2} />
           </div>
         );
       case 'strength':
         return (
           <div className="w-8 h-8 flex items-center justify-center">
-            <Dumbbell className="w-7 h-7 text-[#006e2f] shrink-0" strokeWidth={1.8} />
+            <Dumbbell className="w-7 h-7 text-[#C9A44C] shrink-0" strokeWidth={1.8} />
           </div>
         );
       case 'finish':
         return (
           <div className="relative w-8 h-8 flex items-center justify-center">
-            <Layers className="w-6 h-6 text-[#006e2f] shrink-0" strokeWidth={1.8} />
+            <Layers className="w-6 h-6 text-[#C9A44C] shrink-0" strokeWidth={1.8} />
             <Sparkles className="absolute top-0 right-0 w-3.5 h-3.5 text-amber-500 shrink-0" />
           </div>
         );
       default:
         return (
           <div className="w-8 h-8 flex items-center justify-center">
-            <Shield className="w-7 h-7 text-[#006e2f] shrink-0" strokeWidth={1.8} />
+            <Shield className="w-7 h-7 text-[#C9A44C] shrink-0" strokeWidth={1.8} />
           </div>
         );
     }
@@ -2785,7 +2841,7 @@ export const ProductsPage = ({ onNavigate, search }) => {
       );
       if (brandForCat) return brandForCat.name;
     }
-    return 'Royal Club';
+    return null;
   });
   const [selectedCategory, setSelectedCategory] = useState(() => {
     const params = new URLSearchParams(search || (typeof window !== 'undefined' ? window.location.search : ''));
@@ -2801,21 +2857,29 @@ export const ProductsPage = ({ onNavigate, search }) => {
     return 'Plywood';
   });
 
+  const [brandCategoryFilter, setBrandCategoryFilter] = useState('All');
+  const [brandSearchTerm, setBrandSearchTerm] = useState('');
+
   useEffect(() => {
-    const targetIdx = getIndexFromSearch(search || window.location.search);
-    if (targetIdx !== currentSpreadIdx) {
-      setCurrentSpreadIdx(targetIdx);
-    }
     const params = new URLSearchParams(search || window.location.search);
     const cat = params.get('category');
     const brand = params.get('brand');
     if (brand) {
       const matched = BRAND_CONFIG.find(b => b.name.toLowerCase() === brand.toLowerCase().trim());
       setSelectedBrand(matched ? matched.name : brand);
-    }
-    if (cat) {
+      const targetIdx = getIndexFromSearch(search || window.location.search);
+      setCurrentSpreadIdx(targetIdx);
+    } else if (cat) {
       const canonical = getCanonicalCategory(cat);
       setSelectedCategory(canonical);
+      const brandForCat = BRAND_CONFIG.find(b =>
+        b.categories && b.categories.map(c => getCanonicalCategory(c)).includes(canonical)
+      );
+      if (brandForCat) setSelectedBrand(brandForCat.name);
+      const targetIdx = getIndexFromSearch(search || window.location.search);
+      setCurrentSpreadIdx(targetIdx);
+    } else {
+      setSelectedBrand(null);
     }
   }, [search]);
 
@@ -3015,6 +3079,12 @@ export const ProductsPage = ({ onNavigate, search }) => {
     const bLower = brandName.toLowerCase().trim();
     setSelectedBrand(brandName);
 
+    const basePrefix = window.location.pathname.startsWith('/PAKSHAL-AGENCYS') ? '/PAKSHAL-AGENCYS' : '';
+    const newPath = `${basePrefix}/products?brand=${encodeURIComponent(brandName)}`;
+    if (window.location.pathname + window.location.search !== newPath) {
+      window.history.pushState({}, '', newPath);
+    }
+
     // 1. Check if the currently selected category has spreads for this brand
     if (selectedCategory) {
       const spreadsInCurrentCat = SPREADS.filter(s => isBrandCategoryMatch(s, brandName, selectedCategory));
@@ -3023,6 +3093,7 @@ export const ProductsPage = ({ onNavigate, search }) => {
         if (targetIdx !== -1) {
           setCurrentSpreadIdx(targetIdx);
         }
+        window.scrollTo({ top: 0, behavior: 'smooth' });
         return;
       }
     }
@@ -3037,6 +3108,7 @@ export const ProductsPage = ({ onNavigate, search }) => {
       if (targetIdx !== -1) {
         setCurrentSpreadIdx(targetIdx);
       }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
       return;
     }
 
@@ -3046,6 +3118,14 @@ export const ProductsPage = ({ onNavigate, search }) => {
       const newCat = getCanonicalCategory(brandObj.categories[0]);
       setSelectedCategory(newCat);
     }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleBackToAllBrands = () => {
+    setSelectedBrand(null);
+    const basePrefix = window.location.pathname.startsWith('/PAKSHAL-AGENCYS') ? '/PAKSHAL-AGENCYS' : '';
+    window.history.pushState({}, '', `${basePrefix}/products`);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handleCategorySelect = (categoryName) => {
@@ -3138,198 +3218,325 @@ export const ProductsPage = ({ onNavigate, search }) => {
 
 
   return (
-    <div className="w-full min-h-screen bg-[#F8F8F6] font-sans pt-0 pb-4 select-none text-slate-800">
+    <div className="w-full min-h-screen bg-[#FAF8F5] font-sans pt-0 pb-12 select-none text-slate-800">
 
       {/* Toast Notification */}
       {toastMsg && (
         <div className="fixed top-24 left-1/2 -translate-x-1/2 z-[110] bg-slate-900/90 backdrop-blur-md text-white border border-slate-700/50 px-6 py-3.5 rounded-xl shadow-2xl flex items-center gap-3 animate-scale-up font-bold text-xs uppercase tracking-wider">
-          <svg className="w-4 h-4 text-emerald-400 fill-current" viewBox="0 0 20 20">
+          <svg className="w-4 h-4 text-[#C9A44C] fill-current" viewBox="0 0 20 20">
             <path d="M10 2a8 8 0 100 16 8 8 0 000-16zm3.707 7.707l-4 4a1 1 0 01-1.414 0l-2-2a1 1 0 111.414-1.414L9 11.586l3.293-3.293a1 1 0 011.414 1.414z" />
           </svg>
           {toastMsg}
         </div>
       )}
 
-      {/* Visual Navigation Deck (Matching Mobile Reference Mockup) */}
-      <div className="w-full bg-white text-slate-800 relative animate-fade-in mb-6 sm:mb-8 pt-[104px] sm:pt-[94px] md:pt-[96px] pb-3 sm:pb-4 border-b border-slate-100">
-        <div className="max-w-[1440px] mx-auto w-full px-3 sm:px-6 relative z-20">
+      {!selectedBrand ? (
+        /* ALL BRANDS ONLY VIEW (When user opens products page, all brands ONLY appear - NO categories and NO products!) */
+        <div className="w-full pt-[96px] sm:pt-[104px] pb-16 animate-fade-in">
+          <div className="max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8">
 
-          {/* 1. BRANDS Header */}
-          <div className="flex items-center mb-2.5 px-0.5 sm:px-1">
-            <span className="text-[12px] sm:text-[13px] font-black uppercase tracking-[0.16em] text-[#1e293b]">
-              BRANDS
-            </span>
-          </div>
+            {/* Editorial Hero Header */}
+            <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-10 sm:mb-12">
 
-          {/* Brand Cards Carousel without Arrow Buttons */}
-          <div className="mb-3 sm:mb-4">
-            {/* Brand Cards Grid / Scroll Track */}
-            <div
-              id="brand-scroll-track"
-              ref={brandScrollRef}
-              className="scroll-smooth flex items-center gap-2 sm:gap-3 overflow-x-auto no-scrollbar py-1 px-0.5"
-            >
-              {BRAND_CONFIG.map((b) => {
-                const isBrandActive = Boolean(selectedBrand && selectedBrand.toLowerCase() === b.name.toLowerCase());
-                return (
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-stone-900 tracking-tight font-sans leading-tight mb-4">
+                Select a <span className="text-[#C9A44C] italic font-serif font-extrabold">Brand</span> to Explore
+              </h1>
+              <p className="text-sm sm:text-base text-stone-600 font-medium leading-relaxed max-w-2xl mb-8">
+                PAKSHAL AGENCYS is an authorized partner for India's leading architectural plywood, decorative laminates, acrylic panels, designer doors, and hardware. Click on any brand below to view its specific categories and products.
+              </p>
+
+              {/* Centered Brand Search Input */}
+              <div className="relative w-full max-w-lg mx-auto">
+                <input
+                  type="text"
+                  value={brandSearchTerm}
+                  onChange={(e) => setBrandSearchTerm(e.target.value)}
+                  placeholder="Search for authorized brands..."
+                  className="w-full bg-white border border-stone-200/90 rounded-2xl pl-11 pr-10 py-3.5 text-xs sm:text-sm font-semibold text-stone-900 placeholder-stone-400 focus:outline-none focus:border-[#C9A44C] focus:ring-4 focus:ring-[#C9A44C]/15 transition-all shadow-sm"
+                />
+                <svg className="w-5 h-5 text-[#8c6d23] absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                </svg>
+                {brandSearchTerm && (
                   <button
-                    key={b.name}
-                    ref={(el) => {
-                      if (el) brandButtonRefs.current[b.name] = el;
-                    }}
                     type="button"
-                    onClick={() => handleBrandSelect(b.name)}
-                    className={`group shrink-0 flex flex-col items-center justify-center min-w-[110px] sm:min-w-[130px] h-[64px] sm:h-[68px] px-2.5 py-1.5 rounded-xl transition-all cursor-pointer select-none active:scale-95 outline-none focus:outline-none focus-visible:outline-none ring-0 focus:ring-0 ${isBrandActive
-                      ? 'bg-white border-2 border-[#005a2b] shadow-xs ring-1 ring-[#005a2b]/15 text-[#005a2b]'
-                      : 'bg-white hover:bg-[#FFFDF7] border border-slate-200/90 hover:border-[#C5A059] text-slate-800 shadow-2xs'
-                      }`}
+                    onClick={() => setBrandSearchTerm('')}
+                    className="absolute right-3.5 top-1/2 -translate-y-1/2 text-stone-400 hover:text-stone-700 text-xs font-bold w-5 h-5 rounded-full bg-stone-100 flex items-center justify-center cursor-pointer"
                   >
-                    {b.logo ? (
-                      <div className="w-full h-full flex items-center justify-center px-1.5 py-0.5">
-                        <img
-                          src={b.logo}
-                          alt={b.displayName}
-                          className="max-h-9 sm:max-h-10 max-w-full object-contain transition-transform duration-300 group-hover:scale-105 mix-blend-multiply"
-                        />
-                      </div>
-                    ) : (
-                      <>
-                        {/* Brand Icon / Emblem on top */}
-                        <div className="flex items-center justify-center h-6 mb-1 transition-transform group-hover:scale-105">
-                          {b.icon}
-                        </div>
-
-                        {/* Brand Name Typography */}
-                        <div className="flex items-center justify-center leading-none text-center">
-                          <span className={`font-serif font-black tracking-wider text-[10.5px] sm:text-[11px] whitespace-nowrap ${isBrandActive ? 'text-[#005a2b]' : 'text-[#0c2340]'}`}>
-                            {b.highlightWord ? (
-                              <>
-                                {b.displayName.replace(b.highlightWord, '')}
-                                <span className={`ml-0.5 ${b.highlightWord === 'KING' ? 'italic text-[#b88a44]' : 'text-[#b88a44]'}`}>
-                                  {b.highlightWord}
-                                </span>
-                              </>
-                            ) : (
-                              b.displayName
-                            )}
-                          </span>
-                          {b.trademark && (
-                            <span className="text-[7.5px] font-normal ml-0.5 relative -top-1 text-slate-500">®</span>
-                          )}
-                        </div>
-                      </>
-                    )}
+                    ✕
                   </button>
-                );
-              })}
+                )}
+              </div>
             </div>
-          </div>
 
-          {/* 2. CATEGORIES Header */}
-          <div className="flex items-center mb-2 px-0.5 sm:px-1">
-            <span className="text-[12px] sm:text-[13px] font-black uppercase tracking-[0.16em] text-[#1e293b]">
-              CATEGORIES
-            </span>
-          </div>
-
-          {/* Categories Tab Strip without vertical dividers or underline box */}
-          <div className="flex items-center gap-2 sm:gap-3.5 overflow-x-auto no-scrollbar py-1 px-0.5">
-            {CATEGORY_DEFINITIONS.filter((cat) => {
-              const canonicalKey = getCanonicalCategory(cat.key);
-              const activeBrandName = (selectedBrand || activeSpread?.brandName || '').toLowerCase().trim();
-              const isAstdax = activeBrandName.includes('astdax');
-              const isSteelWood = activeBrandName.includes('steel wood') || activeBrandName.includes('steel');
-              const isHardwareBrand = isAstdax || isSteelWood;
-
-              const nonHardwareCategories = [
-                'Plywood',
-                'Laminates',
-                'Acrylic Panels',
-                'Veneers',
-                'Fancy Doors'
-              ];
-
-              // For Astdax brand: DO NOT show non-hardware categories, show remaining only!
-              if (isAstdax) {
-                if (nonHardwareCategories.includes(canonicalKey)) {
-                  return false;
-                }
-                return ['Arch. Hardware', 'Hardware & Fittings'].includes(canonicalKey);
+            {/* Brands Grid (Image-forward cards with zero brand logos) */}
+            {BRAND_CONFIG.filter((b) => {
+              if (brandSearchTerm.trim()) {
+                const term = brandSearchTerm.toLowerCase().trim();
+                const matchesName = b.name.toLowerCase().includes(term) || (b.displayName || '').toLowerCase().includes(term);
+                const matchesTagline = (b.tagline || '').toLowerCase().includes(term);
+                const matchesHallmark = (b.hallmark || '').toLowerCase().includes(term);
+                const matchesCategories = (b.categories || []).some(c => c.toLowerCase().includes(term));
+                if (!matchesName && !matchesTagline && !matchesHallmark && !matchesCategories) return false;
               }
-
-              // For other hardware brands (like Steel Wood):
-              if (isHardwareBrand) {
-                return !nonHardwareCategories.includes(canonicalKey);
-              }
-
-              // For non-hardware brands: do not show hardware categories
-              const isHardwareCat = [
-                'Arch. Hardware',
-                'Hardware & Fittings',
-                'Kitchen Accessories',
-                'Sliding Systems'
-              ].includes(canonicalKey);
-
-              return !isHardwareCat;
-            }).map((cat) => {
-              const canonicalKey = getCanonicalCategory(cat.key);
-              const isCatActive = Boolean(selectedCategory && canonicalKey === getCanonicalCategory(selectedCategory));
-
-              return (
+              return true;
+            }).length === 0 ? (
+              <div className="text-center py-16 bg-white rounded-3xl border border-stone-200 p-8 max-w-md mx-auto">
+                <p className="text-stone-500 font-medium text-sm mb-4">No brands found matching "{brandSearchTerm}".</p>
                 <button
-                  key={cat.key}
                   type="button"
-                  onClick={() => handleCategorySelect(cat.key)}
-                  className={`group flex flex-col items-center justify-center px-3 sm:px-4 py-1.5 shrink-0 cursor-pointer select-none transition-all outline-none focus:outline-none focus-visible:outline-none ring-0 focus:ring-0 border-0 bg-transparent ${isCatActive ? 'scale-105' : 'hover:scale-102 opacity-80 hover:opacity-100'
-                    }`}
+                  onClick={() => setBrandSearchTerm('')}
+                  className="px-5 py-2.5 bg-[#C9A44C] text-black font-extrabold text-xs uppercase tracking-wider rounded-xl cursor-pointer"
                 >
-                  <div className="flex items-center justify-center h-6 mb-1">
-                    {typeof cat.icon === 'function' ? cat.icon(isCatActive) : cat.icon}
-                  </div>
-                  <span className={`text-[11px] sm:text-[12px] tracking-tight whitespace-nowrap leading-tight transition-colors ${isCatActive ? 'text-[#005a2b] font-black' : 'text-slate-600 font-semibold group-hover:text-slate-900'
-                    }`}>
-                    {cat.label}
-                  </span>
+                  View All Brands
                 </button>
-              );
-            })}
-          </div>
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-7">
+                {BRAND_CONFIG.filter((b) => {
+                  if (brandSearchTerm.trim()) {
+                    const term = brandSearchTerm.toLowerCase().trim();
+                    const matchesName = b.name.toLowerCase().includes(term) || (b.displayName || '').toLowerCase().includes(term);
+                    const matchesTagline = (b.tagline || '').toLowerCase().includes(term);
+                    const matchesHallmark = (b.hallmark || '').toLowerCase().includes(term);
+                    const matchesCategories = (b.categories || []).some(c => c.toLowerCase().includes(term));
+                    if (!matchesName && !matchesTagline && !matchesHallmark && !matchesCategories) return false;
+                  }
+                  return true;
+                }).map((b) => (
+                  <div
+                    key={b.name}
+                    onClick={() => handleBrandSelect(b.name)}
+                    className="group relative bg-white rounded-3xl border border-stone-200/90 shadow-[0_4px_24px_rgba(0,0,0,0.04)] flex flex-col justify-between cursor-pointer overflow-hidden"
+                  >
+                    {/* Top Image Showcase (NO brand logos! Authentic product imagery) */}
+                    <div className="relative h-56 sm:h-60 w-full overflow-hidden bg-stone-100">
+                      <img
+                        src={b.image}
+                        alt={b.name}
+                        className="w-full h-full object-cover"
+                      />
+                      {/* Gradient scrim for text readability */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
 
-        </div>
-      </div>
-      {!selectedCategory ? (
-        <div className="w-full max-w-[1536px] mx-auto px-4 py-16 sm:py-24 text-center animate-fade-in">
-          <div className="inline-flex flex-col items-center justify-center p-8 sm:p-12 bg-white border border-slate-200/80 rounded-3xl shadow-xs max-w-lg mx-auto">
-            <div className="w-14 h-14 rounded-2xl bg-emerald-50 text-[#005a2b] flex items-center justify-center mb-4 border border-emerald-100 shadow-2xs">
-              <svg className="w-7 h-7" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" />
-              </svg>
-            </div>
-            <h3 className="text-xl sm:text-2xl font-black text-slate-900 tracking-tight mb-2">
-              {selectedBrand ? `Select a Category for ${selectedBrand}` : 'Select a Category'}
-            </h3>
-            <p className="text-sm font-medium text-slate-500 max-w-sm leading-relaxed">
-              Choose a category from the options above to explore premium products, finishes, and technical specifications.
-            </p>
+                      {/* Floating Hallmark Pill Top-Left */}
+                      {b.tags?.[0] && (
+                        <div className="absolute top-3.5 left-3.5 bg-black/60 backdrop-blur-md text-[#E5C378] border border-[#C9A44C]/40 text-[9.5px] font-black uppercase tracking-wider px-3 py-1 rounded-full shadow-xs flex items-center gap-1.5">
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#C9A44C]" />
+                          <span>{b.tags[0]}</span>
+                        </div>
+                      )}
+
+                      {/* Floating Primary Category Pill Top-Right */}
+                      {b.categories?.[0] && (
+                        <div className="absolute top-3.5 right-3.5 bg-white/95 backdrop-blur-md text-stone-900 border border-white/60 text-[9.5px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded-full shadow-xs">
+                          {b.categories[0]}
+                        </div>
+                      )}
+
+                      {/* Overlaid Brand Title at Bottom of Image */}
+                      <div className="absolute bottom-3.5 inset-x-4">
+                        <h3 className="font-serif text-2xl font-black tracking-wide text-white drop-shadow-md leading-tight flex items-baseline gap-1">
+                          {b.name}
+                          {b.trademark && (
+                            <span className="text-[10px] font-sans font-semibold text-[#C9A44C] relative -top-2">®</span>
+                          )}
+                        </h3>
+                        {b.tagline && (
+                          <p className="text-[11px] font-bold text-[#FAF6EE]/90 tracking-wide line-clamp-1 mt-0.5 drop-shadow-sm">
+                            {b.tagline}
+                          </p>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Card Body */}
+                    <div className="p-5 sm:p-6 bg-white flex flex-col justify-between flex-grow">
+                      <div>
+                        {/* Hallmark description */}
+                        <p className="text-xs text-stone-600 font-medium leading-relaxed mb-4 line-clamp-2">
+                          {b.hallmark}
+                        </p>
+
+                        {/* Brand Categories Chips */}
+                        <div className="mb-5">
+                          <span className="text-[10px] font-extrabold uppercase tracking-widest text-stone-400 block mb-2">
+                            Product Categories
+                          </span>
+                          <div className="flex flex-wrap gap-1.5">
+                            {(b.categories || []).map((cat, idx) => (
+                              <span
+                                key={idx}
+                                className="inline-flex items-center gap-1.5 text-[11px] font-bold px-3 py-1 rounded-lg bg-[#FAF8F5] text-stone-800 border border-stone-200/90"
+                              >
+                                <span className="w-1.5 h-1.5 rounded-full bg-[#C9A44C]" />
+                                {cat}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Action CTA Button with hover effect */}
+                      <div className="w-full py-3.5 px-4 bg-stone-900 group-hover:bg-[#8c6d23] text-white rounded-xl font-bold text-xs uppercase tracking-wider flex items-center justify-between transition-colors duration-200 shadow-xs group-hover:shadow-md cursor-pointer">
+                        <span className="tracking-wide">Explore Products</span>
+                        <svg
+                          className="w-4 h-4 text-[#C9A44C] group-hover:text-white transition-all duration-200 group-hover:translate-x-1.5"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2.5"
+                          viewBox="0 0 24 24"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+
           </div>
         </div>
       ) : (
+        /* BRAND PRODUCTS VIEW (Categories and products appear!) */
         <>
-          {/* Product Spotlight Showcase Section - Seamless 2-Column Layout */}
+          {/* ARCHITECTURAL BRAND SHOWCASE HEADER */}
+          {(() => {
+            const brandObj = BRAND_CONFIG.find(b => b.name.toLowerCase() === (selectedBrand || '').toLowerCase()) || {
+              name: selectedBrand,
+              displayName: selectedBrand?.toUpperCase(),
+              tagline: activeSpread?.tagline || 'Authorized Architectural Collection',
+              hallmark: activeSpread?.desc || 'Double-pressed calibrated core engineered for structural integrity.',
+              tags: activeSpread?.features || ['100% Calibrated', 'Boiling Water Proof', 'Lifetime Warranty'],
+              categories: [activeSpread?.category || 'Plywood']
+            };
+            const brandCats = (brandObj && brandObj.categories) ? brandObj.categories.map(c => getCanonicalCategory(c)) : [];
+            const availableCats = CATEGORY_DEFINITIONS.filter(cat => brandCats.includes(getCanonicalCategory(cat.key)));
+
+            return (
+              <div className="w-full pt-[96px] sm:pt-[104px] pb-8 mb-8 bg-gradient-to-b from-[#F5F0E4]/70 via-[#FAF8F5] to-[#FAF8F5] border-b border-[#E8DEC8]/80 animate-fade-in">
+                <div className="max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8">
+
+                  {/* Top Row: Clean Compact Back Navigation */}
+                  <div className="flex items-center justify-between gap-3 pb-3 border-b border-stone-200/60 mb-5">
+                    <button
+                      type="button"
+                      onClick={handleBackToAllBrands}
+                      className="inline-flex items-center gap-1.5 text-xs font-bold text-stone-500 hover:text-[#8c6d23] transition-colors cursor-pointer group"
+                    >
+                      <svg className="w-3.5 h-3.5 text-[#C9A44C] group-hover:-translate-x-0.5 transition-transform" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+                      </svg>
+                      <span>All Brands</span>
+                      <span className="text-stone-300 mx-1">/</span>
+                      <span className="text-stone-800 font-extrabold">{selectedBrand}</span>
+                    </button>
+
+                    <span className="text-[11px] font-bold text-stone-400 uppercase tracking-wider hidden sm:inline">
+                      PAKSHAL AGENCYS
+                    </span>
+                  </div>
+
+                  {/* Brand Identity & Hallmark Summary */}
+                  <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
+                    <div className="max-w-3xl space-y-2.5">
+                      <div className="flex flex-wrap items-center gap-2.5">
+                        <span className="px-3 py-1 rounded-full bg-[#FAF6EE] border border-[#C9A44C]/40 text-[#8c6d23] text-[10px] font-black uppercase tracking-widest inline-flex items-center gap-1.5 shadow-2xs">
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#C9A44C]" />
+                          Authorized Brand Range
+                        </span>
+                        {brandObj.categories?.[0] && (
+                          <span className="text-[11px] font-bold text-stone-400 tracking-wider uppercase">
+                            • {brandObj.categories.join(' & ')}
+                          </span>
+                        )}
+                      </div>
+
+                      <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-black text-stone-900 tracking-tight leading-tight">
+                        {brandObj.displayName || selectedBrand}
+                      </h1>
+
+                      {brandObj.tagline && (
+                        <p className="text-[#8c6d23] font-bold text-sm sm:text-base leading-snug">
+                          {brandObj.tagline}
+                        </p>
+                      )}
+
+                      {brandObj.hallmark && (
+                        <p className="text-stone-600 text-xs sm:text-sm leading-relaxed max-w-2xl pt-0.5">
+                          {brandObj.hallmark}
+                        </p>
+                      )}
+
+                      {/* Brand Key Highlights / Hallmark Tags */}
+                      {brandObj.tags && brandObj.tags.length > 0 && (
+                        <div className="flex flex-wrap items-center gap-2 pt-2">
+                          {brandObj.tags.map((tag, idx) => (
+                            <span
+                              key={idx}
+                              className="px-2.5 py-1 rounded-lg bg-white/80 border border-stone-200/90 text-stone-700 text-[11px] font-bold flex items-center gap-1.5 shadow-2xs"
+                            >
+                              <svg className="w-3.5 h-3.5 text-[#C9A44C]" fill="currentColor" viewBox="0 0 20 20">
+                                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                              </svg>
+                              <span>{tag}</span>
+                            </span>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+
+                    {/* Segmented Category Switcher (if brand has multiple lines) */}
+                    {availableCats.length > 1 && (
+                      <div className="shrink-0 flex flex-col items-start lg:items-end gap-1.5 pt-2 lg:pt-0">
+                        <span className="text-[10px] font-black uppercase tracking-widest text-stone-400">
+                          Select Brand Line:
+                        </span>
+                        <div className="flex items-center gap-1.5 p-1 bg-stone-100 rounded-xl border border-stone-200/90">
+                          {availableCats.map((cat) => {
+                            const canonicalKey = getCanonicalCategory(cat.key);
+                            const isCatActive = Boolean(selectedCategory && canonicalKey === getCanonicalCategory(selectedCategory));
+
+                            return (
+                              <button
+                                key={cat.key}
+                                type="button"
+                                onClick={() => handleCategorySelect(cat.key)}
+                                className={`px-3.5 py-1.5 rounded-lg text-xs font-extrabold uppercase tracking-wider transition-colors cursor-pointer flex items-center gap-1.5 ${isCatActive
+                                  ? 'bg-white text-[#8c6d23] shadow-xs border border-stone-200/60'
+                                  : 'text-stone-500 hover:text-stone-800'
+                                  }`}
+                              >
+                                {typeof cat.icon === 'function' ? cat.icon(isCatActive) : cat.icon}
+                                <span>{cat.label}</span>
+                              </button>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
+            );
+          })()}
+
+          {/* Product Spotlight Showcase Section - 2-Column Architectural Layout */}
           <div
             id="catalogue-book-section"
-            className="w-full max-w-[1536px] mx-auto px-3 sm:px-6 lg:px-8 relative mb-16"
+            className="w-full max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 relative mb-14"
           >
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
 
-              {/* Left: Product Image with Prev/Next Overlay Buttons */}
-              <div className="lg:col-span-7 flex items-center justify-start">
-                <div className="relative w-full overflow-hidden rounded-2xl shadow-sm group bg-white">
+              {/* Left: Product Image with Controlled Size & Frosted Glass Navigation */}
+              <div className="lg:col-span-5 flex items-center justify-center lg:justify-start">
+                <div className="relative w-full max-w-md xl:max-w-lg overflow-hidden rounded-2xl border border-stone-200/90 shadow-[0_4px_24px_rgba(0,0,0,0.04)] bg-white">
                   <img
                     src={activeSpread.image}
                     alt={activeSpread.brandName}
-                    className={`w-full max-h-[460px] sm:max-h-[520px] md:max-h-[580px] transition-transform duration-500 hover:scale-[1.01] ${activeSpread.category === 'Kitchen Accessories' || activeSpread.category === 'Arch. Hardware' || activeSpread.category === 'Hardware & Fittings' || activeSpread.imageFit === 'contain'
-                      ? 'object-contain bg-white p-4 sm:p-6'
+                    className={`w-full h-auto max-h-[290px] sm:max-h-[330px] md:max-h-[350px] ${activeSpread.category === 'Kitchen Accessories' || activeSpread.category === 'Arch. Hardware' || activeSpread.category === 'Hardware & Fittings' || activeSpread.imageFit === 'contain'
+                      ? 'object-contain bg-white p-4 sm:p-5'
                       : 'object-cover'
                       }`}
                   />
@@ -3338,11 +3545,11 @@ export const ProductsPage = ({ onNavigate, search }) => {
                   <button
                     type="button"
                     onClick={handlePrevImage}
-                    className="absolute left-3 sm:left-5 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/25 hover:bg-black/45 text-white shadow-md hover:shadow-lg backdrop-blur-md border border-white/30 flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95 cursor-pointer"
+                    className="absolute left-3 sm:left-4 top-1/2 -translate-y-1/2 z-20 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-black/30 hover:bg-black/50 text-white shadow-md backdrop-blur-md border border-white/30 flex items-center justify-center transition-colors cursor-pointer"
                     title="Previous Image"
                     aria-label="Previous Image"
                   >
-                    <svg className="w-5 h-5 sm:w-6 sm:h-6 drop-shadow-sm" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                    <svg className="w-5 h-5 drop-shadow-sm" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
                     </svg>
                   </button>
@@ -3351,11 +3558,11 @@ export const ProductsPage = ({ onNavigate, search }) => {
                   <button
                     type="button"
                     onClick={handleNextImage}
-                    className="absolute right-3 sm:right-5 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-black/25 hover:bg-black/45 text-white shadow-md hover:shadow-lg backdrop-blur-md border border-white/30 flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95 cursor-pointer"
+                    className="absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 z-20 w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-black/30 hover:bg-black/50 text-white shadow-md backdrop-blur-md border border-white/30 flex items-center justify-center transition-colors cursor-pointer"
                     title="Next Image"
                     aria-label="Next Image"
                   >
-                    <svg className="w-5 h-5 sm:w-6 sm:h-6 drop-shadow-sm" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                    <svg className="w-5 h-5 drop-shadow-sm" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
                     </svg>
                   </button>
@@ -3375,9 +3582,9 @@ export const ProductsPage = ({ onNavigate, search }) => {
                               setCurrentSpreadIdx(targetIdx);
                             }
                           }}
-                          className={`transition-all rounded-full cursor-pointer ${isDotActive
-                            ? 'w-2.5 h-2.5 bg-white shadow-xs scale-110'
-                            : 'w-2 h-2 bg-white/50 hover:bg-white/80'
+                          className={`rounded-full cursor-pointer transition-colors ${isDotActive
+                            ? 'w-2.5 h-2.5 bg-white shadow-xs'
+                            : 'w-2 h-2 bg-white/60 hover:bg-white/90'
                             }`}
                           aria-label={`Go to slide ${dotIdx + 1}`}
                         />
@@ -3387,12 +3594,22 @@ export const ProductsPage = ({ onNavigate, search }) => {
                 </div>
               </div>
 
-              {/* Right: Text Content in the gap */}
-              <div className="lg:col-span-5 flex flex-col justify-center space-y-4 text-left">
+              {/* Right: Product Specifications & Instant Inquiry Actions */}
+              <div className="lg:col-span-7 flex flex-col justify-center space-y-3.5 text-left">
 
+                {/* Category & Badge */}
+                <div className="flex items-center gap-2">
+                  <span className="px-3 py-1 rounded-full bg-[#FAF6EE] border border-[#C9A44C]/35 text-[#8c6d23] text-[10px] font-black uppercase tracking-widest inline-flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#C9A44C]" />
+                    {activeSpread.category || 'Plywood'}
+                  </span>
+                  <span className="text-[11px] font-bold text-stone-400 tracking-wider uppercase">
+                    {activeSpread.badge || 'Official Specification'}
+                  </span>
+                </div>
 
-                <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 tracking-tight leading-tight">
-                  {activeBrandDisplay}
+                <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-black text-slate-900 tracking-tight leading-tight">
+                  {activeSpread.title ? activeSpread.title.replace('\n', ' ') : (activeSpread.heroTitle || activeBrandDisplay)}
                 </h2>
 
                 {activeSpread.tagline && (
@@ -3423,14 +3640,14 @@ export const ProductsPage = ({ onNavigate, search }) => {
                   </div>
                 )}
 
-                {/* Action Buttons */}
-                <div className="flex flex-wrap sm:flex-nowrap gap-3 pt-3">
+                {/* Action Buttons: Get Quote, Brochure, WhatsApp */}
+                <div className="flex flex-wrap sm:flex-nowrap gap-3 pt-2">
                   <button
                     onClick={handleGetQuote}
-                    className="px-7 py-3.5 bg-[#006e2f] hover:bg-[#005a26] text-white text-xs font-black tracking-widest uppercase rounded-xl shadow-sm hover:shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer active:scale-98"
+                    className="px-6 py-3.5 bg-[#C9A44C] hover:bg-[#b38e3b] text-black text-xs font-black tracking-widest uppercase rounded-xl shadow-sm transition-colors flex items-center justify-center gap-2 cursor-pointer"
                   >
                     <span>Get Instant Quote</span>
-                    <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                    <svg className="w-4 h-4 text-black" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                     </svg>
                   </button>
@@ -3439,11 +3656,11 @@ export const ProductsPage = ({ onNavigate, search }) => {
                   <div className="relative">
                     <button
                       onClick={() => setIsBrochureDropdownOpen(!isBrochureDropdownOpen)}
-                      className="px-5 py-3.5 bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-black tracking-wider uppercase rounded-xl transition-all flex items-center justify-center gap-1.5 cursor-pointer active:scale-98"
+                      className="px-5 py-3.5 bg-stone-100 hover:bg-stone-200 text-stone-800 text-xs font-black tracking-wider uppercase rounded-xl transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
                     >
-                      <Download className="w-4 h-4 text-slate-700" />
+                      <Download className="w-4 h-4 text-stone-700" />
                       <span>Brochure</span>
-                      <ChevronDown className={`w-3.5 h-3.5 text-slate-600 transition-transform duration-200 ${isBrochureDropdownOpen ? 'rotate-180' : ''}`} />
+                      <ChevronDown className={`w-3.5 h-3.5 text-stone-600 transition-transform duration-200 ${isBrochureDropdownOpen ? 'rotate-180' : ''}`} />
                     </button>
 
                     {isBrochureDropdownOpen && (
@@ -3454,7 +3671,7 @@ export const ProductsPage = ({ onNavigate, search }) => {
                           target="_blank"
                           rel="noopener noreferrer"
                           onClick={() => setIsBrochureDropdownOpen(false)}
-                          className="block px-4 py-3 text-xs font-extrabold text-slate-800 hover:bg-[#f0f9f4] hover:text-[#006e2f] transition-colors cursor-pointer"
+                          className="block px-4 py-3 text-xs font-extrabold text-slate-800 hover:bg-[#FAF6EE] hover:text-[#8c6d23] transition-colors cursor-pointer"
                         >
                           SG Product Catalogue
                         </a>
@@ -3464,19 +3681,109 @@ export const ProductsPage = ({ onNavigate, search }) => {
                           target="_blank"
                           rel="noopener noreferrer"
                           onClick={() => setIsBrochureDropdownOpen(false)}
-                          className="block px-4 py-3 text-xs font-extrabold text-slate-800 hover:bg-[#f0f9f4] hover:text-[#006e2f] transition-colors cursor-pointer"
+                          className="block px-4 py-3 text-xs font-extrabold text-slate-800 hover:bg-[#FAF6EE] hover:text-[#8c6d23] transition-colors cursor-pointer"
                         >
                           Hardware Accessories Catalogue
                         </a>
                       </div>
                     )}
                   </div>
+
+                  {/* Direct WhatsApp Concierge Button */}
+                  <a
+                    href={`https://wa.me/919247449522?text=${encodeURIComponent(`Hello Pakshal Agencys, I am interested in ${selectedBrand} - ${activeSpread.category || 'Products'}. Please share pricing and catalogue.`)}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-5 py-3.5 bg-[#25D366] hover:bg-[#20ba59] text-white text-xs font-black tracking-wider uppercase rounded-xl transition-colors flex items-center justify-center gap-2 cursor-pointer shadow-xs"
+                    title="Chat on WhatsApp"
+                  >
+                    <svg className="w-4 h-4 fill-current text-white" viewBox="0 0 24 24">
+                      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.66.986 3.292 1.493 4.904 1.495 5.182 0 9.4-4.216 9.403-9.397.001-2.51-1-4.87-2.817-6.649-1.817-1.778-4.23-2.757-6.79-2.758-5.186 0-9.409 4.217-9.412 9.4-.002 1.942.506 3.843 1.472 5.513L2.26 21.53l4.387-1.376zM18.04 14.99c-.32-.16-1.89-.93-2.18-1.04-.3-.1-.51-.16-.72.16-.21.32-.82 1.04-1 1.25-.19.21-.38.24-.7.08-.32-.16-1.35-.5-2.57-1.59-.95-.95-1.59-1.9-1.78-2.22-.19-.32-.02-.49.14-.65.15-.14.32-.32.48-.48.16-.16.21-.27.32-.48.11-.21.05-.4-.03-.56-.08-.16-.72-1.74-.99-2.38-.26-.64-.53-.55-.72-.56l-.61-.01c-.21 0-.55.08-.84.4-.29.32-1.12 1.1-1.12 2.68s1.15 3.1 1.31 3.32c.16.22 2.27 3.46 5.5 4.86.76.33 1.36.53 1.83.68.77.24 1.47.21 2.03.12.62-.09 1.89-.77 2.15-1.51.26-.74.26-1.38.18-1.51-.08-.13-.3-.21-.62-.37z" />
+                    </svg>
+                    <span>WhatsApp</span>
+                  </a>
                 </div>
 
               </div>
 
             </div>
           </div>
+
+          {/* Explore Complete Brand Lineup Grid (Riyansh Plywood inspired catalog browsing) */}
+          {activeCategorySpreads.length > 1 && (
+            <div className="max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8 mb-14 animate-fade-in">
+              <div className="flex items-center justify-between mb-6 pb-3 border-b border-stone-200/80">
+                <div>
+                  <span className="text-[10px] font-black uppercase tracking-widest text-[#8c6d23] block mb-1">
+                    Complete Range
+                  </span>
+                  <h3 className="text-xl sm:text-2xl font-black text-stone-900 tracking-tight">
+                    {selectedBrand} Product Collection ({activeCategorySpreads.length})
+                  </h3>
+                </div>
+                <span className="text-xs font-bold text-stone-400 hidden sm:inline">
+                  Click any product to view in spotlight
+                </span>
+              </div>
+
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+                {activeCategorySpreads.map((spreadItem, sIdx) => {
+                  const isCurrent = activeCatIdx === sIdx;
+                  return (
+                    <div
+                      key={spreadItem.id || sIdx}
+                      onClick={() => {
+                        const targetIdx = SPREADS.indexOf(spreadItem);
+                        if (targetIdx !== -1) {
+                          setCurrentSpreadIdx(targetIdx);
+                          const el = document.getElementById('catalogue-book-section');
+                          if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }
+                      }}
+                      className={`group relative bg-white rounded-2xl border transition-all duration-200 cursor-pointer p-4 flex flex-col justify-between overflow-hidden ${
+                        isCurrent
+                          ? 'border-[#C9A44C] ring-2 ring-[#C9A44C]/25 shadow-md'
+                          : 'border-stone-200/80 hover:border-[#C9A44C]/60 shadow-xs'
+                      }`}
+                    >
+                      <div className="relative h-32 sm:h-36 w-full rounded-xl overflow-hidden bg-stone-50 mb-3 border border-stone-100 flex items-center justify-center">
+                        <img
+                          src={spreadItem.image}
+                          alt={spreadItem.brandName}
+                          className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-300"
+                        />
+                        {isCurrent && (
+                          <div className="absolute top-2 right-2 bg-[#8c6d23] text-white text-[9px] font-black uppercase px-2 py-0.5 rounded-md shadow-xs">
+                            Active
+                          </div>
+                        )}
+                      </div>
+
+                      <div>
+                        <div className="flex items-center gap-1.5 mb-1">
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#C9A44C]" />
+                          <span className="text-[10px] font-black uppercase tracking-wider text-[#8c6d23]">
+                            {spreadItem.category}
+                          </span>
+                        </div>
+                        <h4 className="text-sm font-extrabold text-stone-900 group-hover:text-[#8c6d23] transition-colors line-clamp-1">
+                          {spreadItem.title ? spreadItem.title.replace('\n', ' ') : spreadItem.brandName}
+                        </h4>
+                        <p className="text-[11px] text-stone-500 line-clamp-2 mt-1 leading-snug">
+                          {spreadItem.desc}
+                        </p>
+                      </div>
+
+                      <div className="mt-3 pt-2.5 border-t border-stone-100 flex items-center justify-between text-[11px] font-bold text-stone-700">
+                        <span>{spreadItem.thicknesses?.[0] ? `${spreadItem.thicknesses.length} Thicknesses` : 'Standard Specs'}</span>
+                        <span className="text-[#8c6d23] group-hover:translate-x-0.5 transition-transform">View Details →</span>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          )}
 
           {/* Product Overview Section - Interactive Selection Component */}
           {(() => {
@@ -3486,9 +3793,9 @@ export const ProductsPage = ({ onNavigate, search }) => {
               // Render the standard Product Overview card for Laminates, Hardware, Veneers, etc.
               return (
                 <div className="max-w-[1280px] mx-auto px-4 mt-4 md:mt-16 mb-12 md:mb-16 animate-fade-in">
-                  <div className="bg-white rounded-[32px] border border-slate-200/60 shadow-sm p-8 md:p-12 hover:shadow-md transition-all duration-300">
+                  <div className="bg-white rounded-[32px] border border-slate-200/60 shadow-sm p-8 md:p-12">
                     <div className="text-center mb-12">
-                      <span className="text-[11px] font-black tracking-[0.25em] text-[#006e2f] uppercase block mb-2">
+                      <span className="text-[11px] font-black tracking-[0.25em] text-[#8c6d23] uppercase block mb-2">
                         Product Overview
                       </span>
                       <h3 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight font-sans">
@@ -3498,8 +3805,8 @@ export const ProductsPage = ({ onNavigate, search }) => {
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-6 justify-items-stretch text-center mb-12">
                       {(activeSpread.overviewFeatures || []).map((feature, i) => (
-                        <div key={i} className="flex flex-col items-center gap-4 group">
-                          <div className="w-[60px] h-[60px] rounded-full bg-[#f0f9f4] flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-110">
+                        <div key={i} className="flex flex-col items-center gap-4">
+                          <div className="w-[60px] h-[60px] rounded-full bg-[#FAF6EE] border border-[#C9A44C]/25 flex items-center justify-center shrink-0">
                             {renderOverviewTagIcon(feature.icon)}
                           </div>
                           <div className="flex flex-col items-center text-center">
@@ -3517,10 +3824,10 @@ export const ProductsPage = ({ onNavigate, search }) => {
                     <div className="flex flex-col sm:flex-row justify-center items-center gap-4 w-full border-t border-slate-100 pt-10">
                       <button
                         onClick={handleGetQuote}
-                        className="w-full sm:w-auto px-10 py-4 bg-[#006e2f] hover:bg-[#005c26] text-white text-[11px] font-black tracking-widest uppercase rounded-lg shadow-sm transition-all flex items-center justify-center gap-3 cursor-pointer hover:shadow-md transform active:scale-95"
+                        className="w-full sm:w-auto px-10 py-4 bg-[#C9A44C] hover:bg-[#b38e3b] text-black text-[11px] font-black tracking-widest uppercase rounded-lg shadow-sm transition-colors flex items-center justify-center gap-3 cursor-pointer"
                       >
                         Get Quote
-                        <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                        <svg className="w-4 h-4 text-black" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                         </svg>
                       </button>
@@ -3528,10 +3835,10 @@ export const ProductsPage = ({ onNavigate, search }) => {
                         href={`https://wa.me/919247449522?text=${encodeURIComponent(`I am interested in ${getOverviewTitle(activeSpread)} (${activeThickness}). Please share pricing and availability.`)}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-full sm:w-auto px-10 py-4 bg-white border border-[#006e2f] hover:bg-[#f0f9f4] text-[#006e2f] text-[11px] font-black tracking-widest uppercase rounded-lg transition-all flex items-center justify-center gap-3 cursor-pointer shadow-sm hover:shadow-md transform active:scale-95"
+                        className="w-full sm:w-auto px-10 py-4 bg-white border border-[#C9A44C] hover:bg-[#FAF6EE] text-[#8c6d23] text-[11px] font-black tracking-widest uppercase rounded-lg transition-colors flex items-center justify-center gap-3 cursor-pointer shadow-sm"
                       >
                         Whatsapp Us
-                        <svg className="w-4 h-4 fill-current text-[#006e2f]" viewBox="0 0 24 24">
+                        <svg className="w-4 h-4 fill-current text-[#8c6d23]" viewBox="0 0 24 24">
                           <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.66.986 3.292 1.493 4.904 1.495 5.182 0 9.4-4.216 9.403-9.397.001-2.51-1-4.87-2.817-6.649-1.817-1.778-4.23-2.757-6.79-2.758-5.186 0-9.409 4.217-9.412 9.4-.002 1.942.506 3.843 1.472 5.513L2.26 21.53l4.387-1.376zM18.04 14.99c-.32-.16-1.89-.93-2.18-1.04-.3-.1-.51-.16-.72.16-.21.32-.82 1.04-1 1.25-.19.21-.38.24-.7.08-.32-.16-1.35-.5-2.57-1.59-.95-.95-1.59-1.9-1.78-2.22-.19-.32-.02-.49.14-.65.15-.14.32-.32.48-.48.16-.16.21-.27.32-.48.11-.21.05-.4-.03-.56-.08-.16-.72-1.74-.99-2.38-.26-.64-.53-.55-.72-.56l-.61-.01c-.21 0-.55.08-.84.4-.29.32-1.12 1.1-1.12 2.68s1.15 3.1 1.31 3.32c.16.22 2.27 3.46 5.5 4.86.76.33 1.36.53 1.83.68.77.24 1.47.21 2.03.12.62-.09 1.89-.77 2.15-1.51.26-.74.26-1.38.18-1.51-.08-.13-.3-.21-.62-.37z" />
                         </svg>
                       </a>
@@ -3562,7 +3869,7 @@ export const ProductsPage = ({ onNavigate, search }) => {
             const selectedSpecFeature = activeSpread.features[1] || 'Boiling Water Proof';
 
             const renderSelectorIcon = (iconName, isSelected) => {
-              const strokeColor = isSelected ? '#ffffff' : '#006e2f';
+              const strokeColor = isSelected ? '#ffffff' : '#8c6d23';
               const className = `w-5 h-5 transition-colors duration-200`;
               switch (iconName) {
                 case 'weight':
@@ -3607,11 +3914,11 @@ export const ProductsPage = ({ onNavigate, search }) => {
                   {/* HEADER SECTION */}
                   <header className="text-center mb-8 md:mb-10">
                     <div className="flex items-center justify-center space-x-3 mb-3">
-                      <span className="h-[1px] w-8 md:w-16 bg-emerald-500"></span>
-                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-                      <span className="text-xs md:text-sm font-extrabold tracking-wider text-emerald-600 uppercase">AVAILABLE THICKNESS OPTIONS</span>
-                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-                      <span className="h-[1px] w-8 md:w-16 bg-emerald-500"></span>
+                      <span className="h-[1px] w-8 md:w-16 bg-[#C9A44C]"></span>
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#C9A44C]"></span>
+                      <span className="text-xs md:text-sm font-extrabold tracking-wider text-[#8c6d23] uppercase">AVAILABLE THICKNESS OPTIONS</span>
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#C9A44C]"></span>
+                      <span className="h-[1px] w-8 md:w-16 bg-[#C9A44C]"></span>
                     </div>
                     <h1 className="text-3xl md:text-5xl font-extrabold text-[#0c2340] tracking-tight mb-2">
                       Choose the Right Fit for Your Project
@@ -3672,7 +3979,7 @@ export const ProductsPage = ({ onNavigate, search }) => {
                                       <span className="w-2.5 h-[1.5px] bg-[#8c6d23]/60 hidden sm:inline-block" />
                                       <span
                                         className={`w-2 h-2 rounded-full border-2 transition-all shrink-0 ${isSelected
-                                          ? 'bg-emerald-500 border-white ring-2 ring-emerald-400/50 scale-125'
+                                          ? 'bg-[#C9A44C] border-white ring-2 ring-[#C9A44C]/50 scale-125'
                                           : 'bg-white border-[#8c6d23]'
                                           }`}
                                       />
@@ -3869,13 +4176,13 @@ export const ProductsPage = ({ onNavigate, search }) => {
                                       <div className="absolute left-6 top-1/2 -translate-y-1/2 flex items-center gap-2">
                                         {isSelected ? (
                                           <span className="relative flex h-4 w-4 shrink-0">
-                                            <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 animate-ping"></span>
-                                            <span className="relative inline-flex rounded-full h-4 w-4 bg-emerald-600 border-2 border-white"></span>
+                                            <span className="absolute inline-flex h-full w-full rounded-full bg-[#C9A44C] opacity-75 animate-ping"></span>
+                                            <span className="relative inline-flex rounded-full h-4 w-4 bg-[#8c6d23] border-2 border-white"></span>
                                           </span>
                                         ) : (
-                                          <span className="relative inline-flex rounded-full h-3 w-3 bg-white border-2 border-emerald-500 shrink-0"></span>
+                                          <span className="relative inline-flex rounded-full h-3 w-3 bg-white border-2 border-[#C9A44C] shrink-0"></span>
                                         )}
-                                        <span className={`text-[11px] font-black uppercase tracking-wider select-none ${isSelected ? 'text-emerald-800 font-extrabold' : 'text-[#533b25]/85'}`}>
+                                        <span className={`text-[11px] font-black uppercase tracking-wider select-none ${isSelected ? 'text-[#8c6d23] font-extrabold' : 'text-[#533b25]/85'}`}>
                                           {displayVal}
                                         </span>
                                       </div>
@@ -3890,7 +4197,7 @@ export const ProductsPage = ({ onNavigate, search }) => {
 
                           {/* RIGHT DETAIL CARD */}
                           <div className="col-span-3 flex justify-center z-20">
-                            <div className="w-full max-w-sm bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden transform hover:-translate-y-1 transition-all duration-300">
+                            <div className="w-full max-w-sm bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden">
                               <div className="bg-[#8c6d23] text-white text-center py-3.5 px-4 text-xs font-bold tracking-widest uppercase">
                                 Selected Option
                               </div>
@@ -3966,7 +4273,7 @@ export const ProductsPage = ({ onNavigate, search }) => {
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                       {(activeSpread.overviewFeatures || []).slice(0, 4).map((feature, i) => (
                         <div key={i} className="bg-white p-5 rounded-2xl border border-gray-100/80 flex items-start space-x-4">
-                          <div className="w-12 h-12 bg-emerald-50 text-emerald-600 rounded-full flex items-center justify-center flex-shrink-0 shadow-inner">
+                          <div className="w-12 h-12 bg-[#FAF6EE] text-[#8c6d23] border border-[#C9A44C]/25 rounded-full flex items-center justify-center flex-shrink-0 shadow-inner">
                             {renderOverviewTagIcon(feature.icon)}
                           </div>
                           <div className="text-left">
@@ -3981,14 +4288,14 @@ export const ProductsPage = ({ onNavigate, search }) => {
                   {/* FOOTER CERTIFICATION METRIC BADGES */}
                   <footer className="mt-8 pt-6 border-t border-gray-100/80 text-center flex flex-wrap items-center justify-center gap-6 text-xs text-gray-500 font-semibold">
                     <div className="flex items-center space-x-1.5">
-                      <svg className="w-4 h-4 text-emerald-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <svg className="w-4 h-4 text-[#8c6d23] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                       </svg>
                       <span>Other sizes available on request</span>
                     </div>
                     <span className="hidden md:inline text-gray-300">|</span>
                     <div className="flex items-center space-x-1.5">
-                      <svg className="w-4 h-4 text-emerald-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <svg className="w-4 h-4 text-[#8c6d23] flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                       </svg>
                       <span>All thickness in mm</span>
@@ -4063,7 +4370,7 @@ export const ProductsPage = ({ onNavigate, search }) => {
             {/* Specifications Grid panels */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
               {/* Left card: Specifications list table */}
-              <div className="bg-white rounded-[24px] border border-slate-200/50 shadow-sm p-6 sm:p-8 flex flex-col justify-between hover:shadow-md transition-all duration-300">
+              <div className="bg-white rounded-[24px] border border-slate-200/50 shadow-sm p-6 sm:p-8 flex flex-col justify-between">
                 <div className="space-y-1">
                   {getTechnicalSpecs(activeSpread).specs.map((item, index) => (
                     <div key={index} className="flex items-center justify-between py-3 border-b border-slate-100 last:border-b-0 last:pb-0">
@@ -4115,7 +4422,7 @@ export const ProductsPage = ({ onNavigate, search }) => {
                         return (
                           <div
                             key={index}
-                            className={`${style.bg} ${gridClass} rounded-[20px] border border-slate-200/50 shadow-sm overflow-hidden flex flex-col justify-between pt-6 hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 relative h-fit sm:h-[268px]`}
+                            className={`${style.bg} ${gridClass} rounded-[20px] border border-slate-200/50 shadow-sm overflow-hidden flex flex-col justify-between pt-6 relative h-fit sm:h-[268px]`}
                           >
                             <div className="flex flex-col items-center justify-center flex-grow">
                               {/* Icon Container */}
@@ -4155,7 +4462,7 @@ export const ProductsPage = ({ onNavigate, search }) => {
 
                 // For other categories, render the normal Highlights list
                 return (
-                  <div className="bg-white rounded-[24px] border border-slate-200/50 shadow-sm p-6 sm:p-8 flex flex-col justify-between hover:shadow-md transition-all duration-300">
+                  <div className="bg-white rounded-[24px] border border-slate-200/50 shadow-sm p-6 sm:p-8 flex flex-col justify-between">
                     <div className="flex flex-col justify-between h-full py-1">
                       {getTechnicalSpecs(activeSpread).highlights.map((item, index) => (
                         <div key={index} className="flex items-center gap-5 py-3.5 last:py-0 last:border-b-0 border-b border-slate-100 border-dashed">
@@ -4187,17 +4494,17 @@ export const ProductsPage = ({ onNavigate, search }) => {
           href="https://wa.me/919247449522"
           target="_blank"
           rel="noopener noreferrer"
-          className="w-8 h-8 sm:w-9 sm:h-9 bg-[#25d366] hover:bg-[#1ebd59] text-white rounded-lg sm:rounded-xl flex items-center justify-center shadow-md hover:shadow-lg hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer"
+          className="w-8 h-8 sm:w-9 sm:h-9 bg-[#25d366] hover:bg-[#1ebd59] text-white rounded-lg sm:rounded-xl flex items-center justify-center shadow-md hover:shadow-lg transition-colors duration-200 cursor-pointer"
           title="WhatsApp Support"
           aria-label="WhatsApp Support"
         >
           <svg className="w-4 h-4 sm:w-4.5 sm:h-4.5 fill-current" viewBox="0 0 24 24">
-            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.66.986 3.292 1.493 4.904 1.495 5.182 0 9.4-4.216 9.403-9.397.001-2.51-1-4.87-2.817-6.649-1.817-1.778-4.23-2.757-6.79-2.758-5.186 0-9.409 4.217-9.412 9.4-.002 1.942.506 3.843 1.472 5.513L2.26 21.53l4.387-1.376zM18.04 14.99c-.32-.16-1.89-.93-2.18-1.04-.3-.1-.51-.16-.72.16-.21.32-.82 1.04-1 1.25-.19.21-.38.24-.7.08-.32-.16-1.35-.5-2.57-1.59-.95-.85-1.9-1.9-1.78-2.22-.19-.32-.02-.49.14-.65.15-.14.32-.32.48-.48.16-.16.21-.27.32-.48.11-.21.05-.4-.03-.56-.08-.16-.72-1.74-.99-2.38-.26-.64-.53-.55-.72-.56l-.61-.01c-.21 0-.55.08-.84.4-.29.32-1.12 1.1-1.12 2.68s1.15 3.1 1.31 3.32c.16.22 2.27 3.46 5.5 4.86.76.33 1.36.53 1.83.68.77.24 1.47.21 2.03.12.62-.09 1.89-.77 2.15-1.51.26-.74.26-1.38.18-1.51-.08-.13-.3-.21-.62-.37z" />
+            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.66.986 3.292 1.493 4.904 1.495 5.182 0 9.4-4.216 9.403-9.397.001-2.51-1-4.87-2.817-6.649-1.817-1.778-4.23-2.757-6.79-2.758-5.186 0-9.409 4.217-9.412 9.4-.002 1.942.506 3.843 1.472 5.513L2.26 21.53l4.387-1.376zM18.04 14.99c-.32-.16-1.89-.93-2.18-1.04-.3-.1-.51-.16-.72.16-.21.32-.82 1.04-1 1.25-.19.21-.38.24-.7.08-.32-.16-1.35-.5-2.57-1.59-.95-.95-1.59-1.9-1.78-2.22-.19-.32-.02-.49.14-.65.15-.14.32-.32.48-.48.16-.16.21-.27.32-.48.11-.21.05-.4-.03-.56-.08-.16-.72-1.74-.99-2.38-.26-.64-.53-.55-.72-.56l-.61-.01c-.21 0-.55.08-.84.4-.29.32-1.12 1.1-1.12 2.68s1.15 3.1 1.31 3.32c.16.22 2.27 3.46 5.5 4.86.76.33 1.36.53 1.83.68.77.24 1.47.21 2.03.12.62-.09 1.89-.77 2.15-1.51.26-.74.26-1.38.18-1.51-.08-.13-.3-.21-.62-.37z" />
           </svg>
         </a>
         <a
           href="tel:+919247449522"
-          className="w-8 h-8 sm:w-9 sm:h-9 bg-slate-900 hover:bg-slate-800 text-white rounded-lg sm:rounded-xl flex items-center justify-center shadow-md hover:shadow-lg hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer"
+          className="w-8 h-8 sm:w-9 sm:h-9 bg-slate-900 hover:bg-slate-800 text-white rounded-lg sm:rounded-xl flex items-center justify-center shadow-md hover:shadow-lg transition-colors duration-200 cursor-pointer"
           title="Call Direct"
           aria-label="Call Direct"
         >
@@ -4207,7 +4514,7 @@ export const ProductsPage = ({ onNavigate, search }) => {
         </a>
         <button
           onClick={handleGetQuote}
-          className="w-8 h-8 sm:w-9 sm:h-9 bg-white hover:bg-amber-50 text-slate-800 hover:text-[#0F5C3B] border border-slate-200 hover:border-[#0F5C3B]/40 rounded-lg sm:rounded-xl flex items-center justify-center shadow-md hover:shadow-lg hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer"
+          className="w-8 h-8 sm:w-9 sm:h-9 bg-white hover:bg-amber-50 text-slate-800 hover:text-[#0F5C3B] border border-slate-200 hover:border-[#0F5C3B]/40 rounded-lg sm:rounded-xl flex items-center justify-center shadow-md hover:shadow-lg transition-colors duration-200 cursor-pointer"
           title="Inquiry Form"
           aria-label="Inquiry Form"
         >
