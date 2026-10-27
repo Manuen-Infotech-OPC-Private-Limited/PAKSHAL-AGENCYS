@@ -1,9 +1,9 @@
 import React from 'react';
-import laminates from '../assets/laminates/laminate-marble-slabs.jpg';
-import plywood from '../assets/plywood/plywood-image.png';
+import laminates from '../assets/laminates/centurylaminates1.jpg';
+import plywood from '../assets/plywood/century.png';
 import doorfittings from '../assets/hardware/mortise.png';
 import fancydoors from '../assets/doors/fancydoors.png';
-import hardwarefittings from '../assets/hardware/hardwarefittings.png';
+import hardwarefittings from '../assets/hardware/Astdax hardware and fittings.png';
 import kitchenaccessories from '../assets/kitchen/kitchenaccessories.png';
 import slidingchannels from '../assets/hardware/slidingchannels.png';
 import tandemboxes from '../assets/kitchen/tandembox.png';

@@ -64,6 +64,41 @@ import plywoodKingImg from '../assets/plywood/plywood-image.png';
 import veneer2Img from '../assets/plywood/veneer2.png';
 import veneer3Img from '../assets/plywood/veneer3.png';
 import veneer4Img from '../assets/plywood/veneer4.png';
+import royalClub3Img from '../assets/plywood/royalclub3.png';
+import royalClub4Img from '../assets/plywood/royalclub4.png';
+import royalClub5Img from '../assets/plywood/royalclub5.png';
+import marine1Img from '../assets/plywood/marine.png';
+import marine2Img from '../assets/plywood/marine2.png';
+import marine3Img from '../assets/plywood/marine3.png';
+import gurjanClub1Img from '../assets/plywood/gurjanclub1.png';
+import gurjanClub2Img from '../assets/plywood/gurjanclub2.png';
+import gurjanKing1Img from '../assets/plywood/gurjan king.png';
+import gurjanKing2Img from '../assets/plywood/gurjanking2.png';
+import gurjanGoldNewImg from '../assets/plywood/gurjangold.png';
+import gurjanGoldNew2Img from '../assets/plywood/gurjangold2.png';
+import centuryPlywood1Img from '../assets/plywood/century.png';
+import centuryPlywood2Img from '../assets/plywood/century2.png';
+import centuryPlywood3Img from '../assets/plywood/century3.png';
+import greenPlywood1Img from '../assets/plywood/green1.png';
+import greenPlywood2Img from '../assets/plywood/green2.png';
+import greenPlywood3Img from '../assets/plywood/green3.png';
+import merino1Img from '../assets/plywood/merino.png';
+import merino2Img from '../assets/plywood/Merino2.png';
+import merino3Img from '../assets/plywood/merino3.png';
+import vista1Img from '../assets/plywood/vista1.png';
+import vista2Img from '../assets/plywood/vista2.png';
+import vista3Img from '../assets/plywood/vista3.png';
+import chroma1Img from '../assets/plywood/chroma1.png';
+import chroma2Img from '../assets/plywood/chroma2.png';
+import chroma3Img from '../assets/plywood/chroma3.png';
+import centuryLaminates1Img from '../assets/laminates/centurylaminates1.jpg';
+import centuryLaminates2Img from '../assets/laminates/centurylaminates2.png';
+import centuryLaminates3Img from '../assets/laminates/centurylaminates3.png';
+import centuryLaminates4Img from '../assets/laminates/centurylaminates4.png';
+import chromaLaminates1Img from '../assets/laminates/chromalaminates1.png';
+import chromaLaminates2Img from '../assets/laminates/chromalaminates2.png';
+import astdaxHardware1Img from '../assets/hardware/Astdax hardware and fittings.png';
+import astdaxHardware2Img from '../assets/hardware/Astdax hardware and fittings2.png';
 import kitchensCardImg from '../assets/kitchen/kitchens-card.jpg';
 import wardrobesCardImg from '../assets/furniture/wardrobes-card.jpg';
 import officefurniture from '../assets/furniture/officefurniture.jpg';
@@ -171,6 +206,117 @@ const SPREADS = [
     ]
   },
   {
+    id: 121,
+    brandId: 'royal-club-gold',
+    category: 'Plywood',
+    pageNumLeft: 3,
+    pageNumRight: 4,
+    hideFromIndex: true,
+    parentBrandId: 'royal-club',
+    badge: 'Architectural Gold',
+    title: 'Architectural\nMastery.',
+    tagline: 'Selected Gurjan Veneer Core with High Tensile Strength',
+    image: royalClub3Img,
+    brandName: 'Royal Club',
+    desc: 'Royal Club Gold series incorporates multi-layer high-density hardwood plies bonded under extreme pressure for maximum structural stability.',
+    thicknesses: ['6mm', '9mm', '12mm', '16mm', '19mm', '25mm'],
+    defaultThickness: '19mm',
+    features: ['Tensile Tested', 'Phenolic Formaldehyde', 'Borer Shield'],
+    applications: ['Luxury Living Rooms', 'Heavy Partitions', 'Structural Frameworks'],
+    specs: {
+      'Core Timber': 'Selected Gurjan Hardwood',
+      'Bonding': 'PF Synthetic Resin',
+      'Moisture Content': '8% - 12%'
+    },
+    heroSub: 'ARCHITECTURAL GOLD. MAXIMUM TENSILE RIGIDITY.',
+    heroTitle: 'ROYAL CLUB',
+    heroDesc: 'Royal Club Gold series incorporates multi-layer high-density hardwood plies bonded under extreme pressure for maximum structural stability.',
+    heroTags: [
+      { text: 'Tensile Tested', icon: 'strength' },
+      { text: '100% Gurjan', icon: 'wood' },
+      { text: 'Lifetime Warranty', icon: 'shield' }
+    ],
+    overviewFeatures: [
+      { title: 'Selected Timber', desc: 'Premium grade imported hardwood', icon: 'wood' },
+      { title: 'PF Resin Bond', desc: 'Weather and moisture resistant', icon: 'droplet' },
+      { title: 'Borer Proof', desc: 'Vacuum-pressure preservative treated', icon: 'shield' }
+    ]
+  },
+  {
+    id: 122,
+    brandId: 'royal-club-marine',
+    category: 'Plywood',
+    pageNumLeft: 3,
+    pageNumRight: 4,
+    hideFromIndex: true,
+    parentBrandId: 'royal-club',
+    badge: 'Marine Grade Core',
+    title: 'Boiling Water Proof\nEndurance.',
+    tagline: 'Pure Phenolic Resin Bond for Severe Climate Areas',
+    image: royalClub4Img,
+    brandName: 'Royal Club',
+    desc: 'Tested to withstand continuous 72-hour boiling water immersion, this marine-grade Royal Club sheet ensures zero delamination.',
+    thicknesses: ['9mm', '12mm', '16mm', '19mm'],
+    defaultThickness: '19mm',
+    features: ['72-Hr Boil Proof', 'Zero Delamination', 'Anti-Fungal'],
+    applications: ['Modular Kitchen Sinks', 'Bathroom Vanities', 'Coastal Residences'],
+    specs: {
+      'Grade': 'BWP IS:710 Marine',
+      'Core': '100% Calibrated Hardwood',
+      'Adhesive': 'Phenolic Resin'
+    },
+    heroSub: '72-HOUR BOIL TESTED. ZERO DELAMINATION.',
+    heroTitle: 'ROYAL CLUB',
+    heroDesc: 'Tested to withstand continuous 72-hour boiling water immersion, this marine-grade Royal Club sheet ensures zero delamination in wet spaces.',
+    heroTags: [
+      { text: 'BWP IS:710 Marine', icon: 'droplet' },
+      { text: 'Zero Delamination', icon: 'shield' },
+      { text: 'Anti-Fungal', icon: 'sparkles' }
+    ],
+    overviewFeatures: [
+      { title: 'Boiling Water Proof', desc: 'Full 72-hour boil certified', icon: 'droplet' },
+      { title: 'Zero Delamination', desc: 'Seamlessly cross-laminated layers', icon: 'layers' },
+      { title: 'Extreme Climate', desc: 'Resists coastal humidity & heat', icon: 'shield' }
+    ]
+  },
+  {
+    id: 123,
+    brandId: 'royal-club-architect',
+    category: 'Plywood',
+    pageNumLeft: 3,
+    pageNumRight: 4,
+    hideFromIndex: true,
+    parentBrandId: 'royal-club',
+    badge: 'Precision Calibrated',
+    title: 'Calibrated\nSuperiority.',
+    tagline: 'Double-Sided Calibration with Mirror-Smooth Finish',
+    image: royalClub5Img,
+    brandName: 'Royal Club',
+    desc: 'Surface-sanded with micro-grit abrasives to achieve perfectly flat veneer and laminate substrates with no telegraphing.',
+    thicknesses: ['12mm', '16mm', '19mm', '25mm'],
+    defaultThickness: '19mm',
+    features: ['Micro-Sanded', 'Zero Telegraphing', 'High Screw Holding'],
+    applications: ['Designer Wardrobes', 'Wall Paneling', 'Custom Joinery'],
+    specs: {
+      'Tolerance': '± 0.15mm',
+      'Surface': 'Double-Sided 120 Grit Sanded',
+      'Core Plies': 'Selected Hardwood'
+    },
+    heroSub: 'PRECISION CALIBRATED. ZERO TELEGRAPHING.',
+    heroTitle: 'ROYAL CLUB',
+    heroDesc: 'Surface-sanded with micro-grit abrasives to achieve perfectly flat veneer and laminate substrates with zero core telegraphing.',
+    heroTags: [
+      { text: 'Zero Telegraphing', icon: 'sparkles' },
+      { text: 'Calibrated ±0.15mm', icon: 'calibrate' },
+      { text: 'Lifetime Warranty', icon: 'shield' }
+    ],
+    overviewFeatures: [
+      { title: 'Flat Substrate', desc: 'Ideal for laminates and veneers', icon: 'sparkles' },
+      { title: 'High Density', desc: 'Superior screw and fastener retention', icon: 'gear' },
+      { title: 'Dimensional Stability', desc: 'No warping or bowing across seasons', icon: 'shield' }
+    ]
+  },
+  {
     id: 2,
     brandId: 'marine-club',
     category: 'Plywood',
@@ -179,7 +325,7 @@ const SPREADS = [
     badge: 'Marine Grade',
     title: 'Waterproof\nShield.',
     tagline: 'Defending against moisture and water damage',
-    image: marineClubImg,
+    image: marine1Img,
     brandName: 'Marine Club',
     desc: 'Engineered specifically for high-moisture zones, Marine Club offers superior boiling-water-proof (BWP) protection.',
     thicknesses: ['6mm', '9mm', '12mm', '16mm', '19mm'],
@@ -208,6 +354,80 @@ const SPREADS = [
     ]
   },
   {
+    id: 21,
+    brandId: 'marine-club-bwp',
+    category: 'Plywood',
+    pageNumLeft: 5,
+    pageNumRight: 6,
+    hideFromIndex: true,
+    parentBrandId: 'marine-club',
+    badge: 'Heavy-Duty Marine',
+    title: 'Zero-Void\nCore.',
+    tagline: 'Pre-pressed high density hardwood veneers',
+    image: marine2Img,
+    brandName: 'Marine Club',
+    desc: 'Each veneer layer is individually treated with preservative chemicals and bonded with pure phenolic glue for zero core voiding.',
+    thicknesses: ['6mm', '9mm', '12mm', '16mm', '19mm'],
+    defaultThickness: '19mm',
+    features: ['Zero Core Voids', 'High Screw Holding', 'Boiling Water Proof'],
+    applications: ['Marine Craft & Docks', 'Commercial Wet Kitchens', 'Heavy Cabinetry'],
+    specs: {
+      'Bonding': 'Boiling Water Proof PF Resin',
+      'Wood Plies': '100% Calibrated Hardwood',
+      'Warranty': '25 Years Warranty'
+    },
+    heroSub: 'ZERO VOID CORE. EXTREME ENDURANCE.',
+    heroTitle: 'MARINE CLUB',
+    heroDesc: 'Each veneer layer is individually treated with preservative chemicals and bonded with pure phenolic glue for zero core voiding.',
+    heroTags: [
+      { text: 'Zero Core Voids', icon: 'layers' },
+      { text: 'High Screw Holding', icon: 'gear' },
+      { text: '25 Year Warranty', icon: 'shield' }
+    ],
+    overviewFeatures: [
+      { title: 'Zero Core Gaps', desc: 'Solid continuous plies without voids', icon: 'layers' },
+      { title: 'Extreme BWP', desc: 'Boiling-water proof resin bond', icon: 'droplet' },
+      { title: 'Heavy Load Rating', desc: 'Built for high stress applications', icon: 'strength' }
+    ]
+  },
+  {
+    id: 22,
+    brandId: 'marine-club-pro',
+    category: 'Plywood',
+    pageNumLeft: 5,
+    pageNumRight: 6,
+    hideFromIndex: true,
+    parentBrandId: 'marine-club',
+    badge: 'Marine Pro Grade',
+    title: 'Marine Grade\nShield.',
+    tagline: 'Superior boiling water proof and borer protection',
+    image: marine3Img,
+    brandName: 'Marine Club',
+    desc: 'Marine Club Pro delivers double-sided calibrated smoothness and certified borer and termite resistance for all marine and home projects.',
+    thicknesses: ['12mm', '16mm', '19mm'],
+    defaultThickness: '19mm',
+    features: ['Double-Sided Calibrated', 'Borer Proof', 'Termite Resistant'],
+    applications: ['Luxury Kitchens', 'Bath Vanity Shutters', 'Outdoor Patio Units'],
+    specs: {
+      'Density': 'Above 750 kg/m³',
+      'Glue Shear Strength': 'Exceeds IS:710 Standards',
+      'Warranty': '25 Years Warranty'
+    },
+    heroSub: 'DOUBLE CALIBRATED. CERTIFIED IS:710.',
+    heroTitle: 'MARINE CLUB',
+    heroDesc: 'Marine Club Pro delivers double-sided calibrated smoothness and certified borer and termite resistance for all marine and home projects.',
+    heroTags: [
+      { text: 'IS:710 Certified', icon: 'cert' },
+      { text: 'Density >750 kg/m³', icon: 'strength' },
+      { text: '25 Year Warranty', icon: 'shield' }
+    ],
+    overviewFeatures: [
+      { title: 'High Density', desc: 'Compact solid core exceeding 750 kg/m³', icon: 'strength' },
+      { title: 'Smooth Sanding', desc: 'Ready for laminate press without prep', icon: 'sparkles' },
+      { title: 'Anti-Termite', desc: 'Lifelong protection against pests', icon: 'shield' }
+    ]
+  },
+  {
     id: 3,
     brandId: 'century-laminates',
     category: 'Laminates',
@@ -215,8 +435,8 @@ const SPREADS = [
     pageNumRight: 8,
     badge: 'Architectural Collection',
     title: 'Timeless\nElegance.',
-    tagline: 'High-pressure decorative laminates for interior surfaces',
-    image: laminatesImg,
+    tagline: 'Century Decorative Laminates for Luxury Interiors',
+    image: centuryLaminates1Img,
     brandName: 'Century',
     desc: 'Century Laminates offer high-pressure scratch-resistant surfaces, rich textures, and superior color fastness.',
     thicknesses: ['0.8mm', '1.0mm', '1.2mm'],
@@ -242,6 +462,117 @@ const SPREADS = [
       { title: 'Anti-Bacterial', desc: 'Hygienic surface protection', icon: 'sparkles' },
       { title: 'Heat Proof', desc: 'Resists hot items up to 180°C', icon: 'droplet' },
       { title: 'Eco Safe Kraft', desc: 'Non-toxic raw materials', icon: 'leaf' }
+    ]
+  },
+  {
+    id: 31,
+    brandId: 'century-laminates-textures',
+    category: 'Laminates',
+    pageNumLeft: 7,
+    pageNumRight: 8,
+    hideFromIndex: true,
+    parentBrandId: 'century-laminates',
+    badge: 'Embossed Series',
+    title: 'Textured\nRealism.',
+    tagline: 'Deep tactile woodgrains and natural stone finishes',
+    image: centuryLaminates2Img,
+    brandName: 'Century',
+    desc: 'Deep textured embossing mirrors real wood grains and split slate stones, creating sensational tactile visual interest.',
+    thicknesses: ['1.0mm', '1.2mm'],
+    defaultThickness: '1.0mm',
+    features: ['Synchronized Grain', 'Tactile Texture', 'Wear Resistant'],
+    applications: ['Feature Walls', 'Living Room Credenzas', 'Bar Counters'],
+    specs: {
+      'Texture': 'Synchronized Deep Grain',
+      'Wear Layer': 'High Scratch Melamine',
+      'Standard Size': '8ft x 4ft'
+    },
+    heroSub: 'TEXTURED REALISM. SYNCHRONIZED DEEP GRAIN.',
+    heroTitle: 'CENTURY',
+    heroDesc: 'Deep textured embossing mirrors real wood grains and split slate stones, creating sensational tactile visual interest.',
+    heroTags: [
+      { text: 'Synchronized Grain', icon: 'wood' },
+      { text: 'Tactile Texture', icon: 'sparkles' },
+      { text: 'Wear Resistant', icon: 'shield' }
+    ],
+    overviewFeatures: [
+      { title: 'Tactile Grain', desc: 'Real texture matched to wood patterns', icon: 'wood' },
+      { title: 'Scratch Resistant', desc: 'Tough melamine top protection', icon: 'shield' },
+      { title: 'Anti-Bacterial', desc: 'Silver nano hygiene shield', icon: 'sparkles' }
+    ]
+  },
+  {
+    id: 32,
+    brandId: 'century-laminates-architectural',
+    category: 'Laminates',
+    pageNumLeft: 7,
+    pageNumRight: 8,
+    hideFromIndex: true,
+    parentBrandId: 'century-laminates',
+    badge: 'Designer Palette',
+    title: 'Architectural\nVeneer Grain.',
+    tagline: 'Premium exotic wood aesthetics with laminate durability',
+    image: centuryLaminates3Img,
+    brandName: 'Century',
+    desc: 'Architectural woodgrain decors replicate rare veneers like smoked oak, Santos rosewood, and American walnut with zero maintenance.',
+    thicknesses: ['1.0mm', '1.2mm'],
+    defaultThickness: '1.0mm',
+    features: ['Veneer Look-Alike', 'Zero Maintenance', 'Stain Resistant'],
+    applications: ['Executive Desks', 'Conference Tables', 'Bespoke Wardrobes'],
+    specs: {
+      'Decor': 'Smoked Architectural Oak',
+      'Resistance': '180°C Heat Tested',
+      'Core': 'Phenolic Kraft'
+    },
+    heroSub: 'EXOTIC VENEER AESTHETICS. ZERO MAINTENANCE.',
+    heroTitle: 'CENTURY',
+    heroDesc: 'Architectural woodgrain decors replicate rare veneers like smoked oak, Santos rosewood, and American walnut with zero maintenance.',
+    heroTags: [
+      { text: 'Veneer Look-Alike', icon: 'wood' },
+      { text: 'Zero Maintenance', icon: 'sparkles' },
+      { text: 'Stain Resistant', icon: 'shield' }
+    ],
+    overviewFeatures: [
+      { title: 'Exotic Grain', desc: 'Flitch-matched timber decor look', icon: 'wood' },
+      { title: 'Zero Maintenance', desc: 'No polishing or lacquering required', icon: 'sparkles' },
+      { title: 'Stain Resistance', desc: 'Impervious to household chemicals', icon: 'shield' }
+    ]
+  },
+  {
+    id: 33,
+    brandId: 'century-laminates-stone',
+    category: 'Laminates',
+    pageNumLeft: 7,
+    pageNumRight: 8,
+    hideFromIndex: true,
+    parentBrandId: 'century-laminates',
+    badge: 'Anti-Fingerprint Matte',
+    title: 'Super Matte\nVelvet.',
+    tagline: 'Anti-fingerprint thermal healing surface technology',
+    image: centuryLaminates4Img,
+    brandName: 'Century',
+    desc: 'Engineered with ultra-low gloss velvet touch, Century Super Matte resists smudges and provides an ultra-luxurious feel for modern kitchens.',
+    thicknesses: ['1.0mm', '1.2mm'],
+    defaultThickness: '1.0mm',
+    features: ['Anti-Fingerprint', 'Velvet Touch', 'Low Light Reflection'],
+    applications: ['Kitchen Shutter Fronts', 'Wardrobes', 'Luxury Partitions'],
+    specs: {
+      'Finish': 'Ultra Matte Velvet',
+      'Surface Reflection': 'Below 5 Gloss Units',
+      'Cleaning': 'Easy Microfiber Wipe'
+    },
+    heroSub: 'SUPER MATTE VELVET. ANTI-FINGERPRINT TOUCH.',
+    heroTitle: 'CENTURY',
+    heroDesc: 'Engineered with ultra-low gloss velvet touch, Century Super Matte resists smudges and provides an ultra-luxurious feel for modern kitchens.',
+    heroTags: [
+      { text: 'Anti-Fingerprint', icon: 'sparkles' },
+      { text: 'Velvet Touch', icon: 'sparkles' },
+      { text: 'Zero Reflection', icon: 'shield' }
+    ],
+    overviewFeatures: [
+      { title: 'Anti-Fingerprint', desc: 'Stays pristine under daily touch', icon: 'sparkles' },
+      { title: 'Silky Texture', desc: 'Soft-touch velvet sensory feel', icon: 'sparkles' },
+      { title: 'Thermal Healing', desc: 'Micro-scratches buff out easily', icon: 'shield' }
     ]
   },
   {
@@ -290,7 +621,7 @@ const SPREADS = [
     badge: 'Architectural Grade',
     title: 'Engineered\nEndurance.',
     tagline: 'Century Plywood - BWP Marine Grade Core',
-    image: royalClubImg,
+    image: centuryPlywood1Img,
     brandName: 'Century',
     desc: 'Century architectural plywood features calibrated core layers bonded with phenolic resin, engineered for extreme moisture resistance and load strength.',
     thicknesses: ['6mm', '9mm', '12mm', '16mm', '19mm', '25mm'],
@@ -317,6 +648,80 @@ const SPREADS = [
     ]
   },
   {
+    id: 3011,
+    brandId: 'century-plywood-club',
+    category: 'Plywood',
+    pageNumLeft: 7,
+    pageNumRight: 8,
+    hideFromIndex: true,
+    parentBrandId: 'century-plywood',
+    badge: 'Century Club Prime',
+    title: 'Century Club\nPrime.',
+    tagline: 'Calibrated BWP Marine Grade Core with Glue Line Protection',
+    image: centuryPlywood2Img,
+    brandName: 'Century',
+    desc: 'Century Club Prime is manufactured with patented Glue Line Protection (GLP) technology, making it 100% immune to borers and termites.',
+    thicknesses: ['6mm', '9mm', '12mm', '16mm', '19mm', '25mm'],
+    defaultThickness: '19mm',
+    features: ['GLP Technology', '25 Year Warranty', 'BWP Marine'],
+    applications: ['Modular Kitchens', 'Heavy Wardrobes', 'Partition Paneling'],
+    specs: {
+      'Adhesive': 'Phenolic PF Formaldehyde',
+      'Core Species': 'Selected Calibrated Hardwood',
+      'Warranty': '25 Years Warranty'
+    },
+    heroSub: 'PATENTED GLP TECHNOLOGY. 100% BORER PROOF.',
+    heroTitle: 'CENTURY PLYWOOD',
+    heroDesc: 'Century Club Prime is manufactured with patented Glue Line Protection (GLP) technology, making it 100% immune to borers and termites.',
+    heroTags: [
+      { text: 'GLP Technology', icon: 'shield' },
+      { text: '25 Year Warranty', icon: 'cert' },
+      { text: 'BWP Marine', icon: 'droplet' }
+    ],
+    overviewFeatures: [
+      { title: 'Glue Line Protection', desc: 'Organic preservative in adhesive line', icon: 'shield' },
+      { title: 'BWP Marine', desc: 'Boiling-water resistant marine bond', icon: 'droplet' },
+      { title: 'Calibrated Face', desc: 'Uniform thickness across all corners', icon: 'calibrate' }
+    ]
+  },
+  {
+    id: 3012,
+    brandId: 'century-plywood-architect',
+    category: 'Plywood',
+    pageNumLeft: 7,
+    pageNumRight: 8,
+    hideFromIndex: true,
+    parentBrandId: 'century-plywood',
+    badge: 'Architect Selection',
+    title: 'Century Architectural\nMastery.',
+    tagline: 'Calibrated hardwood core for zero core gaps and flat surface',
+    image: centuryPlywood3Img,
+    brandName: 'Century',
+    desc: 'Engineered for premium interior fit-outs requiring zero core overlapping and exceptional screw-holding capacity.',
+    thicknesses: ['12mm', '16mm', '19mm', '25mm'],
+    defaultThickness: '19mm',
+    features: ['Zero Overlapping', 'High Density Core', 'Phenolic BWP'],
+    applications: ['Luxury Furniture', 'Beds & Sofas', 'Designer Partitions'],
+    specs: {
+      'Bonding': 'PF Phenolic Resin',
+      'Core': '100% Calibrated Plies',
+      'Preservative': 'Pressure Impregnated'
+    },
+    heroSub: 'CALIBRATED HARDWOOD CORE. ZERO CORE GAPS.',
+    heroTitle: 'CENTURY PLYWOOD',
+    heroDesc: 'Engineered for premium interior fit-outs requiring zero core overlapping and exceptional screw-holding capacity.',
+    heroTags: [
+      { text: 'Zero Core Gaps', icon: 'wood' },
+      { text: 'High Screw Grip', icon: 'gear' },
+      { text: 'Lifetime Protection', icon: 'shield' }
+    ],
+    overviewFeatures: [
+      { title: 'High Density Hardwood', desc: 'Solid core with superior screw holding', icon: 'gear' },
+      { title: 'Pressure Impregnated', desc: 'Chemical preservative vacuum-infused', icon: 'shield' },
+      { title: 'Flawless Base', desc: 'Perfect foundation for veneers and laminates', icon: 'sparkles' }
+    ]
+  },
+  {
     id: 302,
     brandId: 'green-plywood',
     category: 'Plywood',
@@ -325,7 +730,7 @@ const SPREADS = [
     badge: 'Sustainable Strength',
     title: 'Eco-Certified\nIntegrity.',
     tagline: 'Greenply Marine Grade BWP Plywood',
-    image: plywoodKingImg,
+    image: greenPlywood1Img,
     brandName: 'Green',
     desc: 'Green premium plywood is crafted from ethically sourced hardwood veneers and bonded with high-grade synthetic resin for maximum durability and strength.',
     thicknesses: ['6mm', '9mm', '12mm', '16mm', '19mm'],
@@ -349,6 +754,80 @@ const SPREADS = [
       { title: 'BWP Bonded', desc: 'Protected against boiling water and humidity', icon: 'droplet' },
       { title: 'Selected Hardwood', desc: 'Superior core density and screw-holding', icon: 'wood' },
       { title: 'Termite Protection', desc: 'Specially chemically treated', icon: 'shield' }
+    ]
+  },
+  {
+    id: 3021,
+    brandId: 'green-plywood-gold',
+    category: 'Plywood',
+    pageNumLeft: 11,
+    pageNumRight: 12,
+    hideFromIndex: true,
+    parentBrandId: 'green-plywood',
+    badge: 'Greenply Club',
+    title: 'Greenply Calibrated\nCore.',
+    tagline: 'Zero Core Gaps with High-Density Hardwood Plies',
+    image: greenPlywood2Img,
+    brandName: 'Green',
+    desc: 'Greenply Club calibrated plywood features quad-press technology ensuring flat surfaces, minimal thickness variation, and termite-proof durability.',
+    thicknesses: ['6mm', '9mm', '12mm', '16mm', '19mm'],
+    defaultThickness: '19mm',
+    features: ['Quad-Press Tech', 'Emission Compliant', 'Anti-Termite'],
+    applications: ['Modular Kitchens', 'Wardrobes', 'Bespoke Joinery'],
+    specs: {
+      'Bonding': 'Unextended Phenolic PF Resin',
+      'Tolerance': '± 0.2mm',
+      'Warranty': '20 Years Warranty'
+    },
+    heroSub: 'QUAD-PRESS CALIBRATED. ZERO CORE VOIDS.',
+    heroTitle: 'GREEN PLYWOOD',
+    heroDesc: 'Greenply Club calibrated plywood features quad-press technology ensuring flat surfaces, minimal thickness variation, and termite-proof durability.',
+    heroTags: [
+      { text: 'Quad-Press Tech', icon: 'calibrate' },
+      { text: 'E0 Emission Safe', icon: 'leaf' },
+      { text: '20 Year Warranty', icon: 'shield' }
+    ],
+    overviewFeatures: [
+      { title: 'Quad-Press Calibration', desc: 'Uniform thickness and mirror flat surfaces', icon: 'calibrate' },
+      { title: 'E0 Low Emission', desc: 'Certified safe for healthy indoor air', icon: 'leaf' },
+      { title: 'Phenolic PF Resin', desc: 'Boiling-water proof bond', icon: 'droplet' }
+    ]
+  },
+  {
+    id: 3022,
+    brandId: 'green-plywood-marine',
+    category: 'Plywood',
+    pageNumLeft: 11,
+    pageNumRight: 12,
+    hideFromIndex: true,
+    parentBrandId: 'green-plywood',
+    badge: 'Green Marine BWP',
+    title: 'Greenply Eco-Safe\nBWP.',
+    tagline: 'Sustainable timber matrix with 20-year assurance',
+    image: greenPlywood3Img,
+    brandName: 'Green',
+    desc: 'Formulated with sustainable timber matrix and vacuum-pressure preservative infusion for extreme weather conditions.',
+    thicknesses: ['9mm', '12mm', '16mm', '19mm', '25mm'],
+    defaultThickness: '19mm',
+    features: ['Eco-Certified', 'Vacuum Infused', 'Weatherproof'],
+    applications: ['Bathroom Cabinets', 'Heavy Desks', 'Partition Systems'],
+    specs: {
+      'Grade': 'BWP IS:710 Marine',
+      'Core Density': 'High Density Hardwood',
+      'Warranty': '20 Years Warranty'
+    },
+    heroSub: 'SUSTAINABLE TIMBER MATRIX. MARINE IS:710.',
+    heroTitle: 'GREEN PLYWOOD',
+    heroDesc: 'Formulated with sustainable timber matrix and vacuum-pressure preservative infusion for extreme weather conditions.',
+    heroTags: [
+      { text: 'BWP IS:710', icon: 'droplet' },
+      { text: 'Vacuum Infused', icon: 'shield' },
+      { text: '20 Year Warranty', icon: 'cert' }
+    ],
+    overviewFeatures: [
+      { title: 'Sustainable Sourcing', desc: 'FSC-compliant plantation timber', icon: 'leaf' },
+      { title: 'Moisture Immune', desc: 'Withstands water saturation without swelling', icon: 'droplet' },
+      { title: 'Screw Retention', desc: 'Solid grip across edges and face', icon: 'gear' }
     ]
   },
   {
@@ -431,34 +910,108 @@ const SPREADS = [
     pageNumLeft: 13,
     pageNumRight: 14,
     badge: 'Contemporary Collection',
-    title: 'Warm\nWalnut.',
-    tagline: 'Sophisticated walnut wood grains for modern interiors',
-    image: vistaLaminateImg,
+    title: 'Natural Stone &\nMarble.',
+    tagline: 'Sophisticated architectural laminate textures for luxury interiors',
+    image: vista1Img,
     brandName: 'Vista',
-    desc: 'Vista Laminates highlight deep walnut tones and golden grain accents, creating a warm and luxurious atmosphere.',
+    desc: 'Vista Laminates highlight deep walnut tones, realistic marble veining, and contemporary tactile textures, creating an inspiring ambience.',
     thicknesses: ['0.8mm', '1.0mm', '1.2mm'],
     defaultThickness: '1.0mm',
-    features: ['Warm Walnut Grain', 'Anti-Fingerprint', 'Impact Resistant'],
+    features: ['Natural Stone Grain', 'Anti-Fingerprint', 'Impact Resistant'],
     applications: ['Executive Offices', 'Living Room Consoles', 'Feature Walls'],
     specs: {
       'Material': 'Phenolic Resin Kraft',
-      'Surface Finish': 'Walnut Woodgrain',
+      'Surface Finish': 'Stone & Walnut Texture',
       'Heat Resistance': 'Up to 180°C'
     },
-    heroSub: 'CONTEMPORARY STYLE. WARM WALNUT.',
+    heroSub: 'CONTEMPORARY STYLE. NATURAL STONE & MARBLE.',
     heroTitle: 'VISTA',
-    heroDesc: 'Vista Laminates highlight deep walnut tones and golden grain accents, creating a warm and luxurious atmosphere.',
+    heroDesc: 'Vista Laminates highlight deep walnut tones, realistic marble veining, and contemporary tactile textures for luxury spaces.',
     heroTags: [
-      { text: 'Warm Walnut', icon: 'wood' },
+      { text: 'Natural Stone', icon: 'sparkles' },
       { text: 'Anti-Fingerprint', icon: 'sparkles' },
       { text: 'Impact Resistant', icon: 'shield' }
     ],
     overviewFeatures: [
-      { title: 'Walnut Texture', desc: 'Deep warm woodgrain details', icon: 'wood' },
+      { title: 'Stone & Wood Textures', desc: 'Deep warm architectural details', icon: 'wood' },
       { title: 'Anti-Fingerprint', desc: 'Smudge-free ultra smooth feel', icon: 'sparkles' },
       { title: 'Impact Resistant', desc: 'High resistance to physical knocks', icon: 'shield' },
       { title: 'Thermal Stability', desc: 'Resists temperature shifts', icon: 'droplet' },
       { title: 'Easy Maintenance', desc: 'Cleans effortlessly with damp cloth', icon: 'sparkles' }
+    ]
+  },
+  {
+    id: 251,
+    brandId: 'vista-laminates-walnut',
+    category: 'Laminates',
+    pageNumLeft: 13,
+    pageNumRight: 14,
+    hideFromIndex: true,
+    parentBrandId: 'vista-laminates',
+    badge: 'Warm Walnut',
+    title: 'Warm Walnut\nTextures.',
+    tagline: 'Deep walnut tones with golden woodgrain accents',
+    image: vista2Img,
+    brandName: 'Vista',
+    desc: 'Rich walnut woodgrain decor with synchronised golden pores brings organic warmth to executive furniture and living room joinery.',
+    thicknesses: ['1.0mm', '1.2mm'],
+    defaultThickness: '1.0mm',
+    features: ['Golden Grain Accents', 'Suede Texture', 'Color Fast'],
+    applications: ['Executive Desks', 'TV Consoles', 'Bed Headboards'],
+    specs: {
+      'Finish': 'Suede Walnut',
+      'Moisture Resistance': 'High Resistant',
+      'Standard Size': '8ft x 4ft'
+    },
+    heroSub: 'WARM WALNUT TONES. GOLDEN GRAIN ACCENTS.',
+    heroTitle: 'VISTA',
+    heroDesc: 'Rich walnut woodgrain decor with synchronised golden pores brings organic warmth to executive furniture and living room joinery.',
+    heroTags: [
+      { text: 'Golden Woodgrain', icon: 'wood' },
+      { text: 'Suede Finish', icon: 'sparkles' },
+      { text: 'Scratch Resistant', icon: 'shield' }
+    ],
+    overviewFeatures: [
+      { title: 'Warm Walnut Grain', desc: 'Authentic golden-tinged pores', icon: 'wood' },
+      { title: 'Scratch Resistant', desc: 'Protected by high-wear melamine resin', icon: 'shield' },
+      { title: 'UV Protection', desc: 'Retains rich color without yellowing', icon: 'sparkles' }
+    ]
+  },
+  {
+    id: 252,
+    brandId: 'vista-laminates-stone',
+    category: 'Laminates',
+    pageNumLeft: 13,
+    pageNumRight: 14,
+    hideFromIndex: true,
+    parentBrandId: 'vista-laminates',
+    badge: 'Architectural Stone',
+    title: 'Contemporary\nTactile Stone.',
+    tagline: 'Realistic split slate and marble textures for feature walls',
+    image: vista3Img,
+    brandName: 'Vista',
+    desc: 'Sophisticated stone finishes offering the cool grandeur of Italian marble combined with light weight and seamless edge bonding.',
+    thicknesses: ['1.0mm', '1.2mm'],
+    defaultThickness: '1.0mm',
+    features: ['Italian Marble Decor', 'Tactile Touch', 'Stain Resistant'],
+    applications: ['Kitchen Backsplashes', 'Reception Desks', 'Wall Cladding'],
+    specs: {
+      'Texture': 'Split Slate / Calacatta',
+      'Heat Resistance': 'Up to 180°C',
+      'Maintenance': 'Wipe Clean'
+    },
+    heroSub: 'COOL STONE TEXTURE. ITALIAN MARBLE AESTHETICS.',
+    heroTitle: 'VISTA',
+    heroDesc: 'Sophisticated stone finishes offering the cool grandeur of Italian marble combined with light weight and seamless edge bonding.',
+    heroTags: [
+      { text: 'Marble Aesthetics', icon: 'sparkles' },
+      { text: 'Heat Proof 180°C', icon: 'droplet' },
+      { text: 'Stain Resistant', icon: 'shield' }
+    ],
+    overviewFeatures: [
+      { title: 'Marble Elegance', desc: 'Seamless veining without heavy stone slabs', icon: 'sparkles' },
+      { title: 'Heat Resistant', desc: 'Resists boiling water and hot cookware', icon: 'droplet' },
+      { title: 'Easy Maintenance', desc: 'Simple wipe with microfiber cloth', icon: 'leaf' }
     ]
   },
   {
@@ -467,35 +1020,294 @@ const SPREADS = [
     category: 'Laminates',
     pageNumLeft: 15,
     pageNumRight: 16,
-    badge: 'Metallic Series',
-    title: 'Brushed\nCopper.',
-    tagline: 'Ultra-modern metallic chrome laminates for futuristic design',
-    image: cromaLaminateImg,
+    badge: 'Modern Surfaces',
+    title: 'Decorative Surfaces\n& Colors.',
+    tagline: 'Ultra-modern metallic and decorative laminates',
+    image: chromaLaminates1Img,
     brandName: 'Croma',
-    desc: 'Croma Metallic Laminates deliver brushed copper and chrome textures, adding a high-tech industrial aesthetic to spaces.',
+    desc: 'Croma Decorative Laminates deliver brushed copper, metallic chrome, and synchronized woodgrain decors for visionary spaces.',
     thicknesses: ['0.8mm', '1.0mm'],
     defaultThickness: '1.0mm',
-    features: ['Brushed Copper Finish', 'Metallic Texture', 'Scratch Resistant'],
+    features: ['Brushed Metal Finish', 'Vibrant Solids', 'Scratch Resistant'],
     applications: ['Commercial Bar Countertops', 'Reception Desks', 'Accent Panels'],
     specs: {
       'Material': 'Metallic Foil & Phenolic Kraft',
-      'Surface Finish': 'Brushed Copper Chrome',
+      'Surface Finish': 'Brushed Copper Chrome & High Gloss',
       'Heat Resistance': 'Up to 180°C'
     },
-    heroSub: 'METALLIC SERIES. BRUSHED COPPER.',
+    heroSub: 'MODERN SURFACES. VIBRANT COLORS & METALLICS.',
     heroTitle: 'CROMA',
-    heroDesc: 'Croma Metallic Laminates deliver brushed copper and chrome textures, adding a high-tech industrial aesthetic to spaces.',
+    heroDesc: 'Croma Decorative Laminates deliver brushed copper, metallic chrome, and synchronized woodgrain decors for visionary interior designs.',
     heroTags: [
-      { text: 'Brushed Copper', icon: 'sparkles' },
-      { text: 'Metallic Texture', icon: 'gear' },
+      { text: 'Brushed Metallic', icon: 'sparkles' },
+      { text: 'Vibrant Solids', icon: 'gear' },
       { text: 'Scratch Resistant', icon: 'shield' }
     ],
     overviewFeatures: [
-      { title: 'Brushed Metallic', desc: 'Real copper foil surface layer', icon: 'sparkles' },
-      { title: 'Industrial Design', desc: 'Futuristic metallic sheen', icon: 'gear' },
+      { title: 'Brushed Metallic', desc: 'Real copper and chrome foil textures', icon: 'sparkles' },
+      { title: 'Industrial Design', desc: 'Futuristic high-tech sheen', icon: 'gear' },
       { title: 'Scratch Proof', desc: 'Coated for heavy daily commercial use', icon: 'shield' },
       { title: 'Fire Retardant', desc: 'Enhanced fire resistance properties', icon: 'shield' },
       { title: 'Anti-Corrosion', desc: 'Protective top clear sealant layer', icon: 'droplet' }
+    ]
+  },
+  {
+    id: 261,
+    brandId: 'croma-laminates-gloss',
+    category: 'Laminates',
+    pageNumLeft: 15,
+    pageNumRight: 16,
+    hideFromIndex: true,
+    parentBrandId: 'croma-laminates',
+    badge: 'High Gloss Series',
+    title: 'Vibrant Solids &\nHigh Gloss.',
+    tagline: 'Expansive color palette and mirror-like reflection',
+    image: chromaLaminates2Img,
+    brandName: 'Croma',
+    desc: 'Mirror-finish gloss laminate sheets in striking modern hues, ideal for wardrobe shutters and designer kitchen cabinets.',
+    thicknesses: ['1.0mm'],
+    defaultThickness: '1.0mm',
+    features: ['Mirror Reflection', 'Anti-Yellowing', 'High Wear'],
+    applications: ['Wardrobes', 'Kitchen Shutters', 'Retail Displays'],
+    specs: {
+      'Finish': 'Mirror Gloss',
+      'Reflectivity': '>90 Gloss Units',
+      'Cleaning': 'Anti-Static Dust Repellent'
+    },
+    heroSub: 'MIRROR REFLECTION. VIBRANT MODERN HUES.',
+    heroTitle: 'CROMA',
+    heroDesc: 'Mirror-finish gloss laminate sheets in striking modern hues, ideal for wardrobe shutters and designer kitchen cabinets.',
+    heroTags: [
+      { text: 'Mirror Gloss', icon: 'sparkles' },
+      { text: 'Dust Repellent', icon: 'shield' },
+      { text: 'UV Fast', icon: 'sparkles' }
+    ],
+    overviewFeatures: [
+      { title: 'Mirror Gloss', desc: 'Glass-like depth and reflection', icon: 'sparkles' },
+      { title: 'Color Fastness', desc: 'Zero fading under bright showroom lights', icon: 'shield' },
+      { title: 'Scratch Barrier', desc: 'Resistant to daily scuffs and wipes', icon: 'gear' }
+    ]
+  },
+  {
+    id: 262,
+    brandId: 'croma-laminates-metallic',
+    category: 'Laminates',
+    pageNumLeft: 15,
+    pageNumRight: 16,
+    hideFromIndex: true,
+    parentBrandId: 'croma-laminates',
+    badge: 'Brushed Copper',
+    title: 'Brushed Copper\nMetallic.',
+    tagline: 'Real metallic foil top surface for futuristic accents',
+    image: chroma1Img,
+    brandName: 'Croma',
+    desc: 'Real brushed copper metallic foil bonded with phenolic kraft backing, offering an authentic industrial feel.',
+    thicknesses: ['1.0mm'],
+    defaultThickness: '1.0mm',
+    features: ['Real Copper Foil', 'Anti-Oxidant Coat', 'Scratch Resistant'],
+    applications: ['Bar Counters', 'Elevator Lobbies', 'Feature Pillars'],
+    specs: {
+      'Material': 'Genuine Metallic Copper Foil',
+      'Top Coat': 'Polyurethane Protective Sealant',
+      'Standard Size': '8ft x 4ft'
+    },
+    heroSub: 'GENUINE COPPER FOIL. INDUSTRIAL SHEEN.',
+    heroTitle: 'CROMA',
+    heroDesc: 'Real brushed copper metallic foil bonded with phenolic kraft backing, offering an authentic industrial feel.',
+    heroTags: [
+      { text: 'Copper Foil', icon: 'sparkles' },
+      { text: 'Anti-Oxidant', icon: 'shield' },
+      { text: 'Futuristic', icon: 'gear' }
+    ],
+    overviewFeatures: [
+      { title: 'Authentic Metal', desc: 'Tactile brushed copper foil feel', icon: 'sparkles' },
+      { title: 'Sealant Protected', desc: 'No tarnishing or oxidation', icon: 'shield' },
+      { title: 'Accent Ready', desc: 'Perfect contrast for dark wood and stone', icon: 'gear' }
+    ]
+  },
+  {
+    id: 263,
+    brandId: 'croma-laminates-chrome',
+    category: 'Laminates',
+    pageNumLeft: 15,
+    pageNumRight: 16,
+    hideFromIndex: true,
+    parentBrandId: 'croma-laminates',
+    badge: 'Industrial Chrome',
+    title: 'Industrial Chrome\nSheen.',
+    tagline: 'High-tech brushed chrome finish for bars and counters',
+    image: chroma2Img,
+    brandName: 'Croma',
+    desc: 'Sleek brushed chrome foil laminate providing a clean, tech-forward architectural look for modern retail and hospitality projects.',
+    thicknesses: ['1.0mm'],
+    defaultThickness: '1.0mm',
+    features: ['Brushed Chrome', 'Non-Corrosive', 'High Thermal Stability'],
+    applications: ['Showrooms', 'Reception Counters', 'Commercial Partitions'],
+    specs: {
+      'Foil': 'Brushed Aluminum / Chrome',
+      'Adhesive': 'Phenolic Thermosetting Resin',
+      'Resistance': '180°C Heat Tested'
+    },
+    heroSub: 'BRUSHED CHROME. HI-TECH ARCHITECTURAL FINISH.',
+    heroTitle: 'CROMA',
+    heroDesc: 'Sleek brushed chrome foil laminate providing a clean, tech-forward architectural look for modern retail and hospitality projects.',
+    heroTags: [
+      { text: 'Brushed Chrome', icon: 'gear' },
+      { text: 'Non-Corrosive', icon: 'shield' },
+      { text: 'High Tech', icon: 'sparkles' }
+    ],
+    overviewFeatures: [
+      { title: 'Brushed Aluminum', desc: 'Clean metallic reflections', icon: 'gear' },
+      { title: 'Heavy Duty', desc: 'Built for high traffic public spaces', icon: 'shield' },
+      { title: 'Precision Cut', desc: 'Crisp edges without metal burrs', icon: 'calibrate' }
+    ]
+  },
+  {
+    id: 264,
+    brandId: 'croma-laminates-decor',
+    category: 'Laminates',
+    pageNumLeft: 15,
+    pageNumRight: 16,
+    hideFromIndex: true,
+    parentBrandId: 'croma-laminates',
+    badge: 'Synchronized Decors',
+    title: 'Contemporary\nWood Decors.',
+    tagline: 'Fade-resistant surface with modern synchronized grain',
+    image: chroma3Img,
+    brandName: 'Croma',
+    desc: 'Warm synchronized wood decors engineered to withstand severe humidity and everyday wear with timeless style.',
+    thicknesses: ['1.0mm'],
+    defaultThickness: '1.0mm',
+    features: ['Synchronized Grain', 'Fade Resistant', 'Stain Resistant'],
+    applications: ['Wardrobes', 'Kitchen Cabinets', 'Study Desks'],
+    specs: {
+      'Texture': 'Natural Matt Woodgrain',
+      'Heat Resistance': 'Up to 180°C',
+      'Cleaning': 'Damp Cloth'
+    },
+    heroSub: 'SYNCHRONIZED WOOD DECOR. FADE RESISTANT.',
+    heroTitle: 'CROMA',
+    heroDesc: 'Warm synchronized wood decors engineered to withstand severe humidity and everyday wear with timeless style.',
+    heroTags: [
+      { text: 'Woodgrain Series', icon: 'wood' },
+      { text: 'Fade Resistant', icon: 'sparkles' },
+      { text: 'Stain Proof', icon: 'shield' }
+    ],
+    overviewFeatures: [
+      { title: 'Natural Woodgrain', desc: 'Tactile realistic timber texture', icon: 'wood' },
+      { title: 'Fade Resistant', desc: 'UV stabilized pigments retain beauty', icon: 'sparkles' },
+      { title: 'Durable Kraft', desc: 'Phenolic resin core ensures zero warping', icon: 'shield' }
+    ]
+  },
+  {
+    id: 401,
+    brandId: 'merino-laminates',
+    category: 'Laminates',
+    pageNumLeft: 17,
+    pageNumRight: 18,
+    badge: 'Surface Innovations',
+    title: 'Design Mastery &\nHigh Pressure.',
+    tagline: 'Merino Decorative Laminates for Modern Interiors',
+    image: merino1Img,
+    brandName: 'Merino',
+    desc: 'Merino high-pressure decorative laminates combine trendsetting surface aesthetics with exceptional scratch and stain durability.',
+    thicknesses: ['0.8mm', '1.0mm', '1.2mm'],
+    defaultThickness: '1.0mm',
+    features: ['Anti-Bacterial', 'Super Matt & High Gloss', 'Stain Resistant'],
+    applications: ['Living Spaces', 'Kitchen Counters', 'Bespoke Wardrobes'],
+    specs: {
+      'Material': 'Phenolic Resin Kraft',
+      'Surface Finish': 'Matt / Suede / Gloss',
+      'Heat Resistance': 'Up to 180°C'
+    },
+    heroSub: 'MERINO LAMINATES. SURFACE MASTERY.',
+    heroTitle: 'MERINO',
+    heroDesc: 'Merino high-pressure decorative laminates combine trendsetting surface aesthetics with exceptional scratch and stain durability.',
+    heroTags: [
+      { text: 'Anti-Bacterial', icon: 'sparkles' },
+      { text: 'Super Matt & Gloss', icon: 'sparkles' },
+      { text: 'Stain Resistant', icon: 'shield' }
+    ],
+    overviewFeatures: [
+      { title: 'Anti-Bacterial Protection', desc: 'Certified silver nano antibacterial shield', icon: 'sparkles' },
+      { title: 'Scratch Resistant', desc: 'Heavy-duty melamine top layer', icon: 'shield' },
+      { title: 'Moisture Immune', desc: 'Withstands ambient kitchen steam and spills', icon: 'droplet' },
+      { title: 'UV Color Stability', desc: 'Maintains vibrant depth over decades', icon: 'sparkles' },
+      { title: 'Eco Friendly Kraft', desc: 'Sustainably sourced kraft paper matrix', icon: 'leaf' }
+    ]
+  },
+  {
+    id: 402,
+    brandId: 'merino-laminates-textures',
+    category: 'Laminates',
+    pageNumLeft: 17,
+    pageNumRight: 18,
+    hideFromIndex: true,
+    parentBrandId: 'merino-laminates',
+    badge: 'Architectural Woods',
+    title: 'Architectural Grain &\nStone Looks.',
+    tagline: 'Rich synchronized woodgrains and rustic textures',
+    image: merino2Img,
+    brandName: 'Merino',
+    desc: 'Authentic synchronized tactile decors bringing Scandinavian woods and Italian stones to life in contemporary interiors.',
+    thicknesses: ['1.0mm', '1.2mm'],
+    defaultThickness: '1.0mm',
+    features: ['Synchronized Grain', 'Tactile Texture', 'Impact Resistant'],
+    applications: ['Wall Paneling', 'Modular Shutters', 'Executive Cabins'],
+    specs: {
+      'Texture': 'Synchronized Architectural Timber',
+      'Impact Rating': 'Exceeds EN 438 Standards',
+      'Standard Size': '8ft x 4ft'
+    },
+    heroSub: 'SYNCHRONIZED WOODGRAINS. ARCHITECTURAL TEXTURES.',
+    heroTitle: 'MERINO',
+    heroDesc: 'Authentic synchronized tactile decors bringing Scandinavian woods and Italian stones to life in contemporary interiors.',
+    heroTags: [
+      { text: 'Synchronized Grain', icon: 'wood' },
+      { text: 'Impact Resistant', icon: 'shield' },
+      { text: 'Stone Decors', icon: 'sparkles' }
+    ],
+    overviewFeatures: [
+      { title: 'Deep Texture', desc: 'Tactile surface matching visual woodgrain', icon: 'wood' },
+      { title: 'Impact Resistance', desc: 'Resists accidental blows and scratches', icon: 'shield' },
+      { title: 'Seamless Edging', desc: 'Blends cleanly with matching edge bands', icon: 'calibrate' }
+    ]
+  },
+  {
+    id: 403,
+    brandId: 'merino-laminates-matt',
+    category: 'Laminates',
+    pageNumLeft: 17,
+    pageNumRight: 18,
+    hideFromIndex: true,
+    parentBrandId: 'merino-laminates',
+    badge: 'Super Matt Series',
+    title: 'Super Matt &\nVelvet Touch.',
+    tagline: 'Anti-fingerprint silky surface for luxury wardrobes and shutters',
+    image: merino3Img,
+    brandName: 'Merino',
+    desc: 'Silky, anti-fingerprint velvet matte surface with microscopic light diffusion, creating an ultra-premium visual stillness.',
+    thicknesses: ['1.0mm', '1.2mm'],
+    defaultThickness: '1.0mm',
+    features: ['Anti-Fingerprint', 'Velvet Smoothness', 'Thermal Healing'],
+    applications: ['Kitchen Cabinets', 'Master Wardrobes', 'Vanity Fronts'],
+    specs: {
+      'Finish': 'Velvet Super Matt',
+      'Gloss': 'Ultra-Low (<3 Gloss Units)',
+      'Cleaning': 'Soft Microfiber Wipe'
+    },
+    heroSub: 'VELVET SUPER MATT. ZERO FINGERPRINT RESIDUE.',
+    heroTitle: 'MERINO',
+    heroDesc: 'Silky, anti-fingerprint velvet matte surface with microscopic light diffusion, creating an ultra-premium visual stillness.',
+    heroTags: [
+      { text: 'Anti-Fingerprint', icon: 'sparkles' },
+      { text: 'Velvet Soft Touch', icon: 'sparkles' },
+      { text: 'Zero Glare', icon: 'shield' }
+    ],
+    overviewFeatures: [
+      { title: 'Zero Glare', desc: 'Soft ambient light diffusion without harsh reflection', icon: 'sparkles' },
+      { title: 'Smudge Free', desc: 'Fingerprints wipe away effortlessly without marks', icon: 'shield' },
+      { title: 'Velvet Feel', desc: 'Indulgent, warm tactile response under touch', icon: 'sparkles' }
     ]
   },
   {
@@ -1011,7 +1823,7 @@ const SPREADS = [
     badge: 'Structural Plywood',
     title: 'Elite Core\nIntegrity.',
     tagline: 'High load-bearing calibrated plywood',
-    image: plywoodImg,
+    image: gurjanClub1Img,
     brandName: 'Gurjan Club',
     desc: '100% pure Gurjan core plywood, calibrated for uniform thickness and exceptional strength for heavy load-bearing furniture.',
     thicknesses: ['6mm', '9mm', '12mm', '16mm', '19mm'],
@@ -1040,6 +1852,43 @@ const SPREADS = [
     ]
   },
   {
+    id: 71,
+    brandId: 'gurjan-club-calibrated',
+    category: 'Plywood',
+    pageNumLeft: 35,
+    pageNumRight: 36,
+    hideFromIndex: true,
+    parentBrandId: 'gurjan-club',
+    badge: 'Calibrated Gurjan',
+    title: 'Calibrated\nStrength.',
+    tagline: '100% Pure Gurjan Hardwood Construction',
+    image: gurjanClub2Img,
+    brandName: 'Gurjan Club',
+    desc: 'Imported high-density Gurjan plies with phenolic resin infusion, engineered for lifetime defense against severe humidity.',
+    thicknesses: ['6mm', '9mm', '12mm', '16mm', '19mm'],
+    defaultThickness: '19mm',
+    features: ['Selected Gurjan', 'Quad Calibrated', 'BWP Marine'],
+    applications: ['Kitchen Counters', 'Wardrobe Frames', 'Heavy Framework'],
+    specs: {
+      'Timber': '100% Pure Gurjan',
+      'Tolerance': '± 0.2mm',
+      'Glue': 'BWP Phenolic Resin'
+    },
+    heroSub: '100% PURE GURJAN. CALIBRATED UNIFORMITY.',
+    heroTitle: 'GURJAN CLUB',
+    heroDesc: 'Imported high-density Gurjan plies with phenolic resin infusion, engineered for lifetime defense against severe humidity.',
+    heroTags: [
+      { text: 'Pure Gurjan', icon: 'wood' },
+      { text: 'Quad Calibrated', icon: 'calibrate' },
+      { text: 'Lifetime Warranty', icon: 'shield' }
+    ],
+    overviewFeatures: [
+      { title: 'Pure Gurjan Timber', desc: 'Heavy density core timber from sustainable sources', icon: 'wood' },
+      { title: 'Quad-Calibrated', desc: 'Even thickness on both faces', icon: 'calibrate' },
+      { title: 'Boiling Water Proof', desc: 'Exceeds standard 72-hour boiling water test', icon: 'droplet' }
+    ]
+  },
+  {
     id: 8,
     brandId: 'gurjan-king',
     category: 'Plywood',
@@ -1048,7 +1897,7 @@ const SPREADS = [
     badge: 'Premium Calibrated',
     title: 'The King of\nPlywoods.',
     tagline: 'Double-pressed flat surfaces for modular designs',
-    image: plywoodKingImg,
+    image: gurjanKing1Img,
     brandName: 'Gurjan King',
     desc: 'Double-pressed calibrated plywood offering unmatched flat surfaces and zero-core gaps. The ultimate choice for modular kitchens.',
     thicknesses: ['6mm', '9mm', '12mm', '16mm', '19mm'],
@@ -1072,7 +1921,44 @@ const SPREADS = [
       { title: 'Calibrated Precision', desc: 'Smooth uniform sanding on faces', icon: 'calibrate' },
       { title: 'Zero Core Gaps', desc: 'No overlapping plies or voids', icon: 'wood' },
       { title: 'Boiling Water Proof', desc: 'Withstands heavy moisture exposure', icon: 'droplet' },
-      { title: 'Screw Holding', desc: 'Superior grip strength for hinges', icon: 'gear' },
+      { title: 'Screw Holding', desc: 'Superior grip strength for hinges', icon: 'gear' }
+    ]
+  },
+  {
+    id: 82,
+    brandId: 'gurjan-king-premium',
+    category: 'Plywood',
+    pageNumLeft: 37,
+    pageNumRight: 38,
+    hideFromIndex: true,
+    parentBrandId: 'gurjan-king',
+    badge: 'Architectural King',
+    title: 'Double-Pressed\nFlatness.',
+    tagline: 'King of calibrated zero-gap architectural plywood',
+    image: gurjanKing2Img,
+    brandName: 'Gurjan King',
+    desc: 'Zero-core-void calibrated core ensures seamless screw fixing for European hinges, runners, and tandem drawer systems.',
+    thicknesses: ['12mm', '16mm', '19mm', '25mm'],
+    defaultThickness: '19mm',
+    features: ['Zero Core Voids', 'Superior Screw Grip', 'Mirror Smooth'],
+    applications: ['Modular Kitchens', 'Master Bedroom Wardrobes', 'Joinery'],
+    specs: {
+      'Pressing': 'Dual Hot Hydraulic Press',
+      'Adhesive': 'Phenolic PF Resin',
+      'Density': '780 kg/m³'
+    },
+    heroSub: 'ZERO CORE VOIDS. SUPERIOR FASTENER RETENTION.',
+    heroTitle: 'GURJAN KING',
+    heroDesc: 'Zero-core-void calibrated core ensures seamless screw fixing for European hinges, runners, and tandem drawer systems.',
+    heroTags: [
+      { text: 'Zero Core Voids', icon: 'layers' },
+      { text: 'Fastener Grip', icon: 'gear' },
+      { text: 'Mirror Smooth', icon: 'sparkles' }
+    ],
+    overviewFeatures: [
+      { title: 'Zero Void Core', desc: 'Seamless solid timber core', icon: 'layers' },
+      { title: 'Hinge Holding', desc: 'Withstands heavy repetitive door usage', icon: 'gear' },
+      { title: 'Double Calibrated', desc: 'Smooth substrate for veneers and laminates', icon: 'sparkles' }
     ]
   },
   {
@@ -1084,7 +1970,7 @@ const SPREADS = [
     badge: 'Gold Calibrated BWP',
     title: 'Golden Standard\nExcellence.',
     tagline: '100% Selected Gurjan Core with 4-Press Technology',
-    image: gurjanGoldImg,
+    image: gurjanGoldNewImg,
     brandName: 'Gurjan Gold',
     desc: 'Engineered with 100% selected Gurjan veneers and 4-times hot pressed calibration. Offers superior bonding, termite protection, and mirror-flat finish for luxury interiors.',
     thicknesses: ['6mm', '9mm', '12mm', '16mm', '19mm', '25mm'],
@@ -1111,6 +1997,43 @@ const SPREADS = [
       { title: 'Phenolic PF Resin', desc: 'Boiling water proof marine endurance', icon: 'droplet' },
       { title: 'Borer & Termite Shield', desc: 'Deep vacuum-pressure chemical treatment', icon: 'shield' },
       { title: 'Screw Retention', desc: 'Maximum load bearing and hinge strength', icon: 'gear' }
+    ]
+  },
+  {
+    id: 811,
+    brandId: 'gurjan-gold-elite',
+    category: 'Plywood',
+    pageNumLeft: 37,
+    pageNumRight: 38,
+    hideFromIndex: true,
+    parentBrandId: 'gurjan-gold',
+    badge: 'Gold Elite',
+    title: '4-Press Golden\nCalibrated.',
+    tagline: 'Unrivaled screw holding and structural integrity',
+    image: gurjanGoldNew2Img,
+    brandName: 'Gurjan Gold',
+    desc: 'The gold benchmark in calibrated marine plywood, utilizing quad hot press cycles and unextended phenolic resin.',
+    thicknesses: ['12mm', '16mm', '19mm', '25mm'],
+    defaultThickness: '19mm',
+    features: ['Quad-Pressed', 'Borer Immunity', 'Phenolic Marine'],
+    applications: ['Luxury Wardrobes', 'Heavy Sofa Beds', 'Partition Frames'],
+    specs: {
+      'Core Plies': '100% Premium Gurjan',
+      'Bonding': 'Phenolic PF',
+      'Warranty': 'Lifetime Guarantee'
+    },
+    heroSub: 'QUAD-PRESSED GOLD. UNRIVALED STRUCTURAL INTEGRITY.',
+    heroTitle: 'GURJAN GOLD',
+    heroDesc: 'The gold benchmark in calibrated marine plywood, utilizing quad hot press cycles and unextended phenolic resin.',
+    heroTags: [
+      { text: 'Quad-Pressed', icon: 'calibrate' },
+      { text: 'Lifetime Warranty', icon: 'shield' },
+      { text: '100% Gurjan', icon: 'wood' }
+    ],
+    overviewFeatures: [
+      { title: 'Quad-Press Integrity', desc: 'Four hydraulic heat cycles for zero voids', icon: 'calibrate' },
+      { title: '100% Gurjan Core', desc: 'Dense structural timber core', icon: 'wood' },
+      { title: 'Lifetime Assurance', desc: 'Guaranteed against delamination and borers', icon: 'shield' }
     ]
   },
   {
@@ -1556,7 +2479,7 @@ const SPREADS = [
     badge: 'Premium Handles',
     title: 'Designer\nHandles.',
     tagline: 'Premium zinc alloy cabinet pulls with multi-finish options',
-    image: astdaxHandles1,
+    image: astdaxHardware1Img,
     brandName: 'Astdax Hardwares',
     desc: 'Precision-crafted zinc alloy cabinet handles available in elegant multi-tone finishes. Perfect for modular kitchens, wardrobes, and premium furniture.',
     thicknesses: ['96 mm', '160 mm', '224 mm'],
@@ -1594,7 +2517,7 @@ const SPREADS = [
     badge: 'Premium Collection',
     title: 'Fusion\nHandles.',
     tagline: 'Dual-material fusion handles with wood & metal combination',
-    image: astdaxHandles2,
+    image: astdaxHardware2Img,
     brandName: 'Astdax Hardwares',
     desc: 'Dual-material fusion cabinet handles combining premium zinc alloy with wood-effect inserts. Ideal for contemporary and transitional interior styles.',
     thicknesses: ['96 mm', '160 mm'],
@@ -2073,7 +2996,7 @@ export const BRAND_CONFIG = [
     name: 'Royal Club',
     displayName: 'ROYAL CLUB',
     trademark: true,
-    image: royalClubImg,
+    image: royalClub3Img,
     categories: ['Plywood'],
     categorySummary: 'Plywood • BWP Marine Grade',
     tagline: "The Architect's Choice Since 1994",
@@ -2092,7 +3015,7 @@ export const BRAND_CONFIG = [
     name: 'Marine Club',
     displayName: 'MARINE CLUB',
     trademark: true,
-    image: marineClubImg,
+    image: marine1Img,
     categories: ['Plywood'],
     categorySummary: 'Plywood • High Moisture Defense',
     tagline: 'Waterproof Shield for High-Moisture Zones',
@@ -2109,7 +3032,7 @@ export const BRAND_CONFIG = [
     name: 'Gurjan Club',
     displayName: 'GURJAN CLUB',
     trademark: true,
-    image: plywoodKingImg,
+    image: gurjanClub1Img,
     categories: ['Plywood'],
     categorySummary: 'Plywood • Calibrated Gurjan Core',
     tagline: 'Precision Calibrated for Zero Core Gaps',
@@ -2129,7 +3052,7 @@ export const BRAND_CONFIG = [
     displayName: 'GURJAN KING',
     highlightWord: 'KING',
     trademark: true,
-    image: gurjanKingBrandImg,
+    image: gurjanKing1Img,
     categories: ['Plywood'],
     categorySummary: 'Plywood • Structural Heavy-Duty',
     tagline: 'Heavy Load-Bearing Structural Endurance',
@@ -2147,7 +3070,7 @@ export const BRAND_CONFIG = [
     displayName: 'GURJAN GOLD',
     highlightWord: 'GOLD',
     trademark: true,
-    image: gurjanGoldImg,
+    image: gurjanGoldNewImg,
     categories: ['Plywood'],
     categorySummary: 'Plywood • Commercial MR & BWR',
     tagline: 'Premium Commercial & Interior Fit-Outs',
@@ -2182,7 +3105,7 @@ export const BRAND_CONFIG = [
     name: 'Century',
     displayName: 'CENTURY',
     trademark: true,
-    image: centuryBrandImg,
+    image: centuryPlywood1Img,
     categories: ['Laminates', 'Plywood'],
     categorySummary: 'Laminates & Plywood • Surface Solutions',
     tagline: "India's Benchmark for Decorative Surfaces",
@@ -2199,7 +3122,7 @@ export const BRAND_CONFIG = [
     name: 'Green',
     displayName: 'GREEN',
     trademark: true,
-    image: greenLaminateImg,
+    image: greenPlywood1Img,
     categories: ['Laminates', 'Plywood'],
     categorySummary: 'Laminates & Plywood • Eco Luxury',
     tagline: 'Eco-Friendly Premium Surface Collection',
@@ -2232,7 +3155,7 @@ export const BRAND_CONFIG = [
     name: 'Vista',
     displayName: 'VISTA',
     trademark: true,
-    image: vistaLaminateImg,
+    image: vista1Img,
     categories: ['Laminates'],
     categorySummary: 'Laminates • Architectural Textures',
     tagline: 'Contemporary Textures & Natural Stone Looks',
@@ -2248,7 +3171,7 @@ export const BRAND_CONFIG = [
     name: 'Croma',
     displayName: 'CROMA',
     trademark: true,
-    image: cromaLaminateImg,
+    image: chromaLaminates1Img,
     categories: ['Laminates'],
     categorySummary: 'Laminates • Solid Colors & Woodgrains',
     tagline: 'Vibrant Colors & Timeless Wood Decors',
@@ -2276,6 +3199,23 @@ export const BRAND_CONFIG = [
     icon: (
       <svg className="w-7 h-7 text-[#C9A44C]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <polygon points="12 2 20 7 20 17 12 22 4 17 4 7" />
+      </svg>
+    )
+  },
+  {
+    name: 'Merino',
+    displayName: 'MERINO',
+    trademark: true,
+    image: merino1Img,
+    categories: ['Laminates'],
+    categorySummary: 'Laminates • High-Pressure Surfaces',
+    tagline: 'World-Class Decorative Laminates & Surfaces',
+    hallmark: 'Trendsetting textures, anti-bacterial surfaces, and premium high-pressure decorative laminates for elegant spaces.',
+    tags: ['Anti-Bacterial', 'Super Matt & High Gloss', 'Stain Resistant'],
+    icon: (
+      <svg className="w-7 h-7 text-[#C9A44C]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+        <polyline points="4 14 9 9 14 14 20 8" />
       </svg>
     )
   },
@@ -2333,7 +3273,7 @@ export const BRAND_CONFIG = [
     name: 'Astdax',
     displayName: 'ASTDAX',
     trademark: true,
-    image: astdaxBrandImg,
+    image: astdaxHardware1Img,
     categories: ['Arch. Hardware', 'Hardware & Fittings'],
     categorySummary: 'Architectural Hardware • Luxury Brass & Zinc',
     tagline: 'Designer Door Handles, Mortise Locks & Pulls',
@@ -2493,6 +3433,7 @@ export const isPlywoodOrLaminateBrand = (brandName) => {
     'vista',
     'croma',
     'indigo',
+    'merino',
     'armani',
     'architecture',
     'fancy doors',

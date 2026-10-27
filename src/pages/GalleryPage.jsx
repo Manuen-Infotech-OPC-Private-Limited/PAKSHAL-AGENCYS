@@ -22,6 +22,15 @@ import veneer2Img from '../assets/plywood/veneer2.png';
 import veneer3Img from '../assets/plywood/veneer3.png';
 import veneer4Img from '../assets/plywood/veneer4.png';
 import homepageMarinePlywoodImg from '../assets/plywood/homepage-marineplywood.png';
+import centuryPlywoodImg from '../assets/plywood/century.png';
+import centuryLaminatesImg from '../assets/laminates/centurylaminates1.jpg';
+import chromaLaminatesImg from '../assets/laminates/chromalaminates1.png';
+import vistaLaminatesImg from '../assets/plywood/vista1.png';
+import merinoLaminatesImg from '../assets/plywood/merino.png';
+import gurjanClubImg from '../assets/plywood/gurjanclub1.png';
+import gurjanKingImg from '../assets/plywood/gurjan king.png';
+import greenPlywoodImg from '../assets/plywood/green1.png';
+import astdaxHardwareImg from '../assets/hardware/Astdax hardware and fittings.png';
 import kitchensCardImg from '../assets/kitchen/kitchens-card.jpg';
 import bifoldLiftUpImg from '../assets/kitchen/bifoldliftupsystem.png';
 import cornerImg from '../assets/kitchen/corner.jpg';
@@ -62,11 +71,19 @@ const GALLERY_ITEMS = [
     id: 1,
     title: 'Plywood & Laminates',
     category: 'Plywood & Laminates',
-    img: plywoodImg,
-    imagesCount: 12,
+    img: centuryPlywoodImg,
+    imagesCount: 20,
     images: [
+      centuryPlywoodImg,
+      centuryLaminatesImg,
       plywoodImg,
       laminatesImg,
+      chromaLaminatesImg,
+      vistaLaminatesImg,
+      merinoLaminatesImg,
+      gurjanClubImg,
+      gurjanKingImg,
+      greenPlywoodImg,
       royalClubImg,
       royalClub2Img,
       marineClubImg,
@@ -78,7 +95,7 @@ const GALLERY_ITEMS = [
       veneer4Img,
       homepageMarinePlywoodImg
     ],
-    desc: 'Premium BWR and marine-grade plywood sheets, veneers, and decorative wood laminates.'
+    desc: 'Premium BWR and marine-grade plywood sheets, veneers, and decorative wood laminates from Century, Green, Gurjan, Merino, Vista, Croma, and Royal Club.'
   },
   {
     id: 2,
@@ -136,9 +153,10 @@ const GALLERY_ITEMS = [
     id: 4,
     title: 'Hardware & Fittings',
     category: 'Hardware & Fittings',
-    img: hardwareImg,
-    imagesCount: 5,
+    img: astdaxHardwareImg,
+    imagesCount: 6,
     images: [
+      astdaxHardwareImg,
       hardwareImg,
       mortiseImg,
       slidingChannelsImg,
