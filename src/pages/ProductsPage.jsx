@@ -412,7 +412,21 @@ export const ProductsPage = ({ onNavigate, search }) => {
 
   const [brandCategoryFilter, setBrandCategoryFilter] = useState('All');
   const [brandSearchTerm, setBrandSearchTerm] = useState('');
-  const [categoryCoverIdx, setCategoryCoverIdx] = useState(0);
+  const [categoryCoverIdx, setCategoryCoverIdx] = useState(() => {
+    const params = new URLSearchParams(search || (typeof window !== 'undefined' ? window.location.search : ''));
+    const catParam = params.get('category');
+    if (catParam) {
+      const canonical = getCanonicalCategory(catParam);
+      const catIdx = PRODUCT_PAGE_CATEGORIES.findIndex(c => getCanonicalCategory(c.categoryKey) === canonical);
+      if (catIdx !== -1) return catIdx;
+    }
+    return 0;
+  });
+
+  const [mobileCategoryOpen, setMobileCategoryOpen] = useState(() => {
+    const params = new URLSearchParams(search || (typeof window !== 'undefined' ? window.location.search : ''));
+    return Boolean(params.get('category'));
+  });
 
   useEffect(() => {
     const params = new URLSearchParams(search || window.location.search);
@@ -421,6 +435,9 @@ export const ProductsPage = ({ onNavigate, search }) => {
     if (brand) {
       const matched = BRAND_CONFIG.find(b => b.name.toLowerCase() === brand.toLowerCase().trim());
       setSelectedBrand(matched ? matched.name : brand);
+      if (matched && matched.categories && matched.categories.length > 0) {
+        setSelectedCategory(getCanonicalCategory(matched.categories[0]));
+      }
       const targetIdx = getIndexFromSearch(search || window.location.search);
       setCurrentSpreadIdx(targetIdx);
     } else if (cat) {
@@ -428,16 +445,39 @@ export const ProductsPage = ({ onNavigate, search }) => {
       setSelectedCategory(canonical);
       const catIdx = PRODUCT_PAGE_CATEGORIES.findIndex(c => getCanonicalCategory(c.categoryKey) === canonical);
       if (catIdx !== -1) setCategoryCoverIdx(catIdx);
-      const brandForCat = BRAND_CONFIG.find(b =>
-        b.categories && b.categories.map(c => getCanonicalCategory(c)).includes(canonical)
-      );
-      if (brandForCat) setSelectedBrand(brandForCat.name);
+      setSelectedBrand(null);
+      setMobileCategoryOpen(true);
       const targetIdx = getIndexFromSearch(search || window.location.search);
       setCurrentSpreadIdx(targetIdx);
     } else {
       setSelectedBrand(null);
+      setMobileCategoryOpen(false);
     }
   }, [search]);
+
+  useEffect(() => {
+    const handlePop = () => {
+      const params = new URLSearchParams(window.location.search);
+      const cat = params.get('category');
+      const brand = params.get('brand');
+      if (brand) {
+        const matched = BRAND_CONFIG.find(b => b.name.toLowerCase() === brand.toLowerCase().trim());
+        setSelectedBrand(matched ? matched.name : brand);
+      } else if (cat) {
+        const canonical = getCanonicalCategory(cat);
+        setSelectedCategory(canonical);
+        const catIdx = PRODUCT_PAGE_CATEGORIES.findIndex(c => getCanonicalCategory(c.categoryKey) === canonical);
+        if (catIdx !== -1) setCategoryCoverIdx(catIdx);
+        setSelectedBrand(null);
+        setMobileCategoryOpen(true);
+      } else {
+        setSelectedBrand(null);
+        setMobileCategoryOpen(false);
+      }
+    };
+    window.addEventListener('popstate', handlePop);
+    return () => window.removeEventListener('popstate', handlePop);
+  }, []);
 
   useEffect(() => {
     setSelectedSize('8 x 4');
@@ -630,6 +670,38 @@ export const ProductsPage = ({ onNavigate, search }) => {
     }
   };
 
+  const handleCategoryClick = (cat, idx) => {
+    setCategoryCoverIdx(idx);
+    setSelectedCategory(cat.categoryKey);
+    setBrandSearchTerm('');
+    setMobileCategoryOpen(true);
+
+    const basePrefix = window.location.pathname.startsWith('/PAKSHAL-AGENCYS') ? '/PAKSHAL-AGENCYS' : '';
+    const newPath = `${basePrefix}/products?category=${encodeURIComponent(cat.categoryKey.toLowerCase())}`;
+    if (window.location.pathname + window.location.search !== newPath) {
+      window.history.pushState({ category: cat.categoryKey }, '', newPath);
+    }
+
+    // On mobile view (< 1024px), instantly open the category's brands page at top
+    window.scrollTo({ top: 0, behavior: 'instant' });
+
+    // On desktop view (>= 1024px), smooth scroll to the brands section below if needed
+    if (typeof window !== 'undefined' && window.innerWidth >= 1024) {
+      const el = document.getElementById('category-brands-section');
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  };
+
+  const handleBackToCategories = () => {
+    setMobileCategoryOpen(false);
+    setBrandSearchTerm('');
+    const basePrefix = window.location.pathname.startsWith('/PAKSHAL-AGENCYS') ? '/PAKSHAL-AGENCYS' : '';
+    window.history.pushState({}, '', `${basePrefix}/products`);
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  };
+
   const handleBrandSelect = (brandName) => {
     if (!brandName) return;
     const bLower = brandName.toLowerCase().trim();
@@ -638,7 +710,7 @@ export const ProductsPage = ({ onNavigate, search }) => {
     const basePrefix = window.location.pathname.startsWith('/PAKSHAL-AGENCYS') ? '/PAKSHAL-AGENCYS' : '';
     const newPath = `${basePrefix}/products?brand=${encodeURIComponent(brandName)}`;
     if (window.location.pathname + window.location.search !== newPath) {
-      window.history.pushState({}, '', newPath);
+      window.history.pushState({ brand: brandName }, '', newPath);
     }
 
     // 1. Check if the currently selected category has spreads for this brand
@@ -649,7 +721,7 @@ export const ProductsPage = ({ onNavigate, search }) => {
         if (targetIdx !== -1) {
           setCurrentSpreadIdx(targetIdx);
         }
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        window.scrollTo({ top: 0, behavior: 'instant' });
         return;
       }
     }
@@ -664,7 +736,7 @@ export const ProductsPage = ({ onNavigate, search }) => {
       if (targetIdx !== -1) {
         setCurrentSpreadIdx(targetIdx);
       }
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.scrollTo({ top: 0, behavior: 'instant' });
       return;
     }
 
@@ -674,14 +746,22 @@ export const ProductsPage = ({ onNavigate, search }) => {
       const newCat = getCanonicalCategory(brandObj.categories[0]);
       setSelectedCategory(newCat);
     }
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: 'instant' });
   };
 
   const handleBackToAllBrands = () => {
     setSelectedBrand(null);
     const basePrefix = window.location.pathname.startsWith('/PAKSHAL-AGENCYS') ? '/PAKSHAL-AGENCYS' : '';
-    window.history.pushState({}, '', `${basePrefix}/products`);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    const targetCat = selectedCategory || PRODUCT_PAGE_CATEGORIES[categoryCoverIdx]?.categoryKey;
+    if (targetCat) {
+      setMobileCategoryOpen(true);
+      const newPath = `${basePrefix}/products?category=${encodeURIComponent(targetCat.toLowerCase())}`;
+      window.history.pushState({ category: targetCat }, '', newPath);
+    } else {
+      setMobileCategoryOpen(false);
+      window.history.pushState({}, '', `${basePrefix}/products`);
+    }
+    window.scrollTo({ top: 0, behavior: 'instant' });
   };
 
   const handleCategorySelect = (categoryName) => {
@@ -790,100 +870,167 @@ export const ProductsPage = ({ onNavigate, search }) => {
         <div className="w-full pt-[96px] sm:pt-[104px] pb-16 animate-fade-in">
           <div className="max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8">
 
-            {/* Editorial Category Header */}
-            <div className="flex flex-col items-center text-center max-w-4xl mx-auto mb-8 sm:mb-10">
-              <span className="text-[10.5px] font-black uppercase tracking-[0.25em] text-[#C9A44C] block leading-none mb-3">
-                ARCHITECTURAL CATALOGUE
-              </span>
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-stone-900 tracking-tight font-sans leading-tight mb-3">
-                Select a <span className="text-[#C9A44C] italic font-serif font-extrabold">Category</span> to Explore
-              </h1>
-              <p className="text-sm sm:text-base text-stone-600 font-medium leading-relaxed max-w-2xl">
-                Explore our premium architectural categories. Select any category below to view authorized brands and technical specifications.
-              </p>
-            </div>
+            {/* Category Selection Grid - On mobile, hidden when mobileCategoryOpen */}
+            <div className={`transition-all duration-300 ${mobileCategoryOpen ? 'hidden lg:block' : 'block'}`}>
+              {/* Editorial Category Header */}
+              <div className="flex flex-col items-center text-center max-w-4xl mx-auto mb-8 sm:mb-10">
+                <span className="text-[10.5px] font-black uppercase tracking-[0.25em] text-[#C9A44C] block leading-none mb-3">
+                  ARCHITECTURAL CATALOGUE
+                </span>
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-stone-900 tracking-tight font-sans leading-tight mb-3">
+                  Select a <span className="text-[#C9A44C] italic font-serif font-extrabold">Category</span> to Explore
+                </h1>
+                <p className="text-sm sm:text-base text-stone-600 font-medium leading-relaxed max-w-2xl">
+                  Explore our premium architectural categories. Select any category below to view authorized brands and technical specifications.
+                </p>
+              </div>
 
-            {/* 5 Premium Category Cards Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5 lg:gap-4 xl:gap-5 mb-10 sm:mb-12">
-              {PRODUCT_PAGE_CATEGORIES.map((cat, idx) => {
-                const isActive = (PRODUCT_PAGE_CATEGORIES[categoryCoverIdx]?.categoryKey === cat.categoryKey) || (selectedCategory === cat.categoryKey);
+              {/* 5 Premium Category Cards Grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5 lg:gap-4 xl:gap-5 mb-10 sm:mb-12">
+                {PRODUCT_PAGE_CATEGORIES.map((cat, idx) => {
+                  const isActive = (PRODUCT_PAGE_CATEGORIES[categoryCoverIdx]?.categoryKey === cat.categoryKey) || (selectedCategory === cat.categoryKey);
 
-                return (
-                  <div
-                    key={cat.categoryKey}
-                    onClick={() => {
-                      setCategoryCoverIdx(idx);
-                      setSelectedCategory(cat.categoryKey);
-                      const el = document.getElementById('category-brands-section');
-                      if (el) {
-                        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                      }
-                    }}
-                    className={`group relative rounded-3xl overflow-hidden cursor-pointer select-none transition-all duration-300 flex flex-col justify-end p-5 sm:p-6 text-left min-h-[360px] sm:min-h-[390px] lg:min-h-[410px] ${
-                      isActive
-                        ? 'border-2 border-[#C9A44C] ring-4 ring-[#C9A44C]/30 shadow-[0_16px_36px_rgba(201,164,76,0.28)] -translate-y-2'
-                        : 'border border-stone-200/90 hover:border-[#C9A44C]/70 shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:shadow-[0_16px_32px_rgba(0,0,0,0.16)] hover:-translate-y-2'
-                    } bg-stone-900`}
-                  >
-                    {/* Background Image with Zoom */}
-                    <img
-                      src={cat.image}
-                      alt={cat.title}
-                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out brightness-[0.72] group-hover:brightness-[0.80]"
-                    />
-
-                    {/* Gradient Overlay for Text Contrast */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/55 to-black/30 z-0 pointer-events-none" />
-
-                    {/* Warm Gold Tint on Active / Hover */}
+                  return (
                     <div
-                      className={`absolute inset-0 transition-opacity duration-300 pointer-events-none ${
-                        isActive ? 'bg-[#C9A44C]/15 opacity-100' : 'bg-transparent group-hover:bg-[#C9A44C]/10'
-                      }`}
-                    />
+                      key={cat.categoryKey}
+                      onClick={() => handleCategoryClick(cat, idx)}
+                      className={`group relative rounded-3xl overflow-hidden cursor-pointer select-none transition-all duration-300 flex flex-col justify-end p-5 sm:p-6 text-left min-h-[360px] sm:min-h-[390px] lg:min-h-[410px] ${
+                        isActive
+                          ? 'border-2 border-[#C9A44C] ring-4 ring-[#C9A44C]/30 shadow-[0_16px_36px_rgba(201,164,76,0.28)] lg:-translate-y-2'
+                          : 'border border-stone-200/90 hover:border-[#C9A44C]/70 shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:shadow-[0_16px_32px_rgba(0,0,0,0.16)] hover:-translate-y-2'
+                      } bg-stone-900`}
+                    >
+                      {/* Background Image with Zoom */}
+                      <img
+                        src={cat.image}
+                        alt={cat.title}
+                        className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out brightness-[0.72] group-hover:brightness-[0.80]"
+                      />
 
-                    {/* Bottom Content */}
-                    <div className="relative z-10 text-left flex flex-col gap-1.5">
-                      <h3 className="text-lg sm:text-xl font-black text-white leading-tight uppercase font-sans tracking-tight group-hover:text-[#F3D78A] transition-colors">
-                        {cat.title}
-                      </h3>
+                      {/* Gradient Overlay for Text Contrast */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/55 to-black/30 z-0 pointer-events-none" />
 
-                      <p className="text-[11.5px] sm:text-xs text-stone-300 font-medium leading-snug line-clamp-2">
-                        {cat.subtitle}
-                      </p>
+                      {/* Warm Gold Tint on Active / Hover */}
+                      <div
+                        className={`absolute inset-0 transition-opacity duration-300 pointer-events-none ${
+                          isActive ? 'bg-[#C9A44C]/15 opacity-100' : 'bg-transparent group-hover:bg-[#C9A44C]/10'
+                        }`}
+                      />
 
-                      {cat.highlight && (
-                        <div className="mt-1 text-[9.5px] sm:text-[10px] font-bold text-[#E5C378] tracking-wider uppercase flex items-center gap-1.5">
-                          <span className="w-1.5 h-1.5 rounded-full bg-[#C9A44C] flex-shrink-0" />
-                          <span className="truncate">{cat.highlight}</span>
-                        </div>
-                      )}
+                      {/* Bottom Content */}
+                      <div className="relative z-10 text-left flex flex-col gap-1.5">
+                        <h3 className="text-lg sm:text-xl font-black text-white leading-tight uppercase font-sans tracking-tight group-hover:text-[#F3D78A] transition-colors">
+                          {cat.title}
+                        </h3>
 
-                      {/* Interactive Bottom CTA Button */}
-                      {isActive ? (
-                        <div className="mt-3 w-full py-2.5 px-3.5 rounded-xl bg-gradient-to-r from-[#996f1d] via-[#8c6d23] to-[#735515] text-white font-black text-[10.5px] uppercase tracking-wider flex items-center justify-center gap-1.5 shadow-md">
-                          <span>Viewing Brands</span>
-                          <svg className="w-3.5 h-3.5 animate-bounce" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                          </svg>
-                        </div>
-                      ) : (
-                        <div className="mt-3 w-full py-2.5 px-3.5 rounded-xl bg-white/15 backdrop-blur-md group-hover:bg-[#C9A44C] text-white group-hover:text-stone-950 border border-white/25 group-hover:border-[#C9A44C] font-black text-[10.5px] uppercase tracking-wider flex items-center justify-between transition-all duration-300 shadow-xs">
-                          <span>Explore Category</span>
+                        <p className="text-[11.5px] sm:text-xs text-stone-300 font-medium leading-snug line-clamp-2">
+                          {cat.subtitle}
+                        </p>
+
+                        {cat.highlight && (
+                          <div className="mt-1 text-[9.5px] sm:text-[10px] font-bold text-[#E5C378] tracking-wider uppercase flex items-center gap-1.5">
+                            <span className="w-1.5 h-1.5 rounded-full bg-[#C9A44C] flex-shrink-0" />
+                            <span className="truncate">{cat.highlight}</span>
+                          </div>
+                        )}
+
+                        {/* Interactive Bottom CTA Button */}
+                        {/* On Mobile: Always clear 'Explore Brands →' */}
+                        <div className="mt-3 w-full py-2.5 px-3.5 rounded-xl bg-white/15 backdrop-blur-md group-hover:bg-[#C9A44C] text-white group-hover:text-stone-950 border border-white/25 group-hover:border-[#C9A44C] font-black text-[10.5px] uppercase tracking-wider flex items-center justify-between transition-all duration-300 shadow-xs lg:hidden">
+                          <span>Explore Brands</span>
                           <svg className="w-3.5 h-3.5 text-[#E5C378] group-hover:text-stone-950 group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                           </svg>
                         </div>
-                      )}
+
+                        {/* On Desktop: Show Viewing Brands if active */}
+                        <div className="hidden lg:block">
+                          {isActive ? (
+                            <div className="mt-3 w-full py-2.5 px-3.5 rounded-xl bg-gradient-to-r from-[#996f1d] via-[#8c6d23] to-[#735515] text-white font-black text-[10.5px] uppercase tracking-wider flex items-center justify-center gap-1.5 shadow-md">
+                              <span>Viewing Brands</span>
+                              <svg className="w-3.5 h-3.5 animate-bounce" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                              </svg>
+                            </div>
+                          ) : (
+                            <div className="mt-3 w-full py-2.5 px-3.5 rounded-xl bg-white/15 backdrop-blur-md group-hover:bg-[#C9A44C] text-white group-hover:text-stone-950 border border-white/25 group-hover:border-[#C9A44C] font-black text-[10.5px] uppercase tracking-wider flex items-center justify-between transition-all duration-300 shadow-xs">
+                              <span>Explore Category</span>
+                              <svg className="w-3.5 h-3.5 text-[#E5C378] group-hover:text-stone-950 group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                              </svg>
+                            </div>
+                          )}
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                );
-              })}
+                  );
+                })}
+              </div>
             </div>
 
             {/* Brands Section (Shows Particular Brands for Selected Category) */}
-            <div id="category-brands-section" className="pt-4 mb-6 border-t border-stone-200/80">
-              <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-6 pt-4">
+            <div
+              id="category-brands-section"
+              className={`pt-2 mb-6 border-t border-stone-200/80 animate-fade-in ${
+                !mobileCategoryOpen ? 'hidden lg:block' : 'block'
+              }`}
+            >
+              {/* Mobile-Only Top Navigation Bar: Back Button & Quick Category Switcher */}
+              <div className="lg:hidden mb-6">
+                <div className="flex items-center justify-between pb-3 mb-4 border-b border-stone-200/80">
+                  <button
+                    type="button"
+                    onClick={handleBackToCategories}
+                    className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white border border-stone-200/90 text-stone-800 text-xs font-black uppercase tracking-wider shadow-xs hover:bg-[#FAF6EE] hover:text-[#8c6d23] hover:border-[#C9A44C]/50 transition-all cursor-pointer"
+                  >
+                    <svg className="w-4 h-4 text-[#C9A44C]" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+                    </svg>
+                    <span>Back to Categories</span>
+                  </button>
+
+                  <span className="text-[10px] font-extrabold uppercase tracking-widest text-[#8c6d23] px-2.5 py-1 bg-[#FAF6EE] rounded-lg border border-[#C9A44C]/30">
+                    {PRODUCT_PAGE_CATEGORIES[categoryCoverIdx]?.title}
+                  </span>
+                </div>
+
+                {/* Horizontal Quick Category Switcher Pills */}
+                <div>
+                  <span className="text-[10px] font-black uppercase tracking-widest text-stone-400 block mb-2 text-left">
+                    Switch Category:
+                  </span>
+                  <div className="-mx-4 px-4 overflow-x-auto no-scrollbar flex items-center gap-2 pb-2">
+                    {PRODUCT_PAGE_CATEGORIES.map((cat, idx) => {
+                      const isCurrent = categoryCoverIdx === idx;
+                      return (
+                        <button
+                          key={cat.categoryKey}
+                          type="button"
+                          onClick={() => {
+                            setCategoryCoverIdx(idx);
+                            setSelectedCategory(cat.categoryKey);
+                            setBrandSearchTerm('');
+                            const basePrefix = window.location.pathname.startsWith('/PAKSHAL-AGENCYS') ? '/PAKSHAL-AGENCYS' : '';
+                            window.history.pushState({ category: cat.categoryKey }, '', `${basePrefix}/products?category=${encodeURIComponent(cat.categoryKey.toLowerCase())}`);
+                            window.scrollTo({ top: 0, behavior: 'instant' });
+                          }}
+                          className={`shrink-0 px-3.5 py-2 rounded-xl text-xs font-black uppercase tracking-wider transition-all flex items-center gap-2 cursor-pointer ${
+                            isCurrent
+                              ? 'bg-stone-900 text-[#F3D78A] shadow-sm border border-stone-800'
+                              : 'bg-white text-stone-700 border border-stone-200/90 hover:border-[#C9A44C]/50'
+                          }`}
+                        >
+                          <span className={`w-2 h-2 rounded-full ${isCurrent ? 'bg-[#C9A44C]' : 'bg-stone-300'}`} />
+                          <span>{cat.title}</span>
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
+
+              {/* Header Section for Brands */}
+              <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-6 pt-2">
                 <div className="text-center sm:text-left">
                   <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FAF6EE] border border-[#C9A44C]/35 text-[#8c6d23] text-[10px] font-black uppercase tracking-widest mb-1.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#C9A44C]" />
@@ -1070,12 +1217,12 @@ export const ProductsPage = ({ onNavigate, search }) => {
                     <button
                       type="button"
                       onClick={handleBackToAllBrands}
-                      className="inline-flex items-center gap-1.5 text-xs font-bold text-stone-500 hover:text-[#8c6d23] transition-colors cursor-pointer group"
+                      className="inline-flex items-center gap-1.5 text-xs font-bold text-stone-600 hover:text-[#8c6d23] transition-colors cursor-pointer group"
                     >
                       <svg className="w-3.5 h-3.5 text-[#C9A44C] group-hover:-translate-x-0.5 transition-transform" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
                       </svg>
-                      <span>All Brands</span>
+                      <span>Back to {selectedCategory || 'Authorized'} Brands</span>
                       <span className="text-stone-300 mx-1">/</span>
                       <span className="text-stone-800 font-extrabold">{selectedBrand}</span>
                     </button>
