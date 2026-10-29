@@ -38,7 +38,7 @@ app.use('/uploads', express.static(uploadsDir));
 
 // Connect to MongoDB
 const DEFAULT_COLLECTIONS = [
-  { id: "col1", title: "MARINE PLYWOOD", subtitle: "Strong. Durable. Reliable.", image: "" },
+  { id: "col1", title: "PLYWOOD", subtitle: "Strong. Durable. Reliable.", image: "" },
   { id: "col2", title: "VENEERS", subtitle: "Natural Beauty. Perfect Finish", image: "" },
   { id: "col3", title: "LAMINATES", subtitle: "Style That Stands Out", image: "" },
   { id: "col4", title: "HARDWARE FITTINGS", subtitle: "Precision in Every Detail", image: "" },

@@ -9,7 +9,7 @@ import { API_BASE_URL } from '../config';
 const FALLBACK_OFFERS = [
   {
     id: "1",
-    category: "Marine Plywood",
+    category: "Plywood",
     badge: "UP TO",
     title: "10% Off",
     description: "ON SELECTED PRODUCTS",

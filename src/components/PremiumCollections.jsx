@@ -10,7 +10,7 @@ import doors from '../assets/doors/fancydoors.png';
 
 const COLLECTIONS = [
   {
-    title: "MARINE PLYWOOD",
+    title: "PLYWOOD",
     subtitle: "Strong. Durable. Reliable.",
     image: marinePlywood
   },

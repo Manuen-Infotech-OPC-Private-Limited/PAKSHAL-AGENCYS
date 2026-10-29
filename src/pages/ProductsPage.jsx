@@ -1,5 +1,48 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useDocumentMetadata } from '../hooks/useDocumentMetadata';
+import marinePlywoodImg from '../assets/plywood/homepage-marineplywood.png';
+import veneersImg from '../assets/plywood/veneer2.png';
+import laminatesImg from '../assets/laminates/laminate-marble-slabs.jpg';
+import hardwareFittingsImg from '../assets/hardware/hardwarefittings.png';
+import doorsImg from '../assets/doors/fancydoors.png';
+
+const PRODUCT_PAGE_CATEGORIES = [
+  {
+    title: "PLYWOOD",
+    subtitle: "Strong. Durable. Reliable.",
+    highlight: "IS 710 Boiling Water Proof",
+    image: marinePlywoodImg,
+    categoryKey: "Plywood"
+  },
+  {
+    title: "VENEERS",
+    subtitle: "Natural Beauty. Perfect Finish",
+    highlight: "Exotic Natural & Teak Grain",
+    image: veneersImg,
+    categoryKey: "Veneers"
+  },
+  {
+    title: "LAMINATES",
+    subtitle: "Style That Stands Out",
+    highlight: "1.0mm Matt, Gloss & Texture",
+    image: laminatesImg,
+    categoryKey: "Laminates"
+  },
+  {
+    title: "HARDWARE FITTINGS",
+    subtitle: "Precision in Every Detail",
+    highlight: "Hydraulic Hinges & Channels",
+    image: hardwareFittingsImg,
+    categoryKey: "Hardware & Fittings"
+  },
+  {
+    title: "DOORS & ACCESSORIES",
+    subtitle: "Complete Your Interior",
+    highlight: "Solid Core & Designer Doors",
+    image: doorsImg,
+    categoryKey: "Fancy Doors"
+  }
+];
 import KitchenAccessories from '../components/KitchenAccessories';
 import FancyDoors from '../components/FancyDoors';
 import {
@@ -35,7 +78,9 @@ import {
   getCanonicalCategory,
   isPlywoodOrLaminateBrand,
   isBrandMatch,
-  isBrandCategoryMatch
+  isBrandCategoryMatch,
+  getBrandImage,
+  getBrandTag
 } from '../components/Data';
 
 // Re-export data definitions and helpers for backward compatibility
@@ -47,7 +92,9 @@ export {
   getCanonicalCategory,
   isPlywoodOrLaminateBrand,
   isBrandMatch,
-  isBrandCategoryMatch
+  isBrandCategoryMatch,
+  getBrandImage,
+  getBrandTag
 };
 
 export const ProductsPage = ({ onNavigate, search }) => {
@@ -365,6 +412,7 @@ export const ProductsPage = ({ onNavigate, search }) => {
 
   const [brandCategoryFilter, setBrandCategoryFilter] = useState('All');
   const [brandSearchTerm, setBrandSearchTerm] = useState('');
+  const [categoryCoverIdx, setCategoryCoverIdx] = useState(0);
 
   useEffect(() => {
     const params = new URLSearchParams(search || window.location.search);
@@ -378,6 +426,8 @@ export const ProductsPage = ({ onNavigate, search }) => {
     } else if (cat) {
       const canonical = getCanonicalCategory(cat);
       setSelectedCategory(canonical);
+      const catIdx = PRODUCT_PAGE_CATEGORIES.findIndex(c => getCanonicalCategory(c.categoryKey) === canonical);
+      if (catIdx !== -1) setCategoryCoverIdx(catIdx);
       const brandForCat = BRAND_CONFIG.find(b =>
         b.categories && b.categories.map(c => getCanonicalCategory(c)).includes(canonical)
       );
@@ -722,7 +772,6 @@ export const ProductsPage = ({ onNavigate, search }) => {
     return b || 'Royal Club';
   })();
 
-
   return (
     <div className="w-full min-h-screen bg-[#FAF8F5] font-sans pt-0 pb-12 select-none text-slate-800">
 
@@ -737,27 +786,125 @@ export const ProductsPage = ({ onNavigate, search }) => {
       )}
 
       {!selectedBrand ? (
-        /* ALL BRANDS ONLY VIEW (When user opens products page, all brands ONLY appear - NO categories and NO products!) */
+        /* CATEGORIES FIRST, THEN ITS BRANDS VIEW */
         <div className="w-full pt-[96px] sm:pt-[104px] pb-16 animate-fade-in">
           <div className="max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8">
 
-            {/* Editorial Hero Header */}
-            <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-10 sm:mb-12">
-
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-stone-900 tracking-tight font-sans leading-tight mb-4">
-                Select a <span className="text-[#C9A44C] italic font-serif font-extrabold">Brand</span> to Explore
+            {/* Editorial Category Header */}
+            <div className="flex flex-col items-center text-center max-w-4xl mx-auto mb-8 sm:mb-10">
+              <span className="text-[10.5px] font-black uppercase tracking-[0.25em] text-[#C9A44C] block leading-none mb-3">
+                ARCHITECTURAL CATALOGUE
+              </span>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-stone-900 tracking-tight font-sans leading-tight mb-3">
+                Select a <span className="text-[#C9A44C] italic font-serif font-extrabold">Category</span> to Explore
               </h1>
-              <p className="text-sm sm:text-base text-stone-600 font-medium leading-relaxed max-w-2xl mb-8">
-                PAKSHAL AGENCYS is an authorized partner for India's leading architectural plywood, decorative laminates, acrylic panels, designer doors, and hardware. Click on any brand below to view its specific categories and products.
+              <p className="text-sm sm:text-base text-stone-600 font-medium leading-relaxed max-w-2xl">
+                Explore our premium architectural categories. Select any category below to view authorized brands and technical specifications.
               </p>
+            </div>
+
+            {/* 5 Premium Category Cards Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5 lg:gap-4 xl:gap-5 mb-10 sm:mb-12">
+              {PRODUCT_PAGE_CATEGORIES.map((cat, idx) => {
+                const isActive = (PRODUCT_PAGE_CATEGORIES[categoryCoverIdx]?.categoryKey === cat.categoryKey) || (selectedCategory === cat.categoryKey);
+
+                return (
+                  <div
+                    key={cat.categoryKey}
+                    onClick={() => {
+                      setCategoryCoverIdx(idx);
+                      setSelectedCategory(cat.categoryKey);
+                      const el = document.getElementById('category-brands-section');
+                      if (el) {
+                        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                      }
+                    }}
+                    className={`group relative rounded-3xl overflow-hidden cursor-pointer select-none transition-all duration-300 flex flex-col justify-end p-5 sm:p-6 text-left min-h-[360px] sm:min-h-[390px] lg:min-h-[410px] ${
+                      isActive
+                        ? 'border-2 border-[#C9A44C] ring-4 ring-[#C9A44C]/30 shadow-[0_16px_36px_rgba(201,164,76,0.28)] -translate-y-2'
+                        : 'border border-stone-200/90 hover:border-[#C9A44C]/70 shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:shadow-[0_16px_32px_rgba(0,0,0,0.16)] hover:-translate-y-2'
+                    } bg-stone-900`}
+                  >
+                    {/* Background Image with Zoom */}
+                    <img
+                      src={cat.image}
+                      alt={cat.title}
+                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out brightness-[0.72] group-hover:brightness-[0.80]"
+                    />
+
+                    {/* Gradient Overlay for Text Contrast */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/55 to-black/30 z-0 pointer-events-none" />
+
+                    {/* Warm Gold Tint on Active / Hover */}
+                    <div
+                      className={`absolute inset-0 transition-opacity duration-300 pointer-events-none ${
+                        isActive ? 'bg-[#C9A44C]/15 opacity-100' : 'bg-transparent group-hover:bg-[#C9A44C]/10'
+                      }`}
+                    />
+
+                    {/* Bottom Content */}
+                    <div className="relative z-10 text-left flex flex-col gap-1.5">
+                      <h3 className="text-lg sm:text-xl font-black text-white leading-tight uppercase font-sans tracking-tight group-hover:text-[#F3D78A] transition-colors">
+                        {cat.title}
+                      </h3>
+
+                      <p className="text-[11.5px] sm:text-xs text-stone-300 font-medium leading-snug line-clamp-2">
+                        {cat.subtitle}
+                      </p>
+
+                      {cat.highlight && (
+                        <div className="mt-1 text-[9.5px] sm:text-[10px] font-bold text-[#E5C378] tracking-wider uppercase flex items-center gap-1.5">
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#C9A44C] flex-shrink-0" />
+                          <span className="truncate">{cat.highlight}</span>
+                        </div>
+                      )}
+
+                      {/* Interactive Bottom CTA Button */}
+                      {isActive ? (
+                        <div className="mt-3 w-full py-2.5 px-3.5 rounded-xl bg-gradient-to-r from-[#996f1d] via-[#8c6d23] to-[#735515] text-white font-black text-[10.5px] uppercase tracking-wider flex items-center justify-center gap-1.5 shadow-md">
+                          <span>Viewing Brands</span>
+                          <svg className="w-3.5 h-3.5 animate-bounce" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                          </svg>
+                        </div>
+                      ) : (
+                        <div className="mt-3 w-full py-2.5 px-3.5 rounded-xl bg-white/15 backdrop-blur-md group-hover:bg-[#C9A44C] text-white group-hover:text-stone-950 border border-white/25 group-hover:border-[#C9A44C] font-black text-[10.5px] uppercase tracking-wider flex items-center justify-between transition-all duration-300 shadow-xs">
+                          <span>Explore Category</span>
+                          <svg className="w-3.5 h-3.5 text-[#E5C378] group-hover:text-stone-950 group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                          </svg>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Brands Section (Shows Particular Brands for Selected Category) */}
+            <div id="category-brands-section" className="pt-4 mb-6 border-t border-stone-200/80">
+              <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-6 pt-4">
+                <div className="text-center sm:text-left">
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FAF6EE] border border-[#C9A44C]/35 text-[#8c6d23] text-[10px] font-black uppercase tracking-widest mb-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#C9A44C]" />
+                    {PRODUCT_PAGE_CATEGORIES[categoryCoverIdx]?.title}
+                  </div>
+                  <h2 className="text-2xl sm:text-3xl font-black text-stone-900 font-sans tracking-tight">
+                    Authorized Brands for <span className="text-[#C9A44C] italic font-serif font-extrabold">{PRODUCT_PAGE_CATEGORIES[categoryCoverIdx]?.categoryKey}</span>
+                  </h2>
+                  <p className="text-xs sm:text-sm text-stone-500 font-medium mt-1">
+                    Click any brand below to view its specific products, catalogues, and finishes.
+                  </p>
+                </div>
+              </div>
 
               {/* Centered Brand Search Input */}
-              <div className="relative w-full max-w-lg mx-auto">
+              <div className="relative w-full max-w-lg mx-auto mb-8">
                 <input
                   type="text"
                   value={brandSearchTerm}
                   onChange={(e) => setBrandSearchTerm(e.target.value)}
-                  placeholder="Search for authorized brands..."
+                  placeholder="Search brands in this category..."
                   className="w-full bg-white border border-stone-200/90 rounded-2xl pl-11 pr-10 py-3.5 text-xs sm:text-sm font-semibold text-stone-900 placeholder-stone-400 focus:outline-none focus:border-[#C9A44C] focus:ring-4 focus:ring-[#C9A44C]/15 transition-all shadow-sm"
                 />
                 <svg className="w-5 h-5 text-[#8c6d23] absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
@@ -775,133 +922,127 @@ export const ProductsPage = ({ onNavigate, search }) => {
               </div>
             </div>
 
-            {/* Brands Grid (Image-forward cards with zero brand logos) */}
-            {BRAND_CONFIG.filter((b) => {
-              if (brandSearchTerm.trim()) {
-                const term = brandSearchTerm.toLowerCase().trim();
-                const matchesName = b.name.toLowerCase().includes(term) || (b.displayName || '').toLowerCase().includes(term);
-                const matchesTagline = (b.tagline || '').toLowerCase().includes(term);
-                const matchesHallmark = (b.hallmark || '').toLowerCase().includes(term);
-                const matchesCategories = (b.categories || []).some(c => c.toLowerCase().includes(term));
-                if (!matchesName && !matchesTagline && !matchesHallmark && !matchesCategories) return false;
+            {/* Brands Grid (Filtered by Active Category and/or Search Term) */}
+            {(() => {
+              const activeCatKey = PRODUCT_PAGE_CATEGORIES[categoryCoverIdx]?.categoryKey || 'Laminates';
+              const filteredBrands = BRAND_CONFIG.filter((b) => {
+                const bCats = (b.categories || []).map(c => getCanonicalCategory(c));
+                const targetCat = getCanonicalCategory(activeCatKey);
+                const matchesCat = bCats.includes(targetCat) ||
+                  (targetCat === 'Hardware & Fittings' && bCats.includes('Arch. Hardware')) ||
+                  (targetCat === 'Fancy Doors' && (b.name === 'Fancy Doors' || bCats.includes('Fancy Doors')));
+                if (!matchesCat) return false;
+
+                if (brandSearchTerm.trim()) {
+                  const term = brandSearchTerm.toLowerCase().trim();
+                  const matchesName = b.name.toLowerCase().includes(term) || (b.displayName || '').toLowerCase().includes(term);
+                  const matchesTagline = (b.tagline || '').toLowerCase().includes(term);
+                  const matchesHallmark = (b.hallmark || '').toLowerCase().includes(term);
+                  if (!matchesName && !matchesTagline && !matchesHallmark) return false;
+                }
+                return true;
+              });
+
+              if (filteredBrands.length === 0) {
+                return (
+                  <div className="text-center py-16 bg-white rounded-3xl border border-stone-200 p-8 max-w-md mx-auto">
+                    <p className="text-stone-500 font-medium text-sm mb-4">No brands found matching "{brandSearchTerm}".</p>
+                    <button
+                      type="button"
+                      onClick={() => setBrandSearchTerm('')}
+                      className="px-5 py-2.5 bg-[#C9A44C] text-black font-extrabold text-xs uppercase tracking-wider rounded-xl cursor-pointer"
+                    >
+                      Clear Search
+                    </button>
+                  </div>
+                );
               }
-              return true;
-            }).length === 0 ? (
-              <div className="text-center py-16 bg-white rounded-3xl border border-stone-200 p-8 max-w-md mx-auto">
-                <p className="text-stone-500 font-medium text-sm mb-4">No brands found matching "{brandSearchTerm}".</p>
-                <button
-                  type="button"
-                  onClick={() => setBrandSearchTerm('')}
-                  className="px-5 py-2.5 bg-[#C9A44C] text-black font-extrabold text-xs uppercase tracking-wider rounded-xl cursor-pointer"
-                >
-                  View All Brands
-                </button>
-              </div>
-            ) : (
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-7">
-                {BRAND_CONFIG.filter((b) => {
-                  if (brandSearchTerm.trim()) {
-                    const term = brandSearchTerm.toLowerCase().trim();
-                    const matchesName = b.name.toLowerCase().includes(term) || (b.displayName || '').toLowerCase().includes(term);
-                    const matchesTagline = (b.tagline || '').toLowerCase().includes(term);
-                    const matchesHallmark = (b.hallmark || '').toLowerCase().includes(term);
-                    const matchesCategories = (b.categories || []).some(c => c.toLowerCase().includes(term));
-                    if (!matchesName && !matchesTagline && !matchesHallmark && !matchesCategories) return false;
-                  }
-                  return true;
-                }).map((b) => (
-                  <div
-                    key={b.name}
-                    onClick={() => handleBrandSelect(b.name)}
-                    className="group relative bg-white rounded-3xl border border-stone-200/90 shadow-[0_4px_24px_rgba(0,0,0,0.04)] flex flex-col justify-between cursor-pointer overflow-hidden"
-                  >
-                    {/* Top Image Showcase (NO brand logos! Authentic product imagery) */}
-                    <div className="relative h-56 sm:h-60 w-full overflow-hidden bg-stone-100">
-                      <img
-                        src={b.image}
-                        alt={b.name}
-                        className="w-full h-full object-cover"
-                      />
-                      {/* Gradient scrim for text readability */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
 
-                      {/* Floating Hallmark Pill Top-Left */}
-                      {b.tags?.[0] && (
-                        <div className="absolute top-3.5 left-3.5 bg-black/60 backdrop-blur-md text-[#E5C378] border border-[#C9A44C]/40 text-[9.5px] font-black uppercase tracking-wider px-3 py-1 rounded-full shadow-xs flex items-center gap-1.5">
-                          <span className="w-1.5 h-1.5 rounded-full bg-[#C9A44C]" />
-                          <span>{b.tags[0]}</span>
+              return (
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 sm:gap-7">
+                  {filteredBrands.map((b) => {
+                    const brandImg = getBrandImage(b, activeCatKey);
+                    const brandTag = getBrandTag(b, activeCatKey);
+
+                    return (
+                      <div
+                        key={b.name}
+                        onClick={() => handleBrandSelect(b.name)}
+                        className="group relative bg-white rounded-3xl border border-stone-200/90 shadow-[0_4px_24px_rgba(0,0,0,0.04)] flex flex-col justify-between cursor-pointer overflow-hidden"
+                      >
+                        {/* Top Image Showcase (NO brand logos! Authentic product imagery) */}
+                        <div className="relative h-56 sm:h-60 w-full overflow-hidden bg-stone-100">
+                          <img
+                            src={brandImg}
+                            alt={b.name}
+                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                          />
+                          {/* Gradient scrim for text readability */}
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
+
+                          {/* Overlaid Brand Title at Bottom of Image */}
+                          <div className="absolute bottom-3.5 inset-x-4">
+                            <h3 className="font-serif text-2xl font-black tracking-wide text-white drop-shadow-md leading-tight flex items-baseline gap-1">
+                              {b.name}
+                              {b.trademark && (
+                                <span className="text-[10px] font-sans font-semibold text-[#C9A44C] relative -top-2">®</span>
+                              )}
+                            </h3>
+                            {b.tagline && (
+                              <p className="text-[11px] font-bold text-[#FAF6EE]/90 tracking-wide line-clamp-1 mt-0.5 drop-shadow-sm">
+                                {b.tagline}
+                              </p>
+                            )}
+                          </div>
                         </div>
-                      )}
 
-                      {/* Floating Primary Category Pill Top-Right */}
-                      {b.categories?.[0] && (
-                        <div className="absolute top-3.5 right-3.5 bg-white/95 backdrop-blur-md text-stone-900 border border-white/60 text-[9.5px] font-extrabold uppercase tracking-wider px-2.5 py-1 rounded-full shadow-xs">
-                          {b.categories[0]}
-                        </div>
-                      )}
+                        {/* Card Body */}
+                        <div className="p-5 sm:p-6 bg-white flex flex-col justify-between flex-grow">
+                          <div>
+                            {/* Hallmark description */}
+                            <p className="text-xs text-stone-600 font-medium leading-relaxed mb-4 line-clamp-2">
+                              {b.hallmark}
+                            </p>
 
-                      {/* Overlaid Brand Title at Bottom of Image */}
-                      <div className="absolute bottom-3.5 inset-x-4">
-                        <h3 className="font-serif text-2xl font-black tracking-wide text-white drop-shadow-md leading-tight flex items-baseline gap-1">
-                          {b.name}
-                          {b.trademark && (
-                            <span className="text-[10px] font-sans font-semibold text-[#C9A44C] relative -top-2">®</span>
-                          )}
-                        </h3>
-                        {b.tagline && (
-                          <p className="text-[11px] font-bold text-[#FAF6EE]/90 tracking-wide line-clamp-1 mt-0.5 drop-shadow-sm">
-                            {b.tagline}
-                          </p>
-                        )}
-                      </div>
-                    </div>
-
-                    {/* Card Body */}
-                    <div className="p-5 sm:p-6 bg-white flex flex-col justify-between flex-grow">
-                      <div>
-                        {/* Hallmark description */}
-                        <p className="text-xs text-stone-600 font-medium leading-relaxed mb-4 line-clamp-2">
-                          {b.hallmark}
-                        </p>
-
-                        {/* Brand Categories Chips */}
-                        <div className="mb-5">
-                          <span className="text-[10px] font-extrabold uppercase tracking-widest text-stone-400 block mb-2">
-                            Product Categories
-                          </span>
-                          <div className="flex flex-wrap gap-1.5">
-                            {(b.categories || []).map((cat, idx) => (
-                              <span
-                                key={idx}
-                                className="inline-flex items-center gap-1.5 text-[11px] font-bold px-3 py-1 rounded-lg bg-[#FAF8F5] text-stone-800 border border-stone-200/90"
-                              >
-                                <span className="w-1.5 h-1.5 rounded-full bg-[#C9A44C]" />
-                                {cat}
+                            {/* Brand Categories Chips */}
+                            <div className="mb-5">
+                              <span className="text-[10px] font-extrabold uppercase tracking-widest text-stone-400 block mb-2">
+                                Product Categories
                               </span>
-                            ))}
+                              <div className="flex flex-wrap gap-1.5">
+                                {(b.categories || []).map((cat, idx) => (
+                                  <span
+                                    key={idx}
+                                    className="inline-flex items-center gap-1.5 text-[11px] font-bold px-3 py-1 rounded-lg bg-[#FAF8F5] text-stone-800 border border-stone-200/90"
+                                  >
+                                    <span className="w-1.5 h-1.5 rounded-full bg-[#C9A44C]" />
+                                    {cat}
+                                  </span>
+                                ))}
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Action CTA Button with hover effect */}
+                          <div className="w-full py-3.5 px-4 bg-stone-900 group-hover:bg-[#8c6d23] text-white rounded-xl font-bold text-xs uppercase tracking-wider flex items-center justify-between transition-colors duration-200 shadow-xs group-hover:shadow-md cursor-pointer">
+                            <span className="tracking-wide">Explore Products</span>
+                            <svg
+                              className="w-4 h-4 text-[#C9A44C] group-hover:text-white transition-all duration-200 group-hover:translate-x-1.5"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="2.5"
+                              viewBox="0 0 24 24"
+                            >
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                            </svg>
                           </div>
                         </div>
                       </div>
-
-                      {/* Action CTA Button with hover effect */}
-                      <div className="w-full py-3.5 px-4 bg-stone-900 group-hover:bg-[#8c6d23] text-white rounded-xl font-bold text-xs uppercase tracking-wider flex items-center justify-between transition-colors duration-200 shadow-xs group-hover:shadow-md cursor-pointer">
-                        <span className="tracking-wide">Explore Products</span>
-                        <svg
-                          className="w-4 h-4 text-[#C9A44C] group-hover:text-white transition-all duration-200 group-hover:translate-x-1.5"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2.5"
-                          viewBox="0 0 24 24"
-                        >
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            )}
-
+                    );
+                  })} 
+                </div>
+              );
+            })()}
           </div>
         </div>
       ) : (
@@ -1246,11 +1387,10 @@ export const ProductsPage = ({ onNavigate, search }) => {
                           if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
                         }
                       }}
-                      className={`group relative bg-white rounded-2xl border transition-all duration-200 cursor-pointer p-4 flex flex-col justify-between overflow-hidden ${
-                        isCurrent
+                      className={`group relative bg-white rounded-2xl border transition-all duration-200 cursor-pointer p-4 flex flex-col justify-between overflow-hidden ${isCurrent
                           ? 'border-[#C9A44C] ring-2 ring-[#C9A44C]/25 shadow-md'
                           : 'border-stone-200/80 hover:border-[#C9A44C]/60 shadow-xs'
-                      }`}
+                        }`}
                     >
                       <div className="relative h-32 sm:h-36 w-full rounded-xl overflow-hidden bg-stone-50 mb-3 border border-stone-100 flex items-center justify-center">
                         <img

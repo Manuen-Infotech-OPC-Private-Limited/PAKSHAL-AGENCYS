@@ -25,7 +25,8 @@ import homepageMarinePlywoodImg from '../assets/plywood/homepage-marineplywood.p
 import centuryPlywoodImg from '../assets/plywood/century.png';
 import centuryLaminatesImg from '../assets/laminates/centurylaminates1.jpg';
 import chromaLaminatesImg from '../assets/laminates/chromalaminates1.png';
-import vistaLaminatesImg from '../assets/plywood/vista1.png';
+import vistaLaminatesImg from '../assets/laminates/vistalaminates2.png';
+import vistaPlywoodImg from '../assets/plywood/vistaplywood1.png';
 import merinoLaminatesImg from '../assets/plywood/merino.png';
 import gurjanClubImg from '../assets/plywood/gurjanclub1.png';
 import gurjanKingImg from '../assets/plywood/gurjan king.png';
@@ -459,10 +460,10 @@ export const GalleryPage = () => {
 
               {/* Row 2, Col 3: Experience Centre Image Card */}
               <div className="relative rounded-br-[48px] sm:rounded-br-[80px] rounded-tl-2xl rounded-tr-2xl rounded-bl-2xl overflow-hidden group">
-                <img 
-                  src={interiorPanelsImg} 
-                  alt="Experience Centre" 
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                <img
+                  src={interiorPanelsImg}
+                  alt="Experience Centre"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
             </div>

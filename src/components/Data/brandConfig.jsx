@@ -7,13 +7,19 @@ import gurjanGoldNewImg from '../../assets/plywood/gurjangold.png';
 import gurjanStarImg from '../../assets/plywood/gurjanstar.png';
 import centuryPlywood1Img from '../../assets/plywood/century.png';
 import greenPlywood1Img from '../../assets/plywood/green1.png';
+import centuryLaminatesImg from '../../assets/laminates/centurylaminates2.png';
+import greenLaminatesImg from '../../assets/laminates/greenlaminates3.png';
 import marineLaminateImg from '../../assets/laminates/marine_laminate.jpg';
-import vista1Img from '../../assets/plywood/vista1.png';
+import vistaLaminatesImg from '../../assets/laminates/vistalaminates2.png';
+import vistaPlywoodImg from '../../assets/plywood/vistaplywood1.png';
 import chromaLaminates1Img from '../../assets/laminates/chromalaminates1.png';
+import indigoLaminatesImg from '../../assets/laminates/indigolaminates.png';
 import acrylicPanelsImg from '../../assets/laminates/acrylicpanels.png';
+import merinoLaminatesImg from '../../assets/laminates/merinolaminates.png';
 import merino1Img from '../../assets/plywood/merino.png';
 import armaniBrandImg from '../../assets/brands/armani_acrylic.jpg';
 import veneer2Img from '../../assets/plywood/veneer2.png';
+import fancyDoorsImg from '../../assets/doors/fancydoors.png';
 import hardwareFittings1 from '../../assets/hardware/productspage-hardware&fittings.png';
 import astdaxHardware1Img from '../../assets/hardware/Astdax hardware and fittings.png';
 
@@ -131,7 +137,15 @@ export const BRAND_CONFIG = [
     name: 'Century',
     displayName: 'CENTURY',
     trademark: true,
-    image: centuryPlywood1Img,
+    image: centuryLaminatesImg,
+    categoryImages: {
+      'Plywood': centuryPlywood1Img,
+      'Laminates': centuryLaminatesImg
+    },
+    categoryTags: {
+      'Plywood': ['100% Gurjan Core', 'BWP Marine Grade', 'Termite Proof'],
+      'Laminates': ['High Pressure Laminate', 'Antibacterial', 'Anti-Fingerprint']
+    },
     categories: ['Laminates', 'Plywood'],
     categorySummary: 'Laminates & Plywood • Surface Solutions',
     tagline: "India's Benchmark for Decorative Surfaces",
@@ -148,7 +162,15 @@ export const BRAND_CONFIG = [
     name: 'Green',
     displayName: 'GREEN',
     trademark: true,
-    image: greenPlywood1Img,
+    image: greenLaminatesImg,
+    categoryImages: {
+      'Plywood': greenPlywood1Img,
+      'Laminates': greenLaminatesImg
+    },
+    categoryTags: {
+      'Plywood': ['100% Calibrated', 'Borer Resistant', 'High Load Capacity'],
+      'Laminates': ['Zero Emission', 'Scratch Resistant', 'Texture Rich']
+    },
     categories: ['Laminates', 'Plywood'],
     categorySummary: 'Laminates & Plywood • Eco Luxury',
     tagline: 'Eco-Friendly Premium Surface Collection',
@@ -165,6 +187,9 @@ export const BRAND_CONFIG = [
     displayName: 'MARINE',
     trademark: true,
     image: marineLaminateImg,
+    categoryImages: {
+      'Laminates': marineLaminateImg
+    },
     categories: ['Laminates'],
     categorySummary: 'Laminates • Moisture-Proof Finishes',
     tagline: 'High-Resilience Moisture Resistant Sheets',
@@ -181,12 +206,20 @@ export const BRAND_CONFIG = [
     name: 'Vista',
     displayName: 'VISTA',
     trademark: true,
-    image: vista1Img,
-    categories: ['Laminates'],
-    categorySummary: 'Laminates • Architectural Textures',
-    tagline: 'Contemporary Textures & Natural Stone Looks',
-    hallmark: 'Sophisticated architectural laminate range featuring realistic marble, rustic stone, and tactile woodgrain patterns.',
-    tags: ['Stone Textures', 'Matte Finish', 'Impact Resistant'],
+    image: vistaLaminatesImg,
+    categoryImages: {
+      'Laminates': vistaLaminatesImg,
+      'Plywood': vistaPlywoodImg
+    },
+    categoryTags: {
+      'Laminates': 'Stone Textures',
+      'Plywood': '100% Calibrated'
+    },
+    categories: ['Laminates', 'Plywood'],
+    categorySummary: 'Laminates • Plywood • Calibrated Cores',
+    tagline: 'Contemporary Textures & Calibrated Plywood',
+    hallmark: 'Sophisticated architectural laminate range and high-density calibrated structural plywood with zero core gaps.',
+    tags: ['Stone Textures', '100% Calibrated', 'Impact Resistant'],
     icon: (
       <svg className="w-7 h-7 text-[#C9A44C]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <polygon points="12 3 21 12 12 21 3 12" />
@@ -198,6 +231,9 @@ export const BRAND_CONFIG = [
     displayName: 'CROMA',
     trademark: true,
     image: chromaLaminates1Img,
+    categoryImages: {
+      'Laminates': chromaLaminates1Img
+    },
     categories: ['Laminates'],
     categorySummary: 'Laminates • Solid Colors & Woodgrains',
     tagline: 'Vibrant Colors & Timeless Wood Decors',
@@ -216,7 +252,10 @@ export const BRAND_CONFIG = [
     name: 'Indigo',
     displayName: 'INDIGO',
     trademark: true,
-    image: acrylicPanelsImg,
+    image: indigoLaminatesImg,
+    categoryImages: {
+      'Laminates': indigoLaminatesImg
+    },
     categories: ['Laminates'],
     categorySummary: 'Laminates • High-Gloss & Velvet Matte',
     tagline: 'Ultra High-Gloss & Velvet Touch Surfaces',
@@ -232,7 +271,11 @@ export const BRAND_CONFIG = [
     name: 'Merino',
     displayName: 'MERINO',
     trademark: true,
-    image: merino1Img,
+    image: merinoLaminatesImg,
+    categoryImages: {
+      'Laminates': merinoLaminatesImg,
+      'Plywood': merino1Img
+    },
     categories: ['Laminates'],
     categorySummary: 'Laminates • High-Pressure Surfaces',
     tagline: 'World-Class Decorative Laminates & Surfaces',
@@ -310,6 +353,26 @@ export const BRAND_CONFIG = [
         <rect x="3" y="6" width="6" height="12" rx="3" />
         <path d="M9 10h11a1.5 1.5 0 011.5 1.5v0a1.5 1.5 0 01-1.5 1.5H9" />
         <circle cx="6" cy="12" r="1.2" fill="currentColor" />
+      </svg>
+    )
+  },
+  {
+    name: 'Fancy Doors',
+    displayName: 'FANCY DOORS',
+    trademark: true,
+    image: fancyDoorsImg,
+    categoryImages: {
+      'Fancy Doors': fancyDoorsImg
+    },
+    categories: ['Fancy Doors'],
+    categorySummary: 'Fancy Doors • Luxury Designer Entrances',
+    tagline: 'Designer Doors for Stylish Living Spaces',
+    hallmark: 'Premium solid core designer doors crafted with seasoned hardwoods, acoustic sound insulation, and luxury contemporary finishes.',
+    tags: ['Solid Timber Core', 'Zero Warpage Guarantee', '15-Year Warranty'],
+    icon: (
+      <svg className="w-7 h-7 text-[#C9A44C]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M4 3h16a1 1 0 011 1v16a1 1 0 01-1 1H4a1 1 0 01-1-1V4a1 1 0 011-1z" />
+        <circle cx="8" cy="12" r="1.5" fill="currentColor" />
       </svg>
     )
   }

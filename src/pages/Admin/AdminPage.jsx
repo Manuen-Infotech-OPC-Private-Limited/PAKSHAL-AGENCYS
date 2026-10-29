@@ -833,7 +833,7 @@ export const AdminPage = ({ onNavigate }) => {
                     className="w-full bg-slate-50 border border-stone-200 focus:bg-white rounded-xl py-2.5 px-3.5 text-xs font-bold text-slate-800 focus:outline-none focus:border-[#0F5C3B] transition-colors"
                   >
                     <option value="General">General/Storewide</option>
-                    <option value="Marine Plywood">Marine Plywood</option>
+                    <option value="Plywood">Plywood</option>
                     <option value="Laminates">Laminates</option>
                     <option value="Hardware">Hardware / Fittings</option>
                     <option value="Kitchen Accessories">Kitchen Accessories</option>

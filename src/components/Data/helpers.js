@@ -95,3 +95,36 @@ export const isBrandCategoryMatch = (s, brandName, categoryName) => {
   return true;
 };
 
+export const getBrandImage = (brand, targetCategory) => {
+  if (!brand) return '';
+  if (targetCategory && brand.categoryImages) {
+    const canonical = getCanonicalCategory(targetCategory);
+    if (brand.categoryImages[canonical]) {
+      return brand.categoryImages[canonical];
+    }
+    const matchKey = Object.keys(brand.categoryImages).find(
+      cat => getCanonicalCategory(cat) === canonical
+    );
+    if (matchKey) {
+      return brand.categoryImages[matchKey];
+    }
+  }
+  return brand.image || '';
+};
+
+export const getBrandTag = (brand, targetCategory) => {
+  if (!brand) return '';
+  if (targetCategory && brand.categoryTags) {
+    const canonical = getCanonicalCategory(targetCategory);
+    const tags = brand.categoryTags[canonical];
+    if (tags && tags.length > 0) return tags[0];
+    const matchKey = Object.keys(brand.categoryTags).find(
+      cat => getCanonicalCategory(cat) === canonical
+    );
+    if (matchKey && brand.categoryTags[matchKey]?.length > 0) {
+      return brand.categoryTags[matchKey][0];
+    }
+  }
+  return brand.tags?.[0] || '';
+};
+

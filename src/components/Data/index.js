@@ -13,7 +13,9 @@ export {
   getCanonicalCategory,
   isPlywoodOrLaminateBrand,
   isBrandMatch,
-  isBrandCategoryMatch
+  isBrandCategoryMatch,
+  getBrandImage,
+  getBrandTag
 } from './helpers';
 
 export {

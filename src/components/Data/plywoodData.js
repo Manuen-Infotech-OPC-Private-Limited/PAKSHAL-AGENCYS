@@ -30,9 +30,12 @@ import gurjanStarImg from '../../assets/plywood/gurjanstar.png';
 import gurjanStar2Img from '../../assets/plywood/gurjanstar2.png';
 import gurjanStar3Img from '../../assets/plywood/gurjanstar3.png';
 import gurjanStar4Img from '../../assets/plywood/gurjanstar4.png';
+import vistaPlywood1Img from '../../assets/plywood/vistaplywood1.png';
+import vistaPlywood2Img from '../../assets/plywood/vistaplywood2.png';
+import vistaPlywood3Img from '../../assets/plywood/vistaplywood3.png';
 
 export const plywoodSpreads = [
-{
+  {
     id: 1,
     brandId: 'royal-club',
     category: 'Plywood',
@@ -69,7 +72,7 @@ export const plywoodSpreads = [
       { title: 'Eco Friendly', desc: 'Sustainable & environment safe', icon: 'leaf' }
     ]
   },
-{
+  {
     id: 12,
     brandId: 'royal-club-premium',
     category: 'Plywood',
@@ -108,7 +111,7 @@ export const plywoodSpreads = [
       { title: 'Lifetime Warranty', desc: 'Assured product warranty protection', icon: 'shield' }
     ]
   },
-{
+  {
     id: 121,
     brandId: 'royal-club-gold',
     category: 'Plywood',
@@ -145,7 +148,7 @@ export const plywoodSpreads = [
       { title: 'Borer Proof', desc: 'Vacuum-pressure preservative treated', icon: 'shield' }
     ]
   },
-{
+  {
     id: 122,
     brandId: 'royal-club-marine',
     category: 'Plywood',
@@ -182,7 +185,7 @@ export const plywoodSpreads = [
       { title: 'Extreme Climate', desc: 'Resists coastal humidity & heat', icon: 'shield' }
     ]
   },
-{
+  {
     id: 123,
     brandId: 'royal-club-architect',
     category: 'Plywood',
@@ -219,7 +222,7 @@ export const plywoodSpreads = [
       { title: 'Dimensional Stability', desc: 'No warping or bowing across seasons', icon: 'shield' }
     ]
   },
-{
+  {
     id: 2,
     brandId: 'marine-club',
     category: 'Plywood',
@@ -256,7 +259,7 @@ export const plywoodSpreads = [
       { title: 'Eco Safe Resin', desc: 'Low emissions polymer bond', icon: 'leaf' }
     ]
   },
-{
+  {
     id: 21,
     brandId: 'marine-club-bwp',
     category: 'Plywood',
@@ -293,7 +296,7 @@ export const plywoodSpreads = [
       { title: 'Heavy Load Rating', desc: 'Built for high stress applications', icon: 'strength' }
     ]
   },
-{
+  {
     id: 22,
     brandId: 'marine-club-pro',
     category: 'Plywood',
@@ -330,7 +333,7 @@ export const plywoodSpreads = [
       { title: 'Anti-Termite', desc: 'Lifelong protection against pests', icon: 'shield' }
     ]
   },
-{
+  {
     id: 301,
     brandId: 'century-plywood',
     category: 'Plywood',
@@ -365,7 +368,7 @@ export const plywoodSpreads = [
       { title: 'Termite Proof', desc: 'Treated with specialized preservative salts', icon: 'shield' }
     ]
   },
-{
+  {
     id: 3011,
     brandId: 'century-plywood-club',
     category: 'Plywood',
@@ -402,7 +405,7 @@ export const plywoodSpreads = [
       { title: 'Calibrated Face', desc: 'Uniform thickness across all corners', icon: 'calibrate' }
     ]
   },
-{
+  {
     id: 3012,
     brandId: 'century-plywood-architect',
     category: 'Plywood',
@@ -439,7 +442,7 @@ export const plywoodSpreads = [
       { title: 'Flawless Base', desc: 'Perfect foundation for veneers and laminates', icon: 'sparkles' }
     ]
   },
-{
+  {
     id: 302,
     brandId: 'green-plywood',
     category: 'Plywood',
@@ -474,7 +477,7 @@ export const plywoodSpreads = [
       { title: 'Termite Protection', desc: 'Specially chemically treated', icon: 'shield' }
     ]
   },
-{
+  {
     id: 3021,
     brandId: 'green-plywood-gold',
     category: 'Plywood',
@@ -511,7 +514,7 @@ export const plywoodSpreads = [
       { title: 'Phenolic PF Resin', desc: 'Boiling-water proof bond', icon: 'droplet' }
     ]
   },
-{
+  {
     id: 3022,
     brandId: 'green-plywood-marine',
     category: 'Plywood',
@@ -548,7 +551,7 @@ export const plywoodSpreads = [
       { title: 'Screw Retention', desc: 'Solid grip across edges and face', icon: 'gear' }
     ]
   },
-{
+  {
     id: 7,
     brandId: 'gurjan-club',
     category: 'Plywood',
@@ -585,7 +588,7 @@ export const plywoodSpreads = [
       { title: 'Lifetime Guarantee', desc: 'Assured product warranty protection', icon: 'shield' }
     ]
   },
-{
+  {
     id: 71,
     brandId: 'gurjan-club-calibrated',
     category: 'Plywood',
@@ -622,7 +625,7 @@ export const plywoodSpreads = [
       { title: 'Boiling Water Proof', desc: 'Exceeds standard 72-hour boiling water test', icon: 'droplet' }
     ]
   },
-{
+  {
     id: 8,
     brandId: 'gurjan-king',
     category: 'Plywood',
@@ -658,7 +661,7 @@ export const plywoodSpreads = [
       { title: 'Screw Holding', desc: 'Superior grip strength for hinges', icon: 'gear' }
     ]
   },
-{
+  {
     id: 82,
     brandId: 'gurjan-king-premium',
     category: 'Plywood',
@@ -695,7 +698,7 @@ export const plywoodSpreads = [
       { title: 'Double Calibrated', desc: 'Smooth substrate for veneers and laminates', icon: 'sparkles' }
     ]
   },
-{
+  {
     id: 81,
     brandId: 'gurjan-gold',
     category: 'Plywood',
@@ -733,7 +736,7 @@ export const plywoodSpreads = [
       { title: 'Screw Retention', desc: 'Maximum load bearing and hinge strength', icon: 'gear' }
     ]
   },
-{
+  {
     id: 811,
     brandId: 'gurjan-gold-elite',
     category: 'Plywood',
@@ -770,7 +773,7 @@ export const plywoodSpreads = [
       { title: 'Lifetime Assurance', desc: 'Guaranteed against delamination and borers', icon: 'shield' }
     ]
   },
-{
+  {
     id: 10,
     brandId: 'gurjan-star',
     category: 'Plywood',
@@ -1205,6 +1208,116 @@ export const plywoodSpreads = [
       { title: 'Unextended Resin Bond', desc: 'Maximum adhesion that never fails in high-humidity zones', icon: 'shield' },
       { title: 'Anti-Fungal & Anti-Borer', desc: 'Deep preservative penetration against mold and pests', icon: 'bug' },
       { title: 'Lifetime Assurance', desc: 'Guaranteed for wet area installations', icon: 'shield' }
+    ]
+  },
+  {
+    id: 950,
+    brandId: 'vista-plywood',
+    category: 'Plywood',
+    pageNumLeft: 31,
+    pageNumRight: 32,
+    badge: 'Calibrated Collection',
+    title: 'Precision\nCalibrated Core.',
+    tagline: 'High-density calibrated plywood engineered for precision interiors',
+    image: vistaPlywood1Img,
+    brandName: 'Vista',
+    desc: 'Vista Calibrated Plywood features imported hardwood core veneers double-pressed to uniform thickness with zero core gaps for flawless joinery and cabinetry.',
+    thicknesses: ['6mm', '9mm', '12mm', '16mm', '19mm', '25mm'],
+    defaultThickness: '19mm',
+    features: ['100% Calibrated', 'Zero Core Gaps', 'BWP Marine Grade', 'Termite Resistant'],
+    applications: ['Modular Kitchens', 'Wardrobes', 'Architectural Paneling', 'Luxury Furniture'],
+    specs: {
+      'Core Material': 'Imported Hardwood',
+      'Thickness Tolerance': '± 0.2mm',
+      'Bonding': 'Phenolic Formaldehyde (BWP)',
+      'Warranty': '25 Years Warranty'
+    },
+    heroSub: 'DOUBLE HOT PRESSED. 100% CALIBRATED.',
+    heroTitle: 'VISTA PLYWOOD',
+    heroDesc: 'Vista Calibrated Plywood features imported hardwood core veneers double-pressed to uniform thickness with zero core gaps for flawless joinery and cabinetry.',
+    heroTags: [
+      { text: '100% Calibrated Core', icon: 'calibrate' },
+      { text: 'Zero Core Gaps', icon: 'wood' },
+      { text: 'BWP Marine Grade', icon: 'droplet' }
+    ],
+    overviewFeatures: [
+      { title: '100% Calibrated', desc: 'Uniform thickness across all corners for flawless lamination', icon: 'calibrate' },
+      { title: 'Selected Hardwood Core', desc: 'Double-pressed structural stability and superior screw holding', icon: 'wood' },
+      { title: 'BWP Grade Resin', desc: 'Resists extreme boiling water and moisture conditions', icon: 'droplet' },
+      { title: 'Termite & Borer Proof', desc: 'Chemically treated for complete pest defense', icon: 'bug' },
+      { title: 'Zero Core Gaps', desc: 'Eliminates warping, bending, and internal hollow spots', icon: 'shield' }
+    ]
+  },
+  {
+    id: 951,
+    brandId: 'vista-plywood-bwp',
+    category: 'Plywood',
+    pageNumLeft: 31,
+    pageNumRight: 32,
+    hideFromIndex: true,
+    parentBrandId: 'vista-plywood',
+    badge: 'Marine Grade',
+    title: 'Marine Grade\nBWP Plywood.',
+    tagline: 'Moisture defense calibrated ply for high-humidity areas',
+    image: vistaPlywood2Img,
+    brandName: 'Vista',
+    desc: 'Treated with advanced phenolic resins to ensure uncompromised bonding even under continuous contact with moisture and steam in kitchen and bath casework.',
+    thicknesses: ['12mm', '16mm', '19mm', '25mm'],
+    defaultThickness: '19mm',
+    features: ['BWP IS 710', 'Boiling Water Resistant', 'High Screw Holding'],
+    applications: ['Wet Kitchens', 'Bathroom Vanities', 'Sink Base Units'],
+    specs: {
+      'Core Material': 'High-Density Hardwood',
+      'Standard': 'IS 710 BWP',
+      'Warranty': '25 Years Warranty'
+    },
+    heroSub: 'CERTIFIED BWP. MAXIMUM WATER DEFENSE.',
+    heroTitle: 'VISTA BWP PLYWOOD',
+    heroDesc: 'Treated with advanced phenolic resins to ensure uncompromised bonding even under continuous contact with moisture and steam in kitchen and bath casework.',
+    heroTags: [
+      { text: 'IS 710 Certified', icon: 'droplet' },
+      { text: 'Zero Swelling', icon: 'shield' },
+      { text: 'High Density', icon: 'wood' }
+    ],
+    overviewFeatures: [
+      { title: 'Water Resistance', desc: 'Uncompromised phenolic bonding', icon: 'droplet' },
+      { title: 'Heavy Load Strength', desc: 'Dense hardwood layers support heavy kitchen hardware', icon: 'wood' }
+    ]
+  },
+  {
+    id: 952,
+    brandId: 'vista-plywood-structural',
+    category: 'Plywood',
+    pageNumLeft: 31,
+    pageNumRight: 32,
+    hideFromIndex: true,
+    parentBrandId: 'vista-plywood',
+    badge: 'Structural Core',
+    title: 'Architectural\nStructural Ply.',
+    tagline: 'Heavy-duty calibrated core for load-bearing joinery',
+    image: vistaPlywood3Img,
+    brandName: 'Vista',
+    desc: 'Multi-layer calibrated architectural core designed for zero warping across tall wardrobe doors, executive office credenzas, and floor-to-ceiling partitions.',
+    thicknesses: ['16mm', '19mm', '25mm'],
+    defaultThickness: '19mm',
+    features: ['Zero Warping', 'Calibrated ±0.2mm', 'Termite Treated'],
+    applications: ['Full-Height Doors', 'Executive Credenzas', 'Partitions'],
+    specs: {
+      'Core': 'Multi-Layer Hardwood',
+      'Calibration': 'Double Sanded',
+      'Warranty': 'Lifetime Guarantee'
+    },
+    heroSub: 'ZERO WARPING. PRECISION ARCHITECTURAL CORE.',
+    heroTitle: 'VISTA STRUCTURAL PLY',
+    heroDesc: 'Multi-layer calibrated architectural core designed for zero warping across tall wardrobe doors, executive office credenzas, and floor-to-ceiling partitions.',
+    heroTags: [
+      { text: 'Zero Warping', icon: 'shield' },
+      { text: 'Double Sanded', icon: 'calibrate' },
+      { text: 'Lifetime Guarantee', icon: 'shield' }
+    ],
+    overviewFeatures: [
+      { title: 'Zero Warping', desc: 'Engineered for tall shutters and large spans', icon: 'shield' },
+      { title: 'Double Sanded Surface', desc: 'Ready for instant laminate or veneer application', icon: 'calibrate' }
     ]
   }
 ];

@@ -29,9 +29,6 @@ import centuryLaminates3Img from '../../assets/laminates/centurylaminates3.png';
 import centuryLaminates4Img from '../../assets/laminates/centurylaminates4.png';
 import chromaLaminates1Img from '../../assets/laminates/chromalaminates1.png';
 import chromaLaminates2Img from '../../assets/laminates/chromalaminates2.png';
-import vista1Img from '../../assets/plywood/vista1.png';
-import vista2Img from '../../assets/plywood/vista2.png';
-import vista3Img from '../../assets/plywood/vista3.png';
 import chroma1Img from '../../assets/plywood/chroma1.png';
 import chroma2Img from '../../assets/plywood/chroma2.png';
 import chroma3Img from '../../assets/plywood/chroma3.png';
@@ -41,7 +38,7 @@ import merino3Img from '../../assets/plywood/merino3.png';
 
 
 export const laminatesSpreads = [
-{
+  {
     id: 3,
     brandId: 'century-laminates',
     category: 'Laminates',
@@ -78,7 +75,7 @@ export const laminatesSpreads = [
       { title: 'Eco Safe Kraft', desc: 'Non-toxic raw materials', icon: 'leaf' }
     ]
   },
-{
+  {
     id: 31,
     brandId: 'century-laminates-textures',
     category: 'Laminates',
@@ -115,7 +112,7 @@ export const laminatesSpreads = [
       { title: 'Anti-Bacterial', desc: 'Silver nano hygiene shield', icon: 'sparkles' }
     ]
   },
-{
+  {
     id: 32,
     brandId: 'century-laminates-architectural',
     category: 'Laminates',
@@ -152,7 +149,7 @@ export const laminatesSpreads = [
       { title: 'Stain Resistance', desc: 'Impervious to household chemicals', icon: 'shield' }
     ]
   },
-{
+  {
     id: 33,
     brandId: 'century-laminates-stone',
     category: 'Laminates',
@@ -189,7 +186,7 @@ export const laminatesSpreads = [
       { title: 'Thermal Healing', desc: 'Micro-scratches buff out easily', icon: 'shield' }
     ]
   },
-{
+  {
     id: 11,
     brandId: 'green-laminates',
     category: 'Laminates',
@@ -226,7 +223,7 @@ export const laminatesSpreads = [
       { title: 'Zero Toxins', desc: 'Low VOC emission certified', icon: 'sparkles' }
     ]
   },
-{
+  {
     id: 27,
     brandId: 'indigo-laminates',
     category: 'Laminates',
@@ -262,7 +259,7 @@ export const laminatesSpreads = [
       { title: 'Eco Friendly', desc: 'Low VOC compliant materials', icon: 'leaf' }
     ]
   },
-{
+  {
     id: 14,
     brandId: 'marine-laminates',
     category: 'Laminates',
@@ -299,118 +296,125 @@ export const laminatesSpreads = [
       { title: 'UV Stabilized', desc: 'Color remains vibrant over time', icon: 'shield' }
     ]
   },
-{
+  {
     id: 25,
     brandId: 'vista-laminates',
     category: 'Laminates',
     pageNumLeft: 13,
     pageNumRight: 14,
-    badge: 'Contemporary Collection',
-    title: 'Natural Stone &\nMarble.',
-    tagline: 'Sophisticated architectural laminate textures for luxury interiors',
-    image: vista1Img,
+    badge: 'Fluted & Textured Stone',
+    title: 'Vista Fluted &\nSplit Stone Series.',
+    tagline: 'Tactile fluted panels and raw mineral stone textures for premium interiors',
+    image: vistaLaminates2Img,
     brandName: 'Vista',
-    desc: 'Vista Laminates highlight deep walnut tones, realistic marble veining, and contemporary tactile textures, creating an inspiring ambience.',
+    desc: 'Vista Fluted & Stone Laminates offer deep 3D fluting, concrete textures, and natural slate finishes that give furniture surfaces rich tactile character and architectural shadow play.',
+    thicknesses: ['1.0mm', '1.2mm'],
+    defaultThickness: '1.0mm',
+    features: ['3D Fluted Texture', 'Raw Mineral Stone Finish', 'High Impact Core', 'Scratch Resistant'],
+    applications: ['Feature Wall Cladding', 'Reception Counters', 'Luxury Bar Cabinets', 'TV Feature Units'],
+    specs: {
+      'Texture': 'Deep 3D Fluted & Split Mineral',
+      'Core': 'Dense Phenolic Kraft',
+      'Sheet Dimension': '2440 x 1220 mm',
+      'Warranty': '10 Years Warranty'
+    },
+    heroSub: '3D FLUTED PROFILES. MINERAL STONE DEPTH.',
+    heroTitle: 'VISTA FLUTED & STONE',
+    heroDesc: 'Vista Fluted & Stone Laminates offer deep 3D fluting, concrete textures, and natural slate finishes that give furniture surfaces rich tactile character.',
+    heroTags: [
+      { text: '3D Fluted Texture', icon: 'sparkles' },
+      { text: 'Mineral Stone', icon: 'wood' },
+      { text: 'High Impact', icon: 'shield' }
+    ],
+    overviewFeatures: [
+      { title: '3D Fluted Relief', desc: 'Vertical grooved ridges create dynamic ambient shadows', icon: 'sparkles' },
+      { title: 'Raw Mineral Feel', desc: 'Tactile stone texture feels like carved slate', icon: 'wood' },
+      { title: 'High Density Kraft Core', desc: 'Absorbs shocks and holds screws securely at edges', icon: 'shield' },
+      { title: 'Wear Resistant Melamine', desc: 'Stands up to high foot-traffic hospitality zones', icon: 'shield' },
+      { title: '10-Year Guarantee', desc: 'Backed by Vista surface engineering reliability', icon: 'leaf' }
+    ]
+  },
+  {
+    id: 251,
+    brandId: 'vista-laminates-calacatta',
+    category: 'Laminates',
+    pageNumLeft: 13,
+    pageNumRight: 14,
+    hideFromIndex: true,
+    parentBrandId: 'vista-laminates',
+    badge: 'Calacatta Marble & Slate',
+    title: 'Calacatta Marble &\nVolcanic Slate.',
+    tagline: 'Luxury Italian marble veining and volcanic slate finishes',
+    image: vistaLaminates3Img,
+    brandName: 'Vista',
+    desc: 'Meticulously recreates the dramatic veining of Italian Calacatta gold marble and dark volcanic slate, offering the opulent look of stone at a fraction of the weight and maintenance.',
+    thicknesses: ['1.0mm', '1.2mm'],
+    defaultThickness: '1.0mm',
+    features: ['Dramatic Vein Realism', 'Lightweight Stone Alternative', 'Stain & Heat Proof', 'Seamless Mirror Match'],
+    applications: ['Kitchen Island Facing', 'Dining Table Tops', 'Bathroom Vanity Walls', 'Lift Lobby Panels'],
+    specs: {
+      'Pattern Type': 'Calacatta Gold / Volcanic Nero Slate',
+      'Heat Resistance': 'Up to 180°C',
+      'Stain Resistance': 'Zero Porosity Coating',
+      'Warranty': '10 Years Warranty'
+    },
+    heroSub: 'CALACATTA VEINING. ZERO POROSITY.',
+    heroTitle: 'VISTA MARBLE & SLATE',
+    heroDesc: 'Meticulously recreates the dramatic veining of Italian Calacatta gold marble and dark volcanic slate, offering the opulent look of stone without heavy weight.',
+    heroTags: [
+      { text: 'Calacatta Veins', icon: 'sparkles' },
+      { text: 'Zero Porosity', icon: 'droplet' },
+      { text: '180°C Heat Proof', icon: 'shield' }
+    ],
+    overviewFeatures: [
+      { title: 'Photorealistic Veins', desc: 'High-definition European print recreates quarry marble', icon: 'sparkles' },
+      { title: 'Zero Porosity', desc: 'Never stains from coffee, turmeric, or red wine spills', icon: 'droplet' },
+      { title: '180°C Heat Tolerance', desc: 'Withstands hot kitchen utensils without blistering', icon: 'shield' },
+      { title: 'Lightweight Versatility', desc: 'Easy for carpenters to cut, route, and install', icon: 'calibrate' },
+      { title: 'Lifetime Luxury Look', desc: 'Never requires sealing or polishing unlike real marble', icon: 'leaf' }
+    ]
+  },
+  {
+    id: 252,
+    brandId: 'vista-laminates-architectural',
+    category: 'Laminates',
+    pageNumLeft: 13,
+    pageNumRight: 14,
+    hideFromIndex: true,
+    parentBrandId: 'vista-laminates',
+    badge: 'Architectural Hardwood',
+    title: 'Vista Architectural\nHardwood Decors.',
+    tagline: 'Synchronized warm oak, walnut, and smoked ash timber grain laminates',
+    image: vistaLaminates4Img,
+    brandName: 'Vista',
+    desc: 'Crafted with synchronized grain technology where surface texture precisely matches woodgrain visuals, delivering the warmth and authenticity of genuine solid timber.',
     thicknesses: ['0.8mm', '1.0mm', '1.2mm'],
     defaultThickness: '1.0mm',
-    features: ['Natural Stone Grain', 'Anti-Fingerprint', 'Impact Resistant'],
-    applications: ['Executive Offices', 'Living Room Consoles', 'Feature Walls'],
+    features: ['Synchronized Grain Match', 'Warm Timber Tones', 'UV Color Protection', 'Easy Edge Matching'],
+    applications: ['Wardrobe Shutters', 'Office Desking', 'Bookshelves & Storage', 'Living Room Paneling'],
     specs: {
-      'Material': 'Phenolic Resin Kraft',
-      'Surface Finish': 'Stone & Walnut Texture',
-      'Heat Resistance': 'Up to 180°C'
+      'Wood Species': 'European Oak, American Walnut, Smoked Ash',
+      'Texture': 'Synchronized Natural Grain',
+      'Standard Size': '8ft x 4ft',
+      'Warranty': '10 Years Warranty'
     },
-    heroSub: 'CONTEMPORARY STYLE. NATURAL STONE & MARBLE.',
-    heroTitle: 'VISTA',
-    heroDesc: 'Vista Laminates highlight deep walnut tones, realistic marble veining, and contemporary tactile textures for luxury spaces.',
+    heroSub: 'SYNCHRONIZED WOOD. TIMELESS WARMTH.',
+    heroTitle: 'VISTA HARDWOOD DECORS',
+    heroDesc: 'Crafted with synchronized grain technology where surface texture precisely matches woodgrain visuals, delivering the warmth of genuine timber.',
     heroTags: [
-      { text: 'Natural Stone', icon: 'sparkles' },
-      { text: 'Anti-Fingerprint', icon: 'sparkles' },
-      { text: 'Impact Resistant', icon: 'shield' }
+      { text: 'Synchronized Grain', icon: 'wood' },
+      { text: 'Natural Timber Look', icon: 'leaf' },
+      { text: 'UV Protected', icon: 'shield' }
     ],
     overviewFeatures: [
-      { title: 'Stone & Wood Textures', desc: 'Deep warm architectural details', icon: 'wood' },
-      { title: 'Anti-Fingerprint', desc: 'Smudge-free ultra smooth feel', icon: 'sparkles' },
-      { title: 'Impact Resistant', desc: 'High resistance to physical knocks', icon: 'shield' },
-      { title: 'Thermal Stability', desc: 'Resists temperature shifts', icon: 'droplet' },
-      { title: 'Easy Maintenance', desc: 'Cleans effortlessly with damp cloth', icon: 'sparkles' }
+      { title: 'Synchronized Texture', desc: 'Every grain line is physically embossed for true timber feel', icon: 'wood' },
+      { title: 'Warm Organic Tones', desc: 'Selected European oak and American walnut colorways', icon: 'leaf' },
+      { title: 'UV Stabilized Surface', desc: 'Maintains uniform wood color under interior room lighting', icon: 'shield' },
+      { title: 'Clean Edge Planing', desc: 'Zero micro-chipping along cut lines with fine saw blades', icon: 'calibrate' },
+      { title: '10 Years Performance', desc: 'Guaranteed dimensional stability and peel resistance', icon: 'shield' }
     ]
   },
-{
-    id: 251,
-    brandId: 'vista-laminates-walnut',
-    category: 'Laminates',
-    pageNumLeft: 13,
-    pageNumRight: 14,
-    hideFromIndex: true,
-    parentBrandId: 'vista-laminates',
-    badge: 'Warm Walnut',
-    title: 'Warm Walnut\nTextures.',
-    tagline: 'Deep walnut tones with golden woodgrain accents',
-    image: vista2Img,
-    brandName: 'Vista',
-    desc: 'Rich walnut woodgrain decor with synchronised golden pores brings organic warmth to executive furniture and living room joinery.',
-    thicknesses: ['1.0mm', '1.2mm'],
-    defaultThickness: '1.0mm',
-    features: ['Golden Grain Accents', 'Suede Texture', 'Color Fast'],
-    applications: ['Executive Desks', 'TV Consoles', 'Bed Headboards'],
-    specs: {
-      'Finish': 'Suede Walnut',
-      'Moisture Resistance': 'High Resistant',
-      'Standard Size': '8ft x 4ft'
-    },
-    heroSub: 'WARM WALNUT TONES. GOLDEN GRAIN ACCENTS.',
-    heroTitle: 'VISTA',
-    heroDesc: 'Rich walnut woodgrain decor with synchronised golden pores brings organic warmth to executive furniture and living room joinery.',
-    heroTags: [
-      { text: 'Golden Woodgrain', icon: 'wood' },
-      { text: 'Suede Finish', icon: 'sparkles' },
-      { text: 'Scratch Resistant', icon: 'shield' }
-    ],
-    overviewFeatures: [
-      { title: 'Warm Walnut Grain', desc: 'Authentic golden-tinged pores', icon: 'wood' },
-      { title: 'Scratch Resistant', desc: 'Protected by high-wear melamine resin', icon: 'shield' },
-      { title: 'UV Protection', desc: 'Retains rich color without yellowing', icon: 'sparkles' }
-    ]
-  },
-{
-    id: 252,
-    brandId: 'vista-laminates-stone',
-    category: 'Laminates',
-    pageNumLeft: 13,
-    pageNumRight: 14,
-    hideFromIndex: true,
-    parentBrandId: 'vista-laminates',
-    badge: 'Architectural Stone',
-    title: 'Contemporary\nTactile Stone.',
-    tagline: 'Realistic split slate and marble textures for feature walls',
-    image: vista3Img,
-    brandName: 'Vista',
-    desc: 'Sophisticated stone finishes offering the cool grandeur of Italian marble combined with light weight and seamless edge bonding.',
-    thicknesses: ['1.0mm', '1.2mm'],
-    defaultThickness: '1.0mm',
-    features: ['Italian Marble Decor', 'Tactile Touch', 'Stain Resistant'],
-    applications: ['Kitchen Backsplashes', 'Reception Desks', 'Wall Cladding'],
-    specs: {
-      'Texture': 'Split Slate / Calacatta',
-      'Heat Resistance': 'Up to 180°C',
-      'Maintenance': 'Wipe Clean'
-    },
-    heroSub: 'COOL STONE TEXTURE. ITALIAN MARBLE AESTHETICS.',
-    heroTitle: 'VISTA',
-    heroDesc: 'Sophisticated stone finishes offering the cool grandeur of Italian marble combined with light weight and seamless edge bonding.',
-    heroTags: [
-      { text: 'Marble Aesthetics', icon: 'sparkles' },
-      { text: 'Heat Proof 180°C', icon: 'droplet' },
-      { text: 'Stain Resistant', icon: 'shield' }
-    ],
-    overviewFeatures: [
-      { title: 'Marble Elegance', desc: 'Seamless veining without heavy stone slabs', icon: 'sparkles' },
-      { title: 'Heat Resistant', desc: 'Resists boiling water and hot cookware', icon: 'droplet' },
-      { title: 'Easy Maintenance', desc: 'Simple wipe with microfiber cloth', icon: 'leaf' }
-    ]
-  },
-{
+  {
     id: 26,
     brandId: 'croma-laminates',
     category: 'Laminates',
@@ -447,7 +451,7 @@ export const laminatesSpreads = [
       { title: 'Anti-Corrosion', desc: 'Protective top clear sealant layer', icon: 'droplet' }
     ]
   },
-{
+  {
     id: 261,
     brandId: 'croma-laminates-gloss',
     category: 'Laminates',
@@ -484,7 +488,7 @@ export const laminatesSpreads = [
       { title: 'Scratch Barrier', desc: 'Resistant to daily scuffs and wipes', icon: 'gear' }
     ]
   },
-{
+  {
     id: 262,
     brandId: 'croma-laminates-metallic',
     category: 'Laminates',
@@ -521,7 +525,7 @@ export const laminatesSpreads = [
       { title: 'Accent Ready', desc: 'Perfect contrast for dark wood and stone', icon: 'gear' }
     ]
   },
-{
+  {
     id: 263,
     brandId: 'croma-laminates-chrome',
     category: 'Laminates',
@@ -558,7 +562,7 @@ export const laminatesSpreads = [
       { title: 'Precision Cut', desc: 'Crisp edges without metal burrs', icon: 'calibrate' }
     ]
   },
-{
+  {
     id: 264,
     brandId: 'croma-laminates-decor',
     category: 'Laminates',
@@ -595,7 +599,7 @@ export const laminatesSpreads = [
       { title: 'Durable Kraft', desc: 'Phenolic resin core ensures zero warping', icon: 'shield' }
     ]
   },
-{
+  {
     id: 401,
     brandId: 'merino-laminates',
     category: 'Laminates',
@@ -632,7 +636,7 @@ export const laminatesSpreads = [
       { title: 'Eco Friendly Kraft', desc: 'Sustainably sourced kraft paper matrix', icon: 'leaf' }
     ]
   },
-{
+  {
     id: 402,
     brandId: 'merino-laminates-textures',
     category: 'Laminates',
@@ -669,7 +673,7 @@ export const laminatesSpreads = [
       { title: 'Seamless Edging', desc: 'Blends cleanly with matching edge bands', icon: 'calibrate' }
     ]
   },
-{
+  {
     id: 403,
     brandId: 'merino-laminates-matt',
     category: 'Laminates',
@@ -1264,126 +1268,6 @@ export const laminatesSpreads = [
       { title: 'Easy Edge-Banding', desc: 'Clean cuts with zero chipping on edge banders', icon: 'calibrate' },
       { title: 'UV Shielded', desc: 'Guaranteed against fading under direct daylight exposure', icon: 'shield' },
       { title: 'Commercial Rating', desc: 'Engineered for multi-unit apartments and corporate fit-outs', icon: 'shield' }
-    ]
-  },
-  {
-    id: 253,
-    brandId: 'vista-laminates-fluted',
-    category: 'Laminates',
-    pageNumLeft: 17,
-    pageNumRight: 18,
-    hideFromIndex: true,
-    parentBrandId: 'vista-laminates',
-    badge: 'Fluted & Textured Stone',
-    title: 'Vista Fluted &\nSplit Stone Series.',
-    tagline: 'Tactile fluted panels and raw mineral stone textures for premium interiors',
-    image: vistaLaminates2Img,
-    brandName: 'Vista',
-    desc: 'Vista Fluted & Stone Laminates offer deep 3D fluting, concrete textures, and natural slate finishes that give furniture surfaces rich tactile character and architectural shadow play.',
-    thicknesses: ['1.0mm', '1.2mm'],
-    defaultThickness: '1.0mm',
-    features: ['3D Fluted Texture', 'Raw Mineral Stone Finish', 'High Impact Core', 'Scratch Resistant'],
-    applications: ['Feature Wall Cladding', 'Reception Counters', 'Luxury Bar Cabinets', 'TV Feature Units'],
-    specs: {
-      'Texture': 'Deep 3D Fluted & Split Mineral',
-      'Core': 'Dense Phenolic Kraft',
-      'Sheet Dimension': '2440 x 1220 mm',
-      'Warranty': '10 Years Warranty'
-    },
-    heroSub: '3D FLUTED PROFILES. MINERAL STONE DEPTH.',
-    heroTitle: 'VISTA FLUTED & STONE',
-    heroDesc: 'Vista Fluted & Stone Laminates offer deep 3D fluting, concrete textures, and natural slate finishes that give furniture surfaces rich tactile character.',
-    heroTags: [
-      { text: '3D Fluted Texture', icon: 'sparkles' },
-      { text: 'Mineral Stone', icon: 'wood' },
-      { text: 'High Impact', icon: 'shield' }
-    ],
-    overviewFeatures: [
-      { title: '3D Fluted Relief', desc: 'Vertical grooved ridges create dynamic ambient shadows', icon: 'sparkles' },
-      { title: 'Raw Mineral Feel', desc: 'Tactile stone texture feels like carved slate', icon: 'wood' },
-      { title: 'High Density Kraft Core', desc: 'Absorbs shocks and holds screws securely at edges', icon: 'shield' },
-      { title: 'Wear Resistant Melamine', desc: 'Stands up to high foot-traffic hospitality zones', icon: 'shield' },
-      { title: '10-Year Guarantee', desc: 'Backed by Vista surface engineering reliability', icon: 'leaf' }
-    ]
-  },
-  {
-    id: 254,
-    brandId: 'vista-laminates-calacatta',
-    category: 'Laminates',
-    pageNumLeft: 17,
-    pageNumRight: 18,
-    hideFromIndex: true,
-    parentBrandId: 'vista-laminates',
-    badge: 'Calacatta Marble & Slate',
-    title: 'Calacatta Marble &\nVolcanic Slate.',
-    tagline: 'Luxury Italian marble veining and volcanic slate finishes',
-    image: vistaLaminates3Img,
-    brandName: 'Vista',
-    desc: 'Meticulously recreates the dramatic veining of Italian Calacatta gold marble and dark volcanic slate, offering the opulent look of stone at a fraction of the weight and maintenance.',
-    thicknesses: ['1.0mm', '1.2mm'],
-    defaultThickness: '1.0mm',
-    features: ['Dramatic Vein Realism', 'Lightweight Stone Alternative', 'Stain & Heat Proof', 'Seamless Mirror Match'],
-    applications: ['Kitchen Island Facing', 'Dining Table Tops', 'Bathroom Vanity Walls', 'Lift Lobby Panels'],
-    specs: {
-      'Pattern Type': 'Calacatta Gold / Volcanic Nero Slate',
-      'Heat Resistance': 'Up to 180°C',
-      'Stain Resistance': 'Zero Porosity Coating',
-      'Warranty': '10 Years Warranty'
-    },
-    heroSub: 'CALACATTA VEINING. ZERO POROSITY.',
-    heroTitle: 'VISTA MARBLE & SLATE',
-    heroDesc: 'Meticulously recreates the dramatic veining of Italian Calacatta gold marble and dark volcanic slate, offering the opulent look of stone without heavy weight.',
-    heroTags: [
-      { text: 'Calacatta Veins', icon: 'sparkles' },
-      { text: 'Zero Porosity', icon: 'droplet' },
-      { text: '180°C Heat Proof', icon: 'shield' }
-    ],
-    overviewFeatures: [
-      { title: 'Photorealistic Veins', desc: 'High-definition European print recreates quarry marble', icon: 'sparkles' },
-      { title: 'Zero Porosity', desc: 'Never stains from coffee, turmeric, or red wine spills', icon: 'droplet' },
-      { title: '180°C Heat Tolerance', desc: 'Withstands hot kitchen utensils without blistering', icon: 'shield' },
-      { title: 'Lightweight Versatility', desc: 'Easy for carpenters to cut, route, and install', icon: 'calibrate' },
-      { title: 'Lifetime Luxury Look', desc: 'Never requires sealing or polishing unlike real marble', icon: 'leaf' }
-    ]
-  },
-  {
-    id: 255,
-    brandId: 'vista-laminates-architectural',
-    category: 'Laminates',
-    pageNumLeft: 17,
-    pageNumRight: 18,
-    hideFromIndex: true,
-    parentBrandId: 'vista-laminates',
-    badge: 'Architectural Hardwood',
-    title: 'Vista Architectural\nHardwood Decors.',
-    tagline: 'Synchronized warm oak, walnut, and smoked ash timber grain laminates',
-    image: vistaLaminates4Img,
-    brandName: 'Vista',
-    desc: 'Crafted with synchronized grain technology where surface texture precisely matches woodgrain visuals, delivering the warmth and authenticity of genuine solid timber.',
-    thicknesses: ['0.8mm', '1.0mm', '1.2mm'],
-    defaultThickness: '1.0mm',
-    features: ['Synchronized Grain Match', 'Warm Timber Tones', 'UV Color Protection', 'Easy Edge Matching'],
-    applications: ['Wardrobe Shutters', 'Office Desking', 'Bookshelves & Storage', 'Living Room Paneling'],
-    specs: {
-      'Wood Species': 'European Oak, American Walnut, Smoked Ash',
-      'Texture': 'Synchronized Natural Grain',
-      'Standard Size': '8ft x 4ft',
-      'Warranty': '10 Years Warranty'
-    },
-    heroSub: 'SYNCHRONIZED WOOD. TIMELESS WARMTH.',
-    heroTitle: 'VISTA HARDWOOD DECORS',
-    heroDesc: 'Crafted with synchronized grain technology where surface texture precisely matches woodgrain visuals, delivering the warmth of genuine timber.',
-    heroTags: [
-      { text: 'Synchronized Grain', icon: 'wood' },
-      { text: 'Natural Timber Look', icon: 'leaf' },
-      { text: 'UV Protected', icon: 'shield' }
-    ],
-    overviewFeatures: [
-      { title: 'Synchronized Texture', desc: 'Every grain line is physically embossed for true timber feel', icon: 'wood' },
-      { title: 'Warm Organic Tones', desc: 'Selected European oak and American walnut colorways', icon: 'leaf' },
-      { title: 'UV Stabilized Surface', desc: 'Maintains uniform wood color under interior room lighting', icon: 'shield' },
-      { title: 'Clean Edge Planing', desc: 'Zero micro-chipping along cut lines with fine saw blades', icon: 'calibrate' },
-      { title: '10 Years Performance', desc: 'Guaranteed dimensional stability and peel resistance', icon: 'shield' }
     ]
   }
 ];
