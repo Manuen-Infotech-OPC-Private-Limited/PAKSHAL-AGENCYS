@@ -19,7 +19,7 @@ export const HomePage = ({ onNavigateAbout, onNavigate }) => {
   return (
     <>
       {/* Hero Section - Full screen banner with headline and CTA */}
-      <Hero />
+      <Hero onNavigate={onNavigate} />
 
       {/* Stats Bar - Floating stats card overlapping hero */}
       <Stats />

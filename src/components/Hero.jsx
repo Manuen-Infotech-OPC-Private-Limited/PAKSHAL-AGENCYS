@@ -1,6 +1,10 @@
 import React from 'react';
 
-export const Hero = () => {
+export const Hero = ({ onNavigate }) => {
+  const basePrefix = typeof window !== 'undefined' && window.location.pathname.startsWith('/PAKSHAL-AGENCYS')
+    ? '/PAKSHAL-AGENCYS'
+    : '';
+
   return (
     <section
       id="home"
@@ -56,15 +60,27 @@ export const Hero = () => {
             <div className="flex flex-wrap gap-4 mt-10">
 
               <a
-                href="#products"
-                className="inline-flex items-center justify-center bg-[#38a12c] hover:bg-[#2f8a24] text-white px-8 py-4 rounded-xl text-sm font-bold uppercase tracking-wider transition-all duration-300 shadow-lg hover:-translate-y-0.5"
+                href={`${basePrefix}/products`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  if (onNavigate) {
+                    onNavigate('products');
+                  }
+                }}
+                className="inline-flex items-center justify-center bg-[#38a12c] hover:bg-[#2f8a24] text-white px-8 py-4 rounded-xl text-sm font-bold uppercase tracking-wider transition-all duration-300 shadow-lg hover:-translate-y-0.5 cursor-pointer"
               >
                 View Products
               </a>
 
               <a
-                href="#contact"
-                className="inline-flex items-center justify-center border border-[#C9A44C]/60 text-[#071330] hover:bg-[#C9A44C]/10 px-8 py-4 rounded-xl text-sm font-bold uppercase tracking-wider transition-all duration-300 hover:-translate-y-0.5"
+                href={`${basePrefix}/contact`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  if (onNavigate) {
+                    onNavigate('contact');
+                  }
+                }}
+                className="inline-flex items-center justify-center border border-[#C9A44C]/60 text-[#071330] hover:bg-[#C9A44C]/10 px-8 py-4 rounded-xl text-sm font-bold uppercase tracking-wider transition-all duration-300 hover:-translate-y-0.5 cursor-pointer"
               >
                 Contact Us
               </a>

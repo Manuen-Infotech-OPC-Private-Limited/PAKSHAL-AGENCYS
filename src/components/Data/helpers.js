@@ -73,8 +73,11 @@ export const isBrandMatch = (s, brandName) => {
   if (bLower === 'astdax') {
     return sBrand.includes('astdax');
   }
+  if (bLower === 'sentex gold' || bLower === 'sentex') {
+    return sCat === 'Kitchen Accessories' || sBrand.includes('sentex');
+  }
   if (bLower === 'steel wood') {
-    return sBrand.includes('steel') || sCat === 'Sliding Systems' || sCat === 'Kitchen Accessories' || sBrand.includes('sliding');
+    return sBrand.includes('steel') || sCat === 'Sliding Systems' || sBrand.includes('sliding');
   }
   return sBrand === bLower;
 };

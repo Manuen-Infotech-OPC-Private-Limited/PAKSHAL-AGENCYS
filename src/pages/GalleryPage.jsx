@@ -14,6 +14,7 @@ import hydraulicHingeImg from '../assets/hardware/hydraulichinge.png';
 import mortiseImg from '../assets/hardware/mortise.png';
 import royalClubImg from '../assets/plywood/royalclub.png';
 import royalClub2Img from '../assets/plywood/royalclub2.png';
+import royalClub3Img from '../assets/plywood/royalclub3.png';
 import marineClubImg from '../assets/plywood/marineclub.png';
 import marineClub2Img from '../assets/plywood/marineclub2.png';
 import laminates2Img from '../assets/laminates/laminates2.png';
@@ -23,14 +24,35 @@ import veneer3Img from '../assets/plywood/veneer3.png';
 import veneer4Img from '../assets/plywood/veneer4.png';
 import homepageMarinePlywoodImg from '../assets/plywood/homepage-marineplywood.png';
 import centuryPlywoodImg from '../assets/plywood/century.png';
+import century2Img from '../assets/plywood/century2.png';
 import centuryLaminatesImg from '../assets/laminates/centurylaminates1.jpg';
+import centuryLaminates2Img from '../assets/laminates/centurylaminates2.png';
+import centuryLaminates4Img from '../assets/laminates/centurylaminates4.png';
 import chromaLaminatesImg from '../assets/laminates/chromalaminates1.png';
+import chromaLaminates2Img from '../assets/laminates/chromalaminates2.png';
 import vistaLaminatesImg from '../assets/laminates/vistalaminates2.png';
+import vistaLaminates2Img from '../assets/laminates/vistalaminates2.png';
+import vistaLaminates3Img from '../assets/laminates/vistalaminates3.png';
+import vistaLaminates4Img from '../assets/laminates/vistalaminates4.png';
 import vistaPlywoodImg from '../assets/plywood/vistaplywood1.png';
-import merinoLaminatesImg from '../assets/plywood/merino.png';
+import merinoLaminatesImg from '../assets/laminates/merinolaminates.png';
+import merinoLaminates2Img from '../assets/laminates/merinolaminates2.webp';
+import merinoLaminates3Img from '../assets/laminates/merinolaminates3.png';
+import merinoLaminates4Img from '../assets/laminates/merinolaminates4.png';
 import gurjanClubImg from '../assets/plywood/gurjanclub1.png';
 import gurjanKingImg from '../assets/plywood/gurjan king.png';
+import gurjanGoldNewImg from '../assets/plywood/gurjangold.png';
+import gurjanStarImg from '../assets/plywood/gurjanstar.png';
 import greenPlywoodImg from '../assets/plywood/green1.png';
+import green2Img from '../assets/plywood/green2.png';
+import greenLaminates2Img from '../assets/laminates/greenlaminates2.webp';
+import greenLaminates3Img from '../assets/laminates/greenlaminates3.png';
+import indigoLaminates1Img from '../assets/laminates/indigolaminates.png';
+import indigoLaminates2Img from '../assets/laminates/indigolaminates2.png';
+import marineLaminates2Img from '../assets/laminates/marinelaminates2.png';
+import marineLaminates3Img from '../assets/laminates/marinelaminates3.png';
+import marineLaminates4Img from '../assets/laminates/marinelaminates4.png';
+import marineLaminates5Img from '../assets/laminates/marinelaminates5.png';
 import astdaxHardwareImg from '../assets/hardware/Astdax hardware and fittings.png';
 import kitchensCardImg from '../assets/kitchen/kitchens-card.jpg';
 import bifoldLiftUpImg from '../assets/kitchen/bifoldliftupsystem.png';
@@ -70,18 +92,13 @@ import { useDocumentMetadata } from '../hooks/useDocumentMetadata';
 const GALLERY_ITEMS = [
   {
     id: 1,
-    title: 'Plywood & Laminates',
-    category: 'Plywood & Laminates',
+    title: 'Plywood Collection',
+    category: 'Plywood',
     img: centuryPlywoodImg,
-    imagesCount: 20,
+    imagesCount: 16,
     images: [
       centuryPlywoodImg,
-      centuryLaminatesImg,
       plywoodImg,
-      laminatesImg,
-      chromaLaminatesImg,
-      vistaLaminatesImg,
-      merinoLaminatesImg,
       gurjanClubImg,
       gurjanKingImg,
       greenPlywoodImg,
@@ -89,14 +106,43 @@ const GALLERY_ITEMS = [
       royalClub2Img,
       marineClubImg,
       marineClub2Img,
+      vistaPlywoodImg,
+      homepageMarinePlywoodImg,
+      gurjanGoldNewImg,
+      gurjanStarImg,
+      century2Img,
+      green2Img,
+      royalClub3Img
+    ],
+    desc: 'Premium BWR, BWP marine-grade, calibrated, and club plywood sheets from Century, Green, Gurjan King, Royal Club, Marine Club, and Vista.'
+  },
+  {
+    id: 201,
+    title: 'Decorative Laminates',
+    category: 'Laminates',
+    img: centuryLaminatesImg,
+    imagesCount: 18,
+    images: [
+      centuryLaminatesImg,
+      laminatesImg,
+      chromaLaminatesImg,
+      vistaLaminatesImg,
+      merinoLaminatesImg,
       laminates2Img,
       laminates3Img,
-      veneer2Img,
-      veneer3Img,
-      veneer4Img,
-      homepageMarinePlywoodImg
+      greenLaminates2Img,
+      greenLaminates3Img,
+      indigoLaminates1Img,
+      indigoLaminates2Img,
+      marineLaminates2Img,
+      marineLaminates3Img,
+      merinoLaminates2Img,
+      merinoLaminates3Img,
+      vistaLaminates2Img,
+      vistaLaminates3Img,
+      centuryLaminates2Img
     ],
-    desc: 'Premium BWR and marine-grade plywood sheets, veneers, and decorative wood laminates from Century, Green, Gurjan, Merino, Vista, Croma, and Royal Club.'
+    desc: 'High-pressure decorative surface laminates in matte, high-gloss, suede, and textured woodgrains from Century, Merino, Greenlam, Vista, Indigo, and Croma.'
   },
   {
     id: 2,
@@ -182,6 +228,36 @@ const GALLERY_ITEMS = [
     desc: 'Designer entrance doors, contemporary fancy doors, luxury veneer doors, and carved timber doors.'
   },
   {
+    id: 101,
+    title: 'Natural Wood Veneers',
+    category: 'Plywood',
+    img: veneer2Img,
+    imagesCount: 4,
+    images: [
+      veneer2Img,
+      veneer3Img,
+      veneer4Img,
+      homepageMarinePlywoodImg
+    ],
+    desc: 'Exotic natural wood veneers with architectural grain patterns, teak textures, and luxury bookmatched surface finishes.'
+  },
+  {
+    id: 202,
+    title: 'Marble & Textured Laminates',
+    category: 'Laminates',
+    img: laminatesImg,
+    imagesCount: 6,
+    images: [
+      laminatesImg,
+      marineLaminates4Img,
+      marineLaminates5Img,
+      merinoLaminates4Img,
+      vistaLaminates4Img,
+      centuryLaminates4Img
+    ],
+    desc: 'Luxury marble slab patterns, stone finishes, and tactile architectural textures for designer countertops and interior paneling.'
+  },
+  {
     id: 501,
     title: 'Modern Fancy Doors',
     category: 'Doors & Systems',
@@ -245,7 +321,8 @@ const GALLERY_ITEMS = [
 
 const CATEGORIES = [
   { name: 'All Collections', id: 'All' },
-  { name: 'Plywood & Laminates', id: 'Plywood & Laminates' },
+  { name: 'Plywood', id: 'Plywood' },
+  { name: 'Laminates', id: 'Laminates' },
   { name: 'Acrylic Panels', id: 'Acrylic Panels' },
   { name: 'Hardware & Fittings', id: 'Hardware & Fittings' },
   { name: 'Kitchen & Accessories', id: 'Kitchen & Accessories' },
@@ -261,11 +338,17 @@ const CATEGORY_ICONS = {
       <rect x="14" y="14" width="7" height="7" rx="1" />
     </svg>
   ),
-  'Plywood & Laminates': (
+  'Plywood': (
     <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
       <path d="M12 4L3 8L12 12L21 8L12 4Z" strokeLinecap="round" strokeLinejoin="round" />
       <path d="M3 12L12 16L21 12" strokeLinecap="round" strokeLinejoin="round" />
       <path d="M3 16L12 20L21 16" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  ),
+  'Laminates': (
+    <svg className="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+      <rect x="3" y="3" width="14" height="14" rx="2" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M7 17v2a2 2 0 002 2h10a2 2 0 002-2V9a2 2 0 00-2-2h-2" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   ),
   'Acrylic Panels': (
@@ -342,7 +425,7 @@ const GalleryCard = ({ item, onClick }) => {
 export const GalleryPage = () => {
   useDocumentMetadata(
     "Showroom & Materials Gallery | PAKSHAL AGENCYS",
-    "Get inspired by our showroom gallery featuring custom modular wardrobes, luxury kitchens, slatted wall panels, and high-gloss acrylic sheet selections."
+    "Get inspired by our showroom gallery featuring premium plywood, decorative laminates, custom modular wardrobes, luxury kitchens, slatted wall panels, and high-gloss acrylic sheet selections."
   );
 
   const [selectedCategory, setSelectedCategory] = useState('All');
@@ -472,7 +555,7 @@ export const GalleryPage = () => {
 
         {/* CATEGORY TABS SELECTOR */}
         <div className="mt-16 w-full">
-          <div className="flex flex-row flex-nowrap lg:grid lg:grid-cols-6 gap-3 md:gap-4 overflow-x-auto pb-4 lg:pb-0 no-scrollbar w-full scroll-smooth">
+          <div className="flex flex-row flex-nowrap lg:grid lg:grid-cols-7 gap-3 md:gap-4 overflow-x-auto pb-4 lg:pb-0 no-scrollbar w-full scroll-smooth">
             {CATEGORIES.map((category) => {
               const isActive = selectedCategory === category.id;
               return (
@@ -512,8 +595,8 @@ export const GalleryPage = () => {
                 <GalleryCard key={item.id} item={item} onClick={() => openLightbox(item.id)} />
               ))}
             </div>
-            {/* Row 3: 5-column Layout */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+            {/* Row 3: 6-column Layout */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
               {filteredItems.slice(6).map((item) => (
                 <GalleryCard key={item.id} item={item} onClick={() => openLightbox(item.id)} />
               ))}
@@ -621,11 +704,3 @@ export const GalleryPage = () => {
     </div>
   );
 };
-
-
-
-
-
-
-
-

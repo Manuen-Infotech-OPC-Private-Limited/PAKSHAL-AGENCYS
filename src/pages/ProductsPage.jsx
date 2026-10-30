@@ -1,48 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useDocumentMetadata } from '../hooks/useDocumentMetadata';
-import marinePlywoodImg from '../assets/plywood/homepage-marineplywood.png';
-import veneersImg from '../assets/plywood/veneer2.png';
-import laminatesImg from '../assets/laminates/laminate-marble-slabs.jpg';
-import hardwareFittingsImg from '../assets/hardware/hardwarefittings.png';
-import doorsImg from '../assets/doors/fancydoors.png';
-
-const PRODUCT_PAGE_CATEGORIES = [
-  {
-    title: "PLYWOOD",
-    subtitle: "Strong. Durable. Reliable.",
-    highlight: "IS 710 Boiling Water Proof",
-    image: marinePlywoodImg,
-    categoryKey: "Plywood"
-  },
-  {
-    title: "VENEERS",
-    subtitle: "Natural Beauty. Perfect Finish",
-    highlight: "Exotic Natural & Teak Grain",
-    image: veneersImg,
-    categoryKey: "Veneers"
-  },
-  {
-    title: "LAMINATES",
-    subtitle: "Style That Stands Out",
-    highlight: "1.0mm Matt, Gloss & Texture",
-    image: laminatesImg,
-    categoryKey: "Laminates"
-  },
-  {
-    title: "HARDWARE FITTINGS",
-    subtitle: "Precision in Every Detail",
-    highlight: "Hydraulic Hinges & Channels",
-    image: hardwareFittingsImg,
-    categoryKey: "Hardware & Fittings"
-  },
-  {
-    title: "DOORS & ACCESSORIES",
-    subtitle: "Complete Your Interior",
-    highlight: "Solid Core & Designer Doors",
-    image: doorsImg,
-    categoryKey: "Fancy Doors"
-  }
-];
 import KitchenAccessories from '../components/KitchenAccessories';
 import FancyDoors from '../components/FancyDoors';
 import {
@@ -68,9 +25,12 @@ import {
   BookOpen,
   Wrench
 } from 'lucide-react';
-import sgCatalogPdf from '../assets/Broucher/SG CATALOG.pdf';
-import hardwarePdf from '../assets/Broucher/hardwareaccessories.pdf';
+
 import {
+  PRODUCT_PAGE_CATEGORIES,
+  PRODUCTS_PAGE_METADATA,
+  sgCatalogPdf,
+  hardwarePdf,
   SPREADS,
   BRAND_CONFIG,
   CATEGORY_DEFINITIONS,
@@ -81,10 +41,12 @@ import {
   isBrandCategoryMatch,
   getBrandImage,
   getBrandTag
-} from '../components/Data';
+} from '../components/Data/ProductsPageData';
 
 // Re-export data definitions and helpers for backward compatibility
 export {
+  PRODUCT_PAGE_CATEGORIES,
+  PRODUCTS_PAGE_METADATA,
   SPREADS,
   BRAND_CONFIG,
   CATEGORY_DEFINITIONS,
@@ -374,6 +336,23 @@ export const ProductsPage = ({ onNavigate, search }) => {
   const [selectedSize, setSelectedSize] = useState('8 x 4');
   const [showEnquiryModal, setShowEnquiryModal] = useState(false);
   const [isBrochureDropdownOpen, setIsBrochureDropdownOpen] = useState(false);
+  const brochureDropdownRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (brochureDropdownRef.current && !brochureDropdownRef.current.contains(e.target)) {
+        setIsBrochureDropdownOpen(false);
+      }
+    };
+    if (isBrochureDropdownOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+      document.addEventListener('touchstart', handleClickOutside);
+    }
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('touchstart', handleClickOutside);
+    };
+  }, [isBrochureDropdownOpen]);
   const [toastMsg, setToastMsg] = useState('');
   const [expandedCategories, setExpandedCategories] = useState({
     'Plywood': true
@@ -407,7 +386,7 @@ export const ProductsPage = ({ onNavigate, search }) => {
         return getCanonicalCategory(matched.categories[0]);
       }
     }
-    return 'Plywood';
+    return null;
   });
 
   const [brandCategoryFilter, setBrandCategoryFilter] = useState('All');
@@ -451,6 +430,7 @@ export const ProductsPage = ({ onNavigate, search }) => {
       setCurrentSpreadIdx(targetIdx);
     } else {
       setSelectedBrand(null);
+      setSelectedCategory(null);
       setMobileCategoryOpen(false);
     }
   }, [search]);
@@ -472,6 +452,7 @@ export const ProductsPage = ({ onNavigate, search }) => {
         setMobileCategoryOpen(true);
       } else {
         setSelectedBrand(null);
+        setSelectedCategory(null);
         setMobileCategoryOpen(false);
       }
     };
@@ -520,6 +501,23 @@ export const ProductsPage = ({ onNavigate, search }) => {
 
   const activeSpread = SPREADS[currentSpreadIdx] || activeCategorySpreads[0] || SPREADS[0];
   const activeCatIdx = activeCategorySpreads.indexOf(activeSpread);
+
+  // Check if current view is a hardware category brand
+  const isHardwareBrand = (() => {
+    const catCanonical = getCanonicalCategory(activeCategory || activeSpread?.category || selectedCategory || '');
+    if (catCanonical === 'Hardware & Fittings' || catCanonical === 'Arch. Hardware' || catCanonical.toLowerCase().includes('hardware')) {
+      return true;
+    }
+    const bName = (selectedBrand || activeSpread?.brandName || '').toLowerCase().trim();
+    if (bName.includes('astdax') || bName.includes('steel wood') || bName.includes('hardware')) {
+      return true;
+    }
+    const spreadCat = getCanonicalCategory(activeSpread?.category || '');
+    if (spreadCat === 'Hardware & Fittings' || spreadCat === 'Arch. Hardware' || spreadCat.toLowerCase().includes('hardware')) {
+      return true;
+    }
+    return false;
+  })();
 
   // Sync category expansion whenever activeSpread changes
   useEffect(() => {
@@ -625,7 +623,8 @@ export const ProductsPage = ({ onNavigate, search }) => {
           s.brandName.toLowerCase().trim() === bLower ||
           (bLower === 'armani' && (s.category === 'Acrylic Panels' || s.brandName.toLowerCase().includes('acrylic'))) ||
           (bLower === 'astdax' && s.brandName.toLowerCase().includes('astdax')) ||
-          (bLower === 'steel wood' && s.brandName.toLowerCase().includes('steel'))
+          (bLower === 'steel wood' && s.brandName.toLowerCase().includes('steel')) ||
+          ((bLower === 'sentex gold' || bLower === 'sentex') && (s.category === 'Kitchen Accessories' || s.brandName.toLowerCase().includes('sentex')))
         );
         if (!bMatch) return false;
 
@@ -646,7 +645,8 @@ export const ProductsPage = ({ onNavigate, search }) => {
           s.brandName.toLowerCase().trim() === bLower ||
           (bLower === 'armani' && (s.category === 'Acrylic Panels' || s.brandName.toLowerCase().includes('acrylic'))) ||
           (bLower === 'astdax' && s.brandName.toLowerCase().includes('astdax')) ||
-          (bLower === 'steel wood' && s.brandName.toLowerCase().includes('steel'))
+          (bLower === 'steel wood' && s.brandName.toLowerCase().includes('steel')) ||
+          ((bLower === 'sentex gold' || bLower === 'sentex') && (s.category === 'Kitchen Accessories' || s.brandName.toLowerCase().includes('sentex')))
         );
       });
 
@@ -694,7 +694,18 @@ export const ProductsPage = ({ onNavigate, search }) => {
     }
   };
 
+  const categoryScrollRef = useRef(null);
+
+  const scrollCategoryTrack = (direction) => {
+    if (categoryScrollRef.current) {
+      const scrollAmount = direction === 'left' ? -310 : 310;
+      categoryScrollRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+  };
+
   const handleBackToCategories = () => {
+    setSelectedCategory(null);
+    setSelectedBrand(null);
     setMobileCategoryOpen(false);
     setBrandSearchTerm('');
     const basePrefix = window.location.pathname.startsWith('/PAKSHAL-AGENCYS') ? '/PAKSHAL-AGENCYS' : '';
@@ -843,10 +854,12 @@ export const ProductsPage = ({ onNavigate, search }) => {
   const activeBrandDisplay = (() => {
     const canonical = getCanonicalCategory(activeSpread?.category || selectedCategory);
     if (canonical === 'Fancy Doors') return 'Fancy Doors';
+    if (canonical === 'Kitchen Accessories') return 'Sentex Gold';
     if (selectedBrand) return selectedBrand;
     if (!activeSpread) return 'Royal Club';
     if (canonical === 'Acrylic Panels') return 'Armani';
     const b = activeSpread.brandName || '';
+    if (b.toLowerCase().includes('sentex')) return 'Sentex Gold';
     if (b.toLowerCase().includes('astdax')) return 'Astdax';
     if (b.toLowerCase().includes('steel wood')) return 'Steel Wood';
     return b || 'Royal Club';
@@ -865,213 +878,140 @@ export const ProductsPage = ({ onNavigate, search }) => {
         </div>
       )}
 
-      {!selectedBrand ? (
-        /* CATEGORIES FIRST, THEN ITS BRANDS VIEW */
+      {!selectedCategory && !selectedBrand ? (
+        /* LEVEL 1: CATEGORIES VIEW ONLY (BIG CARDS: 3 PER ROW, 2 ROWS) */
+        <div className="w-full pt-[96px] sm:pt-[104px] pb-16 animate-fade-in">
+          <div className="max-w-[1480px] mx-auto px-4 sm:px-6 lg:px-8">
+            {/* Category Header */}
+            <div className="flex flex-col items-center text-center max-w-3xl mx-auto mb-10 sm:mb-12">
+              <span className="text-xs font-black uppercase tracking-[0.25em] text-[#C9A44C] block leading-none mb-3">
+                {PRODUCTS_PAGE_METADATA.editorialCategoryTag}
+              </span>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-stone-900 tracking-tight font-sans leading-tight mb-3">
+                Select a <span className="text-[#C9A44C] italic font-serif font-extrabold">Category</span> to Explore
+              </h1>
+              <p className="text-sm sm:text-base text-stone-600 font-medium leading-relaxed max-w-2xl">
+                {PRODUCTS_PAGE_METADATA.editorialCategoryDesc}
+              </p>
+            </div>
+
+            {/* Category Cards Grid: 3 cards per row, 2 rows (6 cards total) in big size */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 lg:gap-8 mb-12 sm:mb-16">
+              {PRODUCT_PAGE_CATEGORIES.map((cat, idx) => {
+                return (
+                  <div
+                    key={cat.categoryKey}
+                    onClick={() => handleCategoryClick(cat, idx)}
+                    className="group relative rounded-3xl overflow-hidden cursor-pointer select-none transition-all duration-300 flex flex-col justify-end p-5 sm:p-6 lg:p-7 text-left min-h-[350px] sm:min-h-[380px] lg:min-h-[400px] border border-stone-200/90 hover:border-[#C9A44C]/70 shadow-[0_4px_24px_rgba(0,0,0,0.06)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.20)] hover:-translate-y-2 bg-stone-900"
+                  >
+                    {/* Background Image with Zoom */}
+                    <img
+                      src={cat.image}
+                      alt={cat.title}
+                      className="absolute inset-0 w-full h-full object-cover group-hover:scale-108 transition-transform duration-700 ease-out brightness-[0.70] group-hover:brightness-[0.78]"
+                    />
+
+                    {/* Gradient Overlay for Text Contrast */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/55 to-black/25 z-0 pointer-events-none" />
+
+                    {/* Warm Gold Tint on Hover */}
+                    <div className="absolute inset-0 transition-opacity duration-300 pointer-events-none bg-transparent group-hover:bg-[#C9A44C]/10" />
+
+                    {/* Bottom Content */}
+                    <div className="relative z-10 text-left flex flex-col gap-1.5 sm:gap-2">
+                      <h3 className="text-xl sm:text-2xl lg:text-[26px] font-black text-white leading-tight uppercase font-sans tracking-tight group-hover:text-[#F3D78A] transition-colors">
+                        {cat.title}
+                      </h3>
+
+                      <p className="text-xs sm:text-sm text-stone-200 font-medium leading-relaxed line-clamp-2">
+                        {cat.subtitle}
+                      </p>
+
+                      {cat.highlight && (
+                        <div className="mt-0.5 sm:mt-1 text-[11px] sm:text-xs font-bold text-[#E5C378] tracking-wider uppercase flex items-center gap-2">
+                          <span className="w-2 h-2 rounded-full bg-[#C9A44C] flex-shrink-0" />
+                          <span className="truncate">{cat.highlight}</span>
+                        </div>
+                      )}
+
+                      <div className="mt-3 sm:mt-3.5 w-full py-3 px-4 sm:px-5 rounded-2xl bg-white/15 backdrop-blur-md group-hover:bg-[#C9A44C] text-white group-hover:text-stone-950 border border-white/25 group-hover:border-[#C9A44C] font-black text-xs sm:text-sm uppercase tracking-wider flex items-center justify-between transition-all duration-300 shadow-md">
+                        <span>Explore Category</span>
+                        <svg className="w-4 h-4 text-[#E5C378] group-hover:text-stone-950 group-hover:translate-x-1.5 transition-all" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      ) : !selectedBrand ? (
+        /* LEVEL 2: DEDICATED BRANDS PAGE FOR SELECTED CATEGORY ONLY */
         <div className="w-full pt-[96px] sm:pt-[104px] pb-16 animate-fade-in">
           <div className="max-w-[1536px] mx-auto px-4 sm:px-6 lg:px-8">
 
-            {/* Category Selection Grid - On mobile, hidden when mobileCategoryOpen */}
-            <div className={`transition-all duration-300 ${mobileCategoryOpen ? 'hidden lg:block' : 'block'}`}>
-              {/* Editorial Category Header */}
-              <div className="flex flex-col items-center text-center max-w-4xl mx-auto mb-8 sm:mb-10">
-                <span className="text-[10.5px] font-black uppercase tracking-[0.25em] text-[#C9A44C] block leading-none mb-3">
-                  ARCHITECTURAL CATALOGUE
-                </span>
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-stone-900 tracking-tight font-sans leading-tight mb-3">
-                  Select a <span className="text-[#C9A44C] italic font-serif font-extrabold">Category</span> to Explore
-                </h1>
-                <p className="text-sm sm:text-base text-stone-600 font-medium leading-relaxed max-w-2xl">
-                  Explore our premium architectural categories. Select any category below to view authorized brands and technical specifications.
+            {/* Top Navigation Bar: Back to Categories & Category Badge */}
+            <div className="flex items-center justify-between pb-4 border-b border-stone-200/80 mb-8">
+              <button
+                type="button"
+                onClick={handleBackToCategories}
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-white border border-stone-200/90 text-stone-800 text-xs font-black uppercase tracking-wider shadow-xs hover:bg-[#FAF6EE] hover:text-[#8c6d23] hover:border-[#C9A44C]/50 transition-all cursor-pointer group"
+              >
+                <svg className="w-4 h-4 text-[#C9A44C] group-hover:-translate-x-0.5 transition-transform" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+                </svg>
+                <span>Back to Categories</span>
+              </button>
+
+              <span className="text-xs font-extrabold uppercase tracking-widest text-[#8c6d23] px-3.5 py-1.5 bg-[#FAF6EE] rounded-lg border border-[#C9A44C]/30 shadow-2xs">
+                {selectedCategory}
+              </span>
+            </div>
+
+            {/* Header Section for Brands */}
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-6 pt-2">
+              <div className="text-center sm:text-left">
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FAF6EE] border border-[#C9A44C]/35 text-[#8c6d23] text-[10px] font-black uppercase tracking-widest mb-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#C9A44C]" />
+                  Authorized Brands
+                </div>
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-stone-900 font-sans tracking-tight">
+                  Authorized Brands for <span className="text-[#C9A44C] italic font-serif font-extrabold">{selectedCategory}</span>
+                </h2>
+                <p className="text-xs sm:text-sm text-stone-500 font-medium mt-1">
+                  Click any brand below to view its specific products, catalogues, and finishes.
                 </p>
               </div>
-
-              {/* 5 Premium Category Cards Grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-5 lg:gap-4 xl:gap-5 mb-10 sm:mb-12">
-                {PRODUCT_PAGE_CATEGORIES.map((cat, idx) => {
-                  const isActive = (PRODUCT_PAGE_CATEGORIES[categoryCoverIdx]?.categoryKey === cat.categoryKey) || (selectedCategory === cat.categoryKey);
-
-                  return (
-                    <div
-                      key={cat.categoryKey}
-                      onClick={() => handleCategoryClick(cat, idx)}
-                      className={`group relative rounded-3xl overflow-hidden cursor-pointer select-none transition-all duration-300 flex flex-col justify-end p-5 sm:p-6 text-left min-h-[360px] sm:min-h-[390px] lg:min-h-[410px] ${
-                        isActive
-                          ? 'border-2 border-[#C9A44C] ring-4 ring-[#C9A44C]/30 shadow-[0_16px_36px_rgba(201,164,76,0.28)] lg:-translate-y-2'
-                          : 'border border-stone-200/90 hover:border-[#C9A44C]/70 shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:shadow-[0_16px_32px_rgba(0,0,0,0.16)] hover:-translate-y-2'
-                      } bg-stone-900`}
-                    >
-                      {/* Background Image with Zoom */}
-                      <img
-                        src={cat.image}
-                        alt={cat.title}
-                        className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ease-out brightness-[0.72] group-hover:brightness-[0.80]"
-                      />
-
-                      {/* Gradient Overlay for Text Contrast */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/55 to-black/30 z-0 pointer-events-none" />
-
-                      {/* Warm Gold Tint on Active / Hover */}
-                      <div
-                        className={`absolute inset-0 transition-opacity duration-300 pointer-events-none ${
-                          isActive ? 'bg-[#C9A44C]/15 opacity-100' : 'bg-transparent group-hover:bg-[#C9A44C]/10'
-                        }`}
-                      />
-
-                      {/* Bottom Content */}
-                      <div className="relative z-10 text-left flex flex-col gap-1.5">
-                        <h3 className="text-lg sm:text-xl font-black text-white leading-tight uppercase font-sans tracking-tight group-hover:text-[#F3D78A] transition-colors">
-                          {cat.title}
-                        </h3>
-
-                        <p className="text-[11.5px] sm:text-xs text-stone-300 font-medium leading-snug line-clamp-2">
-                          {cat.subtitle}
-                        </p>
-
-                        {cat.highlight && (
-                          <div className="mt-1 text-[9.5px] sm:text-[10px] font-bold text-[#E5C378] tracking-wider uppercase flex items-center gap-1.5">
-                            <span className="w-1.5 h-1.5 rounded-full bg-[#C9A44C] flex-shrink-0" />
-                            <span className="truncate">{cat.highlight}</span>
-                          </div>
-                        )}
-
-                        {/* Interactive Bottom CTA Button */}
-                        {/* On Mobile: Always clear 'Explore Brands →' */}
-                        <div className="mt-3 w-full py-2.5 px-3.5 rounded-xl bg-white/15 backdrop-blur-md group-hover:bg-[#C9A44C] text-white group-hover:text-stone-950 border border-white/25 group-hover:border-[#C9A44C] font-black text-[10.5px] uppercase tracking-wider flex items-center justify-between transition-all duration-300 shadow-xs lg:hidden">
-                          <span>Explore Brands</span>
-                          <svg className="w-3.5 h-3.5 text-[#E5C378] group-hover:text-stone-950 group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                          </svg>
-                        </div>
-
-                        {/* On Desktop: Show Viewing Brands if active */}
-                        <div className="hidden lg:block">
-                          {isActive ? (
-                            <div className="mt-3 w-full py-2.5 px-3.5 rounded-xl bg-gradient-to-r from-[#996f1d] via-[#8c6d23] to-[#735515] text-white font-black text-[10.5px] uppercase tracking-wider flex items-center justify-center gap-1.5 shadow-md">
-                              <span>Viewing Brands</span>
-                              <svg className="w-3.5 h-3.5 animate-bounce" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                              </svg>
-                            </div>
-                          ) : (
-                            <div className="mt-3 w-full py-2.5 px-3.5 rounded-xl bg-white/15 backdrop-blur-md group-hover:bg-[#C9A44C] text-white group-hover:text-stone-950 border border-white/25 group-hover:border-[#C9A44C] font-black text-[10.5px] uppercase tracking-wider flex items-center justify-between transition-all duration-300 shadow-xs">
-                              <span>Explore Category</span>
-                              <svg className="w-3.5 h-3.5 text-[#E5C378] group-hover:text-stone-950 group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                              </svg>
-                            </div>
-                          )}
-                        </div>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
             </div>
 
-            {/* Brands Section (Shows Particular Brands for Selected Category) */}
-            <div
-              id="category-brands-section"
-              className={`pt-2 mb-6 border-t border-stone-200/80 animate-fade-in ${
-                !mobileCategoryOpen ? 'hidden lg:block' : 'block'
-              }`}
-            >
-              {/* Mobile-Only Top Navigation Bar: Back Button & Quick Category Switcher */}
-              <div className="lg:hidden mb-6">
-                <div className="flex items-center justify-between pb-3 mb-4 border-b border-stone-200/80">
-                  <button
-                    type="button"
-                    onClick={handleBackToCategories}
-                    className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white border border-stone-200/90 text-stone-800 text-xs font-black uppercase tracking-wider shadow-xs hover:bg-[#FAF6EE] hover:text-[#8c6d23] hover:border-[#C9A44C]/50 transition-all cursor-pointer"
-                  >
-                    <svg className="w-4 h-4 text-[#C9A44C]" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
-                    </svg>
-                    <span>Back to Categories</span>
-                  </button>
-
-                  <span className="text-[10px] font-extrabold uppercase tracking-widest text-[#8c6d23] px-2.5 py-1 bg-[#FAF6EE] rounded-lg border border-[#C9A44C]/30">
-                    {PRODUCT_PAGE_CATEGORIES[categoryCoverIdx]?.title}
-                  </span>
-                </div>
-
-                {/* Horizontal Quick Category Switcher Pills */}
-                <div>
-                  <span className="text-[10px] font-black uppercase tracking-widest text-stone-400 block mb-2 text-left">
-                    Switch Category:
-                  </span>
-                  <div className="-mx-4 px-4 overflow-x-auto no-scrollbar flex items-center gap-2 pb-2">
-                    {PRODUCT_PAGE_CATEGORIES.map((cat, idx) => {
-                      const isCurrent = categoryCoverIdx === idx;
-                      return (
-                        <button
-                          key={cat.categoryKey}
-                          type="button"
-                          onClick={() => {
-                            setCategoryCoverIdx(idx);
-                            setSelectedCategory(cat.categoryKey);
-                            setBrandSearchTerm('');
-                            const basePrefix = window.location.pathname.startsWith('/PAKSHAL-AGENCYS') ? '/PAKSHAL-AGENCYS' : '';
-                            window.history.pushState({ category: cat.categoryKey }, '', `${basePrefix}/products?category=${encodeURIComponent(cat.categoryKey.toLowerCase())}`);
-                            window.scrollTo({ top: 0, behavior: 'instant' });
-                          }}
-                          className={`shrink-0 px-3.5 py-2 rounded-xl text-xs font-black uppercase tracking-wider transition-all flex items-center gap-2 cursor-pointer ${
-                            isCurrent
-                              ? 'bg-stone-900 text-[#F3D78A] shadow-sm border border-stone-800'
-                              : 'bg-white text-stone-700 border border-stone-200/90 hover:border-[#C9A44C]/50'
-                          }`}
-                        >
-                          <span className={`w-2 h-2 rounded-full ${isCurrent ? 'bg-[#C9A44C]' : 'bg-stone-300'}`} />
-                          <span>{cat.title}</span>
-                        </button>
-                      );
-                    })}
-                  </div>
-                </div>
-              </div>
-
-              {/* Header Section for Brands */}
-              <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-6 pt-2">
-                <div className="text-center sm:text-left">
-                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FAF6EE] border border-[#C9A44C]/35 text-[#8c6d23] text-[10px] font-black uppercase tracking-widest mb-1.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#C9A44C]" />
-                    {PRODUCT_PAGE_CATEGORIES[categoryCoverIdx]?.title}
-                  </div>
-                  <h2 className="text-2xl sm:text-3xl font-black text-stone-900 font-sans tracking-tight">
-                    Authorized Brands for <span className="text-[#C9A44C] italic font-serif font-extrabold">{PRODUCT_PAGE_CATEGORIES[categoryCoverIdx]?.categoryKey}</span>
-                  </h2>
-                  <p className="text-xs sm:text-sm text-stone-500 font-medium mt-1">
-                    Click any brand below to view its specific products, catalogues, and finishes.
-                  </p>
-                </div>
-              </div>
-
-              {/* Centered Brand Search Input */}
-              <div className="relative w-full max-w-lg mx-auto mb-8">
-                <input
-                  type="text"
-                  value={brandSearchTerm}
-                  onChange={(e) => setBrandSearchTerm(e.target.value)}
-                  placeholder="Search brands in this category..."
-                  className="w-full bg-white border border-stone-200/90 rounded-2xl pl-11 pr-10 py-3.5 text-xs sm:text-sm font-semibold text-stone-900 placeholder-stone-400 focus:outline-none focus:border-[#C9A44C] focus:ring-4 focus:ring-[#C9A44C]/15 transition-all shadow-sm"
-                />
-                <svg className="w-5 h-5 text-[#8c6d23] absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
-                </svg>
-                {brandSearchTerm && (
-                  <button
-                    type="button"
-                    onClick={() => setBrandSearchTerm('')}
-                    className="absolute right-3.5 top-1/2 -translate-y-1/2 text-stone-400 hover:text-stone-700 text-xs font-bold w-5 h-5 rounded-full bg-stone-100 flex items-center justify-center cursor-pointer"
-                  >
-                    ✕
-                  </button>
-                )}
-              </div>
+            {/* Centered Brand Search Input */}
+            <div className="relative w-full max-w-lg mx-auto mb-8">
+              <input
+                type="text"
+                value={brandSearchTerm}
+                onChange={(e) => setBrandSearchTerm(e.target.value)}
+                placeholder={`Search brands in ${selectedCategory}...`}
+                className="w-full bg-white border border-stone-200/90 rounded-2xl pl-11 pr-10 py-3.5 text-xs sm:text-sm font-semibold text-stone-900 placeholder-stone-400 focus:outline-none focus:border-[#C9A44C] focus:ring-4 focus:ring-[#C9A44C]/15 transition-all shadow-sm"
+              />
+              <svg className="w-5 h-5 text-[#8c6d23] absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+              </svg>
+              {brandSearchTerm && (
+                <button
+                  type="button"
+                  onClick={() => setBrandSearchTerm('')}
+                  className="absolute right-3.5 top-1/2 -translate-y-1/2 text-stone-400 hover:text-stone-700 text-xs font-bold w-5 h-5 rounded-full bg-stone-100 flex items-center justify-center cursor-pointer"
+                >
+                  ✕
+                </button>
+              )}
             </div>
 
-            {/* Brands Grid (Filtered by Active Category and/or Search Term) */}
+            {/* Brands Grid (Filtered by selectedCategory and/or Search Term) */}
             {(() => {
-              const activeCatKey = PRODUCT_PAGE_CATEGORIES[categoryCoverIdx]?.categoryKey || 'Laminates';
+              const activeCatKey = selectedCategory || 'Kitchen Accessories';
               const filteredBrands = BRAND_CONFIG.filter((b) => {
                 const bCats = (b.categories || []).map(c => getCanonicalCategory(c));
                 const targetCat = getCanonicalCategory(activeCatKey);
@@ -1115,9 +1055,9 @@ export const ProductsPage = ({ onNavigate, search }) => {
                       <div
                         key={b.name}
                         onClick={() => handleBrandSelect(b.name)}
-                        className="group relative bg-white rounded-3xl border border-stone-200/90 shadow-[0_4px_24px_rgba(0,0,0,0.04)] flex flex-col justify-between cursor-pointer overflow-hidden"
+                        className="group relative bg-white rounded-3xl border border-stone-200/90 shadow-[0_4px_24px_rgba(0,0,0,0.04)] flex flex-col justify-between cursor-pointer overflow-hidden hover:border-[#C9A44C]/70 hover:shadow-[0_12px_32px_rgba(201,164,76,0.18)] transition-all duration-300 hover:-translate-y-1"
                       >
-                        {/* Top Image Showcase (NO brand logos! Authentic product imagery) */}
+                        {/* Top Image Showcase */}
                         <div className="relative h-56 sm:h-60 w-full overflow-hidden bg-stone-100">
                           <img
                             src={brandImg}
@@ -1157,12 +1097,11 @@ export const ProductsPage = ({ onNavigate, search }) => {
                                 Product Categories
                               </span>
                               <div className="flex flex-wrap gap-1.5">
-                                {(b.categories || []).map((cat, idx) => (
+                                {(b.categories || []).map((cat) => (
                                   <span
-                                    key={idx}
-                                    className="inline-flex items-center gap-1.5 text-[11px] font-bold px-3 py-1 rounded-lg bg-[#FAF8F5] text-stone-800 border border-stone-200/90"
+                                    key={cat}
+                                    className="px-2.5 py-1 rounded-md text-[10.5px] font-bold bg-[#FAF6EE] text-[#8c6d23] border border-[#C9A44C]/25"
                                   >
-                                    <span className="w-1.5 h-1.5 rounded-full bg-[#C9A44C]" />
                                     {cat}
                                   </span>
                                 ))}
@@ -1186,14 +1125,15 @@ export const ProductsPage = ({ onNavigate, search }) => {
                         </div>
                       </div>
                     );
-                  })} 
+                  })}
                 </div>
               );
             })()}
+
           </div>
         </div>
       ) : (
-        /* BRAND PRODUCTS VIEW (Categories and products appear!) */
+        /* LEVEL 3: BRAND PRODUCTS SHOWCASE */
         <>
           {/* ARCHITECTURAL BRAND SHOWCASE HEADER */}
           {(() => {
@@ -1446,9 +1386,10 @@ export const ProductsPage = ({ onNavigate, search }) => {
                     </svg>
                   </button>
 
-                  {/* Download Brochure Dropdown */}
-                  <div className="relative">
+                  {/* Download Brochure Dropdown: Hardware Accessories for Hardware brands, SG Catalogue for remaining brands */}
+                  <div className="relative" ref={brochureDropdownRef}>
                     <button
+                      type="button"
                       onClick={() => setIsBrochureDropdownOpen(!isBrochureDropdownOpen)}
                       className="px-5 py-3.5 bg-stone-100 hover:bg-stone-200 text-stone-800 text-xs font-black tracking-wider uppercase rounded-xl transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
                     >
@@ -1458,27 +1399,32 @@ export const ProductsPage = ({ onNavigate, search }) => {
                     </button>
 
                     {isBrochureDropdownOpen && (
-                      <div className="absolute left-0 sm:right-0 bottom-full mb-2 w-64 bg-white rounded-xl border border-slate-200 shadow-xl overflow-hidden animate-fade-in text-left z-50 divide-y divide-slate-100">
-                        <a
-                          href={sgCatalogPdf}
-                          download="SG CATALOG.pdf"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          onClick={() => setIsBrochureDropdownOpen(false)}
-                          className="block px-4 py-3 text-xs font-extrabold text-slate-800 hover:bg-[#FAF6EE] hover:text-[#8c6d23] transition-colors cursor-pointer"
-                        >
-                          SG Product Catalogue
-                        </a>
-                        <a
-                          href={hardwarePdf}
-                          download="hardwareaccessories.pdf"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          onClick={() => setIsBrochureDropdownOpen(false)}
-                          className="block px-4 py-3 text-xs font-extrabold text-slate-800 hover:bg-[#FAF6EE] hover:text-[#8c6d23] transition-colors cursor-pointer"
-                        >
-                          Hardware Accessories Catalogue
-                        </a>
+                      <div className="absolute left-0 sm:right-0 bottom-full mb-2 w-72 bg-white rounded-xl border border-slate-200 shadow-xl overflow-hidden animate-fade-in text-left z-50 divide-y divide-slate-100">
+                        {isHardwareBrand ? (
+                          <a
+                            href={hardwarePdf}
+                            download="hardwareaccessories.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={() => setIsBrochureDropdownOpen(false)}
+                            className="flex items-center gap-2.5 px-4 py-3 text-xs font-extrabold text-slate-800 hover:bg-[#FAF6EE] hover:text-[#8c6d23] transition-colors cursor-pointer"
+                          >
+                            <Download className="w-4 h-4 text-[#C9A44C] shrink-0" />
+                            <span>Hardware Accessories Catalogue</span>
+                          </a>
+                        ) : (
+                          <a
+                            href={sgCatalogPdf}
+                            download="SG CATALOG.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={() => setIsBrochureDropdownOpen(false)}
+                            className="flex items-center gap-2.5 px-4 py-3 text-xs font-extrabold text-slate-800 hover:bg-[#FAF6EE] hover:text-[#8c6d23] transition-colors cursor-pointer"
+                          >
+                            <Download className="w-4 h-4 text-[#C9A44C] shrink-0" />
+                            <span>SG Product Catalogue</span>
+                          </a>
+                        )}
                       </div>
                     )}
                   </div>
@@ -1535,15 +1481,15 @@ export const ProductsPage = ({ onNavigate, search }) => {
                         }
                       }}
                       className={`group relative bg-white rounded-2xl border transition-all duration-200 cursor-pointer p-4 flex flex-col justify-between overflow-hidden ${isCurrent
-                          ? 'border-[#C9A44C] ring-2 ring-[#C9A44C]/25 shadow-md'
-                          : 'border-stone-200/80 hover:border-[#C9A44C]/60 shadow-xs'
+                        ? 'border-[#C9A44C] ring-2 ring-[#C9A44C]/25 shadow-md'
+                        : 'border-stone-200/80 hover:border-[#C9A44C]/60 shadow-xs'
                         }`}
                     >
                       <div className="relative h-32 sm:h-36 w-full rounded-xl overflow-hidden bg-stone-50 mb-3 border border-stone-100 flex items-center justify-center">
                         <img
                           src={spreadItem.image}
                           alt={spreadItem.brandName}
-                          className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-300"
+                          className={`w-full h-full ${spreadItem.category === 'Kitchen Accessories' ? 'object-contain p-2' : 'object-cover'} group-hover:scale-102 transition-transform duration-300`}
                         />
                         {isCurrent && (
                           <div className="absolute top-2 right-2 bg-[#8c6d23] text-white text-[9px] font-black uppercase px-2 py-0.5 rounded-md shadow-xs">
@@ -2282,43 +2228,42 @@ export const ProductsPage = ({ onNavigate, search }) => {
       )}
 
       {/* Floating Action Buttons (Hidden on mobile view) */}
-      <div className="hidden sm:flex fixed sm:right-5 sm:bottom-6 z-[40] flex-col gap-2">
-        <a
-          href="https://wa.me/919247449522"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="w-8 h-8 sm:w-9 sm:h-9 bg-[#25d366] hover:bg-[#1ebd59] text-white rounded-lg sm:rounded-xl flex items-center justify-center shadow-md hover:shadow-lg transition-colors duration-200 cursor-pointer"
-          title="WhatsApp Support"
-          aria-label="WhatsApp Support"
-        >
-          <svg className="w-4 h-4 sm:w-4.5 sm:h-4.5 fill-current" viewBox="0 0 24 24">
-            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.66.986 3.292 1.493 4.904 1.495 5.182 0 9.4-4.216 9.403-9.397.001-2.51-1-4.87-2.817-6.649-1.817-1.778-4.23-2.757-6.79-2.758-5.186 0-9.409 4.217-9.412 9.4-.002 1.942.506 3.843 1.472 5.513L2.26 21.53l4.387-1.376zM18.04 14.99c-.32-.16-1.89-.93-2.18-1.04-.3-.1-.51-.16-.72.16-.21.32-.82 1.04-1 1.25-.19.21-.38.24-.7.08-.32-.16-1.35-.5-2.57-1.59-.95-.95-1.59-1.9-1.78-2.22-.19-.32-.02-.49.14-.65.15-.14.32-.32.48-.48.16-.16.21-.27.32-.48.11-.21.05-.4-.03-.56-.08-.16-.72-1.74-.99-2.38-.26-.64-.53-.55-.72-.56l-.61-.01c-.21 0-.55.08-.84.4-.29.32-1.12 1.1-1.12 2.68s1.15 3.1 1.31 3.32c.16.22 2.27 3.46 5.5 4.86.76.33 1.36.53 1.83.68.77.24 1.47.21 2.03.12.62-.09 1.89-.77 2.15-1.51.26-.74.26-1.38.18-1.51-.08-.13-.3-.21-.62-.37z" />
-          </svg>
-        </a>
-        <a
-          href="tel:+919247449522"
-          className="w-8 h-8 sm:w-9 sm:h-9 bg-slate-900 hover:bg-slate-800 text-white rounded-lg sm:rounded-xl flex items-center justify-center shadow-md hover:shadow-lg transition-colors duration-200 cursor-pointer"
-          title="Call Direct"
-          aria-label="Call Direct"
-        >
-          <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-current" viewBox="0 0 24 24">
-            <path d="M20 15.5c-1.2 0-2.4-.2-3.6-.6-.3-.1-.7 0-1 .2l-2.2 2.2c-2.8-1.4-5.1-3.8-6.6-6.6l2.2-2.2c.3-.3.4-.7.2-1-.3-1.1-.5-2.3-.5-3.5 0-.6-.4-1-1-1H4c-.6 0-1 .4-1 1 0 9.4 7.6 17 17 17 .6 0 1-.4 1-1v-3.5c0-.6-.4-1-1-1z" />
-          </svg>
-        </a>
-        <button
-          onClick={handleGetQuote}
-          className="w-8 h-8 sm:w-9 sm:h-9 bg-white hover:bg-amber-50 text-slate-800 hover:text-[#0F5C3B] border border-slate-200 hover:border-[#0F5C3B]/40 rounded-lg sm:rounded-xl flex items-center justify-center shadow-md hover:shadow-lg transition-colors duration-200 cursor-pointer"
-          title="Inquiry Form"
-          aria-label="Inquiry Form"
-        >
-          <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
-          </svg>
-        </button>
+        <div className="hidden sm:flex fixed sm:right-5 sm:bottom-6 z-[40] flex-col gap-2">
+          <a
+            href="https://wa.me/919247449522"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-8 h-8 sm:w-9 sm:h-9 bg-[#25d366] hover:bg-[#1ebd59] text-white rounded-lg sm:rounded-xl flex items-center justify-center shadow-md hover:shadow-lg transition-colors duration-200 cursor-pointer"
+            title="WhatsApp Support"
+            aria-label="WhatsApp Support"
+          >
+            <svg className="w-4 h-4 sm:w-4.5 sm:h-4.5 fill-current" viewBox="0 0 24 24">
+              <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.724-1.455L0 24zm6.59-4.846c1.66.986 3.292 1.493 4.904 1.495 5.182 0 9.4-4.216 9.403-9.397.001-2.51-1-4.87-2.817-6.649-1.817-1.778-4.23-2.757-6.79-2.758-5.186 0-9.409 4.217-9.412 9.4-.002 1.942.506 3.843 1.472 5.513L2.26 21.53l4.387-1.376zM18.04 14.99c-.32-.16-1.89-.93-2.18-1.04-.3-.1-.51-.16-.72.16-.21.32-.82 1.04-1 1.25-.19.21-.38.24-.7.08-.32-.16-1.35-.5-2.57-1.59-.95-.95-1.59-1.9-1.78-2.22-.19-.32-.02-.49.14-.65.15-.14.32-.32.48-.48.16-.16.21-.27.32-.48.11-.21.05-.4-.03-.56-.08-.16-.72-1.74-.99-2.38-.26-.64-.53-.55-.72-.56l-.61-.01c-.21 0-.55.08-.84.4-.29.32-1.12 1.1-1.12 2.68s1.15 3.1 1.31 3.32c.16.22 2.27 3.46 5.5 4.86.76.33 1.36.53 1.83.68.77.24 1.47.21 2.03.12.62-.09 1.89-.77 2.15-1.51.26-.74.26-1.38.18-1.51-.08-.13-.3-.21-.62-.37z" />
+            </svg>
+          </a>
+          <a
+            href="tel:+919247449522"
+            className="w-8 h-8 sm:w-9 sm:h-9 bg-slate-900 hover:bg-slate-800 text-white rounded-lg sm:rounded-xl flex items-center justify-center shadow-md hover:shadow-lg transition-colors duration-200 cursor-pointer"
+            title="Call Direct"
+            aria-label="Call Direct"
+          >
+            <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 fill-current" viewBox="0 0 24 24">
+              <path d="M20 15.5c-1.2 0-2.4-.2-3.6-.6-.3-.1-.7 0-1 .2l-2.2 2.2c-2.8-1.4-5.1-3.8-6.6-6.6l2.2-2.2c.3-.3.4-.7.2-1-.3-1.1-.5-2.3-.5-3.5 0-.6-.4-1-1-1H4c-.6 0-1 .4-1 1 0 9.4 7.6 17 17 17 .6 0 1-.4 1-1v-3.5c0-.6-.4-1-1-1z" />
+            </svg>
+          </a>
+          <button
+            onClick={handleGetQuote}
+            className="w-8 h-8 sm:w-9 sm:h-9 bg-white hover:bg-amber-50 text-slate-800 hover:text-[#0F5C3B] border border-slate-200 hover:border-[#0F5C3B]/40 rounded-lg sm:rounded-xl flex items-center justify-center shadow-md hover:shadow-lg transition-colors duration-200 cursor-pointer"
+            title="Inquiry Form"
+            aria-label="Inquiry Form"
+          >
+            <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+            </svg>
+          </button>
+        </div>
+
+
       </div>
-
-
-    </div>
-  );
+      );
 };
-

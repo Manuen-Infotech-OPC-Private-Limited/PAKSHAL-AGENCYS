@@ -22,6 +22,7 @@ import veneer2Img from '../../assets/plywood/veneer2.png';
 import fancyDoorsImg from '../../assets/doors/fancydoors.png';
 import hardwareFittings1 from '../../assets/hardware/productspage-hardware&fittings.png';
 import astdaxHardware1Img from '../../assets/hardware/Astdax hardware and fittings.png';
+import kitchenAccessoriesImg from '../../assets/kitchen/kitchenaccessories.png';
 
 export const BRAND_CONFIG = [
   {
@@ -326,10 +327,10 @@ export const BRAND_CONFIG = [
     displayName: 'STEEL WOOD',
     trademark: true,
     image: hardwareFittings1,
-    categories: ['Arch. Hardware', 'Hardware & Fittings', 'Sliding Systems', 'Kitchen Accessories'],
-    categorySummary: 'Hardware & Kitchen • Precision Fittings',
+    categories: ['Arch. Hardware', 'Hardware & Fittings', 'Sliding Systems'],
+    categorySummary: 'Architectural Hardware • Precision Fittings',
     tagline: 'Heavy-Duty Drawer Systems & Sliding Hardware',
-    hallmark: 'German-engineered soft-close hinges, tandem boxes, sliding wardrobe systems, and modular kitchen accessories.',
+    hallmark: 'German-engineered soft-close hinges, drawer channels, sliding wardrobe systems, and precision architectural fittings.',
     tags: ['Soft-Close Tested', 'High Load Capacity', 'Corrosion Free'],
     icon: (
       <svg className="w-7 h-7 text-[#C9A44C]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -353,6 +354,26 @@ export const BRAND_CONFIG = [
         <rect x="3" y="6" width="6" height="12" rx="3" />
         <path d="M9 10h11a1.5 1.5 0 011.5 1.5v0a1.5 1.5 0 01-1.5 1.5H9" />
         <circle cx="6" cy="12" r="1.2" fill="currentColor" />
+      </svg>
+    )
+  },
+  {
+    name: 'Sentex Gold',
+    displayName: 'SENTEX GOLD',
+    trademark: true,
+    image: kitchenAccessoriesImg,
+    categoryImages: {
+      'Kitchen Accessories': kitchenAccessoriesImg
+    },
+    categories: ['Kitchen Accessories'],
+    categorySummary: 'Modular Kitchen • Smart Storage Systems',
+    tagline: 'Premium Modular Kitchen Accessories & Organizers',
+    hallmark: 'High-grade SS 304 modular kitchen baskets, magic corners, pull-down elevators, rolling shutters, and silent tandem drawers.',
+    tags: ['SS 304 Grade', 'Soft-Close Motion', 'Lifetime Rust Protection'],
+    icon: (
+      <svg className="w-7 h-7 text-[#C9A44C]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="3" y="3" width="18" height="18" rx="2" />
+        <path d="M3 9h18M3 15h18M9 3v18M15 3v18" />
       </svg>
     )
   },

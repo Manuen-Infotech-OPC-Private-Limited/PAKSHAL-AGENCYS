@@ -32,7 +32,7 @@ import kitchensCardImg from '../assets/kitchen/kitchens-card.jpg';
 export const kitchenAccessoriesSpreads = [
   {
     id: 101,
-    brandId: 'pull-down-elevator',
+    
     category: 'Kitchen Accessories',
     pageNumLeft: 71,
     pageNumRight: 72,
@@ -40,7 +40,9 @@ export const kitchenAccessoriesSpreads = [
     title: 'Pull-Down\nElevator.',
     tagline: 'Hydraulic elevator basket for overhead kitchen cabinets',
     image: pullDownElevatorImg,
-    brandName: 'Pull-Down Elevator System',
+    productName: 'Pull-Down Elevator System',
+    brandName: 'Sentex Gold',
+    brandId: 'sentex-gold',
     desc: 'Heavy-duty hydraulic pull-down elevator basket system allowing effortless access to high overhead cabinet storage. Features smooth dampening and multi-stage weight adjustment.',
     material: 'Dark Gray',
     thicknesses: ['560x280x560mm', '760x280x560mm', '860x280x560mm'],
@@ -71,7 +73,7 @@ export const kitchenAccessoriesSpreads = [
   },
   {
     id: 102,
-    brandId: 'pull-down-dishrack',
+    
     category: 'Kitchen Accessories',
     pageNumLeft: 73,
     pageNumRight: 74,
@@ -79,7 +81,9 @@ export const kitchenAccessoriesSpreads = [
     title: 'Dish Rack\nElevator.',
     tagline: 'Pull-down dish drying rack with stainless drip tray',
     image: pullDownDishRackImg,
-    brandName: 'Pull-Down Dish Rack Elevator',
+    productName: 'Pull-Down Dish Rack Elevator',
+    brandName: 'Sentex Gold',
+    brandId: 'sentex-gold',
     desc: 'Specialized pull-down dish drying elevator with integrated water tray and plate slots. Sits neatly inside wall cabinets for space-saving dish drainage.',
     material: 'Dark Gray',
     thicknesses: ['560x280x560mm', '760x280x560mm', '860x280x560mm'],
@@ -108,7 +112,7 @@ export const kitchenAccessoriesSpreads = [
   },
   {
     id: 103,
-    brandId: 'magic-corner',
+    
     category: 'Kitchen Accessories',
     pageNumLeft: 75,
     pageNumRight: 76,
@@ -116,7 +120,9 @@ export const kitchenAccessoriesSpreads = [
     title: 'Magic Corner\nUnit.',
     tagline: 'Soft-close pull-out blind corner basket organizer',
     image: magicCornerImg,
-    brandName: 'Magic Corner Storage',
+    productName: 'Magic Corner Storage',
+    brandName: 'Sentex Gold',
+    brandId: 'sentex-gold',
     desc: 'Innovative magic corner pull-out basket mechanism that transforms awkward blind corner cabinets into fully accessible, dual-tier storage space.',
     material: 'Aluminum + Glass',
     thicknesses: ['900x460x600mm', '900x500x525mm'],
@@ -145,7 +151,7 @@ export const kitchenAccessoriesSpreads = [
   },
   {
     id: 104,
-    brandId: 'corner-carousel-unit',
+    
     category: 'Kitchen Accessories',
     pageNumLeft: 77,
     pageNumRight: 78,
@@ -153,7 +159,9 @@ export const kitchenAccessoriesSpreads = [
     title: 'Rotary Corner\nCarousel.',
     tagline: '360° revolving kidney tray corner storage',
     image: cornerImg,
-    brandName: 'Rotary Corner Carousel',
+    productName: 'Rotary Corner Carousel',
+    brandName: 'Sentex Gold',
+    brandId: 'sentex-gold',
     desc: 'Smooth 360° revolving kidney-shaped corner shelf system designed to utilize deep corner cabinet dead zones with effortless rotational access.',
     material: 'Aluminum + Glass',
     thicknesses: ['900x460x600mm', '900x500x525mm'],
@@ -181,7 +189,7 @@ export const kitchenAccessoriesSpreads = [
   },
   {
     id: 105,
-    brandId: 'cutlery-tray-organizer',
+    
     category: 'Kitchen Accessories',
     pageNumLeft: 79,
     pageNumRight: 80,
@@ -189,7 +197,9 @@ export const kitchenAccessoriesSpreads = [
     title: 'Cutlery Tray\nOrganizers.',
     tagline: 'Modular plastic & metallic drawer insert trays',
     image: cutleryTrayImg,
-    brandName: 'Cutlery Tray Organizer',
+    productName: 'Cutlery Tray Organizer',
+    brandName: 'Sentex Gold',
+    brandId: 'sentex-gold',
     desc: 'Precision molded food-grade plastic cutlery inserts with adjustable divider slots for spoons, forks, knives, and cooking utensils.',
     thicknesses: ['450 mm Drawer', '600 mm Drawer', '900 mm Drawer'],
     defaultThickness: '600 mm Drawer',
@@ -217,7 +227,7 @@ export const kitchenAccessoriesSpreads = [
   },
   {
     id: 106,
-    brandId: 'cutlery-tray-2',
+    
     category: 'Kitchen Accessories',
     pageNumLeft: 81,
     pageNumRight: 82,
@@ -225,7 +235,9 @@ export const kitchenAccessoriesSpreads = [
     title: 'Cutlery Tray\nSeries II.',
     tagline: 'Deep compartment utensil organizer tray',
     image: cutleryTray2Img,
-    brandName: 'Cutlery Tray Series II',
+    productName: 'Cutlery Tray Series II',
+    brandName: 'Sentex Gold',
+    brandId: 'sentex-gold',
     desc: 'Deep multi-compartment executive cutlery tray with specialized knife block, spice bottle slots, and extended utensil dividers.',
     thicknesses: ['600 mm', '800 mm', '900 mm'],
     defaultThickness: '600 mm',
@@ -252,7 +264,7 @@ export const kitchenAccessoriesSpreads = [
   },
   {
     id: 107,
-    brandId: 'bifold-liftup-system',
+    
     category: 'Kitchen Accessories',
     pageNumLeft: 83,
     pageNumRight: 84,
@@ -260,7 +272,9 @@ export const kitchenAccessoriesSpreads = [
     title: 'Bi-Fold Lift-Up\nSystem.',
     tagline: 'Parallel bi-fold door stay mechanism for upper cabinets',
     image: bifoldLiftUpImg,
-    brandName: 'Bi-Fold Lift-Up System',
+    productName: 'Bi-Fold Lift-Up System',
+    brandName: 'Sentex Gold',
+    brandId: 'sentex-gold',
     desc: 'German-engineered bi-fold hydraulic lift system that folds wall cabinet doors upwards and out of the way for unrestricted overhead access.',
     thicknesses: ['Light Duty (Power 1)', 'Medium Duty (Power 2)', 'Heavy Duty (Power 3)'],
     defaultThickness: 'Medium Duty (Power 2)',
@@ -288,7 +302,7 @@ export const kitchenAccessoriesSpreads = [
   },
   {
     id: 108,
-    brandId: 'kitchen-rolling-shutters',
+    
     category: 'Kitchen Accessories',
     pageNumLeft: 85,
     pageNumRight: 86,
@@ -296,7 +310,9 @@ export const kitchenAccessoriesSpreads = [
     title: 'Kitchen Rolling\nShutters.',
     tagline: 'Glass & aluminum tambour door system for kitchen counter units',
     image: rollingShuttersImg,
-    brandName: 'Kitchen Rolling Shutters',
+    productName: 'Kitchen Rolling Shutters',
+    brandName: 'Sentex Gold',
+    brandId: 'sentex-gold',
     desc: 'Sleek vertical rolling tambour shutter systems crafted from toughened glass or brushed aluminum slats. Perfect for hiding kitchen counter appliances.',
     colors: 'Silver, White, Black',
     thicknesses: ['450x1320mm', '600x1320mm', '900x1320mm'],
@@ -325,7 +341,7 @@ export const kitchenAccessoriesSpreads = [
   },
   {
     id: 109,
-    brandId: 'glass-tandem-box-system',
+    
     category: 'Kitchen Accessories',
     pageNumLeft: 87,
     pageNumRight: 88,
@@ -333,7 +349,9 @@ export const kitchenAccessoriesSpreads = [
     title: 'Glass Tandem\nBox System.',
     tagline: 'Ultra-sleek double-wall metal drawer with tempered glass side panels',
     image: glassTandemBoxImg,
-    brandName: 'Glass Tandem Box System',
+    productName: 'Glass Tandem Box System',
+    brandName: 'Sentex Gold',
+    brandId: 'sentex-gold',
     desc: 'Luxury double-wall metal drawer system featuring crystal clear tempered glass side galleries, full extension concealed runners, and silent soft-close action.',
     thicknesses: ['90 mm Height', '150 mm Height', '200 mm Height'],
     defaultThickness: '150 mm Height',
@@ -361,7 +379,7 @@ export const kitchenAccessoriesSpreads = [
   },
   {
     id: 110,
-    brandId: 'glass-box-drawers',
+    
     category: 'Kitchen Accessories',
     pageNumLeft: 89,
     pageNumRight: 90,
@@ -369,7 +387,9 @@ export const kitchenAccessoriesSpreads = [
     title: 'Glass Box\nDrawers.',
     tagline: 'Frameless glass panel drawer side profiles',
     image: glassBoxImg,
-    brandName: 'Glass Box Drawers',
+    productName: 'Glass Box Drawers',
+    brandName: 'Sentex Gold',
+    brandId: 'sentex-gold',
     desc: 'Minimalist frameless glass drawer sides with integrated LED strip ready grooves and soft-closing slide runners.',
     thicknesses: ['Standard 500mm Length', 'Short 450mm Length'],
     defaultThickness: 'Standard 500mm Length',
@@ -393,7 +413,7 @@ export const kitchenAccessoriesSpreads = [
   },
   {
     id: 111,
-    brandId: 'universal-glass-box',
+    
     category: 'Kitchen Accessories',
     pageNumLeft: 91,
     pageNumRight: 92,
@@ -401,7 +421,9 @@ export const kitchenAccessoriesSpreads = [
     title: 'Universal Glass\nBox System.',
     tagline: 'Modular glass side box drawer system',
     image: universalGlassBoxImg,
-    brandName: 'Universal Glass Box System',
+    productName: 'Universal Glass Box System',
+    brandName: 'Sentex Gold',
+    brandId: 'sentex-gold',
     desc: 'Versatile glass box drawer mechanism designed to fit both wooden and metal drawer back panels seamlessly.',
     thicknesses: ['Slim 12mm', 'Standard 16mm'],
     defaultThickness: 'Standard 16mm',
@@ -425,7 +447,7 @@ export const kitchenAccessoriesSpreads = [
   },
   {
     id: 112,
-    brandId: 'slim-box-drawer-system',
+    
     category: 'Kitchen Accessories',
     pageNumLeft: 93,
     pageNumRight: 94,
@@ -433,7 +455,9 @@ export const kitchenAccessoriesSpreads = [
     title: 'Slim Box\nDrawer System.',
     tagline: '13mm ultra-thin double-wall steel drawer box',
     image: slimBoxesImg,
-    brandName: 'Slim Box Drawer System',
+    productName: 'Slim Box Drawer System',
+    brandName: 'Sentex Gold',
+    brandId: 'sentex-gold',
     desc: 'State-of-the-art 13mm straight-line ultra-slim metal side drawer box system. Maximizes internal drawer storage capacity with high aesthetic appeal.',
     thicknesses: ['13 mm Wall Thickness'],
     defaultThickness: '13 mm Wall Thickness',
@@ -461,7 +485,7 @@ export const kitchenAccessoriesSpreads = [
   },
   {
     id: 113,
-    brandId: 'kitchen-tandem-box-unit',
+    
     category: 'Kitchen Accessories',
     pageNumLeft: 95,
     pageNumRight: 96,
@@ -469,7 +493,9 @@ export const kitchenAccessoriesSpreads = [
     title: 'Kitchen Tandem\nBox.',
     tagline: 'Heavy-duty double-wall steel drawer box',
     image: tandemBoxAccessoryImg,
-    brandName: 'Kitchen Tandem Box',
+    productName: 'Kitchen Tandem Box',
+    brandName: 'Sentex Gold',
+    brandId: 'sentex-gold',
     desc: 'Classic double-wall metallic tandem drawer box system with round railing options and high load-bearing concealed runners.',
     thicknesses: ['Low Drawer (84mm)', 'Medium Drawer (135mm)', 'High Drawer (199mm)'],
     defaultThickness: 'Medium Drawer (135mm)',
@@ -493,7 +519,7 @@ export const kitchenAccessoriesSpreads = [
   },
   {
     id: 114,
-    brandId: 'side-pullout-baskets',
+    
     category: 'Kitchen Accessories',
     pageNumLeft: 97,
     pageNumRight: 98,
@@ -501,7 +527,9 @@ export const kitchenAccessoriesSpreads = [
     title: 'Side Pull-Out\nBaskets.',
     tagline: 'Multi-tier narrow cabinet spice & oil bottle organizer',
     image: sidePulloutImg,
-    brandName: 'Side Pull-Out Baskets',
+    productName: 'Side Pull-Out Baskets',
+    brandName: 'Sentex Gold',
+    brandId: 'sentex-gold',
     desc: 'Slim 150mm and 200mm side pull-out basket organizer for storing oil bottles, spice containers, and cooking sauces right next to the stove.',
     thicknesses: ['150 mm Cabinet', '200 mm Cabinet', '300 mm Cabinet'],
     defaultThickness: '150 mm Cabinet',
@@ -529,7 +557,7 @@ export const kitchenAccessoriesSpreads = [
   },
   {
     id: 115,
-    brandId: 'side-pullout-series-2',
+    
     category: 'Kitchen Accessories',
     pageNumLeft: 99,
     pageNumRight: 100,
@@ -537,7 +565,9 @@ export const kitchenAccessoriesSpreads = [
     title: 'Side Pull-Out\nSeries II.',
     tagline: 'Solid wooden base side pull-out organizer',
     image: sidePullout2Img,
-    brandName: 'Side Pull-Out Series II',
+    productName: 'Side Pull-Out Series II',
+    brandName: 'Sentex Gold',
+    brandId: 'sentex-gold',
     desc: 'Premium solid wooden/sheet base side pull-out unit with flat chrome railing guards for easy wipe-clean maintenance.',
     thicknesses: ['150 mm', '200 mm', '300 mm'],
     defaultThickness: '200 mm',
@@ -561,7 +591,7 @@ export const kitchenAccessoriesSpreads = [
   },
   {
     id: 116,
-    brandId: 'swing-storage-unit',
+    
     category: 'Kitchen Accessories',
     pageNumLeft: 101,
     pageNumRight: 102,
@@ -569,7 +599,9 @@ export const kitchenAccessoriesSpreads = [
     title: 'Swing Storage\nUnit.',
     tagline: 'Tandem tall pantry swing-out basket mechanism',
     image: swingStorageImg,
-    brandName: 'Swing Storage Unit',
+    productName: 'Swing Storage Unit',
+    brandName: 'Sentex Gold',
+    brandId: 'sentex-gold',
     desc: 'High-capacity tall pantry unit mechanism that swings internal rear shelves forward as the pantry door opens, providing dual-sided storage visibility.',
     thicknesses: ['450 mm Door (6 Tier)', '600 mm Door (6 Tier)'],
     defaultThickness: '450 mm Door (6 Tier)',
@@ -597,7 +629,7 @@ export const kitchenAccessoriesSpreads = [
   },
   {
     id: 117,
-    brandId: 'pullout-wastebin',
+    
     category: 'Kitchen Accessories',
     pageNumLeft: 103,
     pageNumRight: 104,
@@ -605,7 +637,9 @@ export const kitchenAccessoriesSpreads = [
     title: 'Pull-Out\nWaste Bin.',
     tagline: 'Built-in under-sink dual compartment pull-out waste bin',
     image: wastebinImg,
-    brandName: 'Pull-Out Waste Bin',
+    productName: 'Pull-Out Waste Bin',
+    brandName: 'Sentex Gold',
+    brandId: 'sentex-gold',
     desc: 'Hygienic dual-bin pull-out waste management system with integrated odor lid. Mounts under kitchen sinks for wet and dry waste segregation.',
     thicknesses: ['Dual Bin (2 x 14L)', 'Dual Bin (2 x 20L)'],
     defaultThickness: 'Dual Bin (2 x 14L)',
@@ -633,7 +667,7 @@ export const kitchenAccessoriesSpreads = [
   },
   {
     id: 118,
-    brandId: 'cabinet-ventilator-grills',
+    
     category: 'Kitchen Accessories',
     pageNumLeft: 105,
     pageNumRight: 106,
@@ -641,7 +675,9 @@ export const kitchenAccessoriesSpreads = [
     title: 'Cabinet Ventilator\nGrills.',
     tagline: 'Aluminum air ventilation louvers for kitchen cabinets & appliances',
     image: ventilatorImg,
-    brandName: 'Cabinet Ventilator Grills',
+    productName: 'Cabinet Ventilator Grills',
+    brandName: 'Sentex Gold',
+    brandId: 'sentex-gold',
     desc: 'Precision extruded aluminum ventilation grills designed to dissipate heat from oven housings, refrigerator cavities, and under-sink cabinets.',
     thicknesses: ['60mm x 225mm', '80mm x 300mm', '100mm x 500mm'],
     defaultThickness: '80mm x 300mm',
@@ -668,7 +704,7 @@ export const kitchenAccessoriesSpreads = [
   },
   {
     id: 119,
-    brandId: 'modular-kitchen-basket',
+    
     category: 'Kitchen Accessories',
     pageNumLeft: 107,
     pageNumRight: 108,
@@ -676,7 +712,9 @@ export const kitchenAccessoriesSpreads = [
     title: 'Kitchen Wire\nBasket.',
     tagline: 'Stainless steel SS 304 modular kitchen basket for utensils & crockery',
     image: kitchenBasketImg,
-    brandName: 'Kitchen Basket',
+    productName: 'Kitchen Basket',
+    brandName: 'Sentex Gold',
+    brandId: 'sentex-gold',
     desc: 'Heavy-duty food-grade SS 304 stainless steel modular kitchen baskets designed for plate storage, cup-saucer organization, and heavy cookware load distribution.',
     material: 'SS 304 Stainless Steel',
     thicknesses: ['450mm Cabinet', '500mm Cabinet', '600mm Cabinet'],
@@ -707,7 +745,7 @@ export const kitchenAccessoriesSpreads = [
   },
   {
     id: 120,
-    brandId: 'tandem-box-drawer',
+    
     category: 'Kitchen Accessories',
     pageNumLeft: 109,
     pageNumRight: 110,
@@ -715,7 +753,9 @@ export const kitchenAccessoriesSpreads = [
     title: 'Luxury Tandem\nBox.',
     tagline: 'German engineered double-wall metallic modular drawer box system',
     image: tandemBoxJpgImg,
-    brandName: 'Tandem Box Drawers',
+    productName: 'Tandem Box Drawers',
+    brandName: 'Sentex Gold',
+    brandId: 'sentex-gold',
     desc: 'Precision engineered double-wall metallic drawer systems with synchronized smooth motion runners, integrated soft-close dampening, and sleek modern side walls.',
     material: 'Electro-Galvanized Steel',
     thicknesses: ['Low Wall (84mm)', 'Medium Wall (135mm)', 'High Wall (199mm)'],
@@ -746,7 +786,7 @@ export const kitchenAccessoriesSpreads = [
   },
   {
     id: 121,
-    brandId: 'tandem-box-pullout',
+    
     category: 'Kitchen Accessories',
     pageNumLeft: 111,
     pageNumRight: 112,
@@ -754,7 +794,9 @@ export const kitchenAccessoriesSpreads = [
     title: 'Modular Tandem\nPull-Out.',
     tagline: 'High gallery railing deep drawer tandem system for kitchen storage',
     image: tandemBoxPngImg,
-    brandName: 'Tandem Box Pull-Out',
+    productName: 'Tandem Box Pull-Out',
+    brandName: 'Sentex Gold',
+    brandId: 'sentex-gold',
     desc: 'Deep modular tandem drawer system equipped with round gallery railings and anti-slip matting. Built for storing tall grocery containers and heavy kitchen appliances.',
     material: 'Steel + Chrome Railing',
     thicknesses: ['450mm Depth', '500mm Depth', '550mm Depth'],
@@ -783,7 +825,7 @@ export const kitchenAccessoriesSpreads = [
   },
   {
     id: 122,
-    brandId: 'channel-basket-system',
+    
     category: 'Kitchen Accessories',
     pageNumLeft: 113,
     pageNumRight: 114,
@@ -791,7 +833,9 @@ export const kitchenAccessoriesSpreads = [
     title: 'Channel Basket\nSystem.',
     tagline: 'Smooth slide-out wire basket with precision ball-bearing runners',
     image: channelBasketImg,
-    brandName: 'Channel Basket System',
+    productName: 'Channel Basket System',
+    brandName: 'Sentex Gold',
+    brandId: 'sentex-gold',
     desc: 'Heavy-gauge stainless steel kitchen wire basket integrated with soft-closing telescopic drawer slides. Ideal for daily dish, bowl, and utensil access.',
     material: 'Stainless Steel + Zinc Slides',
     thicknesses: ['15-inch Drawer', '17-inch Drawer', '21-inch Drawer'],
@@ -820,7 +864,7 @@ export const kitchenAccessoriesSpreads = [
   },
   {
     id: 123,
-    brandId: 'channel-drawer-organizer',
+    
     category: 'Kitchen Accessories',
     pageNumLeft: 115,
     pageNumRight: 116,
@@ -828,7 +872,9 @@ export const kitchenAccessoriesSpreads = [
     title: 'Channel Drawer\nOrganizer.',
     tagline: 'Under-mount synchronized soft-close drawer system for sleek cabinets',
     image: channelDrawerImg,
-    brandName: 'Channel Drawer Organizer',
+    productName: 'Channel Drawer Organizer',
+    brandName: 'Sentex Gold',
+    brandId: 'sentex-gold',
     desc: 'Advanced concealed under-mount drawer channel system providing completely hidden runner hardware and whisper-quiet soft closing for kitchen cabinetry.',
     material: 'Galvanized Cold Rolled Steel',
     thicknesses: ['350mm (14")', '450mm (18")', '500mm (20")', '550mm (22")'],
@@ -857,7 +903,7 @@ export const kitchenAccessoriesSpreads = [
   },
   {
     id: 124,
-    brandId: 'multi-tier-tandem-boxes',
+    
     category: 'Kitchen Accessories',
     pageNumLeft: 117,
     pageNumRight: 118,
@@ -865,7 +911,9 @@ export const kitchenAccessoriesSpreads = [
     title: 'Modular Tandem\nSeries.',
     tagline: 'Complete multi-tier kitchen drawer ensemble with inner dividers',
     image: multiTierTandemImg,
-    brandName: 'Modular Tandem Series',
+    productName: 'Modular Tandem Series',
+    brandName: 'Sentex Gold',
+    brandId: 'sentex-gold',
     desc: 'All-in-one modular kitchen tandem drawer system grouping cutlery organizers, plate organizers, and deep pot drawers into a coordinated cabinetry suite.',
     material: 'Anthracite Metallic Steel',
     thicknesses: ['3-Drawer Stack (Standard)', '2-Drawer Deep Stack', '4-Drawer Chef Stack'],
@@ -894,7 +942,7 @@ export const kitchenAccessoriesSpreads = [
   },
   {
     id: 125,
-    brandId: 'kitchen-accessories-master',
+    
     category: 'Kitchen Accessories',
     pageNumLeft: 119,
     pageNumRight: 120,
@@ -902,7 +950,9 @@ export const kitchenAccessoriesSpreads = [
     title: 'Modular Kitchen\nAccessories.',
     tagline: 'Comprehensive collection of smart storage hardware & fittings',
     image: kitchenAccessoriesMasterImg,
-    brandName: 'Kitchen Accessories Collection',
+    productName: 'Sentex Gold Kitchen Accessories',
+    brandName: 'Sentex Gold',
+    brandId: 'sentex-gold',
     desc: 'The complete signature collection of Pakshal modular kitchen hardware: pull-downs, magic corners, cutlery trays, rolling shutters, and tandem systems.',
     material: 'Premium SS 304, Aluminum & Glass',
     thicknesses: ['Standard 600mm Kitchen Module', 'Standard 900mm Kitchen Module'],
@@ -931,7 +981,7 @@ export const kitchenAccessoriesSpreads = [
   },
   {
     id: 126,
-    brandId: 'modern-kitchen-cabinetry',
+    
     category: 'Kitchen Accessories',
     pageNumLeft: 121,
     pageNumRight: 122,
@@ -939,7 +989,9 @@ export const kitchenAccessoriesSpreads = [
     title: 'Modern Modular\nKitchen Suite.',
     tagline: 'Turnkey architectural modular kitchen cabinetry & fittings layout',
     image: kitchensCardImg,
-    brandName: 'Modern Modular Kitchen',
+    productName: 'Modern Modular Kitchen',
+    brandName: 'Sentex Gold',
+    brandId: 'sentex-gold',
     desc: 'Full architectural modular kitchen layout displaying seamless integration of tandem drawers, rolling shutters, overhead lift-up shutters, and pantry swing units.',
     material: 'Luxury Matte Laminates & Calibrated Marine Plywood',
     thicknesses: ['L-Shaped Kitchen', 'U-Shaped Kitchen', 'Parallel Kitchen', 'Island Kitchen'],
@@ -974,7 +1026,7 @@ export const KitchenAccessories = ({ onNavigate, onSelectItem, activeId }) => {
     if (onSelectItem) {
       onSelectItem(item);
     } else if (onNavigate) {
-      onNavigate('products', '', `?category=kitchen-accessories&product=${item.brandId}`);
+      onNavigate('products', '', `?category=kitchen-accessories&brand=Sentex%20Gold`);
     }
   };
 
@@ -986,10 +1038,10 @@ export const KitchenAccessories = ({ onNavigate, onSelectItem, activeId }) => {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 pb-4 border-b border-slate-200">
           <div>
             <span className="text-[11px] font-black uppercase tracking-widest text-[#006e2f] mb-1 block">
-              Modular Storage Solutions
+              SENTEX GOLD • Modular Storage Solutions
             </span>
             <h2 className="text-3xl md:text-4xl font-black text-slate-900 tracking-tight uppercase">
-              Kitchen Accessories Collection
+              Sentex Gold Kitchen Accessories
             </h2>
             <p className="text-slate-500 font-medium text-xs sm:text-sm mt-1 max-w-2xl">
               Explore our complete range of pull-downs, tandem drawers, magic corners, carousel trays, organizer systems, and architectural cabinetry.
@@ -998,7 +1050,7 @@ export const KitchenAccessories = ({ onNavigate, onSelectItem, activeId }) => {
 
           <div className="mt-4 md:mt-0 flex items-center gap-3">
             <span className="px-3.5 py-1.5 bg-[#f0f9f4] text-[#006e2f] border border-[#006e2f]/20 rounded-full text-xs font-black uppercase tracking-wider">
-              Premium Collection
+              Sentex Gold Collection
             </span>
           </div>
         </div>
@@ -1021,7 +1073,7 @@ export const KitchenAccessories = ({ onNavigate, onSelectItem, activeId }) => {
                 <div className="relative h-48 sm:h-52 bg-white overflow-hidden border-b border-slate-100 flex items-center justify-center p-3">
                   <img
                     src={item.image}
-                    alt={item.brandName}
+                    alt={item.productName || (item.title ? item.title.replace(/\n/g, ' ') : item.brandName)}
                     className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-md px-2.5 py-1 rounded-full text-[10px] font-black uppercase tracking-wider text-slate-800 border border-slate-200/70 shadow-2xs">
@@ -1036,7 +1088,7 @@ export const KitchenAccessories = ({ onNavigate, onSelectItem, activeId }) => {
                     <h3 className={`text-base font-black transition-colors leading-snug ${
                       isSelected ? 'text-[#006e2f]' : 'text-slate-900 group-hover:text-[#006e2f]'
                     }`}>
-                      {item.brandName}
+                      {item.productName || (item.title ? item.title.replace(/\n/g, ' ') : item.brandName)}
                     </h3>
                     <p className="text-xs font-medium text-slate-500 mt-1 line-clamp-2 leading-relaxed">
                       {item.tagline}
