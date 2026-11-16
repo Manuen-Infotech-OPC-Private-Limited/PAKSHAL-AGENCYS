@@ -28,6 +28,10 @@ import europaLogo from '../../assets/logos/europa-logo.png';
 import europaRimLocksImg from '../../assets/hardware/europa/europa-anti-theft-rim-locks.jpg';
 import europaDoorLocksImg from '../../assets/hardware/europa/europa-architectural-door-locks.jpg';
 import europaPadlocksImg from '../../assets/hardware/europa/europa-security-padlocks-disc.jpg';
+import nimmiDoorHardwareImg from '../../assets/hardware/nimmi/nimmi-door-hardware.jpg';
+import nimmiKitchenAccessoriesImg from '../../assets/hardware/nimmi/nimmi-kitchen-accessories.jpg';
+import nimmiFurnitureFittingsImg from '../../assets/hardware/nimmi/nimmi-furniture-fittings.jpg';
+import nimmiInteriorHardwareImg from '../../assets/hardware/nimmi/nimmi-interior-hardware.jpg';
 import nimmiLogo from '../../assets/logos/nimmi-logo.png';
 import hardwareImg from '../../assets/hardware/hardwarefittings.png';
 import slidingChannelsImg from '../../assets/hardware/slidingchannels.png';
@@ -986,113 +990,146 @@ export const hardwareSpreads = [
   // ==========================================
   {
     id: 255,
-    brandId: 'nimmi-pull-handles',
+    brandId: 'nimmi-door-hardware',
     category: 'Hardware & Fittings',
     pageNumLeft: 119,
     pageNumRight: 120,
-    badge: 'Architectural Handles',
-    title: 'Luxury Architectural\nPull Handles.',
-    tagline: 'High-purity zinc alloy main door designer pull handles',
-    image: nimmiLogo,
-    imageFit: 'contain',
+    badge: 'Door Hardware',
+    title: 'Architectural Door\nHardware & Locks.',
+    tagline: 'Door handles, mortise locks, hinges, and fittings',
+    image: nimmiDoorHardwareImg,
     brandName: 'Nimmi',
-    desc: 'Nimmi premier architectural door pull handles sculptured from high-purity virgin zinc alloy with advanced multi-layer PVD finish, concealed bolt mounting, and ergonomic grip.',
-    thicknesses: ['300 mm (12 inch)', '450 mm (18 inch)', '600 mm (24 inch)'],
-    defaultThickness: '450 mm (18 inch)',
-    thicknessLabel: 'Handle Length',
-    features: ['Solid Virgin Zinc Alloy', 'Multi-Layer PVD Finish', 'Concealed Through-Bolt Mount'],
-    applications: ['Main Entrance Doors', 'Glass Doors', 'Luxury Wardrobes'],
+    desc: 'High-quality door handles, mortise locks, tower bolts, hinges, aldrops, and door accessories for homes and offices.',
+    thicknesses: ['Satin SS', 'Matt Black', 'Antique'],
+    defaultThickness: 'Satin SS',
+    thicknessLabel: 'Finish',
+    features: ['Durable Metal Construction', 'Smooth Locking Mechanism', 'Corrosion Resistant'],
+    applications: ['Main Doors', 'Bedroom Doors', 'Commercial Doors'],
     specs: {
-      'Material': 'High-Purity Zinc Alloy',
-      'Finish': 'Rosegold PVD | Matt Black | Satin Gold',
-      'Mounting': 'Through-Door Bolt with Decorative Washers'
+      'Material': 'Stainless Steel & Brass',
+      'Finishes': 'Satin Steel / Matt Black / Antique',
+      'Components': 'Handles, Locks, Hinges, Bolts'
     },
-    heroSub: 'ARCHITECTURAL STATEMENT. BESPOKE LUXURY.',
-    heroTitle: 'NIMMI ARCHITECTURAL PULLS',
-    heroDesc: 'Designer pull handles crafted to make an immediate impression on luxury main entrance and wardrobe doors.',
+    heroSub: 'DOOR HARDWARE & LOCKS',
+    heroTitle: 'NIMMI DOOR HARDWARE',
+    heroDesc: 'Reliable door locks, handles, tower bolts, and hinges built for durability and smooth operation.',
     heroTags: [
-      { text: 'Virgin Zinc Alloy', icon: 'shield' },
-      { text: 'PVD Anti-Tarnish', icon: 'sparkles' },
-      { text: 'Concealed Mounting', icon: 'gear' }
+      { text: 'Durable Quality', icon: 'shield' },
+      { text: 'Multiple Finishes', icon: 'sparkles' },
+      { text: 'Easy Installation', icon: 'gear' }
     ],
     overviewFeatures: [
-      { title: 'High-Purity Zinc Die-Cast', desc: 'Solid, weighty feel with zero air bubbles or defects', icon: 'shield' },
-      { title: 'PVD Titanium Plating', desc: 'Resistant to hand perspiration, ring scratches, and UV fading', icon: 'sparkles' },
-      { title: 'Concealed Bolt System', desc: 'Sleek appearance with hidden through-door bolts', icon: 'calibrate' }
+      { title: 'Durable Metals', desc: 'Crafted from strong metals for high durability and daily use', icon: 'shield' },
+      { title: 'Smooth Operation', desc: 'Precision engineered for effortless turning and secure locking', icon: 'gear' },
+      { title: 'Modern Finishes', desc: 'Contemporary finishes to match any door style', icon: 'sparkles' }
     ]
   },
   {
     id: 256,
-    brandId: 'nimmi-conceal-profiles',
+    brandId: 'nimmi-kitchen-accessories',
     category: 'Hardware & Fittings',
     pageNumLeft: 121,
     pageNumRight: 122,
-    badge: 'Edge Profiles',
-    title: 'Edge-Recessed Conceal\nProfile Handles.',
-    tagline: 'Minimalist edge-mount aluminum profile handles',
-    image: nimmiLogo,
-    imageFit: 'contain',
+    badge: 'Kitchen Storage',
+    title: 'Modular Kitchen\nAccessories & Storage.',
+    tagline: 'Kitchen wire baskets, corner carousels, and organizers',
+    image: nimmiKitchenAccessoriesImg,
     brandName: 'Nimmi',
-    desc: 'Nimmi sleek edge-recessed cabinet handles engineered for handle-less modular cabinetry, featuring flush grooved contour, anodized scratch-resistant coating, and easy screw installation.',
-    thicknesses: ['160 mm', '224 mm', '320 mm', 'Full-Length Profile'],
-    defaultThickness: '224 mm',
-    thicknessLabel: 'Size (mm)',
-    features: ['Sleek Edge-Mount Profile', 'Scratch-Resistant Anodizing', 'Ergonomic Finger Recess'],
-    applications: ['Modular Kitchen Shutters', 'Wardrobe Sliding Doors', 'Bathroom Vanity Drawers'],
+    desc: 'Modular kitchen storage accessories including corner carousels, pull-out wire baskets, tandem drawer boxes, and waste bins.',
+    thicknesses: ['Standard Cabinet Sizes', 'Modular Sizes'],
+    defaultThickness: 'Standard Cabinet Sizes',
+    thicknessLabel: 'Size',
+    features: ['Space-Saving Design', 'Smooth Pull-Out Motion', 'Rust-Resistant Finish'],
+    applications: ['Modular Kitchen Cabinets', 'Pantry Units', 'Corner Storage'],
     specs: {
-      'Material': 'Architectural Aluminum Alloy',
-      'Finishes': 'Matt Black | Champagne Gold | Brushed Silver',
-      'Fitment': 'Top & Edge Rear Screw'
+      'Material': 'Stainless Steel & Quality Polymers',
+      'Installation': 'Base Cabinets & Corners',
+      'Type': 'Pull-Out Drawers & Carousels'
     },
-    heroSub: 'MINIMALIST LINES. SEAMLESS CABINETRY.',
-    heroTitle: 'NIMMI CONCEAL PROFILES',
-    heroDesc: 'Contemporary edge profile handles that deliver sleek lines and uncluttered aesthetics to modular carpentry.',
+    heroSub: 'KITCHEN STORAGE SOLUTIONS',
+    heroTitle: 'NIMMI KITCHEN ACCESSORIES',
+    heroDesc: 'Functional modular kitchen accessories designed to maximize cabinet storage and keep items organized.',
     heroTags: [
-      { text: 'Edge Flush Mount', icon: 'calibrate' },
-      { text: 'Anodized Finishes', icon: 'sparkles' },
-      { text: 'Finger Recess Grip', icon: 'gear' }
+      { text: 'Space-Saving', icon: 'calibrate' },
+      { text: 'Smooth Motion', icon: 'gear' },
+      { text: 'Easy Cleaning', icon: 'sparkles' }
     ],
     overviewFeatures: [
-      { title: 'Handle-Less Aesthetic', desc: 'Sits flush onto cabinet shutter edges for clean minimal facades', icon: 'calibrate' },
-      { title: 'Ergonomic Finger Channel', desc: 'Comfortable recessed lip for effortless drawer opening', icon: 'gear' },
-      { title: 'Anodized Surface Defense', desc: 'Resistant to everyday fingertip smudges and kitchen grease', icon: 'sparkles' }
+      { title: 'Smart Storage', desc: 'Corner carousels and pull-outs make full use of cabinet depth', icon: 'calibrate' },
+      { title: 'Smooth Movement', desc: 'Heavy-duty glides ensure quiet and easy pull-out action', icon: 'gear' },
+      { title: 'Rust-Proof Finish', desc: 'Durable coating helps resist kitchen moisture and stains', icon: 'shield' }
     ]
   },
   {
     id: 257,
-    brandId: 'nimmi-designer-knobs',
+    brandId: 'nimmi-furniture-fittings',
     category: 'Hardware & Fittings',
     pageNumLeft: 123,
     pageNumRight: 124,
-    badge: 'Designer Knobs',
-    title: 'Luxury Dual-Tone\nCabinet Knobs.',
-    tagline: 'Geometric accent furniture knobs with contrasting textures',
-    image: nimmiLogo,
-    imageFit: 'contain',
+    badge: 'Furniture Fittings',
+    title: 'Cabinet Hardware &\nFurniture Fittings.',
+    tagline: 'Soft-close hinges, locks, gas stays, and connectors',
+    image: nimmiFurnitureFittingsImg,
     brandName: 'Nimmi',
-    desc: 'Nimmi luxury cabinet and wardrobe knobs crafted with knurled textured centers and electroplated polished rims for dramatic tactile elegance on dresser drawers and cabinet doors.',
-    thicknesses: ['Gold & Matt Black', 'Rosegold & Satin CP', 'Graphite Grey'],
-    defaultThickness: 'Gold & Matt Black',
-    thicknessLabel: 'Finish Combination',
-    features: ['Diamond Knurled Texture', 'Solid Metal Weight', 'Universal M4 Screw Fit'],
-    applications: ['Modular Wardrobes', 'Nightstands & Dressers', 'Kitchen Wall Units'],
+    desc: 'Cabinet fittings including soft-close hydraulic hinges, drawer locks, flap stays, adjustable legs, and furniture connectors.',
+    thicknesses: ['Standard Fittings', 'Heavy Duty'],
+    defaultThickness: 'Standard Fittings',
+    thicknessLabel: 'Grade',
+    features: ['Soft-Close Action', 'Reliable Load Support', 'Simple Assembly'],
+    applications: ['Wardrobes', 'Kitchen Cabinets', 'Living & Office Furniture'],
     specs: {
-      'Material': 'Solid Brass & Zinc Alloy',
-      'Diameter': '32 mm',
-      'Projection': '26 mm'
+      'Components': 'Hinges, Locks, Stays, Legs, Connectors',
+      'Mounting': 'Concealed / Clip-on',
+      'Finish': 'Nickel & Zinc Coated'
     },
-    heroSub: 'TACTILE ELEGANCE. GEOMETRIC ACCENTS.',
-    heroTitle: 'NIMMI DESIGNER KNOBS',
-    heroDesc: 'Diamond-knurled and dual-tone furniture knobs providing a distinctive touch of luxury to bespoke carpentry.',
+    heroSub: 'CABINET HARDWARE & ACCESSORIES',
+    heroTitle: 'NIMMI FURNITURE FITTINGS',
+    heroDesc: 'Essential cabinet hinges, locks, and hardware fittings crafted for seamless furniture fabrication.',
     heroTags: [
-      { text: 'Diamond Knurled', icon: 'sparkles' },
-      { text: 'Solid Metal Core', icon: 'shield' },
-      { text: 'Dual-Tone Accents', icon: 'sparkles' }
+      { text: 'Soft-Close Action', icon: 'gear' },
+      { text: 'Durable Support', icon: 'shield' },
+      { text: 'Standard Fit', icon: 'calibrate' }
     ],
     overviewFeatures: [
-      { title: 'Diamond Knurled Grip', desc: 'Precision machine-knurled pattern provides tactile luxury feel', icon: 'sparkles' },
-      { title: 'Substantial Metal Weight', desc: 'Solid brass and zinc alloy core prevents loosening over time', icon: 'shield' },
-      { title: 'Universal M4 Screws', desc: 'Pre-threaded for effortless mounting on 18mm to 25mm shutters', icon: 'calibrate' }
+      { title: 'Gentle Soft-Close', desc: 'Damped hydraulic action closes doors quietly and smoothly', icon: 'gear' },
+      { title: 'Strong Support', desc: 'High load capacity for overhead cabinets and furniture bases', icon: 'shield' },
+      { title: 'Easy Installation', desc: 'Standard hole patterns for quick and accurate carpenter fitment', icon: 'calibrate' }
+    ]
+  },
+  {
+    id: 258,
+    brandId: 'nimmi-interior-hardware',
+    category: 'Hardware & Fittings',
+    pageNumLeft: 125,
+    pageNumRight: 126,
+    badge: 'Interior Hardware',
+    title: 'Interior Hardware &\nProfile Systems.',
+    tagline: 'Aluminium profile handles, sliding fittings, and modern fixtures',
+    image: nimmiInteriorHardwareImg,
+    brandName: 'Nimmi',
+    desc: 'Modern interior hardware featuring sleek aluminium profile handles, sliding door channels, cabinet knobs, and security chains.',
+    thicknesses: ['Matt Black', 'Brushed Silver', 'Champagne Gold'],
+    defaultThickness: 'Matt Black',
+    thicknessLabel: 'Finish',
+    features: ['Modern Minimalist Look', 'Smooth Sliding Action', 'Scratch-Resistant Finish'],
+    applications: ['Modular Kitchens', 'Wardrobes', 'Sliding Partitions'],
+    specs: {
+      'Profiles': 'G-Profile / J-Profile / Edge Profiles',
+      'Mechanism': 'Top Hung & Sliding Tracks',
+      'Material': 'Aluminium Alloy & Zinc'
+    },
+    heroSub: 'INTERIOR HARDWARE & PROFILES',
+    heroTitle: 'NIMMI INTERIOR SYSTEMS',
+    heroDesc: 'Modern profile handles and sliding door systems designed for clean and minimalist interior aesthetics.',
+    heroTags: [
+      { text: 'Minimalist Profile', icon: 'calibrate' },
+      { text: 'Smooth Sliding', icon: 'gear' },
+      { text: 'Scratch-Resistant', icon: 'sparkles' }
+    ],
+    overviewFeatures: [
+      { title: 'Minimalist Profiles', desc: 'Handle-less edge profiles create clean and seamless cabinet lines', icon: 'calibrate' },
+      { title: 'Smooth Sliding', desc: 'Quiet rollers provide smooth and reliable door glide', icon: 'gear' },
+      { title: 'Protective Anodizing', desc: 'Durable surface layer resists everyday scratches and finger marks', icon: 'shield' }
     ]
   }
 ,

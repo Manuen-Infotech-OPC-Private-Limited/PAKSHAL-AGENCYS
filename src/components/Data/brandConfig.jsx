@@ -39,6 +39,7 @@ import godrejArchImg from '../../assets/hardware/godrej/godrej-architectural-har
 import europaLogo from '../../assets/logos/europa-logo.png';
 import europaRimLocksImg from '../../assets/hardware/europa/europa-anti-theft-rim-locks.jpg';
 import nimmiLogo from '../../assets/logos/nimmi-logo.png';
+import nimmiDoorHardwareImg from '../../assets/hardware/nimmi/nimmi-door-hardware.jpg';
 import hardwareFittings6 from '../../assets/hardware/productspage-hardware&fittings6.png';
 
 export const BRAND_CONFIG = [
@@ -501,17 +502,17 @@ export const BRAND_CONFIG = [
     name: 'Nimmi',
     displayName: 'NIMMI',
     trademark: true,
-    image: nimmiLogo,
+    image: nimmiDoorHardwareImg,
     logo: nimmiLogo,
     categoryImages: {
-      'Hardware & Fittings': nimmiLogo,
-      'Arch. Hardware': nimmiLogo
+      'Hardware & Fittings': nimmiDoorHardwareImg,
+      'Arch. Hardware': nimmiDoorHardwareImg
     },
     categories: ['Hardware & Fittings'],
-    categorySummary: 'Hardware & Fittings • Luxury Handles & Hardware',
-    tagline: 'Designer Architectural Handles & Cabinet Hardware',
-    hallmark: 'Premier architectural handles, edge-profile conceal pulls, luxury zinc-alloy furniture knobs, and silent soft-close hinges designed for bespoke luxury carpentry.',
-    tags: ['Designer Pull Handles', 'Edge Conceal Profiles', 'Dual-Tone Luxury', 'Anti-Corrosion PVD'],
+    categorySummary: 'Hardware & Fittings • Door Hardware • Kitchen Accessories • Furniture Fittings',
+    tagline: 'Architectural Door Hardware, Kitchen Accessories & Furniture Fittings',
+    hallmark: 'Durable door locks, handles, hinges, modular kitchen accessories, and furniture fittings.',
+    tags: ['Door Hardware', 'Kitchen Storage', 'Cabinet Fittings', 'Profile Handles'],
     icon: (
       <svg className="w-7 h-7 text-[#C9A44C]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M4 7h16M4 12h16M4 17h16" />
