@@ -1151,17 +1151,17 @@ export const ProductsPage = ({ onNavigate, search }) => {
                       >
                         {isLogoBrand ? (
                           /* Top Logo Showcase for Hardware & Logo-First Brands */
-                          <div className="relative h-52 sm:h-56 w-full overflow-hidden bg-gradient-to-b from-[#fbf9f5] via-white to-stone-50/70 flex items-center justify-center p-6 border-b border-stone-100">
+                          <div className="relative h-36 sm:h-40 w-full overflow-hidden bg-gradient-to-b from-[#fbf9f5] via-white to-stone-50/70 flex items-center justify-center px-6 py-4 border-b border-stone-100">
                             <div className="w-full h-full flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
                               <img
                                 src={b.logo || brandImg}
                                 alt={`${b.name} Logo`}
-                                className="max-h-24 sm:max-h-28 max-w-[82%] object-contain select-none"
+                                className="max-h-20 sm:max-h-24 max-w-[80%] object-contain select-none"
                               />
                             </div>
 
                             {/* Authorized Partner Badge */}
-                            <div className="absolute top-3.5 right-3.5 z-10">
+                            <div className="absolute top-3 right-3 z-10">
                               <span className="px-2.5 py-1 rounded-full text-[9px] font-black tracking-wider uppercase bg-[#FAF6EE] text-[#8c6d23] border border-[#C9A44C]/35 shadow-2xs">
                                 Authorized Brand
                               </span>
@@ -1196,7 +1196,7 @@ export const ProductsPage = ({ onNavigate, search }) => {
                         )}
 
                         {/* Card Body */}
-                        <div className="p-5 sm:p-6 bg-white flex flex-col justify-between flex-grow">
+                        <div className="p-5 sm:p-6 pt-3.5 sm:pt-4 bg-white flex flex-col justify-between flex-grow">
                           <div>
                             {isLogoBrand && (
                               <div className="mb-2">
