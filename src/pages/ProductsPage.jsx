@@ -1151,12 +1151,12 @@ export const ProductsPage = ({ onNavigate, search }) => {
                       >
                         {isLogoBrand ? (
                           /* Top Logo Showcase for Hardware & Logo-First Brands */
-                          <div className="relative h-36 sm:h-40 w-full overflow-hidden bg-gradient-to-b from-[#fbf9f5] via-white to-stone-50/70 flex items-center justify-center px-6 py-4 border-b border-stone-100">
+                          <div className="relative h-44 sm:h-48 w-full overflow-hidden bg-white flex items-center justify-center px-6 py-4 border-b border-stone-100">
                             <div className="w-full h-full flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
                               <img
                                 src={b.logo || brandImg}
                                 alt={`${b.name} Logo`}
-                                className="max-h-20 sm:max-h-24 max-w-[80%] object-contain select-none"
+                                className="max-h-28 sm:max-h-32 max-w-[88%] object-contain select-none mix-blend-multiply"
                               />
                             </div>
 
