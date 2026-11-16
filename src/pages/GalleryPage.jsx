@@ -34,7 +34,10 @@ import vistaLaminatesImg from '../assets/laminates/vistalaminates2.png';
 import vistaLaminates2Img from '../assets/laminates/vistalaminates2.png';
 import vistaLaminates3Img from '../assets/laminates/vistalaminates3.png';
 import vistaLaminates4Img from '../assets/laminates/vistalaminates4.png';
-import vistaPlywoodImg from '../assets/plywood/vistaplywood1.png';
+import indigo710Img from '../assets/plywood/indigo710/indigo710_1.png';
+import indigo710_2Img from '../assets/plywood/indigo710/indigo710_2.png';
+import indigo710_4Img from '../assets/plywood/indigo710/indigo710_4.png';
+import armani710Img from '../assets/plywood/armani710/armani710_1.png';
 import merinoLaminatesImg from '../assets/laminates/merinolaminates.png';
 import merinoLaminates2Img from '../assets/laminates/merinolaminates2.webp';
 import merinoLaminates3Img from '../assets/laminates/merinolaminates3.png';
@@ -95,7 +98,7 @@ const GALLERY_ITEMS = [
     title: 'Plywood Collection',
     category: 'Plywood',
     img: centuryPlywoodImg,
-    imagesCount: 16,
+    imagesCount: 17,
     images: [
       centuryPlywoodImg,
       plywoodImg,
@@ -106,15 +109,18 @@ const GALLERY_ITEMS = [
       royalClub2Img,
       marineClubImg,
       marineClub2Img,
-      vistaPlywoodImg,
       homepageMarinePlywoodImg,
       gurjanGoldNewImg,
       gurjanStarImg,
       century2Img,
       green2Img,
-      royalClub3Img
+      royalClub3Img,
+      indigo710Img,
+      indigo710_2Img,
+      indigo710_4Img,
+      armani710Img
     ],
-    desc: 'Premium BWR, BWP marine-grade, calibrated, and club plywood sheets from Century, Green, Gurjan King, Royal Club, Marine Club, and Vista.'
+    desc: 'Premium BWR, BWP marine-grade, calibrated, and club plywood sheets from Century, Green, Gurjan King, Royal Club, Marine Club, Indigo 710, and Armani 710.'
   },
   {
     id: 201,

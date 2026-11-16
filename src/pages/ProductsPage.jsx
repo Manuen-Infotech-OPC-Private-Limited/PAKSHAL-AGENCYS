@@ -31,6 +31,8 @@ import {
   PRODUCTS_PAGE_METADATA,
   sgCatalogPdf,
   hardwarePdf,
+  skyDoorsPdf,
+  srDoorSkinPdf,
   SPREADS,
   BRAND_CONFIG,
   CATEGORY_DEFINITIONS,
@@ -47,6 +49,10 @@ import {
 export {
   PRODUCT_PAGE_CATEGORIES,
   PRODUCTS_PAGE_METADATA,
+  sgCatalogPdf,
+  hardwarePdf,
+  skyDoorsPdf,
+  srDoorSkinPdf,
   SPREADS,
   BRAND_CONFIG,
   CATEGORY_DEFINITIONS,
@@ -125,6 +131,28 @@ export const ProductsPage = ({ onNavigate, search }) => {
     }
   };
 
+  const renderBrandHeading = (text, isCard = false) => {
+    if (!text) return null;
+    const str = String(text);
+    if (str.includes('710')) {
+      const parts = str.split(/(710)/g);
+      return parts.map((part, i) =>
+        part === '710' ? (
+          <span
+            key={i}
+            className="font-sans font-black tracking-wider text-[#C9A44C] inline-block ml-1"
+            style={{ fontVariantNumeric: 'lining-nums' }}
+          >
+            710
+          </span>
+        ) : (
+          <span key={i}>{part}</span>
+        )
+      );
+    }
+    return str;
+  };
+
   const getOverviewTitle = (spread) => {
     const brand = spread.brandName;
     const cat = spread.category;
@@ -149,18 +177,20 @@ export const ProductsPage = ({ onNavigate, search }) => {
 
 
   const getTechnicalSpecs = (spread) => {
+    if (!spread) return { specs: [], highlights: [] };
     const cat = spread.category;
+    const specs = spread.specs || {};
 
     if (cat === 'Plywood') {
       return {
         specs: [
-          { label: 'Core Material', value: spread.specs['Core Material'] || spread.specs['Wood Species'] || 'Imported Gurjan', icon: 'tree' },
-          { label: 'Adhesive', value: spread.specs['Bonding Adhesive'] || spread.specs['Bonding Glue'] || 'Phenolic Formaldehyde', icon: 'glue' },
-          { label: 'Grade', value: spread.brandId.includes('marine') ? 'BWP Marine Grade (IS 710)' : 'BWP (Boiling Water Proof)', icon: 'grade' },
+          { label: 'Core Material', value: specs['Core Material'] || specs['Wood Species'] || 'Imported Gurjan', icon: 'tree' },
+          { label: 'Adhesive', value: specs['Bonding Adhesive'] || specs['Bonding Glue'] || 'Phenolic Formaldehyde', icon: 'glue' },
+          { label: 'Grade', value: (spread.brandId || '').includes('marine') ? 'BWP Marine Grade (IS 710)' : 'BWP (Boiling Water Proof)', icon: 'grade' },
           { label: 'Density', value: 'High Density Hardwood', icon: 'layers' },
           { label: 'Moisture Content', value: 'Below 12%', icon: 'moisture' },
           { label: 'Thickness Tolerance', value: '±0.5mm', icon: 'ruler' },
-          { label: 'Warranty', value: spread.specs['Manufacturer Warranty'] || 'Lifetime Guarantee', icon: 'warranty' },
+          { label: 'Warranty', value: specs['Manufacturer Warranty'] || 'Lifetime Guarantee', icon: 'warranty' },
           { label: 'Certification', value: 'ISO 9001:2015 Certified', icon: 'cert' }
         ],
         highlights: [
@@ -175,7 +205,7 @@ export const ProductsPage = ({ onNavigate, search }) => {
       return {
         specs: [
           { label: 'Base Material', value: 'Phenolic Resin Kraft / Acrylic', icon: 'layers' },
-          { label: 'Surface Finish', value: spread.specs['Surface Finish'] || 'Matt / Glossy / Textured', icon: 'finish' },
+          { label: 'Surface Finish', value: specs['Surface Finish'] || 'Matt / Glossy / Textured', icon: 'finish' },
           { label: 'Thickness', value: spread.defaultThickness || '1.0mm', icon: 'ruler' },
           { label: 'Heat Resistance', value: 'Up to 180°C', icon: 'moisture' },
           { label: 'Stain Resistance', value: 'Excellent (Wipe Clean)', icon: 'cert' },
@@ -194,14 +224,14 @@ export const ProductsPage = ({ onNavigate, search }) => {
     } else if (cat === 'Fancy Doors') {
       return {
         specs: [
-          { label: 'Core Material', value: spread.specs['Core Type'] || 'Kiln-Seasoned Pine / Hardwood Core', icon: 'tree' },
-          { label: 'Bonding Adhesive', value: spread.specs['Bonding Adhesive'] || 'BWP Synthetic Resin Adhesive', icon: 'glue' },
+          { label: 'Core Material', value: specs['Core Type'] || 'Kiln-Seasoned Pine / Hardwood Core', icon: 'tree' },
+          { label: 'Bonding Adhesive', value: specs['Bonding Adhesive'] || 'BWP Synthetic Resin Adhesive', icon: 'glue' },
           { label: 'Standard Thickness', value: spread.defaultThickness || '35mm', icon: 'ruler' },
-          { label: 'Surface Finish', value: spread.specs['Face Veneer'] || 'Natural Veneer / Laminated / Polishable', icon: 'finish' },
-          { label: 'Moisture Content', value: spread.specs['Moisture Content'] || '8% - 12% Seasoned Timber', icon: 'moisture' },
+          { label: 'Surface Finish', value: specs['Face Veneer'] || specs['Surface Finish'] || 'Natural Veneer / Laminated / Polishable', icon: 'finish' },
+          { label: 'Moisture Content', value: specs['Moisture Content'] || '8% - 12% Seasoned Timber', icon: 'moisture' },
           { label: 'Warpage Rating', value: 'Zero Warpage Tested', icon: 'grade' },
-          { label: 'Warranty', value: spread.specs['Warranty'] || '15 Years Warranty', icon: 'warranty' },
-          { label: 'Standard Certification', value: spread.specs['Certification'] || 'IS: 2202 Flush Doors', icon: 'cert' }
+          { label: 'Warranty', value: specs['Warranty'] || '15 Years Warranty', icon: 'warranty' },
+          { label: 'Standard Certification', value: specs['Certification'] || 'IS: 2202 Flush Doors', icon: 'cert' }
         ],
         highlights: [
           { title: 'Solid Seasoned Core', desc: '100% kiln-dried timber blocks eliminate twisting', icon: 'water-proof' },
@@ -215,11 +245,11 @@ export const ProductsPage = ({ onNavigate, search }) => {
       // Architectural Hardware etc.
       return {
         specs: [
-          { label: 'Material Grade', value: spread.specs['Material Grade'] || 'SS 304 Stainless Steel', icon: 'layers' },
+          { label: 'Material Grade', value: specs['Material Grade'] || 'SS 304 Stainless Steel', icon: 'layers' },
           { label: 'Mechanism', value: 'Hydraulic soft-close damping', icon: 'glue' },
-          { label: 'Load Capacity', value: spread.specs['Load Capacity'] || '45 kg per pair', icon: 'strength' },
+          { label: 'Load Capacity', value: specs['Load Capacity'] || '45 kg per pair', icon: 'strength' },
           { label: 'Cycle Testing', value: '100,000+ opening cycles', icon: 'cert' },
-          { label: 'Opening Angle', value: spread.specs['Opening Angle'] || '110 Degrees', icon: 'ruler' },
+          { label: 'Opening Angle', value: specs['Opening Angle'] || '110 Degrees', icon: 'ruler' },
           { label: 'Finish', value: 'Satin Finish / Electroplated Black', icon: 'finish' },
           { label: 'Rust Protection', value: 'Rust-free salt spray tested', icon: 'grade' },
           { label: 'Warranty', value: 'Lifetime Rust-Free Guarantee', icon: 'warranty' }
@@ -509,7 +539,7 @@ export const ProductsPage = ({ onNavigate, search }) => {
       return true;
     }
     const bName = (selectedBrand || activeSpread?.brandName || '').toLowerCase().trim();
-    if (bName.includes('astdax') || bName.includes('steel wood') || bName.includes('hardware')) {
+    if (bName.includes('astdax') || bName.includes('steel wood') || bName.includes('hardware') || bName.includes('ebco') || bName.includes('hettich') || bName.includes('hafele') || bName.includes('godrej') || bName.includes('europa') || bName.includes('nimmi')) {
       return true;
     }
     const spreadCat = getCanonicalCategory(activeSpread?.category || '');
@@ -519,9 +549,26 @@ export const ProductsPage = ({ onNavigate, search }) => {
     return false;
   })();
 
+  // Check if current view is a doors & accessories category / brand
+  const isDoorsCategory = (() => {
+    const catCanonical = getCanonicalCategory(activeCategory || activeSpread?.category || selectedCategory || '');
+    if (catCanonical === 'Fancy Doors' || catCanonical.toLowerCase().includes('door')) {
+      return true;
+    }
+    const bName = (selectedBrand || activeSpread?.brandName || '').toLowerCase().trim();
+    if (bName.includes('door') || bName.includes('sky doors') || bName.includes('door skin')) {
+      return true;
+    }
+    const spreadCat = getCanonicalCategory(activeSpread?.category || '');
+    if (spreadCat === 'Fancy Doors' || spreadCat.toLowerCase().includes('door')) {
+      return true;
+    }
+    return false;
+  })();
+
   // Sync category expansion whenever activeSpread changes
   useEffect(() => {
-    if (activeSpread) {
+    if (activeSpread && activeSpread.category) {
       setExpandedCategories(prev => ({
         ...prev,
         [activeSpread.category]: true
@@ -531,10 +578,11 @@ export const ProductsPage = ({ onNavigate, search }) => {
 
   // Update default message whenever active brand or thickness changes
   useEffect(() => {
-    const thicknessStr = selectedThicknesses[currentSpreadIdx] || activeSpread.defaultThickness;
+    if (!activeSpread) return;
+    const thicknessStr = selectedThicknesses[currentSpreadIdx] || activeSpread.defaultThickness || '';
     setEnquiryForm(prev => ({
       ...prev,
-      message: `I am interested in ${activeSpread.brandName} (${thicknessStr}). Please share pricing and availability.`
+      message: `I am interested in ${activeSpread.brandName || ''} (${thicknessStr}). Please share pricing and availability.`
     }));
   }, [currentSpreadIdx, selectedThicknesses, activeSpread]);
 
@@ -624,6 +672,12 @@ export const ProductsPage = ({ onNavigate, search }) => {
           (bLower === 'armani' && (s.category === 'Acrylic Panels' || s.brandName.toLowerCase().includes('acrylic'))) ||
           (bLower === 'astdax' && s.brandName.toLowerCase().includes('astdax')) ||
           (bLower === 'steel wood' && s.brandName.toLowerCase().includes('steel')) ||
+          (bLower === 'ebco' && s.brandName.toLowerCase().includes('ebco')) ||
+          (bLower === 'hettich' && s.brandName.toLowerCase().includes('hettich')) ||
+          ((bLower === 'hafele' || bLower === 'häfele') && (s.brandName.toLowerCase().includes('hafele') || s.brandName.toLowerCase().includes('häfele'))) ||
+          (bLower === 'godrej' && s.brandName.toLowerCase().includes('godrej')) ||
+          (bLower === 'europa' && s.brandName.toLowerCase().includes('europa')) ||
+          (bLower === 'nimmi' && s.brandName.toLowerCase().includes('nimmi')) ||
           ((bLower === 'sentex gold' || bLower === 'sentex') && (s.category === 'Kitchen Accessories' || s.brandName.toLowerCase().includes('sentex')))
         );
         if (!bMatch) return false;
@@ -646,6 +700,12 @@ export const ProductsPage = ({ onNavigate, search }) => {
           (bLower === 'armani' && (s.category === 'Acrylic Panels' || s.brandName.toLowerCase().includes('acrylic'))) ||
           (bLower === 'astdax' && s.brandName.toLowerCase().includes('astdax')) ||
           (bLower === 'steel wood' && s.brandName.toLowerCase().includes('steel')) ||
+          (bLower === 'ebco' && s.brandName.toLowerCase().includes('ebco')) ||
+          (bLower === 'hettich' && s.brandName.toLowerCase().includes('hettich')) ||
+          ((bLower === 'hafele' || bLower === 'häfele') && (s.brandName.toLowerCase().includes('hafele') || s.brandName.toLowerCase().includes('häfele'))) ||
+          (bLower === 'godrej' && s.brandName.toLowerCase().includes('godrej')) ||
+          (bLower === 'europa' && s.brandName.toLowerCase().includes('europa')) ||
+          (bLower === 'nimmi' && s.brandName.toLowerCase().includes('nimmi')) ||
           ((bLower === 'sentex gold' || bLower === 'sentex') && (s.category === 'Kitchen Accessories' || s.brandName.toLowerCase().includes('sentex')))
         );
       });
@@ -862,6 +922,12 @@ export const ProductsPage = ({ onNavigate, search }) => {
     if (b.toLowerCase().includes('sentex')) return 'Sentex Gold';
     if (b.toLowerCase().includes('astdax')) return 'Astdax';
     if (b.toLowerCase().includes('steel wood')) return 'Steel Wood';
+    if (b.toLowerCase().includes('ebco')) return 'Ebco';
+    if (b.toLowerCase().includes('hettich')) return 'Hettich';
+    if (b.toLowerCase().includes('hafele') || b.toLowerCase().includes('häfele')) return 'Häfele';
+    if (b.toLowerCase().includes('godrej')) return 'Godrej';
+    if (b.toLowerCase().includes('europa')) return 'Europa';
+    if (b.toLowerCase().includes('nimmi')) return 'Nimmi';
     return b || 'Royal Club';
   })();
 
@@ -983,6 +1049,31 @@ export const ProductsPage = ({ onNavigate, search }) => {
                 <p className="text-xs sm:text-sm text-stone-500 font-medium mt-1">
                   Click any brand below to view its specific products, catalogues, and finishes.
                 </p>
+                {isDoorsCategory && (
+                  <div className="flex items-center gap-2.5 flex-wrap mt-3">
+                    <span className="text-[11px] font-bold text-stone-500 uppercase tracking-wider">Catalogues:</span>
+                    <a
+                      href={skyDoorsPdf}
+                      download="SKY DOORS.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white border border-[#C9A44C]/40 text-stone-800 hover:bg-[#FAF6EE] hover:text-[#8c6d23] text-xs font-bold shadow-2xs transition-colors"
+                    >
+                      <Download className="w-3.5 h-3.5 text-[#C9A44C]" />
+                      <span>Sky Doors (PDF)</span>
+                    </a>
+                    <a
+                      href={srDoorSkinPdf}
+                      download="SR Door Skin.pdf"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white border border-[#C9A44C]/40 text-stone-800 hover:bg-[#FAF6EE] hover:text-[#8c6d23] text-xs font-bold shadow-2xs transition-colors"
+                    >
+                      <Download className="w-3.5 h-3.5 text-[#C9A44C]" />
+                      <span>SR Door Skin (PDF)</span>
+                    </a>
+                  </div>
+                )}
               </div>
             </div>
 
@@ -1021,7 +1112,7 @@ export const ProductsPage = ({ onNavigate, search }) => {
                 if (!matchesCat) return false;
 
                 if (brandSearchTerm.trim()) {
-                  const term = brandSearchTerm.toLowerCase().trim();
+                  const term = brandSearchTerm.toLowerCase().replace(/7io|71o/g, '710').trim();
                   const matchesName = b.name.toLowerCase().includes(term) || (b.displayName || '').toLowerCase().includes(term);
                   const matchesTagline = (b.tagline || '').toLowerCase().includes(term);
                   const matchesHallmark = (b.hallmark || '').toLowerCase().includes(term);
@@ -1050,6 +1141,7 @@ export const ProductsPage = ({ onNavigate, search }) => {
                   {filteredBrands.map((b) => {
                     const brandImg = getBrandImage(b, activeCatKey);
                     const brandTag = getBrandTag(b, activeCatKey);
+                    const isLogoBrand = Boolean(b.logo) || activeCatKey === 'Hardware & Fittings' || (b.categories || []).includes('Hardware & Fittings');
 
                     return (
                       <div
@@ -1057,35 +1149,79 @@ export const ProductsPage = ({ onNavigate, search }) => {
                         onClick={() => handleBrandSelect(b.name)}
                         className="group relative bg-white rounded-3xl border border-stone-200/90 shadow-[0_4px_24px_rgba(0,0,0,0.04)] flex flex-col justify-between cursor-pointer overflow-hidden hover:border-[#C9A44C]/70 hover:shadow-[0_12px_32px_rgba(201,164,76,0.18)] transition-all duration-300 hover:-translate-y-1"
                       >
-                        {/* Top Image Showcase */}
-                        <div className="relative h-56 sm:h-60 w-full overflow-hidden bg-stone-100">
-                          <img
-                            src={brandImg}
-                            alt={b.name}
-                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                          />
-                          {/* Gradient scrim for text readability */}
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
+                        {isLogoBrand ? (
+                          /* Top Logo Showcase for Hardware & Logo-First Brands */
+                          <div className="relative h-52 sm:h-56 w-full overflow-hidden bg-gradient-to-b from-[#fbf9f5] via-white to-stone-50/70 flex items-center justify-center p-6 border-b border-stone-100">
+                            <div className="w-full h-full flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
+                              <img
+                                src={b.logo || brandImg}
+                                alt={`${b.name} Logo`}
+                                className="max-h-24 sm:max-h-28 max-w-[82%] object-contain select-none"
+                              />
+                            </div>
 
-                          {/* Overlaid Brand Title at Bottom of Image */}
-                          <div className="absolute bottom-3.5 inset-x-4">
-                            <h3 className="font-serif text-2xl font-black tracking-wide text-white drop-shadow-md leading-tight flex items-baseline gap-1">
-                              {b.name}
-                              {b.trademark && (
-                                <span className="text-[10px] font-sans font-semibold text-[#C9A44C] relative -top-2">®</span>
-                              )}
-                            </h3>
-                            {b.tagline && (
-                              <p className="text-[11px] font-bold text-[#FAF6EE]/90 tracking-wide line-clamp-1 mt-0.5 drop-shadow-sm">
-                                {b.tagline}
-                              </p>
-                            )}
+                            {/* Authorized Partner Badge */}
+                            <div className="absolute top-3.5 right-3.5 z-10">
+                              <span className="px-2.5 py-1 rounded-full text-[9px] font-black tracking-wider uppercase bg-[#FAF6EE] text-[#8c6d23] border border-[#C9A44C]/35 shadow-2xs">
+                                Authorized Brand
+                              </span>
+                            </div>
+
+                            {/* Hardware Division Pill */}
+                            <div className="absolute bottom-3 left-4 z-10 flex items-center gap-1.5">
+                              <span className="w-2 h-2 rounded-full bg-[#C9A44C]" />
+                              <span className="text-[10px] font-black tracking-widest uppercase text-stone-400">
+                                Hardware Division
+                              </span>
+                            </div>
                           </div>
-                        </div>
+                        ) : (
+                          /* Top Image Showcase for Surface / Panel Brands */
+                          <div className="relative h-56 sm:h-60 w-full overflow-hidden bg-stone-100">
+                            <img
+                              src={brandImg}
+                              alt={b.name}
+                              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                            />
+                            {/* Gradient scrim for text readability */}
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
+
+                            {/* Overlaid Brand Title at Bottom of Image */}
+                            <div className="absolute bottom-3.5 inset-x-4">
+                              <h3 className="font-serif text-2xl font-black tracking-wide text-white drop-shadow-md leading-tight flex items-baseline gap-1 [font-variant-numeric:lining-nums]">
+                                {renderBrandHeading(b.displayName || b.name, true)}
+                                {b.trademark && (
+                                  <span className="text-[10px] font-sans font-semibold text-[#C9A44C] relative -top-2">®</span>
+                                )}
+                              </h3>
+                              {b.tagline && (
+                                <p className="text-[11px] font-bold text-[#FAF6EE]/90 tracking-wide line-clamp-1 mt-0.5 drop-shadow-sm">
+                                  {b.tagline}
+                                </p>
+                              )}
+                            </div>
+                          </div>
+                        )}
 
                         {/* Card Body */}
                         <div className="p-5 sm:p-6 bg-white flex flex-col justify-between flex-grow">
                           <div>
+                            {isLogoBrand && (
+                              <div className="mb-2">
+                                <h3 className="font-serif text-2xl font-black tracking-wide text-stone-900 leading-tight [font-variant-numeric:lining-nums]">
+                                  {renderBrandHeading(b.displayName || b.name, true)}
+                                  {b.trademark && (
+                                    <span className="text-[10px] font-sans font-semibold text-[#C9A44C] relative -top-2 ml-0.5">®</span>
+                                  )}
+                                </h3>
+                                {b.tagline && (
+                                  <p className="text-[11.5px] font-bold text-[#8c6d23] tracking-wide line-clamp-1 mt-0.5">
+                                    {b.tagline}
+                                  </p>
+                                )}
+                              </div>
+                            )}
+
                             {/* Hallmark description */}
                             <p className="text-xs text-stone-600 font-medium leading-relaxed mb-4 line-clamp-2">
                               {b.hallmark}
@@ -1110,8 +1246,8 @@ export const ProductsPage = ({ onNavigate, search }) => {
                           </div>
 
                           {/* Action CTA Button with hover effect */}
-                          <div className="w-full py-3.5 px-4 bg-stone-900 group-hover:bg-[#8c6d23] text-white rounded-xl font-bold text-xs uppercase tracking-wider flex items-center justify-between transition-colors duration-200 shadow-xs group-hover:shadow-md cursor-pointer">
-                            <span className="tracking-wide">Explore Products</span>
+                          <div className="w-full py-3.5 px-4 bg-stone-900 group-hover:bg-[#8c6d23] text-white rounded-xl font-bold text-xs uppercase tracking-wider flex items-center justify-between transition-colors duration-200 shadow-xs group-hover:shadow-md cursor-pointer mt-2">
+                            <span className="tracking-wide">Explore {b.displayName || b.name} Products</span>
                             <svg
                               className="w-4 h-4 text-[#C9A44C] group-hover:text-white transition-all duration-200 group-hover:translate-x-1.5"
                               fill="none"
@@ -1146,6 +1282,7 @@ export const ProductsPage = ({ onNavigate, search }) => {
               categories: [activeSpread?.category || 'Plywood']
             };
             const brandCats = (brandObj && brandObj.categories) ? brandObj.categories.map(c => getCanonicalCategory(c)) : [];
+            const isExcludedBrand = ['ebco', 'hettich', 'hafele', 'godrej', 'europa', 'nimmi'].includes((brandObj.name || '').toLowerCase());
             const availableCats = CATEGORY_DEFINITIONS.filter(cat => brandCats.includes(getCanonicalCategory(cat.key)));
 
             return (
@@ -1162,7 +1299,7 @@ export const ProductsPage = ({ onNavigate, search }) => {
                       <svg className="w-3.5 h-3.5 text-[#C9A44C] group-hover:-translate-x-0.5 transition-transform" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
                       </svg>
-                      <span>Back to {selectedCategory || 'Authorized'} Brands</span>
+                      <span>Back to {isExcludedBrand ? 'Hardware' : (selectedCategory || 'Authorized')} Brands</span>
                       <span className="text-stone-300 mx-1">/</span>
                       <span className="text-stone-800 font-extrabold">{selectedBrand}</span>
                     </button>
@@ -1182,14 +1319,21 @@ export const ProductsPage = ({ onNavigate, search }) => {
                         </span>
                         {brandObj.categories?.[0] && (
                           <span className="text-[11px] font-bold text-stone-400 tracking-wider uppercase">
-                            • {brandObj.categories.join(' & ')}
+                            • {isExcludedBrand ? 'HARDWARE & FITTINGS' : brandObj.categories.join(' & ')}
                           </span>
                         )}
                       </div>
 
-                      <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-black text-stone-900 tracking-tight leading-tight">
-                        {brandObj.displayName || selectedBrand}
-                      </h1>
+                      <div className="flex items-center gap-4 flex-wrap">
+                        <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-black text-stone-900 tracking-tight leading-tight [font-variant-numeric:lining-nums]">
+                          {renderBrandHeading(brandObj.displayName || selectedBrand, false)}
+                        </h1>
+                        {brandObj.logo && (
+                          <div className="h-10 sm:h-12 px-3 py-1 bg-white rounded-xl border border-stone-200/90 shadow-xs flex items-center justify-center">
+                            <img src={brandObj.logo} alt={`${brandObj.name} logo`} className="max-h-8 max-w-[120px] object-contain" />
+                          </div>
+                        )}
+                      </div>
 
                       {brandObj.tagline && (
                         <p className="text-[#8c6d23] font-bold text-sm sm:text-base leading-snug">
@@ -1222,7 +1366,7 @@ export const ProductsPage = ({ onNavigate, search }) => {
                     </div>
 
                     {/* Segmented Category Switcher (if brand has multiple lines) */}
-                    {availableCats.length > 1 && (
+                    {availableCats.length > 1 && !isExcludedBrand && (
                       <div className="shrink-0 flex flex-col items-start lg:items-end gap-1.5 pt-2 lg:pt-0">
                         <span className="text-[10px] font-black uppercase tracking-widest text-stone-400">
                           Select Brand Line:
@@ -1269,9 +1413,11 @@ export const ProductsPage = ({ onNavigate, search }) => {
                   <img
                     src={activeSpread.image}
                     alt={activeSpread.brandName}
-                    className={`w-full h-auto max-h-[290px] sm:max-h-[330px] md:max-h-[350px] ${activeSpread.category === 'Kitchen Accessories' || activeSpread.category === 'Arch. Hardware' || activeSpread.category === 'Hardware & Fittings' || activeSpread.imageFit === 'contain'
-                      ? 'object-contain bg-white p-4 sm:p-5'
-                      : 'object-cover'
+                    className={`w-full h-auto max-h-[290px] sm:max-h-[330px] md:max-h-[350px] ${activeSpread.imageFit === 'cover'
+                      ? 'object-cover w-full h-full'
+                      : activeSpread.category === 'Kitchen Accessories' || activeSpread.category === 'Arch. Hardware' || activeSpread.category === 'Hardware & Fittings' || activeSpread.imageFit === 'contain'
+                        ? 'object-contain bg-white p-4 sm:p-5'
+                        : 'object-cover'
                       }`}
                   />
 
@@ -1400,7 +1546,32 @@ export const ProductsPage = ({ onNavigate, search }) => {
 
                     {isBrochureDropdownOpen && (
                       <div className="absolute left-0 sm:right-0 bottom-full mb-2 w-72 bg-white rounded-xl border border-slate-200 shadow-xl overflow-hidden animate-fade-in text-left z-50 divide-y divide-slate-100">
-                        {isHardwareBrand ? (
+                        {isDoorsCategory ? (
+                          <>
+                            <a
+                              href={skyDoorsPdf}
+                              download="SKY DOORS.pdf"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              onClick={() => setIsBrochureDropdownOpen(false)}
+                              className="flex items-center gap-2.5 px-4 py-3 text-xs font-extrabold text-slate-800 hover:bg-[#FAF6EE] hover:text-[#8c6d23] transition-colors cursor-pointer"
+                            >
+                              <Download className="w-4 h-4 text-[#C9A44C] shrink-0" />
+                              <span>Sky Doors Catalogue</span>
+                            </a>
+                            <a
+                              href={srDoorSkinPdf}
+                              download="SR Door Skin.pdf"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              onClick={() => setIsBrochureDropdownOpen(false)}
+                              className="flex items-center gap-2.5 px-4 py-3 text-xs font-extrabold text-slate-800 hover:bg-[#FAF6EE] hover:text-[#8c6d23] transition-colors cursor-pointer"
+                            >
+                              <Download className="w-4 h-4 text-[#C9A44C] shrink-0" />
+                              <span>SR Door Skin Catalogue</span>
+                            </a>
+                          </>
+                        ) : isHardwareBrand ? (
                           <a
                             href={hardwarePdf}
                             download="hardwareaccessories.pdf"
@@ -1491,11 +1662,6 @@ export const ProductsPage = ({ onNavigate, search }) => {
                           alt={spreadItem.brandName}
                           className={`w-full h-full ${spreadItem.category === 'Kitchen Accessories' ? 'object-contain p-2' : 'object-cover'} group-hover:scale-102 transition-transform duration-300`}
                         />
-                        {isCurrent && (
-                          <div className="absolute top-2 right-2 bg-[#8c6d23] text-white text-[9px] font-black uppercase px-2 py-0.5 rounded-md shadow-xs">
-                            Active
-                          </div>
-                        )}
                       </div>
 
                       <div>
@@ -1603,9 +1769,9 @@ export const ProductsPage = ({ onNavigate, search }) => {
             }
 
             const selectedSpecSize = selectedSize || '8 x 4';
-            const selectedSpecGrade = activeSpread.specs['Grade'] || activeSpread.specs['Wood Species'] || activeSpread.features[0] || 'BWP';
-            const selectedSpecWarranty = activeSpread.specs['Manufacturer Warranty'] || 'Lifetime';
-            const selectedSpecFeature = activeSpread.features[1] || 'Boiling Water Proof';
+            const selectedSpecGrade = activeSpread?.specs?.['Grade'] || activeSpread?.specs?.['Wood Species'] || activeSpread?.features?.[0] || 'BWP';
+            const selectedSpecWarranty = activeSpread?.specs?.['Manufacturer Warranty'] || 'Lifetime';
+            const selectedSpecFeature = activeSpread?.features?.[1] || 'Boiling Water Proof';
 
             const renderSelectorIcon = (iconName, isSelected) => {
               const strokeColor = isSelected ? '#ffffff' : '#8c6d23';
@@ -2047,10 +2213,10 @@ export const ProductsPage = ({ onNavigate, search }) => {
           })()}
 
           {/* Kitchen Accessories Full Collection Showcase (All 26 Products) */}
-          {(getCanonicalCategory(activeSpread.category) === 'Kitchen Accessories' || getCanonicalCategory(selectedCategory) === 'Kitchen Accessories') && (
+          {(getCanonicalCategory(activeSpread?.category) === 'Kitchen Accessories' || getCanonicalCategory(selectedCategory) === 'Kitchen Accessories') && (
             <div id="kitchen-accessories-grid-section" className="w-full max-w-[1536px] mx-auto px-3 sm:px-6 lg:px-8 mt-4 mb-16 animate-fade-in">
               <KitchenAccessories
-                activeId={activeSpread.id}
+                activeId={activeSpread?.id}
                 onSelectItem={(item) => {
                   const targetIdx = SPREADS.findIndex(s => s.id === item.id);
                   if (targetIdx !== -1) {
@@ -2066,10 +2232,10 @@ export const ProductsPage = ({ onNavigate, search }) => {
           )}
 
           {/* Fancy Doors Full Collection Showcase (All 5 Models) */}
-          {(getCanonicalCategory(activeSpread.category) === 'Fancy Doors' || getCanonicalCategory(selectedCategory) === 'Fancy Doors') && (
+          {(getCanonicalCategory(activeSpread?.category) === 'Fancy Doors' || getCanonicalCategory(selectedCategory) === 'Fancy Doors') && (
             <div id="fancy-doors-grid-section" className="w-full max-w-[1536px] mx-auto px-3 sm:px-6 lg:px-8 mt-4 mb-16 animate-fade-in">
               <FancyDoors
-                activeId={activeSpread.id}
+                activeId={activeSpread?.id}
                 onSelectItem={(item) => {
                   const targetIdx = SPREADS.findIndex(s => s.id === item.id);
                   if (targetIdx !== -1) {
@@ -2134,7 +2300,7 @@ export const ProductsPage = ({ onNavigate, search }) => {
 
               {/* Right card: Highlights list or 3-and-2 cards */}
               {(() => {
-                const isPlywoodOrBoard = activeSpread.category === 'Plywood';
+                const isPlywoodOrBoard = activeSpread?.category === 'Plywood';
 
                 if (isPlywoodOrBoard) {
                   const highlights = getTechnicalSpecs(activeSpread).highlights;

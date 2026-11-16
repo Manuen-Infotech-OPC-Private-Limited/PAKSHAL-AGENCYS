@@ -30,9 +30,15 @@ import gurjanStarImg from '../../assets/plywood/gurjanstar.png';
 import gurjanStar2Img from '../../assets/plywood/gurjanstar2.png';
 import gurjanStar3Img from '../../assets/plywood/gurjanstar3.png';
 import gurjanStar4Img from '../../assets/plywood/gurjanstar4.png';
-import vistaPlywood1Img from '../../assets/plywood/vistaplywood1.png';
-import vistaPlywood2Img from '../../assets/plywood/vistaplywood2.png';
-import vistaPlywood3Img from '../../assets/plywood/vistaplywood3.png';
+import indigo710_1Img from '../../assets/plywood/indigo710/indigo710_1.png';
+import indigo710_2Img from '../../assets/plywood/indigo710/indigo710_2.png';
+import indigo710_3Img from '../../assets/plywood/indigo710/indigo710_3.png';
+import indigo710_4Img from '../../assets/plywood/indigo710/indigo710_4.png';
+import indigo710_5Img from '../../assets/plywood/indigo710/indigo710_5.png';
+import indigo710_6Img from '../../assets/plywood/indigo710/indigo710_6.png';
+import armani710_1Img from '../../assets/plywood/armani710/armani710_1.png';
+import armani710_2Img from '../../assets/plywood/armani710/armani710_2.png';
+import armani710_3Img from '../../assets/plywood/armani710/armani710_3.png';
 
 export const plywoodSpreads = [
   {
@@ -1211,113 +1217,338 @@ export const plywoodSpreads = [
     ]
   },
   {
-    id: 950,
-    brandId: 'vista-plywood',
+    id: 7101,
+    brandId: 'indigo-710',
     category: 'Plywood',
-    pageNumLeft: 31,
-    pageNumRight: 32,
-    badge: 'Calibrated Collection',
-    title: 'Precision\nCalibrated Core.',
-    tagline: 'High-density calibrated plywood engineered for precision interiors',
-    image: vistaPlywood1Img,
-    brandName: 'Vista',
-    desc: 'Vista Calibrated Plywood features imported hardwood core veneers double-pressed to uniform thickness with zero core gaps for flawless joinery and cabinetry.',
+    pageNumLeft: 35,
+    pageNumRight: 36,
+    badge: 'IS 710 Marine Grade',
+    title: 'Engineered\nResilience.',
+    tagline: 'Premium IS 710 Boiling Water Proof Marine Plywood',
+    image: indigo710_1Img,
+    brandName: 'Indigo 710',
+    desc: 'Indigo 710 Marine Plywood is precision engineered from 100% selected imported hardwoods bonded with unextended phenolic resins, delivering unmatched water resistance and structural reliability.',
     thicknesses: ['6mm', '9mm', '12mm', '16mm', '19mm', '25mm'],
     defaultThickness: '19mm',
-    features: ['100% Calibrated', 'Zero Core Gaps', 'BWP Marine Grade', 'Termite Resistant'],
-    applications: ['Modular Kitchens', 'Wardrobes', 'Architectural Paneling', 'Luxury Furniture'],
+    features: ['100% BWP IS 710', 'Borer & Termite Proof', 'Zero Core Gaps', 'High Screw Holding'],
+    applications: ['Modular Kitchens', 'Wet Area Casework', 'Wardrobes', 'Architectural Paneling'],
     specs: {
-      'Core Material': 'Imported Hardwood',
-      'Thickness Tolerance': '± 0.2mm',
-      'Bonding': 'Phenolic Formaldehyde (BWP)',
-      'Warranty': '25 Years Warranty'
+      'Core Material': '100% Imported Hardwood',
+      'Standard Grade': 'IS 710 BWP Marine',
+      'Bonding Adhesive': 'Unextended Phenolic Resin',
+      'Thickness Tolerance': '± 0.2mm Calibrated',
+      'Manufacturer Warranty': '30 Years Guarantee'
     },
-    heroSub: 'DOUBLE HOT PRESSED. 100% CALIBRATED.',
-    heroTitle: 'VISTA PLYWOOD',
-    heroDesc: 'Vista Calibrated Plywood features imported hardwood core veneers double-pressed to uniform thickness with zero core gaps for flawless joinery and cabinetry.',
+    heroSub: '100% BWP MARINE GRADE. RIGOROUS IS 710 CERTIFIED.',
+    heroTitle: 'INDIGO 710',
+    heroDesc: 'Indigo 710 Marine Plywood is precision engineered from 100% selected imported hardwoods bonded with unextended phenolic resins, delivering unmatched water resistance and structural reliability.',
     heroTags: [
+      { text: 'IS 710 Marine Certified', icon: 'droplet' },
       { text: '100% Calibrated Core', icon: 'calibrate' },
-      { text: 'Zero Core Gaps', icon: 'wood' },
-      { text: 'BWP Marine Grade', icon: 'droplet' }
+      { text: '30 Years Warranty', icon: 'shield' }
     ],
     overviewFeatures: [
-      { title: '100% Calibrated', desc: 'Uniform thickness across all corners for flawless lamination', icon: 'calibrate' },
-      { title: 'Selected Hardwood Core', desc: 'Double-pressed structural stability and superior screw holding', icon: 'wood' },
-      { title: 'BWP Grade Resin', desc: 'Resists extreme boiling water and moisture conditions', icon: 'droplet' },
-      { title: 'Termite & Borer Proof', desc: 'Chemically treated for complete pest defense', icon: 'bug' },
-      { title: 'Zero Core Gaps', desc: 'Eliminates warping, bending, and internal hollow spots', icon: 'shield' }
+      { title: 'IS 710 BWP Certified', desc: 'Resists boiling water for 72+ continuous hours', icon: 'droplet' },
+      { title: 'Selected Hardwood Core', desc: 'Dense hardwood layers with zero internal core gaps', icon: 'wood' },
+      { title: 'Borer & Termite Shield', desc: 'Vacuum-pressure treated against wood-boring pests', icon: 'bug' },
+      { title: 'Dual-Sided Sanded', desc: 'Super-smooth calibrated surfaces for effortless lamination', icon: 'calibrate' },
+      { title: '30 Years Warranty', desc: 'Tested and guaranteed against delamination', icon: 'shield' }
     ]
   },
   {
-    id: 951,
-    brandId: 'vista-plywood-bwp',
+    id: 7102,
+    brandId: 'indigo-710-club',
     category: 'Plywood',
-    pageNumLeft: 31,
-    pageNumRight: 32,
+    pageNumLeft: 37,
+    pageNumRight: 38,
     hideFromIndex: true,
-    parentBrandId: 'vista-plywood',
-    badge: 'Marine Grade',
-    title: 'Marine Grade\nBWP Plywood.',
-    tagline: 'Moisture defense calibrated ply for high-humidity areas',
-    image: vistaPlywood2Img,
-    brandName: 'Vista',
-    desc: 'Treated with advanced phenolic resins to ensure uncompromised bonding even under continuous contact with moisture and steam in kitchen and bath casework.',
+    parentBrandId: 'indigo-710',
+    badge: 'Calibrated Club Collection',
+    title: 'Calibrated\nPrecision.',
+    tagline: 'Quad-press calibrated marine core for premium joinery',
+    image: indigo710_2Img,
+    brandName: 'Indigo 710',
+    desc: 'Double hot-pressed and dual-side calibrated to uniform ±0.2mm tolerance, Indigo 710 Club provides the ideal flat surface for high-gloss laminates and luxury veneers.',
     thicknesses: ['12mm', '16mm', '19mm', '25mm'],
     defaultThickness: '19mm',
-    features: ['BWP IS 710', 'Boiling Water Resistant', 'High Screw Holding'],
-    applications: ['Wet Kitchens', 'Bathroom Vanities', 'Sink Base Units'],
+    features: ['Quad Pressed', 'Calibrated ±0.2mm', 'Termite Treated', 'Zero Warping'],
+    applications: ['Luxury Kitchen Shutters', 'Wardrobe Sliding Doors', 'Executive Partitions'],
     specs: {
-      'Core Material': 'High-Density Hardwood',
-      'Standard': 'IS 710 BWP',
-      'Warranty': '25 Years Warranty'
-    },
-    heroSub: 'CERTIFIED BWP. MAXIMUM WATER DEFENSE.',
-    heroTitle: 'VISTA BWP PLYWOOD',
-    heroDesc: 'Treated with advanced phenolic resins to ensure uncompromised bonding even under continuous contact with moisture and steam in kitchen and bath casework.',
-    heroTags: [
-      { text: 'IS 710 Certified', icon: 'droplet' },
-      { text: 'Zero Swelling', icon: 'shield' },
-      { text: 'High Density', icon: 'wood' }
-    ],
-    overviewFeatures: [
-      { title: 'Water Resistance', desc: 'Uncompromised phenolic bonding', icon: 'droplet' },
-      { title: 'Heavy Load Strength', desc: 'Dense hardwood layers support heavy kitchen hardware', icon: 'wood' }
-    ]
-  },
-  {
-    id: 952,
-    brandId: 'vista-plywood-structural',
-    category: 'Plywood',
-    pageNumLeft: 31,
-    pageNumRight: 32,
-    hideFromIndex: true,
-    parentBrandId: 'vista-plywood',
-    badge: 'Structural Core',
-    title: 'Architectural\nStructural Ply.',
-    tagline: 'Heavy-duty calibrated core for load-bearing joinery',
-    image: vistaPlywood3Img,
-    brandName: 'Vista',
-    desc: 'Multi-layer calibrated architectural core designed for zero warping across tall wardrobe doors, executive office credenzas, and floor-to-ceiling partitions.',
-    thicknesses: ['16mm', '19mm', '25mm'],
-    defaultThickness: '19mm',
-    features: ['Zero Warping', 'Calibrated ±0.2mm', 'Termite Treated'],
-    applications: ['Full-Height Doors', 'Executive Credenzas', 'Partitions'],
-    specs: {
-      'Core': 'Multi-Layer Hardwood',
-      'Calibration': 'Double Sanded',
+      'Core Material': 'High Density Gurjan & Hardwood',
+      'Standard': 'IS 710 Marine Calibrated',
+      'Calibration': 'Double Sanded Mirror Flat',
       'Warranty': 'Lifetime Guarantee'
     },
-    heroSub: 'ZERO WARPING. PRECISION ARCHITECTURAL CORE.',
-    heroTitle: 'VISTA STRUCTURAL PLY',
-    heroDesc: 'Multi-layer calibrated architectural core designed for zero warping across tall wardrobe doors, executive office credenzas, and floor-to-ceiling partitions.',
+    heroSub: 'QUAD HOT PRESSED. DUAL-SIDE CALIBRATED.',
+    heroTitle: 'INDIGO 710 CLUB',
+    heroDesc: 'Double hot-pressed and dual-side calibrated to uniform ±0.2mm tolerance, Indigo 710 Club provides the ideal flat surface for high-gloss laminates and luxury veneers.',
     heroTags: [
+      { text: 'Quad Hot Pressed', icon: 'layers' },
       { text: 'Zero Warping', icon: 'shield' },
-      { text: 'Double Sanded', icon: 'calibrate' },
       { text: 'Lifetime Guarantee', icon: 'shield' }
     ],
     overviewFeatures: [
-      { title: 'Zero Warping', desc: 'Engineered for tall shutters and large spans', icon: 'shield' },
-      { title: 'Double Sanded Surface', desc: 'Ready for instant laminate or veneer application', icon: 'calibrate' }
+      { title: 'Zero Core Gaps', desc: 'Uniform core composition across every sheet', icon: 'layers' },
+      { title: 'Micro-Calibrated', desc: 'Engineered for seamless CNC routing and edging', icon: 'calibrate' }
+    ]
+  },
+  {
+    id: 7103,
+    brandId: 'indigo-710-platinum',
+    category: 'Plywood',
+    pageNumLeft: 39,
+    pageNumRight: 40,
+    hideFromIndex: true,
+    parentBrandId: 'indigo-710',
+    badge: 'Platinum Marine Reserve',
+    title: 'Heavy-Duty\nEndurance.',
+    tagline: 'Extreme moisture and load-bearing architectural plywood',
+    image: indigo710_3Img,
+    brandName: 'Indigo 710',
+    desc: 'Crafted for heavy-load architectural furniture and moisture-prone luxury casework, offering extreme screw-holding capacity and chemical borer defense.',
+    thicknesses: ['16mm', '19mm', '25mm'],
+    defaultThickness: '19mm',
+    features: ['High Screw Holding', 'Boiling Water Resistant', 'Chemical Preservative Treated'],
+    applications: ['Heavy Load Drawers', 'Vanities & Sinks', 'Full-Height Shutters'],
+    specs: {
+      'Core': 'Ultra-Dense Selected Hardwood',
+      'Grade': 'IS 710 Platinum Marine',
+      'Bonding': 'Phenolic Formaldehyde BWP',
+      'Warranty': '30 Years Warranty'
+    },
+    heroSub: 'EXTREME MOISTURE RESISTANCE. STRUCTURAL STRENGTH.',
+    heroTitle: 'INDIGO 710 PLATINUM',
+    heroDesc: 'Crafted for heavy-load architectural furniture and moisture-prone luxury casework, offering extreme screw-holding capacity and chemical borer defense.',
+    heroTags: [
+      { text: 'High Screw Holding', icon: 'layers' },
+      { text: '100% Water Defense', icon: 'droplet' }
+    ],
+    overviewFeatures: [
+      { title: 'Moisture Sealed', desc: 'Phenolic bonded for wet kitchens and bathrooms', icon: 'droplet' },
+      { title: 'Structural Stability', desc: 'Maintains flat integrity over spans', icon: 'shield' }
+    ]
+  },
+  {
+    id: 7104,
+    brandId: 'indigo-710-gold',
+    category: 'Plywood',
+    pageNumLeft: 41,
+    pageNumRight: 42,
+    hideFromIndex: true,
+    parentBrandId: 'indigo-710',
+    badge: 'Gold Calibrated Core',
+    title: 'Solid Core\nIntegrity.',
+    tagline: 'High-density calibrated hardwood core for premium joinery',
+    image: indigo710_4Img,
+    brandName: 'Indigo 710',
+    desc: 'Features interlocking imported hardwood plies with uniform calibration, engineered for zero core gaps and high load-bearing architectural joinery.',
+    thicknesses: ['12mm', '16mm', '19mm', '25mm'],
+    defaultThickness: '19mm',
+    features: ['High Core Density', 'Zero Core Gaps', '100% Calibrated', '30 Years Warranty'],
+    applications: ['Kitchen Cabinets', 'Heavy Wardrobes', 'Structural Paneling'],
+    specs: {
+      'Core Material': '100% Selected Hardwood',
+      'Tolerance': '± 0.2mm Calibrated',
+      'Bonding': 'BWP Phenolic Resin',
+      'Warranty': '30 Years Guarantee'
+    },
+    heroSub: 'HIGH DENSITY CORE. ZERO CORE GAPS.',
+    heroTitle: 'INDIGO 710 GOLD',
+    heroDesc: 'Features interlocking imported hardwood plies with uniform calibration, engineered for zero core gaps and high load-bearing architectural joinery.',
+    heroTags: [
+      { text: 'High Core Density', icon: 'layers' },
+      { text: 'Calibrated ±0.2mm', icon: 'calibrate' },
+      { text: '30 Years Warranty', icon: 'shield' }
+    ],
+    overviewFeatures: [
+      { title: 'Interlocking Hardwood Core', desc: 'Dense plies resist heavy load deflection', icon: 'layers' },
+      { title: 'Calibrated Precision', desc: 'Uniform thickness across the entire panel', icon: 'calibrate' }
+    ]
+  },
+  {
+    id: 7105,
+    brandId: 'indigo-710-prime',
+    category: 'Plywood',
+    pageNumLeft: 43,
+    pageNumRight: 44,
+    hideFromIndex: true,
+    parentBrandId: 'indigo-710',
+    badge: 'Architectural Prime Reserve',
+    title: 'Balanced Multi-Ply\nStability.',
+    tagline: 'Precision engineered multi-ply architectural marine board',
+    image: indigo710_5Img,
+    brandName: 'Indigo 710',
+    desc: 'Double hot-pressed with unextended synthetic resin, offering extreme screw-holding capacity and resistance to moisture, heat, and fungal attack.',
+    thicknesses: ['9mm', '12mm', '16mm', '19mm', '25mm'],
+    defaultThickness: '19mm',
+    features: ['Multi-Ply Balanced Core', 'BWP Marine Bond', 'Anti-Fungal Treatment', 'Lifetime Durability'],
+    applications: ['Bathroom Casework', 'Sink Vanities', 'Kitchen Carcasses'],
+    specs: {
+      'Grade': 'IS 710 BWP Marine',
+      'Press Cycles': 'Double Hot Pressed',
+      'Treatment': 'Vacuum Pressure Impregnated',
+      'Warranty': '30 Years Guarantee'
+    },
+    heroSub: 'BALANCED MULTI-PLY. MARINE RESILIENT.',
+    heroTitle: 'INDIGO 710 PRIME',
+    heroDesc: 'Double hot-pressed with unextended synthetic resin, offering extreme screw-holding capacity and resistance to moisture, heat, and fungal attack.',
+    heroTags: [
+      { text: 'Balanced Multi-Ply', icon: 'layers' },
+      { text: 'BWP Marine Bond', icon: 'droplet' },
+      { text: '30 Years Warranty', icon: 'shield' }
+    ],
+    overviewFeatures: [
+      { title: 'Multi-Ply Balance', desc: 'Alternating grain direction prevents warp and twist', icon: 'layers' },
+      { title: 'Extreme Moisture Defense', desc: 'Withstands severe humidity without ply separation', icon: 'droplet' }
+    ]
+  },
+  {
+    id: 7106,
+    brandId: 'indigo-710-elite',
+    category: 'Plywood',
+    pageNumLeft: 45,
+    pageNumRight: 46,
+    hideFromIndex: true,
+    parentBrandId: 'indigo-710',
+    badge: 'Elite Edge Definition',
+    title: 'Laser-Flat\nEdge Precision.',
+    tagline: 'Ultra-smooth surface and clean layered edge detailing',
+    image: indigo710_6Img,
+    brandName: 'Indigo 710',
+    desc: 'Precision sanded on heavy-duty calibrating wide-belt sanders, ensuring a flawless foundation for premium laminates, natural veneers, and CNC profile routing.',
+    thicknesses: ['12mm', '16mm', '19mm', '25mm'],
+    defaultThickness: '19mm',
+    features: ['Laser-Flat Surface', 'Clean Edge Profiles', 'CNC Ready', 'Zero Delamination'],
+    applications: ['CNC Routed Shutters', 'Executive Desks', 'Designer Wardrobes'],
+    specs: {
+      'Surface Finish': 'Mirror Calibrated Sanded',
+      'Core Density': '780+ kg/m³',
+      'Standard': 'IS 710 Marine Grade',
+      'Warranty': '30 Years Guarantee'
+    },
+    heroSub: 'LASER-FLAT CALIBRATION. CNC ROUTER READY.',
+    heroTitle: 'INDIGO 710 ELITE',
+    heroDesc: 'Precision sanded on heavy-duty calibrating wide-belt sanders, ensuring a flawless foundation for premium laminates, natural veneers, and CNC profile routing.',
+    heroTags: [
+      { text: 'Laser-Flat Calibration', icon: 'calibrate' },
+      { text: 'CNC Ready', icon: 'layers' },
+      { text: '30 Years Warranty', icon: 'shield' }
+    ],
+    overviewFeatures: [
+      { title: 'Ultra-Smooth Calibration', desc: 'Prevents undulations under thin surface overlays', icon: 'calibrate' },
+      { title: 'Clean Edge Detail', desc: 'Solid wood layers router smoothly without splintering', icon: 'wood' }
+    ]
+  },
+  {
+    id: 7111,
+    brandId: 'armani-710',
+    category: 'Plywood',
+    pageNumLeft: 47,
+    pageNumRight: 48,
+    badge: 'Luxury IS 710 Marine',
+    title: 'Refined\nCraftsmanship.',
+    tagline: 'Italian-Inspired Precision Calibrated IS 710 Marine Plywood',
+    image: armani710_1Img,
+    brandName: 'Armani 710',
+    desc: 'Armani 710 Marine Plywood represents the pinnacle of luxury cabinet engineering. Built with handpicked hardwood veneers and calibrated to perfection, it offers flawless flatness and marine-grade waterproof defense.',
+    thicknesses: ['6mm', '9mm', '12mm', '16mm', '19mm', '25mm'],
+    defaultThickness: '19mm',
+    features: ['100% IS 710 Marine', 'Double Calibrated Core', 'Zero Warpage Guarantee', 'Termite & Borer Proof'],
+    applications: ['Designer Wardrobes', 'Luxury Kitchen Casework', 'Bathroom Vanities', 'Wall Cladding'],
+    specs: {
+      'Core Material': '100% Selected Imported Hardwood',
+      'Certification': 'IS 710 Marine Grade BWP',
+      'Thickness Tolerance': '± 0.2mm Precision Calibrated',
+      'Bonding Glue': 'BWP Grade Phenolic Formaldehyde',
+      'Manufacturer Warranty': 'Lifetime Guarantee'
+    },
+    heroSub: 'LUXURY CALIBRATED CORE. CERTIFIED IS 710 BWP MARINE.',
+    heroTitle: 'ARMANI 710',
+    heroDesc: 'Armani 710 Marine Plywood represents the pinnacle of luxury cabinet engineering. Built with handpicked hardwood veneers and calibrated to perfection, it offers flawless flatness and marine-grade waterproof defense.',
+    heroTags: [
+      { text: 'IS 710 Marine Grade', icon: 'droplet' },
+      { text: '100% Double Calibrated', icon: 'calibrate' },
+      { text: 'Lifetime Guarantee', icon: 'shield' }
+    ],
+    overviewFeatures: [
+      { title: 'Certified IS 710 Marine', desc: 'Superior water resistance under extreme humidity and steam', icon: 'droplet' },
+      { title: 'Double Hot-Pressed', desc: 'Precision hydraulic pressing for zero core gaps and flat edges', icon: 'layers' },
+      { title: 'Micro-Sanded Surface', desc: 'Ultra-smooth surface ready for high-gloss acrylics and veneers', icon: 'calibrate' },
+      { title: 'Bio-Chemical Treatment', desc: 'Permanent protection against borers, termites, and fungi', icon: 'bug' },
+      { title: 'Lifetime Structural Guarantee', desc: 'Long-term warp-free dimensional stability', icon: 'shield' }
+    ]
+  },
+  {
+    id: 7112,
+    brandId: 'armani-710-calibrated',
+    category: 'Plywood',
+    pageNumLeft: 49,
+    pageNumRight: 50,
+    hideFromIndex: true,
+    parentBrandId: 'armani-710',
+    badge: 'Calibrated Precision Edition',
+    title: 'Zero Warpage\nGeometry.',
+    tagline: 'Micro-calibrated marine ply for high-end cabinetry and acrylic application',
+    image: armani710_2Img,
+    brandName: 'Armani 710',
+    desc: 'Double-side micro-sanded and calibrated for zero undulations, Armani 710 Calibrated ensures zero air pockets when pressing acrylic panels or natural veneers.',
+    thicknesses: ['12mm', '16mm', '19mm', '25mm'],
+    defaultThickness: '19mm',
+    features: ['±0.2mm Tolerance', 'Zero Core Overlaps', 'BWP Marine Bonded'],
+    applications: ['High-Gloss Kitchens', 'Tall Shutter Doors', 'Bespoke Furniture'],
+    specs: {
+      'Core': 'Dense Selected Hardwood',
+      'Standard': 'IS 710 Calibrated',
+      'Pressing': 'Quad-Stage Hot Press',
+      'Warranty': 'Lifetime Guarantee'
+    },
+    heroSub: 'MICRO-CALIBRATED. PERFECT FOR ACRYLIC & VENEER APPLICATION.',
+    heroTitle: 'ARMANI 710 CALIBRATED',
+    heroDesc: 'Double-side micro-sanded and calibrated for zero undulations, Armani 710 Calibrated ensures zero air pockets when pressing acrylic panels or natural veneers.',
+    heroTags: [
+      { text: 'Quad Press Technology', icon: 'layers' },
+      { text: 'Zero Undulations', icon: 'calibrate' },
+      { text: 'Lifetime Guarantee', icon: 'shield' }
+    ],
+    overviewFeatures: [
+      { title: 'Zero Undulations', desc: 'Mirror-level flatness for modern luxury finishes', icon: 'calibrate' },
+      { title: 'BWP Marine Standard', desc: 'Withstands continuous boiling and steam cycles', icon: 'droplet' }
+    ]
+  },
+  {
+    id: 7113,
+    brandId: 'armani-710-club',
+    category: 'Plywood',
+    pageNumLeft: 51,
+    pageNumRight: 52,
+    hideFromIndex: true,
+    parentBrandId: 'armani-710',
+    badge: 'Club Marine Masterpiece',
+    title: 'Architectural\nStrength.',
+    tagline: 'Maximum core density for demanding architectural applications',
+    image: armani710_3Img,
+    brandName: 'Armani 710',
+    desc: 'High-density structural marine plywood designed for heavy architectural casework, exterior-grade soffits, and luxury hospitality interiors.',
+    thicknesses: ['16mm', '19mm', '25mm'],
+    defaultThickness: '19mm',
+    features: ['High Density Hardwood', 'Lifetime Termite Proof', 'Full Thickness Integrity'],
+    applications: ['Hospitality Interiors', 'Commercial Credenzas', 'Heavy Partitions'],
+    specs: {
+      'Core': '100% Gurjan & Hardwood',
+      'Standard': 'IS 710 Club Marine',
+      'Adhesive': 'Phenolic Resin 100%',
+      'Warranty': 'Lifetime Guarantee'
+    },
+    heroSub: 'MAXIMUM DENSITY. ARCHITECTURAL ENDURANCE.',
+    heroTitle: 'ARMANI 710 CLUB',
+    heroDesc: 'High-density structural marine plywood designed for heavy architectural casework, exterior-grade soffits, and luxury hospitality interiors.',
+    heroTags: [
+      { text: 'High Density Timber', icon: 'wood' },
+      { text: 'Lifetime Warranty', icon: 'shield' }
+    ],
+    overviewFeatures: [
+      { title: 'Extreme Density', desc: 'Maximum load bearing and screw retention', icon: 'wood' },
+      { title: 'Termite Shield', desc: 'Treated with advanced chemical preservatives', icon: 'bug' }
     ]
   }
 ];

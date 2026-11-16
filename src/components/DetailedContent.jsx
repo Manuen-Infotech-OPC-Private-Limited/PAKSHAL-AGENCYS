@@ -64,10 +64,10 @@ export const DetailedContent = ({ onNavigate }) => {
 
   const brands = [
     { name: 'Ebco', url: 'https://www.ebco.in', desc: 'Precision drawer slides and cabinetry fittings.' },
-    { name: 'Hettich', url: 'https://www.hettich.com', desc: 'German-engineered soft-close hinges and hardware.' },
-    { name: 'Godrej', url: 'https://www.godrej.com', desc: 'Smart locks and security door systems.' },
+    { name: 'Hettich', url: 'https://www.hettich.com', desc: 'German-engineered mortise locks, sliding systems & soft-close hinges.' },
+    { name: 'Godrej', url: 'https://www.godrej.com', desc: 'Biometric smart locks, digital safes & architectural hardware.' },
     { name: 'Dorset', url: 'https://www.dorsetindia.com', desc: 'Designer pull handles and architectural fittings.' },
-    { name: 'Hafele', url: 'https://www.hafeleindia.com', desc: 'Premium kitchen systems and smart hardware.' }
+    { name: 'Hafele', url: 'https://www.hafeleindia.com', desc: 'Slido sliding systems, Loox LED lighting & architectural fittings.' }
   ];
 
   return (

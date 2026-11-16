@@ -4,6 +4,8 @@ import hettichLogo from '../assets/logos/hettich-logo.png';
 import godrejLogo from '../assets/logos/godrej-logo.png';
 import dorsetLogo from '../assets/logos/dorset-logo.png';
 import hafeleLogo from '../assets/logos/hafele-logo.png';
+import europaLogo from '../assets/logos/europa-logo.png';
+import nimmiLogo from '../assets/logos/nimmi-logo.png';
 
 export const Brands = () => {
   const brandLogos = [
@@ -11,7 +13,9 @@ export const Brands = () => {
     { name: 'Hettich', src: hettichLogo, url: 'https://www.hettich.com' },
     { name: 'Godrej', src: godrejLogo, url: 'https://www.godrej.com' },
     { name: 'Dorset', src: dorsetLogo, url: 'https://www.dorsetindia.com' },
-    { name: 'Häfele', src: hafeleLogo, url: 'https://www.hafeleindia.com' }
+    { name: 'Häfele', src: hafeleLogo, url: 'https://www.hafeleindia.com' },
+    { name: 'Europa', src: europaLogo, url: 'https://www.europalocks.com' },
+    { name: 'Nimmi', src: nimmiLogo, url: 'https://www.nimmihardware.com' }
   ];
 
   // Duplicate the brand list to create a seamless looping marquee

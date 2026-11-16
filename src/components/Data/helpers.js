@@ -43,6 +43,8 @@ export const isPlywoodOrLaminateBrand = (brandName) => {
     'vista',
     'croma',
     'indigo',
+    'indigo 710',
+    'armani 710',
     'merino',
     'armani',
     'architecture',
@@ -61,8 +63,17 @@ export const isBrandMatch = (s, brandName) => {
   const sBrand = (s.brandName || '').toLowerCase().trim();
   const sCat = getCanonicalCategory(s.category);
 
+  if (bLower === 'armani 710') {
+    return sBrand === 'armani 710' || (sBrand.includes('armani') && sCat === 'Plywood');
+  }
+  if (bLower === 'indigo 710') {
+    return sBrand === 'indigo 710' || (sBrand.includes('indigo') && sCat === 'Plywood');
+  }
   if (bLower === 'armani') {
     return sCat === 'Acrylic Panels' || sBrand.includes('armani') || sBrand.includes('acrylic');
+  }
+  if (bLower === 'indigo') {
+    return sCat === 'Laminates' || (sBrand.includes('indigo') && sCat !== 'Plywood');
   }
   if (bLower === 'fancy doors') {
     return sCat === 'Fancy Doors' || sBrand.includes('fancy doors') || sBrand.includes('door');
@@ -78,6 +89,24 @@ export const isBrandMatch = (s, brandName) => {
   }
   if (bLower === 'steel wood') {
     return sBrand.includes('steel') || sCat === 'Sliding Systems' || sBrand.includes('sliding');
+  }
+  if (bLower === 'ebco') {
+    return sBrand.includes('ebco');
+  }
+  if (bLower === 'hettich') {
+    return sBrand.includes('hettich');
+  }
+  if (bLower === 'hafele' || bLower === 'häfele') {
+    return sBrand.includes('hafele') || sBrand.includes('häfele');
+  }
+  if (bLower === 'godrej') {
+    return sBrand.includes('godrej');
+  }
+  if (bLower === 'europa') {
+    return sBrand.includes('europa');
+  }
+  if (bLower === 'nimmi') {
+    return sBrand.includes('nimmi');
   }
   return sBrand === bLower;
 };

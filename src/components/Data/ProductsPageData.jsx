@@ -8,6 +8,8 @@ import kitchenAccessoriesImg from '../../assets/kitchen/kitchenaccessories.png';
 
 import sgCatalogPdf from '../../assets/Broucher/SG CATALOG.pdf';
 import hardwarePdf from '../../assets/Broucher/hardwareaccessories.pdf';
+import skyDoorsPdf from '../../assets/Broucher/SKY DOORS.pdf';
+import srDoorSkinPdf from '../../assets/Broucher/SR Door Skin.pdf';
 
 import {
   BRAND_CONFIG,
@@ -81,6 +83,8 @@ export const PRODUCTS_PAGE_METADATA = {
 export {
   sgCatalogPdf,
   hardwarePdf,
+  skyDoorsPdf,
+  srDoorSkinPdf,
   BRAND_CONFIG,
   CATEGORY_DEFINITIONS,
   SPREADS,
