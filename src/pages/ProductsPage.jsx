@@ -1229,9 +1229,6 @@ export const ProductsPage = ({ onNavigate, search }) => {
 
                             {/* Brand Categories Chips */}
                             <div className="mb-5">
-                              <span className="text-[10px] font-extrabold uppercase tracking-widest text-stone-400 block mb-2">
-                                Product Categories
-                              </span>
                               <div className="flex flex-wrap gap-1.5">
                                 {(b.categories || []).map((cat) => (
                                   <span
