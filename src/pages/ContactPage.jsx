@@ -242,7 +242,7 @@ ${formData.message || "No message"}
 
               <div className="space-y-1 relative z-10">
                 <div className="text-[9px] font-black text-[#C9A44C] tracking-[0.25em] uppercase">Experience Centre</div>
-                <h3 className="text-xl font-bold font-serif tracking-wide text-white">GOSHAMAHAL SHOWROOM</h3>
+                <h3 className="text-xl font-bold tracking-wide text-white">GOSHAMAHAL SHOWROOM</h3>
                 <p className="text-xs text-stone-100/95 font-medium leading-relaxed mt-2">
                   Come explore Hyderabad's finest collection of premium plywood, hardware fittings, designer doors, and custom kitchen accessories.
                 </p>

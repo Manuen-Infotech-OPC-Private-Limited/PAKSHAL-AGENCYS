@@ -954,7 +954,7 @@ export const ProductsPage = ({ onNavigate, search }) => {
                 {PRODUCTS_PAGE_METADATA.editorialCategoryTag}
               </span>
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-stone-900 tracking-tight font-sans leading-tight mb-3">
-                Select a <span className="text-[#C9A44C] italic font-serif font-extrabold">Category</span> to Explore
+                Select a <span className="text-[#C9A44C] italic font-extrabold">Category</span> to Explore
               </h1>
               <p className="text-sm sm:text-base text-stone-600 font-medium leading-relaxed max-w-2xl">
                 {PRODUCTS_PAGE_METADATA.editorialCategoryDesc}
@@ -1044,7 +1044,7 @@ export const ProductsPage = ({ onNavigate, search }) => {
                   Authorized Brands
                 </div>
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-stone-900 font-sans tracking-tight">
-                  Authorized Brands for <span className="text-[#C9A44C] italic font-serif font-extrabold">{selectedCategory}</span>
+                  Authorized Brands for <span className="text-[#C9A44C] italic font-extrabold">{selectedCategory}</span>
                 </h2>
                 <p className="text-xs sm:text-sm text-stone-500 font-medium mt-1">
                   Click any brand below to view its specific products, catalogues, and finishes.
@@ -1188,7 +1188,7 @@ export const ProductsPage = ({ onNavigate, search }) => {
 
                             {/* Overlaid Brand Title at Bottom of Image */}
                             <div className="absolute bottom-3.5 inset-x-4">
-                              <h3 className="font-serif text-2xl font-black tracking-wide text-white drop-shadow-md leading-tight flex items-baseline gap-1 [font-variant-numeric:lining-nums]">
+                              <h3 className="text-2xl font-black tracking-wide text-white drop-shadow-md leading-tight flex items-baseline gap-1 [font-variant-numeric:lining-nums]">
                                 {renderBrandHeading(b.displayName || b.name, true)}
                                 {b.trademark && (
                                   <span className="text-[10px] font-sans font-semibold text-[#C9A44C] relative -top-2">®</span>
@@ -1208,7 +1208,7 @@ export const ProductsPage = ({ onNavigate, search }) => {
                           <div>
                             {isLogoBrand && (
                               <div className="mb-2">
-                                <h3 className="font-serif text-2xl font-black tracking-wide text-stone-900 leading-tight [font-variant-numeric:lining-nums]">
+                                <h3 className="text-2xl font-black tracking-wide text-stone-900 leading-tight [font-variant-numeric:lining-nums]">
                                   {renderBrandHeading(b.displayName || b.name, true)}
                                   {b.trademark && (
                                     <span className="text-[10px] font-sans font-semibold text-[#C9A44C] relative -top-2 ml-0.5">®</span>
@@ -1325,7 +1325,7 @@ export const ProductsPage = ({ onNavigate, search }) => {
                       </div>
 
                       <div className="flex items-center gap-4 flex-wrap">
-                        <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-black text-stone-900 tracking-tight leading-tight [font-variant-numeric:lining-nums]">
+                        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-stone-900 tracking-tight leading-tight [font-variant-numeric:lining-nums]">
                           {renderBrandHeading(brandObj.displayName || selectedBrand, false)}
                         </h1>
                         {brandObj.logo && (
@@ -1488,7 +1488,7 @@ export const ProductsPage = ({ onNavigate, search }) => {
                   </span>
                 </div>
 
-                <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-black text-slate-900 tracking-tight leading-tight">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-slate-900 tracking-tight leading-tight">
                   {activeSpread.title ? activeSpread.title.replace('\n', ' ') : (activeSpread.heroTitle || activeBrandDisplay)}
                 </h2>
 
