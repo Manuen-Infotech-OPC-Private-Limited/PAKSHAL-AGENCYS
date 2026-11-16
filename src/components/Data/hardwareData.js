@@ -112,7 +112,7 @@ export const hardwareSpreads = [
     pageNumLeft: 91,
     pageNumRight: 92,
     badge: 'Pocket Door Systems',
-    title: 'Architectural Kitchen\nPocket Door System.',
+    title: 'Concealed Kitchen\nPocket Door System.',
     tagline: 'Disappearing sliding-in pocket door hardware for modular kitchen niches',
     image: ebcoPocketDoor1Img,
     imageFit: 'cover',
@@ -129,9 +129,9 @@ export const hardwareSpreads = [
       'Door Height': 'Up to 2400 mm',
       'Movement': '90° Pivot & Lateral Pocket Slide'
     },
-    heroSub: 'DISAPPEARING ARCHITECTURE. OPEN LIVING.',
+    heroSub: 'DISAPPEARING DOORS. OPEN LIVING.',
     heroTitle: 'EBCO KITCHEN POCKET DOORS',
-    heroDesc: 'Architectural pocket door hardware engineered for seamless disappearing cabinet doors, turning utility niches into clean open living spaces.',
+    heroDesc: 'Concealed pocket door hardware engineered for seamless disappearing cabinet doors, turning utility niches into clean open living spaces.',
     heroTags: [
       { text: 'In-Pocket Slide', icon: 'calibrate' },
       { text: 'Disappearing Doors', icon: 'sparkles' },
@@ -170,7 +170,7 @@ export const hardwareSpreads = [
     },
     heroSub: 'SEAMLESS ACCESS. BESPOKE WARDROBES.',
     heroTitle: 'EBCO WARDROBE POCKET SYSTEM',
-    heroDesc: 'Full-height architectural pocket door systems designed to tuck entire wardrobe doors completely into side cavities for full unobstructed access.',
+    heroDesc: 'Full-height pocket door systems designed to tuck entire wardrobe doors completely into side cavities for full unobstructed access.',
     heroTags: [
       { text: '2600mm Height', icon: 'calibrate' },
       { text: 'Whisper-Quiet', icon: 'gear' },
@@ -234,11 +234,11 @@ export const hardwareSpreads = [
     image: ebcoSpinova2Img,
     imageFit: 'cover',
     brandName: 'Ebco',
-    desc: 'Ebco Spinova 360 tall wardrobe organizer featuring full 360-degree rotation, architectural glass display shelves, and integrated accessory trays for luxury walk-in closet corners.',
+    desc: 'Ebco Spinova 360 tall wardrobe organizer featuring full 360-degree rotation, tempered glass display shelves, and integrated accessory trays for luxury walk-in closet corners.',
     thicknesses: ['1800 - 2000 mm', '2000 - 2200 mm Tall Unit'],
     defaultThickness: '2000 - 2200 mm Tall Unit',
     thicknessLabel: 'Unit Height',
-    features: ['Complete 360° Access', 'Multi-Tier Heavy-Duty Swivel', 'Architectural Aluminum Column'],
+    features: ['Complete 360° Access', 'Multi-Tier Heavy-Duty Swivel', 'Reinforced Aluminum Column'],
     applications: ['Walk-In Closets', 'Wardrobe Corner Units', 'Luxury Display Cabinets'],
     specs: {
       'Rotation Mechanism': 'Heavy-Duty Ball-Bearing Turntable',
@@ -375,7 +375,7 @@ export const hardwareSpreads = [
       { title: 'Ultra-Thin Double Wall', desc: 'Maximizes usable interior drawer volume with slim 13mm side profiles', icon: 'calibrate' },
       { title: 'Synchronized Soft-Close', desc: 'Effortless gliding with hydraulic dampers for whisper-quiet closing', icon: 'gear' },
       { title: 'High Load Resilience', desc: '50kg dynamic rating easily accommodates heavy cookware and chinaware', icon: 'shield' },
-      { title: 'Architectural Finish', desc: 'Premium anthracite powder-coat elevates interior cabinet aesthetics', icon: 'sparkles' }
+      { title: 'Modern Finish', desc: 'Premium anthracite powder-coat elevates interior cabinet aesthetics', icon: 'sparkles' }
     ]
   },
 {
@@ -466,7 +466,7 @@ export const hardwareSpreads = [
     image: hettichInnoTechImg,
     imageFit: 'contain',
     brandName: 'Hettich',
-    desc: 'Hettich InnoTech Atira double-walled steel modular drawer box system with crisp architectural lines, modular design railing options, and flawless Quadro runner movement.',
+    desc: 'Hettich InnoTech Atira double-walled steel modular drawer box system with crisp modern lines, modular design railing options, and flawless Quadro runner movement.',
     thicknesses: ['Silver Finish', 'Anthracite Dark', 'White Gloss'],
     defaultThickness: 'Anthracite Dark',
     thicknessLabel: 'Finish Collection',
@@ -486,7 +486,7 @@ export const hardwareSpreads = [
       { text: '50kg Capacity', icon: 'calibrate' }
     ],
     overviewFeatures: [
-      { title: 'Distinctive Rectangular Design', desc: 'Clean architectural edges complement contemporary interiors', icon: 'sparkles' },
+      { title: 'Distinctive Rectangular Design', desc: 'Clean modern edges complement contemporary interiors', icon: 'sparkles' },
       { title: 'Double-Wall Rigidity', desc: 'Steel profiles resist twisting under heavy cookware loads', icon: 'shield' },
       { title: 'Modular Railings', desc: 'Expandable height using design side panels or square rails', icon: 'calibrate' }
     ]
@@ -497,17 +497,17 @@ export const hardwareSpreads = [
     category: 'Hardware & Fittings',
     pageNumLeft: 101,
     pageNumRight: 102,
-    badge: 'Architectural Door Lock',
+    badge: 'Mortise Door Lock',
     title: 'Premium Mortise\nDoor Handle Locks.',
-    tagline: 'Architectural satin brass mortise lockset with solid brass cylinder',
+    tagline: 'Precision satin brass mortise lockset with solid brass cylinder',
     image: hettichLockImg,
     imageFit: 'contain',
     brandName: 'Hettich',
-    desc: 'Hettich architectural door handle lockset engineered with precision German mortise locking mechanism, triple deadbolts, smooth ergonomic lever handle, and high-security brass euro cylinder in a radiant satin brass finish.',
+    desc: 'Hettich precision door handle lockset engineered with German mortise locking mechanism, triple deadbolts, smooth ergonomic lever handle, and high-security brass euro cylinder in a radiant satin brass finish.',
     thicknesses: ['Satin Brass Gold', 'Matt Anthracite', 'Brushed Nickel'],
     defaultThickness: 'Satin Brass Gold',
     thicknessLabel: 'Finish Collection',
-    features: ['Triple Deadbolt Security', 'Precision Euro Profile Cylinder', 'Architectural Satin Brass Finish', 'Smooth Lever Return Mechanism'],
+    features: ['Triple Deadbolt Security', 'Precision Euro Profile Cylinder', 'Satin Brass PVD Finish', 'Smooth Lever Return Mechanism'],
     applications: ['Main Entrance Doors', 'Master Bedroom Doors', 'Executive Office Suites', 'Luxury Residential Interiors'],
     specs: {
       'Material': 'Solid Forged Brass / Zinc Alloy',
@@ -516,9 +516,9 @@ export const hardwareSpreads = [
       'Backset': '50mm / 60mm Standard Mortise',
       'Keying': 'High-Security Dimple / Computer Keys'
     },
-    heroSub: 'ARCHITECTURAL SECURITY. LUXURY BRASS.',
+    heroSub: 'GERMAN SECURITY. LUXURY BRASS.',
     heroTitle: 'HETTICH MORTISE DOOR LOCKS',
-    heroDesc: 'German engineered luxury door mortise locksets offering triple deadbolt security, silent latching, and radiant architectural gold aesthetics.',
+    heroDesc: 'German engineered luxury door mortise locksets offering triple deadbolt security, silent latching, and radiant gold aesthetics.',
     heroTags: [
       { text: 'Triple Deadbolt Security', icon: 'shield' },
       { text: 'Satin Brass Gold PVD', icon: 'sparkles' },
@@ -526,7 +526,7 @@ export const hardwareSpreads = [
     ],
     overviewFeatures: [
       { title: 'Triple Deadbolt Protection', desc: 'High-strength hardened steel deadbolts ensure uncompromising residential security', icon: 'shield' },
-      { title: 'Architectural Satin Brass', desc: 'Durable PVD gold finish resists corrosion, fingerprints, and wear over decades', icon: 'sparkles' },
+      { title: 'Satin Brass Finish', desc: 'Durable PVD gold finish resists corrosion, fingerprints, and wear over decades', icon: 'sparkles' },
       { title: 'Silent Precision Latch', desc: 'Engineered German internal spring mechanism delivers whisper-quiet door closing', icon: 'gear' },
       { title: 'Computer Key Cylinder', desc: 'High-precision dimple cylinder prevents lock picking and unauthorized key duplication', icon: 'calibrate' }
     ]
@@ -622,7 +622,7 @@ export const hardwareSpreads = [
     pageNumLeft: 101,
     pageNumRight: 102,
     badge: 'Slido & Living Systems',
-    title: 'Slido Architectural\n& Living Systems.',
+    title: 'Slido Sliding\n& Living Systems.',
     tagline: 'German engineered sliding door gear and complete living solutions',
     image: hafeleLivingImg,
     imageFit: 'cover',
@@ -632,7 +632,7 @@ export const hardwareSpreads = [
     defaultThickness: 'Slido D-Line (Up to 80kg)',
     thicknessLabel: 'System Variant',
     features: ['Top-Hung Zero Floor Track', 'Bi-Directional Soft-Close Damping', 'Synchronized Sliding Motion', 'Full Living Hardware Suite'],
-    applications: ['Luxury Living-Kitchen Partitions', 'Walk-In Closets & Wardrobes', 'Contemporary Office Spaces', 'Architectural Interior Doors'],
+    applications: ['Luxury Living-Kitchen Partitions', 'Walk-In Closets & Wardrobes', 'Contemporary Office Spaces', 'Interior Glass & Timber Doors'],
     specs: {
       'Door Weight': 'Up to 80 kg / 100 kg per shutter',
       'Door Thickness': '18mm to 40mm (Wood & Glass)',
@@ -640,9 +640,9 @@ export const hardwareSpreads = [
       'Damping': 'Bi-directional Soft-Close Fluid Dampers',
       'Components': 'Slido Rollers, Tiomos Hinges, Matrix Drawers'
     },
-    heroSub: 'GERMAN ARCHITECTURAL SYSTEMS. SEAMLESS LIVING.',
+    heroSub: 'GERMAN HARDWARE SYSTEMS. SEAMLESS LIVING.',
     heroTitle: 'HÄFELE SLIDO & LIVING HARDWARE',
-    heroDesc: 'Architectural top-hung sliding systems with concealed fluid dampers and synchronized movement, engineered for sophisticated contemporary living spaces.',
+    heroDesc: 'Top-hung sliding systems with concealed fluid dampers and synchronized movement, engineered for sophisticated contemporary living spaces.',
     heroTags: [
       { text: 'Top-Hung Design', icon: 'calibrate' },
       { text: 'Bi-Directional Soft-Close', icon: 'gear' },
@@ -671,7 +671,7 @@ export const hardwareSpreads = [
     thicknesses: ['Bed Lift Gas Springs (600N-1200N)', 'Foldaway Murphy Bed Fitting', 'Aluminum Edge Profiles'],
     defaultThickness: 'Bed Lift Gas Springs (600N-1200N)',
     thicknessLabel: 'Mechanism Type',
-    features: ['Heavy-Duty Gas Spring Pistons', 'Effortless Bed Platform Lift', 'Space-Saving Murphy Bed Gear', 'Architectural Aluminum Profiles'],
+    features: ['Heavy-Duty Gas Spring Pistons', 'Effortless Bed Platform Lift', 'Space-Saving Murphy Bed Gear', 'Engineered Aluminum Profiles'],
     applications: ['Hydraulic Storage Beds', 'Compact Studio Apartments', 'Modern Bedroom Wardrobes', 'Modular Multi-Use Furniture'],
     specs: {
       'Lift Capacity': 'Gas Spring ratings 600N, 900N, 1200N',
@@ -702,7 +702,7 @@ export const hardwareSpreads = [
     pageNumRight: 106,
     badge: 'Loox 5 LED Lighting',
     title: 'Loox 5 LED Modular\nCabinet Lighting.',
-    tagline: 'Plug-and-play architectural LED strips, spotlights & profile systems',
+    tagline: 'Plug-and-play cabinet LED strips, spotlights & profile systems',
     image: hafeleLightingImg,
     imageFit: 'contain',
     brandName: 'Hafele',
@@ -720,7 +720,7 @@ export const hardwareSpreads = [
     },
     heroSub: 'LIGHT MEETS DESIGN. PLUG-AND-PLAY BRILLIANCE.',
     heroTitle: 'HÄFELE LOOX 5 LED LIGHTING',
-    heroDesc: 'Modular architectural lighting transforming cabinetry with brilliant ambiance, seamless aluminum diffuser integration, and intuitive color-coded installation.',
+    heroDesc: 'Modular cabinet lighting transforming interiors with brilliant ambiance, seamless aluminum diffuser integration, and intuitive color-coded installation.',
     heroTags: [
       { text: 'Plug-and-Play System', icon: 'sparkles' },
       { text: 'CRI 90+ True Color', icon: 'calibrate' },
@@ -782,17 +782,17 @@ export const hardwareSpreads = [
     category: 'Hardware & Fittings',
     pageNumLeft: 109,
     pageNumRight: 110,
-    badge: 'Architectural Fittings',
-    title: 'Architectural Hardware\n& Fittings Solutions.',
+    badge: 'Hardware & Fittings',
+    title: 'Comprehensive Hardware\n& Fittings Solutions.',
     tagline: 'Comprehensive door, kitchen, wardrobe, bed & glass fittings',
     image: godrejArchImg,
     imageFit: 'contain',
     brandName: 'Godrej',
-    desc: 'Godrej comprehensive architectural hardware ecosystem covering biometric smart locks, designer lever handles, furniture locks, soft-close hinges, sliding wardrobe channels, hydraulic bed lift mechanisms, tandem kitchen baskets, and commercial overhead door closers.',
+    desc: 'Godrej comprehensive hardware ecosystem covering biometric smart locks, designer lever handles, furniture locks, soft-close hinges, sliding wardrobe channels, hydraulic bed lift mechanisms, tandem kitchen baskets, and commercial overhead door closers.',
     thicknesses: ['Door & Glass Hardware', 'Kitchen & Wardrobe Fittings', 'Bed Lift Mechanisms', 'Furniture Locks & Hinges'],
     defaultThickness: 'Door & Glass Hardware',
     thicknessLabel: 'Hardware Division',
-    features: ['Complete Architectural Range', 'Smart Locks & Furniture Hardware', 'Hydraulic Storage Bed Lifts', 'Precision Glass Patch Fittings'],
+    features: ['Complete Hardware Range', 'Smart Locks & Furniture Hardware', 'Hydraulic Storage Bed Lifts', 'Precision Glass Patch Fittings'],
     applications: ['Master Residences', 'Modular Kitchens & Wardrobes', 'Commercial Offices', 'High-Traffic Glass Entrances'],
     specs: {
       'Hardware Categories': 'Doors, Kitchen, Wardrobe, Bed & Glass',
@@ -800,19 +800,19 @@ export const hardwareSpreads = [
       'Finish Options': 'Satin Nickel, Matt Black, Rose Gold & Brass',
       'Tested Longevity': 'Up to 500,000 Cycle Testing'
     },
-    heroSub: 'INNOVATION & TRUST. COMPLETE ARCHITECTURAL SOLUTIONS.',
-    heroTitle: 'GODREJ ARCHITECTURAL HARDWARE',
-    heroDesc: 'India’s most trusted engineering heritage delivering comprehensive architectural door fittings, modular kitchen accessories, and hydraulic hardware.',
+    heroSub: 'INNOVATION & TRUST. COMPLETE HARDWARE SOLUTIONS.',
+    heroTitle: 'GODREJ HARDWARE & FITTINGS',
+    heroDesc: 'India’s most trusted engineering heritage delivering comprehensive door fittings, modular kitchen accessories, and hydraulic hardware.',
     heroTags: [
       { text: 'Complete 8-Division Range', icon: 'sparkles' },
       { text: 'Tested Durability', icon: 'shield' },
       { text: 'Pan-India Trust', icon: 'calibrate' }
     ],
     overviewFeatures: [
-      { title: '8-in-1 Hardware Solutions', desc: 'Single-source architectural hardware for doors, furniture, wardrobes, kitchens, and beds', icon: 'sparkles' },
+      { title: '8-in-1 Hardware Solutions', desc: 'Single-source hardware fittings for doors, furniture, wardrobes, kitchens, and beds', icon: 'sparkles' },
       { title: 'Hydraulic Storage Bed Lifts', desc: 'Gas spring pistons designed for effortless lifting of heavy wooden storage beds', icon: 'gear' },
       { title: 'Silent Soft-Close Kitchen Systems', desc: 'Tandem drawer boxes and larder pantry units with smooth synchronized movement', icon: 'calibrate' },
-      { title: 'Commercial Glass & Door Control', desc: 'Overhead rack-and-pinion door closers and architectural glass patch hinges', icon: 'shield' }
+      { title: 'Commercial Glass & Door Control', desc: 'Overhead rack-and-pinion door closers and glass patch hinges', icon: 'shield' }
     ]
   },
   {
@@ -827,7 +827,7 @@ export const hardwareSpreads = [
     image: godrejSecurityImg,
     imageFit: 'contain',
     brandName: 'Godrej',
-    desc: 'Godrej advanced security portfolio featuring biometric digital locks with fingerprint, PIN and RFID access, computerized dimple key euro cylinders, anti-drill mortise bodies, motorized safety lockers, and high-security architectural hardware.',
+    desc: 'Godrej advanced security portfolio featuring biometric digital locks with fingerprint, PIN and RFID access, computerized dimple key euro cylinders, anti-drill mortise bodies, motorized safety lockers, and high-security door hardware.',
     thicknesses: ['Biometric Smart Locks', 'Digital Home Safes', 'High-Security Mortise', 'Computer Dimple Cylinders'],
     defaultThickness: 'Biometric Smart Locks',
     thicknessLabel: 'Security Division',
@@ -897,7 +897,7 @@ export const hardwareSpreads = [
       { title: 'Deep Striker Anchor', desc: 'Heavy-gauge steel strike plate anchors deep into structural door jambs', icon: 'shield' },
       { title: 'Computer Dimple Key', desc: 'Non-duplicable precision key profile protects against unauthorized key copies', icon: 'sparkles' },
       { title: 'Automatic Deadlocking', desc: 'Instantly locks deadbolts automatically upon door closing for round-the-clock safety', icon: 'gear' },
-      { title: 'Architectural Designer Finishes', desc: 'Luxury antique brass, rose gold, and polished brass finishes complementing designer doors', icon: 'sparkles' }
+      { title: 'Designer Finishes', desc: 'Luxury antique brass, rose gold, and polished brass finishes complementing designer doors', icon: 'sparkles' }
     ]
   },
   {
@@ -906,13 +906,13 @@ export const hardwareSpreads = [
     category: 'Hardware & Fittings',
     pageNumLeft: 115,
     pageNumRight: 116,
-    badge: 'Architectural Locksets',
-    title: 'Architectural Mortise Locks\n& Cylinder Solutions.',
+    badge: 'Mortise Locksets',
+    title: 'High-Security Mortise Locks\n& Cylinder Solutions.',
     tagline: 'Precision mortise locksets, euro cylinders, digital & furniture locks',
     image: europaDoorLocksImg,
     imageFit: 'cover',
     brandName: 'Europa',
-    desc: 'Europa complete architectural locking solutions encompassing high-security Euro-profile mortise locksets, anti-drill brass cylinders, biometric smart locks, cylindrical entrance knobs, glass door locks, and furniture cam locks.',
+    desc: 'Europa complete locking solutions encompassing high-security Euro-profile mortise locksets, anti-drill brass cylinders, biometric smart locks, cylindrical entrance knobs, glass door locks, and furniture cam locks.',
     thicknesses: ['Euro-Profile Mortise 85mm', 'Anti-Drill Brass Cylinder', 'Biometric Digital Lock', 'Furniture & Cupboard Lock'],
     defaultThickness: 'Euro-Profile Mortise 85mm',
     thicknessLabel: 'Product Range',
@@ -926,9 +926,9 @@ export const hardwareSpreads = [
       'Testing Standard': 'EN 12209 Grade 3 Standard',
       'Warranty': '15-Year Replacement Warranty'
     },
-    heroSub: 'PRECISION ARCHITECTURAL SECURITY SYSTEMS',
-    heroTitle: 'EUROPA ARCHITECTURAL LOCKS',
-    heroDesc: 'Architectural mortise locksets, euro-profile cylinders, and smart access systems providing smooth operation and certified anti-theft reliability.',
+    heroSub: 'PRECISION HIGH-SECURITY LOCKING SYSTEMS',
+    heroTitle: 'EUROPA HIGH-SECURITY LOCKS',
+    heroDesc: 'High-security mortise locksets, euro-profile cylinders, and smart access systems providing smooth operation and certified anti-theft reliability.',
     heroTags: [
       { text: 'Euro Mortise Lockset', icon: 'shield' },
       { text: 'Anti-Drill Cylinder', icon: 'sparkles' },
@@ -995,7 +995,7 @@ export const hardwareSpreads = [
     pageNumLeft: 119,
     pageNumRight: 120,
     badge: 'Door Hardware',
-    title: 'Architectural Door\nHardware & Locks.',
+    title: 'Premium Door\nHardware & Locks.',
     tagline: 'Door handles, mortise locks, hinges, and fittings',
     image: nimmiDoorHardwareImg,
     brandName: 'Nimmi',
@@ -1142,7 +1142,7 @@ export const hardwareSpreads = [
     pageNumRight: 34,
     badge: 'Precision Hardware',
     title: 'Perfect\nEngineering.',
-    tagline: 'Heavy-duty architectural hardware built to last',
+    tagline: 'Heavy-duty precision hardware built to last',
     image: hardwareImg,
     brandName: 'Steel Wood',
     desc: 'Heavy-duty cabinet hinges, drawer runners, and modular fittings designed for silent operation and longevity.',
@@ -1289,10 +1289,10 @@ export const hardwareSpreads = [
     pageNumRight: 46,
     badge: 'Butt Hinges',
     title: 'SS 304\nButt Hinges.',
-    tagline: 'High load bearing stainless steel architectural butt hinges',
+    tagline: 'High load bearing stainless steel butt hinges',
     image: hydraulicHingeImg,
     brandName: 'Steel Wood',
-    desc: 'Heavy-duty AISI 304 grade architectural butt hinges with two precision ball bearings, ensuring frictionless rotation and lifetime durability for heavy doors.',
+    desc: 'Heavy-duty AISI 304 grade precision butt hinges with two precision ball bearings, ensuring frictionless rotation and lifetime durability for heavy doors.',
     thicknesses: ['4 x 3 x 3 mm', '5 x 3 x 3 mm'],
     defaultThickness: '5 x 3 x 3 mm',
     features: ['SS 304 Grade', 'Two Ball Bearings', 'High Load Bearing'],
@@ -1302,9 +1302,9 @@ export const hardwareSpreads = [
       'Bearing': '2 Heavy Precision Ball Bearings',
       'Load Capacity': 'Up to 80 kg per pair'
     },
-    heroSub: 'ARCHITECTURAL HINGES. SOLID SS 304.',
+    heroSub: 'HEAVY-DUTY HINGES. SOLID SS 304.',
     heroTitle: 'STEEL WOOD BUTT HINGES',
-    heroDesc: 'Heavy-duty AISI 304 grade architectural butt hinges with two precision ball bearings, ensuring frictionless rotation and lifetime durability for heavy doors.',
+    heroDesc: 'Heavy-duty AISI 304 grade precision butt hinges with two precision ball bearings, ensuring frictionless rotation and lifetime durability for heavy doors.',
     heroTags: [
       { text: 'SS 304 Grade', icon: 'shield' },
       { text: 'Twin Ball Bearings', icon: 'gear' },
@@ -1473,7 +1473,7 @@ export const hardwareSpreads = [
     tagline: 'Heavy-duty top hung and bottom rolling wardrobe fittings',
     image: hardwareFittings4,
     brandName: 'Wardrobe Sliding System',
-    desc: 'Complete architectural wardrobe sliding fitting system featuring double-direction soft damping, heavy-duty aluminium profile tracks, and anti-jump safety rollers.',
+    desc: 'Complete wardrobe sliding fitting system featuring double-direction soft damping, heavy-duty aluminium profile tracks, and anti-jump safety rollers.',
     thicknesses: ['2-Door System', '3-Door System'],
     defaultThickness: '2-Door System',
     features: ['Top-Hung Concealed Track', 'Two-Way Dampening', 'Heavy Door Support'],
@@ -1483,9 +1483,9 @@ export const hardwareSpreads = [
       'Door Height': 'Up to 2.8m',
       'Guide Mechanism': 'Self-cleaning roller guides'
     },
-    heroSub: 'WARDROBE SYSTEMS. ARCHITECTURAL GRADE.',
+    heroSub: 'WARDROBE SYSTEMS. HEAVY-DUTY GRADE.',
     heroTitle: 'WARDROBE SLIDING SYSTEM',
-    heroDesc: 'Complete architectural wardrobe sliding fitting system featuring double-direction soft damping, heavy-duty aluminium profile tracks, and anti-jump safety rollers.',
+    heroDesc: 'Complete wardrobe sliding fitting system featuring double-direction soft damping, heavy-duty aluminium profile tracks, and anti-jump safety rollers.',
     heroTags: [
       { text: '100kg Capacity', icon: 'shield' },
       { text: 'Two-Way Dampening', icon: 'gear' },
@@ -1768,7 +1768,7 @@ export const hardwareSpreads = [
     tagline: 'Designer curtain rod supports & finials',
     image: curtain,
     brandName: 'Astdax Hardwares',
-    desc: 'Heavy-duty architectural curtain brackets crafted for elegant drapery support in CP, Antique, Rosegold, and Copper finishes.',
+    desc: 'Heavy-duty designer curtain brackets crafted for elegant drapery support in CP, Antique, Rosegold, and Copper finishes.',
     thicknesses: ['CP', 'Antique', 'Rosegold', 'Copper'],
     defaultThickness: 'CP',
     thicknessLabel: 'Available Finishes',
@@ -1814,7 +1814,7 @@ export const hardwareSpreads = [
     specs: {
       'Finish': 'CP | Antique | Rosegold | Copper | Silver | Blackgold',
       'Mounting Type': 'Wall / Ceiling Flange Mount',
-      'Quality Rating': 'Premium Architectural'
+      'Quality Rating': 'Premium Grade'
     },
     heroSub: 'CURTAIN BRACKETS II. LUXURY SELECTION.',
     heroTitle: 'ASTDAX HARDWARES',
@@ -1842,7 +1842,7 @@ export const hardwareSpreads = [
     tagline: 'Elegant dual-tone cabinet knobs',
     image: knob,
     brandName: 'Astdax Hardwares',
-    desc: 'Architectural cabinet knobs styled to enhance modern cabinet doors, drawers, and wardrobe shutters.',
+    desc: 'Designer cabinet knobs styled to enhance modern cabinet doors, drawers, and wardrobe shutters.',
     thicknesses: ['Z Black-Gold', 'Z Black-Antique', 'Z Black-Rosegold', 'Satin-CP'],
     defaultThickness: 'Z Black-Gold',
     thicknessLabel: 'Available Finishes',
@@ -1855,7 +1855,7 @@ export const hardwareSpreads = [
     },
     heroSub: 'DESIGNER KNOBS. DUAL-TONE ACCENTS.',
     heroTitle: 'ASTDAX HARDWARES',
-    heroDesc: 'Architectural cabinet knobs styled in Z Black-Gold, Z Black-Antique, Z Black-Rosegold, and Satin-CP finishes.',
+    heroDesc: 'Designer cabinet knobs styled in Z Black-Gold, Z Black-Antique, Z Black-Rosegold, and Satin-CP finishes.',
     heroTags: [
       { text: 'Dual-Tone', icon: 'sparkles' },
       { text: 'Solid Core', icon: 'shield' },
@@ -1911,11 +1911,11 @@ export const hardwareSpreads = [
     pageNumLeft: 79,
     pageNumRight: 80,
     badge: 'Door Fittings',
-    title: 'Architectural\nDoor Fittings.',
+    title: 'Designer\nDoor Fittings.',
     tagline: 'Precision engineered luxury door hardware & fittings',
     image: hardwareImg,
     brandName: 'Steel Wood',
-    desc: 'Architectural grade solid brass and stainless steel door hardware accessories designed for luxury main doors, high security latching, and enduring performance.',
+    desc: 'Premium solid brass and stainless steel door hardware accessories designed for luxury main doors, high security latching, and enduring performance.',
     thicknesses: ['Brass Finish', 'Satin Nickel', 'Antique Bronze'],
     defaultThickness: 'Brass Finish',
     features: ['Solid Brass Alloy', 'Heavy Security Rating', 'Anti-Tarnish Coating'],
@@ -1925,9 +1925,9 @@ export const hardwareSpreads = [
       'Finish': 'PVD Titanium Brass / Satin Steel',
       'Corrosion Resistance': '500-hour Salt Spray Tested'
     },
-    heroSub: 'DOOR FITTINGS. ARCHITECTURAL LUXURY.',
+    heroSub: 'DOOR FITTINGS. PREMIUM LUXURY.',
     heroTitle: 'STEEL WOOD DOOR FITTINGS',
-    heroDesc: 'Architectural grade solid brass and stainless steel door hardware accessories designed for luxury main doors, high security latching, and enduring performance.',
+    heroDesc: 'Premium solid brass and stainless steel door hardware accessories designed for luxury main doors, high security latching, and enduring performance.',
     heroTags: [
       { text: 'Solid Brass Core', icon: 'shield' },
       { text: 'PVD Scratch Proof', icon: 'sparkles' },
@@ -1936,7 +1936,7 @@ export const hardwareSpreads = [
     overviewFeatures: [
       { title: 'Forged Brass Core', desc: 'High-density metal casting resists forced entry', icon: 'shield' },
       { title: 'PVD Scratch Coating', desc: 'Lifetime luster without fading or peeling', icon: 'sparkles' },
-      { title: 'Architectural Profile', desc: 'Bold sculptured styling for premium doors', icon: 'calibrate' },
+      { title: 'Sculpted Profile', desc: 'Bold sculptured styling for premium doors', icon: 'calibrate' },
       { title: 'Universal Mounting', desc: 'Fits all standard wooden and composite doors', icon: 'gear' }
     ]
   },
@@ -1983,7 +1983,7 @@ export const hardwareSpreads = [
     pageNumLeft: 83,
     pageNumRight: 84,
     badge: 'Shelf Supports',
-    title: 'Architectural\nSupports.',
+    title: 'Furniture &\nShelf Supports.',
     tagline: 'Heavy-load glass and wooden shelf bracket supports',
     image: support,
     brandName: 'Steel Wood',
@@ -2020,7 +2020,7 @@ export const hardwareSpreads = [
     pageNumRight: 86,
     badge: 'Lever Handles',
     title: 'Ergonomic\nLever Handles.',
-    tagline: 'Architectural grade solid brass & zinc lever handles',
+    tagline: 'Premium grade solid brass & zinc lever handles',
     image: hardwareFittings6,
     brandName: 'Steel Wood',
     desc: 'Modern designer door lever handles with concealed screw roses, spring-assisted return mechanisms, and luxury electroplated dual-tone finishes.',

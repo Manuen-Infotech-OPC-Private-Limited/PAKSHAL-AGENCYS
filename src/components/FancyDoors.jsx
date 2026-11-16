@@ -29,7 +29,7 @@ export const fancyDoorsList = [
     badge: 'Contemporary Series',
     title: 'Modern Laminated Fancy Doors',
     subtitle: 'High-Pressure Decorative Finish',
-    tagline: 'Sleek architectural laminate finish for luxury residences',
+    tagline: 'Sleek modern laminate finish for luxury residences',
     image: fancyDoors2Img,
     thicknesses: '30mm, 32mm, 35mm, 38mm, 40mm',
     core: 'Calibrated Solid Pine Core',
@@ -43,7 +43,7 @@ export const fancyDoorsList = [
     badge: 'Royal Elegance',
     title: 'Luxury Veneered Fancy Doors',
     subtitle: 'Exotic Natural Teak & Walnut',
-    tagline: 'Natural wood grains with bookmatched architectural symmetry',
+    tagline: 'Natural wood grains with bookmatched symmetry',
     image: fancyDoors3Img,
     thicknesses: '32mm, 35mm, 38mm, 40mm, 45mm',
     core: 'Selected Seasoned Hardwood',
@@ -53,9 +53,9 @@ export const fancyDoorsList = [
   },
   {
     id: 44,
-    brandId: 'architectural-fancy-doors',
+    brandId: 'grooved-fancy-doors',
     badge: 'Elite Craft',
-    title: 'Architectural Grooved Fancy Doors',
+    title: 'Precision Grooved Fancy Doors',
     subtitle: 'Precision CNC Geometric Detailing',
     tagline: 'Precision engineered groove patterns & contemporary geometric styling',
     image: fancyDoors4Img,
@@ -77,7 +77,7 @@ export const fancyDoorsList = [
     core: '100% Solid Burma Teak / Sal',
     finish: 'Multi-Layer Weather-Shield PU Polish',
     warranty: 'Lifetime Durability',
-    features: ['100% Solid Hardwood', 'Architectural 3D Carvings', 'Weather Shield Coat', 'Heavy Security Hardware Ready']
+    features: ['100% Solid Hardwood', 'Artisan 3D Carvings', 'Weather Shield Coat', 'Heavy Security Hardware Ready']
   }
 ];
 
@@ -97,13 +97,13 @@ export const FancyDoors = ({ onSelectItem, activeId }) => {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 pb-4 border-b border-slate-200">
           <div>
             <span className="text-[11px] font-black uppercase tracking-widest text-[#006e2f] mb-1 block">
-              Architectural Entrance & Interior Doors
+              Designer Entrance & Interior Doors
             </span>
             <h2 className="text-3xl md:text-4xl font-black text-slate-900 tracking-tight uppercase">
               Fancy Doors Collection
             </h2>
             <p className="text-slate-500 font-medium text-xs sm:text-sm mt-1 max-w-2xl">
-              Explore our complete range of premium solid core fancy doors, luxury decorative laminates, bookmatched exotic veneers, and carved timber architectural doors.
+              Explore our complete range of premium solid core fancy doors, luxury decorative laminates, bookmatched exotic veneers, and carved timber entrance doors.
             </p>
           </div>
 

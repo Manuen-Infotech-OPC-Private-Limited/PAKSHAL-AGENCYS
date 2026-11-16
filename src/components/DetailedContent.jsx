@@ -42,7 +42,7 @@ export const DetailedContent = ({ onNavigate }) => {
     },
     {
       question: "Are the hardware fittings genuine?",
-      answer: "Yes, PAKSHAL AGENCYS is an authorized distributor. Every hinge, lock, or drawer slide channel is sourced directly from manufacturers like Ebco, Hettich, Godrej, Hafele, and Dorset. We stand behind 100% genuine quality for all architectural hardware solutions."
+      answer: "Yes, PAKSHAL AGENCYS is an authorized distributor. Every hinge, lock, or drawer slide channel is sourced directly from manufacturers like Ebco, Hettich, Godrej, Hafele, and Dorset. We stand behind 100% genuine quality for all hardware & fittings solutions."
     },
     {
       question: "Where is the PAKSHAL AGENCYS showroom located?",
@@ -65,9 +65,9 @@ export const DetailedContent = ({ onNavigate }) => {
   const brands = [
     { name: 'Ebco', url: 'https://www.ebco.in', desc: 'Precision drawer slides and cabinetry fittings.' },
     { name: 'Hettich', url: 'https://www.hettich.com', desc: 'German-engineered mortise locks, sliding systems & soft-close hinges.' },
-    { name: 'Godrej', url: 'https://www.godrej.com', desc: 'Biometric smart locks, digital safes & architectural hardware.' },
-    { name: 'Dorset', url: 'https://www.dorsetindia.com', desc: 'Designer pull handles and architectural fittings.' },
-    { name: 'Hafele', url: 'https://www.hafeleindia.com', desc: 'Slido sliding systems, Loox LED lighting & architectural fittings.' }
+    { name: 'Godrej', url: 'https://www.godrej.com', desc: 'Biometric smart locks, digital safes & security hardware.' },
+    { name: 'Dorset', url: 'https://www.dorsetindia.com', desc: 'Designer pull handles and door fittings.' },
+    { name: 'Hafele', url: 'https://www.hafeleindia.com', desc: 'Slido sliding systems, Loox LED lighting & interior fittings.' }
   ];
 
   return (
@@ -254,14 +254,14 @@ export const DetailedContent = ({ onNavigate }) => {
             </div>
           </div>
 
-          {/* Card 3: Architectural Hardware */}
+          {/* Card 3: Hardware & Fittings */}
           <div className="bg-white rounded-[28px] border border-slate-200/60 shadow-[0_8px_30px_rgba(0,0,0,0.03)] flex flex-col justify-between group overflow-hidden hover:shadow-lg transition-all duration-300">
             <div>
               {/* Image with slanted separator and floating badge */}
               <div className="relative w-full h-[180px] overflow-hidden bg-slate-100">
                 <img
                   src={hardwareImg}
-                  alt="Architectural Hardware"
+                  alt="Hardware & Fittings"
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   style={{ clipPath: 'polygon(0 0, 100% 0, 100% 85%, 0 100%)' }}
                 />
@@ -272,7 +272,7 @@ export const DetailedContent = ({ onNavigate }) => {
 
               <div className="p-6 sm:p-8 pt-4">
                 <h3 className="text-lg font-black text-[#0c2340] mb-3 tracking-wider uppercase font-sans">
-                  ARCHITECTURAL HARDWARE
+                  HARDWARE & FITTINGS
                 </h3>
                 <p className="text-slate-600 text-[13.5px] leading-relaxed font-semibold">
                   Authorized distribution of soft-close hinges, sliding drawer channels, modular kitchen systems, and luxury pull handles. Made from premium SS 304 stainless steel.

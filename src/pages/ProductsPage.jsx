@@ -1276,7 +1276,7 @@ export const ProductsPage = ({ onNavigate, search }) => {
             const brandObj = BRAND_CONFIG.find(b => b.name.toLowerCase() === (selectedBrand || '').toLowerCase()) || {
               name: selectedBrand,
               displayName: selectedBrand?.toUpperCase(),
-              tagline: activeSpread?.tagline || 'Authorized Architectural Collection',
+              tagline: activeSpread?.tagline || 'Authorized Brand Collection',
               hallmark: activeSpread?.desc || 'Double-pressed calibrated core engineered for structural integrity.',
               tags: activeSpread?.features || ['100% Calibrated', 'Boiling Water Proof', 'Lifetime Warranty'],
               categories: [activeSpread?.category || 'Plywood']

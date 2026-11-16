@@ -987,12 +987,12 @@ export const kitchenAccessoriesSpreads = [
     pageNumRight: 122,
     badge: 'Cabinetry Design',
     title: 'Modern Modular\nKitchen Suite.',
-    tagline: 'Turnkey architectural modular kitchen cabinetry & fittings layout',
+    tagline: 'Turnkey modular kitchen cabinetry & fittings layout',
     image: kitchensCardImg,
     productName: 'Modern Modular Kitchen',
     brandName: 'Sentex Gold',
     brandId: 'sentex-gold',
-    desc: 'Full architectural modular kitchen layout displaying seamless integration of tandem drawers, rolling shutters, overhead lift-up shutters, and pantry swing units.',
+    desc: 'Full modern modular kitchen layout displaying seamless integration of tandem drawers, rolling shutters, overhead lift-up shutters, and pantry swing units.',
     material: 'Luxury Matte Laminates & Calibrated Marine Plywood',
     thicknesses: ['L-Shaped Kitchen', 'U-Shaped Kitchen', 'Parallel Kitchen', 'Island Kitchen'],
     defaultThickness: 'L-Shaped Kitchen',
@@ -1004,11 +1004,11 @@ export const kitchenAccessoriesSpreads = [
       'Fittings': 'Soft-Close Concealed German Hardware',
       'Finish': 'Anti-Scratch Matte Panels'
     },
-    heroSub: 'ARCHITECTURAL KITCHEN CONCEPTS.',
+    heroSub: 'MODERN KITCHEN CONCEPTS.',
     heroTitle: 'MODULAR KITCHEN SUITE',
-    heroDesc: 'Full architectural modular kitchen layout displaying seamless integration of tandem drawers, rolling shutters, overhead lift-up shutters, and pantry swing units.',
+    heroDesc: 'Full modern modular kitchen layout displaying seamless integration of tandem drawers, rolling shutters, overhead lift-up shutters, and pantry swing units.',
     heroTags: [
-      { text: 'Architectural Layout', icon: 'sparkles' },
+      { text: 'Modular Layout', icon: 'sparkles' },
       { text: 'Integrated Hardware', icon: 'gear' },
       { text: 'Waterproof Core', icon: 'droplet' }
     ],
@@ -1044,7 +1044,7 @@ export const KitchenAccessories = ({ onNavigate, onSelectItem, activeId }) => {
               Sentex Gold Kitchen Accessories
             </h2>
             <p className="text-slate-500 font-medium text-xs sm:text-sm mt-1 max-w-2xl">
-              Explore our complete range of pull-downs, tandem drawers, magic corners, carousel trays, organizer systems, and architectural cabinetry.
+              Explore our complete range of pull-downs, tandem drawers, magic corners, carousel trays, organizer systems, and modular cabinetry.
             </p>
           </div>
 

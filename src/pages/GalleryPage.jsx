@@ -216,7 +216,7 @@ const GALLERY_ITEMS = [
       tandemBoxImg,
       hydraulicHingeImg
     ],
-    desc: 'Precision architectural hinges, drawer runners, locks, and premium door fittings.'
+    desc: 'Precision hinges, drawer runners, locks, and premium door fittings.'
   },
   {
     id: 5,
@@ -245,7 +245,7 @@ const GALLERY_ITEMS = [
       veneer4Img,
       homepageMarinePlywoodImg
     ],
-    desc: 'Exotic natural wood veneers with architectural grain patterns, teak textures, and luxury bookmatched surface finishes.'
+    desc: 'Exotic natural wood veneers with rich wood grain patterns, teak textures, and luxury bookmatched surface finishes.'
   },
   {
     id: 202,
@@ -261,7 +261,7 @@ const GALLERY_ITEMS = [
       vistaLaminates4Img,
       centuryLaminates4Img
     ],
-    desc: 'Luxury marble slab patterns, stone finishes, and tactile architectural textures for designer countertops and interior paneling.'
+    desc: 'Luxury marble slab patterns, stone finishes, and tactile designer textures for countertops and interior paneling.'
   },
   {
     id: 501,
@@ -295,7 +295,7 @@ const GALLERY_ITEMS = [
   },
   {
     id: 503,
-    title: 'Architectural Fancy Doors',
+    title: 'Grooved Fancy Doors',
     category: 'Doors & Systems',
     img: fancyDoors4Img,
     imagesCount: 5,
@@ -306,7 +306,7 @@ const GALLERY_ITEMS = [
       fancyDoors3Img,
       designerDoorImg
     ],
-    desc: 'Precision CNC grooved geometric patterns designed for luxury modern architectural spaces.'
+    desc: 'Precision CNC grooved geometric patterns designed for luxury modern spaces.'
   },
   {
     id: 504,
@@ -321,7 +321,7 @@ const GALLERY_ITEMS = [
       fancyDoors3Img,
       fancyDoors4Img
     ],
-    desc: 'Handcrafted solid timber doors with traditional architectural relief carvings.'
+    desc: 'Handcrafted solid timber doors with traditional heritage relief carvings.'
   }
 ];
 

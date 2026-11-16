@@ -87,7 +87,7 @@ export const BRAND_CONFIG = [
     categories: ['Plywood'],
     categorySummary: 'Plywood • Calibrated Gurjan Core',
     tagline: 'Precision Calibrated for Zero Core Gaps',
-    hallmark: 'Double-pressed with uniform thickness tolerance for flawless luxury cabinetry and architectural veneer backing.',
+    hallmark: 'Double-pressed with uniform thickness tolerance for flawless luxury cabinetry and premium veneer backing.',
     tags: ['Double Pressed', 'Zero Core Gaps', 'Phenolic Bonded'],
     icon: (
       <svg className="w-7 h-7 text-[#C9A44C]" viewBox="0 0 28 28" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
@@ -143,7 +143,7 @@ export const BRAND_CONFIG = [
     image: gurjanStarImg,
     categories: ['Plywood'],
     categorySummary: 'Plywood • 360° Flexible Plywood',
-    tagline: 'Specially Formulated Bendable Architectural Ply',
+    tagline: 'Specially Formulated Bendable Flexible Ply',
     hallmark: 'Flexible grain-parallel plywood engineered for seamless curves, round counters, decorative arches, and columns.',
     tags: ['360° Flexibility', 'Grain Parallel Bending', 'No Splitting'],
     icon: (
@@ -234,8 +234,8 @@ export const BRAND_CONFIG = [
     },
     categories: ['Laminates'],
     categorySummary: 'Laminates • Contemporary Textures',
-    tagline: 'Contemporary Textures & Architectural Surfaces',
-    hallmark: 'Sophisticated architectural laminate range with modern textures, stone finishes, and impact resistance.',
+    tagline: 'Contemporary Textures & Designer Surfaces',
+    hallmark: 'Sophisticated laminate range with modern textures, stone finishes, and impact resistance.',
     tags: ['Stone Textures', 'Anti-Fingerprint', 'Impact Resistant'],
     icon: (
       <svg className="w-7 h-7 text-[#C9A44C]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -375,7 +375,7 @@ export const BRAND_CONFIG = [
     categories: ['Veneers'],
     categorySummary: 'Veneers • Exotic Natural Woods',
     tagline: 'Curated Natural & Smoked Wood Veneers',
-    hallmark: 'Hand-selected natural wood species, flitch-matched smoked veneers, and open-grain architectural surfaces.',
+    hallmark: 'Hand-selected natural wood species, flitch-matched smoked veneers, and open-grain wood surfaces.',
     tags: ['Natural Timber', 'Smoked Finishes', 'Bookmatched'],
     icon: (
       <svg className="w-7 h-7 text-[#C9A44C]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -396,7 +396,7 @@ export const BRAND_CONFIG = [
     categories: ['Hardware & Fittings'],
     categorySummary: 'Hardware & Fittings • Digital Locks • Pocket Doors • Spinova 360°',
     tagline: 'Smart Living, Pocket Door Systems & Spinova 360° Storage',
-    hallmark: "India's pioneer manufacturer of advanced biometric digital locks, architectural pocket door systems, Spinova 360 rotating organizers, and precision hardware fittings.",
+    hallmark: "India's pioneer manufacturer of advanced biometric digital locks, concealed pocket door systems, Spinova 360 rotating organizers, and precision hardware fittings.",
     tags: ['Smart Digital Locks', 'Pocket Door Systems', 'Spinova 360°', 'Soft-Close Motion'],
     icon: (
       <svg className="w-7 h-7 text-[#C9A44C]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -420,8 +420,8 @@ export const BRAND_CONFIG = [
     categories: ['Hardware & Fittings'],
     categorySummary: 'Hardware & Fittings • Mortise Locks • Sliding & Folding Systems',
     tagline: 'Fascin[action] German Engineering: Locks, Sliding Systems & Cabinetry Fittings',
-    hallmark: 'World-renowned German engineered hardware featuring architectural mortise door locks, TopLine sliding systems, WingLine folding door gear, Sensys soft-close hinges, and Quadro runner channels.',
-    tags: ['Architectural Mortise Locks', 'TopLine Sliding Gear', 'WingLine Folding Systems', 'Sensys Soft-Close', 'Quadro Runners'],
+    hallmark: 'World-renowned German engineered hardware featuring precision mortise door locks, TopLine sliding systems, WingLine folding door gear, Sensys soft-close hinges, and Quadro runner channels.',
+    tags: ['Mortise Door Locks', 'TopLine Sliding Gear', 'WingLine Folding Systems', 'Sensys Soft-Close', 'Quadro Runners'],
     icon: (
       <svg className="w-7 h-7 text-[#C9A44C]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <circle cx="12" cy="12" r="3" />
@@ -442,8 +442,8 @@ export const BRAND_CONFIG = [
     },
     categories: ['Hardware & Fittings'],
     categorySummary: 'Hardware & Fittings • Slido Sliding Systems • Loox LED Lighting • Bed Lift Mechanisms',
-    tagline: 'German Architectural Hardware, Slido Sliding Systems & Loox LED Lighting',
-    hallmark: 'Global authority in premium architectural hardware, Slido top-hung sliding door gear, Loox 5 LED cabinet lighting, multifunctional hydraulic bed lift mechanisms, and Minifix connecting fittings.',
+    tagline: 'German Hardware Systems, Slido Sliding Systems & Loox LED Lighting',
+    hallmark: 'Global authority in premium hardware solutions, Slido top-hung sliding door gear, Loox 5 LED cabinet lighting, multifunctional hydraulic bed lift mechanisms, and Minifix connecting fittings.',
     tags: ['Slido Sliding Systems', 'Loox 5 LED Lighting', 'Multifunctional Bed Lift', 'Minifix Connecting Systems', 'German Engineering'],
     icon: (
       <svg className="w-7 h-7 text-[#C9A44C]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -464,8 +464,8 @@ export const BRAND_CONFIG = [
       'Arch. Hardware': godrejArchImg
     },
     categories: ['Hardware & Fittings'],
-    categorySummary: 'Hardware & Fittings • Digital Locks • Safes • Architectural Hardware',
-    tagline: "India's Benchmark for Smart Locks, Electronic Safes & Architectural Hardware",
+    categorySummary: 'Hardware & Fittings • Digital Locks • Safes • Door Fittings',
+    tagline: "India's Benchmark for Smart Locks, Electronic Safes & Door Fittings",
     hallmark: 'Trusted high-security biometric digital locks, motorized home safes, Euro-profile anti-drill brass cylinders, hydraulic overhead door closers, and comprehensive modular furniture hardware.',
     tags: ['Biometric Smart Locks', 'Digital Home Safes', 'High Security Mortise', 'Hydraulic Closers', 'Furniture Fittings'],
     icon: (
@@ -510,7 +510,7 @@ export const BRAND_CONFIG = [
     },
     categories: ['Hardware & Fittings'],
     categorySummary: 'Hardware & Fittings • Door Hardware • Kitchen Accessories • Furniture Fittings',
-    tagline: 'Architectural Door Hardware, Kitchen Accessories & Furniture Fittings',
+    tagline: 'Door Hardware, Kitchen Accessories & Furniture Fittings',
     hallmark: 'Durable door locks, handles, hinges, modular kitchen accessories, and furniture fittings.',
     tags: ['Door Hardware', 'Kitchen Storage', 'Cabinet Fittings', 'Profile Handles'],
     icon: (
@@ -529,9 +529,9 @@ export const BRAND_CONFIG = [
     trademark: true,
     image: hardwareFittings1,
     categories: ['Arch. Hardware', 'Hardware & Fittings', 'Sliding Systems'],
-    categorySummary: 'Architectural Hardware • Precision Fittings',
+    categorySummary: 'Hardware & Fittings • Precision Fittings',
     tagline: 'Heavy-Duty Drawer Systems & Sliding Hardware',
-    hallmark: 'German-engineered soft-close hinges, drawer channels, sliding wardrobe systems, and precision architectural fittings.',
+    hallmark: 'German-engineered soft-close hinges, drawer channels, sliding wardrobe systems, and precision hardware fittings.',
     tags: ['Soft-Close Tested', 'High Load Capacity', 'Corrosion Free'],
     icon: (
       <svg className="w-7 h-7 text-[#C9A44C]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -546,7 +546,7 @@ export const BRAND_CONFIG = [
     trademark: true,
     image: astdaxHardware1Img,
     categories: ['Arch. Hardware', 'Hardware & Fittings'],
-    categorySummary: 'Architectural Hardware • Luxury Brass & Zinc',
+    categorySummary: 'Hardware & Fittings • Luxury Brass & Zinc',
     tagline: 'Designer Door Handles, Mortise Locks & Pulls',
     hallmark: 'Ergonomic solid brass and zinc door handles, concealed roses, digital locks, and precision furniture fittings.',
     tags: ['Solid Brass & Zinc', 'PVD Finish Guarantee', 'Concealed Screws'],
