@@ -1166,14 +1166,6 @@ export const ProductsPage = ({ onNavigate, search }) => {
                                 Authorized Brand
                               </span>
                             </div>
-
-                            {/* Hardware Division Pill */}
-                            <div className="absolute bottom-3 left-4 z-10 flex items-center gap-1.5">
-                              <span className="w-2 h-2 rounded-full bg-[#C9A44C]" />
-                              <span className="text-[10px] font-black tracking-widest uppercase text-stone-400">
-                                Hardware Division
-                              </span>
-                            </div>
                           </div>
                         ) : (
                           /* Top Image Showcase for Surface / Panel Brands */
