@@ -627,7 +627,7 @@ export const hardwareSpreads = [
     image: hafeleLivingImg,
     imageFit: 'cover',
     brandName: 'Hafele',
-    desc: 'Häfele Slido top-hung sliding hardware and integrated living systems, featuring synchronized silent sliding partitions, concealed hinges, modular drawer boxes, and larder storage solutions for luxury residences.',
+    desc: 'Hafele Slido top-hung sliding hardware and integrated living systems, featuring synchronized silent sliding partitions, concealed hinges, modular drawer boxes, and larder storage solutions for luxury residences.',
     thicknesses: ['Slido D-Line (Up to 80kg)', 'Slido Classic Glass', 'Aluflex Sliding Partitions'],
     defaultThickness: 'Slido D-Line (Up to 80kg)',
     thicknessLabel: 'System Variant',
@@ -641,7 +641,7 @@ export const hardwareSpreads = [
       'Components': 'Slido Rollers, Tiomos Hinges, Matrix Drawers'
     },
     heroSub: 'GERMAN HARDWARE SYSTEMS. SEAMLESS LIVING.',
-    heroTitle: 'HÄFELE SLIDO & LIVING HARDWARE',
+    heroTitle: 'HAFELE SLIDO & LIVING HARDWARE',
     heroDesc: 'Top-hung sliding systems with concealed fluid dampers and synchronized movement, engineered for sophisticated contemporary living spaces.',
     heroTags: [
       { text: 'Top-Hung Design', icon: 'calibrate' },
@@ -652,7 +652,7 @@ export const hardwareSpreads = [
       { title: 'Obstruction-Free Flooring', desc: 'Top-hung profile eliminates dirty floor tracks completely for seamless floor transitions', icon: 'calibrate' },
       { title: 'Dual Fluid Air Dampers', desc: 'Gently cushions shutters smoothly at both opening and closing endpoints', icon: 'gear' },
       { title: 'Synchronized Double Doors', desc: 'Moving one shutter automatically glides the connected panel smoothly in tandem', icon: 'sparkles' },
-      { title: 'Integrated Interior Hardware', desc: 'Engineered to harmoniously match Häfele soft-close hinges, drawer boxes, and larder units', icon: 'shield' }
+      { title: 'Integrated Interior Hardware', desc: 'Engineered to harmoniously match Hafele soft-close hinges, drawer boxes, and larder units', icon: 'shield' }
     ]
   },
   {
@@ -667,7 +667,7 @@ export const hardwareSpreads = [
     image: hafeleMultiImg,
     imageFit: 'contain',
     brandName: 'Hafele',
-    desc: 'Häfele multifunctional furniture fittings including heavy-duty gas spring bed lift mechanisms for storage beds, foldaway Murphy wall-bed fittings, aluminum handle profiles, and modular drawer organizers.',
+    desc: 'Hafele multifunctional furniture fittings including heavy-duty gas spring bed lift mechanisms for storage beds, foldaway Murphy wall-bed fittings, aluminum handle profiles, and modular drawer organizers.',
     thicknesses: ['Bed Lift Gas Springs (600N-1200N)', 'Foldaway Murphy Bed Fitting', 'Aluminum Edge Profiles'],
     defaultThickness: 'Bed Lift Gas Springs (600N-1200N)',
     thicknessLabel: 'Mechanism Type',
@@ -680,7 +680,7 @@ export const hardwareSpreads = [
       'Mechanism': 'Precision Gas-Piston Lift & Fold Mechanism'
     },
     heroSub: 'SPACE-SAVING ENGINEERING. EFFORTLESS LIFT.',
-    heroTitle: 'HÄFELE MULTIFUNCTIONAL FITTINGS',
+    heroTitle: 'HAFELE MULTIFUNCTIONAL FITTINGS',
     heroDesc: 'Engineered hydraulic bed lift mechanisms and space-optimizing fittings transforming compact interiors into versatile, clutter-free spaces.',
     heroTags: [
       { text: 'Hydraulic Bed Lift', icon: 'gear' },
@@ -706,7 +706,7 @@ export const hardwareSpreads = [
     image: hafeleLightingImg,
     imageFit: 'contain',
     brandName: 'Hafele',
-    desc: 'Häfele Loox 5 engineered LED lighting system featuring plug-and-play modular connectivity, warm & neutral flexible LED ribbon strips, recessed puck downlights, aluminum diffusers, and motorized TV lift mechanisms.',
+    desc: 'Hafele Loox 5 engineered LED lighting system featuring plug-and-play modular connectivity, warm & neutral flexible LED ribbon strips, recessed puck downlights, aluminum diffusers, and motorized TV lift mechanisms.',
     thicknesses: ['12V System (Residential)', '24V System (Commercial / Long Runs)'],
     defaultThickness: '12V System (Residential)',
     thicknessLabel: 'Voltage Rating',
@@ -719,7 +719,7 @@ export const hardwareSpreads = [
       'Lifespan': '50,000+ Operating Hours'
     },
     heroSub: 'LIGHT MEETS DESIGN. PLUG-AND-PLAY BRILLIANCE.',
-    heroTitle: 'HÄFELE LOOX 5 LED LIGHTING',
+    heroTitle: 'HAFELE LOOX 5 LED LIGHTING',
     heroDesc: 'Modular cabinet lighting transforming interiors with brilliant ambiance, seamless aluminum diffuser integration, and intuitive color-coded installation.',
     heroTags: [
       { text: 'Plug-and-Play System', icon: 'sparkles' },
@@ -745,7 +745,7 @@ export const hardwareSpreads = [
     image: hafeleConnectorsImg,
     imageFit: 'contain',
     brandName: 'Hafele',
-    desc: 'Häfele Minifix and Rafix furniture connecting fittings, patented cam connector housings, expanding steel dowels, concealed shelf brackets, and precision glass shelf supports for rigid, wobble-free cabinetry assembly.',
+    desc: 'Hafele Minifix and Rafix furniture connecting fittings, patented cam connector housings, expanding steel dowels, concealed shelf brackets, and precision glass shelf supports for rigid, wobble-free cabinetry assembly.',
     thicknesses: ['Minifix 15 / 12 Cams', 'Rafix 20 Connectors', 'Concealed Shelf Supports'],
     defaultThickness: 'Minifix 15 / 12 Cams',
     thicknessLabel: 'Fitting Variant',
@@ -758,7 +758,7 @@ export const hardwareSpreads = [
       'Finish': 'Bright Nickel-Plated & Zinc Passivated'
     },
     heroSub: 'THE WORLD STANDARD. TIMELESS PRECISION.',
-    heroTitle: 'HÄFELE MINIFIX & RAFIX CONNECTORS',
+    heroTitle: 'HAFELE MINIFIX & RAFIX CONNECTORS',
     heroDesc: 'The gold standard in furniture assembly hardware, providing unbreakable joints, tool-free knock-down convenience, and hidden shelf stabilization.',
     heroTags: [
       { text: 'Centric Cam Lock', icon: 'gear' },

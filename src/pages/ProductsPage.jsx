@@ -924,7 +924,7 @@ export const ProductsPage = ({ onNavigate, search }) => {
     if (b.toLowerCase().includes('steel wood')) return 'Steel Wood';
     if (b.toLowerCase().includes('ebco')) return 'Ebco';
     if (b.toLowerCase().includes('hettich')) return 'Hettich';
-    if (b.toLowerCase().includes('hafele') || b.toLowerCase().includes('häfele')) return 'Häfele';
+    if (b.toLowerCase().includes('hafele') || b.toLowerCase().includes('häfele')) return 'Hafele';
     if (b.toLowerCase().includes('godrej')) return 'Godrej';
     if (b.toLowerCase().includes('europa')) return 'Europa';
     if (b.toLowerCase().includes('nimmi')) return 'Nimmi';

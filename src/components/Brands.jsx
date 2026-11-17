@@ -13,7 +13,7 @@ export const Brands = () => {
     { name: 'Hettich', src: hettichLogo, url: 'https://www.hettich.com' },
     { name: 'Godrej', src: godrejLogo, url: 'https://www.godrej.com' },
     { name: 'Dorset', src: dorsetLogo, url: 'https://www.dorsetindia.com' },
-    { name: 'Häfele', src: hafeleLogo, url: 'https://www.hafeleindia.com' },
+    { name: 'Hafele', src: hafeleLogo, url: 'https://www.hafeleindia.com' },
     { name: 'Europa', src: europaLogo, url: 'https://www.europalocks.com' },
     { name: 'Nimmi', src: nimmiLogo, url: 'https://www.nimmihardware.com' }
   ];

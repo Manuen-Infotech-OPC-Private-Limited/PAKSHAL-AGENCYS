@@ -431,7 +431,7 @@ export const BRAND_CONFIG = [
   },
   {
     name: 'Hafele',
-    displayName: 'HÄFELE',
+    displayName: 'HAFELE',
     trademark: true,
     image: hafeleLogo,
     logo: hafeleLogo,
